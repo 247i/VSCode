@@ -1,0 +1,31 @@
+2026-09-15 06:41:33.124 [info] Agent Host process started successfully
+2026-09-15 06:41:33.148 [info] AgentService initialized
+2026-09-15 06:41:33.155 [info] Registering agent provider: copilotcli
+2026-09-15 06:41:33.158 [info] Registering agent provider: claude
+2026-09-15 06:41:33.174 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-09-15 06:41:33.178 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-09-15 06:41:33.198 [info] [Claude] Models refreshed (merged). Count: 0, 
+2026-09-15 06:41:33.664 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-09-15 06:41:33.674 [info] [CommandAutoApprover] Tree-sitter initialized (bash=available, powershell=available)
+2026-09-15 06:41:34.230 [info] [ProtocolServer] Initialize: clientId=07a0a46a-8242-4dca-b076-1edeff3969d8, protocolVersions=[0.9.0, 0.7.0, 0.6.0, 0.5.2, 0.5.1]
+2026-09-15 06:41:34.848 [info] [WebSocketProtocol] Server listening on socket \\.\pipe\vscode-agent-host-c20bc4bf9c7930313c9bbf3f3c649c2ea5f295998700d7ce5df008f2c82aac7f-hrudVx8gkARB1wy7-iFXAA
+2026-09-15 06:41:35.469 [info] [Copilot] Auth token updated
+2026-09-15 06:41:35.537 [info] [ClaudeProxyService] listening on http://127.0.0.1:57731
+2026-09-15 06:41:35.538 [info] [Claude] Auth token updated
+2026-09-15 06:41:35.545 [info] [AgentService] pruned 0 stale external session row(s) older than 30 days
+2026-09-15 06:41:35.545 [info] [Copilot] Listing discoverable chats...
+2026-09-15 06:41:35.546 [info] [Copilot] Starting CopilotClient...
+2026-09-15 06:41:35.548 [info] [Copilot] Set CLI env: GITHUB_COPILOT_INTEGRATION_ID=vscode-chat
+2026-09-15 06:41:35.552 [info] [Copilot] Resolved CLI path: d:\All\SCM.Gui\vscode\645f29cc31\resources\app\node_modules.asar.unpacked\@github\copilot-win32-x64\index.js
+2026-09-15 06:41:35.591 [info] [Claude] SDK not downloaded yet; deferring chat discovery
+2026-09-15 06:41:37.218 [info] [Copilot] CopilotClient started successfully
+2026-09-15 06:41:37.221 [info] [Copilot] Listed 0 SDK session(s) for discoverable chats
+2026-09-15 06:41:37.222 [info] [Copilot] Chat discovery: 0 SDK session(s) -> 0 external, 0 adoptable legacy extension-host, 0 suppressed adoptable legacy extension-host, 0 suppressed archived legacy extension-host, 0 already known to Agent Host, 0 without a working directory, 0 with unsupported or missing client name, 0 outside the import window, 0 without repository metadata, 0 failed to classify (adopt legacy extension-host chats: false)
+2026-09-15 06:41:37.853 [info] [Copilot] Listing models...
+2026-09-15 06:41:40.028 [info] [Copilot] Found 17 models: Auto, Claude Sonnet 5, Claude Opus 5, Claude Opus 4.8, Claude Haiku 4.5, GPT-5.6 Sol, GPT-5.6 Terra, GPT-5.6 Luna, GPT-5.5, GPT-5.4, GPT-5.4 mini, GPT-5.3-Codex, MAI-Code-1.1-Flash, Gemini 3.7 Flash, Gemini 3.6 Flash, Gemini 3.5 Flash, Gemini 3.8 Flash
+2026-09-15 06:41:40.094 [info] [Claude] Models refreshed (merged). Count: 4, Claude Opus 4.8, Claude Opus 5, Claude Sonnet 5, Claude Haiku 4.5
+2026-09-15 06:42:12.100 [info] [ProtocolServer] Client disconnected: 07a0a46a-8242-4dca-b076-1edeff3969d8, subscriptions=1
+2026-09-15 06:42:12.101 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-09-15 06:42:12.102 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-09-15 06:42:12.104 [info] AgentService: shutting down all providers...
+2026-09-15 06:42:12.104 [info] [Copilot] Shutting down...

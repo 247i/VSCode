@@ -1,0 +1,11 @@
+- (10 Jul, 2024) Support for more programming languages added
+- (04 Jul, 2024) Upgraded to use vscode engine ^1.91.0
+- (24 Jun, 2020) Stackoverflow search (via google) added
+- (16 Jun, 2020) C++ search added
+- (20 Dec, 2019) Golang search added
+- (19 Dec, 2019) Minor fixes for PHP search
+- (16 Dec, 2019) Python Docs search added
+- (13 Nov, 2019) Language specific activation
+- (30 Oct, 2019) CSS manual added
+- (29 Oct, 2019) Minor Changes
+- (18 Oct, 2019) Initial release

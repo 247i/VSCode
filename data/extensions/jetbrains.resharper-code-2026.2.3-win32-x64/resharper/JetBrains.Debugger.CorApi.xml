@@ -1,0 +1,423 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Debugger.CorApi</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.Debugger.CorApi.ComInterop.CorDebugFactory">
+            <summary>
+            Knows how to create <see cref="T:JetBrains.Debugger.CorApi.ComInterop.ICorDebug" /> for various environments.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.CorDebugProcessFactory.CorDebugCreateProcess(JetBrains.Lifetimes.Lifetime,JetBrains.Util.ILogger,JetBrains.Debugger.CorApi.ComInterop.ICorDebug,JetBrains.Util.FileSystemPath,JetBrains.Util.CommandLineBuilderJet,JetBrains.Util.FileSystemPath,JetBrains.Util.InvokeChildProcess.PumpStreamHighLevelDelegate,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Launch a process under the control of the debugger.
+            Parameters are the same as the Win32 CreateProcess call.
+            </summary>
+        </member>
+        <member name="P:JetBrains.Debugger.CorApi.ComInterop.Eventing.CorAppDomainEventArgs.AppDomain">
+            The AppDomain that generated the event. 
+        </member>
+        <member name="P:JetBrains.Debugger.CorApi.ComInterop.Eventing.CorAssemblyEventArgs.Assembly">
+            <summary>
+            The Assembly of interest.
+            </summary>
+        </member>
+        <member name="P:JetBrains.Debugger.CorApi.ComInterop.Eventing.CorBreakpointEventArgs.Breakpoint">
+            The breakpoint involved. 
+        </member>
+        <member name="P:JetBrains.Debugger.CorApi.ComInterop.Eventing.CorEvalEventArgs.Eval">
+            The object being evaluated. 
+        </member>
+        <member name="P:JetBrains.Debugger.CorApi.ComInterop.Eventing.CorEventArgs.Controller">
+            <summary>
+            The Controller of the current event.
+            </summary>
+        </member>
+        <member name="P:JetBrains.Debugger.CorApi.ComInterop.Eventing.CorEventArgs.Continue">
+            <summary>
+            The default behavior after an event is to Continue processing
+            after the event has been handled.  This can be changed by
+            setting this property to false.
+            </summary>
+        </member>
+        <member name="P:JetBrains.Debugger.CorApi.ComInterop.Eventing.CorEventArgs.CallbackType">
+            <summary>
+            The type of callback that returned this CorEventArgs object.
+            </summary>
+        </member>
+        <member name="P:JetBrains.Debugger.CorApi.ComInterop.Eventing.CorEventArgs.Thread">
+            <summary>
+            The CorThread associated with the callback event that returned
+            this CorEventArgs object. If here is no such thread, Thread is null.
+            </summary>
+        </member>
+        <member name="P:JetBrains.Debugger.CorApi.ComInterop.Eventing.CorExceptionEventArgs.Unhandled">
+            Has the exception been handled yet? 
+        </member>
+        <member name="P:JetBrains.Debugger.CorApi.ComInterop.Eventing.CorProcessEventArgs.Process">
+            The process that generated the event. 
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugAppDomainEx.GetProcess(JetBrains.Debugger.CorApi.ComInterop.ICorDebugAppDomain)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugAppDomain.GetProcess(JetBrains.Debugger.CorApi.ComInterop.ICorDebugProcess@)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugCode2Ex.GetEntireCode(JetBrains.Debugger.CorApi.ComInterop.ICorDebugCode2,JetBrains.Debugger.CorApi.ComInterop.ICorDebugProcess,System.Byte[]@)">
+            <summary>
+            Not tested properly
+            </summary>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugCode2Ex.GetCodeChunks(JetBrains.Debugger.CorApi.ComInterop.ICorDebugCode2)">
+            <summary>
+            Not tested properly
+            </summary>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugCodeEx.GetEntireCode(JetBrains.Debugger.CorApi.ComInterop.ICorDebugCode,System.UInt32)">
+            <summary>
+            Get all code from `@this` from `from` offset to the end of code.
+            Use only for IL code, for native code use <see cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugCode2Ex.GetEntireCode(JetBrains.Debugger.CorApi.ComInterop.ICorDebugCode2,JetBrains.Debugger.CorApi.ComInterop.ICorDebugProcess,System.Byte[]@)"/> 
+            </summary>
+            <param name="this"></param>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugEnumEx.ToList``2(``0,JetBrains.Debugger.CorApi.ComInterop.ICorDebugEnumEx.NextDelegate{``0,``1})">
+            <summary> 
+            Requires enumerator to pointing to the beginning of a collection and consumes it. After the call if you want to use an enumerator again - call Reset method.
+            </summary>
+            <param name="comenum"></param>
+            <param name="FNext"></param>
+            <typeparam name="TCorDebugEnum"></typeparam>
+            <typeparam name="TItem"></typeparam>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrameEx.GetFunction(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrame)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrame.GetFunction(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunction@)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrameEx.TryGetFunctionToken(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrame,System.UInt32@)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrame.GetFunctionToken(System.UInt32@)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrameEx.GetFunctionSafe(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrame)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrame.GetFunction(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunction@)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrameEx.GetCaller(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrame)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrame.GetCaller(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrame@)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrameEx.GetCallerSafe(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrame)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrame.GetCaller(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrame@)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrameEx.GetCalleeSafe(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrame)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrame.GetCallee(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrame@)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunctionBreakpointEx.Activate(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunctionBreakpoint,System.Boolean)">
+            <inheritdoc cref="!:ICorDebugFunctionBreakpoint.Activate"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunctionBreakpointEx.GetFunction(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunctionBreakpoint)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunctionBreakpoint.GetFunction(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunction@)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunctionEx.GetModule(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunction)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunction.GetModule(JetBrains.Debugger.CorApi.ComInterop.ICorDebugModule@)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunctionEx.GetClass(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunction)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunction.GetClass(JetBrains.Debugger.CorApi.ComInterop.ICorDebugClass@)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunctionEx.GetILCode(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunction)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunction.GetILCode(JetBrains.Debugger.CorApi.ComInterop.ICorDebugCode@)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunctionEx.GetNativeCode(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunction)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunction.GetNativeCode(JetBrains.Debugger.CorApi.ComInterop.ICorDebugCode@)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunctionEx.GetCurrentVersionNumber(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunction)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunction.GetCurrentVersionNumber(System.UInt32@)"/>
+        </member>
+        <member name="F:JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValueEx.ElementTypesPrimitiveGetSetValue">
+            <summary>
+            What <see cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValueEx.GetValue(JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValue)" /> / <see cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValueEx.SetValue(JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValue,System.Object)" /> can do as primitive objects (e.g. not a Value Type returned as an array of bytes, which is useless e.g. from a ToString point of view).
+            </summary>
+        </member>
+        <member name="F:JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValueEx.ElementTypesSupportedByGetSetValue">
+            <summary>
+            On what <see cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValueEx.GetValue(JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValue)" /> / <see cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValueEx.SetValue(JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValue,System.Object)" /> won't throw.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValueEx.SetValue(JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValue,System.Object)">
+            <summary>
+            Convert the supplied value to the type of this CorGenericValue using System.IConvertable.
+            Then store the value into this CorGenericValue.  Any compatible type can be supplied.
+            For example, if you supply a string and the underlying type is ELEMENT_TYPE_BOOLEAN,
+            Convert.ToBoolean will attempt to match the string against "true" and "false".
+            </summary>
+            <param name="corvalue"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValueEx.CopyTo(JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValue,JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValue)">
+            <summary>
+            Copies value from source to dest 
+            </summary>
+            <param name="dest">dest value</param>
+            <param name="source">source value</param>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValueEx.CopyPossibleBytes(JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValue,JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValue)">
+            <summary>
+            Copies as much as possible bytes from <paramref name="source"/> to <paramref name="dest"/> 
+            </summary>
+            <param name="source"></param>
+            <param name="dest"></param>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValueEx.IsZeros(JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValue)">
+            <summary>
+            Checks if the value's binary representations contains only zeros 
+            </summary>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValueEx.FillZeros(JetBrains.Debugger.CorApi.ComInterop.ICorDebugGenericValue)">
+            <summary>
+            Fills the value blob with zeros 
+            </summary>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugILFrameEx.GetFunctionToken(JetBrains.Debugger.CorApi.ComInterop.ICorDebugILFrame)">
+            <inheritdoc cref="!:ICorDebugILFrame.GetFunctionToken"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugILFrameEx.GetIPAndMappingResult(JetBrains.Debugger.CorApi.ComInterop.ICorDebugILFrame)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugILFrame.GetIP(System.UInt32@,JetBrains.Debugger.CorApi.ComInterop.CorDebugMappingResult@)"/> 
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugProcessEx.GetAppDomains(JetBrains.Debugger.CorApi.ComInterop.ICorDebugProcess)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugProcess.EnumerateAppDomains(JetBrains.Debugger.CorApi.ComInterop.ICorDebugAppDomainEnum@)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugProcessEx.GetThreads(JetBrains.Debugger.CorApi.ComInterop.ICorDebugProcess)">
+            <inheritdoc cref="!:ICorDebugProcess.EnumerateThreads"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugProcessEx.HasQueuedCallbacks(JetBrains.Debugger.CorApi.ComInterop.ICorDebugProcess,JetBrains.Debugger.CorApi.ComInterop.ICorDebugThread)">
+            <inheritdoc cref="!:ICorDebugProcess.HasQueuedCallbacks"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugReferenceValueEx.SetValueTo(JetBrains.Debugger.CorApi.ComInterop.ICorDebugReferenceValue,JetBrains.Debugger.CorApi.ComInterop.ICorDebugReferenceValue)">
+            <summary>
+            Sets the value of <paramref name="dest"/> that it points to object on <paramref name="source"/>
+            </summary>
+            <param name="dest"></param>
+            <param name="source"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugStepperEx.IsActive(JetBrains.Debugger.CorApi.ComInterop.ICorDebugStepper)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugStepper.IsActive(System.Int32@)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugStepperEx.Deactivate_(JetBrains.Debugger.CorApi.ComInterop.ICorDebugStepper)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugStepper.Deactivate"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugStepperEx.SetJMC(JetBrains.Debugger.CorApi.ComInterop.ICorDebugStepper2,System.Boolean)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugStepper2.SetJMC(System.Int32)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugStepperEx.StepOut_(JetBrains.Debugger.CorApi.ComInterop.ICorDebugStepper)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugStepper.StepOut"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugStepperEx.Step(JetBrains.Debugger.CorApi.ComInterop.ICorDebugStepper,System.Boolean)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugStepper.Step(System.Int32)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugStepperEx.StepRange(JetBrains.Debugger.CorApi.ComInterop.ICorDebugStepper,System.Boolean,JetBrains.Debugger.CorApi.ComInterop.COR_DEBUG_STEP_RANGE[])">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugStepper.StepRange(System.Int32,JetBrains.Debugger.CorApi.ComInterop.COR_DEBUG_STEP_RANGE[],System.UInt32)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugThreadEx.GetChains(JetBrains.Debugger.CorApi.ComInterop.ICorDebugThread)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugThread.EnumerateChains(JetBrains.Debugger.CorApi.ComInterop.ICorDebugChainEnum@)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugThreadEx.GetThreadId(JetBrains.Debugger.CorApi.ComInterop.ICorDebugThread)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugThread.GetID(System.Int32@)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugThreadEx.GetActiveFrame(JetBrains.Debugger.CorApi.ComInterop.ICorDebugThread)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugThread.GetActiveFrame(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrame@)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugThreadEx.TryGetActiveFrame(JetBrains.Debugger.CorApi.ComInterop.ICorDebugThread)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugThread.GetActiveFrame(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFrame@)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugThreadEx.GetProcess(JetBrains.Debugger.CorApi.ComInterop.ICorDebugThread)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugThread.GetProcess(JetBrains.Debugger.CorApi.ComInterop.ICorDebugProcess@)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugThreadEx.CreateStepper(JetBrains.Debugger.CorApi.ComInterop.ICorDebugThread)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugThread.CreateStepper(JetBrains.Debugger.CorApi.ComInterop.ICorDebugStepper@)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugThreadEx.GetAppDomain(JetBrains.Debugger.CorApi.ComInterop.ICorDebugThread)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugThread.GetAppDomain(JetBrains.Debugger.CorApi.ComInterop.ICorDebugAppDomain@)"/>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugValueEx.AssignTo(JetBrains.Debugger.CorApi.ComInterop.ICorDebugValue,JetBrains.Debugger.CorApi.ComInterop.ICorDebugValue,JetBrains.Debugger.CorApi.ComInterop.ICorDebugProcess,System.Boolean)">
+            <summary>
+            In the case when both are BYREFs it assigns the managed pointers. In the case of ordinary references it just assigns them. In other cases it unwraps the underlying values and makes binary copy 
+            </summary>
+            <param name="source"></param>
+            <param name="dest"></param>
+            <param name="corDebugProcess"></param>
+            <param name="ignoreSizeMismatch"></param>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugValueEx.SetByRefTo(JetBrains.Debugger.CorApi.ComInterop.ICorDebugValue,System.UInt64,JetBrains.Debugger.CorApi.ComInterop.ICorDebugProcess)">
+            <summary>
+            Sets the pointer of BYREF reference <paramref name="referenceValue"/> to point to <paramref name="newAddress"/>
+            </summary>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.Pinvoke.CoreClrDebuggerUtil.StartProcessWithDebugger_CreateProcessForLaunch(JetBrains.Util.FileSystemPath,JetBrains.Util.CommandLineBuilderJet,JetBrains.Util.FileSystemPath,System.Collections.Generic.IDictionary{System.String,System.String},System.TimeSpan,System.Action{JetBrains.Debugger.CorApi.Pinvoke.CoreClrDebuggerUtil.CorDebugAndPid})">
+            <summary>
+            Calls the CreateProcessForLaunch API.
+            Has problems with passing env variables (it's an OS-dependent BLOB in Windows 95 format, so not all of the WinNT properties fit in).
+            Does not support IO streams redirection.
+            Works on any OS.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Debugger.CorApi.Pinvoke.DbgShimInterop.CreateProcessForLaunchDelegate">
+            <summary>
+            HRESULT CreateProcessForLaunch(
+            __in LPWSTR lpCommandLine,
+            __in BOOL bSuspendProcess,
+            __in LPVOID lpEnvironment,
+            __in LPCWSTR lpCurrentDirectory,
+            __out PDWORD pProcessId,
+            __out HANDLE *pResumeHandle)
+            </summary>
+            <param name="lpCommandLine">lpCommandLine</param>
+            <param name="bSuspendProcess">bSuspendProcess</param>
+            <param name="lpEnvironment">lpEnvironment</param>
+            <param name="lpCurrentDirectory">lpCurrentDirectory</param>
+            <param name="pProcessId">pProcessId</param>
+            <param name="pResumeHandle">pResumeHandle</param>
+        </member>
+        <member name="T:JetBrains.Debugger.CorApi.Pinvoke.DbgShimInterop.PSTARTUP_CALLBACK">
+            <summary>
+            typedef VOID (*PSTARTUP_CALLBACK)(IUnknown *pCordb, PVOID parameter, HRESULT hr);
+            </summary>
+            <param name="pCordb">pCordb</param>
+            <param name="parameter">parameter</param>
+            <param name="hr">hr</param>
+        </member>
+        <member name="T:JetBrains.Debugger.CorApi.Pinvoke.DbgShimInterop.RegisterForRuntimeStartupDelegate">
+            <summary>
+            HRESULT
+            RegisterForRuntimeStartup(
+              __in DWORD dwProcessId,
+              __in PSTARTUP_CALLBACK pfnCallback,
+              __in PVOID parameter,
+              __out PVOID *ppUnregisterToken)
+            </summary>
+            <param name="dwProcessId">dwProcessId</param>
+            <param name="callback">callback</param>
+            <param name="parameter">parameter</param>
+            <param name="ppUnregisterToken">ppUnregisterToken</param>
+        </member>
+        <member name="T:JetBrains.Debugger.CorApi.Pinvoke.DbgShimInterop.UnregisterForRuntimeStartupDelegate">
+            <summary>
+             UnregisterForRuntimeStartup -- stops/cancels runtime startup notification. Needs
+                  to be called during the debugger's shutdown to clean up the internal data.
+                This API can be called in the startup callback. Otherwise, it will block until
+                the callback thread finishes and no more callbacks will be initiated after this
+                API returns.
+            </summary>
+            <param name="pUnregisterToken">unregister token from RegisterForRuntimeStartup or NULL</param>
+            <returns></returns>
+            <example><code>
+            HRESULT
+            UnregisterForRuntimeStartup(
+                __in PVOID pUnregisterToken)
+            
+             </code></example>
+        </member>
+        <member name="T:JetBrains.Debugger.CorApi.Pinvoke.DbgShimInterop.ResumeProcessDelegate">
+            <summary>
+            HRESULT
+            ResumeProcess(
+              __in HANDLE hResumeHandle)
+            </summary>
+            <param name="hResumeHandle">hResumeHandle</param>
+        </member>
+        <member name="T:JetBrains.Debugger.CorApi.Pinvoke.DbgShimInterop.CloseResumeHandleDelegate">
+            <summary>
+            HRESULT
+            CloseResumeHandle(
+              __in HANDLE hResumeHandle)
+            </summary>
+            <param name="hResumeHandle">hResumeHandle</param>
+        </member>
+        <member name="T:JetBrains.Debugger.CorApi.Pinvoke.DbgShimInterop.CLRCreateInstanceDelegate">
+            <summary>
+            HRESULT 
+            CLRCreateInstance(
+                REFCLSID clsid,
+                REFIID riid, 
+                LPVOID *ppInterface)
+            </summary>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.Pinvoke.MscoreeDll.CLRCreateInstance(System.Guid*,System.Guid*,System.Void**)">
+            <summary>
+             This should be the only flat public API exposed from mscoree going forward.
+             The returned interface is likely to be implemented in a separate versioned DLL
+             (mscorhst.dll living in the versioned directory for instance). Acceptable values
+             for riid in v4.0 are IID_ICLRMetaHost, IID_ICLRMetaHostPolicy and
+             IID_ICLRDebugging.
+            </summary>
+            <example><code>
+             /**************************************************************************************
+             ** This should be the only flat public API exposed from mscoree going forward.      **
+             ** The returned interface is likely to be implemented in a separate versioned DLL   **
+             ** (mscorhst.dll living in the versioned directory for instance). Acceptable values **
+             ** for riid in v4.0 are IID_ICLRMetaHost, IID_ICLRMetaHostPolicy and                **
+             ** IID_ICLRDebugging.                                                               **
+             **************************************************************************************/
+            cpp_quote("STDAPI CLRCreateInstance(REFCLSID clsid, REFIID riid, /*iid_is(riid)*/ LPVOID *ppInterface);")
+            
+             </code></example>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.Pinvoke.MscoreeDll.CreateDebuggingInterfaceFromVersion(System.Int32,System.UInt16*,System.Void**)">
+            <summary>
+            </summary>
+            <example><code>
+            #pragma midl_echo("DEPRECATED_CLR_STDAPI CreateDebuggingInterfaceFromVersion(int iDebuggerVersion, LPCWSTR szDebuggeeVersion, IUnknown ** ppCordb);")
+            </code></example>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.Pinvoke.MscoreeDll.GetCORVersion(System.UInt16*,System.UInt32,System.UInt32*)">
+            <summary>
+            </summary>
+            <example><code>
+            #pragma midl_echo("DEPRECATED_CLR_STDAPI GetCORVersion(_Out_writes_to_(cchBuffer, *dwLength) LPWSTR pbBuffer, DWORD cchBuffer, DWORD* dwLength);")
+            </code></example>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.Pinvoke.MscoreeDll.GetRequestedRuntimeVersion(System.UInt16*,System.UInt16*,System.UInt32,System.UInt32*)">
+            <summary>
+            </summary>
+            <example><code>
+            #pragma midl_echo("DEPRECATED_CLR_STDAPI GetRequestedRuntimeVersion(_In_ LPWSTR pExe, _Out_writes_to_(cchBuffer, *dwLength) LPWSTR pVersion, DWORD cchBuffer, _Out_ DWORD* dwLength);")
+            </code></example>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.Pinvoke.MscoreeDll.GetVersionFromProcess(System.Void*,System.UInt16*,System.UInt32,System.UInt32*)">
+            <summary>
+            </summary>
+            <example><code>
+            #pragma midl_echo("DEPRECATED_CLR_STDAPI GetVersionFromProcess(HANDLE hProcess, _Out_writes_to_(cchBuffer, *dwLength) LPWSTR pVersion, DWORD cchBuffer, _Out_ DWORD* dwLength);")
+            </code></example>
+        </member>
+        <member name="T:JetBrains.Debugger.CorApi.Pinvoke.MscoreeDll.CLSID_CLRMetaHost">
+            <example><code>
+             // CLSID_CLRMetaHost : uuid(9280188D-0E8E-4867-B30C-7FA83884E8DE)
+            cpp_quote("EXTERN_GUID(CLSID_CLRMetaHost, 0x9280188d, 0xe8e, 0x4867, 0xb3, 0xc, 0x7f, 0xa8, 0x38, 0x84, 0xe8, 0xde);")
+             </code></example>
+        </member>
+        <member name="T:JetBrains.Debugger.CorApi.Pinvoke.NetClrDebuggerUtil">
+            <summary>Helper methods for .NET Framework debugging.</summary>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.Pinvoke.NetClrDebuggerUtil.WaitForClrInitialization(System.UInt32,System.UInt32,System.Action,System.TimeSpan)">
+            <summary>Waits for CLR loading in the target process.</summary>
+            <param name="processId">Target process identifier.</param>
+            <param name="threadId">Main thread identifier of the target process.</param>
+            <param name="onInitializationSuspended">Callback that will be called while the process is suspended in debugger immediately after runtime was loaded. Debugged thread is suspended during the callback and will be auto-resumed after the callback.</param>
+            <param name="timeout">Timeout after which the process will be </param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.Pinvoke.NetClrDebuggerUtil.WaitForDebugUntilRuntimeFound(System.UInt32,System.Void*,System.UInt32,System.Action,System.TimeSpan)">
+            <remarks>
+            Will always call <see cref="M:JetBrains.Debugger.CorApi.Pinvoke.NetClrDebuggerUtil.DebugActiveProcessStop(System.UInt32)"/> once before exiting, even in case of an error.
+            </remarks>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.Pinvoke.NetClrDebuggerUtil.CloseFileHandles(JetBrains.Interop.WinApi.DEBUG_EVENT)">
+            <remarks>We have to close the file handles received during debug.</remarks>
+        </member>
+        <member name="M:JetBrains.Debugger.CorApi.SharpGenUtil.ComObjectEx.TakeOwning``1(``0)">
+            <summary>
+            Makes one Release() on <paramref name="obj"/> to balance ref count when COM object is newly created with one extra ref
+            (e.g. when returned via out parameter) 
+            </summary>
+        </member>
+    </members>
+</doc>

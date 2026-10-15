@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.Features.Navigation</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.ReSharper.Features.Navigation.Core.Diagnostics.TrigramConsistencyProbailityWatchdog">
+            <summary>
+            This class only alarm if corruption detected in trigram index
+            Intentionally added to diagnose a lot of corrupted cached reports
+            https://jbs.zendesk.com/agent/tickets/1092682
+            RSRP-449606 Find Usages Broken In Many Cases for a While
+            RSRP-459068 Find Usages (Shift+F12) / Usage of symbol (Shift+Alt+F12) doesn't find all usages
+            RSRP-460765 Usages of parameter not found
+            RSRP-460557 In visual studio 2015 ReSharper option "Find Usages" does not works in some of the projects.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Navigation.Core.Navigation.ProjectFileToSolutionExplorerProvider">
+            <summary>
+            This provider is intended for generic ProjectFileNavigation.
+            
+            It is for scenarious where we should select best available point to navigate.
+            For regular files we should do not suggest to navigate into navigate to solution explorer.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Core.RecentFiles.FileLocationInfo.GetProjectFile(JetBrains.ProjectModel.ProjectModelElementPointerManager)">
+            <summary>
+            Return always valid project file
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Core.RecentFiles.RecentFilesCommands.ShowRecentEdits(JetBrains.Application.DataContext.IDataContext)">
+            <summary>
+            Displays a popup menu list of the recent edits.
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Core.RecentFiles.RecentFilesCommands.ShowRecentFiles(JetBrains.Application.DataContext.IDataContext)">
+            <summary>
+            Displays a popup menu list of the recent files.
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.Navigation.Core.RecentFiles.RecentFilesTracker.myRecentItemsFileTimestampUtc">
+            <summary>
+            Last sync timestamp 
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Core.RecentFiles.RecentFilesTracker.Sync">
+             <summary>
+             Synchronizes active list of recent items with the stored version on the disk
+            
+             Either saves, loads or does nothing.
+             </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Navigation.Core.RecentFiles.RecentlyViewedMethods">
+            <summary>
+            Record and persistent recently viewed method to provide smart navigation in Search Everywhere
+            
+            May not be available, don't inject this component.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.Navigation.Core.RecentFiles.RecentlyViewedMethods.PersistIntervalMs">
+            <summary>
+            How often save history of recently viewed methods to disk.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Core.Search.SearchRequests.SearchProjectItemReferencedCodeRequest.#ctor(System.Collections.Generic.IEnumerable{JetBrains.ProjectModel.IProjectItem},JetBrains.ProjectModel.ISolution,System.Boolean,System.Boolean,System.Collections.Generic.List{JetBrains.ProjectModel.IModule},System.Int32)">
+            <param name="referencedCodeScope">Constraint for results to reference elements only from indicated modules. Use null if there is no constraint.</param>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Navigation.Features.FindDeclarations.GotoTypeDeclarationAction">
+            <summary>
+            Navigates to the declaration of the type of a reference expression
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Features.FindUsagesAdvanced.FindUsagesAdvancedContextSearch.AnyExternalAssemblyInDomain(System.Collections.Generic.IEnumerable{JetBrains.ReSharper.Psi.DeclaredElementInstance},JetBrains.ReSharper.Psi.Search.ISearchDomain)">
+            <summary>
+            If you going to make advanced search for Library scope or Solution and library scope the project specific compilation context
+            is unappropriate as it can't resolve all type elements.
+            
+            This method just trying to detect is any external assembly is exist in search domain, which is not related to each element's domain.
+            </summary>
+            <param name="initialTargets"></param>
+            <param name="searchDomain"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Features.GoToDeclarationUsages.Impl.GotoDeclarationUsagesManager.StationaryGotoDeclaration(JetBrains.Application.DataContext.IDataContext)">
+            <summary>
+            Invoke this method when Go to declaration invoked on the declaration and caret will not be moved.
+            E.g. when you are already on declaration and no more declarations found.
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Navigation.Features.GoToText.DottingItemsConsumer">
+            <summary>
+            Wraps <see cref="T:JetBrains.ReSharper.Feature.Services.Navigation.Goto.ItemProviders.GotoItemsConsumer"/> and adds waiting dots to the end. Supports starting and stopping this process.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Navigation.Features.GoToText.DottingItemsConsumer.DotsEnabled">
+            <summary>
+            Starts and stops dotting.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException"></exception>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Features.GoToText.DottingItemsConsumer.#ctor(JetBrains.ReSharper.Feature.Services.Navigation.Goto.ItemProviders.GotoItemsConsumer,System.Int32,System.TimeSpan)">
+            <param name="itemsConsumer">Will be wrapped.
+            You mustn't use <paramref name="itemsConsumer"/> outside unless this instance is disposed.</param>
+            <param name="maxDotsCount">How many dots at most you want to see.</param>
+            <param name="interval">Time interval after which the dots count will change.</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Features.GoToText.DottingItemsConsumer.ConsumeItems(System.Collections.Generic.IEnumerable{JetBrains.ReSharper.Feature.Services.Navigation.Goto.ItemProviders.PresentableGotoItem},JetBrains.Application.UI.Controls.GotoByName.GotoByNameController.AddItemsBehavior)">
+            <summary>
+            Passes the arguments to the wrapped <see cref="T:JetBrains.ReSharper.Feature.Services.Navigation.Goto.ItemProviders.GotoItemsConsumer"/>.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException"></exception>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Navigation.Features.GoToText.FuzzySearch.FilesExplorer">
+            <summary>
+            It is a helper class for fuzzy search providers. It searches for best fuzzy results from a bunch of files.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Features.GoToText.FuzzySearch.FilesExplorer.ExploreForFuzzyResults(JetBrains.ProjectModel.ISolution,System.Collections.Generic.IReadOnlyCollection{System.ValueTuple{JetBrains.ReSharper.Psi.IPsiSourceFile,System.Int32}},System.String)">
+            <summary>
+            Explores files and searches for best fuzzy results.
+            </summary>
+            <param name="solution"></param>
+            <param name="sortedScoredFiles">Scored files to be explored. For better results they should be sorted by score.</param>
+            <param name="pattern">Pattern to be searched for.</param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Features.GoToText.FuzzySearch.FilesExplorer.GetDocumentsAsync(System.Collections.Generic.IEnumerable{JetBrains.ReSharper.Psi.IPsiSourceFile},System.Int32,JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,JetBrains.Application.InterruptionSet)">
+            <summary>
+            Gets documents from <paramref name="files"/> asynchronously using <paramref name="taskHost"/>.
+            It keeps at most <paramref name="maxBufferSize"/> documents at the same time.
+            Uses <paramref name="lifetime"/> for the task lifetime.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.Navigation.Features.GoToText.FuzzySearch.FuzzyAlignment.ourMissingSymbolsFine">
+            i-th element means that we pay that many for missing (i + 1) symbols in a row.
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.Navigation.Features.GoToText.FuzzySearch.FuzzyAlignment.ourMatchReward">
+            since we honor sequential matches it is worth to additionally honor it
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Features.GoToText.FuzzySearch.FuzzyAlignment.Align(System.String,System.String,JetBrains.ReSharper.Features.Navigation.Features.GoToText.FuzzySearch.FuzzyAlignment.Cell*)">
+            <summary>
+            Calculate a best possible alignment between text and pattern using Needleman–Wunsch algorithm and stores results in cells arrays
+            In cell arrays rows correspond to pattern's symbols, columns to text.
+            </summary>
+            <param name="text"></param>
+            <param name="pattern"></param>
+            <param name="cells">an pointer to array with a minimum size of (len(text)+1)*(len(pattern)+1)</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Features.GoToText.FuzzySearch.FuzzyAlignment.Dump(System.Text.StringBuilder)">
+            <summary>
+            Debugging purpose onl
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.Navigation.Features.GoToText.FuzzySearch.FuzzyAlignment.AlignmentIterator.ti">
+            <summary>
+            ti and pi field correspond to index in the alignment matrix, <see cref="T:JetBrains.ReSharper.Features.Navigation.Features.GoToText.FuzzySearch.FuzzyAlignment"/>
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.Navigation.Features.GoToText.FuzzySearch.FuzzyAlignment.AlignmentIterator.pi">
+            <summary>
+            ti and pi field correspond to index in the alignment matrix, <see cref="T:JetBrains.ReSharper.Features.Navigation.Features.GoToText.FuzzySearch.FuzzyAlignment"/>
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Navigation.Features.GoToText.FuzzySearch.IGotoTextFuzzySearchProvider">
+            <summary>
+            Just marker interface for marking fuzzy search providers
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Navigation.Features.GoToText.FuzzySearch.TrigramsCounter">
+            <summary>
+            It is an auxiliary class for <see cref="T:JetBrains.ReSharper.Features.Navigation.Features.GoToText.FuzzySearch.TextExplorer"/> to count trigrams entries in text using <see cref="T:JetBrains.Util.Text.AhoCorasickStateMachine"/>.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Navigation.Features.GoToText.GotoTextEmptyQueryProvider">
+            <summary>
+            Goto text without any query and enabled filter should work as goto file with filters
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Navigation.Features.Goto.AggregatedItemsProviderBase">
+             <summary>
+             Aggregates several providers in one.
+             </summary>
+            
+             <remarks>
+             The resulting items order depents of registration order.
+             Generally, providers  with AutoUpgrade flag should come first . i.e. AutoUpgrade happens only when any of
+             providers with <see cref="F:JetBrains.ReSharper.Features.Navigation.Features.Goto.AggregatedItemsProviderBase.GotoItemsProviderRegistration.AutoUpgrade"/> unable to found any item.
+            
+             Fallback providers are asked for items only if all other providers refused to provide items by producing null
+             into <see cref="T:JetBrains.ReSharper.Feature.Services.Navigation.Goto.ItemProviders.GotoItemsConsumer"/>
+            
+             If you combining several AggregatedItemsProviderBase into each other, ensure, that only one provider have
+             LibrariesFlagAutoSwitch set to true. Several providers with AutoSwitch will produce 2^x queries if search failed.
+             </remarks>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Navigation.Features.Goto.AggregatedItemsProviderBase.LibrariesFlagAutoSwitch">
+            <summary>
+            Gets or sets whether when a solution-only search fails a solution-and-libraries search is performed automatically.
+            <c>True</c> by default.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Features.Goto.AggregatedItemsProviderBase.RegisterItemsProvider(JetBrains.ReSharper.Feature.Services.Navigation.Goto.ItemProviders.IGotoControllerItemsProvider,System.String,System.Boolean)">
+            <summary>
+            Register items provider. <see cref="T:JetBrains.ReSharper.Features.Navigation.Features.Goto.AggregatedItemsProviderBase"/> remarks about provider types.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.Navigation.Features.Goto.AggregatedItemsProviderBase.GotoItemsProviderRegistration.Fallback">
+            <summary>
+            Fallback providers used only when all primary providers refused to provide anything
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.Navigation.Features.Goto.AggregatedItemsProviderBase.GotoItemsProviderRegistration.AutoUpgrade">
+            <summary>
+            If 0 result returned from this provider, items provider will make another search with extended scope
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Navigation.Features.HighlightUsages.CancelHighlightUsagesAction">
+            <summary>
+            For error stripe indicator context menu, to cancel usages.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Features.HighlightUsages.CancelHighlightUsagesAction.JetBrains#Application#UI#ActionsRevised#Menu#IExecutableAction#Execute(JetBrains.Application.DataContext.IDataContext,JetBrains.Application.UI.Actions.DelegateExecute)">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Features.HighlightUsages.CancelHighlightUsagesAction.JetBrains#Application#UI#ActionsRevised#Menu#IExecutableAction#Update(JetBrains.Application.DataContext.IDataContext,JetBrains.Application.UI.Actions.ActionPresentation,JetBrains.Application.UI.Actions.DelegateUpdate)">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Features.HighlightUsages.HighlightUsagesProvider.ShowHintIfNecessary(JetBrains.ProjectModel.ISolution,JetBrains.Application.UI.PopupLayout.PopupWindowContextSource)">
+            <summary>
+            show hint to remove highlighters
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Features.OccurrencesActions.ShowOtherAccessAction.GetOtherOccurrenceKinds(JetBrains.Application.DataContext.IDataContext,JetBrains.ReSharper.Feature.Services.Tree.IOccurrenceBrowserDescriptor)">
+            <summary>
+            dirty hack to support old behaviour of other button in old grouping
+            will be removed as soon as semantic grouping will be enabled by default (not only in internal mode)
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Features.Usages.SpecialUsagesContextSearchBase.GetSpecialFinderSearchDomain(JetBrains.ReSharper.Feature.Services.Navigation.ContextNavigation.ISpecialElementFinder,System.Object,JetBrains.Application.DataContext.IDataContext)">
+            <summary>Get search domain for given special finder</summary>
+            <returns>Return null to cancel search</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Goto.GotoProviders.ClrGotoClassMemberProviderBase.GetQuickSearchTexts(JetBrains.ReSharper.Psi.IDeclaredElement)">
+            <param name="declaredElement"></param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Goto.GotoProviders.ClrGotoFileMemberProvider.GetQuickSearchTexts(JetBrains.ReSharper.Psi.IDeclaredElement)">
+            <param name="declaredElement"></param>
+            <returns>collection of tuples. A = quick search text. B = whether there is a symbol to symbol matching</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Goto.GotoProviders.GotoFileProvider.ProjectItemsCollector.IsHiddenFolder(JetBrains.ProjectModel.IProjectItem)">
+            <summary>
+            RSRP-488615 Allow filtering Find Usage results by "generated code"
+            Also hack for RSRP-454136 "Go to File" results contain invalid entries
+            
+            Ignore virtual folder when items with same location are exists
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Goto.GotoProviders.TypeMemberNavigationUtil.GetPsiSourceFileTypeElements(JetBrains.ReSharper.Psi.IPsiSourceFile)">
+            <summary>
+            Return custom filtered type members from all type elements inside indicated source file.
+            </summary>
+            <param name="sourceFile"></param>
+            <returns></returns>   
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Navigation.Utils.ElementInDocumentUtils.GetRangeFromDeclaration(JetBrains.ProjectModel.ISolution,JetBrains.DocumentModel.DocumentOffset,System.Boolean)">
+             This code is modified copy from GotoDeclarationAction.GetCandidates
+        </member>
+    </members>
+</doc>

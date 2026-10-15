@@ -1,0 +1,35 @@
+2026-09-27 06:17:44.107 [info] [RemoteAgentHost] Reconciling: desired=[], current=[]
+2026-09-27 06:17:44.137 [warning] Creation of workbench contribution 'workbench.contrib.agentHostChatDebug' took 33ms.
+2026-09-27 06:17:44.160 [info] [AgentHost:renderer] Acquiring MessagePort to agent host...
+2026-09-27 06:17:44.424 [info] [AgentHost:renderer] MessagePort acquired, creating client...
+2026-09-27 06:17:44.470 [info] Started local extension host with pid 38752.
+2026-09-27 06:17:44.890 [info] [JakubKozera.csharp-dev-tools]: Command `bookmarks.refresh` already registered by Bookmarks (alefragnani.Bookmarks)
+2026-09-27 06:17:44.913 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.lightModeTheme'. This property is already registered.
+2026-09-27 06:17:44.914 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.darkModeTheme'. This property is already registered.
+2026-09-27 06:17:44.915 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.languages'. This property is already registered.
+2026-09-27 06:17:44.915 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.maxTextSize'. This property is already registered.
+2026-09-27 06:17:44.915 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.mouseNavigation.enabled'. This property is already registered.
+2026-09-27 06:17:44.915 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.controls.show'. This property is already registered.
+2026-09-27 06:17:44.916 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.resizable'. This property is already registered.
+2026-09-27 06:17:44.917 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.maxHeight'. This property is already registered.
+2026-09-27 06:17:45.522 [info] [AgentHost:renderer] Protocol connection established; clientId=c10ab602-2298-4cb5-a84a-9bd8fb11fcc8
+2026-09-27 06:17:45.619 [info] [AccountPolicyGate] apply: state=inactive, reason=undefined, isRestricted=false
+2026-09-27 06:17:45.800 [error] [EricSia.pythonsnippets3]: Unknown language in `contributes.pythonsnippets3.language`. Provided value: django-html
+2026-09-27 06:17:45.802 [error] [EricSia.pythonsnippets3]: Unknown language in `contributes.pythonsnippets3.language`. Provided value: django-txt
+2026-09-27 06:17:46.808 [error] [Extension Host] (node:38752) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `Code --trace-deprecation ...` to show where the warning was created)
+2026-09-27 06:17:47.268 [info] [perf] Render performance baseline is 15ms
+2026-09-27 06:17:47.662 [info] [AgentHost] Authenticating for resource: https://api.github.com
+2026-09-27 06:17:48.264 [error] [Extension Host] (node:38752) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-27 06:17:48.682 [error] [Extension Host] (node:38752) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+2026-09-27 06:17:48.825 [info] Settings Sync: Account status changed from uninitialized to available
+2026-09-27 06:17:49.444 [info] [AgentHost] Authenticating for resource: https://api.github.com/repos
+2026-09-27 06:17:50.054 [info] Auto updating outdated extensions. eamodio.gitlens, github.vscode-pull-request-github, jakubkozera.csharp-dev-tools, ms-dotnettools.csdevkit, ms-dotnettools.csharp, ms-dotnettools.vscode-dotnet-runtime, ms-python.vscode-pylance, ms-python.vscode-python-envs, prateekmahendrakar.prettyxml, sonarsource.sonarlint-vscode
+2026-09-27 06:17:50.620 [info] [AccountPolicyGate] apply: state=inactive, reason=undefined, isRestricted=false
+2026-09-27 06:17:55.755 [info] [JakubKozera.csharp-dev-tools]: Command `bookmarks.refresh` already registered by Bookmarks (alefragnani.Bookmarks)
+2026-09-27 06:18:06.428 [info] [JakubKozera.csharp-dev-tools]: Command `bookmarks.refresh` already registered by Bookmarks (alefragnani.Bookmarks)
+2026-09-27 06:18:25.660 [info] [JakubKozera.csharp-dev-tools]: Command `bookmarks.refresh` already registered by Bookmarks (alefragnani.Bookmarks)
+2026-09-27 06:18:47.090 [info] [JakubKozera.csharp-dev-tools]: Command `bookmarks.refresh` already registered by Bookmarks (alefragnani.Bookmarks)
+2026-09-27 06:19:02.190 [error] [EricSia.pythonsnippets3]: Unknown language in `contributes.pythonsnippets3.language`. Provided value: django-html
+2026-09-27 06:19:02.190 [error] [EricSia.pythonsnippets3]: Unknown language in `contributes.pythonsnippets3.language`. Provided value: django-txt
+2026-09-27 06:19:02.193 [info] [JakubKozera.csharp-dev-tools]: Command `bookmarks.refresh` already registered by Bookmarks (alefragnani.Bookmarks)

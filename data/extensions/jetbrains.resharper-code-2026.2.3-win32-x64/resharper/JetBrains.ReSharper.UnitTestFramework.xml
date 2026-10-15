@@ -1,0 +1,636 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.UnitTestFramework</name>
+    </assembly>
+    <members>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Actions.UnitTestDataConstants.Session.CURRENT">
+            <summary>
+            Returns current active session, regardless whether Unit-Test Sessions tool window has focus or even open. 
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Actions.UnitTestDataConstants.Session.IN_CONTEXT">
+            <summary>
+            Returns current active session, if and only if is called from within Unit-Test Sessions tool window.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Actions.UnitTestDataConstants.Elements.IN_CONTEXT">
+            <summary>
+            Returns unit-test elements available in selection/under caret within current context. Context can be any tool window.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Actions.UnitTestDataConstants.TREE">
+            <summary>
+            Returns unit-test tree in context, which can be either a session tree or the explorer.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Actions.UnitTestDataConstants.ElementsDataConstants.Selected">
+            <summary>
+            Returns unit-tests selected in the corresponding unit-test tree.
+            This takes into account any filter that might be applied to the tree.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Actions.UnitTestDataConstants.ElementsDataConstants.All">
+            <summary>
+            Returns all unit-tests shown in the corresponding unit-test tree.
+            This takes into account any filter that might be applied to the tree.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Actions.UnitTestDataRules.GetSelectedNodesCriterion(System.Collections.Generic.IReadOnlySet{JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.TreeModel.IUnitTestTreeNode},JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.TreeModel.IUnitTestTree)">
+            <summary>
+            Returns <seealso cref="T:JetBrains.ReSharper.UnitTestFramework.Criteria.IUnitTestElementCriterion"/> describing criterion of <paramref name="nodes"/>
+            in the <paramref name="tree"/> without taking into account possible criterion of the tree itself,
+            i.e. if the tree represents the session the resulting criterion will not include session's criterion.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Actions.UnitTestRunTreeActionBase">
+            <summary>
+            Execute all visible unit tests from the current unit test tree.
+            Available in both session and explorer trees.
+            Relevant only for the unit test tool window.
+            For now, it's Rider-only action.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Common.Extensions.SettingsStoreExtensions.GetValueProperty2``3(JetBrains.Application.Settings.IContextBoundSettingsStoreLive,JetBrains.Lifetimes.Lifetime,System.Linq.Expressions.Expression{System.Func{``0,``1}},JetBrains.Application.Settings.ApartmentForNotifications,System.Func{``1,``2},System.Func{``2,``1},System.Collections.Generic.IDictionary{JetBrains.Application.Settings.SettingsKey,System.Object})">
+            <inheritdoc cref="M:JetBrains.Application.Settings.IContextBoundSettingsStoreLive.GetValueProperty``1(JetBrains.Lifetimes.Lifetime,JetBrains.Application.Settings.SettingsScalarEntry,System.Collections.Generic.IDictionary{JetBrains.Application.Settings.SettingsKey,System.Object})"/>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Elements.IFakeUnitTestElement">
+            <summary>
+            Fake unit test element that can not be run, but can appear in UI, like in gutter menus, for example
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Elements.ITestCase.IsNotRunnableStandalone">
+            <summary>
+            Indicates whether it is possible to run the test-case
+            without running other test-cases belonging to the same parent
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement.NaturalId">
+            <summary>
+            Unique stable id of the element.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement.Project">
+            <summary>
+            A Project to which the element belongs.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement.TargetFrameworkId">
+            <summary>
+            A specific target framework of the <see cref="P:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement.Project"/> for which the element was created.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement.Provider">
+            <summary>
+            Provider that created the element.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement.GetPresentation">
+            <summary>
+            A string that will be used in UI to present the element. 
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement.GetNamespace">
+            <summary>
+            Gets namespaces for element. If element doesn't have namespace, return empty namespace.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement.GetLocations">
+            <summary>
+            Gets locations of test element.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement.GetProjectFiles">
+            <summary>
+            Gets IProjectFile for element. If there is no, returns <value>null</value>.
+            Should be as fast as possible, used from Unit Test Explorer in UI thread.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement.GetDeclaredElement">
+            <summary>
+            Gets IDeclaredElement for element. If there is no, returns <value>null</value>.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement.Kind">
+            <summary>
+            Short string describing element kind (test, container, etc.)
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement.OwnCategories">
+            <summary>
+            Gets list of categories defined on this element.
+            Should not include any inherited categories.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement.Parent">
+            <summary>
+            Element's parent element.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement.Children">
+            <summary>
+            Element's children elements.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement.ShortName">
+            <summary>
+            Element short name, shouldn't be used for presentation.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement.Origin">
+            <summary>
+            Exploration type that created the element. 
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElementPropertyCoalescer">
+            <summary>
+            Merges property values from existing and discovered <see cref="T:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement"/>.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElementPropertyCoalescer.Merge(JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement,JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement,JetBrains.ReSharper.UnitTestFramework.Exploration.IUnitTestElementSource)">
+            <param name="target">A newly discovered test element.</param>
+            <param name="original">An existing, i.e. persisted, test element having the same <see cref="P:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement.NaturalId"/> as the <paramref name="target"/>.</param>
+            <param name="source">Context in which the test element was discovered.</param>
+            <returns>A value indicating what kind of change was made.</returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Elements.CoalescePropertyAttribute">
+            <summary>
+            Provides a way to specify merge logic for values of a property of <see cref="T:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement"/>, depending on <see cref="T:JetBrains.ReSharper.UnitTestFramework.Exploration.IUnitTestElementSource"/>.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Elements.CoalescePropertyAttribute.#ctor(System.Type)">
+            <param name="mergerType">Type implementing <see cref="T:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElementPropertyCoalescer"/></param>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestGroupingElement">
+            <summary>
+            Indicates that an element acts as a namespace.
+            The only known example is NUnit's [SetUpFixture].
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestLikeElement">
+            <summary>
+            A marker interface for all entities that can appear on a gutter.
+            Those include runnable elements and non-runnable elements that
+            have a related runnable elements, e.g. abstract test classes.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestLikeElement.GetRelatedUnitTestElements">
+            <summary>
+            Provides list of associated elements to be shown in Alt+Enter menu.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Elements.UnitTestElementId.TestId">
+            <summary>
+            Id of test as generated by the test framework.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Elements.UnitTestElementId.Salt">
+            <summary>
+            Salt to distinguish between elements with the same <seealso cref="P:JetBrains.ReSharper.UnitTestFramework.Elements.UnitTestElementId.TestId"/>.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Elements.UnitTestElementOrigin">
+            <summary>
+            Indicates the source of an entity.
+            The higher the value the more reliable the source is. 
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Elements.UnitTestElementOrigin.Source">
+            <summary>
+            Indicates an entity created from source files.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Elements.UnitTestElementOrigin.Artifact">
+            <summary>
+            Indicates an entity created based on an artifact.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Elements.UnitTestElementOrigin.Runner">
+            <summary>
+            Indicates an entity created as a result of running tests.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Elements.UnitTestElementOrigin.Dynamic">
+            <summary>
+            Indicates a dynamically created entity, e.g.
+            tests that are only reported during execution
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Execution.Hosting.HostProviderAvailability">
+            <summary>
+            <see cref="T:JetBrains.ReSharper.UnitTestFramework.Execution.Hosting.IHostProvider"/> availability.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Execution.Hosting.HostProviderAvailability.Nonexistent">
+            <summary>
+            Completely unavailable, as if it was not present at all.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Execution.Hosting.HostProviderAvailability.Busy">
+            <summary>
+            Temporarily unavailable, but may become available sometime.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Execution.Hosting.HostProviderAvailability.Available">
+            <summary>
+            Ready.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Execution.Hosting.IHostProviderDescriptor.Format">
+            <summary>
+            Provides format string to be used in action text.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Execution.Hosting.IHostProviderDescriptor.ShortText">
+            <summary>
+            Like <see cref="P:JetBrains.ReSharper.UnitTestFramework.Execution.Hosting.IHostProviderDescriptor.Format"/>, but doesn't has "Unit Tests" suffix or smth else.
+            Leave null or empty to force use of <see cref="P:JetBrains.ReSharper.UnitTestFramework.Execution.Hosting.IHostProviderDescriptor.Format"/>
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Execution.Hosting.IExternalProcessHost.StartProcess(System.Diagnostics.ProcessStartInfo)">
+            <remarks>Used to start a process under profiler/dotmemory/debugger</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Execution.Hosting.IExternalProcessHost.AttachToProcess(System.Int32)">
+            <remarks>Used to attach to a process with profiler/dotmemory/debugger</remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Execution.Hosting.ITaskRunnerHostController">
+            <remarks>Created per <see cref="T:JetBrains.ReSharper.UnitTestFramework.Execution.Launch.IUnitTestLaunch"/></remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Execution.Hosting.ITaskRunnerHostController.StartProcess(System.Diagnostics.ProcessStartInfo,JetBrains.ReSharper.UnitTestFramework.Execution.Launch.IUnitTestRun,JetBrains.Util.ILogger)">
+            <remarks>Used to start a process under profiler/dotmemory/debugger</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Execution.Hosting.ITaskRunnerHostController.AttachToProcess(System.Int32,JetBrains.ReSharper.UnitTestFramework.Execution.Launch.IUnitTestRun,JetBrains.Util.ILogger)">
+            <remarks>Used to attach to a process with profiler/dotmemory/debugger</remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Execution.Launch.PlatformMonoPreference">
+            <summary>
+            It makes sense only on Windows in situations when Mono is available.
+            In this case, we can run .NET Framework tests on CLR or Mono 
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Execution.UnitTestResultPropagationData">
+            <summary>
+            Optimization: 
+            Used to quickly calculate aggregating Status of the element when one of its children changes its status.
+            Contains count of immediate children of an element by UnitTestStatus.
+            Must be reset everytime the element it is calculated for changes.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Exploration.Artifacts.UnitTestArtifactExplorationRunner.ReplaceEventContext(JetBrains.Util.EventBus.IEventContext)">
+            <summary>
+            ES: (HACK) Use this method to replace <see cref="T:JetBrains.Util.EventBus.IEventContext" /> with a no-op
+            implementation to avoid double-raising <see cref="F:JetBrains.ReSharper.UnitTestFramework.UT.Events.Exploration.Explorer.Started" />
+            and <see cref="F:JetBrains.ReSharper.UnitTestFramework.UT.Events.Exploration.Explorer.Finished" /> events.
+            Normally I would inject factory into <see cref="T:JetBrains.ReSharper.UnitTestFramework.Exploration.Artifacts.CachingUnitTestArtifactExplorationRunner" /> .ctor
+            with a single parameter of <see cref="T:JetBrains.Util.EventBus.IEventContext" />, but our IoC does not support it. 
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Exploration.Daemon.Highlighting.UnitTestElementHighlighting.TryGetTooltip(JetBrains.TextControl.DocumentMarkup.HighlighterTooltipKind)">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Exploration.UnitTestNuGetAdapterSearcher.GetNuGetAdapters(JetBrains.ProjectModel.IProject)">
+             <summary>
+             Returns the list of UT test adapter assemblies.
+            
+             Should work similar to Microsoft.VisualStudio.TestWindow.Controller.UnitTestExtensionDiscoverer.GetNugetAdapters
+             </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Exploration.UnitTestNuGetInvalidator">
+             <summary>
+             This component is trying to resolve the following problem in VS+R#:
+            
+             1. User opens a .NET Core project with unit tests in VS+R#.
+             2. User suspends R#.
+             3. User resumes R#.
+             4. JetBrains.ReSharper.UnitTestFramework.DotNetCore.DotNetVsTest.DotNetVsTestArtifactExplorer.IsSupported checks
+                that unit tests are supported in this project. It calls NuGetInstalledPackageChecker.IsPackageInstalled which
+                calls NuGetSolutionManager.GetNuGetProject. Next, VsNuGetNetCorePackageReferenceProjectProvider should return
+                the corresponding NuGetProject. However, if NugetModelOwner.NugetModel.IsAvailable is false, the null will be
+                returned. R# will think that it's not an integrated project and that it has zero NuGet dependencies. Next,
+                user will see a BrokenUnitTestElementGutterMark which says that tests can not be executed because we don't have
+                dependencies on the test SDK and adapter.
+             5. After that NugetModelOwner.NugetModel.IsAvailable becomes true which fire
+                VsNuGetNetCorePackageReferenceProjectProvider.Invalidated which fire
+                NuGetSolutionManager.Invalidated.
+             6. Finally UnitTestNuGetInvalidator goes on stage. When NuGetSolutionManager.Invalidated, we are invalidating data
+                for all projects in NuGetLockFileTracker and wait until all of the project are processed.
+             7. Next, UnitTestNuGetInvalidator calls Invalidate methods for
+                IUnitTestArtifactExplorationProcess and IDaemon.
+             8. BrokenUnitTestElementGutterMarks are replaced by usual unit test gutter marks.
+             9. User is happy.
+            
+             See also: https://youtrack.jetbrains.com/issue/RSRP-475379
+             </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Features.Analysis.MethodFieldPropertyFilter">
+            <summary>
+            Filters out all type members that are neither method, field nor property
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Features.Editor.IUnitTestElementGutterMarkItemProvider">
+            <summary>
+            Extension point to add additional items to Unit Test Gutter Mark menu.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.Dialog.ICreateUnitTestDialogResult.Project">
+            <summary>
+            Project where tests are being created
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.Dialog.ICreateUnitTestDialogResult.TestFramework">
+            <summary>
+            Test framework to generate tests in
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.Dialog.ICreateUnitTestDialogResult.Destination">
+            <summary>
+            Path to test file to be created relative to the solution
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.Dialog.ICreateUnitTestDialogResult.Namespace">
+            <summary>
+            Namespace to place tests in
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.Dialog.ICreateUnitTestDialogResult.ClassName">
+            <summary>
+            Name of the test class to be created
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.Dialog.ICreateUnitTestDialogResult.FileTemplate">
+            <summary>
+            File <seealso cref="T:JetBrains.ReSharper.Feature.Services.LiveTemplates.Templates.Template"/> to be used
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.Dialog.ICreateUnitTestDialogResult.MethodGenerator">
+            <summary>
+            An implementation of <see cref="T:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.ITestMethodGenerator"/> to be used to generate test methods.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.Dialog.ITestFrameworkGroup">
+            <summary>
+            Aggregates <seealso cref="T:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.References.ITestFrameworkReference"/> of same <seealso cref="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.References.ITestFrameworkReference.Provider"/>
+            and <seealso cref="!:ITestFrameworkReference.Reference.Version"/> to be displayed as a single entry in
+            <seealso cref="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.Dialog.ICreateUnitTestDialog.TestFramework"/> selector. 
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.Dialog.ITestFrameworkGroup.Name">
+            <summary>
+            Combined test framework name and version.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.Dialog.ITestFrameworkGroup.Provider">
+            <summary>
+            <seealso cref="T:JetBrains.ReSharper.UnitTestFramework.IUnitTestProvider"/> of this group.
+            Same for all <see cref="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.Dialog.ITestFrameworkGroup.Frameworks"/> in the group.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.Dialog.ITestFrameworkGroup.Frameworks">
+            <summary>
+            Live list of all <seealso cref="T:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.References.ITestFrameworkReference"/> of the same <seealso cref="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.References.ITestFrameworkReference.Provider"/>
+            and <seealso cref="!:ITestFrameworkReference.Version"/> detected from different sources. 
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.Dialog.ITestFrameworkGroup.Origin">
+            <summary>
+            Describes why <see cref="T:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.Dialog.ITestFrameworkGroup"/> is shown, i.e. the project it was detected from
+            or nuget feed it was downloaded from. Depends on currently selected <seealso cref="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.Dialog.ICreateUnitTestDialog.Project"/>.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.ITestClassGenerationContext.Logger">
+            <summary>
+            Common logger for the entire generation workflow 
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.ITestClassGenerationContext.TargetClass">
+            <summary>
+            Class for which tests are being generated
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.ITestClassGenerationContext.TargetMethod">
+            <summary>
+            Method for which tests are being generated
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.ITestClassGenerationContext.Generator">
+            <summary>
+            Test generation method to be used
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.TargetFrameworkIdExtensions.ChooseReferencingTargetFramework(JetBrains.Util.Dotnet.TargetFrameworkIds.TargetFrameworkId,System.Collections.Generic.IReadOnlyCollection{JetBrains.Util.Dotnet.TargetFrameworkIds.TargetFrameworkId})">
+            <summary>
+            Unlike <seealso cref="M:JetBrains.Util.Dotnet.TargetFrameworkIds.TargetFrameworkIdEx.SelectTargetFrameworkIdToReference(JetBrains.Util.Dotnet.TargetFrameworkIds.TargetFrameworkId,System.Collections.Generic.IEnumerable{JetBrains.Util.Dotnet.TargetFrameworkIds.TargetFrameworkId})"/>, this function chooses best suited <seealso cref="T:JetBrains.Util.Dotnet.TargetFrameworkIds.TargetFrameworkId"/>
+            from the given <paramref name="targetFrameworkToReferenceFrom"/>, from which it is possible to reference <paramref name="targetFrameworkToReference"/>
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.ITestGenerationContext.TestClass">
+            <summary>
+            Class in which tests are being generated.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.ITestGenerationContext.Provider">
+            <summary>
+            Test framework for which tests are being generated.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.ITestGenerationContext.WaitForChangesProcessed(System.Threading.CancellationToken)">
+            <summary>
+            Returns a task that completes when changes authored by previous steps are processed by project model and psi caches.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.References.AggregateDescriptor.#ctor(System.String,JetBrains.ProjectModel.NuGet.Packaging.NuGetPackageDependencyInfo,JetBrains.ProjectModel.NuGet.Packaging.NuGetPackageDependencyInfo[])">
+            <summary>
+            Convenience shortcut for creation references from multiple nuget packages. 
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.References.ITestFrameworkReference.SourceProject">
+            <summary>
+            Project from which the <see cref="P:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.CreateTest.References.ITestFrameworkReference.Reference"/> was extracted.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.NavigateToTest.Navigation.LinkedTypesOccurrence.Navigate(JetBrains.ProjectModel.ISolution,JetBrains.Application.UI.PopupLayout.PopupWindowContextSource,System.Boolean,JetBrains.IDE.TabOptions)">
+            <summary>
+            Navigates to a declaration while preserving caret location in the document, if it happens to be within the declaration already.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.Settings.AnnotationStrategy.WhenNotEvident">
+            <summary>
+            Test subject is evident when its type is used as generic parameter of the test class
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.Settings.AnnotationStrategy.WhenCannotBeInferredFromName">
+            <summary>
+            Test subject cannot be extracted from the name of the test class using <seealso cref="T:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.NavigateToTest.Extractors.NamingConventionBasedTestSubjectExtractor"/>
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.Settings.AnnotationStrategy.WhenCannotBeInferred">
+            <summary>
+            Test subject cannot be extracted from the test class using any existing <seealso cref="T:JetBrains.ReSharper.UnitTestFramework.Features.TestLinker.NavigateToTest.ITestSubjectExtractor"/>
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.IUnitTestProvider">
+            <summary>
+            Could have constructor with parameter ISolution or default constructor.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.IUnitTestProvider.ID">
+            <summary>
+            ID of provider
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.IUnitTestProvider.Name">
+            <summary>
+            Provider's name
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.IUnitTestProvider.IsElementOfKind(JetBrains.ReSharper.Psi.IDeclaredElement,JetBrains.ReSharper.UnitTestFramework.Elements.UnitTestElementKind)">
+            <summary>
+            Replaces IsUnitTestElement, IsUnitTest, IsUnitTestContainer and IsUnitTestStuff methods with single one
+            </summary>
+            <param name="declaredElement"></param>
+            <param name="elementKind"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.IUnitTestProvider.IsElementOfKind(JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement,JetBrains.ReSharper.UnitTestFramework.Elements.UnitTestElementKind)">
+            <summary>
+            Replaces IsUnitTestElement, IsUnitTest, IsUnitTestContainer and IsUnitTestStuff methods with single one
+            </summary>
+            <param name="element"></param>
+            <param name="elementKind"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.IUnitTestProvider.IsSupported(JetBrains.ReSharper.UnitTestFramework.Execution.Hosting.IHostProvider,JetBrains.ProjectModel.IProject,JetBrains.Util.Dotnet.TargetFrameworkIds.TargetFrameworkId)">
+            <summary>
+            Returns true, if given host provider could run tests in the given project
+            </summary>
+            <para>
+            E.g. Nunit supports profiling in C#, but not DNX projects
+            </para>
+            <param name="hostProvider"></param>
+            <param name="project"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Persistence.LevelDb.Marshalling.IUnitTestingMarshaller">
+            <summary>
+            Marker interface for injecting all unit-testing marshallers
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Persistence.LevelDb.UnitTestTransaction.PerformDelete(JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement)">
+            <remarks>Performed in hierarchical order from child to parent</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Persistence.LevelDb.UnitTestTransaction.PerformCreate(JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement)">
+            <remarks>Performed in hierarchical order from parent to child</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Persistence.LevelDb.UnitTestTransaction.PerformUpdate(JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement)">
+            <remarks>Performed in undefined order</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.Persistence.LevelDb.UnitTestTransaction.DeletedWorkingSet.Sort(System.Collections.Generic.ISet{JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement})">
+            <summary>
+            Sorts items in hierarchical order. The result includes all elements that were marked for deletion
+            via explicit call to <see cref="M:JetBrains.ReSharper.UnitTestFramework.Persistence.IUnitTestTransaction.Delete(JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement)" /> as well its descendants
+            that should be deleted because cascade-delete is enabled.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Persistence.LevelDb.UnitTestTransaction.UpdatedWorkingSet.TotalEventsFired">
+            <summary>
+            Number of times UT.Events.Element.Updated was fired during commit
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Persistence.LevelDb.UnitTestTransaction.UpdatedWorkingSet.TotalUniqueElementsUpdated">
+            <summary>
+            Total number of elements for which UT.Events.Element.Updated was fired at least once
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.Settings.IUnitTestSessionSettings.ExplorationTimeout">
+            <summary>
+            When running tests, R# will invoke build and subsequent exploration, if necessary.
+            This timeout specified how long test runner will wait for exploration to finish,
+            before giving up and proceeded with tests it has.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.TreeModel.UnitTestSessionTree.RemoveNodeTask">
+            <summary>
+            Removes nodes from the <see cref="T:JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.TreeModel.UnitTestSessionTree"/> by physically disconnecting
+            them from the root, instead of removing elements corresponding to the selected nodes
+            from the underlying <see cref="P:JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.TreeModel.UnitTestSessionTree.Session"/> and handling events
+            raised for <see cref="!:UnitTestSessionTree.Items"/>. The session is still modified,
+            but the resulting events are suppressed. 
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.TreeModel.UnitTestTree`1.Async.ManualChangeMitigation">
+            <summary>
+            Informs the <see cref="T:JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.TreeModel.UnitTestTree`1.Async"/> that changes to <seealso cref="F:JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.TreeModel.UnitTestTree`1.Async.Queue"/> and
+            <seealso cref="P:JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.TreeModel.UnitTestTree`1.Async.Items"/> will be processes manually and that default change
+            handlers should not be invoked.
+            </summary>
+            <remarks>
+            Use this if you are about to perform an action which will modify <seealso cref="T:JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.TreeModel.UnitTestTree`1.Async"/>
+            and you know how to handle the changes faster than the default handler would. You must properly handle changes
+            so that after the cookie is released the structure of tree MUST correspond to the actual <seealso cref="P:JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.TreeModel.UnitTestTree`1.Async.Items"/>.
+            Make sure no unexpected changes to <seealso cref="P:JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.TreeModel.UnitTestTree`1.Async.Items"/> are made while you are holding the cookie.   
+            </remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.TreeModel.UnitTestTree`1.Async.AsyncProcessingQueue.ManualChangeMitigation">
+            <summary>
+            Informs the <see cref="T:JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.TreeModel.UnitTestTree`1.Async.AsyncProcessingQueue"/> to reject any incoming <seealso cref="T:JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.TreeModel.UnitTestTree`1.Async.IBatchable"/> tasks.
+            Only tasks being added on the same thread will be rejected.
+            </summary>
+            <remarks>
+            Use this if you are about to perform an action which will modify <seealso cref="T:JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.TreeModel.UnitTestTree`1.Async"/> and you know how
+            to handle the changes faster than the default handler would. You must properly handle changes so that
+            after the cookie is released the structure of tree MUST correspond to the actual <seealso cref="P:JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.TreeModel.UnitTestTree`1.Async.Items"/>.
+            Make sure no unexpected changes to <seealso cref="P:JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.TreeModel.UnitTestTree`1.Async.Items"/> are made while you are holding the cookie.   
+            </remarks>
+        </member>
+        <member name="P:JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.TreeModel.UnitTestTree`1.Node.HasChildren">
+            <remarks>
+            Optimization to prevent UI from evaluating children collection just to find out whether there is any.
+            Node must have children if:
+              - it is a grouping node (like namespace, category, etc), or
+              - it contains more than one test element, or
+              - it has exactly one element AND this element is not the same as the one our node was created for.
+            The last is a valid scenario when parent of an element is not included in the tree explicitly.
+            For example, when a user creates a session for a single test which has a parent.  
+            </remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.Providers.NamespaceLikeElement">
+            <summary>
+            Need to distinguish groups created by
+            <see cref="!:UnitTestTreeGroupings.NamespaceGroupProvider"/>
+            and
+            <see cref="!:UnitTestTreeGroupings.UnitTestHierarchyProvider"/>
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.Providers.ProjectGroup">
+            <summary>
+            Need to distinguish groups created by
+            <see cref="!:UnitTestTreeGroupings.ProjectGroupProvider"/>
+            and
+            <see cref="!:UnitTestTreeGroupings.FileSystemGroupProvider"/>
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestFramework.UI.ViewModels.UnitTestTreeGroupings`1.CategoryGroupProvider.ShouldMoveItemToUncategorized(JetBrains.Util.dataStructures.TypedIntrinsics.Int32{JetBrains.ReSharper.UnitTestFramework.Elements.IUnitTestElement},`0)">
+            <summary>
+            Whether <paramref name="item"/> can be moved under 'Uncategorized' node.
+            </summary>
+            <remarks>
+            We can only move <paramref name="item"/> to 'Uncategorized' node if it is
+            not in any other category node (including forced).
+            </remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Undo.IUnitTestUndoManager">
+            <summary>
+            Interface to request when you want to work with undo manager from Unit Tests.
+            TODO: protocolize this interface
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.UnitTestFramework.Undo.UnitTestingUndoManagerDataConstant">
+            <summary>
+            Allows Unit-Test-related actions to access undo manager
+            </summary>
+        </member>
+    </members>
+</doc>

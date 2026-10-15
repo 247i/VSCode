@@ -1,0 +1,163 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "JetBrains.ReSharper.TestRunner.Adapters.XUnit3_2/2.16.1.5": {
+        "dependencies": {
+          "JetBrains.ReSharper.TestRunner.Abstractions": "2.16.1",
+          "JetBrains.ReSharper.TestRunner.Adapters.XUnit.Tasks": "2.16.1.11",
+          "JetBrains.ReSharper.TestRunner.Utilities": "2.16.1.16",
+          "JetBrains.XUnit.v3.CompileTimeRefs": "2.0.0",
+          "JetBrains.ReSharper.TestRunner.Adapters.XUnit.Tasks.Reference": "2.16.1.11"
+        },
+        "runtime": {
+          "JetBrains.ReSharper.TestRunner.Adapters.XUnit3_2.dll": {}
+        }
+      },
+      "JetBrains.Annotations/2020.1.0": {
+        "runtime": {
+          "lib/netstandard2.0/JetBrains.Annotations.dll": {
+            "assemblyVersion": "2020.1.0.0",
+            "fileVersion": "2020.1.0.0"
+          }
+        }
+      },
+      "JetBrains.XUnit.v3.CompileTimeRefs/2.0.0": {
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "6.0.0",
+          "Mono.Cecil": "0.11.6",
+          "xunit.abstractions": "2.0.3"
+        },
+        "runtime": {
+          "lib/net8.0/xunit.v3.common.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          },
+          "lib/net8.0/xunit.v3.core.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          },
+          "lib/net8.0/xunit.v3.runner.common.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          },
+          "lib/net8.0/xunit.v3.runner.utility.netcore.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "Mono.Cecil/0.11.6": {
+        "runtime": {
+          "lib/netstandard2.0/Mono.Cecil.Mdb.dll": {
+            "assemblyVersion": "0.11.6.0",
+            "fileVersion": "0.11.6.0"
+          },
+          "lib/netstandard2.0/Mono.Cecil.Pdb.dll": {
+            "assemblyVersion": "0.11.6.0",
+            "fileVersion": "0.11.6.0"
+          },
+          "lib/netstandard2.0/Mono.Cecil.Rocks.dll": {
+            "assemblyVersion": "0.11.6.0",
+            "fileVersion": "0.11.6.0"
+          },
+          "lib/netstandard2.0/Mono.Cecil.dll": {
+            "assemblyVersion": "0.11.6.0",
+            "fileVersion": "0.11.6.0"
+          }
+        }
+      },
+      "xunit.abstractions/2.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/xunit.abstractions.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "JetBrains.ReSharper.TestRunner.Adapters.XUnit.Tasks/2.16.1.11": {
+        "dependencies": {
+          "JetBrains.ReSharper.TestRunner.Abstractions": "2.16.1"
+        },
+        "runtime": {
+          "JetBrains.ReSharper.TestRunner.Adapters.XUnit.Tasks.dll": {
+            "assemblyVersion": "2.16.1.11",
+            "fileVersion": ""
+          }
+        }
+      },
+      "JetBrains.ReSharper.TestRunner.Adapters.XUnit.Tasks.Reference/2.16.1.11": {
+        "runtime": {
+          "JetBrains.ReSharper.TestRunner.Adapters.XUnit.Tasks.dll": {
+            "assemblyVersion": "2.16.1.11",
+            "fileVersion": "2.16.1.11"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "JetBrains.ReSharper.TestRunner.Adapters.XUnit3_2/2.16.1.5": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "JetBrains.Annotations/2020.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kD9D2ey3DGeLbfIzS8PkwLFkcF5vCOLk2rdjgfSxTfpoyovl7gAyoS6yq6T77zo9QgJGaVJ7PO/cSgLopnKlzg==",
+      "path": "jetbrains.annotations/2020.1.0",
+      "hashPath": "jetbrains.annotations.2020.1.0.nupkg.sha512"
+    },
+    "JetBrains.XUnit.v3.CompileTimeRefs/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/rxkz1meMU2UWAzhmRo1o93Q+b0eWIeipHma2gDuO+Ou64YagBxLZsdvoDDtW3ZAKIT6VLXBUQwOYIb1faYi9g==",
+      "path": "jetbrains.xunit.v3.compiletimerefs/2.0.0",
+      "hashPath": "jetbrains.xunit.v3.compiletimerefs.2.0.0.nupkg.sha512"
+    },
+    "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UcSjPsst+DfAdJGVDsu346FX0ci0ah+lw3WRtn18NUwEqRt70HaOQ7lI72vy3+1LxtqI3T5GWwV39rQSrCzAeg==",
+      "path": "microsoft.bcl.asyncinterfaces/6.0.0",
+      "hashPath": "microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512"
+    },
+    "Mono.Cecil/0.11.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-f33RkDtZO8VlGXCtmQIviOtxgnUdym9xx/b1p9h91CRGOsJFxCFOFK1FDbVt1OCf1aWwYejUFa2MOQyFWTFjbA==",
+      "path": "mono.cecil/0.11.6",
+      "hashPath": "mono.cecil.0.11.6.nupkg.sha512"
+    },
+    "xunit.abstractions/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pot1I4YOxlWjIb5jmwvvQNbTrZ3lJQ+jUGkGjWE3hEFM0l5gOnBWS+H3qsex68s5cO52g+44vpGzhAt+42vwKg==",
+      "path": "xunit.abstractions/2.0.3",
+      "hashPath": "xunit.abstractions.2.0.3.nupkg.sha512"
+    },
+    "JetBrains.ReSharper.TestRunner.Adapters.XUnit.Tasks/2.16.1.11": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "JetBrains.ReSharper.TestRunner.Adapters.XUnit.Tasks.Reference/2.16.1.11": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

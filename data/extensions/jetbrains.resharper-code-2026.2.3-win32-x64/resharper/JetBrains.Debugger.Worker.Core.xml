@@ -1,0 +1,365 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Debugger.Worker.Core</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.Debugger.Worker.ConsoleUtils.DisableCtrlCHandling">
+            <summary>
+            Makes current process ignoring Ctrl-C (or similar) event and passing it to process which inherits the console.
+            Windows only.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Debugger.Worker.ConsoleUtils.DisableMonoPtyConsoleDriver">
+            <summary>
+            Forces dumb console driver initializing to prevent any interaction with terminal (see RIDER-19048).
+            </summary>
+        </member>
+        <member name="T:JetBrains.Debugger.Worker.DebugTime.ITimeBetweenPausedContextsCalculator">
+            <summary>
+            Calculates time between two latest <see cref="T:JetBrains.Debugger.Worker.PausedContext"/>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Debugger.Worker.IPausedContexts">
+            <summary>
+            Represents a stack of <see cref="T:JetBrains.Debugger.Worker.PausedContext"/>.
+            </summary>
+        </member>
+        <member name="P:JetBrains.Debugger.Worker.IPausedContexts.Current">
+            <summary>
+            Returns <see cref="T:JetBrains.Debugger.Worker.PausedContext"/> at the top of the stack
+            </summary>
+        </member>
+        <member name="M:JetBrains.Debugger.Worker.IPausedContexts.TryPop">
+            <summary>
+            Removes the <see cref="T:JetBrains.Debugger.Worker.PausedContext"/> at the top of the stack and terminates it's lifetime.
+            If the stack is empty, does nothing.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Debugger.Worker.IPausedContexts.IsEmpty">
+            <summary>
+            Checks if the stack is empty
+            </summary>
+            <returns>True if the stack is empty, false otherwise</returns>
+        </member>
+        <member name="M:JetBrains.Debugger.Worker.IPausedContexts.CreateOnStepCompleted(Mono.Debugging.Client.Events.TargetEventArgs)">
+            <summary>
+            Creates a <see cref="T:JetBrains.Debugger.Worker.PausedContext"/> and pushes it on top of the stack.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Debugger.Worker.IPausedContexts.CreateOnStopped(Mono.Debugging.Client.Events.TargetEventArgs)">
+            <summary>
+            Creates a <see cref="T:JetBrains.Debugger.Worker.PausedContext"/> and pushes it on top of the stack.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Debugger.Worker.IPausedContexts.CreateOnSetNextStatement(Mono.Debugging.Client.Events.TargetEventArgs)">
+            <summary>
+            Creates a <see cref="T:JetBrains.Debugger.Worker.PausedContext"/> and pushes it on top of the stack.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Debugger.Worker.IPausedContexts.CreateOnFrameRestart(Mono.Debugging.Client.Events.TargetEventArgs)">
+            <summary>
+            Creates a <see cref="T:JetBrains.Debugger.Worker.PausedContext"/> and pushes it on top of the stack.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Debugger.Worker.IPausedContexts.CreateOnBreakpoint(Mono.Debugging.Client.Events.TargetEventArgs,JetBrains.Rider.Model.DebuggerWorker.BreakpointId)">
+            <summary>
+            Creates a <see cref="T:JetBrains.Debugger.Worker.PausedContext"/> and pushes it on top of the stack.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Debugger.Worker.IPausedContexts.CreateOnDataBreakpoint(Mono.Debugging.Client.Events.DataBreakpointTargetEventArgs)">
+            <summary>
+            Creates a <see cref="T:JetBrains.Debugger.Worker.PausedContext"/> and pushes it on top of the stack.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Debugger.Worker.IPausedContexts.CreateOnException(Mono.Debugging.Client.Events.TargetEventArgs)">
+            <summary>
+            Creates a <see cref="T:JetBrains.Debugger.Worker.PausedContext"/> and pushes it on top of the stack.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Debugger.Worker.PathResolution.IUrlResolverWorkerToHost.ResolveUrl(System.Guid,System.Byte[],System.String,System.String)">
+            <returns>ResolvedPath</returns>
+        </member>
+        <member name="M:JetBrains.Debugger.Worker.PausedContext.WithCallStacks``1(System.Collections.Generic.IEnumerable{JetBrains.Rider.Model.DebuggerWorker.RdCallStack},System.Func{System.Collections.Generic.IReadOnlyCollection{Mono.Debugging.Async.CallStack},``0})">
+            <summary>
+            See <see cref="T:Mono.Debugging.Async.CallStack"/> to understand the reason this method exists
+            </summary>
+        </member>
+        <member name="T:JetBrains.Debugger.Worker.SessionStartup.LaunchableByExternalSystemSessionStarter">
+            <summary>
+            Use for processes starting by an external system in suspended state and returning a thread to resume 
+            </summary>
+        </member>
+        <member name="M:JetBrains.Debugger.Worker.Util.TaskEx.WaitThrowIfTimedOut``1(System.Threading.Tasks.Task{``0},System.String,System.TimeSpan)">
+            <summary>
+            Calls <paramref name="task"/>.<see cref="!:Task&lt;TResult&gt;.Wait(TimeSpan)"/> with <paramref name="timeout"/> and throws <see cref="T:System.TimeoutException"/>
+            if the <paramref name="task"/> was timed out. Otherwise returns result
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToBrowserHubModel.DebuggerWorkerToBrowserHubModel">
+            <summary>
+            <p>Generated from: DebuggerWorkerToBrowserHubModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToBrowserHubModel.RdAppEnvironmentInfo">
+            <summary>
+            <p>Generated from: DebuggerWorkerToBrowserHubModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToBrowserHubModel.RdMonoRuntime">
+            <summary>
+            <p>Generated from: DebuggerWorkerToBrowserHubModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToBrowserHubModel.RdMonoRuntimeState">
+            <summary>
+            <p>Generated from: DebuggerWorkerToBrowserHubModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToBrowserHubModel.RdRuntimeAttachRequest">
+            <summary>
+            <p>Generated from: DebuggerWorkerToBrowserHubModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToBrowserHubModel.DebuggerWorkerToBrowserHubRoot">
+            <summary>
+            <p>Generated from: DebuggerWorkerToBrowserHubModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.DebuggerWorkerToHostModel">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.DebugDataOrigin">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.DebuggerWorkerMemoryConsumptionInfo">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.EmbeddedSourceArg">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.ExternalSymbolsType">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.GetExpressionForILRangeArg">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.GetExpressionListForILRangeArg">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.GetExpressionListForILRangeResult">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.GetExpressionRangeForStartOffsetArg">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.GetExpressionRangeForStartOffsetResult">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.GetOutputAssembliesInfoResult">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.GetTypeDebugInfoForDocumentArg">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.GetTypeDebugInfoForTokenArg">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.GetTypeDebugInfoResult">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.LoadSymbolsArg">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.LoadSymbolsFailure">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.LoadSymbolsFailureReason">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.LoadSymbolsFromArg">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.LoadSymbolsResult">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.LoadSymbolsSuccess">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.ModuleInfo">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.ModuleSymbols">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.OutputAssembliesInfo">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.PathMapInfo">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.ResolveTypeArg">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.ResolveUrlArg">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.ResolveUrlResult">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToHost.ResumeLocationCoords">
+            <summary>
+            <p>Generated from: DebuggerWorkerToHostModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToRoslynWorkerModel.DebuggerWorkerToRoslynWorkerModel">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToRoslynWorkerModel.ActiveInstructionId">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToRoslynWorkerModel.ActiveMethodId">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToRoslynWorkerModel.ActiveStatementDebugInfo">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToRoslynWorkerModel.ActiveStatementDelta">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToRoslynWorkerModel.ActiveStatementFlags">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToRoslynWorkerModel.ApplyChangesResult">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToRoslynWorkerModel.ApplyChangesResultType">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToRoslynWorkerModel.Delta">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToRoslynWorkerModel.DeltasResult">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToRoslynWorkerModel.EncDiagnosticData">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToRoslynWorkerModel.GetDeltasArg">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToRoslynWorkerModel.LineChange">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToRoslynWorkerModel.LineEdit">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToRoslynWorkerModel.LinePositionSpan">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToRoslynWorkerModel.ManagedExceptionRegionUpdate">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToRoslynWorkerModel.ManagedModuleMethodId">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToRoslynWorkerModel.MetadataAndPdb">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Rider.Model.DebuggerWorkerToRoslynWorkerModel.PdbType">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+    </members>
+</doc>

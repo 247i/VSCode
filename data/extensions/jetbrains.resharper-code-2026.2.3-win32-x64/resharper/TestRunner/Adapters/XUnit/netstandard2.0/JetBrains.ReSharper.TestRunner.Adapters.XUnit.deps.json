@@ -1,0 +1,147 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.0/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.0": {},
+    ".NETStandard,Version=v2.0/": {
+      "JetBrains.ReSharper.TestRunner.Adapters.XUnit/2.16.1.44": {
+        "dependencies": {
+          "JetBrains.ReSharper.TestRunner.Abstractions": "2.16.1",
+          "JetBrains.ReSharper.TestRunner.Adapters.XUnit.Tasks": "2.16.1.11",
+          "JetBrains.ReSharper.TestRunner.Utilities": "2.16.1.16",
+          "NETStandard.Library": "2.0.3",
+          "xunit.abstractions": "2.0.3",
+          "xunit.runner.utility": "2.8.0",
+          "JetBrains.ReSharper.TestRunner.Adapters.XUnit.Tasks.Reference": "2.16.1.11",
+          "xunit.runner.utility.netcoreapp10": "2.8.0.0"
+        },
+        "runtime": {
+          "JetBrains.ReSharper.TestRunner.Adapters.XUnit.dll": {}
+        }
+      },
+      "JetBrains.Annotations/2020.1.0": {
+        "runtime": {
+          "lib/netstandard2.0/JetBrains.Annotations.dll": {
+            "assemblyVersion": "2020.1.0.0",
+            "fileVersion": "2020.1.0.0"
+          }
+        }
+      },
+      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "NETStandard.Library/2.0.3": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "System.Reflection.TypeExtensions/4.7.0": {},
+      "xunit.abstractions/2.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/xunit.abstractions.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "xunit.runner.utility/2.8.0": {
+        "dependencies": {
+          "System.Reflection.TypeExtensions": "4.7.0",
+          "xunit.abstractions": "2.0.3"
+        }
+      },
+      "JetBrains.ReSharper.TestRunner.Adapters.XUnit.Tasks/2.16.1.11": {
+        "dependencies": {
+          "JetBrains.ReSharper.TestRunner.Abstractions": "2.16.1"
+        },
+        "runtime": {
+          "JetBrains.ReSharper.TestRunner.Adapters.XUnit.Tasks.dll": {
+            "assemblyVersion": "2.16.1.11",
+            "fileVersion": ""
+          }
+        }
+      },
+      "JetBrains.ReSharper.TestRunner.Adapters.XUnit.Tasks.Reference/2.16.1.11": {
+        "runtime": {
+          "JetBrains.ReSharper.TestRunner.Adapters.XUnit.Tasks.dll": {
+            "assemblyVersion": "2.16.1.11",
+            "fileVersion": "2.16.1.11"
+          }
+        }
+      },
+      "xunit.runner.utility.netcoreapp10/2.8.0.0": {
+        "runtime": {
+          "xunit.runner.utility.netcoreapp10.dll": {
+            "assemblyVersion": "2.8.0.0",
+            "fileVersion": "2.8.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "JetBrains.ReSharper.TestRunner.Adapters.XUnit/2.16.1.44": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "JetBrains.Annotations/2020.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kD9D2ey3DGeLbfIzS8PkwLFkcF5vCOLk2rdjgfSxTfpoyovl7gAyoS6yq6T77zo9QgJGaVJ7PO/cSgLopnKlzg==",
+      "path": "jetbrains.annotations/2020.1.0",
+      "hashPath": "jetbrains.annotations.2020.1.0.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yhJhKS/oV9n/pestg2Vk1bOLV+jgweqZM+o7YDcUdQYPoWI207ovpcUg6esf5x8nEHCTRNrVp5L137eKZIAY3Q==",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "NETStandard.Library/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "path": "netstandard.library/2.0.3",
+      "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "System.Reflection.TypeExtensions/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VybpaOQQhqE6siHppMktjfGBw1GCwvCqiufqmP8F1nj7fTUNtW35LOEt3UZTEsECfo+ELAl/9o9nJx3U91i7vA==",
+      "path": "system.reflection.typeextensions/4.7.0",
+      "hashPath": "system.reflection.typeextensions.4.7.0.nupkg.sha512"
+    },
+    "xunit.abstractions/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pot1I4YOxlWjIb5jmwvvQNbTrZ3lJQ+jUGkGjWE3hEFM0l5gOnBWS+H3qsex68s5cO52g+44vpGzhAt+42vwKg==",
+      "path": "xunit.abstractions/2.0.3",
+      "hashPath": "xunit.abstractions.2.0.3.nupkg.sha512"
+    },
+    "xunit.runner.utility/2.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vGh3CCR09jE2Juf5N+HTO68Mu0tNvWUIUe9PqRY+llEt1BztaZRviuwnmBEYDsm/+ZP/L6uu2mmrl4fxBaJPyQ==",
+      "path": "xunit.runner.utility/2.8.0",
+      "hashPath": "xunit.runner.utility.2.8.0.nupkg.sha512"
+    },
+    "JetBrains.ReSharper.TestRunner.Adapters.XUnit.Tasks/2.16.1.11": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "JetBrains.ReSharper.TestRunner.Adapters.XUnit.Tasks.Reference/2.16.1.11": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "xunit.runner.utility.netcoreapp10/2.8.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

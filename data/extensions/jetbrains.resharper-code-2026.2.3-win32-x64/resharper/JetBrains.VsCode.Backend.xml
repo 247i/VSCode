@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.VsCode.Backend</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.VsCode.Backend.Install.VsCodeBackendArtifact.GetFileWithPackageName(System.String)">
+            <summary>
+            Creates a file with the specified package name, needed for the frontend part to download it from the CDN at runtime.
+            </summary>
+        </member>
+    </members>
+</doc>

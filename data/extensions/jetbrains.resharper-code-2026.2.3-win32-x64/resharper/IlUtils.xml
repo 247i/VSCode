@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>IlUtils</name>
+  </assembly>
+  <members>
+
+    <member name="T:IlUtils.IlUtil">
+      <summary>
+        Hand-written IL utilities that cannot be expressed in C#.
+      </summary>
+      <remarks>
+        <para>
+          <b>Motivation.</b>
+          The BCL's <c>System.Threading.Volatile</c> provides volatile reads and writes only for
+          specific primitive types and reference types. There is no generic overload for an
+          unconstrained <c>T</c> because the C# compiler refuses to emit the
+          <c>volatile. ldobj/stobj !!T</c> IL sequence when <c>T</c> is not constrained to a
+          known-atomic type. This class fills that gap with hand-written IL for callers that
+          need volatile access on a generic field where the concrete <c>T</c> is known to be
+          safe at the call site (e.g. an <c>int</c>, <c>long</c>, <c>IntPtr</c>, or a
+          pointer-sized struct wrapping a single primitive).
+        </para>
+        <para>
+          <b>When to use.</b>
+          Generic infrastructure such as lock-free containers, thread-safe lazy wrappers, or
+          source-generated code that must work with an arbitrary <c>T</c> supplied by the caller,
+          where the caller guarantees the concrete type is pointer-sized and naturally aligned.
+        </para>
+      </remarks>
+    </member>
+
+    <member name="M:IlUtils.IlUtil.VolatileRead``1(``0@)">
+      <summary>
+        Performs a volatile read of a value of type <typeparamref name="T"/>.
+      </summary>
+      <typeparam name="T">The type to read.</typeparam>
+      <param name="location">The variable to read from.</param>
+      <returns>The value read from <paramref name="location"/>.</returns>
+      <remarks>
+        <para>
+          Emits <c>volatile. ldobj !!T</c> — an acquire-barrier load that the C# compiler
+          cannot produce for an unconstrained generic. The barrier prevents the JIT and CPU
+          from hoisting this read above a preceding store or from caching a stale value in a
+          register across threads.
+        </para>
+        <para>
+          <b>Atomicity warning.</b>
+          The <c>volatile.</c> prefix is a <i>memory-ordering</i> barrier, not an atomicity
+          guarantee. The load is atomic only if <typeparamref name="T"/> fits in a single
+          native-word read (i.e. <c>sizeof(T) &lt;= IntPtr.Size</c> and <paramref name="location"/>
+          is naturally aligned). For larger or misaligned types the hardware may split the load
+          into multiple bus transactions, producing a torn read even with the barrier in place.
+          For those cases use <c>Interlocked</c>, a lock, or a type specifically designed for
+          large atomic access.
+        </para>
+        <para>
+          <b>No compile-time guard.</b>
+          Unlike <c>Interlocked</c>, which exposes only safe overloads, this method accepts
+          any <typeparamref name="T"/>. Passing a multi-word struct silently produces unsafe
+          code with no warning. The caller is responsible for verifying that the concrete
+          <typeparamref name="T"/> is pointer-sized and aligned.
+        </para>
+      </remarks>
+    </member>
+
+    <member name="M:IlUtils.IlUtil.VolatileWrite``1(``0@,``0)">
+      <summary>
+        Performs a volatile write of a value of type <typeparamref name="T"/>.
+      </summary>
+      <typeparam name="T">The type to write.</typeparam>
+      <param name="location">The variable to write to.</param>
+      <param name="value">The value to write.</param>
+      <remarks>
+        <para>
+          Emits <c>volatile. stobj !!T</c> — a release-barrier store that the C# compiler
+          cannot produce for an unconstrained generic. The barrier prevents the JIT and CPU
+          from sinking this write below a subsequent load or from keeping the value in a
+          register instead of flushing it to the coherence domain.
+        </para>
+        <para>
+          <b>Atomicity warning.</b>
+          Same constraint as <see cref="M:IlUtils.IlUtil.VolatileRead``1(``0@)"/>: the store
+          is atomic only when <typeparamref name="T"/> is pointer-sized and naturally aligned.
+          A larger <typeparamref name="T"/> can produce a torn write that is visible to another
+          thread as a partial update, which may corrupt state in ways that are extremely
+          difficult to diagnose.
+        </para>
+        <para>
+          <b>No compile-time guard.</b>
+          The caller must ensure the concrete <typeparamref name="T"/> is safe. There is no
+          constraint that enforces this at the call site.
+        </para>
+      </remarks>
+    </member>
+
+  </members>
+</doc>

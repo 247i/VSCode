@@ -1,0 +1,1215 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+"""Implementation of tool support over LSP."""
+
+# pylint: disable=too-many-lines
+
+from __future__ import annotations
+
+import copy
+import json
+import os
+import pathlib
+import re
+import sys
+import threading
+import traceback
+import types
+from typing import Any, Callable, Dict, List, Optional, Sequence, Union
+from urllib.parse import urlparse, urlunparse
+
+
+# **********************************************************
+# Update sys.path before importing any bundled libraries.
+# **********************************************************
+def update_sys_path(path_to_add: str, strategy: str) -> None:
+    """Add given path to `sys.path`."""
+    if path_to_add not in sys.path and os.path.isdir(path_to_add):
+        if strategy == "useBundled":
+            sys.path.insert(0, path_to_add)
+        else:
+            sys.path.append(path_to_add)
+
+
+# Ensure that we can import LSP libraries, and other bundled libraries.
+BUNDLE_DIR = pathlib.Path(__file__).parent.parent
+# Always use bundled server files.
+update_sys_path(os.fspath(BUNDLE_DIR / "tool"), "useBundled")
+update_sys_path(
+    os.fspath(BUNDLE_DIR / "libs"),
+    os.getenv("LS_IMPORT_STRATEGY", "useBundled"),
+)
+
+# **********************************************************
+# Imports needed for the language server goes below this.
+# **********************************************************
+# pylint: disable=wrong-import-position,import-error
+import lsp_jsonrpc as jsonrpc
+import lsp_notebook as notebook
+import lsp_utils as utils
+from lsprotocol import types as lsp
+from pygls import uris
+from pygls.lsp.server import LanguageServer
+from pygls.workspace import TextDocument
+from vscode_common_python_lsp import (
+    QuickFixRegistrationError,
+    RunResult,
+    is_current_interpreter,
+    is_match,
+    normalize_path,
+    run_module,
+    run_path,
+    substitute_attr,
+    update_environ_path,
+)
+
+update_environ_path()
+
+WORKSPACE_SETTINGS = {}
+GLOBAL_SETTINGS = {}
+RUNNER = pathlib.Path(__file__).parent / "runner.py"
+
+MAX_WORKERS = 5
+_STDERR_ERROR_KEYWORDS = ("error", "traceback", "exception", "fatal")
+
+# Track lint request versions per URI to discard stale results from superseded runs.
+_lint_versions: Dict[str, int] = {}
+_lint_versions_lock = threading.Lock()
+
+LSP_SERVER = LanguageServer(
+    name="pylint-server",
+    version="v0.1.0",
+    max_workers=MAX_WORKERS,
+    notebook_document_sync=notebook.NOTEBOOK_SYNC_OPTIONS,
+)
+
+
+def _get_document_path(document: str) -> str:
+    """Returns the filesystem path for a document.
+
+    Examples:
+        file:///path/to/file.py -> /path/to/file.py
+        vscode-notebook-cell:/path/to/notebook.ipynb#C00001 -> /path/to/notebook.ipynb
+    """
+    if not document.startswith("file:"):
+        parsed = urlparse(document)
+        file_uri = urlunparse(
+            (
+                "file",
+                parsed.netloc,
+                parsed.path,
+                parsed.params,
+                parsed.query,
+                "",
+            )
+        )
+        if result := uris.to_fs_path(file_uri):
+            return result
+    return uris.to_fs_path(document) or document
+
+
+# **********************************************************
+# Tool specific code goes below this.
+# **********************************************************
+TOOL_MODULE = "pylint"
+TOOL_DISPLAY = "Pylint"
+DOCUMENTATION_HOME = "https://pylint.readthedocs.io/en/latest/user_guide/messages"
+
+# Default arguments always passed to pylint.
+TOOL_ARGS = ["--reports=n", "--output-format=json2"]
+
+# Minimum version of pylint supported.
+MIN_VERSION = "2.14.0"
+
+# **********************************************************
+# Linting features start here
+# **********************************************************
+
+
+# Captures version of `pylint` in various workspaces.
+VERSION_TABLE: Dict[str, (int, int, int)] = {}
+
+
+@LSP_SERVER.feature(lsp.TEXT_DOCUMENT_DID_OPEN)
+def did_open(params: lsp.DidOpenTextDocumentParams) -> None:
+    """LSP handler for textDocument/didOpen request."""
+    document = LSP_SERVER.workspace.get_text_document(params.text_document.uri)
+    diagnostics: list[lsp.Diagnostic] = _linting_helper(document)
+    LSP_SERVER.text_document_publish_diagnostics(
+        lsp.PublishDiagnosticsParams(uri=document.uri, diagnostics=diagnostics)
+    )
+
+
+@LSP_SERVER.feature(lsp.TEXT_DOCUMENT_DID_SAVE)
+def did_save(params: lsp.DidSaveTextDocumentParams) -> None:
+    """LSP handler for textDocument/didSave request."""
+    document = LSP_SERVER.workspace.get_text_document(params.text_document.uri)
+    diagnostics: list[lsp.Diagnostic] = _linting_helper(document)
+    LSP_SERVER.text_document_publish_diagnostics(
+        lsp.PublishDiagnosticsParams(uri=document.uri, diagnostics=diagnostics)
+    )
+
+
+@LSP_SERVER.feature(lsp.TEXT_DOCUMENT_DID_CLOSE)
+def did_close(params: lsp.DidCloseTextDocumentParams) -> None:
+    """LSP handler for textDocument/didClose request."""
+    document = LSP_SERVER.workspace.get_text_document(params.text_document.uri)
+    # Publishing empty diagnostics to clear the entries for this file.
+    LSP_SERVER.text_document_publish_diagnostics(
+        lsp.PublishDiagnosticsParams(uri=document.uri, diagnostics=[])
+    )
+
+
+if os.getenv("VSCODE_PYLINT_LINT_ON_CHANGE"):
+
+    @LSP_SERVER.feature(lsp.TEXT_DOCUMENT_DID_CHANGE)
+    def did_change(params: lsp.DidChangeTextDocumentParams) -> None:
+        """LSP handler for textDocument/didChange request."""
+        document = LSP_SERVER.workspace.get_text_document(params.text_document.uri)
+        diagnostics: list[lsp.Diagnostic] = _linting_helper(document)
+        LSP_SERVER.text_document_publish_diagnostics(
+            lsp.PublishDiagnosticsParams(uri=document.uri, diagnostics=diagnostics)
+        )
+
+
+@LSP_SERVER.feature(lsp.NOTEBOOK_DOCUMENT_DID_OPEN)
+def notebook_did_open(params: lsp.DidOpenNotebookDocumentParams) -> None:
+    """Run diagnostics on all code cells when a notebook is opened."""
+    _linting_helper_notebook(params.notebook_document.uri)
+
+
+@LSP_SERVER.feature(lsp.NOTEBOOK_DOCUMENT_DID_CHANGE)
+def notebook_did_change(params: lsp.DidChangeNotebookDocumentParams) -> None:
+    """Re-lint all cells when any cell changes (for cross-cell context)."""
+    if params.change is not None and params.change.cells is not None:
+        structure = params.change.cells.structure
+        if structure and structure.did_close:
+            for cell_document in structure.did_close:
+                _clear_notebook_cell_diagnostics(cell_document.uri)
+    _linting_helper_notebook(params.notebook_document.uri)
+
+
+@LSP_SERVER.feature(lsp.NOTEBOOK_DOCUMENT_DID_SAVE)
+def notebook_did_save(params: lsp.DidSaveNotebookDocumentParams) -> None:
+    """Re-lint all cells when a notebook is saved."""
+    _linting_helper_notebook(params.notebook_document.uri)
+
+
+@LSP_SERVER.feature(lsp.NOTEBOOK_DOCUMENT_DID_CLOSE)
+def notebook_did_close(params: lsp.DidCloseNotebookDocumentParams) -> None:
+    """Clear diagnostics for all cells when the notebook is closed."""
+    for cell_doc in params.cell_text_documents:
+        _clear_notebook_cell_diagnostics(cell_doc.uri)
+
+
+def _get_extra_args(document: TextDocument | None) -> list[str]:
+    """Return extra pylint CLI args based on the pylint version for the workspace."""
+    code_workspace = _get_settings_by_document(document)["workspaceFS"]
+    if VERSION_TABLE.get(code_workspace, None):
+        major, minor, _ = VERSION_TABLE[code_workspace]
+        if (major, minor) >= (2, 16):
+            return ["--clear-cache-post-run=y"]
+    return []
+
+
+def _linting_helper_notebook(notebook_uri: str) -> None:
+    """Lint all code cells together and publish per-cell diagnostics."""
+    try:
+        nb = LSP_SERVER.workspace.get_notebook_document(notebook_uri=notebook_uri)
+        if nb is None:
+            return
+
+        combined_source, cell_map = notebook.build_notebook_source(
+            nb.cells, LSP_SERVER.workspace.get_text_document
+        )
+        if not cell_map:
+            for cell in nb.cells:
+                if cell.kind == lsp.NotebookCellKind.Code and cell.document:
+                    LSP_SERVER.text_document_publish_diagnostics(
+                        lsp.PublishDiagnosticsParams(uri=cell.document, diagnostics=[])
+                    )
+            return
+
+        # Build a synthetic document pointing at the notebook's .ipynb path so
+        # that settings resolution and pylint invocation work correctly.
+        # NOTE: SimpleNamespace is used here as a lightweight stand-in for
+        # workspace.TextDocument. If _run_tool_on_document or
+        # _get_settings_by_document begin accessing additional attributes,
+        # consider replacing this with a Protocol or TypedDict.
+        nb_path = _get_document_path(notebook_uri)
+        combined_doc = types.SimpleNamespace(
+            uri=notebook_uri,
+            path=nb_path,
+            source=combined_source,
+            language_id="python",
+            version=0,
+        )
+
+        # Debounce: key on the notebook URI.
+        with _lint_versions_lock:
+            version = _lint_versions.get(notebook_uri, 0) + 1
+            _lint_versions[notebook_uri] = version
+
+        LSP_SERVER.protocol.notify(
+            "pylint/lintingStarted",
+            {"uri": notebook_uri},
+        )
+
+        result = _run_tool_on_document(
+            combined_doc, use_stdin=True, extra_args=_get_extra_args(combined_doc)
+        )
+
+        # Discard stale results if a newer request has arrived.
+        with _lint_versions_lock:
+            if _lint_versions.get(notebook_uri, 0) != version:
+                log_to_output(
+                    f"Discarding stale lint results for {notebook_uri} "
+                    f"(version {version} superseded by {_lint_versions[notebook_uri]})"
+                )
+                return
+
+        combined_diagnostics: Sequence[lsp.Diagnostic] = []
+        if result and result.stdout:
+            log_to_output(f"{notebook_uri} :\r\n{result.stdout}")
+            settings = copy.deepcopy(_get_settings_by_document(combined_doc))
+            combined_diagnostics, _ = _parse_output(
+                result.stdout, severity=settings["severity"]
+            )
+
+        per_cell = notebook.remap_diagnostics_to_cells(combined_diagnostics, cell_map)
+
+        # Publish per-cell diagnostics; cells with no issues get an empty list
+        # so that stale diagnostics from a previous run are cleared.
+        for cell_uri, diags in per_cell.items():
+            LSP_SERVER.text_document_publish_diagnostics(
+                lsp.PublishDiagnosticsParams(uri=cell_uri, diagnostics=diags)
+            )
+
+        # Clear diagnostics for empty code cells that were skipped by
+        # build_notebook_source so stale diagnostics don't persist.
+        for cell in nb.cells:
+            if (
+                cell.kind == lsp.NotebookCellKind.Code
+                and cell.document
+                and cell.document not in per_cell
+            ):
+                LSP_SERVER.text_document_publish_diagnostics(
+                    lsp.PublishDiagnosticsParams(uri=cell.document, diagnostics=[])
+                )
+    except Exception:  # pylint: disable=broad-except
+        log_error(f"Notebook linting failed with error:\r\n{traceback.format_exc()}")
+        LSP_SERVER.protocol.notify(
+            "pylint/lintingFailed",
+            {"uri": notebook_uri},
+        )
+
+
+def _clear_notebook_cell_diagnostics(cell_uri: str) -> None:
+    """Clear diagnostics for a single notebook cell."""
+    LSP_SERVER.text_document_publish_diagnostics(
+        lsp.PublishDiagnosticsParams(uri=cell_uri, diagnostics=[])
+    )
+
+
+def _linting_helper(document: TextDocument) -> list[lsp.Diagnostic]:
+    try:
+        # Skip notebook cells — they are linted via _linting_helper_notebook
+        # which concatenates all cells before passing to pylint.
+        if str(document.uri).startswith("vscode-notebook-cell"):
+            return []
+
+        # Bump the version for this URI so any concurrent or queued lint for
+        # the same document can detect that it has been superseded.
+        with _lint_versions_lock:
+            version = _lint_versions.get(document.uri, 0) + 1
+            _lint_versions[document.uri] = version
+
+        # Notify the client that linting has started for this document.
+        LSP_SERVER.protocol.notify(
+            "pylint/lintingStarted",
+            {
+                "uri": document.uri,
+            },
+        )
+        result = _run_tool_on_document(
+            document, use_stdin=True, extra_args=_get_extra_args(document)
+        )
+
+        # If a newer lint request arrived while we were running, discard
+        # these stale results — the newer request will publish its own.
+        with _lint_versions_lock:
+            if _lint_versions.get(document.uri, 0) != version:
+                log_to_output(
+                    f"Discarding stale lint results for {document.uri} "
+                    f"(version {version} superseded by {_lint_versions[document.uri]})"
+                )
+                return []
+
+        if result and result.stdout:
+            log_to_output(f"{document.uri} :\r\n{result.stdout}")
+
+            # deep copy here to prevent accidentally updating global settings.
+            settings = copy.deepcopy(_get_settings_by_document(document))
+            diagnostics, score = _parse_output(
+                result.stdout, severity=settings["severity"]
+            )
+            LSP_SERVER.protocol.notify(
+                "pylint/score",
+                {
+                    "uri": document.uri,
+                    "score": score if score is not None else 0.0,
+                },
+            )
+            return list(diagnostics)
+    except Exception:  # pylint: disable=broad-except
+        log_error(f"Linting failed with error:\r\n{traceback.format_exc()}")
+        LSP_SERVER.protocol.notify(
+            "pylint/lintingFailed",
+            {"uri": document.uri},
+        )
+    return []
+
+
+def _get_severity(
+    symbol: str, code: str, code_type: str, severity: Dict[str, str]
+) -> lsp.DiagnosticSeverity:
+    """Converts severity provided by linter to LSP specific value."""
+    value = (
+        severity.get(symbol, None)
+        or severity.get(code, None)
+        or severity.get(code_type, "Error")
+    )
+    try:
+        return lsp.DiagnosticSeverity[value]
+    except KeyError:
+        pass
+
+    return lsp.DiagnosticSeverity.Error
+
+
+def _build_message_doc_url(code: str) -> str:
+    """Build the URL to the documentation for this diagnostic message."""
+    msg_id, message = code.split(":")
+    category = utils.get_message_category(msg_id)
+    uri = f"{category}/{message}.html" if category else DOCUMENTATION_HOME
+    return f"{DOCUMENTATION_HOME}/{uri}"
+
+
+def _parse_output(
+    content: str,
+    severity: Dict[str, str],
+) -> tuple[Sequence[lsp.Diagnostic], float | None]:
+    """Parses linter messages and return LSP diagnostic object for each message."""
+    diagnostics = []
+    line_offset = 1
+
+    json_content = json.loads(content)
+    messages: List[Dict[str, Any]] = json_content.get("messages", [])
+    score: float | None = json_content.get("statistics", {}).get("score", None)
+    for data in messages:
+        start = lsp.Position(
+            line=int(data.get("line")) - line_offset,
+            character=int(data.get("column")),
+        )
+
+        if data.get("endLine") is not None:
+            end = lsp.Position(
+                line=int(data.get("endLine")) - line_offset,
+                character=int(data.get("endColumn", 0)),
+            )
+        else:
+            # If there is no endLine we can use `start` for end position.
+            # According to LSP range will include the character at `start`
+            # but will exclude character at `end`. The LSP client in this
+            # case can decide the actual range based on th token this
+            # points to.
+            end = start
+
+        msg_id = data.get("messageId")
+        code = f"{msg_id}:{data.get('symbol')}"
+        documentation_url = _build_message_doc_url(code)
+
+        diagnostic = lsp.Diagnostic(
+            range=lsp.Range(start=start, end=end),
+            message=data.get("message"),
+            severity=_get_severity(
+                data.get("symbol"), msg_id, data.get("type"), severity
+            ),
+            code=f"{msg_id}:{data.get('symbol')}",
+            code_description=lsp.CodeDescription(href=documentation_url),
+            source=TOOL_DISPLAY,
+        )
+
+        diagnostics.append(diagnostic)
+
+    return diagnostics, score
+
+
+# **********************************************************
+# Linting features end here
+# **********************************************************
+
+
+# **********************************************************
+# Code Action features start here
+# **********************************************************
+class QuickFixSolutions:
+    """Manages quick fixes registered using the quick fix decorator."""
+
+    def __init__(self):
+        self._solutions: Dict[
+            str,
+            Callable[[TextDocument, List[lsp.Diagnostic]], List[lsp.CodeAction]],
+        ] = {}
+
+    def quick_fix(self, codes: Union[str, List[str]]):
+        """Decorator used for registering quick fixes."""
+
+        def decorator(
+            func: Callable[[TextDocument, List[lsp.Diagnostic]], List[lsp.CodeAction]],
+        ):
+            if isinstance(codes, str):
+                if codes in self._solutions:
+                    raise QuickFixRegistrationError(codes)
+                self._solutions[codes] = func
+            else:
+                for code in codes:
+                    if code in self._solutions:
+                        raise QuickFixRegistrationError(code)
+                    self._solutions[code] = func
+
+        return decorator
+
+    def solutions(
+        self, code: str
+    ) -> Optional[Callable[[TextDocument, List[lsp.Diagnostic]], List[lsp.CodeAction]]]:
+        """Given a pylint error code returns a function, if available, that provides
+        quick fix code actions."""
+        return self._solutions.get(code, None)
+
+
+QUICK_FIXES = QuickFixSolutions()
+
+
+@LSP_SERVER.feature(
+    lsp.TEXT_DOCUMENT_CODE_ACTION,
+    lsp.CodeActionOptions(
+        code_action_kinds=[lsp.CodeActionKind.QuickFix], resolve_provider=True
+    ),
+)
+def code_action(params: lsp.CodeActionParams) -> List[lsp.CodeAction]:
+    """LSP handler for textDocument/codeAction request."""
+
+    document = LSP_SERVER.workspace.get_text_document(params.text_document.uri)
+    settings = copy.deepcopy(_get_settings_by_document(document))
+    code_actions = []
+    if not settings["enabled"]:
+        return code_actions
+
+    diagnostics = (d for d in params.context.diagnostics if d.source == TOOL_DISPLAY)
+
+    for diagnostic in diagnostics:
+        func = QUICK_FIXES.solutions(diagnostic.code)
+        if func:
+            code_actions.extend(func(document, [diagnostic]))
+    return code_actions
+
+
+@QUICK_FIXES.quick_fix(
+    codes=[
+        "C0301:line-too-long",
+        "C0303:trailing-whitespace",
+        "C0304:missing-final-newline",
+        "C0305:trailing-newlines",
+        "C0321:multiple-statements",
+    ]
+)
+def fix_format(
+    _document: TextDocument, diagnostics: List[lsp.Diagnostic]
+) -> List[lsp.CodeAction]:
+    """Provides quick fixes which involve formatting document."""
+    return [
+        _command_quick_fix(
+            diagnostics=diagnostics,
+            title=f"{TOOL_DISPLAY}: Run document formatting",
+            command="editor.action.formatDocument",
+        )
+    ]
+
+
+@QUICK_FIXES.quick_fix(
+    codes=[
+        "C0410:multiple-imports",
+        "C0411:wrong-import-order",
+        "C0412:ungrouped-imports",
+    ]
+)
+def organize_imports(
+    _document: TextDocument, diagnostics: List[lsp.Diagnostic]
+) -> List[lsp.CodeAction]:
+    """Provides quick fixes which involve organizing imports."""
+    return [
+        _command_quick_fix(
+            diagnostics=diagnostics,
+            title=f"{TOOL_DISPLAY}: Run organize imports",
+            command="editor.action.organizeImports",
+        )
+    ]
+
+
+REPLACEMENTS: Dict[str, re.Pattern] = {
+    "C0117:unnecessary-negation": [
+        {
+            "pattern": re.compile(r"\snot\s+not"),
+            "repl": r"",
+        }
+    ],
+    "C0121:singleton-comparison": [
+        {
+            "pattern": re.compile(
+                r"(\w+)\s+(?:==\s+True|!=\s+False)|(?:True\s+==|False\s+!=)\s+(\w+)"
+            ),
+            "repl": r"\1\2",
+        },
+        {
+            "pattern": re.compile(
+                r"(\w+)\s+(?:!=\s+True|==\s+False)|(?:True\s+!=|False\s+==)\s+(\w+)"
+            ),
+            "repl": r"not \1\2",
+        },
+    ],
+    "C0123:unidiomatic-typecheck": [
+        {
+            "pattern": re.compile(r"type\((\w+)\)\s+is\s+(\w+)"),
+            "repl": r"isinstance(\1, \2)",
+        }
+    ],
+    "R0205:useless-object-inheritance": [
+        {
+            "pattern": re.compile(r"class (\w+)\(object\):"),
+            "repl": r"class \1:",
+        }
+    ],
+    "R1721:unnecessary-comprehension": [
+        {
+            "pattern": re.compile(r"\{([\w\s,]+) for [\w\s,]+ in ([\w\s,]+)\}"),
+            "repl": r"set(\2)",
+        }
+    ],
+    "E1141:dict-iter-missing-items": [
+        {
+            "pattern": re.compile(r"for\s+(\w+),\s+(\w+)\s+in\s+(\w+)\s*:"),
+            "repl": r"for \1, \2 in \3.items():",
+        }
+    ],
+}
+
+
+def _get_replacement_edit(diagnostic: lsp.Diagnostic, lines: List[str]) -> lsp.TextEdit:
+    new_line = lines[diagnostic.range.start.line]
+    for replacement in REPLACEMENTS[diagnostic.code]:
+        new_line = re.sub(
+            replacement["pattern"],
+            replacement["repl"],
+            new_line,
+        )
+    return lsp.TextEdit(
+        lsp.Range(
+            start=lsp.Position(line=diagnostic.range.start.line, character=0),
+            end=lsp.Position(line=diagnostic.range.start.line + 1, character=0),
+        ),
+        new_line,
+    )
+
+
+@QUICK_FIXES.quick_fix(
+    codes=list(REPLACEMENTS.keys()),
+)
+def fix_with_replacement(
+    document: TextDocument, diagnostics: List[lsp.Diagnostic]
+) -> List[lsp.CodeAction]:
+    """Provides quick fixes which basic string replacements."""
+    return [
+        lsp.CodeAction(
+            title=f"{TOOL_DISPLAY}: Run autofix code action",
+            kind=lsp.CodeActionKind.QuickFix,
+            diagnostics=diagnostics,
+            edit=None,
+            data=document.uri,
+        )
+    ]
+
+
+@LSP_SERVER.feature(lsp.CODE_ACTION_RESOLVE)
+def code_action_resolve(params: lsp.CodeAction) -> lsp.CodeAction:
+    """LSP handler for codeAction/resolve request."""
+    if params.data:
+        document = LSP_SERVER.workspace.get_text_document(params.data)
+        params.edit = _create_workspace_edits(
+            document,
+            [
+                _get_replacement_edit(diagnostic, document.lines)
+                for diagnostic in params.diagnostics
+                if diagnostic.source == TOOL_DISPLAY and diagnostic.code in REPLACEMENTS
+            ],
+        )
+    return params
+
+
+def _command_quick_fix(
+    diagnostics: List[lsp.Diagnostic],
+    title: str,
+    command: str,
+    args: Optional[List[Any]] = None,
+) -> lsp.CodeAction:
+    return lsp.CodeAction(
+        title=title,
+        kind=lsp.CodeActionKind.QuickFix,
+        diagnostics=diagnostics,
+        command=lsp.Command(title=title, command=command, arguments=args),
+    )
+
+
+def _create_workspace_edits(
+    document: TextDocument, results: Optional[List[lsp.TextEdit]]
+):
+    return lsp.WorkspaceEdit(
+        document_changes=[
+            lsp.TextDocumentEdit(
+                text_document=lsp.OptionalVersionedTextDocumentIdentifier(
+                    uri=document.uri,
+                    version=document.version if document.version else 0,
+                ),
+                edits=results,
+            )
+        ],
+    )
+
+
+# **********************************************************
+# Code Action features end here
+# **********************************************************
+
+
+# **********************************************************
+# Required Language Server Initialization and Exit handlers.
+# **********************************************************
+@LSP_SERVER.feature(lsp.INITIALIZE)
+def initialize(params: lsp.InitializeParams) -> None:
+    """LSP handler for initialize request."""
+    log_to_output(f"CWD Server: {os.getcwd()}")
+    import_strategy = os.getenv("LS_IMPORT_STRATEGY", "useBundled")
+    update_sys_path(os.getcwd(), import_strategy)
+
+    GLOBAL_SETTINGS.update(**params.initialization_options.get("globalSettings", {}))
+
+    settings = params.initialization_options["settings"]
+    _update_workspace_settings(settings)
+    log_to_output(
+        f"Settings used to run Server:\r\n{json.dumps(settings, indent=4, ensure_ascii=False)}\r\n"
+    )
+    log_to_output(
+        f"Global settings:\r\n{json.dumps(GLOBAL_SETTINGS, indent=4, ensure_ascii=False)}\r\n"
+    )
+
+    # Add extra paths to sys.path
+    setting = _get_settings_by_path(pathlib.Path(os.getcwd()))
+    for extra in setting.get("extraPaths", []):
+        update_sys_path(extra, import_strategy)
+
+    paths = "\r\n   ".join(sys.path)
+    log_to_output(f"sys.path used to run Server:\r\n   {paths}")
+
+    _log_version_info()
+
+
+@LSP_SERVER.feature(lsp.EXIT)
+def on_exit(_params: Optional[Any] = None) -> None:
+    """Handle clean up on exit."""
+    jsonrpc.shutdown_json_rpc()
+
+
+@LSP_SERVER.feature(lsp.SHUTDOWN)
+def on_shutdown(_params: Optional[Any] = None) -> None:
+    """Handle clean up on shutdown."""
+    jsonrpc.shutdown_json_rpc()
+
+
+def _log_version_info() -> None:
+    for value in WORKSPACE_SETTINGS.values():
+        try:
+            from packaging.version import parse as parse_version
+
+            settings = copy.deepcopy(value)
+            result = _run_tool(["--version"], settings)
+            code_workspace = settings["workspaceFS"]
+            log_to_output(
+                f"Version info for linter running for {code_workspace}:\r\n{result.stdout}"
+            )
+
+            # This is text we get from running `pylint --version`
+            # pylint 2.12.2 <--- This is the version we want.
+            # astroid 2.9.3
+            first_line = result.stdout.splitlines(keepends=False)[0]
+            actual_version = first_line.split(" ")[1]
+
+            version = parse_version(actual_version)
+            min_version = parse_version(MIN_VERSION)
+            VERSION_TABLE[code_workspace] = (
+                version.major,
+                version.minor,
+                version.micro,
+            )
+
+            if version < min_version:
+                log_error(
+                    f"Version of linter running for {code_workspace} is NOT supported:\r\n"
+                    f"SUPPORTED {TOOL_MODULE}>={min_version}\r\n"
+                    f"FOUND {TOOL_MODULE}=={actual_version}\r\n"
+                )
+            else:
+                log_to_output(
+                    f"SUPPORTED {TOOL_MODULE}>={min_version}\r\n"
+                    f"FOUND {TOOL_MODULE}=={actual_version}\r\n"
+                )
+        except:  # pylint: disable=bare-except
+            log_warning(
+                f"Error while detecting pylint version:\r\n{traceback.format_exc()}"
+            )
+
+
+# *****************************************************
+# Internal functional and settings management APIs.
+# *****************************************************
+def _get_global_defaults():
+    return {
+        "enabled": GLOBAL_SETTINGS.get("enabled", True),
+        "path": GLOBAL_SETTINGS.get("path", []),
+        "interpreter": GLOBAL_SETTINGS.get("interpreter", [sys.executable]),
+        "args": GLOBAL_SETTINGS.get("args", []),
+        "severity": GLOBAL_SETTINGS.get(
+            "severity",
+            {
+                "convention": "Information",
+                "error": "Error",
+                "fatal": "Error",
+                "refactor": "Hint",
+                "warning": "Warning",
+                "info": "Information",
+            },
+        ),
+        "ignorePatterns": [],
+        "importStrategy": GLOBAL_SETTINGS.get("importStrategy", "useBundled"),
+        "showNotifications": GLOBAL_SETTINGS.get("showNotifications", "off"),
+        "extraPaths": GLOBAL_SETTINGS.get("extraPaths", []),
+    }
+
+
+def _update_workspace_settings(settings):
+    if not settings:
+        key = normalize_path(os.getcwd())
+        WORKSPACE_SETTINGS[key] = {
+            "cwd": key,
+            "workspaceFS": key,
+            "workspace": uris.from_fs_path(key),
+            **_get_global_defaults(),
+        }
+        return
+
+    for setting in settings:
+        key = normalize_path(uris.to_fs_path(setting["workspace"]))
+        WORKSPACE_SETTINGS[key] = {
+            **setting,
+            "workspaceFS": key,
+        }
+
+
+def _get_settings_by_path(file_path: pathlib.Path):
+    workspaces = {s["workspaceFS"] for s in WORKSPACE_SETTINGS.values()}
+
+    while file_path != file_path.parent:
+        str_file_path = normalize_path(file_path)
+        if str_file_path in workspaces:
+            return WORKSPACE_SETTINGS[str_file_path]
+        file_path = file_path.parent
+
+    setting_values = list(WORKSPACE_SETTINGS.values())
+    return setting_values[0]
+
+
+def _get_document_key(document: TextDocument):
+    if WORKSPACE_SETTINGS:
+        document_workspace = pathlib.Path(document.path)
+        workspaces = {s["workspaceFS"] for s in WORKSPACE_SETTINGS.values()}
+
+        # Find workspace settings for the given file.
+        while document_workspace != document_workspace.parent:
+            norm_path = normalize_path(document_workspace)
+            if norm_path in workspaces:
+                return norm_path
+            document_workspace = document_workspace.parent
+
+    return None
+
+
+def _get_settings_by_document(document: TextDocument | None):
+    if document is None or document.path is None:
+        return list(WORKSPACE_SETTINGS.values())[0]
+
+    key = _get_document_key(document)
+    if key is None:
+        # This is either a non-workspace file or there is no workspace.
+        key = normalize_path(pathlib.Path(document.path).parent)
+        return {
+            "cwd": key,
+            "workspaceFS": key,
+            "workspace": uris.from_fs_path(key),
+            **_get_global_defaults(),
+        }
+
+    return WORKSPACE_SETTINGS[str(key)]
+
+
+# *****************************************************
+# Internal execution APIs.
+# *****************************************************
+def get_cwd(settings: Dict[str, Any], document: Optional[TextDocument]) -> str:
+    """Returns the working directory for running the tool.
+
+    Resolves the following VS Code file-related variable substitutions when
+    a document is available:
+
+    - ``${file}`` – absolute path of the current document.
+    - ``${fileBasename}`` – file name with extension (e.g. ``foo.py``).
+    - ``${fileBasenameNoExtension}`` – file name without extension (e.g. ``foo``).
+    - ``${fileExtname}`` – file extension including the dot (e.g. ``.py``).
+    - ``${fileDirname}`` – directory containing the current document.
+    - ``${fileDirnameBasename}`` – name of the directory containing the document.
+    - ``${relativeFile}`` – document path relative to the workspace root.
+    - ``${relativeFileDirname}`` – document directory relative to the workspace root.
+    - ``${fileWorkspaceFolder}`` – workspace root folder for the document.
+
+    Variables that do not depend on the document (``${workspaceFolder}``,
+    ``${userHome}``, ``${cwd}``) are pre-resolved by the TypeScript client.
+
+    If no document is available and the value contains any unresolvable
+    file-variable, the workspace root is returned as a fallback.
+
+    See https://code.visualstudio.com/docs/reference/variables-reference
+    """
+    cwd = settings.get("cwd", settings["workspaceFS"])
+
+    workspace_fs = settings["workspaceFS"]
+
+    if document and document.path:
+        file_path = document.path
+        file_dir = os.path.dirname(file_path)
+        file_basename = os.path.basename(file_path)
+        file_stem, file_ext = os.path.splitext(file_basename)
+
+        substitutions = {
+            "${file}": file_path,
+            "${fileBasename}": file_basename,
+            "${fileBasenameNoExtension}": file_stem,
+            "${fileExtname}": file_ext,
+            "${fileDirname}": file_dir,
+            "${fileDirnameBasename}": os.path.basename(file_dir),
+            "${relativeFile}": os.path.relpath(file_path, workspace_fs),
+            "${relativeFileDirname}": os.path.relpath(file_dir, workspace_fs),
+            "${fileWorkspaceFolder}": workspace_fs,
+        }
+
+        for token, value in substitutions.items():
+            cwd = cwd.replace(token, value)
+    else:
+        # Without a document we cannot resolve file-related variables.
+        # Fall back to workspace root if any remain.
+        if "${file" in cwd or "${relativeFile" in cwd:
+            cwd = workspace_fs
+
+    return cwd
+
+
+# pylint: disable=too-many-branches,too-many-statements
+def _run_tool_on_document(
+    document: TextDocument,
+    use_stdin: bool = False,
+    extra_args: Optional[Sequence[str]] = None,
+) -> RunResult | None:
+    """Runs tool on the given document.
+
+    if use_stdin is true then contents of the document is passed to the
+    tool via stdin.
+    """
+    if extra_args is None:
+        extra_args = []
+
+    # deep copy here to prevent accidentally updating global settings.
+    settings = copy.deepcopy(_get_settings_by_document(document))
+
+    if not settings["enabled"]:
+        log_warning(f"Skipping file [Linting Disabled]: {document.path}")
+        log_warning("See `pylint.enabled` in settings.json to enabling linting.")
+        return None
+
+    if utils.is_stdlib_file(document.path):
+        log_warning(
+            f"Skipping standard library file (stdlib excluded): {document.path}"
+        )
+
+        return None
+
+    if is_match(settings["ignorePatterns"], document.path):
+        log_warning(
+            f"Skipping file due to `pylint.ignorePatterns` match: {document.path}"
+        )
+        return None
+
+    code_workspace = settings["workspaceFS"]
+    cwd = get_cwd(settings, document)
+
+    use_path = False
+    use_rpc = False
+    if settings["path"]:
+        # 'path' setting takes priority over everything.
+        use_path = True
+        argv = settings["path"]
+    elif settings["interpreter"] and not is_current_interpreter(
+        settings["interpreter"][0]
+    ):
+        # If there is a different interpreter set use JSON-RPC to the subprocess
+        # running under that interpreter.
+        argv = [TOOL_MODULE]
+        use_rpc = True
+    else:
+        # if the interpreter is same as the interpreter running this
+        # process then run as module.
+        argv = [TOOL_MODULE]
+
+    argv += TOOL_ARGS + settings["args"] + extra_args
+
+    # pygls normalizes the path to lowercase on windows, but we need to resolve the
+    # correct capitalization to avoid https://github.com/pylint-dev/pylint/issues/10137
+    resolved_path = str(pathlib.Path(document.path).resolve())
+
+    if use_stdin:
+        argv += ["--from-stdin", resolved_path]
+    else:
+        argv += [resolved_path]
+
+    env = None
+    if use_path or use_rpc:
+        # for path and rpc modes we need to set PYTHONPATH, for module or API mode
+        # we would have already set the extra paths in the initialize handler.
+        env = _get_updated_env(settings)
+
+    if use_path:
+        # This mode is used when running executables.
+        log_to_output(" ".join(argv))
+        log_to_output(f"CWD Server: {cwd}")
+        result = run_path(
+            argv=argv,
+            use_stdin=use_stdin,
+            cwd=cwd,
+            source=document.source.replace("\r\n", "\n"),
+            env=env,
+        )
+        if result.stderr:
+            log_to_output(result.stderr)
+            if any(kw in result.stderr.lower() for kw in _STDERR_ERROR_KEYWORDS):
+                log_warning(result.stderr)
+    elif use_rpc:
+        # This mode is used if the interpreter running this server is different from
+        # the interpreter used for running this server.
+        log_to_output(" ".join(settings["interpreter"] + ["-m"] + argv))
+        log_to_output(f"CWD Linter: {cwd}")
+
+        result = jsonrpc.run_over_json_rpc(
+            workspace=code_workspace,
+            interpreter=settings["interpreter"],
+            module=TOOL_MODULE,
+            argv=argv,
+            use_stdin=use_stdin,
+            cwd=cwd,
+            source=document.source,
+            env=env,
+        )
+        result = _to_run_result_with_logging(result)
+    else:
+        # In this mode the tool is run as a module in the same process as the language server.
+        log_to_output(" ".join([sys.executable, "-m"] + argv))
+        log_to_output(f"CWD Linter: {cwd}")
+        # This is needed to preserve sys.path, in cases where the tool modifies
+        # sys.path and that might not work for this scenario next time around.
+        with substitute_attr(sys, "path", [""] + sys.path[:]):
+            try:
+                result = run_module(
+                    module=TOOL_MODULE,
+                    argv=argv,
+                    use_stdin=use_stdin,
+                    cwd=cwd,
+                    source=document.source,
+                )
+            except Exception:
+                log_error(traceback.format_exc(chain=True))
+                raise
+        if result.stderr:
+            log_to_output(result.stderr)
+            if any(kw in result.stderr.lower() for kw in _STDERR_ERROR_KEYWORDS):
+                log_warning(result.stderr)
+
+    return result
+
+
+def _run_tool(extra_args: Sequence[str], settings: Dict[str, Any]) -> RunResult:
+    """Runs tool."""
+    code_workspace = settings["workspaceFS"]
+    cwd = get_cwd(settings, None)
+
+    use_path = False
+    use_rpc = False
+    if len(settings["path"]) > 0:
+        # 'path' setting takes priority over everything.
+        use_path = True
+        argv = settings["path"]
+    elif len(settings["interpreter"]) > 0 and not is_current_interpreter(
+        settings["interpreter"][0]
+    ):
+        # If there is a different interpreter set use JSON-RPC to the subprocess
+        # running under that interpreter.
+        argv = [TOOL_MODULE]
+        use_rpc = True
+    else:
+        # if the interpreter is same as the interpreter running this
+        # process then run as module.
+        argv = [TOOL_MODULE]
+
+    argv += extra_args
+
+    env = None
+    if use_path or use_rpc:
+        # for path and rpc modes we need to set PYTHONPATH, for module or API mode
+        # we would have already set the extra paths in the initialize handler.
+        env = _get_updated_env(settings)
+
+    if use_path:
+        # This mode is used when running executables.
+        log_to_output(" ".join(argv))
+        log_to_output(f"CWD Server: {cwd}")
+        result = run_path(argv=argv, use_stdin=True, cwd=cwd, env=env)
+        if result.stderr:
+            log_to_output(result.stderr)
+            if any(kw in result.stderr.lower() for kw in _STDERR_ERROR_KEYWORDS):
+                log_warning(result.stderr)
+    elif use_rpc:
+        # This mode is used if the interpreter running this server is different from
+        # the interpreter used for running this server.
+        log_to_output(" ".join(settings["interpreter"] + ["-m"] + argv))
+        log_to_output(f"CWD Linter: {cwd}")
+        result = jsonrpc.run_over_json_rpc(
+            workspace=code_workspace,
+            interpreter=settings["interpreter"],
+            module=TOOL_MODULE,
+            argv=argv,
+            use_stdin=True,
+            cwd=cwd,
+            env=env,
+        )
+        result = _to_run_result_with_logging(result)
+    else:
+        # In this mode the tool is run as a module in the same process as the language server.
+        log_to_output(" ".join([sys.executable, "-m"] + argv))
+        log_to_output(f"CWD Linter: {cwd}")
+        # This is needed to preserve sys.path, in cases where the tool modifies
+        # sys.path and that might not work for this scenario next time around.
+        with substitute_attr(sys, "path", [""] + sys.path[:]):
+            try:
+                result = run_module(
+                    module=TOOL_MODULE, argv=argv, use_stdin=True, cwd=cwd
+                )
+            except Exception:
+                log_error(traceback.format_exc(chain=True))
+                raise
+        if result.stderr:
+            log_to_output(result.stderr)
+            if any(kw in result.stderr.lower() for kw in _STDERR_ERROR_KEYWORDS):
+                log_warning(result.stderr)
+
+    log_to_output(f"\r\n{result.stdout}\r\n")
+    return result
+
+
+def _get_updated_env(settings: Dict[str, Any]) -> str:
+    """Returns the updated environment variables."""
+    extra_paths = settings.get("extraPaths", [])
+    paths = os.environ.get("PYTHONPATH", "").split(os.pathsep) + extra_paths
+    python_paths = os.pathsep.join([p for p in paths if len(p) > 0])
+
+    env = {
+        "LS_IMPORT_STRATEGY": settings["importStrategy"],
+        "PYTHONUTF8": "1",
+    }
+    if python_paths:
+        env["PYTHONPATH"] = python_paths
+    return env
+
+
+def _to_run_result_with_logging(rpc_result: jsonrpc.RpcRunResult) -> RunResult:
+    error = ""
+    if rpc_result.exception:
+        log_error(rpc_result.exception)
+        error = rpc_result.exception
+    elif rpc_result.stderr:
+        log_to_output(rpc_result.stderr)
+        error = rpc_result.stderr
+    return RunResult(rpc_result.stdout, error)
+
+
+# *****************************************************
+# Logging and notification.
+# *****************************************************
+def log_to_output(
+    message: str, msg_type: lsp.MessageType = lsp.MessageType.Log
+) -> None:
+    """Logs messages to Output > Pylint channel only."""
+    LSP_SERVER.window_log_message(lsp.LogMessageParams(type=msg_type, message=message))
+
+
+def log_error(message: str) -> None:
+    """Logs messages with notification on error."""
+    LSP_SERVER.window_log_message(
+        lsp.LogMessageParams(type=lsp.MessageType.Error, message=message)
+    )
+    if os.getenv("LS_SHOW_NOTIFICATION", "off") in ["onError", "onWarning", "always"]:
+        LSP_SERVER.window_show_message(
+            lsp.ShowMessageParams(type=lsp.MessageType.Error, message=message)
+        )
+
+
+def log_warning(message: str) -> None:
+    """Logs messages with notification on warning."""
+    LSP_SERVER.window_log_message(
+        lsp.LogMessageParams(type=lsp.MessageType.Warning, message=message)
+    )
+    if os.getenv("LS_SHOW_NOTIFICATION", "off") in ["onWarning", "always"]:
+        LSP_SERVER.window_show_message(
+            lsp.ShowMessageParams(type=lsp.MessageType.Warning, message=message)
+        )
+
+
+def log_always(message: str) -> None:
+    """Logs messages with notification."""
+    LSP_SERVER.window_log_message(
+        lsp.LogMessageParams(type=lsp.MessageType.Info, message=message)
+    )
+    if os.getenv("LS_SHOW_NOTIFICATION", "off") in ["always"]:
+        LSP_SERVER.window_show_message(
+            lsp.ShowMessageParams(type=lsp.MessageType.Info, message=message)
+        )
+
+
+# *****************************************************
+# Start the server.
+# *****************************************************
+if __name__ == "__main__":
+    LSP_SERVER.start_io()

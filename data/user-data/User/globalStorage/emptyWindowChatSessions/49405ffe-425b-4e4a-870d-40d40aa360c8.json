@@ -1,0 +1,276 @@
+{
+  "version": 3,
+  "requesterUsername": "nitamil",
+  "requesterAvatarIconUri": {
+    "$mid": 1,
+    "path": "/u/176882975",
+    "scheme": "https",
+    "authority": "avatars.githubusercontent.com",
+    "query": "v=4"
+  },
+  "responderUsername": "GitHub Copilot",
+  "responderAvatarIconUri": {
+    "id": "copilot"
+  },
+  "initialLocation": "editor",
+  "requests": [
+    {
+      "requestId": "request_c89bb749-d3ed-4117-b3e3-17ac7ed420d1",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 4
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 5
+            },
+            "command": {
+              "name": "fix",
+              "description": "Propose a fix for the problems in the selected code",
+              "disambiguation": [
+                {
+                  "category": "fix",
+                  "description": "Propose a fix for the problems in the selected code",
+                  "examples": [
+                    "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+                  ]
+                }
+              ]
+            },
+            "kind": "subcommand"
+          },
+          {
+            "range": {
+              "start": 4,
+              "endExclusive": 69
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 5,
+              "endLineNumber": 1,
+              "endColumn": 70
+            },
+            "text": " MD036/no-emphasis-as-heading: Emphasis used instead of a heading",
+            "kind": "text"
+          }
+        ],
+        "text": "/fix MD036/no-emphasis-as-heading: Emphasis used instead of a heading"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "value": "Replace the emphasized line with a proper markdown heading to resolve the MD036/no-emphasis-as-heading error.\n\n",
+          "supportThemeIcons": false,
+          "supportHtml": false
+        },
+        {
+          "kind": "progressMessage",
+          "content": {
+            "value": "Generating edits...",
+            "uris": {}
+          }
+        },
+        {
+          "kind": "textEditGroup",
+          "uri": {
+            "$mid": 1,
+            "fsPath": "c:\\Users\\inthirua\\Downloads\\Ganging-SMU-channels-in-STL.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Users/inthirua/Downloads/Ganging-SMU-channels-in-STL.md",
+            "path": "/c:/Users/inthirua/Downloads/Ganging-SMU-channels-in-STL.md",
+            "scheme": "file"
+          },
+          "edits": [
+            [
+              {
+                "text": "### Bundle Configuration Testing\n\n| Test Scenario | Description |\n|---------------|-------------|\n| Isolated ganging | Bundle contains only the target pin group |\n| Mixed operation | Bundle includes ganged groups and individual pins |\n| Invalid requests | Bundle missing required pin group |\n",
+                "range": {
+                  "startLineNumber": 242,
+                  "startColumn": 1,
+                  "endLineNumber": 249,
+                  "endColumn": 1
+                }
+              }
+            ]
+          ],
+          "state": {
+            "sha1": "1d2d377167732536d1719881cb952cbe5410e1d2",
+            "applied": 1
+          }
+        }
+      ],
+      "responseId": "response_a0a4dc9c-6659-43b0-81be-a9607242feec",
+      "result": {
+        "timings": {
+          "firstProgress": 806,
+          "totalElapsed": 1779
+        },
+        "metadata": {
+          "codeBlocks": [],
+          "toolCallRounds": [
+            {
+              "response": "Replace the emphasized line with a proper markdown heading to resolve the MD036/no-emphasis-as-heading error.\n\n---FILEPATH c:\\Users\\inthirua\\Downloads\\Ganging-SMU-channels-in-STL.md\n---FIND\n```\n**Bundle Configuration Testing**\n\n| Test Scenario | Description |\n|---------------|-------------|\n| Isolated ganging | Bundle contains only the target pin group |\n| Mixed operation | Bundle includes ganged groups and individual pins |\n| Invalid requests | Bundle missing required pin group |\n```\n---REPLACE\n```\n### Bundle Configuration Testing\n\n| Test Scenario | Description |\n|---------------|-------------|\n| Isolated ganging | Bundle contains only the target pin group |\n| Mixed operation | Bundle includes ganged groups and individual pins |\n| Invalid requests | Bundle missing required pin group |\n```\n---COMPLETE",
+              "toolCalls": [],
+              "toolInputRetry": 0,
+              "id": "808e1496-c723-466a-aec5-5e7f9856dc0b"
+            }
+          ],
+          "modelMessageId": "69675c97-ed68-4434-8ace-8490f229ee3e",
+          "responseId": "caee72bf-93c2-4cd8-a466-ed1470b4ea7d",
+          "sessionId": "0f1fc163-e5d3-4528-86d3-bac9f83a0873",
+          "agentId": "github.copilot.editor",
+          "command": "fix"
+        },
+        "details": "GPT-4.1 • 0x"
+      },
+      "followups": [],
+      "isCanceled": false,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.31.1",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.editor",
+        "description": "Ask or edit in context",
+        "when": "!config.inlineChat.enableV2 && !config.github.copilot.chat.advanced.inlineChat2",
+        "metadata": {
+          "themeIcon": {
+            "id": "copilot"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "Copilot",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "editor"
+        ],
+        "modes": [
+          "ask"
+        ],
+        "slashCommands": [
+          {
+            "name": "generate",
+            "description": "Generate new code",
+            "disambiguation": [
+              {
+                "category": "generate",
+                "description": "Generate new code",
+                "examples": [
+                  "Add a function that returns the sum of two numbers"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "edit",
+            "description": "Edit the selected code in your active editor",
+            "disambiguation": [
+              {
+                "category": "edit",
+                "description": "Make changes to existing code",
+                "examples": [
+                  "Change this method to use async/await"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "doc",
+            "description": "Add documentation comment for this symbol",
+            "disambiguation": [
+              {
+                "category": "doc",
+                "description": "Add documentation comment for this symbol",
+                "examples": [
+                  "Add jsdoc to this method"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "disambiguation": [
+              {
+                "category": "fix",
+                "description": "Propose a fix for the problems in the selected code",
+                "examples": [
+                  "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works",
+            "disambiguation": [
+              {
+                "category": "explain",
+                "description": "Explain how the code in your active editor works",
+                "examples": [
+                  "Write an explanation for the code above as paragraphs of text."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "tests",
+                "description": "Generate unit tests for the selected code. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Write a set of detailed unit test functions for the code above."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": [
+          {
+            "category": "unknown",
+            "description": "Intent of this command is unclear or is not related to information technologies",
+            "examples": [
+              "Add a dog to this comment."
+            ]
+          }
+        ]
+      },
+      "slashCommand": {
+        "name": "fix",
+        "description": "Propose a fix for the problems in the selected code",
+        "disambiguation": [
+          {
+            "category": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "examples": [
+              "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+            ]
+          }
+        ]
+      },
+      "contentReferences": [],
+      "codeCitations": [],
+      "timestamp": 1760723899465,
+      "modelId": "copilot/gpt-4.1"
+    }
+  ],
+  "sessionId": "49405ffe-425b-4e4a-870d-40d40aa360c8",
+  "creationDate": 1760723899435,
+  "isImported": false,
+  "lastMessageDate": 1760723899465
+}

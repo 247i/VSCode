@@ -1,0 +1,27 @@
+2026-10-15 05:54:54.611 [warning] C:\Users\inthirua\.ssh\config: ENOENT: no such file or directory, open 'C:\Users\inthirua\.ssh\config'
+2026-10-15 05:54:54.611 [info] [Activation] Extension version: 0.168.0
+2026-10-15 05:54:54.683 [info] [Authentication] Creating hub for .com
+2026-10-15 05:54:54.747 [info] [Activation] Registering built in git provider.
+2026-10-15 05:54:54.747 [info] [Activation] Looking for git repository
+2026-10-15 05:54:54.747 [info] [Activation] Found 0 repositories during activation
+2026-10-15 05:54:54.747 [info] [Activation] Git repository found, initializing review manager and pr tree view.
+2026-10-15 05:54:54.747 [info] [GitAPI] Registering git provider
+2026-10-15 05:54:54.770 [info] [GitPostCommitCommands] Trying to register post commit commands.
+2026-10-15 05:55:23.914 [warning] C:\Users\inthirua\.ssh\config: ENOENT: no such file or directory, open 'C:\Users\inthirua\.ssh\config'
+2026-10-15 05:55:23.914 [info] [Activation] Extension version: 0.170.0
+2026-10-15 05:55:23.930 [info] [Authentication] Creating hub for .com
+2026-10-15 05:55:23.967 [info] [Activation] Registering built in git provider.
+2026-10-15 05:55:23.968 [info] [Activation] Looking for git repository
+2026-10-15 05:55:23.968 [info] [Activation] Found 0 repositories during activation
+2026-10-15 05:55:23.968 [info] [Activation] Git repository found, initializing review manager and pr tree view.
+2026-10-15 05:55:23.990 [info] [GitPostCommitCommands] Trying to register post commit commands.
+2026-10-15 05:55:24.172 [info] [GitAPI] Registering git provider
+2026-10-15 05:56:03.341 [warning] C:\Users\inthirua\.ssh\config: ENOENT: no such file or directory, open 'C:\Users\inthirua\.ssh\config'
+2026-10-15 05:56:03.341 [info] [Activation] Extension version: 0.170.0
+2026-10-15 05:56:03.682 [info] [Authentication] Creating hub for .com
+2026-10-15 05:56:03.727 [info] [Activation] Registering built in git provider.
+2026-10-15 05:56:03.727 [info] [Activation] Looking for git repository
+2026-10-15 05:56:03.727 [info] [Activation] Found 0 repositories during activation
+2026-10-15 05:56:03.727 [info] [Activation] Git repository found, initializing review manager and pr tree view.
+2026-10-15 05:56:03.728 [info] [GitAPI] Registering git provider
+2026-10-15 05:56:03.752 [info] [GitPostCommitCommands] Trying to register post commit commands.

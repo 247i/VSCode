@@ -1,0 +1,929 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Platform.ProjectModel.Host</name>
+    </assembly>
+    <members>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.BuildScript.CheckMsBuildEventLoggerPresence.MsBuildEventLoggerOutputName">
+            <summary>
+            MsBuild Event Logger dll name.
+            Used in <see cref="!:ConsoleRunner.MsBuildExeBuildRunner"/>
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.IProjectsHostLiveTrackingZone">
+            <summary>
+            Zone that enables live tracking of changed files.
+            Must be enabled in Rider and ReSharper if it uses <see cref="T:JetBrains.ProjectModel.ProjectsHost.SolutionLoader"/> and wants to track changed files
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.Diagnostic.IProjectExcludedFromBuild">
+            <summary>
+            Indicates the project has no project configuration in the current solution configuration
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.Diagnostic.IProjectWithInvalidConfiguration">
+            <summary>
+            Indicates the project has invalid project configuration in the current solution configuration
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.ICustomProjectMarkProvider">
+            <summary>
+            Extension interface which allows to contribute additional projects (as project marks) into project model
+            Used by plugins
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.Impl.ProjectHostChange">
+            <summary>
+            Represents any change in project structure
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.Impl.ProjectHostReloadChange">
+            <summary>
+            Represents a project change when the project have to be reloaded via appropriate project host
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.Impl.ProjectHostReloadChange.Descriptors">
+            <summary>
+            Project descriptors tree for this change
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.Impl.ProjectHostReloadChange.ProjectHost">
+            <summary>
+            Corresponding project host
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.Impl.ProjectHostReloadChange.Requester">
+            <summary>
+            Object which requests this project reload operation
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.Impl.ProjectHostReloadChange.IsCancelled">
+            <summary>
+            This project reload change is cancelled and should not be used in project loading operations
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.Impl.ProjectHostStructureChange">
+            <summary>
+            Represents structure project change (i.e. project parent)
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.Impl.ProjectHostStructureChange.Project">
+            <summary>
+            Project to structure update
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.Impl.ProjectHostChangeDescriptors">
+            <summary>
+            Collection of descriptors to represent a single IProject in R# project model
+            Part of <see cref="T:JetBrains.ProjectModel.ProjectsHost.Impl.ProjectHostReloadChange"/>
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.Impl.ProjectHostLoggerService">
+            <summary>
+            Allows to log and project load operations in <see cref="N:JetBrains.ProjectModel.ProjectsHost.SolutionHost"/>
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.Impl.ProjectHostLoggerService.GetLogPath(System.Collections.Generic.IReadOnlyCollection{JetBrains.ProjectModel.ProjectsHost.IProjectMark},JetBrains.ProjectModel.ProjectsHost.ProjectHostLogRequest)">
+            <summary>
+            Returns a path which should be used to store logs for a project load operation
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.Impl.ProjectHostModifications">
+            <summary>
+            Cookie for prevent any project modifications in some cases
+              e.g. from file system changes
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.Impl.Wildcards.WildcardContainer.myStore">
+            <summary>
+            Store information about all patterns in all projects in format:
+              IncludePattern -> ProjectMark[] -> ExcludePattern[]
+            - We have one general list of all include patterns from all projects
+            - Each include pattern can be presented in several projects
+            - Each include pattern in an project can be presented several times with different exclude patterns
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.Impl.Wildcards.WildcardContainer.myFoldersToWatch">
+            <summary>
+            Store all tracking folders and set of dependant projects
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.Impl.Wildcards.WildcardContainer.myFolderFilters">
+            <summary>
+            Store all folders which should be excluded from tracking
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.IProjectHost">
+            <summary>
+            Defines a backend host that owns the authoritative representation of a single IDE project mark.
+            Implementations are responsible for loading, reloading and incrementally updating the project model
+            based on external changes (build system, file system, protocol events), as well as describing items and
+            references for persistence. The host is discovered via ProjectsHostComponent and is selected per project
+            mark using <see cref="M:JetBrains.ProjectModel.ProjectsHost.IProjectHost.IsApplicable(JetBrains.ProjectModel.ProjectsHost.IProjectMark)"/>.
+            </summary>
+            <remarks>
+            Typical lifecycle:
+            - The solution mark creates one or more <see cref="T:JetBrains.ProjectModel.ProjectsHost.IProjectMark"/>s.
+            - The Projects Host selects a concrete IProjectHost whose <see cref="M:JetBrains.ProjectModel.ProjectsHost.IProjectHost.IsApplicable(JetBrains.ProjectModel.ProjectsHost.IProjectMark)"/> returns true.
+            - <see cref="M:JetBrains.ProjectModel.ProjectsHost.IProjectHost.BeforeLoad(JetBrains.ProjectModel.ProjectsHost.IProjectMark)"/> is called, then <see cref="M:JetBrains.ProjectModel.ProjectsHost.IProjectHost.Reload(JetBrains.Lifetimes.Lifetime,System.Collections.Generic.IReadOnlyCollection{JetBrains.ProjectModel.ProjectsHost.Impl.ProjectHostReloadChange},JetBrains.ProjectModel.ProjectsHost.IReloadEventsConsumer,JetBrains.Util.VirtualFileSystemPath)"/> builds a fresh descriptor snapshot.
+            - Later, item/reference edit methods can be used for incremental updates, or <see cref="M:JetBrains.ProjectModel.ProjectsHost.IProjectHost.Reload(JetBrains.Lifetimes.Lifetime,System.Collections.Generic.IReadOnlyCollection{JetBrains.ProjectModel.ProjectsHost.Impl.ProjectHostReloadChange},JetBrains.ProjectModel.ProjectsHost.IReloadEventsConsumer,JetBrains.Util.VirtualFileSystemPath)"/> can be
+              called again to rebuild the project.
+            </remarks>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.IProjectHost.IsApplicable(JetBrains.ProjectModel.ProjectsHost.IProjectMark)">
+            <summary>
+            Returns true if this host knows how to handle the given project mark. Used to select a host implementation per mark.
+            </summary>
+            <param name="projectMark">Project identity created by a solution mark.</param>
+            <returns>True if the host can manage this project.</returns>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.IProjectHost.Reload(JetBrains.Lifetimes.Lifetime,System.Collections.Generic.IReadOnlyCollection{JetBrains.ProjectModel.ProjectsHost.Impl.ProjectHostReloadChange},JetBrains.ProjectModel.ProjectsHost.IReloadEventsConsumer,JetBrains.Util.VirtualFileSystemPath)">
+            <summary>
+            Rebuilds the project model for the specified project mark(s). Implementations typically compute a new
+            in-memory descriptor snapshot and pass it back via the provided <see cref="T:JetBrains.ProjectModel.ProjectsHost.Impl.ProjectHostReloadChange"/>s.
+            </summary>
+            <param name="lifetime">Lifetime controlling a potentially long-running reload operation.</param>
+            <param name="changes">One or more project marks to reload, along with a place to store created descriptors.</param>
+            <param name="reloadEventsConsumer">Callbacks invoked on reload start/finish to update UI and metrics.</param>
+            <param name="logPath">Optional path where the host can write diagnostic or import logs.</param>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.IProjectHost.Unload(JetBrains.ProjectModel.ProjectsHost.IProjectMark)">
+            <summary>
+            Releases all resources and cached state associated with the given project mark.
+            Implementations should stop file watching, cancel ongoing work and detach descriptors.
+            </summary>
+            <param name="projectMark">The project to unload.</param>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.IProjectHost.BeforeLoad(JetBrains.ProjectModel.ProjectsHost.IProjectMark)">
+            <summary>
+            Called before a project is (re)loaded. Gives the host a chance to prepare caches or adjust state.
+            </summary>
+            <param name="projectMark">The project that is about to be loaded.</param>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.IProjectHost.IsProjectAffectedByChange(JetBrains.ProjectModel.ProjectsHost.IProjectMark,JetBrains.ProjectModel.IProjectItem)">
+            <summary>
+            Returns whether the given change affects this project and requires an update (incremental or full reload).
+            </summary>
+            <param name="parentProject">The project to check.</param>
+            <param name="changedItem">An item that has changed (file, folder, reference, etc.).</param>
+            <returns>True if the host should react to the change.</returns>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.IProjectHost.AddItem(JetBrains.ProjectModel.ProjectsHost.IProjectMark,JetBrains.ProjectModel.IProjectItem,JetBrains.ProjectModel.ProjectsHost.RelativeTo)">
+            <summary>
+            Adds a new item to the project (file or folder). Implementations should place the item according to
+            <paramref name="relativeTo"/> when provided to keep a stable presentation order.
+            </summary>
+            <param name="projectMark">Target project.</param>
+            <param name="projectItem">Item to add.</param>
+            <param name="relativeTo">Placement hint relative to existing item; can be null.</param>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.IProjectHost.RemoveItem(JetBrains.ProjectModel.ProjectsHost.IProjectMark,JetBrains.ProjectModel.IProjectItem)">
+            <summary>
+            Removes an item from the project.
+            </summary>
+            <param name="projectMark">Target project.</param>
+            <param name="projectItem">Item to remove.</param>
+            <returns>A session that must be committed to finalize the change.</returns>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.IProjectHost.RemoveAndExcludeItem(JetBrains.ProjectModel.ProjectsHost.IProjectMark,JetBrains.ProjectModel.IProjectItem)">
+            <summary>
+            Removes an item and marks it as excluded from the project (e.g., adds an exclude entry).
+            </summary>
+            <param name="projectMark">Target project.</param>
+            <param name="projectItem">Item to remove and exclude.</param>
+            <returns>A session that must be committed to finalize the change.</returns>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.IProjectHost.UpdateItem(JetBrains.ProjectModel.ProjectsHost.IProjectMark,JetBrains.ProjectModel.IProjectItem)">
+            <summary>
+            Updates metadata or properties of an existing item in the project.
+            </summary>
+            <param name="projectMark">Target project.</param>
+            <param name="projectItem">Item to update.</param>
+            <returns>A session that must be committed to finalize the change.</returns>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.IProjectHost.AddReference(JetBrains.ProjectModel.ProjectsHost.IProjectMark,JetBrains.ProjectModel.IProjectToModuleReference)">
+            <summary>
+            Adds a project-to-module reference (e.g., to another project, package or library).
+            </summary>
+            <param name="projectMark">Target project.</param>
+            <param name="reference">Reference to add.</param>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.IProjectHost.RemoveReference(JetBrains.ProjectModel.ProjectsHost.IProjectMark,JetBrains.ProjectModel.IProjectToModuleReference)">
+            <summary>
+            Removes a reference from the project.
+            </summary>
+            <param name="projectMark">Target project.</param>
+            <param name="reference">Reference to remove.</param>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.IProjectHost.RebindReference(JetBrains.ProjectModel.ProjectsHost.IProjectMark,JetBrains.ProjectModel.IProjectToModuleReference,JetBrains.ProjectModel.IProjectToModuleReference)">
+            <summary>
+            Replaces an existing reference with a new one (atomic rebind).
+            </summary>
+            <param name="projectMark">Target project.</param>
+            <param name="oldReference">Reference to remove.</param>
+            <param name="newReference">Reference to add.</param>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.IProjectHost.UpdateReference(JetBrains.ProjectModel.ProjectsHost.IProjectMark,JetBrains.ProjectModel.IProjectToModuleReference)">
+            <summary>
+            Updates properties/metadata of an existing reference.
+            </summary>
+            <param name="projectMark">Target project.</param>
+            <param name="reference">Reference to update.</param>
+            <returns>A session that must be committed to finalize the change.</returns>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.IProjectHost.Describe(JetBrains.ProjectModel.ProjectsHost.IProjectMark,JetBrains.ProjectModel.IProjectItem)">
+            <summary>
+            Returns a lightweight description of how the host would represent a given item (build action, metadata, etc.).
+            </summary>
+            <param name="projectMark">Target project.</param>
+            <param name="projectItem">Item to describe.</param>
+            <returns>Descriptor describing item type and metadata.</returns>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.IProjectHost.ClearCaches">
+            <summary>
+            Intended to restart the underlying session (like MSBuild process) after changing toolsets
+            Does not modify the project structure.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.IProjectMark">
+            <summary>
+            Lightweight, immutable identity and basic metadata of a project known to the Projects Host.
+            A project mark is created by an <see cref="T:JetBrains.ProjectModel.ProjectsHost.ISolutionMark"/> and used to select a suitable <see cref="T:JetBrains.ProjectModel.ProjectsHost.IProjectHost"/>
+            implementation. It holds stable identity (GUIDs, unique name) and hierarchical relations used by the solution host.
+            The project host owns the concrete project model built from this mark.
+            </summary>
+            <remarks>
+            Responsibilities:
+            - Identify a project by location, GUIDs and unique name.
+            - Represent hierarchy (parent/children) for solution folders and composite projects.
+            - Expose configuration/platform currently active for the project.
+            - Provide a change signal (<see cref="P:JetBrains.ProjectModel.ProjectsHost.IProjectMark.Updated"/>) for UI or hosts that mirror hierarchy changes.
+            </remarks>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.IProjectMark.SolutionMark">
+            <summary>
+            Owning solution identity that created this project mark.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.IProjectMark.Name">
+            <summary>
+            Display name of the project as shown in the Solution view. For file-based projects it usually derives from the
+            project file name or directory name. For solution folders it equals the folder name.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.IProjectMark.Location">
+            <summary>
+            Physical location of the project. For file-based projects this is typically the path to the project file;
+            for folder-based projects it is the directory treated as the project root. Implementations should return
+            an absolute path in the solution VFS context.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.IProjectMark.Guid">
+            <summary>
+            Stable GUID of the project. Must remain constant across reloads; used as persistent identity.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.IProjectMark.TypeGuid">
+            <summary>
+            Project type GUID (e.g., solution folder, MSBuild project type, custom host type). Can be <see cref="F:System.Guid.Empty"/>
+            for custom/virtual projects that do not map to a predefined type.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.IProjectMark.UniqueProjectName">
+            <summary>
+            Unique project name used for persistence (solution files, caches). It should be stable and must not change
+            during modifications; the default is usually derived from <see cref="P:JetBrains.ProjectModel.ProjectsHost.IProjectMark.Name"/> and <see cref="P:JetBrains.ProjectModel.ProjectsHost.IProjectMark.Guid"/>.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.IProjectMark.Parent">
+            <summary>
+            Parent project mark if this project is nested (e.g., inside a solution folder). Can be null for top-level marks.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.IProjectMark.Children">
+            <summary>
+            Direct children of this project in the hierarchy. Empty for leaf projects.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.IProjectMark.ActiveConfigurationAndPlatform">
+            <summary>
+            Currently active configuration and platform for this project as chosen by the solution host.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.IProjectMark.IsSolutionFolder">
+            <summary>
+            True if this mark represents a solution folder rather than a buildable project.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.IProjectMark.IsModifiable">
+            <summary>
+            True if this project mark allows structural modifications via <see cref="T:JetBrains.ProjectModel.ProjectsHost.IProjectHost"/> edit APIs.
+            Non-modifiable marks are managed exclusively by their host and edits should be ignored.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.IProjectMark.Updated">
+            <summary>
+            Signal that is fired when the mark or its hierarchy changes (e.g., parent changed, children updated).
+            Consumers can subscribe to react to structural changes.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.IProjectMark.UpdateParent(JetBrains.ProjectModel.ProjectsHost.IProjectMark)">
+            <summary>
+            Changes the parent in the hierarchy. Implementations are expected to update Children collections accordingly
+            and fire <see cref="P:JetBrains.ProjectModel.ProjectsHost.IProjectMark.Updated"/>.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.IProjectMark.Detach">
+            <summary>
+            Detaches this project from the hierarchy, removing it from its parent if any. Should fire <see cref="P:JetBrains.ProjectModel.ProjectsHost.IProjectMark.Updated"/>.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.IProjectMark.IterateChildren``1(``0,System.Action{JetBrains.ProjectModel.ProjectsHost.IProjectMark,``0})">
+            <summary>
+            Efficiently iterates over children without boxing/allocations. The provided context is passed to each callback
+            invocation to avoid closures. Implementations should not allocate per iteration.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ProjectMarkBase.OnUpdate(System.Action)">
+            <summary>
+            Executes an update operation and fires changes if needed
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.IProjectMarkDependencyProvider.GetDependantProjects(JetBrains.ProjectModel.ProjectsHost.IProjectMark)">
+            <summary>
+            Returns collection of projects from the solution which should be definitely updated along with specified project
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.ISolutionMark">
+            <summary>
+            Lightweight, authoritative identity of a solution that owns a set of <see cref="T:JetBrains.ProjectModel.ProjectsHost.IProjectMark"/>s managed by the
+            Projects Host. An implementation is responsible for naming, locating the solution and orchestrating high-level
+            updates of its projects via <see cref="M:JetBrains.ProjectModel.ProjectsHost.ISolutionMark.Update(JetBrains.ProjectModel.ProjectsHost.SolutionMarkUpdateRequest)"/>. The mark is created by frontend/opening logic and then used by
+            the Solution Host to build and maintain a backend project model.
+            </summary>
+            <remarks>
+            Responsibilities:
+            - Provide stable solution identity and location (<see cref="P:JetBrains.ProjectModel.ProjectsHost.ISolutionMark.Name"/>, <see cref="P:JetBrains.ProjectModel.ProjectsHost.ISolutionMark.Location"/>).
+            - Create/rename/move/remove <see cref="T:JetBrains.ProjectModel.ProjectsHost.IProjectMark"/>s that constitute the solution structure.
+            - Participate in solution structure updates via <see cref="M:JetBrains.ProjectModel.ProjectsHost.ISolutionMark.Update(JetBrains.ProjectModel.ProjectsHost.SolutionMarkUpdateRequest)"/> and expose configuration/platform state.
+            </remarks>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.ISolutionMark.Name">
+            <summary>
+            Display name of the solution as shown in the Solution view.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.ISolutionMark.Location">
+            <summary>
+            Physical location that identifies this solution. For file-based solutions it is typically the solution file
+            (e.g., .sln or build-script entry point); for virtual solutions it can be the main definition file.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ISolutionMark.Update(JetBrains.ProjectModel.ProjectsHost.SolutionMarkUpdateRequest)">
+            <summary>
+            Rebuilds or incrementally updates the solution structure. Implementations should use
+            <see cref="T:JetBrains.ProjectModel.ProjectsHost.Impl.SolutionStructureBuilder"/> from the <paramref name="request"/> to create/update
+            project marks and return a <see cref="T:JetBrains.ProjectModel.ProjectsHost.Impl.SolutionStructureChange"/> describing added/removed/updated projects.
+            </summary>
+            <param name="request">Context with structure builder, current container and update policy.</param>
+            <returns>Description of changes to apply to the solution structure.</returns>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ISolutionMark.GetPlatformVersion">
+            <summary>
+            Returns the solution/platform file format version, if applicable. Unknown when not applicable.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ISolutionMark.GetProjectLocations">
+            <summary>
+            Returns physical locations of projects that belong to this solution. Used for change tracking and fast checks.
+            Implementations should return stable, absolute paths.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ISolutionMark.GetSolutionRelatedLocations">
+            <summary>
+            Returns additional locations considered part of the solution (e.g., configuration files, generated directories).
+            These locations can be used for diagnostics and file watching.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.ISolutionMark.ActiveConfigurationAndPlatform">
+            <summary>
+            Currently active configuration/platform pair for the solution.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.ISolutionMark.ConfigurationAndPlatformStore">
+            <summary>
+            Store that owns all configurations and platforms known to this solution mark and can compute/fix active state.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ISolutionMark.AddProject(JetBrains.ProjectModel.SolutionStructure.SolutionDefinitions.ProjectDefinitionDescriptor,JetBrains.ProjectModel.ProjectsHost.IProjectMark)">
+            <summary>
+            Creates a new <see cref="T:JetBrains.ProjectModel.ProjectsHost.IProjectMark"/> for the given descriptor and optionally assigns its parent in
+            the solution hierarchy.
+            </summary>
+            <param name="descriptor">Definition describing the project to add.</param>
+            <param name="parent">Optional parent project mark (e.g., solution folder).</param>
+            <returns>The created project mark.</returns>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ISolutionMark.RenameProject(JetBrains.ProjectModel.ProjectsHost.IProjectMark,System.String,System.String)">
+            <summary>
+            Renames a project and updates its logical location if needed.
+            </summary>
+            <param name="project">Project to rename.</param>
+            <param name="name">New display name.</param>
+            <param name="path">New physical location (absolute path).</param>
+            <returns>The updated project mark.</returns>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ISolutionMark.RemoveProject(JetBrains.ProjectModel.ProjectsHost.IProjectMark)">
+            <summary>
+            Removes a project from the solution.
+            </summary>
+            <param name="project">Project to remove.</param>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ISolutionMark.MoveProject(JetBrains.ProjectModel.ProjectsHost.IProjectMark,JetBrains.ProjectModel.ProjectsHost.IProjectMark)">
+            <summary>
+            Moves a project under a new parent (e.g., into a different solution folder).
+            </summary>
+            <param name="project">Project to move.</param>
+            <param name="parent">New parent or null to move to the root.</param>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.IForceUpdateProjectsPolicy">
+            <summary>
+            Allows to update a specific project even if it was not changed in the solution definition file
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.MsBuild.Actions.MsBuildAddFileAction.FilterMetadata(JetBrains.Platform.MsBuildHost.Models.RdProjectWildcardItem,System.Collections.Generic.List{JetBrains.Platform.MsBuildHost.Models.RdItemMetadata})">
+            <summary>
+            Filter metadata which should be written for the new items
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.MsBuild.Diagnostic.Components.ProjectConfigurationValidator.ProjectExcludedFromBuild">
+            <summary>
+            User excluded project from build intentionally, it that case message is empty and we do not consider
+              this diagnostic as an issue
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.MsBuild.Diagnostic.IMsBuildProjectLoadDiagnosticProvider">
+            <summary>
+            Listens to loaded MSBuild projects and provides diagnostics to report them to the user
+            Should be [SolutionInstanceComponent] or [ShellComponent]
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.MsBuild.Diagnostic.IMsBuildToolDiagnostic">
+            <summary>
+            Marker interface for diagnostics which can be fixed by installing (different) MSBuild 
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.MsBuild.Diagnostic.IMsBuildConnectionDiagnostic">
+            <summary>
+            Marker interface for diagnostics which means MSBuild process can not be started 
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.MsBuild.Extensions.ManagedProjectPropertiesBuilder.BuildProjectInformation(JetBrains.ProjectModel.ProjectsHost.MsBuild.ProjectInformationFromProperties,JetBrains.Platform.MsBuildHost.ProjectModel.MsBuildProject)">
+            <summary>
+            Fills additional project information based on msbuild project properties
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.MsBuild.Extensions.ManagedProjectPropertiesBuilder.BuildProjectBuildSettings(JetBrains.Platform.MsBuildHost.ProjectModel.MsBuildProject,JetBrains.ProjectModel.Properties.Managed.ManagedProjectBuildSettings)">
+            <summary>
+            Constructs build settings based on generic msbuild project (without specific target framework)
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.MsBuild.Extensions.ManagedProjectPropertiesBuilder.BuildProjectConfiguration(JetBrains.ProjectModel.ProjectsHost.IProjectMark,JetBrains.Platform.MsBuildHost.ProjectModel.MsBuildProjectPart,JetBrains.ProjectModel.Impl.Build.ManagedProjectConfigurationBase)">
+            <summary>
+            Constructs configurations based on msbuild project part loaded for specific target framework
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.MsBuild.Extensions.XamarinIOSModificator">
+            <summary>
+            Run targets to generate objc bindings, see
+             https://github.com/xamarin/xamarin-macios/blob/master/msbuild/Xamarin.Mac.Tasks/Xamarin.Mac.ObjCBinding.CSharp.targets
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.MsBuild.BuildActionFilteringRule">
+            <summary>
+            Filter project item with <see cref="P:JetBrains.ProjectModel.ProjectsHost.MsBuild.BuildActionFilteringRule.FilteredBuildAction"/> if other project item with the same location
+              with <see cref="P:JetBrains.ProjectModel.ProjectsHost.MsBuild.BuildActionFilteringRule.ExistingBuildAction"/> presented in the same project
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.MsBuild.MsBuildDefaultBuildActionsProvider">
+            <summary>
+            Represents default project file build actions in a project
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.MsBuild.MsBuildDefaultBuildActionsProvider.DefaultBuildActions">
+            <summary>
+            Collection of build actions applied to this project by default
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.MsBuild.MsBuildDefaultBuildActionsProvider.GetFromProjectItem(JetBrains.Platform.MsBuildHost.ProjectModel.MsBuildProjectItem)">
+            <summary>
+            Allows to produce default project build action from MSBuild project item(s)
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.MsBuild.IMsBuildModificationSettingsProvider.SmartModificationsFilter">
+            <summary>
+            Returns array of project file extensions
+              where MsBuild Task should use simple modifications instead of default (smart) behavior
+            Extension should be specified without dot
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.MsBuild.IMsBuildProjectListener.OnProjectLoaded(JetBrains.ProjectModel.ProjectsHost.IProjectMark,JetBrains.ProjectModel.Update.IProjectDescriptor,JetBrains.Platform.MsBuildHost.ProjectModel.MsBuildProject)">
+            <summary>
+            Method is called each time after project is loaded/reloaded 
+            Call happens immediately after getting results from MsBuild:
+              - usually on background thread 
+              - before updating R# project model
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.MsBuild.IMsBuildProjectListenerWithRequester.OnProjectLoaded(JetBrains.ProjectModel.ProjectsHost.IProjectMark,JetBrains.ProjectModel.Update.IProjectDescriptor,JetBrains.ProjectModel.ProjectsHost.IProjectLoadRequester,JetBrains.Platform.MsBuildHost.ProjectModel.MsBuildProject)">
+            <summary>
+            Method is called each time after project is loaded/reloaded 
+            Call happens immediately after getting results from MsBuild:
+              - usually on background thread 
+              - before updating R# project model
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.MsBuild.IMsBuildProjectBatchListener.CreateSession">
+            <summary>
+            Method is called each time before several projects are loaded/reloaded
+            Created session will be called for each loaded projects and thn Dispose will be called in the end 
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.MsBuild.IMsBuildProjectSchemeProvider">
+            <summary>
+            Defines which MSBuild items, properties and metadata should be retrieved from MSBuild external process during
+              project model construction
+            Should be defined as a ShellComponent
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.MsBuild.Internal.MsBuildActionFilterService.myRules">
+            <summary>
+            Filtered -> Existing Map
+            Example:
+            "None" should be filtered when "Content" is presented
+            "None" -> "Content"
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.MsBuild.Internal.MsBuildCommonBuildActionsProvider.ourBuildActions">
+            <summary>
+            Default MsBuild item types, allowed in any type of msbuild project.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.MsBuild.Internal.MsBuildProjectTypeService">
+            <summary>
+            Discovers project type using loaded msbuild project and a number of hacks
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.MsBuild.MsBuildProjectHost.RewindSession(JetBrains.ProjectModel.ProjectsHost.IProjectMark)">
+            <summary>
+            Reloads the MSBuild-side representation of the given project from the current on-disk
+            project file without triggering any ReSharper-side side effects (listener notifications,
+            project descriptor rebuild, PSI/caches invalidation). Intended for preview-style flows
+            that transiently mutate the live MSBuild session via <see cref="M:JetBrains.ProjectModel.ProjectsHost.MsBuild.MsBuildProjectHost.EditProject(JetBrains.ProjectModel.ProjectsHost.IProjectMark,System.Action{JetBrains.Platform.MsBuildHost.ProjectModel.MsBuildProjectModelSession})"/> and then
+            want to bring the session back in sync with disk, without invoking the heavier
+            <see cref="M:JetBrains.ProjectModel.ProjectsHost.MsBuild.MsBuildProjectHost.Reload(JetBrains.Lifetimes.Lifetime,System.Collections.Generic.IReadOnlyCollection{JetBrains.ProjectModel.ProjectsHost.Impl.ProjectHostReloadChange},JetBrains.ProjectModel.ProjectsHost.IReloadEventsConsumer,JetBrains.Util.VirtualFileSystemPath)"/> / <c>ISolutionHost.ReloadProjectsAsync</c> paths.
+            </summary>
+            <remarks>
+            Because this bypasses <see cref="F:JetBrains.ProjectModel.ProjectsHost.MsBuild.MsBuildProjectHost.ListenerService"/> and <c>HandleResult</c>, the caller
+            must ensure the ReSharper-side project model and PSI are consistent with the on-disk
+            project file independently. Typically used after rolling back the ReSharper-side project
+            model via transaction rollback, so both sides converge back to the pre-preview state.
+            </remarks>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.MsBuild.Structure.MsBuildProjectStructureBuilderForItems.HiddenChecker.GetPriority(JetBrains.Platform.MsBuildHost.ProjectModel.MsBuildProjectItem)">
+            <summary>
+            Prefer these items when we have several items with different build actions
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.MsBuild.Wildcards.MsBuildWildcardPatternBuilder">
+            <summary>
+            Build wildcard pattern based on Microsoft.Build.Shared.FileMatcher implementation
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.ProjectsHostComponentAttribute">
+            <summary>
+            Components for loading solution/project file and create project descriptors
+            Use <see cref="T:JetBrains.ProjectModel.ProjectsHost.SolutionLoader"/> for update existing solution or load descriptors from disk
+            Use <see cref="T:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Impl.SolutionHostManager"/> from <see cref="T:JetBrains.ProjectModel.ProjectsHost.SolutionHost.IHostSolutionZone"/> control solution lifecycle inside resharper
+            This component container allows to compose a component container each time when we need to load solution or project, SolutionInstance component container doesn't allow this
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ProjectsHostComponentAttribute.#ctor(JetBrains.Application.Parts.Instantiation)">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ProjectsHostExtensions.GetProjectByMark(JetBrains.ProjectModel.ISolution,JetBrains.ProjectModel.ProjectsHost.IProjectMark)">
+            <summary>
+            Returns project for the project mark if there is only one in the solution
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ProjectsHostExtensions.GetProjectsByMark(JetBrains.ProjectModel.ISolution,JetBrains.ProjectModel.ProjectsHost.IProjectMark)">
+            <summary>
+            Returns all projects for the project mark in the solution
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ProjectsHostExtensions.GetBestBuildActionForProjectItem(JetBrains.ProjectModel.IProjectFile)">
+            <summary>
+            Use this method wherever the single build action for a project file required, for example in MsBuild interations or UI
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectStructureBuilder`1">
+            <summary>
+            Encapsulates alghoritm to build project model descriptors (folders and files inside a IProjectDescriptor)
+              from different `abstract` items
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectStructureFileOperations`1.GetOrigin(JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectTrieNodeFile{`0})">
+            <summary>
+            Returns file origin
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectStructureFileOperations`1.BuildProjectFileProperties(JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectTrieNodeFile{`0},JetBrains.ProjectModel.Properties.IProjectFileProperties)">
+            <summary>
+            Fills additional data from this file into project file properties
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectStructureFileOperations`1.FilterDuplicate(JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectTrieNodeFile{`0},System.Collections.Generic.ICollection{JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectTrieNodeFile{`0}})">
+            <summary>
+            Executes when there are other files with the same location
+            Returns true if this file should be filtered in this case
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectStructureBuilderOperations`1.GetLogicalPath(`0,JetBrains.Util.VirtualFileSystemPath)">
+            <summary>
+            Logical path to the element in project model and solution explorer
+            Can be null, that means physical path is the same as logical path
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectStructureBuilderOperations`1.GetPhysicalPath(`0)">
+            <summary>
+            Physical path to the element in file system (can point to any path on any disk)
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectStructureBuilderOperations`1.CanOmitExternalFolder(`0,JetBrains.Util.VirtualFileSystemPath)">
+            <summary>
+            Return true if an external folder could be hidden from project hierarchy
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectTrieNodeFile`1.PhysicalPath">
+            <summary>
+            Physical path to the element in file system (can point to any path on any disk)
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectTrieNodeFile`1.Name">
+            <summary>
+            Logical name (if any)
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectTrieNodeFile`1.BuildActions">
+            <summary>
+            List of build actions per target framework
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectTrieNodeFile`1.ProjectItems">
+            <summary>
+            List of original project items, will be used to create IProjectElementOrigin and file properties
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectTrieNodeFolder`1.ProjectPhysicalPath">
+            <summary>
+            Non-linked folder path inside a project, used to resolve conflicts
+              between several physical (linked) folders, see myPhysicalPaths field
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectTrieNodeFolder`1.myPhysicalPaths">
+            <summary>
+            One project folder can be used for several physical paths (one - inside a project and others - linked)
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectTrieNodeFolder`1.myCasingNames">
+            <summary>
+            Folder names and counts to choose the most actual case for the folder name
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectTrieNodeProject`1.MergeFolders(JetBrains.ProjectModel.Update.IProjectFolderDescriptor,JetBrains.Util.VirtualFileSystemPath)">
+            <summary>
+            Project folders can be duplicated in case of linked files. Example:
+              - Project [c:\project]
+               - Data   [c:\project\data]
+               - Data   [c:\some_other_folder\data]
+            In that case we want to merge all these folders with the same names
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.ProjectStructure.ProjectTrieNodeProject`1.RemoveExcessiveNestedness(JetBrains.ProjectModel.Update.IProjectDescriptor,JetBrains.Util.VirtualFileSystemPath)">
+            <summary>
+            If we have only linked items there might be 1 excessive level of nestedness. Example:
+              - Project   [c:\project\project.proj]
+               - Data     [c:\some_other_folder\data]
+                - Folder  [c:\some_other_folder\data\folder]
+                - File1   [c:\some_other_folder\data\file1]
+                - File2   [c:\some_other_folder\data\file2]
+            In that case we want to get rid of it and move files one level higher (especially in UE4).
+            But Unity expects this project structure (see RIDER-58975).
+            So we're applying this logic only to C++ projects.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Impl.ProjectHostReloadTaskExecutor.IsReady(System.Boolean)">
+            <summary>
+            True if executor can perform some operation
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Impl.ProjectHostReloadTaskExecutor.Execute(System.Func{JetBrains.ProjectModel.ProjectsHost.Impl.ProjectStructureChange},System.Action{JetBrains.ProjectModel.ProjectsHost.Impl.ProjectStructureChange},System.Boolean)">
+            <summary>
+            Performs some reload operation
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Impl.SolutionHost.LoadEventsContainer">
+            <summary>
+            All these event fire from background thread
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Impl.SolutionHostCachingManager">
+            <summary>
+            Encapsulates additional logic to store and recover project model from persistent caches
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Impl.SolutionHostLoadingQueue">
+            <summary>
+            Component tracks all current changes in project model in two ways
+              1) Active reloading projects
+              2) Active reloading processes count (there are changes without affected projects, but we want to track them anyway)
+            Also component allows to queue (or execute immediately) an action as soon as no loading processes executing now
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Impl.SolutionHostManager">
+            <summary>
+            Controls ReSharper Solution life-cycle based on solution / project marks reading
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Interop.ReferencePatcherServiceSuppressor">
+            <summary>
+            We should not patch references in that way when we have actual (real) project model
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.SolutionHost.IProjectModelMonitor.Loaded">
+            <summary>
+            Returns true when solution was already synced once
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.SolutionHost.IProjectModelMonitor.SyncProjects">
+            <summary>
+            Returns true when there are no sync project operations (active or pending)
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.SolutionHost.IProjectModelMonitor.Ready">
+            <summary>
+            Returns true when there are no sync project operations (active or pending)
+              and there are no background tasks which can trigger projects reloading
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.SolutionHost.ISolutionHost.ReloadProjectsSync(System.Collections.Generic.IEnumerable{JetBrains.ProjectModel.ProjectsHost.IProjectMark},JetBrains.ProjectModel.ProjectsHost.IProjectLoadRequester,JetBrains.ProjectModel.ProjectsHost.ProjectHostLogRequest)">
+            <summary>
+            Reload projects synchronously, use this method with carefully, async reloading is usually better
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.SolutionHost.ISolutionHost.ReloadProjectsAsync(System.Collections.Generic.IEnumerable{JetBrains.ProjectModel.ProjectsHost.IProjectMark},JetBrains.ProjectModel.ProjectsHost.IProjectLoadRequester)">
+            <summary>
+            Reload projects async
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.SolutionHost.ISolutionHost.SuspendAsyncProjectsReloading(JetBrains.Lifetimes.Lifetime)">
+            <summary>
+            Suspends ASYNC project reloading until lifetime will be terminated
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.SolutionHost.ISolutionHost.AddAndRemoveProjects(System.Collections.Generic.IEnumerable{JetBrains.ProjectModel.ProjectsHost.SolutionHost.AddProjectRequest},System.Collections.Generic.IEnumerable{JetBrains.ProjectModel.ProjectsHost.IProjectMark})">
+            <summary>
+            Batch operation for adding and removing projects
+            </summary>
+            <remarks>
+            If added projects depend on each other - then dependent project should follow after parent
+            </remarks>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.SolutionHost.ISolutionHost.GetTotalReloadsTime">
+            <summary>
+            Returns how much time Rider spent loading and reloading projects in this solution since startup
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.SolutionHost.ISolutionHost.InjectAndLoadProject(JetBrains.Lifetimes.Lifetime,JetBrains.ProjectModel.ProjectsHost.IProjectMark)">
+            <summary>
+            Injects project into the solution and loads it. Unloads on lifetime termination.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.SolutionHost.ISolutionHostLoadingQueue">
+            <summary>
+            Monitors state of loading/reloading/unloading ant projects in SolutionHost
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.SolutionHost.ISolutionHostLoadingQueue.Idle">
+            <summary>
+            True when SolutionHost performs any loading project operations
+            Changes only on UI thread
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.SolutionHost.ISolutionHostLoadingQueue.ExecuteWhenQueueIsEmpty(System.Action)">
+            <summary>
+            Execute action when there is no pending loading operations and on UI thread
+            Method can be invoked from UI/Background threads
+            </summary>
+        </member>
+        <member name="F:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Persistence.ProjectOrigin.Key">
+            <summary>
+            This key stores origin project ID, i.e. some information from which source project was created
+            For example: name + guid written in a solution file
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Platforms.MsBuildNuGetPlatformProvider">
+            <summary>
+            Provides platforms from NuGet packages per project
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Platforms.MsBuildNuGetPlatformProvider.ImmutableAssembliesInFileSystem">
+            <summary>
+            Assemblies in NuGet folders can be deleted and restored again
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Progress.BackgroundProgressBuilder.WithHeader(JetBrains.DataFlow.IProperty{System.String})">
+            <summary>
+            PermanentHeader will be ignored
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Progress.BackgroundProgressBuilder.WithHeader(System.String)">
+            <summary>
+            Header will be ignored
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Progress.BackgroundProgressBuilder.WithDescription(JetBrains.DataFlow.IProperty{System.String})">
+            <summary>
+            PermanentDescription, DescriptionFromProgress will be ignored
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Progress.BackgroundProgressBuilder.WithDescription(System.String)">
+            <summary>
+            Description, DescriptionFromProgress will be ignored
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Progress.BackgroundProgressBuilder.WithDescriptionFromProgress">
+            <summary>
+            Description, PermanentDescription will be ignored
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Progress.BackgroundProgressBuilder.WithProgress(JetBrains.DataFlow.IProperty{System.Double})">
+            <summary>
+            IsIndeterminate will be ignored.
+            The current position of the progress, in the [0..1] range, inclusive.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Progress.BackgroundProgressBuilder.AsIndeterminate">
+            <summary>
+            Progress will be ignored
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Progress.BackgroundProgressBuilder.AsNonCancelable">
+            <summary>
+            CancelAction will be ignored
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Progress.SolutionLoadProgress.Events">
+            <summary>
+            This proxy class is requires because we start solution loading progress before component container is constructed
+             so we will need use these progresses from "shell" level and then  "pick up" them when container will be initialized
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.SolutionHost.SolutionHostExtensions.ReloadProjectSync(JetBrains.ProjectModel.ProjectsHost.SolutionHost.ISolutionHost,JetBrains.ProjectModel.ProjectsHost.IProjectMark,JetBrains.ProjectModel.ProjectsHost.IProjectLoadRequester,JetBrains.ProjectModel.ProjectsHost.ProjectHostLogRequest)">
+            <summary>
+            Reload a project synchronously, use this method with carefully, async reloading is usually better
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.SolutionHost.SolutionHostExtensions.ReloadProjectAsync(JetBrains.ProjectModel.ProjectsHost.SolutionHost.ISolutionHost,JetBrains.ProjectModel.ProjectsHost.IProjectMark,JetBrains.ProjectModel.ProjectsHost.IProjectLoadRequester)">
+            <summary>
+            Reload a project async
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.SolutionHost.SolutionHostStartup.StartupType">
+            <summary>
+            Tells how solution was loaded - cold (without caches) or warm (from caches)
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.SolutionHost.SolutionHostStartup.IsCold">
+            <summary>
+            Solution was NOT loaded from caches
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectModel.ProjectsHost.SolutionHost.SolutionHostStartup.IsWarm">
+            <summary>
+            Solution was loaded from caches
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectModel.ProjectsHost.SolutionLoader">
+            <summary>
+            Util component to load or update solution once without control solutuion lifecycle <see cref="T:JetBrains.ProjectModel.ProjectsHost.SolutionHost.Impl.SolutionHostManager"/>
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.ProjectsHost.Utils.ProjectTypeGuidGuesser.CalculateTypeGuid(JetBrains.Util.VirtualFileSystemPath)">
+            <summary>
+            Should return same as com.jetbrains.rider.utils.ProjectTypeGuidGuesser.Companion#calculateTypeGuid
+            Also see JetBrains.Platform.MsBuildTask.Utils.ProjectTypeGuidGuesser
+            </summary>
+        </member>
+    </members>
+</doc>

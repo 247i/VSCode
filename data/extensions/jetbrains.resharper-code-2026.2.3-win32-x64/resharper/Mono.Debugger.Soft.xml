@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mono.Debugger.Soft</name>
+    </assembly>
+    <members>
+        <member name="T:Mono.Debugger.Soft.IInvocableMethodOwnerMirror">
+            <summary>
+            Interface to mark a mirror that supports method invocation
+            </summary>
+        </member>
+        <member name="M:Mono.Debugger.Soft.IInvocableMethodOwnerMirror.GetThisObject">
+            <summary>
+            Value that will be passed as 'this' reference when invoking a method (can be null e.g. for static methods)
+            </summary>
+            <returns>'this' reference</returns>
+        </member>
+        <member name="M:Mono.Debugger.Soft.IInvocableMethodOwnerMirror.ProcessResult(Mono.Debugger.Soft.IInvokeResult)">
+            <summary>
+            Make some additional processing of invocation result. See implementation in <see cref="T:Mono.Debugger.Soft.StructMirror"/>
+            </summary>
+            <param name="result"></param>
+        </member>
+        <member name="P:Mono.Debugger.Soft.IInvokeResult.Result">
+            <summary>
+            Return value of invoked method
+            </summary>
+        </member>
+        <member name="P:Mono.Debugger.Soft.IInvokeResult.OutThis">
+            <summary>
+            The value of the receiver after the call for calls to valuetype methods or null.
+            Only set when using the InvokeOptions.ReturnOutThis flag.
+            Since protocol version 2.35
+            </summary>
+        </member>
+        <member name="P:Mono.Debugger.Soft.IInvokeResult.OutArgs">
+            <summary>
+            The value of the arguments after the call
+            Only set when using the InvokeOptions.ReturnOutArgs flag.
+            Since protocol version 2.35
+            </summary>
+        </member>
+        <member name="T:Mono.Debugger.Soft.InvocationsAPI">
+            <summary>
+            A bunch of extension methods to <see cref="T:Mono.Debugger.Soft.IInvocableMethodOwnerMirror"/> to perform invocations on objects
+            </summary>
+        </member>
+        <member name="M:Mono.Debugger.Soft.InvocationsAPI.BeginInvokeMultiple(Mono.Debugger.Soft.IInvocableMethodOwnerMirror,Mono.Debugger.Soft.ThreadMirror,Mono.Debugger.Soft.MethodMirror[],System.Collections.Generic.IList{System.Collections.Generic.IList{Mono.Debugger.Soft.Value}},Mono.Debugger.Soft.InvokeOptions,System.AsyncCallback,System.Object)">
+            <summary>
+            Invoke the members of METHODS one-by-one, calling CALLBACK after each invoke was finished. The IAsyncResult will be marked as completed after all invokes have
+            finished. The callback will be called with a different IAsyncResult that represents one method invocation.
+            From protocol version 2.22.
+            </summary>
+        </member>
+    </members>
+</doc>

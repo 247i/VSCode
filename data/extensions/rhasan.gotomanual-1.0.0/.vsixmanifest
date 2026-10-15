@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+		<Metadata>
+			<Identity Language="en-US" Id="gotomanual" Version="1.0.0" Publisher="rhasan" />
+			<DisplayName>Goto Manual</DisplayName>
+			<Description xml:space="preserve">Goto manual with one click (opens in browser)</Description>
+			<Tags>manual,documentation,manual integration,reference search,manual search,function reference,google,google stackoverflow,google search,stackoverflow search,php,php manual,php documentation,css,css manual,css documentation,python,python manual,python documentation,Golang,Golang Manual,Golang Documentation,C++,C++ Manual,C++ Documentation,CPP,CPP Manual,CPP Documentation,Rust,Rust Manual,Rust Documentation,Perl,Perl Manual,Perl Documentation,R,R Manual,R Documentation,Swift,Swift Manual,Swift Documentation,Julia,Julia Manual,Julia Documentation,Matlab,Matlab Manual,Matlab Documentation,MySQL,MySQL Manual,MySQL Documentation,MariaDB,Mariadb Manual,Mariadb Documentation</Tags>
+			<Categories>Programming Languages,Other</Categories>
+			<GalleryFlags>Public</GalleryFlags>
+			
+			<Properties>
+				<Property Id="Microsoft.VisualStudio.Code.Engine" Value="^1.91.0" />
+				<Property Id="Microsoft.VisualStudio.Code.ExtensionDependencies" Value="" />
+				<Property Id="Microsoft.VisualStudio.Code.ExtensionPack" Value="" />
+				<Property Id="Microsoft.VisualStudio.Code.ExtensionKind" Value="workspace" />
+				<Property Id="Microsoft.VisualStudio.Code.LocalizedLanguages" Value="" />
+				<Property Id="Microsoft.VisualStudio.Code.EnabledApiProposals" Value="" />
+				
+				
+				<Property Id="Microsoft.VisualStudio.Services.Links.Source" Value="https://github.com/Rah1x/gotoManual.git" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Getstarted" Value="https://github.com/Rah1x/gotoManual.git" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.GitHub" Value="https://github.com/Rah1x/gotoManual.git" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Support" Value="https://github.com/Rah1x/gotoManual/issues" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Learn" Value="https://github.com/Rah1x/gotoManual" />
+				
+				
+				<Property Id="Microsoft.VisualStudio.Services.GitHubFlavoredMarkdown" Value="true" />
+				<Property Id="Microsoft.VisualStudio.Services.Content.Pricing" Value="Free"/>
+
+				
+				
+			</Properties>
+			
+			<Icon>extension/resources/icon_2.png</Icon>
+		</Metadata>
+		<Installation>
+			<InstallationTarget Id="Microsoft.VisualStudio.Code"/>
+		</Installation>
+		<Dependencies/>
+		<Assets>
+			<Asset Type="Microsoft.VisualStudio.Code.Manifest" Path="extension/package.json" Addressable="true" />
+			<Asset Type="Microsoft.VisualStudio.Services.Content.Details" Path="extension/README.md" Addressable="true" />
+<Asset Type="Microsoft.VisualStudio.Services.Content.Changelog" Path="extension/CHANGELOG.md" Addressable="true" />
+<Asset Type="Microsoft.VisualStudio.Services.Icons.Default" Path="extension/resources/icon_2.png" Addressable="true" />
+		</Assets>
+	</PackageManifest>

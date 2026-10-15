@@ -1,0 +1,26 @@
+{
+	"//": [
+		"Why this file exists: VS Code exposes no native 'a skill was invoked' signal, so we observe it indirectly. We register",
+		"a PostToolUse hook that the host runs after every tool call; the script records when any skill is activated — a 'skill'",
+		"tool call, or a read of any skill's SKILL.md (the observable proxy for 'a skill was activated'). There is no allowlist:",
+		"any skill counts. Tracking is scoped to C# Dev Kit purely by extension activation — the host only loads this plugin when",
+		"the 'csdevkit.dotnetSkillsEnabled' context is set, and that context is set exclusively during extension activation (see",
+		"the chatPlugins 'when' clause in package.json). The skill-survey service later reads those records to decide whether",
+		"to show the feedback survey. A plugin hook is the only way to register a PostToolUse callback in the host, which is why",
+		"the sibling '.plugin/plugin.json' manifest exists.",
+		"This is the Open Plugin host's auto-loaded hook-config location ('hooks/hooks.json'), so the hook loads without the",
+		"manifest needing to point at it. The 'bash'/'powershell' keys and the '${PLUGIN_ROOT}' token are the Open Plugin host's",
+		"cross-platform hook dialect; '${PLUGIN_ROOT}' is expanded only because '.plugin/plugin.json' selects the Open Plugin format.",
+		"Precedent: microsoft/GitHub-Copilot-for-Azure uses an identical PostToolUse + bash/powershell + ${PLUGIN_ROOT} hook",
+		"(plugin/hooks/copilot-hooks.json) to run its own telemetry-tracking script."
+	],
+	"hooks": {
+		"PostToolUse": [
+			{
+				"type": "command",
+				"bash": "plugin_root=$(printf '%s' \"${PLUGIN_ROOT}\" | tr '\\134' '/'); exec \"$plugin_root/scripts/track-skill-invocation.sh\"",
+				"powershell": "& (Join-Path $env:PLUGIN_ROOT 'scripts\\track-skill-invocation.ps1')"
+			}
+		]
+	}
+}

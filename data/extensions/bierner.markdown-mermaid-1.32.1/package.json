@@ -1,0 +1,173 @@
+{
+	"name": "markdown-mermaid",
+	"version": "1.32.1",
+	"displayName": "Markdown Preview Mermaid Support",
+	"description": "Adds Mermaid diagram and flowchart support to VS Code's builtin markdown preview",
+	"icon": "docs/logo.png",
+	"deprecated": true,
+	"keywords": [
+		"mermaid",
+		"markdown",
+		"flowchart",
+		"diagram",
+		"diagrams",
+		"chart",
+		"preview",
+		"mermaidjs"
+	],
+	"publisher": "bierner",
+	"license": "MIT",
+	"repository": {
+		"url": "https://github.com/mjbvz/vscode-markdown-mermaid.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mjbvz/vscode-markdown-mermaid/issues"
+	},
+	"engines": {
+		"vscode": "^1.100.0"
+	},
+	"activationEvents": [],
+	"main": "./dist/index.js",
+	"browser": "./dist/web/index.js",
+	"categories": [
+		"Other"
+	],
+	"contributes": {
+		"markdown.previewScripts": [
+			"./dist-preview/index.bundle.js"
+		],
+		"notebookRenderer": [
+			{
+				"id": "bierner.markdown-it.mermaid-extension",
+				"displayName": "Markdown-It Mermaid renderer",
+				"entrypoint": {
+					"extends": "vscode.markdown-it-renderer",
+					"path": "./dist-notebook/index.bundle.js"
+				}
+			}
+		],
+		"markdown.markdownItPlugins": true,
+		"configuration": {
+			"title": "Markdown Preview Mermaid Support",
+			"properties": {
+				"markdown-mermaid.lightModeTheme": {
+					"order": 0,
+					"type": "string",
+					"enum": [
+						"base",
+						"forest",
+						"dark",
+						"default",
+						"neutral"
+					],
+					"default": "default",
+					"description": "Default Mermaid theme for light mode."
+				},
+				"markdown-mermaid.darkModeTheme": {
+					"order": 1,
+					"type": "string",
+					"enum": [
+						"base",
+						"forest",
+						"dark",
+						"default",
+						"neutral"
+					],
+					"default": "dark",
+					"description": "Default Mermaid theme for dark mode."
+				},
+				"markdown-mermaid.languages": {
+					"order": 2,
+					"type": "array",
+					"default": [
+						"mermaid"
+					],
+					"description": "Default languages in markdown."
+				},
+				"markdown-mermaid.maxTextSize": {
+					"order": 3,
+					"type": "number",
+					"default": 50000,
+					"description": "The maximum allowed size of the users text diagram."
+				},
+				"markdown-mermaid.mouseNavigation.enabled": {
+					"type": "string",
+					"description": "Controls when mouse-based navigation (panning and zooming) is enabled on mermaid diagrams.",
+					"enum": [
+						"always",
+						"alt",
+						"never"
+					],
+					"default": "alt",
+					"markdownEnumDescriptions": [
+						"Always enable mouse navigation on mermaid diagrams",
+						"Only enable mouse navigation when holding down `alt` (`option` on mac). Gestures such as pinch-to-zoom will still work without `alt`.",
+						"Disable mouse navigation"
+					]
+				},
+				"markdown-mermaid.controls.show": {
+					"type": "string",
+					"description": "Enables/disables showing UI controls on mermaid diagrams.",
+					"enum": [
+						"never",
+						"onHoverOrFocus",
+						"always"
+					],
+					"enumDescriptions": [
+						"Never show controls",
+						"Show zoom controls when hovering over or focusing on a diagram",
+						"Always show zoom controls"
+					],
+					"default": "onHoverOrFocus"
+				},
+				"markdown-mermaid.resizable": {
+					"type": "boolean",
+					"default": true,
+					"description": "Allow diagrams to be resized vertically by dragging the bottom edge."
+				},
+				"markdown-mermaid.maxHeight": {
+					"type": "string",
+					"default": "",
+					"markdownDescription": "Maximum height for diagrams. Can be a number (pixels) or a CSS value like `80vh` or `400px`. Leave empty to try to automatically size diagrams based on their content."
+				}
+			}
+		}
+	},
+	"dependencies": {
+		"@iconify-json/logos": "^1.2.0",
+		"@iconify-json/mdi": "^1.2.0",
+		"@mermaid-js/mermaid-zenuml": "^0.2.0"
+	},
+	"devDependencies": {
+		"@mermaid-js/layout-elk": "^0.2.0",
+		"@mermaid-js/layout-tidy-tree": "^0.2.0",
+		"@stylistic/eslint-plugin-js": "^2.9.0",
+		"@types/markdown-it": "^14.1.0",
+		"@types/node": "^25.0.10",
+		"@types/vscode": "^1.72.0",
+		"@types/vscode-notebook-renderer": "^1.72.0",
+		"@typescript-eslint/eslint-plugin": "^8.54.0",
+		"@typescript-eslint/parser": "^8.54.0",
+		"@vscode/codicons": "^0.0.44",
+		"esbuild": "^0.25.0",
+		"eslint": "^9.39.0",
+		"mermaid": "^11.12.2",
+		"npm-run-all": "^4.1.5",
+		"typescript": "^5.9.3",
+		"typescript-eslint": "^8.54.0"
+	},
+	"scripts": {
+		"build-webview": "node ./build/esbuild-webview.ts",
+		"watch-webview": "node ./build/esbuild-webview.ts --watch",
+		"compile-ext": "node ./build/esbuild-extension.ts",
+		"watch-ext": "node ./build/esbuild-extension.ts --watch",
+		"package-ext": "node ./build/esbuild-extension.ts --production",
+		"vscode:prepublish": "npm-run-all package-ext build-webview",
+		"lint": "eslint src"
+	},
+	"__metadata": {
+		"installedTimestamp": 1779782658556,
+		"targetPlatform": "undefined",
+		"size": 35459729
+	}
+}

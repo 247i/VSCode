@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.LSP.Channel</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.LSP.Channel.JsonRpc.IJsonRpcHandlerRegistry.AddTarget(JetBrains.Lifetimes.Lifetime,JetBrains.LSP.Channel.JsonRpc.IJsonRpcHandlerMarker)">
+            <summary>
+            Registers all public methods declared on <paramref name="target"/> and marked with <see cref="T:StreamJsonRpc.JsonRpcMethodAttribute"/>.
+            </summary>
+        </member>
+        <member name="M:JetBrains.LSP.Channel.JsonRpc.JsonRpcHandlerRegistry.AddHandler(JetBrains.Lifetimes.Lifetime,System.String,System.Reflection.MethodInfo,System.Threading.Tasks.TaskScheduler,System.Object)">
+            <remarks>
+            StreamJsonRpc does not have overloads that support de-registration of earlier registered handlers.
+            To work around that we wrap given <paramref name="target"/> into an instances of <seealso cref="T:JetBrains.LSP.Channel.JsonRpc.JsonRpcHandlerRegistry.RebindableHandler" />.
+            When the same handler is being registered, we will simply replace <see cref="P:JetBrains.LSP.Channel.JsonRpc.JsonRpcHandlerRegistry.RebindableHandler.Target"/> with the new target.
+            </remarks>
+        </member>
+        <member name="T:JetBrains.LSP.Channel.JsonRpc.JsonRpcHandlerRegistry.RebindableHandler">
+            <summary>
+            This class wraps the original handler's method info and exposes its own delegate that passed down to the StreamJsonRpc's <see cref="!:IJsonRpcHandlerRegistry.AddHandler"/>.
+            It serves three purposes:
+            <para> - enables "disconnection" of a handler from StreamJsonRpc, since the latter does not have a "RemoveHandler" method;</para>
+            <para> - allows scheduling the handler's invocation off to a particular <see cref="T:System.Threading.Tasks.TaskScheduler"/>;</para>
+            <para> - enables binding to <see cref="P:JetBrains.LSP.Channel.JsonRpc.JsonRpcHandlerRegistry.RebindableHandler.Lifetime"/> instead of <see cref="T:System.Threading.CancellationToken"/> for a requests` cancellation.</para>
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:JetBrains.LSP.Channel.JsonRpc.JsonRpcHandlerRegistry.RebindableHandlerFactory" -->
+        <member name="M:JetBrains.LSP.Channel.JsonRpc.JsonRpcImpl.TraceToLoggerAdapter.UnwrapTransparent(System.Exception)">
+            <summary>
+            Skips exceptions that do not add useful information 
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:JetBrains.LSP.Channel.Serialization.Converters.EnumConverter`1.CamelCase" -->
+        <member name="T:JetBrains.LSP.Channel.Serialization.Converters.EnumConverter`1.CamelCase.WithFallback">
+            <summary>
+            Same as <see cref="T:JetBrains.LSP.Channel.Serialization.Converters.EnumConverter`1.CamelCase"/> but deserialized any unrecognized value
+            to 'Unknown' value of the given enum rather than throwing.
+            </summary>
+        </member>
+        <member name="T:JetBrains.LSP.Channel.Serialization.Converters.EnumConverter`1.Named">
+            <summary>
+            Uses values from <see cref="T:System.Text.Json.Serialization.JsonPropertyNameAttribute"/> for serialization of <see cref="!:TEnum"/>.
+            </summary>
+        </member>
+        <member name="T:JetBrains.LSP.Channel.Serialization.Converters.EnumConverter`1.Named.WithFallback">
+            <summary>
+            Same as <see cref="T:JetBrains.LSP.Channel.Serialization.Converters.EnumConverter`1.Named"/> but deserialized any unrecognized value
+            to 'Unknown' value of the given enum rather than throwing.
+            </summary>
+        </member>
+    </members>
+</doc>

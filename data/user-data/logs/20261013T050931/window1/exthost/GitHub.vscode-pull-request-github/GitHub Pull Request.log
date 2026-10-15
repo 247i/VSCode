@@ -1,0 +1,9 @@
+2026-10-13 05:09:38.214 [warning] C:\Users\inthirua\.ssh\config: ENOENT: no such file or directory, open 'C:\Users\inthirua\.ssh\config'
+2026-10-13 05:09:38.214 [info] [Activation] Extension version: 0.166.1
+2026-10-13 05:09:38.478 [info] [Authentication] Creating hub for .com
+2026-10-13 05:09:38.599 [info] [Activation] Registering built in git provider.
+2026-10-13 05:09:38.599 [info] [Activation] Looking for git repository
+2026-10-13 05:09:38.599 [info] [Activation] Found 0 repositories during activation
+2026-10-13 05:09:38.600 [info] [Activation] Git repository found, initializing review manager and pr tree view.
+2026-10-13 05:09:38.601 [info] [GitAPI] Registering git provider
+2026-10-13 05:09:38.962 [info] [GitPostCommitCommands] Trying to register post commit commands.

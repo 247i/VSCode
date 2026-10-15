@@ -1,0 +1,350 @@
+{
+	"name": "gotomanual",
+	"displayName": "Goto Manual",
+	"description": "Goto manual with one click (opens in browser)",
+	"version": "1.0.0",
+	"publisher": "rhasan",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Rah1x/gotoManual"
+	},
+	"engines": {
+		"vscode": "^1.91.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Other"
+	],
+	"author": {
+		"name": "Raheel Hasan",
+		"url": "https://github.com/Rah1x"
+	},
+	"icon": "resources/icon_2.png",
+	"homepage": "https://github.com/Rah1x/gotoManual",
+	"keywords": [
+		"manual",
+		"documentation",
+		"manual integration",
+		"reference search",
+		"manual search",
+		"function reference",
+		"google",
+		"google stackoverflow",
+		"google search",
+		"stackoverflow search",
+		"php",
+		"php manual",
+		"php documentation",
+		"css",
+		"css manual",
+		"css documentation",
+		"python",
+		"python manual",
+		"python documentation",
+		"Golang",
+		"Golang Manual",
+		"Golang Documentation",
+		"C++",
+		"C++ Manual",
+		"C++ Documentation",
+		"CPP",
+		"CPP Manual",
+		"CPP Documentation",
+		"Rust",
+		"Rust Manual",
+		"Rust Documentation",
+		"Perl",
+		"Perl Manual",
+		"Perl Documentation",
+		"R",
+		"R Manual",
+		"R Documentation",
+		"Swift",
+		"Swift Manual",
+		"Swift Documentation",
+		"Julia",
+		"Julia Manual",
+		"Julia Documentation",
+		"Matlab",
+		"Matlab Manual",
+		"Matlab Documentation",
+		"MySQL",
+		"MySQL Manual",
+		"MySQL Documentation",
+		"MariaDB",
+		"Mariadb Manual",
+		"Mariadb Documentation"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"configuration": {
+			"title": "Goto Manual Configs",
+			"properties": {
+				"gotomanual.url.Google": {
+					"type": "string",
+					"default": "https://www.google.com/search?q=%SELECTION%",
+					"description": "Google the selected text",
+					"scope": "application"
+				},
+				"gotomanual.url.GoogleStackOverFlow": {
+					"type": "string",
+					"default": "https://www.google.com/search?q=%SELECTION%+site%3Astackoverflow.com",
+					"description": "Google the selected text for stackoverflow",
+					"scope": "application"
+				},
+				"gotomanual.url.PHP": {
+					"type": "string",
+					"default": "https://www.php.net/manual/en/function.%SELECTION%.php",
+					"description": "PHP `Function` search via php.net",
+					"scope": "application"
+				},
+				"gotomanual.url.CSS": {
+					"type": "string",
+					"default": "https://developer.mozilla.org/en-US/docs/Web/CSS/%SELECTION%",
+					"description": "CSS reference search via developer.mozilla.org",
+					"scope": "application"
+				},
+				"gotomanual.url.Python": {
+					"type": "string",
+					"default": "https://docs.python.org/3/search.html?check_keywords=yes&area=default&q=%SELECTION%",
+					"description": "Python3 reference search via docs.python.org",
+					"scope": "application"
+				},
+				"gotomanual.url.Golang": {
+					"type": "string",
+					"default": "https://pkg.go.dev/search?limit=5&m=symbol&q=%SELECTION%",
+					"description": "Golang reference search via go.dev",
+					"scope": "application"
+				},
+				"gotomanual.url.CPP": {
+					"type": "string",
+					"default": "https://documentation.help/CppReference/%SELECTION%.html",
+					"description": "C++ reference search via documentation.help",
+					"scope": "application"
+				},
+				"gotomanual.url.Rust": {
+					"type": "string",
+					"default": "https://doc.rust-lang.org/std/index.html?search=%SELECTION%",
+					"description": "Rust reference search via doc.rust-lang.org",
+					"scope": "application"
+				},
+				"gotomanual.url.Perl": {
+					"type": "string",
+					"default": "https://perldoc.perl.org/functions/%SELECTION%",
+					"description": "Perl reference search via perldoc.perl.org",
+					"scope": "application"
+				},
+				"gotomanual.url.R": {
+					"type": "string",
+					"default": "https://www.rdocumentation.org/search?q=%SELECTION%",
+					"description": "R reference search via rdocumentation.org",
+					"scope": "application"
+				},
+				"gotomanual.url.Swift": {
+					"type": "string",
+					"default": "https://developer.apple.com/search/?type=Documentation&q=%SELECTION%",
+					"description": "Swift reference search via developer.apple.com",
+					"scope": "application"
+				},
+				"gotomanual.url.Julia": {
+					"type": "string",
+					"default": "https://docs.julialang.org/en/v1/search/?q=%SELECTION%",
+					"description": "Julia reference search via docs.julialang.org",
+					"scope": "application"
+				},
+				"gotomanual.url.Matlab": {
+					"type": "string",
+					"default": "https://www.mathworks.com/help/search.html?q=%SELECTION%",
+					"description": "Matlab reference search via mathworks.com",
+					"scope": "application"
+				},
+				"gotomanual.url.MySQL": {
+					"type": "string",
+					"default": "https://mariadb.com/kb/en/%SELECTION%/",
+					"description": "MySQL reference search via mariadb.com",
+					"scope": "application"
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "extension.gotoGoogle",
+				"title": "> goTo: 'Google Search",
+				"icon": "$(link-external)"
+			},
+			{
+				"command": "extension.gotoGoogleStackOverFlow",
+				"title": "> goTo: 'Stackoverflow Search (google)",
+				"icon": "$(link-external)"
+			},
+			{
+				"command": "extension.gotomanualPHP",
+				"title": "> goTo: PHP Function Manual",
+				"icon": "$(link-external)"
+			},
+			{
+				"command": "extension.gotomanualCSS",
+				"title": "> goTo: CSS Manual",
+				"icon": "$(link-external)"
+			},
+			{
+				"command": "extension.gotomanualPython",
+				"title": "> goTo: Python3 Manual",
+				"icon": "$(link-external)"
+			},
+			{
+				"command": "extension.gotomanualGolang",
+				"title": "> goTo: Golang Manual",
+				"icon": "$(link-external)"
+			},
+			{
+				"command": "extension.gotomanualCPP",
+				"title": "> goTo: C++ Manual",
+				"icon": "$(link-external)"
+			},
+			{
+				"command": "extension.gotomanualRust",
+				"title": "> goTo: Rust Manual",
+				"icon": "$(link-external)"
+			},
+			{
+				"command": "extension.gotomanualPerl",
+				"title": "> goTo: Perl Manual",
+				"icon": "$(link-external)"
+			},
+			{
+				"command": "extension.gotomanualR",
+				"title": "> goTo: R Manual",
+				"icon": "$(link-external)"
+			},
+			{
+				"command": "extension.gotomanualSwift",
+				"title": "> goTo: Swift Manual",
+				"icon": "$(link-external)"
+			},
+			{
+				"command": "extension.gotomanualJulia",
+				"title": "> goTo: Julia Manual",
+				"icon": "$(link-external)"
+			},
+			{
+				"command": "extension.gotomanualMatlab",
+				"title": "> goTo: Matlab Manual",
+				"icon": "$(link-external)"
+			},
+			{
+				"command": "extension.gotomanualMySQL",
+				"title": "> goTo: Mariadb Manual",
+				"icon": "$(link-external)"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorHasSelection",
+					"group": "navigation@1.1",
+					"command": "extension.gotoGoogle"
+				},
+				{
+					"when": "editorHasSelection",
+					"group": "navigation@1.1",
+					"command": "extension.gotoGoogleStackOverFlow"
+				},
+				{
+					"when": "editorHasSelection && editorLangId=~/php|blade/",
+					"group": "navigation@1.1",
+					"command": "extension.gotomanualPHP"
+				},
+				{
+					"when": "editorHasSelection && editorLangId=~/php|blade|less|css|html|scss|sass/",
+					"group": "navigation@1.1",
+					"command": "extension.gotomanualCSS"
+				},
+				{
+					"when": "editorHasSelection && editorLangId=~/py/",
+					"group": "navigation@1.1",
+					"command": "extension.gotomanualPython"
+				},
+				{
+					"when": "editorHasSelection && editorLangId==go",
+					"group": "navigation@1.1",
+					"command": "extension.gotomanualGolang"
+				},
+				{
+					"when": "editorHasSelection && editorLangId==cpp",
+					"group": "navigation@1.1",
+					"command": "extension.gotomanualCPP"
+				},
+				{
+					"when": "editorHasSelection && editorLangId==rust",
+					"group": "navigation@1.1",
+					"command": "extension.gotomanualRust"
+				},
+				{
+					"when": "editorHasSelection && editorLangId==perl",
+					"group": "navigation@1.1",
+					"command": "extension.gotomanualPerl"
+				},
+				{
+					"when": "editorHasSelection && editorLangId==r",
+					"group": "navigation@1.1",
+					"command": "extension.gotomanualR"
+				},
+				{
+					"when": "editorHasSelection && editorLangId==swift",
+					"group": "navigation@1.1",
+					"command": "extension.gotomanualSwift"
+				},
+				{
+					"when": "editorHasSelection && editorLangId==julia",
+					"group": "navigation@1.1",
+					"command": "extension.gotomanualJulia"
+				},
+				{
+					"when": "editorHasSelection && editorLangId==matlab",
+					"group": "navigation@1.1",
+					"command": "extension.gotomanualMatlab"
+				},
+				{
+					"when": "editorHasSelection && editorLangId==sql",
+					"group": "navigation@1.1",
+					"command": "extension.gotomanualMySQL"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint \"src/**/*.ts\"",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"typescript": "^5.5.3",
+		"@types/node": "^18.19.0",
+		"@types/vscode": "^1.91.0",
+		"glob": "^7",
+		"@types/glob": "^8",
+		"mocha": "^10.6.0",
+		"@types/mocha": "^10.0.7",
+		"eslint": "^8.57.0",
+		"@typescript-eslint/eslint-plugin": "^7.15.0",
+		"@vscode/test-electron": "^2.4.0"
+	},
+	"__metadata": {
+		"id": "f7cb4ee1-a682-4742-bc71-8d743ef5dbcb",
+		"publisherId": "241ec889-4f03-4ebd-8643-5250cd174235",
+		"publisherDisplayName": "Raheel Hasan",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1721325339380,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 1683332
+	}
+}

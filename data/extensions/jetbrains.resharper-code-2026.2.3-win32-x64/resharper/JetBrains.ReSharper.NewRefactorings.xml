@@ -1,0 +1,336 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.NewRefactorings</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.ReSharper.Refactorings.ChangeSignature.ChangeSignatureModel`1.GetParameterKindDescription(JetBrains.ReSharper.Psi.ParameterKind,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <returns>
+            Human-readable parameter kind description, like '[optional] in',
+            -or-
+            <c>null</c> if such a parameter modifier is not supported
+            -or-
+            <c>null</c> if <paramref name="nullIfNotSupported"/> is set to true and such a parameter modifier is
+            not supported in current language level.
+            </returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.ChangeSignature.ChangeSignatureModel`1.GetParameterModifierString(JetBrains.ReSharper.Psi.ParameterKind,System.Boolean,System.Boolean,System.Boolean)">
+            <returns>Language-specific modifier string for parameter declaration</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.ChangeSignature.ClrChangeSignatureModel.BuildParameterName(JetBrains.ReSharper.Refactorings.ChangeSignature.ClrChangeSignatureParameter,JetBrains.ReSharper.Psi.IParametersOwner,System.Boolean@)">
+            <remarks>
+            Parameter name may match conflicting elements one if shadowing is allowed.
+            </remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.ChangeSignature.Impl.ChangeSignatureConflictSearcher">
+            <summary>
+            Searches conflicts when changing signature
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.ChangeSignature.Impl.ChangeSignatureConflictSearcher.#ctor(JetBrains.ReSharper.Refactorings.ChangeSignature.ClrChangeSignatureModel)">
+            <summary>
+            Searches conflicts when changing signature
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.ChangeSignature.SignatureUsageUpdater.ISignatureUsage.ConvertToSimplerUsageIfNeeded(System.Boolean)">
+            <summary>
+            Converts signature usage into simpler form (keeping current binding),
+            allowing to <see cref="M:JetBrains.ReSharper.Refactorings.ChangeSignature.SignatureUsageUpdater.ISignatureUsage.TryUpdateSignatureUsage(JetBrains.ReSharper.Refactorings.ChangeSignature.RebindableReference,System.Collections.Generic.List{JetBrains.ReSharper.Refactorings.ChangeSignature.Impl.ArgumentLikeInfo})"/> later on it.
+            MAY invalidate other usages' nodes/references if they are located close to this one.
+            </summary>
+            <remarks>
+            If there is no implemented conversion to simpler code,
+            turns current code into red (typically via <see cref="T:JetBrains.ReSharper.Refactorings.ChangeSignature.ParameterValues.NonCompilableParameterValue"/>).
+            </remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.ChangeSignature.SignatureUsageUpdater.ISignatureUsage.TryUpdateSignatureUsage(JetBrains.ReSharper.Refactorings.ChangeSignature.RebindableReference,System.Collections.Generic.List{JetBrains.ReSharper.Refactorings.ChangeSignature.Impl.ArgumentLikeInfo})">
+            <remarks>
+            Unlike <see cref="M:JetBrains.ReSharper.Refactorings.ChangeSignature.SignatureUsageUpdater.ISignatureUsage.ConvertToSimplerUsageIfNeeded(System.Boolean)"/> does NOT change type of node behind the reference.
+            </remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.Conflicts.CompositeConflictSearcher">
+            <summary>
+            Composites multiple conflict searchers
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.Conflicts.NewLocalElementConflictSearcher">
+            <summary>
+            Searches conflicts caused by adding a new local declaration
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.Conflicts.TypeMemberQualifier">
+            <summary>
+            Remembers all references to type members in a scope and resurrects the broken ones by qualifying them
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Refactorings.Rename.IDerivedRenamesEvaluator.SuggestedElementsHaveDerivedName">
+            <summary>
+            This options controls if new name of related symbol should be derived from the name of the initial symbol.
+            When it is 'false' the same name will be applied all related symbols of the evaluator.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.Rename.IDerivedRenamesEvaluator.CreateFromElement(System.Collections.Generic.IEnumerable{JetBrains.ReSharper.Psi.IDeclaredElement},JetBrains.ReSharper.Refactorings.Rename.DerivedElement,JetBrains.Application.Progress.IProgressIndicator)">
+            <summary>
+            This method is called for
+              - each <see cref="T:JetBrains.ReSharper.Psi.IDeclaredElement"/> from <see cref="!:initialElements"/>
+              - each <see cref="T:JetBrains.ReSharper.Psi.IDeclaredElement"/> that is added by a call to <see cref="M:JetBrains.ReSharper.Refactorings.Rename.IDerivedRenamesEvaluator.CreateFromElement(System.Collections.Generic.IEnumerable{JetBrains.ReSharper.Psi.IDeclaredElement},JetBrains.ReSharper.Refactorings.Rename.DerivedElement,JetBrains.Application.Progress.IProgressIndicator)"/> or <see cref="M:JetBrains.ReSharper.Refactorings.Rename.IDerivedRenamesEvaluator.CreateFromReference(JetBrains.ReSharper.Psi.Resolve.IReference,JetBrains.ReSharper.Psi.IDeclaredElement,JetBrains.Application.Progress.IProgressIndicator)"/>
+            </summary>
+            <param name="initialElements">Declared elements that are initially detected (i.e. by caret position) when rename refactoring is called</param>
+            <param name="derivedElement">Wrapped <see cref="T:JetBrains.ReSharper.Psi.IDeclaredElement"/> from <see cref="!:initialElements"/> or added later</param>
+            <param name="pi">Progress indicator</param>
+            <returns>Additional declared elements to rename</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.Rename.IDerivedRenamesEvaluator.CreateFromReference(JetBrains.ReSharper.Psi.Resolve.IReference,JetBrains.ReSharper.Psi.IDeclaredElement,JetBrains.Application.Progress.IProgressIndicator)">
+            <summary>
+            This method call always follows the <see cref="M:JetBrains.ReSharper.Refactorings.Rename.IDerivedRenamesEvaluator.CreateFromElement(System.Collections.Generic.IEnumerable{JetBrains.ReSharper.Psi.IDeclaredElement},JetBrains.ReSharper.Refactorings.Rename.DerivedElement,JetBrains.Application.Progress.IProgressIndicator)"/> call with the <see cref="!:declaredElement"/> corresponding to the derivedElement
+            </summary>
+            <param name="reference">Reference to <see cref="!:declaredElement"/></param>
+            <param name="declaredElement">Declared element corresponding to the derived element for preceding call to <see cref="M:JetBrains.ReSharper.Refactorings.Rename.IDerivedRenamesEvaluator.CreateFromElement(System.Collections.Generic.IEnumerable{JetBrains.ReSharper.Psi.IDeclaredElement},JetBrains.ReSharper.Refactorings.Rename.DerivedElement,JetBrains.Application.Progress.IProgressIndicator)"/></param>
+            <param name="pi">Progress indicator</param>
+            <returns>Additional declared elements to rename</returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.Rename.ParameterInOverloadRenameEvaluator">
+            <summary>
+            Corresponding parameter of overload.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Refactorings.Rename.RenameDataModel.RenameType">
+            <summary>Rename corresponding type when file is being renamed</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.ILanguageSpecificRefactoringService">
+            <summary>
+            Tag interface for all language-specific refactroing services
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Refactorings.InlineParameter.Impl.SubExpressionSearcher.myQualifier">
+            <summary>
+            Qualifier of invoced expression
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Refactorings.InlineParameter.Impl.SubExpressionSearcher.myHasThisQualifier">
+            <summary>
+            Qualifier of invoced expression is this (or omitted)
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.IntroduceVariable.IntroduceVariableHelper.AdditionalInitialization(JetBrains.ReSharper.Refactorings.IntroduceVariable.IntroduceVariableWorkflow,JetBrains.ReSharper.Psi.Tree.ITreeNode,JetBrains.Application.DataContext.IDataContext)">
+            <summary>
+            should return false if refactoring should be terminated
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Refactorings.MoveMembers.Analysis.IMoveAnalyser.BaseClass2MemberInfosMap">
+            <summary>
+            Table of methods that should be declared abstract in the base classes.
+            This is only actual for Pull Up refactoring.  
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.MoveMembers.Common.IImageCollector.GetMemberImages(JetBrains.ReSharper.Psi.IDeclaredElement,JetBrains.ReSharper.Psi.ITypeElement)">
+            <summary>
+            Return all images of a given type member.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.MoveMembers.Common.MovedMemberInfo">
+            <summary>
+              Stores declared element even when it was removed.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Refactorings.MoveMembers.Util.MemberListDataProvider.mySelectedMembers">
+            <summary>
+            Selected members, eg 1,4,6
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Refactorings.MoveMembers.Util.MemberListDataProvider.myAbstract">
+            <summary>
+            Members selected abstract, eg 1,6
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Refactorings.MoveStaticMembers.Impl.StaticMemberInfo.OldDecalredElements">
+            Provides <see cref="P:JetBrains.ReSharper.Refactorings.MoveStaticMembers.Impl.StaticMemberInfo.OldDeclaredElement"/> along with its secondary elements.
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.MoveStaticMembers.MoveStaticMembersRefactoring.TryRemoveQualification(JetBrains.ReSharper.Psi.Resolve.IReference)">
+            <remarks>Trying to not introduce new namespace using for non-user code</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.MoveTypeToOuterScope.IMoveTypeToOuterScope.NeedsTypeParameterOfOuterClass(JetBrains.ReSharper.Psi.ITypeParameter,JetBrains.ReSharper.Psi.Tree.IDeclaration)">
+            <summary>
+            STEP 2: Calculate new CLR name of a type, including its type parameters<br/>
+             phase a: is given parameter of outer class needed in a body of new class?
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.MoveTypeToOuterScope.IMoveTypeToOuterScope.SaveLocalReferences(System.Collections.Generic.ICollection{JetBrains.ReSharper.Psi.Tree.IDeclaration})">
+            <summary>
+            STEP 4: Prepare to move; save information about references inside your declarations
+            </summary>
+            <param name="declarations"></param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.MoveTypeToOuterScope.IMoveTypeToOuterScope.CutDeclaration(JetBrains.ReSharper.Psi.Tree.IDeclaration)">
+            <summary>
+            STEP 5a: Prepare to changing declarations
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.MoveTypeToOuterScope.IMoveTypeToOuterScope.PasteDeclarations(JetBrains.Util.Pair{JetBrains.ReSharper.Psi.Tree.IDeclaration,JetBrains.ReSharper.Psi.Tree.IDeclaration})">
+            <summary>
+            STEP 5b: Change declarations; resulting class should have correct CLR name as given by SetNewCLRName
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.MoveTypeToOuterScope.IMoveTypeToOuterScope.RestoreLocalReferences(System.Collections.Generic.ICollection{JetBrains.ReSharper.Psi.Tree.IDeclaration})">
+            <summary>
+            STEP 6: Restore references inside new declarations
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Refactorings.Move.AdjustNamespaces.Impl.ClassPartsCollector.myFqnToElements">
+            <summary>
+            Element names collisions...
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Refactorings.Move.AdjustNamespaces.Impl.ClassPartsCollector.myDeclaredElementsToNamespaces">
+            <summary>
+            List of type parts with new namespaces...
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Refactorings.Move.AdjustNamespaces.Impl.ClassPartsCollector.myOutOfScopeParts">
+            <summary>
+            Elements having parts out of refactoring scope...
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Refactorings.Move.AdjustNamespaces.Impl.ClassPartsCollector.ImportedSymbols">
+            <summary>
+            Imported symbols of files are collected and then are explicitly inserted into new files.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Refactorings.Move.AdjustNamespaces.Impl.ClassPartsCollector.TopmostElements">
+            <summary>
+            Elements that can be used externally without qualifier...
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Refactorings.Move.MoveToFolder.Impl.MoveToFolderHierarchyItem.CreatedProjectFile">
+            <summary>
+            Create project file for this item...
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Refactorings.PushPullTool.FixFactory.Priority">
+            <summary>
+            The smaller the number, the higher fix's position in UI
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.RenameProject.RenameProjectSupport">
+            <summary>
+            IDE - specific part of the refactoring
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.SafeDeleteProjects.IProjectToDelete">
+            <summary>
+              IDE - specific project entity. In Rider ProjectMark prefer to use
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Refactorings.SafeDeleteProjects.IProjectToDelete.Children">
+            <summary>
+              For solution folder returns projects and solution folders inside.
+              For regular projects return empty list.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.SafeDeleteProjects.IProjectToDelete.GetLocationsToDelete">
+            <summary>
+              Project directories that will be deleted
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.SafeDeleteProjects.SafeDeleteProjectDataModel.GetAllProjectsToDelete">
+            <summary>
+              If selected solution folder returns it and all children
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.SafeDeleteProjects.SafeDeleteProjectsHelper">
+            <summary>
+              IDE - specific part of the refactoring
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.SafeDeleteProjects.SafeDeleteProjectsHelper.GetLocationsToDeleteWithDisableUndo(JetBrains.ProjectModel.ISolution,JetBrains.ReSharper.Refactorings.SafeDeleteProjects.IProjectToDelete)">
+            <summary>
+              Gets bin and obj directories if they are inside project directory.
+              It's better to generate them again if user undo refactoring
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.TransformParameters.SignatureGenerifier.BuildSubstitution(JetBrains.ReSharper.Psi.IType,JetBrains.ReSharper.Psi.IType)">
+            <summary>
+            Example:
+            mostGenericType = List{T[], T1}
+            specializedType = List{string[], U}
+            result is T -> string, T1 -> U. 
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.TransformParameters.TransformParametersDataModel.FindOverrides(JetBrains.Application.Progress.IProgressIndicator)">
+            <returns>
+            <c>false</c> if failed to process overrides and fallen back to single declaration refactoring - this is a conflict
+            </returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.TransformParameters.TransformParametersExecBase.PreProcessCall(JetBrains.ReSharper.Psi.Resolve.IReference,JetBrains.ReSharper.Psi.Resolve.ISubstitution)">
+            <summary>
+            Prepare reference for further processing.
+            This method can change call syntax, but must keep it resolvable to the same element.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.TransformParameters.TransformParametersExecBase.FixUsage(JetBrains.ReSharper.Refactorings.TransformParameters.PreProcessedCall,System.Collections.Generic.List{JetBrains.ReSharper.Refactorings.ChangeSignature.Impl.ArgumentLikeInfo})">
+            <summary>
+            Update a call according to the performed transformation of the parameters owner
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.TransformParameters.TransformParametersParameterModel.#ctor(JetBrains.ReSharper.Refactorings.TransformParameters.ITransformParameterInfo,JetBrains.ReSharper.Psi.IParameter,System.Int32)">
+            <param name="originalParameter">Is <c>null</c> for original return values</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.TransformParameters.TransformParametersService.TryWrapIntoTupleExpressionOrFactory``1(System.Collections.Generic.List{``0},JetBrains.ReSharper.Psi.Tree.ITreeNode,System.Boolean)">
+            <returns>
+            A tuple creation expression (either tuple syntax or factory method call), if multiple expressions passed via <paramref name="expressions"/>,
+            or just single expression copy otherwise.
+            </returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.Util.NewTypeImages.ResolveImagesRepository.Substitute(JetBrains.ReSharper.Psi.IType)">
+            <summary>
+            Use on your own risk. Source image should be valid! And type identity should be provided.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.WorkflowNew.BeRefactoringsTaskExecutor">
+            <summary>
+            Facilitates implementation of UI-based ITaskExecutors
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.WorkflowNew.WorkflowHostWithBeWizardForm">
+            <summary>
+            Runs refactoring on the refactoring wizard form...
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.Workflow.RefactoringAction">
+            <summary>
+            Implements the standard action that spawns a refactoring.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Refactorings.Workflow.RefactoringAction.myAfterRefactoringExecuted">
+            <summary>
+            Executes after the refactoring completes successfully.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.Workflow.RefactoringAction.#ctor(System.Func{JetBrains.ProjectModel.ISolution,JetBrains.ReSharper.Feature.Services.Refactorings.IRefactoringWorkflow})">
+            <summary>
+            Inits with a functor that produces the refactoring workflow.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Refactorings.Workflow.RefactoringAction.AfterRefactoringExecuted">
+            <summary>
+            If non-Null, executes after the refactoring completes successfully.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.Workflow.RefactoringAction.Execute(JetBrains.Application.DataContext.IDataContext,JetBrains.Application.UI.Actions.DelegateExecute)">
+            <summary>
+            Executes action. Called after Update, that set ActionPresentation.Enabled to true.
+            </summary>
+            <param name="context">DataContext</param>
+            <param name="nextExecute">delegate to call</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.Workflow.RefactoringAction.Update(JetBrains.Application.DataContext.IDataContext,JetBrains.Application.UI.Actions.ActionPresentation,JetBrains.Application.UI.Actions.DelegateUpdate)">
+            <summary>
+            Updates action visual presentation. If presentation.Enabled is set to false, Execute
+            will not be called.
+            </summary>
+            <param name="context">DataContext</param>
+            <param name="presentation">presentation to update</param>
+            <param name="nextUpdate">delegate to call</param>
+        </member>
+    </members>
+</doc>

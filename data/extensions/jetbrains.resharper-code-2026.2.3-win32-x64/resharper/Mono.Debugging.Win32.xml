@@ -1,0 +1,489 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mono.Debugging.Win32</name>
+    </assembly>
+    <members>
+        <member name="M:Mono.Debugging.Win32.ArrayAdaptor.#ctor(Mono.Debugging.Client.CallStacks.IStackFrame,Mono.Debugging.Client.Values.Render.IValueFetchOptions,Mono.Debugging.Win32.CorDebuggerSession,JetBrains.Debugger.CorApi.ComInterop.ICorDebugEval,Mono.Debugging.Win32.ICorValue)">
+            <param name="stackFrame"></param>
+            <param name="options"></param>
+            <param name="session"></param>
+            <param name="eval"></param>
+            <param name="adapter"></param>
+            <param name="arrayObject">Do not pass direct handle to <see cref="T:JetBrains.Debugger.CorApi.ComInterop.ICorDebugArrayValue"/> because it may be invalidated after func-eval. 
+              Pass initial reference instead, adapter will automatically extract array value</param>
+        </member>
+        <member name="M:Mono.Debugging.Win32.AsyncUtils.GetAwaitILOffset(System.Int32,JetBrains.Metadata.Reader.Impl.CustomDebugInformation.AsyncMethodSteppingInformationData,JetBrains.Debugger.CorApi.ComInterop.ICorDebugCode)">
+            <summary>
+            Find IL offset of `await` instruction in `IAsyncStateMachine.MoveNext` method corresponding particular 
+            state of state machine 
+            </summary>
+            <param name="state">current state</param>
+            <param name="steppingInfo">stepping info for method</param>
+            <param name="code">IL code of method</param>
+            <returns></returns>
+        </member>
+        <member name="T:Mono.Debugging.Win32.CallStacks.Presenting.IMethodPresenter">
+            <summary>
+            Produces one segment of a stack-frame presentation chain.
+            A presenter can print the current semantic element differently depending on
+            whether it appears alone or together with enclosing elements, and can expose
+            the next presenter that should continue the chain.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.CallStacks.Presenting.Managed.MethodPresentationMode">
+            <summary>
+            Coarse preset used to configure all method presenters.
+            </summary>
+        </member>
+        <member name="F:Mono.Debugging.Win32.CallStacks.Presenting.Managed.MethodPresentationMode.Raw">
+            <summary>
+            Configures presenters to render raw metadata methods whenever they recognize
+            a compiler-generated semantic pattern.
+            </summary>
+        </member>
+        <member name="F:Mono.Debugging.Win32.CallStacks.Presenting.Managed.MethodPresentationMode.Enhanced">
+            <summary>
+            Configures presenters to use their enhanced source-oriented behavior by default.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.CallStacks.Presenting.Managed.Presenters.AsyncKickOffPresenter">
+            <summary>
+            Decorates an async or async-iterator kickoff method presentation with the
+            <c>async</c> modifier while delegating the rest of the formatting to the
+            regular method presenter.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CallStacks.Presenting.Managed.Presenters.AsyncKickOffPresenter.#ctor(Mono.Debugging.Win32.CallStacks.Presenting.Managed.MethodPresentingContext)">
+            <summary>
+            Decorates an async or async-iterator kickoff method presentation with the
+            <c>async</c> modifier while delegating the rest of the formatting to the
+            regular method presenter.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.CallStacks.Presenting.Managed.Presenters.AsyncLambdaPresenter">
+            <summary>
+            Async-aware variant of <see cref="T:Mono.Debugging.Win32.CallStacks.Presenting.Managed.Presenters.LambdaPresenter"/> used when semantic
+            presentation should surface a lambda that also serves as an async kickoff
+            method.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CallStacks.Presenting.Managed.Presenters.AsyncLambdaPresenter.#ctor(Mono.Debugging.Win32.CallStacks.Presenting.Managed.MethodPresentingContext,Mono.Debugging.Win32.MethodSemantics.Traits.Lambda,Mono.Debugging.Win32.CallStacks.Presenting.CorMethodPresenterFactory)">
+            <summary>
+            Async-aware variant of <see cref="T:Mono.Debugging.Win32.CallStacks.Presenting.Managed.Presenters.LambdaPresenter"/> used when semantic
+            presentation should surface a lambda that also serves as an async kickoff
+            method.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.CallStacks.Presenting.Managed.Presenters.AsyncLocalFunctionPresenter">
+            <summary>
+            Async-aware variant of <see cref="T:Mono.Debugging.Win32.CallStacks.Presenting.Managed.Presenters.LocalFunctionPresenter"/> that adds the
+            <c>async</c> modifier while preserving the semantic local-function name.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CallStacks.Presenting.Managed.Presenters.AsyncLocalFunctionPresenter.#ctor(Mono.Debugging.Win32.CallStacks.Presenting.Managed.MethodPresentingContext,Mono.Debugging.Win32.MethodSemantics.Traits.LocalFunction,Mono.Debugging.Win32.CallStacks.Presenting.CorMethodPresenterFactory)">
+            <summary>
+            Async-aware variant of <see cref="T:Mono.Debugging.Win32.CallStacks.Presenting.Managed.Presenters.LocalFunctionPresenter"/> that adds the
+            <c>async</c> modifier while preserving the semantic local-function name.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.CallStacks.Presenting.Managed.Presenters.BasicMethodPresenter">
+            <summary>
+            Leaf presenter for ordinary methods. It renders the resolved signature as-is
+            and terminates the presentation chain.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CallStacks.Presenting.Managed.Presenters.BasicMethodPresenter.#ctor(Mono.Debugging.Win32.CallStacks.Presenting.Managed.MethodPresentingContext,Mono.Debugging.Win32.CallStacks.Presenting.Managed.MethodPresentationMode)">
+            <summary>
+            Leaf presenter for ordinary methods. It renders the resolved signature as-is
+            and terminates the presentation chain.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.CallStacks.Presenting.Managed.Presenters.ConstructorPresenter">
+            <summary>
+            Presents instance and static constructors using debugger-friendly
+            <c>new</c> or <c>static</c> modifiers instead of raw CLR method names such
+            as <c>.ctor</c> and <c>.cctor</c>.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CallStacks.Presenting.Managed.Presenters.ConstructorPresenter.#ctor(Mono.Debugging.Win32.CallStacks.Presenting.Managed.MethodPresentingContext)">
+            <summary>
+            Presents instance and static constructors using debugger-friendly
+            <c>new</c> or <c>static</c> modifiers instead of raw CLR method names such
+            as <c>.ctor</c> and <c>.cctor</c>.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.CallStacks.Presenting.Managed.Presenters.DelegatingPresenter">
+            <summary>
+            Convenience base class for presenters that wrap another presenter and only
+            add small semantic adjustments such as extra modifiers.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CallStacks.Presenting.Managed.Presenters.DelegatingPresenter.#ctor(Mono.Debugging.Win32.CallStacks.Presenting.Managed.MethodPresentingContext,Mono.Debugging.Win32.CallStacks.Presenting.IMethodPresenter)">
+            <summary>
+            Convenience base class for presenters that wrap another presenter and only
+            add small semantic adjustments such as extra modifiers.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.CallStacks.Presenting.Managed.Presenters.LambdaPresenter">
+            <summary>
+            Rewrites compiler-generated lambda methods into readable lambda labels and,
+            when possible, continues the presentation chain with the owning method.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CallStacks.Presenting.Managed.Presenters.LambdaPresenter.#ctor(Mono.Debugging.Win32.CallStacks.Presenting.Managed.MethodPresentingContext,Mono.Debugging.Win32.MethodSemantics.Traits.Lambda,Mono.Debugging.Win32.CallStacks.Presenting.CorMethodPresenterFactory)">
+            <summary>
+            Rewrites compiler-generated lambda methods into readable lambda labels and,
+            when possible, continues the presentation chain with the owning method.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.CallStacks.Presenting.Managed.Presenters.LocalFunctionPresenter">
+            <summary>
+            Presents compiler-generated local-function methods using the source local
+            function name and resolves generic arguments back to the owning method when
+            the chain continues outward.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CallStacks.Presenting.Managed.Presenters.LocalFunctionPresenter.#ctor(Mono.Debugging.Win32.CallStacks.Presenting.Managed.MethodPresentingContext,Mono.Debugging.Win32.MethodSemantics.Traits.LocalFunction,Mono.Debugging.Win32.CallStacks.Presenting.CorMethodPresenterFactory)">
+            <summary>
+            Presents compiler-generated local-function methods using the source local
+            function name and resolves generic arguments back to the owning method when
+            the chain continues outward.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.CallStacks.Presenting.Managed.Presenters.MoveNextPresenter">
+            <summary>
+            Rewrites compiler-generated state-machine <c>MoveNext</c> frames to the
+            source kickoff method and appends async completion markers when the runtime
+            state machine has already finished.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.CallStacks.Presenting.Managed.TypeResolvers.ForKickOffTypeResolver">
+            <summary>
+            Adapter that resolves generic parameters for a kickOff method, when the actual stack frame points to the MoveNext method.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CallStacks.Presenting.Managed.TypeResolvers.ForKickOffTypeResolver.#ctor(JetBrains.Metadata.Reader.API.IMetadataMethod,JetBrains.Metadata.Reader.API.IMetadataMethod,Mono.Debugging.Win32.CallStacks.Presenting.Managed.TypeResolvers.ITypeResolver)">
+            <summary>
+            Adapter that resolves generic parameters for a kickOff method, when the actual stack frame points to the MoveNext method.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.CallStacks.Presenting.Managed.TypeResolvers.ForOwnerTypeResolver">
+            <summary>
+            Adapter that resolves generic parameters for the owner method, when the actual stack frame points to the Local Function / Lambda.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CallStacks.Presenting.Managed.TypeResolvers.ForOwnerTypeResolver.#ctor(JetBrains.Metadata.Reader.API.IMetadataMethod,JetBrains.Metadata.Reader.API.IMetadataMethod,Mono.Debugging.Win32.CallStacks.Presenting.Managed.TypeResolvers.ITypeResolver)">
+            <summary>
+            Adapter that resolves generic parameters for the owner method, when the actual stack frame points to the Local Function / Lambda.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.CallStacks.Presenting.Managed.TypeResolvers.FromAsyncStateMachineTypeResolver">
+            <summary>
+            Resolves generic arguments from the type of async state-machine.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.CallStacks.Presenting.Managed.TypeResolvers.FromFrameTypeResolver">
+            <summary>
+            Resolves type parameters directly from the physical CLR frame.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CallStacks.Presenting.Managed.TypeResolvers.FromFrameTypeResolver.#ctor(Mono.Debugging.Backend.CallStacks.IStackFrame{Mono.Debugging.Win32.Frames.ICorFrame})">
+            <summary>
+            Resolves type parameters directly from the physical CLR frame.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.CallStacks.Presenting.Managed.TypeResolvers.ITypeResolver">
+            <summary>
+            Given an open generic type, resolves a closed generic type.
+            </summary>
+        </member>
+        <member name="F:Mono.Debugging.Win32.CorDebuggerSession.DebuggerRegisteredAndProcessIdAvailable">
+            <summary>
+            Raised when debugger has registered itself for debugging and process id is available:
+            When attach Process Id available right away for .NET(including .NET Core) and .NET Framework
+            When running under debugger on .NetFramework the process id is available once the process is created and its main thread is created (no user's (.NET and native) code hasn't been yet executed)
+                                           .NET(including .NET Core) the process id is available once the runtime is loaded into the process
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CorDebuggerSession.SetICorDebug(JetBrains.Debugger.CorApi.ComInterop.ICorDebug)">
+            <summary>
+            Assigns the newly-created <see cref="T:JetBrains.Debugger.CorApi.ComInterop.ICorDebug" />, without even Initialize called.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CorDebuggerSession.EvalEventsUnadvise.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Mono.Debugging.Win32.CorDebuggerSessionEx.CopyStructFromMemory(Mono.Debugging.Win32.CorDebuggerSession,System.Int64,Mono.Debugging.Client.CallStacks.IStackFrame,Mono.Debugging.MetadataLite.API.IMetadataTypeLite,Mono.Debugging.Client.Values.Render.IValueFetchOptions)">
+            <inheritdoc cref="M:Mono.Debugging.Win32.CorDebuggerSessionEx.&lt;G&gt;$69CD1D40B9105EC6BF00A3D5571E8E62.CopyStructFromMemory(System.Int64,Mono.Debugging.Client.CallStacks.IStackFrame,Mono.Debugging.MetadataLite.API.IMetadataTypeLite,Mono.Debugging.Client.Values.Render.IValueFetchOptions)"/>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CorDebuggerSessionEx.&lt;G&gt;$69CD1D40B9105EC6BF00A3D5571E8E62.CopyStructFromMemory(System.Int64,Mono.Debugging.Client.CallStacks.IStackFrame,Mono.Debugging.MetadataLite.API.IMetadataTypeLite,Mono.Debugging.Client.Values.Render.IValueFetchOptions)">
+            Similar code exists in CorInterpreterContext::CopyValueFromMemory(long address, IMetadataType substitutedType)
+        </member>
+        <member name="P:Mono.Debugging.Win32.CoreClrDebuggerStartInfo.IsExecuteAsIs">
+            <inheritdoc />
+        </member>
+        <member name="P:Mono.Debugging.Win32.CoreClrDebuggerStartInfo.CoreRunExecutable">
+            <summary>
+              The executable file which should be started as a new process to run a NetCore DLL.
+              Would be an attach-only session if this path is not known.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CorFunctionDeOptimizer.ICorFunctionDeOptimizer.DeOptimizeIfNeededSafe(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunction,Mono.Debugging.Win32.CorAppDomainsInfo.CorModuleInfo)">
+            <summary>
+            Says JIT to recompiled(if the function is already compiled)/compile(if it's not) with disabled optimisations on the next function call
+            </summary>
+            <remarks>
+            If we stay in a function the function won't recompiled right after this method is called, it will be recompiled on the next the function call
+            </remarks>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CorMetadataUtil.UnwrapType(JetBrains.Debugger.CorApi.ComInterop.ICorDebugType)">
+            <summary>
+            Unwrap real type in the case when the type is REF or PTR
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CorMetadataUtil.CorTypeTransformer.IsCorLibAssembly(JetBrains.Util.FileSystemPath)">
+            <summary>
+            Don't just use <see cref="!:CorLibUtils.IsCorLibAssembly(FileSystemPath)"/>, because we must find a CorLib
+            that is not a facade assembly.
+            </summary>
+            <param name="pathToAssembly"></param>
+            <returns>True, if assembly is a CorLib assembly and it is not a facade assembly</returns>
+        </member>
+        <member name="T:Mono.Debugging.Win32.CorCall">
+            <summary>
+            Use for any calls to ICorDebug
+            Manages of evaluation start, abort, handles cross thread dependency notifications
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CorCall.RuntimeInvoke">
+            <summary>
+            Make any runtime call using <see cref="T:Microsoft.JScript.Eval"/>
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CorMethodCalls.InterpretUtils.GetSubstitutionFromType(JetBrains.Metadata.Reader.API.IMetadataType,JetBrains.Metadata.Reader.API.IMetadataClassType)">
+            <summary>
+             finds generic substitutions if <paramref name="ownerTypeByMetadata"/> owner contains generic parameters
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.CorStepper.GetTempStepper(Mono.Debugging.Win32.Threads.ICorThread)">
+            <summary>
+            Get a stepper for thread with JustMyCode = false as a default
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.DebuggerStartInfoUtil.PrepareWorkingDirectory(Mono.Debugging.Client.DebuggerStartInfo)">
+            <summary>
+            Explicit, if set;
+            from executable command, if possible;
+            TEMP otherwise.
+            Never NULL/empty.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.DebugTime.CorDebugStoppageIntervalsProvider">
+            <summary>
+            Provides intervals when target process is stopped and debugger does it's processing
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.DebugTime.CorDebugStoppageIntervalsProvider.#ctor(Mono.Debugging.Win32.Threads.CorThreadsManager)">
+            <summary>
+            Provides intervals when target process is stopped and debugger does it's processing
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.DebugTime.EvaluationIntervalsProvider">
+            <summary>
+            Provides intervals of evaluation
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.DebugTime.EvaluationIntervalsProvider.#ctor(Mono.Debugging.Win32.CorDebuggerSession)">
+            <summary>
+            Provides intervals of evaluation
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.DFA.ReferencedAssembliesCollectors.AssemblyCollectorTypeVisitor">
+            <summary>
+            Collects all referenced assemblies walking by type members
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.DFA.TypeReplace.TypeReplaceUtils">
+            <summary>
+            When we recompile class for dfa, we have to replace new types/methods/properties/fields/events, etc. in new instructions with original ones.
+            Because in the recompiled assembly methods that are called from method we stay in have been stripped out and have "throw null" body, so can't be interpreted without replacement.
+            These utils provide ability to determine which new members we should replace with original ones. It also covers compiler-generated methods replacement
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.Enc.EncDeltaApplier.AddDelta(Debugger.Common.EnC.EnCDelta)">
+            <summary>
+            
+            </summary>
+            <param name="delta"></param>
+            <returns>Next delta version</returns>
+        </member>
+        <member name="P:Mono.Debugging.Win32.Evaluation.NewGen.VirtualExecution.CorInterpreterContext.AnyAvailableFrame">
+            <summary>
+            Sometimes obtaining of GetCorDebugFrame is not possible, for example <see cref="M:Mono.Debugging.Win32.Snapshot.CorExceptionFrame.GetCorDebugFrame"/>,
+            if for the caller it doesn't better from where the frame comes, it can use this property instead
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.Evaluation.NewGen.VirtualExecution.DFACorInterpreterStackFrame">
+            <summary>
+            For DFA we have to handle variables original and recompiled variables mismatch
+            It matches original and recompiled variables indexes and raise an exception when the interpreter needs a variable (extra variable) which doesn't exist on original frame and hasn't been written yet
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Mono.Debugging.Win32.HeapView.HeapObjectNode" -->
+        <!-- Badly formed XML comment ignored for member "M:Mono.Debugging.Win32.HeapView.HeapObjectNode.#ctor(Mono.Debugging.MetadataLite.API.IMetadataTypeLite)" -->
+        <member name="T:Mono.Debugging.Win32.ICorValue">
+            <summary>
+            Holder for <see cref="T:JetBrains.Debugger.CorApi.ComInterop.ICorDebugValue"/>
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Win32.IRuntimeExecution.IsExecuteAsIs">
+            <summary>
+            Do not add runtime executable to the command line, assume it's already there.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.MethodSemantics.Traits.CorMethodTrait">
+            <summary>
+            Base class for semantic annotations inferred from a metadata method.
+            Traits let frame presentation code reason about compiler-generated methods
+            such as state-machine entry points, lambdas, and local functions without
+            reparsing the method shape each time.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.MethodSemantics.Traits.CorMethodTrait.#ctor(Mono.Debugging.Win32.CorDebuggerSession,JetBrains.Metadata.Reader.API.IMetadataMethod)">
+            <summary>
+            Base class for semantic annotations inferred from a metadata method.
+            Traits let frame presentation code reason about compiler-generated methods
+            such as state-machine entry points, lambdas, and local functions without
+            reparsing the method shape each time.
+            </summary>
+        </member>
+        <member name="F:Mono.Debugging.Win32.MixedMode.CorMixedModeHost.SignalContinueToIdea">
+            <summary>
+            false -- only result the frontend suspend context
+            true -- also terminate paused context and cancel all ongoing operations
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.MixedMode.CorMixedModeHost.HandleTargetEvent(System.Action{Mono.Debugging.Client.Events.TargetEventArgs},Mono.Debugging.Client.Events.TargetEventArgs,System.Nullable{System.Boolean})">
+            <summary> 
+            Debugger can send a lot of different stop events (managed symbol breakpoint, managed data breakpoint, managed exception thrown, managed step completion, etc.) this method is called for
+            every stop event that is going to be sent to IDEA.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.MixedMode.CorMixedModeHost.DisableNativeBreakpoint(System.UInt64)">
+            <returns> false - if we haven't set a breakpoint at the address </returns>
+        </member>
+        <member name="M:Mono.Debugging.Win32.MixedMode.CorMixedModeHost.ContinueScheduled">
+            <summary>
+            We need this call to ensure that the continue events we received which were not requested by Idea weren't mistakenly sent to Idea when it requests the last continue event
+            By this method call originating from ContinueDebugEventLLDBCommand::Execute we ensure that `SendSessionContinue` will wait for the last continue event 
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.MixedMode.CorMixedModeUtils.GetExceptionDebugEventFromThread(Mono.Debugging.Win32.CorDebuggerSession,System.UInt32,JetBrains.Interop.Windows.Declarations.Constants.DebugExceptionCode,System.Boolean)">
+            <summary>
+            We need it only to create an exception event on an unmanaged thread (unmanaged threads are not represented as ICorDebugThread)
+            For managed threads we use a function above(which takes ICorDebugThread instead of a thread id)
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.MixedMode.CorMixedModeUtils.WalkToSkipTopInternalFrameOnException(Mono.Debugging.Win32.CorDebuggerSession,JetBrains.Debugger.CorApi.ComInterop.ICorDebugThread,JetBrains.Debugger.CorApi.ComInterop.ICorDebugStackWalk)">
+            <summary>
+            When CLR is stopped by EXCEPTION_CALLBACK it doesn't return a correct thread context of the top frame
+            It should be a context of the dotnet frame where the exception was thrown. Instead, stack walker returns a context of WaitForSingleObject call (from a real windows frame)
+            We fix it by skipping such frames until we walk to the dotnet frame where the exception was thrown 
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.MixedMode.CorMixedModeUtils.SkipBreakpointOnEvaluation(Mono.Debugging.Win32.CorDebuggerSession,JetBrains.Interop.WinApi.DEBUG_EVENT)">
+            <summary>
+            This method step restores an original instruction instead of `int3`, moves the instruction pointer `int3` size back and clears the exception breakpoint.
+            So we can say it masks the breakpoint as if it has never been hit
+            </summary>
+        </member>
+        <member name="F:Mono.Debugging.Win32.MixedMode.DotnetDebuggerRequest.SetThreadContextType.Context">
+            <summary>
+            LLDB sends either <see cref="T:Mono.Debugging.Win32.ThreadContexts.X64.Context64"/> or <see cref="T:Mono.Debugging.Win32.ThreadContexts.WOW64.ContextWOW64"/> depending on the debuggee architecture.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.MixedMode.LLDBCommands.HelpNativeStackWalk">
+            <summary>
+            LLDB can walk native frames, but has troubles when walking managed jitted frames
+            We use the same approach as in VS debugger, refer to ICorDebug for dotnet frames
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.MixedMode.LLDBCommands.HelpNativeStackWalk.#ctor(Mono.Debugging.Win32.CorDebuggerSession)">
+            <summary>
+            LLDB can walk native frames, but has troubles when walking managed jitted frames
+            We use the same approach as in VS debugger, refer to ICorDebug for dotnet frames
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.MixedMode.MixedModeEventsProcessingThread.ProcessOutOfBandEvent(JetBrains.Interop.WinApi.DEBUG_EVENT,System.Boolean)">
+            <returns> If the event was sent to lldb </returns>
+        </member>
+        <member name="M:Mono.Debugging.Win32.MixedMode.MixedModeThreadsTracker.RefreshUserNativeThreads">
+            <summary>
+            Native threads may start to call managed code and from that moment will be trackable by ICorDebug, so we have to refresh our list of native threads
+            Additionally, we just need to remove created by dotnet threads since we save handles of all threads 
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.MixedMode.NativeThreadsStateHolder">
+            <summary>
+            Encapsulates all state and situations when we have to suspend/resume native threads via Windows API 
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.MixedMode.NativeThreadsStateHolder.#ctor(Mono.Debugging.Win32.MixedMode.MixedModeThreadsTracker)">
+            <summary>
+            Encapsulates all state and situations when we have to suspend/resume native threads via Windows API 
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.MixedMode.NativeThreadsStateHolder.SuspendThreads(System.Collections.Generic.List{System.UInt64})">
+            <summary>
+            Suspends all threads except myThreadsToKeepResumed
+            NOTE: Threads listed in myThreadsToResume will not be resumed via `ResumeThread` API. We rely on the fact that ICorDebug will resume them from ICorDebugProcess::Continue call 
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.RazorPathResolution.IRazorFilePathResolver.ResolveFileFullPath(System.String)">
+            <summary>
+            Return absolute path or null
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Mono.Debugging.Win32.RuntimeEventProcessing.CorRuntimeEventsReceiver">
+            <summary>
+            Receives events from runtime and delegates them to <see cref="T:Mono.Debugging.Win32.RuntimeEventProcessing.CorRuntimeEventProcessor"/> on the main thread
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.Sos.SosHost.ProcessInitializer.TryRemoveSingleFileClrInfoProvider">
+            <summary>
+            SingleFileClrInfoProvider leads to symbols of all unmanaged modules to be enumerated.
+            On big projects, it might take 3-5 seconds (on every debugger pause!).
+            Since we do not support single file app debug (/p:PublishSingleFile=true),
+            there is no need for SingleFileClrInfoProvider so we can remove it from the list of ClrInfoProviders.
+            
+            Note that we have plans to support  single file app debug in 263 and there will be a proper fix for this issue in 263.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.ThreadContexts.X64.Context64">
+            <summary>
+            x64
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Win32.ThreadContexts.X64.XSaveFormat64">
+            <summary>
+            x64
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Win32.Utils.CorDebugFunctionUtil.CorMethodBodyProvider.GetIlMethodBodyViaCorFunctionInterface(JetBrains.Metadata.Reader.API.MethodSpecification)">
+            <summary>
+            Use the method only if you are not able to determine a method address in the target memory, if you are able to use <see cref="M:Mono.Debugging.Win32.Utils.CorDebugFunctionUtil.CorMethodBodyProvider.GetIlMethodBodyForFunction(System.UInt64,JetBrains.Metadata.Reader.API.MethodSpecification)"/> please
+            </summary>
+            <param name="methodSpecification"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:Mono.Debugging.Win32.Utils.CorDebugFunctionUtil.IsJustMyCode(JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunction,Mono.Debugging.Client.DebuggerOptions.DebugKind)">
+            <inheritdoc cref="M:JetBrains.Debugger.CorApi.ComInterop.ICorDebugFunction2.GetJMCStatus(System.Int32@)"/>
+        </member>
+    </members>
+</doc>

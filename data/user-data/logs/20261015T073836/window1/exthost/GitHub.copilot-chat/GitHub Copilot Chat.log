@@ -1,0 +1,138 @@
+2026-10-15 07:38:42.494 [info] [GitExtensionServiceImpl] Initializing Git extension service.
+2026-10-15 07:38:42.494 [info] FetcherService: Experimentation service not available yet, using default fetcher configuration.
+2026-10-15 07:38:42.494 [info] Using the Electron fetcher.
+2026-10-15 07:38:42.494 [info] [GitExtensionServiceImpl] Successfully activated the vscode.git extension.
+2026-10-15 07:38:42.494 [info] [GitExtensionServiceImpl] Enablement state of the vscode.git extension: true.
+2026-10-15 07:38:42.494 [info] [GitExtensionServiceImpl] Successfully registered Git commit message provider.
+2026-10-15 07:38:42.494 [info] ConversationFeature: Waiting for copilot token or BYOK model to activate conversation feature
+2026-10-15 07:38:42.495 [warning] [LanguageModelAccess] LanguageModel/Embeddings are not available without a Copilot token source
+2026-10-15 07:38:42.495 [info] [CopilotCLIModels] Skipping model fetch since there is no Copilot token source
+2026-10-15 07:38:42.495 [info] BYOK: registered 9 provider(s): ollama, anthropic, gemini, xai, openai, openrouter, azure, customoai, customendpoint
+2026-10-15 07:38:42.495 [info] BYOK: fetching known models list
+2026-10-15 07:38:42.495 [info] activationBlocker from 'languageModelAccess' took for 80ms
+2026-10-15 07:38:42.495 [info] [CopilotCLI] OpenTelemetry enabled: exporter=file, source=github.copilot
+2026-10-15 07:38:42.495 [info] [CopilotCLIChatSessionContentProvider] listSessions took 6.686300000000301ms
+2026-10-15 07:38:42.495 [warning] BYOK: failed to refresh known models, will retry on next allowed transition: net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:42.495 [info] [CopilotCLI] MCP server started. Lock file: C:\Users\inthirua\.copilot\ide\0d795541-eddc-466b-b87f-cda77cff03a4.lock
+2026-10-15 07:38:42.495 [info] [CopilotCLI] Server URI: pipe:%5C%5C.%5Cpipe%5Cmcp-16708bf4-198c-46ab-bc9f-ac9f6c3f6cf9.sock#%2Fmcp
+2026-10-15 07:38:42.501 [warning] [LanguageModelAccess] LanguageModel/Embeddings are not available without a Copilot token source
+2026-10-15 07:38:42.519 [info] Logged in as nitamil
+2026-10-15 07:38:42.607 [info] ConversationFeature: BYOK models available
+2026-10-15 07:38:42.607 [info] ConversationFeature: Activating contributions
+2026-10-15 07:38:42.616 [info] Registering default platform agent...
+2026-10-15 07:38:42.617 [info] activationBlocker from 'conversationFeature' took for 489ms
+2026-10-15 07:38:42.732 [info] [CopilotCLIChatSessionContentProvider] listSessions took 11.020400000000336ms
+2026-10-15 07:38:42.817 [error] Error: net::ERR_NAME_NOT_RESOLVED
+	at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/utility_init:2:10645)
+	at SimpleURLLoaderWrapper.emit (node:events:514:28): Failed to load remote copilot agents
+2026-10-15 07:38:42.818 [error] Error: net::ERR_NAME_NOT_RESOLVED
+	at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/utility_init:2:10645)
+	at SimpleURLLoaderWrapper.emit (node:events:514:28)
+2026-10-15 07:38:42.822 [error] [GitHubOrgChatResourcesService] Error checking authenticated user: Error: net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:42.823 [error] Error fetching available embedding types: Error: net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:42.823 [info] FetcherService: electron-fetch failed with error: net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:42.843 [info] FetcherService: electron-fetch failed with error: net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:42.866 [info] FetcherService: node-fetch failed with error: fetch failed
+2026-10-15 07:38:42.907 [info] FetcherService: node-fetch failed with error: fetch failed
+2026-10-15 07:38:42.922 [info] FetcherService: node-http failed with error: getaddrinfo ENOTFOUND api.github.com
+2026-10-15 07:38:42.923 [warning] Failed to get copilot token due to fetch throwing: net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:42.928 [info] FetcherService: node-http failed with error: getaddrinfo ENOTFOUND api.github.com
+2026-10-15 07:38:42.930 [info] Successfully activated the GitHub.vscode-pull-request-github extension.
+2026-10-15 07:38:42.930 [info] [githubTitleAndDescriptionProvider] Initializing GitHub PR title and description provider provider.
+2026-10-15 07:38:42.930 [info] Successfully registered GitHub PR title and description provider.
+2026-10-15 07:38:42.941 [error] GitHub Copilot could not connect to server. Extension activation failed: "Failed to get copilot token. reason: RequestFailed"
+2026-10-15 07:38:42.941 [warning] [LanguageModelAccess] LanguageModel/Embeddings are not available without auth token
+2026-10-15 07:38:42.941 [error] Error: Failed to get copilot token. reason: RequestFailed
+	at foe._authShowWarnings (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1647:21035)
+	at async foe.getCopilotToken (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1647:18009)
+	at async jhe.getCopilotToken (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1294:11580)
+	at async _ie._getToken (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1614:11156)
+	at async _ie._provideLanguageModelChatInfo (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1614:4233)
+	at async gc.$provideLanguageModelChatInfo (file:///d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:167:42570)
+2026-10-15 07:38:42.964 [info] Logged in as nitamil
+2026-10-15 07:38:43.191 [info] FetcherService: electron-fetch failed with error: net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:43.213 [info] FetcherService: electron-fetch failed with error: net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:43.239 [info] FetcherService: node-fetch failed with error: fetch failed
+2026-10-15 07:38:43.257 [info] FetcherService: node-fetch failed with error: fetch failed
+2026-10-15 07:38:43.272 [info] FetcherService: node-http failed with error: getaddrinfo ENOTFOUND api.github.com
+2026-10-15 07:38:43.272 [warning] Failed to get copilot token due to fetch throwing: net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:43.275 [info] FetcherService: node-http failed with error: getaddrinfo ENOTFOUND api.github.com
+2026-10-15 07:38:43.279 [warning] [LanguageModelAccess] LanguageModel/Embeddings are not available without auth token
+2026-10-15 07:38:43.279 [error] Error: Failed to get copilot token. reason: RequestFailed
+	at foe._authShowWarnings (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1647:21035)
+	at async foe.getCopilotToken (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1647:18009)
+	at async jhe.getCopilotToken (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1294:11580)
+	at async _ie._getToken (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1614:11156)
+	at async _ie._provideLanguageModelChatInfo (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1614:4233)
+	at async gc.$provideLanguageModelChatInfo (file:///d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:167:42570)
+2026-10-15 07:38:43.291 [info] Logged in as nitamil
+2026-10-15 07:38:43.548 [info] FetcherService: electron-fetch failed with error: net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:43.567 [info] FetcherService: electron-fetch failed with error: net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:43.586 [info] FetcherService: node-fetch failed with error: fetch failed
+2026-10-15 07:38:43.603 [info] FetcherService: node-fetch failed with error: fetch failed
+2026-10-15 07:38:43.619 [info] FetcherService: node-http failed with error: getaddrinfo ENOTFOUND api.github.com
+2026-10-15 07:38:43.619 [warning] Failed to get copilot token due to fetch throwing: net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:43.624 [info] FetcherService: node-http failed with error: getaddrinfo ENOTFOUND api.github.com
+2026-10-15 07:38:43.632 [info] Logged in as nitamil
+2026-10-15 07:38:43.890 [info] FetcherService: electron-fetch failed with error: net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:43.910 [info] FetcherService: electron-fetch failed with error: net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:43.930 [info] FetcherService: node-fetch failed with error: fetch failed
+2026-10-15 07:38:43.964 [info] FetcherService: node-fetch failed with error: fetch failed
+2026-10-15 07:38:43.978 [info] FetcherService: node-http failed with error: getaddrinfo ENOTFOUND api.github.com
+2026-10-15 07:38:43.978 [warning] Failed to get copilot token due to fetch throwing: net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:43.988 [info] AuthenticationService: firing onDidAuthenticationChange from handleAuthChangeEvent identity change. Has token: false
+2026-10-15 07:38:43.988 [info] BYOK: unregistered providers because the Copilot token needed to check the BYOK policy is unavailable.
+2026-10-15 07:38:43.994 [info] FetcherService: node-http failed with error: getaddrinfo ENOTFOUND api.github.com
+2026-10-15 07:38:44.004 [info] Logged in as nitamil
+2026-10-15 07:38:44.017 [error] [CopilotCLIModels] Failed to fetch available models: Error: network fetch failed: request failed: error sending request for url (https://api.github.com/copilot_internal/user)
+2026-10-15 07:38:44.288 [info] FetcherService: electron-fetch failed with error: net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:44.308 [info] FetcherService: electron-fetch failed with error: net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:44.326 [error] Error: net::ERR_NAME_NOT_RESOLVED
+	at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/utility_init:2:10645)
+	at SimpleURLLoaderWrapper.emit (node:events:514:28): Failed to load remote copilot agents
+2026-10-15 07:38:44.327 [info] FetcherService: node-fetch failed with error: fetch failed
+2026-10-15 07:38:44.342 [info] FetcherService: node-fetch failed with error: fetch failed
+2026-10-15 07:38:44.357 [info] FetcherService: node-http failed with error: getaddrinfo ENOTFOUND api.github.com
+2026-10-15 07:38:44.357 [warning] Failed to get copilot token due to fetch throwing: net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:44.362 [info] FetcherService: node-http failed with error: getaddrinfo ENOTFOUND api.github.com
+2026-10-15 07:38:44.368 [error] GitHub Copilot could not connect to server. Extension activation failed: "Failed to get copilot token. reason: RequestFailed"
+2026-10-15 07:38:44.368 [warning] [LanguageModelAccess] LanguageModel/Embeddings are not available without auth token
+2026-10-15 07:38:44.368 [error] Error: Failed to get copilot token. reason: RequestFailed
+	at foe._authShowWarnings (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1647:21035)
+	at async foe.getCopilotToken (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1647:18009)
+	at async jhe.getCopilotToken (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1294:11580)
+	at async _ie._getToken (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1614:11156)
+	at async r (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1614:10437)
+2026-10-15 07:38:44.368 [warning] [LanguageModelAccess] LanguageModel/Embeddings are not available without auth token
+2026-10-15 07:38:44.368 [error] Error: Failed to get copilot token. reason: RequestFailed
+	at foe._authShowWarnings (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1647:21035)
+	at async foe.getCopilotToken (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1647:18009)
+	at async jhe.getCopilotToken (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1294:11580)
+	at async _ie._getToken (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1614:11156)
+	at async _ie._provideLanguageModelChatInfo (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1614:4233)
+	at async gc.$provideLanguageModelChatInfo (file:///d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:167:42570)
+2026-10-15 07:38:44.379 [info] Logged in as nitamil
+2026-10-15 07:38:44.648 [info] FetcherService: electron-fetch failed with error: net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:44.673 [info] FetcherService: electron-fetch failed with error: net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:44.692 [info] FetcherService: node-fetch failed with error: fetch failed
+2026-10-15 07:38:44.706 [info] FetcherService: node-fetch failed with error: fetch failed
+2026-10-15 07:38:44.721 [info] FetcherService: node-http failed with error: getaddrinfo ENOTFOUND api.github.com
+2026-10-15 07:38:44.721 [warning] Failed to get copilot token due to fetch throwing: net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:44.725 [info] FetcherService: node-http failed with error: getaddrinfo ENOTFOUND api.github.com
+2026-10-15 07:38:44.726 [warning] [LanguageModelAccess] LanguageModel/Embeddings are not available without auth token
+2026-10-15 07:38:44.726 [error] Error: Failed to get copilot token. reason: RequestFailed
+	at foe._authShowWarnings (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1647:21035)
+	at async foe.getCopilotToken (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1647:18009)
+	at async jhe.getCopilotToken (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1294:11580)
+	at async _ie._getToken (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1614:11156)
+	at async _ie._provideLanguageModelChatInfo (d:\All\IDLE\t\VSCode\16507d91be\resources\app\extensions\copilot\dist\extension.js:1614:4233)
+	at async gc.$provideLanguageModelChatInfo (file:///d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:167:42570)
+2026-10-15 07:39:06.957 [info] Logged in as nitamil
+2026-10-15 07:39:06.968 [info] FetcherService: electron-fetch failed with error: net::ERR_INTERNET_DISCONNECTED
+2026-10-15 07:39:06.990 [info] FetcherService: electron-fetch failed with error: net::ERR_INTERNET_DISCONNECTED
+2026-10-15 07:39:07.009 [info] FetcherService: node-fetch failed with error: fetch failed
+2026-10-15 07:39:07.024 [info] FetcherService: node-fetch failed with error: fetch failed
+2026-10-15 07:39:07.039 [info] FetcherService: node-http failed with error: getaddrinfo ENOTFOUND api.github.com
+2026-10-15 07:39:07.039 [warning] Failed to get copilot token due to fetch throwing: net::ERR_INTERNET_DISCONNECTED
+2026-10-15 07:39:07.039 [info] FetcherService: node-http failed with error: getaddrinfo ENOTFOUND api.github.com
+2026-10-15 07:39:07.047 [error] GitHub Copilot could not connect to server. Extension activation failed: "Failed to get copilot token. reason: RequestFailed"

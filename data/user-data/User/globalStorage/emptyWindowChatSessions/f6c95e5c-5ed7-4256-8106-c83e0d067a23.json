@@ -1,0 +1,277 @@
+{
+  "version": 3,
+  "requesterUsername": "nitamil",
+  "requesterAvatarIconUri": {
+    "$mid": 1,
+    "path": "/u/176882975",
+    "scheme": "https",
+    "authority": "avatars.githubusercontent.com",
+    "query": "v=4"
+  },
+  "responderUsername": "GitHub Copilot",
+  "responderAvatarIconUri": {
+    "id": "copilot"
+  },
+  "initialLocation": "editor",
+  "requests": [
+    {
+      "requestId": "request_0cb36c1d-52d0-4a3b-8664-aec6ee062bfd",
+      "message": {
+        "parts": [
+          {
+            "range": {
+              "start": 0,
+              "endExclusive": 4
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 1,
+              "endLineNumber": 1,
+              "endColumn": 5
+            },
+            "command": {
+              "name": "fix",
+              "description": "Propose a fix for the problems in the selected code",
+              "disambiguation": [
+                {
+                  "category": "fix",
+                  "description": "Propose a fix for the problems in the selected code",
+                  "examples": [
+                    "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+                  ]
+                }
+              ]
+            },
+            "kind": "subcommand"
+          },
+          {
+            "range": {
+              "start": 4,
+              "endExclusive": 69
+            },
+            "editorRange": {
+              "startLineNumber": 1,
+              "startColumn": 5,
+              "endLineNumber": 1,
+              "endColumn": 70
+            },
+            "text": " MD036/no-emphasis-as-heading: Emphasis used instead of a heading",
+            "kind": "text"
+          }
+        ],
+        "text": "/fix MD036/no-emphasis-as-heading: Emphasis used instead of a heading"
+      },
+      "variableData": {
+        "variables": []
+      },
+      "response": [
+        {
+          "value": "Replace the emphasized text used as a heading with a proper Markdown heading to resolve the MD036/no-emphasis-as-heading error.\n\n",
+          "supportThemeIcons": false,
+          "supportHtml": false
+        },
+        {
+          "kind": "progressMessage",
+          "content": {
+            "value": "Generating edits...",
+            "uris": {}
+          }
+        },
+        {
+          "kind": "textEditGroup",
+          "uri": {
+            "$mid": 1,
+            "fsPath": "c:\\Users\\inthirua\\Downloads\\Ganging-SMU-channels-in-STL.md",
+            "_sep": 1,
+            "external": "file:///c%3A/Users/inthirua/Downloads/Ganging-SMU-channels-in-STL.md",
+            "path": "/c:/Users/inthirua/Downloads/Ganging-SMU-channels-in-STL.md",
+            "scheme": "file"
+          },
+          "edits": [
+            [
+              {
+                "text": "### Manual Test Configurations\n\n| Test Case | Hardware Combination | Channels Tested |\n|-----------|---------------------|-----------------|\n",
+                "range": {
+                  "startLineNumber": 223,
+                  "startColumn": 1,
+                  "endLineNumber": 227,
+                  "endColumn": 1
+                }
+              }
+            ]
+          ],
+          "state": {
+            "sha1": "b76abbccad11cfaa5a416c9708f6608aea75a760",
+            "applied": 1
+          }
+        }
+      ],
+      "responseId": "response_d11db927-0346-4edd-870a-02d7303f9dc0",
+      "result": {
+        "timings": {
+          "firstProgress": 1722,
+          "totalElapsed": 2324
+        },
+        "metadata": {
+          "codeBlocks": [],
+          "toolCallRounds": [
+            {
+              "response": "Replace the emphasized text used as a heading with a proper Markdown heading to resolve the MD036/no-emphasis-as-heading error.\n\n---FILEPATH c:\\Users\\inthirua\\Downloads\\Ganging-SMU-channels-in-STL.md\n---FIND\n```\n**Manual Test Configurations**\n\n| Test Case | Hardware Combination | Channels Tested |\n|-----------|---------------------|-----------------|\n```\n---REPLACE\n```\n### Manual Test Configurations\n\n| Test Case | Hardware Combination | Channels Tested |\n|-----------|---------------------|-----------------|\n```\n---COMPLETE",
+              "toolCalls": [],
+              "toolInputRetry": 0,
+              "id": "e9baa69e-00fa-4898-ad5f-247730adbf06"
+            }
+          ],
+          "modelMessageId": "7e33eb4f-280b-45fe-b728-3f3a12edf45c",
+          "responseId": "7f9561de-008d-44fd-af00-aad4944d7d2e",
+          "sessionId": "ed7d8b26-dd3c-47e4-a44e-bbec0fae8d5c",
+          "agentId": "github.copilot.editor",
+          "command": "fix"
+        },
+        "details": "GPT-4.1 • 0x"
+      },
+      "responseMarkdownInfo": [],
+      "followups": [],
+      "isCanceled": false,
+      "agent": {
+        "extensionId": {
+          "value": "GitHub.copilot-chat",
+          "_lower": "github.copilot-chat"
+        },
+        "extensionVersion": "0.31.1",
+        "publisherDisplayName": "GitHub",
+        "extensionPublisherId": "GitHub",
+        "extensionDisplayName": "GitHub Copilot Chat",
+        "id": "github.copilot.editor",
+        "description": "Ask or edit in context",
+        "when": "!config.inlineChat.enableV2 && !config.github.copilot.chat.advanced.inlineChat2",
+        "metadata": {
+          "themeIcon": {
+            "id": "copilot"
+          },
+          "hasFollowups": false,
+          "supportIssueReporting": false
+        },
+        "name": "Copilot",
+        "fullName": "GitHub Copilot",
+        "isDefault": true,
+        "locations": [
+          "editor"
+        ],
+        "modes": [
+          "ask"
+        ],
+        "slashCommands": [
+          {
+            "name": "generate",
+            "description": "Generate new code",
+            "disambiguation": [
+              {
+                "category": "generate",
+                "description": "Generate new code",
+                "examples": [
+                  "Add a function that returns the sum of two numbers"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "edit",
+            "description": "Edit the selected code in your active editor",
+            "disambiguation": [
+              {
+                "category": "edit",
+                "description": "Make changes to existing code",
+                "examples": [
+                  "Change this method to use async/await"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "doc",
+            "description": "Add documentation comment for this symbol",
+            "disambiguation": [
+              {
+                "category": "doc",
+                "description": "Add documentation comment for this symbol",
+                "examples": [
+                  "Add jsdoc to this method"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "disambiguation": [
+              {
+                "category": "fix",
+                "description": "Propose a fix for the problems in the selected code",
+                "examples": [
+                  "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "explain",
+            "description": "Explain how the code in your active editor works",
+            "disambiguation": [
+              {
+                "category": "explain",
+                "description": "Explain how the code in your active editor works",
+                "examples": [
+                  "Write an explanation for the code above as paragraphs of text."
+                ]
+              }
+            ]
+          },
+          {
+            "name": "tests",
+            "description": "Generate unit tests for the selected code",
+            "disambiguation": [
+              {
+                "category": "tests",
+                "description": "Generate unit tests for the selected code. The user does not want to fix their existing tests.",
+                "examples": [
+                  "Write a set of detailed unit test functions for the code above."
+                ]
+              }
+            ]
+          }
+        ],
+        "disambiguation": [
+          {
+            "category": "unknown",
+            "description": "Intent of this command is unclear or is not related to information technologies",
+            "examples": [
+              "Add a dog to this comment."
+            ]
+          }
+        ]
+      },
+      "slashCommand": {
+        "name": "fix",
+        "description": "Propose a fix for the problems in the selected code",
+        "disambiguation": [
+          {
+            "category": "fix",
+            "description": "Propose a fix for the problems in the selected code",
+            "examples": [
+              "There is a problem in this code. Rewrite the code to show it with the bug fixed."
+            ]
+          }
+        ]
+      },
+      "contentReferences": [],
+      "codeCitations": [],
+      "timestamp": 1760721256354,
+      "modelId": "copilot/gpt-4.1"
+    }
+  ],
+  "sessionId": "f6c95e5c-5ed7-4256-8106-c83e0d067a23",
+  "creationDate": 1760721256308,
+  "isImported": false,
+  "lastMessageDate": 1760721256355
+}

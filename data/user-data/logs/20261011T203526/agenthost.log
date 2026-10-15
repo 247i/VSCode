@@ -1,0 +1,45 @@
+2026-10-11 20:35:27.487 [info] Agent Host process started successfully
+2026-10-11 20:35:27.502 [info] AgentService initialized
+2026-10-11 20:35:27.506 [info] Registering agent provider: copilotcli
+2026-10-11 20:35:27.508 [info] Registering agent provider: claude
+2026-10-11 20:35:27.518 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-10-11 20:35:27.519 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-10-11 20:35:27.537 [info] [Claude] Models refreshed (merged). Count: 0, 
+2026-10-11 20:35:27.538 [info] [Copilot] Auto routing profiles toggled; refreshing models
+2026-10-11 20:35:27.563 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-10-11 20:35:27.563 [info] [ProtocolServer] Initialize: clientId=c15f272f-d727-4674-9ff9-25456c3527c1, protocolVersions=[0.9.0, 0.7.0, 0.6.0, 0.5.2, 0.5.1]
+2026-10-11 20:35:27.591 [info] [Copilot] Auto routing profiles toggled; refreshing models
+2026-10-11 20:35:27.593 [info] [Copilot] Auto routing profiles toggled; refreshing models
+2026-10-11 20:35:27.595 [info] [Copilot] Auto routing profiles toggled; refreshing models
+2026-10-11 20:35:27.596 [info] [Copilot] Auto routing profiles toggled; refreshing models
+2026-10-11 20:35:27.597 [info] [Copilot] Auto routing profiles toggled; refreshing models
+2026-10-11 20:35:27.597 [info] [Copilot] Auto routing profiles toggled; refreshing models
+2026-10-11 20:35:27.607 [info] [CommandAutoApprover] Tree-sitter initialized (bash=available, powershell=available)
+2026-10-11 20:35:28.019 [info] [WebSocketProtocol] Server listening on socket \\.\pipe\vscode-agent-host-f3cb4e1745630b664de180e68b1eb385555c26afe838bc031216470fd08bc9d9-yDffv-q9qmanmUL7YCw33Q
+2026-10-11 20:35:28.720 [info] [Copilot] Auto routing profiles toggled; refreshing models
+2026-10-11 20:35:28.722 [info] [AgentService] pruned 0 stale external session row(s) older than 30 days
+2026-10-11 20:35:28.723 [info] [Copilot] Listing discoverable chats...
+2026-10-11 20:35:28.723 [info] [Copilot] Starting CopilotClient...
+2026-10-11 20:35:28.724 [info] [Copilot] Set CLI env: GITHUB_COPILOT_INTEGRATION_ID=vscode-chat
+2026-10-11 20:35:28.725 [info] [Copilot] Resolved CLI path: d:\All\IDLE\t\vscode\645f29cc31\resources\app\node_modules.asar.unpacked\@github\copilot-win32-x64\index.js
+2026-10-11 20:35:28.748 [info] [Claude] SDK not downloaded yet; deferring chat discovery
+2026-10-11 20:35:28.881 [info] [Copilot] Auth token updated
+2026-10-11 20:35:28.921 [info] [ClaudeProxyService] listening on http://127.0.0.1:56922
+2026-10-11 20:35:28.921 [info] [Claude] Auth token updated
+2026-10-11 20:35:29.457 [info] [Copilot] CopilotClient started successfully
+2026-10-11 20:35:29.461 [info] [Copilot] Listed 0 SDK session(s) for discoverable chats
+2026-10-11 20:35:29.461 [info] [Copilot] Chat discovery: 0 SDK session(s) -> 0 external, 0 adoptable legacy extension-host, 0 suppressed adoptable legacy extension-host, 0 suppressed archived legacy extension-host, 0 already known to Agent Host, 0 without a working directory, 0 with unsupported or missing client name, 0 outside the import window, 0 without repository metadata, 0 failed to classify (adopt legacy extension-host chats: false)
+2026-10-11 20:35:30.603 [info] [Copilot] Listing models...
+2026-10-11 20:35:31.390 [info] [Copilot] Auto routing profiles toggled; refreshing models
+2026-10-11 20:35:31.391 [info] [Copilot] Listing models...
+2026-10-11 20:35:31.435 [info] [Copilot] Auto routing profiles toggled; refreshing models
+2026-10-11 20:35:31.436 [info] [Copilot] Listing models...
+2026-10-11 20:35:32.172 [info] [Copilot] Found 18 models: Auto, Claude Sonnet 5, Claude Haiku 4.5, GPT-5.6 Sol, GPT-5.6 Terra, GPT-5.6 Luna, GPT-5.5, GPT-5.4, GPT-5.4 mini, GPT-5.3-Codex, MAI-Code-1.1-Flash, Gemini 3.7 Flash, Claude Opus 5.5, Claude Sonnet 5.5, Gemini 3.8 Flash, GPT-6.1 Sol, GPT-6 Luna, GPT-6 Sol
+2026-10-11 20:35:32.426 [info] [Copilot] Found 18 models: Auto, Claude Sonnet 5, Claude Haiku 4.5, GPT-5.6 Sol, GPT-5.6 Terra, GPT-5.6 Luna, GPT-5.5, GPT-5.4, GPT-5.4 mini, GPT-5.3-Codex, MAI-Code-1.1-Flash, Gemini 3.7 Flash, Claude Opus 5.5, Claude Sonnet 5.5, Gemini 3.8 Flash, GPT-6.1 Sol, GPT-6 Luna, GPT-6 Sol
+2026-10-11 20:35:32.523 [info] [Copilot] Found 18 models: Auto, Claude Sonnet 5, Claude Haiku 4.5, GPT-5.6 Sol, GPT-5.6 Terra, GPT-5.6 Luna, GPT-5.5, GPT-5.4, GPT-5.4 mini, GPT-5.3-Codex, MAI-Code-1.1-Flash, Gemini 3.7 Flash, Claude Opus 5.5, Claude Sonnet 5.5, Gemini 3.8 Flash, GPT-6.1 Sol, GPT-6 Luna, GPT-6 Sol
+2026-10-11 20:35:32.650 [info] [Claude] Models refreshed (merged). Count: 4, Claude Opus 5.5, Claude Sonnet 5.5, Claude Sonnet 5, Claude Haiku 4.5
+2026-10-11 20:38:22.210 [info] [ProtocolServer] Client disconnected: c15f272f-d727-4674-9ff9-25456c3527c1, subscriptions=1
+2026-10-11 20:38:22.212 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-10-11 20:38:22.212 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-10-11 20:38:22.215 [info] AgentService: shutting down all providers...
+2026-10-11 20:38:22.215 [info] [Copilot] Shutting down...

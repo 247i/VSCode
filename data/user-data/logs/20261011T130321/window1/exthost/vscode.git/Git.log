@@ -1,0 +1,7 @@
+2026-10-11 13:03:26.128 [info] [main] Log level: Info
+2026-10-11 13:03:26.128 [info] [main] Validating found git in: "C:\Program Files\Git\cmd\git.exe"
+2026-10-11 13:03:26.128 [info] [main] Validating found git in: "C:\Program Files (x86)\Git\cmd\git.exe"
+2026-10-11 13:03:26.128 [info] [main] Validating found git in: "C:\Program Files\Git\cmd\git.exe"
+2026-10-11 13:03:26.128 [info] [main] Validating found git in: "C:\Users\inthirua\AppData\Local\Programs\Git\cmd\git.exe"
+2026-10-11 13:03:26.229 [warning] Unable to find git. Error: not found: git.exe
+2026-10-11 13:03:26.231 [warning] [main] Failed to create model: Error: Git installation not found.

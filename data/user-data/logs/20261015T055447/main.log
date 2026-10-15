@@ -1,0 +1,15 @@
+2026-10-15 05:54:47.476 [info] [node-compile-cache] main: packaged cache enabled (status: enabled, configured: D:\All\IDLE\t\VSCode\2a59476c9b\resources\app\node-compile-cache\main, active: D:\All\IDLE\t\VSCode\2a59476c9b\resources\app\node-compile-cache\main\v24.21.0-x64-c3a7e8f2)
+2026-10-15 05:54:47.476 [info] StorageMainService: creating application shared storage
+2026-10-15 05:54:47.476 [info] [shared storage] Creating shared storage database at 'd:\All\IDLE\t\VSCode\data\shared-data\sharedStorage\state.vscdb' (wasCreated: false)
+2026-10-15 05:54:47.476 [info] [shared storage] Initializing fallback application storage (path: d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\state.vscdb)
+2026-10-15 05:54:47.538 [info] [shared storage] Fallback application storage initialized with 193 items
+2026-10-15 05:54:48.192 [info] update#setState idle
+2026-10-15 05:54:48.225 [info] AgentHostProcessManager: agent host started
+2026-10-15 05:54:48.920 [error] [AgentHost:stderr] (node:12352) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `Code --trace-deprecation ...` to show where the warning was created)
+
+2026-10-15 05:55:18.208 [info] update#setState checking for updates
+2026-10-15 05:55:18.331 [info] update#setState available for download
+2026-10-15 05:55:23.167 [info] Extension host with pid 27844 exited with code: 0, signal: unknown.
+2026-10-15 05:56:01.558 [info] Extension host with pid 4696 exited with code: 0, signal: unknown.
+2026-10-15 07:23:07.641 [info] Extension host with pid 27500 exited with code: 0, signal: unknown.

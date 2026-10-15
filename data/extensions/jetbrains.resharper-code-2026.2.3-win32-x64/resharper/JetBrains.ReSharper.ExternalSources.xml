@@ -1,0 +1,860 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.ExternalSources</name>
+    </assembly>
+    <members>
+        <member name="F:JetBrains.ReSharper.ExternalSources.AssemblyDiff.ComparisonMode.CompareBodies">
+            <remarks>
+            Compare signatures and bodies
+            </remarks>
+        </member>
+        <member name="F:JetBrains.ReSharper.ExternalSources.AssemblyDiff.ComparisonMode.CompareSignatures">
+            <remarks>
+            Bodies changes are ignored
+            </remarks>
+        </member>
+        <member name="F:JetBrains.ReSharper.ExternalSources.AssemblyDiff.ComparisonMode.ComparePublicApi">
+            <remarks>
+            Bodies changes are ignored,
+            changes in non-public signatures are ignored
+            </remarks>
+        </member>
+        <member name="F:JetBrains.ReSharper.ExternalSources.AssemblyDiff.DiffMode.ShowOnlyDifferences">
+            <remarks>
+            Items (namespaces / types / members / resources / references / files) with the identical content are hidden
+            </remarks>
+        </member>
+        <member name="F:JetBrains.ReSharper.ExternalSources.AssemblyDiff.DiffMode.ShowOnlySignatureDifferences">
+            <remarks>
+            Items (namespaces / types / members / resources / references / files) with the identical content are hidden,
+            members with the same signatures are hidden (bodies can be modified)
+            </remarks>
+        </member>
+        <member name="F:JetBrains.ReSharper.ExternalSources.AssemblyDiff.DiffMode.ShowOnlyPublicAPIDifferences">
+            <remarks>
+            Items (namespaces / types / members / resources / references / files) with the identical content are hidden,
+            members with the same signatures are hidden (bodies can be modified),
+            non-public members are hidden (signatures and bodies can be modified; members can be added or deleted)
+            </remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyDiff.DiffUtil.CompareAccessRights(JetBrains.ReSharper.Psi.IDeclaredElement,JetBrains.ReSharper.Psi.IDeclaredElement,JetBrains.ReSharper.ExternalSources.AssemblyDiff.ComparisonMode)">
+            <remarks>
+            null means there is no need to compare access rights in this mode
+            (both elements are non-public, mode is ComparePublicApi)
+            </remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyDiff.DiffUtil.GetPairWeight(JetBrains.Metadata.Utils.AssemblyNameInfo,JetBrains.Metadata.Utils.AssemblyNameInfo)">
+            <summary>
+            Similarity of names in the range [0, 100]
+            (100 - names are equal)
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyDiff.DiffUtil.GetPairWeight(System.Version,System.Version)">
+            <summary>
+            Similarity of versions in the range [0, 32]
+            (32 - versions are equal)
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyDiff.DiffUtil.GetPairWeight(NuGet.Versioning.NuGetVersion,NuGet.Versioning.NuGetVersion)">
+            <summary>
+            Similarity of versions in the range [0, 40]
+            (40 - versions are equal)
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyDiff.DiffUtil.DiffIlMetadataFormatter.RenderTypeAndCollectAssociatedTokens(JetBrains.Metadata.Reader.API.IMetadataTypeInfo,JetBrains.Metadata.Reader.API.IImageBodyReader)">
+            <returns>
+            Tokens of used compiler-generated static methods (only for for compiler-generated type)
+            (tokens of used lambdas / local functions methods)
+            </returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyDiff.DiffUtil.DiffIlMetadataFormatter.RenderMethodAndCollectAssociatedTokens(JetBrains.Metadata.Reader.API.IMetadataMethod,JetBrains.Metadata.Reader.API.IImageBodyReader)">
+            <returns>
+            Tokens of used compiler-generated types / methods
+            (tokens of used lambdas / local functions methods or containing compiler-generated type,
+            tokens of compiler-generated state machine types for methods with async / yield return,
+            tokens of anonymous types)
+            </returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyDiff.PairingProviders.DeclaredElementDiffPairingProvider.IsNotEmpty(JetBrains.ReSharper.Psi.INamespace,JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Nodes.DeclaredElementNode,System.Func{JetBrains.ReSharper.Psi.ITypeElement,System.Boolean})">
+            <summary>
+            Determines whether the namespace contains accepted types
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.AssemblyDiff.PairingProviders.DiffPairingProvider`2.PairSingles">
+            <summary>
+            true - always pair single nodes (oldNodes.Count == 1 and newNodes.Count == 1);
+            false - pair single nodes only if they have the same keys
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyDiff.PairingProviders.FolderLikeDiffPairingProvider.ToKey(System.String)">
+            <summary>
+            Non-empty part of name before numbers
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyDiff.Presenters.IDiffNodePresenter.Present(JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Nodes.Diff.IDiffNode,JetBrains.Application.UI.Controls.TreeView.PresentationState)">
+            <remarks>null can be interpreted as "use default diff presentation"</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.Actions.NavigateToRepositoryUtil.ConvertToGitHubSourceUrl(System.String)">
+            <summary>
+            Transforms the URL for downloading a source file into a URL for viewing its contents directly on GitHub
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.Actions.NavigateToRepositoryUtil.FindCommitIndex(System.String)">
+            <summary>
+            Finds commit (40 hex symbols, i.e. 20 byte Sha-1 hash) url part
+            </summary>
+            <returns>index of '/' before commit part</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.Actions.NavigateToRepositoryUtil.FindCommitEndIndex(System.String)">
+            <summary>
+            Finds commit (40 hex symbols, i.e. 20 byte Sha-1 hash) url part
+            </summary>
+            <returns>index of '/' after commit part</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.AssemblyExplorerManagerBase.NavigateToAssemblyExplorer(JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IExplorerNode)">
+            <summary>
+            Searches through already obtained tree and navigates to a node if it's found. Does not perform getting children.
+            </summary>
+            <param name="explorerNode"></param>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.Content.AssemblyExplorerDescriptor.FocusablePanelWhenConnectedToView">
+            <inheritdoc />
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.Content.AssemblyExplorerDescriptor.SaveExpandedNodes(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Records the currently expanded nodes (by their data value) so the expansion survives a
+            rebuild of the WPF view/panel, e.g. when the tool window is detached into a floating panel.
+            Restored lazily as nodes materialize through <see cref="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.Content.AssemblyExplorerDescriptor.ExpandNodeInitially(JetBrains.Application.UI.TreeModels.TreeModelNode)"/>.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.AssemblyExplorerUtil.SearchRecursive(JetBrains.Application.UI.TreeModels.TreeModelNode,System.Collections.Generic.List{JetBrains.Application.UI.TreeModels.TreeModelNode},System.Func{JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IExplorerNode,System.Boolean},System.Func{JetBrains.Application.UI.TreeModels.TreeModelNode,System.Boolean})">
+            <summary>
+            Adds node to result list if it satisfies filter condition.
+            Searches recursively in a given treemodel node if stopCondition(node) is false 
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.AssemblyExplorerUtil.SearchRecursive(JetBrains.Application.UI.TreeModels.TreeModelNode,System.Collections.Generic.List{JetBrains.Application.UI.TreeModels.TreeModelNode},JetBrains.ReSharper.ExternalSources.AssemblyExplorer.Content.AssemblyExplorerTreeModel,System.Func{JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IExplorerNode,System.Boolean})">
+            <summary>
+            Searches recursively in a given treemodel node. Does not gets children if they are not cached. Can find folder nodes and assemlby file nodes as well.
+            </summary>
+            <param name="node"></param>
+            <param name="result"></param>
+            <param name="assemblyExplorerTreeModel"></param>
+            <param name="filter"> </param>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.AssemblyExplorerUtil.SearchRecursive(JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IExplorerNode,System.Collections.Generic.List{JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IExplorerNode},System.Func{JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IExplorerNode,System.Boolean},System.Func{JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IExplorerNode,System.Boolean})">
+            <summary>
+            Adds node to result list if it satisfies filter condition.
+            Searches recursively in a given IExplorerNode if stopCondition(node) is false 
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.AssemblyExplorerUtil.SearchRecursive(JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IExplorerNode,System.Collections.Generic.List{JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IExplorerNode},JetBrains.ReSharper.ExternalSources.AssemblyExplorer.Content.AssemblyExplorerTreeModel,System.Func{JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IExplorerNode,System.Boolean})">
+            <summary>
+            Searches recursively in a given IExplorerNode. Does not gets children if they are not cached. Can find folder nodes and assembly file nodes as well.
+            </summary>
+            <param name="node"></param>
+            <param name="result"></param>
+            <param name="assemblyExplorerTreeModel"></param>
+            <param name="filter"> </param>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.AssemblyExplorerUtil.SearchRecursiveStopAtVirtual(JetBrains.Application.UI.TreeModels.TreeModelNode,System.Collections.Generic.List{JetBrains.Application.UI.TreeModels.TreeModelNode},System.Func{JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IExplorerNode,System.Boolean})">
+            <summary>
+            Searches recursively in a given treemodel node. 
+            Stops at IRecursionCauseNode or IAssemblyFileNode
+            Adds node to result list if it satisfies filter condition
+            </summary>
+            <param name="node">root node of subtree</param>
+            <param name="result">list of filtered nodes</param>
+            <param name="filter">node filter condition</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.AssemblyExplorerUtil.SearchRecursiveStopAtVirtual(JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IExplorerNode,System.Collections.Generic.List{JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IExplorerNode},System.Func{JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IExplorerNode,System.Boolean})">
+            <summary>
+            Searches recursively in a given IExplorerNode. 
+            Stops at IRecursionCauseNode or IAssemblyFileNode
+            Adds node to result list if it satisfies filter condition
+            </summary>
+            <param name="node">root node of subtree</param>
+            <param name="result">list of filtered nodes</param>
+            <param name="filter">node filter condition</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.ExplorerNode.GetChildren">
+            <summary>
+            Override this method if you don't want to extend your children-getting logic.
+            Otherwise use IExplorerNodesProviders to provide this logic.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IPersistentDiffNodeProvider.CreateDiffNodeFromPaths(JetBrains.Util.FileSystemPath,JetBrains.Util.FileSystemPath,JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IExtendablePersistentNode)">
+            <remarks>oldPath/newPath can be a folder, not only a file</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IPersistentNodeProvider.CreateNodeFromPath(JetBrains.Util.FileSystemPath,JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IExtendablePersistentNode)">
+            <remarks>path can be a folder, not only a file</remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IRecursionCauseNode">
+            <summary>
+            Nodes which may cause recursion should implement this interface
+            (for example: BaseTypesNode and InheritorsNode)
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IResourceConsumingNode">
+            <summary>
+            Node for which the calculation of the subtree can consume a lot of processor time or memory
+            (e.g. BaseTypesNode, MetadataTreeFolderNode, etc.)
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.NodeProviders.IExplorerNodesProvider.HasChildrenFast(JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IExplorerNode)">
+            <summary>
+            Implement if provider can definitely determine [fast] whether a node has children or not
+            Otherwise return false and HasChildren method will be used later.
+            </summary>
+            <param name="explorerNode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.NodeProviders.IExplorerNodesProvider.CollectLoadActions(JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IExplorerNode,System.Collections.Generic.List{System.Action{JetBrains.Application.Progress.IProgressIndicator}})">
+            <summary>
+            Collects actions to fully load node
+            </summary>
+            <returns>true if requires collecting actions from child nodes</returns>
+        </member>
+        <member name="F:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Nodes.Diff.NodeDiffState.ChangedInternally">
+            <remarks>
+            Examples:
+             method body (implementation) change;
+             type content change (e.g. method adding);
+             assembly content change (name / version without changes);
+             base type / implemented interfaces set / attributes change
+            </remarks>
+        </member>
+        <member name="F:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Nodes.Diff.NodeDiffState.Changed">
+            <remarks>
+            Examples:
+             method / type renaming;
+             method signature change (e.g. parameter adding);
+             field type change;
+             visibility change;
+             assembly version change
+            </remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Nodes.Win32ResourceNodeEx.GetContentSize(JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Nodes.IWin32ResourceNode)">
+            <summary>
+            Size of the resource data in bytes
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Nodes.Win32ResourceNodeEx.GetContentSize(JetBrains.Metadata.Utils.PE.Directories.ResourceDirectoryEntry)">
+            <summary>
+            Size of the resource data in bytes
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Nodes.Win32ResourceNodeEx.GetContentSize(JetBrains.Metadata.Utils.PE.Directories.ResourceDirectory)">
+            <summary>
+            Size of the resource data in bytes
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Nodes.MetadataTree.IOffsetMetadataTreeNode.AbsoluteOffset">
+            <summary>
+            Offset (from file start)
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Nodes.MetadataTree.MethodDebugInformationTokenNode">
+            <remarks>
+            MethodDebugInformation Table is a logical extension of MethodDef table
+            (adding a column to the table)
+            and as such can be indexed by MethodDef row id.
+            </remarks>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Nodes.MetadataTree.MethodDebugInformationTokenNode.MethodDefToken">
+            <summary>
+            MethodDef token associated with MethodDebugInformation token
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Persistence.PersistentAssemblyProvider.BsjbExtensionWithDot">
+            <summary>
+            File extension for metadata blob files
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Persistence.PersistentAssemblyProvider.EmptyExtensionWithDot">
+            <summary>
+            Single-file bundle or native app host files for Mac or Linux
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.PropertiesProviders.INodePropertiesProvider.GetProperties(JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IExplorerNode)">
+            <summary>
+            Presents information about node as property grid data object
+            </summary>
+            <remarks>It is desirable that this data object has overridden GetHashCode method</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.Locators.LocationExtensions.TryGetSourceFileLocations(JetBrains.ReSharper.Psi.ITypeMember)">
+            <summary>
+            Gets all (ProjFile) sources containing typeMember
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.Locators.LocationExtensions.TryGetNamespaceFolderLocations(JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Locators.AssemblyNamespace)">
+            <summary>
+            Gets all (ProjFile) folders corresponing to assemblyNamespace.Ns in assemblyNamespace.Assembly
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.Locators.LocationExtensions.TryGetNamespaceFolderLocations(JetBrains.ReSharper.Psi.INamespace,JetBrains.ProjectModel.Model2.Assemblies.Interfaces.IAssembly)">
+            <summary>
+            Gets all (ProjFile) folders corresponing to ns in assembly
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.Locators.LocationExtensions.SelectFileSystemPathNodes(System.Collections.Generic.IEnumerable{JetBrains.Application.UI.TreeModels.TreeModelNode},System.Collections.Generic.HashSet{JetBrains.Util.FileSystemPath})">
+            <summary>
+            Selects nodes corresponding to some location in locations from scope
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.Locators.LocationExtensions.SelectAssemblyFileNodes(System.Collections.Generic.IEnumerable{JetBrains.Application.UI.TreeModels.TreeModelNode},JetBrains.ProjectModel.Model2.Assemblies.Interfaces.IAssembly)">
+            <summary>
+            Selects nodes corresponding to assembly from scope
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.Locators.LocationExtensions.SelectAssemblyFileNodes(System.Collections.Generic.IEnumerable{JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExplorerNodesModel.Core.IExplorerNode},JetBrains.ProjectModel.Model2.Assemblies.Interfaces.IAssembly)">
+            <summary>
+            Selects nodes corresponding to assembly from scope
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.Nodes.IProjFileNode.BoundAssemblyLocation">
+            <summary>
+            Location of assembly associated with IProjFileNode.Project
+            </summary>
+            <remarks>IProjFileNode.Path - path to *.*proj file of IProjFileNode.Project</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.Nodes.ProjFileNode.AddRemoveMappingsLifetimeBracket(JetBrains.ReSharper.Feature.Services.ExternalSources.CSharp.AssemblyExport.ProjFileModel.ProjFile,JetBrains.Lifetimes.Lifetime)">
+            <summary>
+            Adds mappings to projFile (Project in ProjFileNode),
+            removes this mapping when ProjFileNode will be removed from AssemblyExplorer tree
+            </summary>    
+            <remarks>This method should be called after Project property is initialized (with binding assembly)</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.Persistence.PersistentProjFileNode.AddRemoveMappingsLifetimeBracket(JetBrains.ReSharper.Feature.Services.ExternalSources.CSharp.AssemblyExport.ProjFileModel.ProjFile)">
+            <summary>
+            Adds mappings to projFile (Project in PersistentProjFileNode),
+            removes this mapping when PersistentProjFileNode will be removed from AssemblyExplorer tree
+            </summary>    
+            <remarks>This method should be called after Project property is initialized (with binding assembly)</remarks>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.ProjFileModel.Export.IExportParameters.AddProjectToAssemblyExplorer">
+            <summary>
+            Add exported project node to assembly explorer tree 
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.ProjFileModel.Export.IExportParameters.OpenProjectInVisualStudio">
+            <summary>
+            Open project (or solution, if it is created (i.e. if CreateSolution)) in Visual Studio
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.ProjFileModel.IProjFileSourceMappings.AddMapping(JetBrains.ReSharper.Feature.Services.ExternalSources.CSharp.AssemblyExport.ProjFileModel.LinkedItemElement,JetBrains.ReSharper.Feature.Services.ExternalSources.CSharp.AssemblyExport.ProjFileModel.ProjFile)">
+            <summary>
+            Creates and adds a new mapping between linkedItemElement and projFile if it does not exist,
+            finds existent mapping otherwise
+            </summary>
+            <returns>created or found mapping</returns>
+            <remarks>projFile.Assembly should be not null</remarks>
+            <exception cref="T:System.ArgumentNullException"> throws if projFile.Assembly is null</exception>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.ProjFileModel.IProjFileSourceMappings.GetMapping(JetBrains.Util.FileSystemPath)">
+            <summary>
+            Gets mapping by path (if it exists)
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.ProjFileModel.IProjFileSourceMappings.GetMappings(JetBrains.ReSharper.Psi.IClrDeclaredElement)">
+            <summary>
+            Gets all mappings for declaredElement 
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.ProjFileModel.IProjFileSourceMappings.RemoveMappings(JetBrains.ReSharper.Feature.Services.ExternalSources.CSharp.AssemblyExport.ProjFileModel.ProjFile)">
+            <summary>
+            Removes all mappings in  with Project property equals to projFile
+            (removes mappings associated with projFile)
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.ProjFileModel.IProjFileSourceMappings.GetProjFiles(JetBrains.ProjectModel.Model2.Assemblies.Interfaces.IAssembly)">
+            <summary>
+            Gets all proj files bound with assembly
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.ProjFileModel.ProjFileAssemblyMappings.GetProjFiles(JetBrains.ProjectModel.Model2.Assemblies.Interfaces.IAssembly)">
+            <summary>
+            Gets all proj files bound with assembly
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.ProjFileModel.ProjFileAssemblyMappings.AddMapping(JetBrains.ProjectModel.Model2.Assemblies.Interfaces.IAssembly,JetBrains.ReSharper.Feature.Services.ExternalSources.CSharp.AssemblyExport.ProjFileModel.ProjFile)">
+            <summary>
+            Adds mapping(assembly, projFile) to mappings (if this mapping does not exist in mappings)
+            </summary>    
+            <returns>true if mapping(assembly, projFile) is added to mappings; false if this mapping is already present</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.ProjFileModel.ProjFileAssemblyMappings.RemoveMapping(JetBrains.ProjectModel.Model2.Assemblies.Interfaces.IAssembly,JetBrains.ReSharper.Feature.Services.ExternalSources.CSharp.AssemblyExport.ProjFileModel.ProjFile)">
+            <summary>
+            Removes mapping(assembly, projFile) from mappings
+            </summary>
+            <returns>true if mapping(assembly, projFile) is successfully found and removed; otherwise (if this mapping is not found in mappings), false</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.ProjFileModel.ProjFileAssemblyMappings.RemoveMapping(JetBrains.ReSharper.Feature.Services.ExternalSources.CSharp.AssemblyExport.ProjFileModel.ProjFile)">
+            <summary>
+            Removes mapping(projFile.Assembly, projFile) from mappings
+            </summary>
+            <returns>true if mapping(projFile.Assembly, projFile) is successfully found and removed; otherwise (if this mapping is not found in mappings), false</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.ProjFileModel.ProjFileItemElementMapping.#ctor(JetBrains.ReSharper.Feature.Services.ExternalSources.CSharp.AssemblyExport.ProjFileModel.LinkedItemElement,JetBrains.ReSharper.Feature.Services.ExternalSources.CSharp.AssemblyExport.ProjFileModel.ProjFile,JetBrains.ProjectModel.Model2.Assemblies.Interfaces.IAssembly)">
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.ProjFileModel.ProjFileItemElementMapping.#ctor(JetBrains.ReSharper.Feature.Services.ExternalSources.CSharp.AssemblyExport.ProjFileModel.LinkedItemElement,JetBrains.ReSharper.Feature.Services.ExternalSources.CSharp.AssemblyExport.ProjFileModel.ProjFile)">
+            <remarks>projFile.Assembly should be not null</remarks>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.ProjFileModel.ProjFileSourceMappingsExtensions.AddMappings(JetBrains.ReSharper.ExternalSources.AssemblyExplorer.ExportedProject.ProjFileModel.IProjFileSourceMappings,JetBrains.ReSharper.Feature.Services.ExternalSources.CSharp.AssemblyExport.ProjFileModel.ProjFile)">
+            <summary>
+            Adds mappings between (Compile) projFile.LinkedItems and projFile
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.IAssemblyExplorerDescriptor.FocusablePanelWhenConnectedToView">
+            <summary>
+            Set by a view whenif it gets connected to this view model.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.Menu.AssemblyExplorerActionBarAddActionGroup">
+            <summary>
+            A combo (split) button on the Assembly Explorer action bar: the primary segment adds files
+            (<see cref="T:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.Actions.AssemblyExplorerAddItemsActionHandler"/>), the chevron segment drops down every
+            "add items" action. Being both an <see cref="T:JetBrains.Application.UI.ActionSystem.ActionsRevised.Menu.ActionGroupAttribute">action group</see> and an
+            <see cref="T:JetBrains.Application.UI.ActionsRevised.Menu.IExecutableAction"/> is what makes the action bar render it as a split button
+            rather than a plain drop-down.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.Navigation.AssemblyExplorerNavigationUtil.LocateAndNavigateToNodeAsync(System.Object,JetBrains.ProjectModel.ISolution,System.Boolean)">
+            <summary>
+            Locates nodes corresponding to a given target object and navigates to them in assembly explorer.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog">
+            <summary>
+            Encapsulates dialog functionality from the Credential Management API. Code from http://www.developerfusion.com/code/4693/using-the-credential-management-api/
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.ValidBannerHeight">
+            <summary>
+            The only valid bitmap height (in pixels) of a user-defined banner.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.ValidBannerWidth">
+            <summary>
+            The only valid bitmap width (in pixels) of a user-defined banner.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog"/> class with the specified target.
+            </summary>
+            <param name="target">The name of the target for the credentials, typically a server name.</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog"/> class with the specified target and caption.
+            </summary>
+            <param name="target">The name of the target for the credentials, typically a server name.</param>
+            <param name="caption">The caption of the dialog (null will cause a system default title to be used).</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog"/> class with the specified target, caption and message.
+            </summary>
+            <param name="target">The name of the target for the credentials, typically a server name.</param>
+            <param name="caption">The caption of the dialog (null will cause a system default title to be used).</param>
+            <param name="message">The message of the dialog (null will cause a system default message to be used).</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.#ctor(System.String,System.String,System.String,System.Drawing.Image)">
+            <summary>
+            Initializes a new instance of the <see cref="T:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog"/> class with the specified target, caption, message and banner.
+            </summary>
+            <param name="target">The name of the target for the credentials, typically a server name.</param>
+            <param name="caption">The caption of the dialog (null will cause a system default title to be used).</param>
+            <param name="message">The message of the dialog (null will cause a system default message to be used).</param>
+            <param name="banner">The image to display on the dialog (null will cause a system default image to be used).</param>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.AlwaysDisplay">
+            <summary>
+            Gets or sets if the dialog will be shown even if the credentials can be returned from an existing credential in the credential manager.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.ExcludeCertificates">
+            <summary>
+            Gets or sets if the dialog is populated with name/password only.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.Persist">
+            <summary>
+            Gets or sets if the credentials are to be persisted in the credential manager.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.KeepName">
+            <summary>
+            Gets or sets if the name is read-only.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.Username">
+            <summary>
+            Gets or sets the username for the credentials.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.Password">
+            <summary>
+            Gets or sets the password for the credentials.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.SaveChecked">
+            <summary>
+            Gets or sets the save checkbox status.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.SaveDisplayed">
+            <summary>Gets or sets if the save checkbox is displayed.</summary>
+            <remarks>This value only has effect if Persist is true.</remarks>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.Target">
+            <summary>
+            Gets or sets the name of the target for the credentials, typically a server name.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.Caption">
+            <summary>
+            Gets or sets the caption of the dialog.
+            </summary>
+            <remarks>A null value will cause a system default caption to be used.</remarks>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.Message">
+            <summary>
+            Gets or sets the message of the dialog.
+            </summary>
+            <remarks>A null value will cause a system default message to be used.</remarks>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.Banner">
+            <summary>
+            Gets or sets the image to display on the dialog.
+            </summary>
+            <remarks>A null value will cause a system default image to be used.</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.Show">
+            <summary>
+            Shows the credentials dialog.
+            </summary>
+            <returns>Returns a DialogResult indicating the user action.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.Show(System.Boolean)">
+            <summary>
+            Shows the credentials dialog with the specified save checkbox status.
+            </summary>
+            <param name="saveChecked">True if the save checkbox is checked.</param>
+            <returns>Returns a DialogResult indicating the user action.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.Show(System.String)">
+            <summary>
+            Shows the credentials dialog with the specified name.
+            </summary>
+            <param name="name">The name for the credentials.</param>
+            <returns>Returns a DialogResult indicating the user action.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.Show(System.String,System.String)">
+            <summary>
+            Shows the credentials dialog with the specified name and password.
+            </summary>
+            <param name="name">The name for the credentials.</param>
+            <param name="password">The password for the credentials.</param>
+            <returns>Returns a DialogResult indicating the user action.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.Show(System.String,System.String,System.Boolean)">
+            <summary>
+            Shows the credentials dialog with the specified name, password and save checkbox status.
+            </summary>
+            <param name="name">The name for the credentials.</param>
+            <param name="password">The password for the credentials.</param>
+            <param name="saveChecked">True if the save checkbox is checked.</param>
+            <returns>Returns a DialogResult indicating the user action.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.Show(System.Windows.Forms.IWin32Window)">
+            <summary>
+            Shows the credentials dialog with the specified owner.
+            </summary>
+            <param name="owner">The System.Windows.Forms.IWin32Window the dialog will display in front of.</param>
+            <returns>Returns a DialogResult indicating the user action.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.Show(System.Windows.Forms.IWin32Window,System.Boolean)">
+            <summary>
+            Shows the credentials dialog with the specified owner and save checkbox status.
+            </summary>
+            <param name="owner">The System.Windows.Forms.IWin32Window the dialog will display in front of.</param>
+            <param name="saveChecked">True if the save checkbox is checked.</param>
+            <returns>Returns a DialogResult indicating the user action.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.Show(System.Windows.Forms.IWin32Window,System.String,System.String)">
+            <summary>
+            Shows the credentials dialog with the specified owner, name and password.
+            </summary>
+            <param name="owner">The System.Windows.Forms.IWin32Window the dialog will display in front of.</param>
+            <param name="name">The name for the credentials.</param>
+            <param name="password">The password for the credentials.</param>
+            <returns>Returns a DialogResult indicating the user action.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.Boolean)">
+            <summary>
+            Shows the credentials dialog with the specified owner, name, password and save checkbox status.
+            </summary>
+            <param name="owner">The System.Windows.Forms.IWin32Window the dialog will display in front of.</param>
+            <param name="name">The name for the credentials.</param>
+            <param name="password">The password for the credentials.</param>
+            <param name="saveChecked">True if the save checkbox is checked.</param>
+            <returns>Returns a DialogResult indicating the user action.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.Confirm(System.Boolean)">
+            <summary>
+            Confirmation action to be applied.
+            </summary>
+            <param name="value">True if the credentials should be persisted.</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.ShowDialog(System.Windows.Forms.IWin32Window)">
+            <summary>
+            Returns a DialogResult indicating the user action.
+            </summary>
+            <param name="owner">The System.Windows.Forms.IWin32Window the dialog will display in front of.</param>
+            <remarks>
+            Sets the name, password and SaveChecked accessors to the state of the dialog as it was dismissed by the user.
+            </remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.GetInfo(JetBrains.Lifetimes.Lifetime,System.Windows.Forms.IWin32Window)">
+            <summary>Returns the info structure for dialog display settings.</summary>
+            <param name="lifetime"></param>
+            <param name="owner">The System.Windows.Forms.IWin32Window the dialog will display in front of.</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.GetFlags">
+            <summary>Returns the flags for dialog display options.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CredentialsDialog.GetDialogResult(JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CREDUI.ReturnCodes)">
+            <summary>Returns a DialogResult from the specified code.</summary>
+            <param name="code">The credential return code.</param>
+        </member>
+        <member name="F:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CREDUI.MAX_MESSAGE_LENGTH">
+            <summary>http://msdn.microsoft.com/library/default.asp?url=/library/en-us/secauthn/security/authentication_constants.asp</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CREDUI.FLAGS">
+            <summary>
+            http://www.pinvoke.net/default.aspx/Enums.CREDUI_FLAGS
+            http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnnetsec/html/dpapiusercredentials.asp
+            http://msdn.microsoft.com/library/default.asp?url=/library/en-us/secauthn/security/creduipromptforcredentials.asp
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CREDUI.ReturnCodes">
+            <summary>http://www.pinvoke.net/default.aspx/Enums.CredUIReturnCodes</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CREDUI.INFO">
+            <summary>
+            http://www.pinvoke.net/default.aspx/Structures.CREDUI_INFO
+            http://msdn.microsoft.com/library/default.asp?url=/library/en-us/secauthn/security/credui_info.asp
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CREDUI.PromptForCredentials(JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CREDUI.INFO@,System.String,System.IntPtr,System.Int32,System.Text.StringBuilder,System.Int32,System.Text.StringBuilder,System.Int32,System.Int32@,JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CREDUI.FLAGS)">
+            <summary>
+            http://www.pinvoke.net/default.aspx/credui.CredUIPromptForCredentialsW
+            http://msdn.microsoft.com/library/default.asp?url=/library/en-us/secauthn/security/creduipromptforcredentials.asp
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.NuPeek.Infrastructure.CREDUI.ConfirmCredentials(System.String,System.Boolean)">
+            <summary>
+            http://www.pinvoke.net/default.aspx/credui.CredUIConfirmCredentials
+            http://msdn.microsoft.com/library/default.asp?url=/library/en-us/secauthn/security/creduiconfirmcredentials.asp
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.PdbGeneration.IPdbGenerationParameters.Folder">
+            <summary>
+            Root folder for pdb generation
+            </summary>
+            <remarks>Sources for pdb are generated into another folder (see ISharedDecompilationCache)</remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.Resources.BindExternalSourcesProviderBase">
+            <summary>
+            Binds various decompiled files to assemblies
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.AssemblyExplorer.Resources.ResourceNavigationUtil.ReadResource(JetBrains.ReSharper.ExternalSources.AssemblyExplorer.Resources.IResourceData)">
+            <param name="navigationTarget">ManifestResourceData or NetResourceEntryData or Win32ResourceData</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.ILViewer.CachedCode.FindContainingRangeNode(JetBrains.Metadata.Access.MetadataToken)">
+            <returns>
+            Node with elementToken if exists,
+            existing node with typeToken (where typeToken - token of containing type (maybe recursively) of member with elementToken) or null otherwise
+            </returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.ILViewer.CachedCode.CollectSequencePointRanges(JetBrains.Metadata.Debug.DebugData,JetBrains.Metadata.Debug.DebugData)">
+            <summary>
+            Match sequence points in original code with ranges in decompiled code
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.ILViewer.CachedDebugData.TryGetSourceDebugData(JetBrains.ProjectModel.IProjectFile,System.String,JetBrains.Metadata.Reader.API.IAssemblyLocation@,JetBrains.ReSharper.Feature.Services.ExternalSources.MetadataTranslator.MetadataTranslatorOptions@,System.String@,JetBrains.ReSharper.ExternalSources.ILViewer.DebugDataOrigin@,System.Boolean)">
+            <returns>
+            null, if assemblyLocation == null (i.e. we can not show IL);
+            empty DebugData, if assembly != null, but debug data is not found (e.g. pdb signature does not correspond to signature from assembly)
+            (in this case we can show IL (without sequence point matching), because assembly is found);
+            empty DebugData, if mainThread is false and output assembly for project exists
+            (if mainThread is false, then method  myPdbCache.RescanSync should not be called)
+            </returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.ILViewer.DeclarationSynchronizationElement.#ctor(System.String,JetBrains.ReSharper.Psi.Tree.IDeclaration,JetBrains.ReSharper.ExternalSources.ILViewer.ISynchronizationElement)">
+            <param name="topLevelTypeName">null for top-level code</param>
+            <param name="declaration">type / type member / local function declaration</param>
+            <param name="fallbackSynchronizationElement">sync element that can be used when the declaration is unresolved</param>
+        </member>
+        <member name="T:JetBrains.ReSharper.ExternalSources.ILViewer.IlViewerToolWindowContent">
+            <summary>
+            The direct viewmodel for tool window. Wires up the view models. TODO(H): should be able to use IlViewerViewModel directly if all the wiring is done by it.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.ILViewer.RangeTree.IlViewerPsiUtil.TryGetTopLevelTypeName(JetBrains.ReSharper.Psi.Tree.IDeclaration,JetBrains.ReSharper.Psi.CSharp.Tree.ITopLevelCode@)">
+            <remarks>
+            In case of top level code returns null, topLevelCode is not null
+            (depending on the compiler, the type name may be Program or &lt;Program&gt;$)
+            </remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.ILViewer.RangeTree.RangeTreeUtil.TryGetTokenOwnerNode(JetBrains.ReSharper.ExternalSources.ILViewer.RangeTree.RangeNode)">
+            <returns>
+            rangeNode, if it is TokenOwnerRangeNode,
+            containing node of type TokenOwnerRangeNode otherwise</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.ILViewer.RangeTree.RangeTreeUtil.GetTypeChain(JetBrains.ReSharper.Psi.Tree.ITypeDeclaration)">
+            <remarks>
+            result[i] is parent for result[i+1];
+            result[0] is top-level type;
+            result.Last() is typeDeclaration
+            </remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.ILViewer.RangeTree.RangeTreeUtil.TryGetLocalFunctionNode(JetBrains.ReSharper.ExternalSources.ILViewer.RangeTree.TypeRangeNode,JetBrains.ReSharper.Psi.CSharp.Tree.ILocalFunctionDeclaration,JetBrains.ReSharper.Psi.Tree.IFunctionDeclaration)">
+            <remarks>containingDeclaration is null for local function inside top level code</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.ILViewer.RangeTree.RangeTreeUtil.CollectLocalFunctionNodesByName(JetBrains.ReSharper.ExternalSources.ILViewer.RangeTree.TokenOwnerRangeNode,System.String,JetBrains.ReSharper.Psi.Tree.IFunctionDeclaration,System.Collections.Generic.List{JetBrains.ReSharper.ExternalSources.ILViewer.RangeTree.MethodRangeNode})">
+            <remarks>containingDeclaration is null for local function inside top level code</remarks>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.ILViewer.RangeTree.TokenOwnerRangeNode.Name">
+            <summary>
+            Short name of metadataEntity
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.ILViewer.SequencePointSynchronizationElement.FindSequencePointRanges(JetBrains.ReSharper.ExternalSources.ILViewer.RangeTree.RangeNode,JetBrains.ReSharper.ExternalSources.ILViewer.RangeTree.SequencePointRangeNode@)">
+            <returns>true in case of exact sequence point IL offset match</returns>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.MetadataContent.BinaryStruct.Offset">
+            <summary>
+            Offset (from file start)
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.MetadataContent.BinaryStruct.Size">
+            <summary>
+            Size of struct in bytes
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.MetadataContent.BinaryStructRow.Size">
+            <summary>
+            Size in bytes
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.MetadataContent.BinaryStructRow.Offset">
+            <summary>
+            Relative offset (from struct start)
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.MetadataContent.HeadersStructure.CreateFileHeader(JetBrains.Metadata.Utils.PE.PEFile)">
+            <summary>
+            COFF (file) header
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.ExternalSources.MetadataContent.MetadataContent.ourTablesWithBlobInBlob">
+            <summary>
+            Items in this tables refer to blobs that refer to another blobs
+            (blobs contain other blob offsets)
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.MetadataContent.MetadataContent.DebugDirectoryEntries">
+            <summary>
+            Pair.First - Entry
+            Pair.Second - Code View Debug Information ([CanBeNull])
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.MetadataContent.ResourceDirectoryEntryIds.GetTypeDescription(JetBrains.Metadata.Utils.PE.Directories.ResourceType)">
+            <summary>
+            https://docs.microsoft.com/en-us/windows/desktop/menurc/resource-types
+            https://docs.microsoft.com/en-us/cpp/mfc/tn024-mfc-defined-messages-and-resources?view=vs-2019#mfc-private-resource-formats
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.ExternalSources.MetadataContent.SectionNames.ourDescriptions">
+            <summary>
+            https://docs.microsoft.com/en-us/windows/desktop/debug/pe-format#section-table-section-headers
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.MetadataTree.Presenters.PresentationUtil.PresentMultilineString(System.String)">
+            <summary>
+            null -> null,
+            single line string -> single line string,
+            multiline string -> first line + "…"
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.ExternalSources.MetadataViewer.DecompiledSourcesExternalSourcesProvider.UseDiffTranslatorOptions">
+            <summary>
+            Use special translator options for decompiled files comparison
+            </summary>
+            <remarks>
+            Do not render tokens when comparing types from different assemblies, because the tokens can change and too many differences in the decompiled files will be shown
+            </remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.ExternalSources.MetadataViewer.MetadataViewerTextControlsUpdater">
+            <summary>
+            Updates opened text controls with metadata view when MV option changes or different assembly
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.ExternalSources.Navigation.Goto.IndexOfStringMatcher">
+            <summary>
+            Simple index of matcher with ability to provide appropriate MatchingInfo
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.Navigation.Goto.MetadataTokenUtils.GetConstantStringParentCompiledElementByToken(JetBrains.Metadata.Access.MetadataToken,JetBrains.ReSharper.Psi.Modules.IAssemblyPsiModule,JetBrains.Metadata.Reader.API.IMetadataAssembly)">
+            <summary>
+            Find field/parameter/property with token (constant string parent)
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.ExternalSources.Navigation.Goto.StringMatcher">
+            <summary>
+            Wraps IdentifierMatcher,
+            changes it's behaviour to substring matching
+            for special filter string
+            (text surrounded with quotes or double quotes, this text has more than one character)
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.ExternalSources.Navigation.Goto.StringMatcher.mySubstringMatcher">
+            <remarks>false - IdentifierMatcher behaviour</remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.ReSharperIntegration.CSharp.CSharpExternalSourcesNavigationUtil.GetNavigationAreas(JetBrains.ReSharper.Psi.IDeclaredElement,JetBrains.ReSharper.ExternalSources.ReSharperIntegration.ExternalSourceFile[],JetBrains.ReSharper.Feature.Services.Navigation.ICompiledNavigationTarget)">
+            <summary>
+            Get navigation area (file + treeNode) to perform precise navigation later in that area.
+            </summary>
+            <param name="declaredElement"></param>
+            <param name="files"></param>
+            <param name="target"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.ReSharperIntegration.ExternalSourcesPointsProvider.FindSpecificElementInFile(JetBrains.ReSharper.Feature.Services.Navigation.CompiledElementNavigationInfo,System.Collections.Generic.IReadOnlyCollection{JetBrains.ReSharper.Feature.Services.ExternalSource.ExternalSourcesMapping},JetBrains.Application.Progress.IProgressIndicator,JetBrains.ReSharper.ExternalSources.ReSharperIntegration.ExternalSourceFile[]@)">
+            <param name="compiledElementNavigationInfo">DeclaredElement to find. I.e. we want to navigate to a specific ITypeMember in externalSources</param>
+            <param name="files">ExternalSourcesMappings to parse and find elements in</param>
+            <param name="indicator"></param>
+            <param name="externalSourceFiles"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.ExternalSources.ReSharperIntegration.ExternalSourcesPointsProvider.FindSpecificElementAreasInFile(JetBrains.ReSharper.Feature.Services.Navigation.CompiledElementNavigationInfo,System.Collections.Generic.IReadOnlyCollection{JetBrains.ReSharper.Feature.Services.ExternalSource.ExternalSourcesMapping},JetBrains.Application.Progress.IProgressIndicator)">
+            <param name="compiledElementNavigationInfo">DeclaredElement to find. I.e. we want to navigate to a specific ITypeMember in externalSources</param>
+            <param name="files">ExternalSourcesMappings to parse and find elements in</param>
+            <param name="assemblyPsiModule">IPsiModule which mapping files were generated against</param>
+            <param name="indicator"></param>
+            <param name="externalSourceFiles"></param>
+            <returns></returns>
+        </member>
+        <member name="P:JetBrains.PsiFeatures.UIInteractive.Features.ExternalSources.ILViewer.IlViewerViewModel.Lines">
+            <remarks>StartLine of range is treated as caret line</remarks>
+        </member>
+    </members>
+</doc>

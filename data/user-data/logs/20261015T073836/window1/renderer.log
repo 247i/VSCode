@@ -1,0 +1,295 @@
+2026-10-15 07:38:37.403 [info] [RemoteAgentHost] Reconciling: desired=[], current=[]
+2026-10-15 07:38:37.424 [info] [AgentHost:renderer] Acquiring MessagePort to agent host...
+2026-10-15 07:38:37.663 [info] [AgentHost:renderer] MessagePort acquired, creating client...
+2026-10-15 07:38:37.709 [info] Started local extension host with pid 29660.
+2026-10-15 07:38:37.982 [info] [RemoteAgentHostProtocol] Sending initialize: address=local clientId=e4797e94-316d-4bea-ac9d-ca6f39858e44 requestId=1
+2026-10-15 07:38:37.994 [info] [RemoteAgentHostProtocol] Initialized: address=local clientId=e4797e94-316d-4bea-ac9d-ca6f39858e44 durationMs=569
+2026-10-15 07:38:37.996 [info] [AgentHost:renderer] Protocol connection established; clientId=e4797e94-316d-4bea-ac9d-ca6f39858e44
+2026-10-15 07:38:37.999 [error] Extension 'github.copilot-chat' appears in product.json but enables LESS API proposals than the extension wants.
+package.json (LOSES): agentSessionsWorkspace
+agentsWindowConfiguration
+chatDebug
+chatHooks
+envIsConnectionMetered
+extensionsAny
+newSymbolNamesProvider
+interactive
+codeActionAI
+activeComment
+commentReveal
+contribCommentThreadAdditionalMenu
+contribCommentsViewThreadMenus
+contribChatEditorInlineGutterMenu
+documentFiltersExclusive
+embeddings
+findTextInFiles
+findTextInFiles2
+languageModelToolSupportsModel
+findFiles2
+textSearchProvider
+terminalDataWriteEvent
+terminalExecuteCommandEvent
+terminalSelection
+terminalQuickFixProvider
+mappedEditsProvider
+aiRelatedInformation
+aiSettingsSearch
+chatParticipantAdditions
+defaultChatParticipant
+contribSourceControlInputBoxMenu
+authLearnMore
+authIssuers
+testObserver
+aiTextSearchProvider
+chatParticipantPrivate
+chatProvider
+contribDebugCreateConfiguration
+chatReferenceDiagnostic
+textSearchProvider2
+chatReferenceBinaryData
+languageModelSystem
+languageModelCapabilities
+languageModelPricing
+inlineCompletionsAdditions
+chatStatusItem
+chatInputNotification
+taskProblemMatcherStatus
+contribLanguageModelToolSets
+textDocumentChangeReason
+resolvers
+taskExecutionTerminal
+dataChannels
+languageModelThinkingPart
+chatSessionsProvider
+devDeviceId
+contribEditorContentMenu
+chatPromptFiles
+mcpServerDefinitions
+tabInputMultiDiff
+workspaceTrust
+environmentPower
+terminalTitle
+toolInvocationApproveCombination
+chatSessionCustomizationProvider
+product.json (WINS): agentSessionsWorkspace
+agentsWindowConfiguration
+interactive
+terminalDataWriteEvent
+terminalExecuteCommandEvent
+terminalSelection
+terminalQuickFixProvider
+chatParticipantAdditions
+defaultChatParticipant
+embeddings
+chatProvider
+mappedEditsProvider
+aiRelatedInformation
+aiSettingsSearch
+codeActionAI
+findTextInFiles
+findTextInFiles2
+textSearchProvider
+textSearchProvider2
+activeComment
+commentReveal
+contribSourceControlInputBoxMenu
+contribCommentEditorActionsMenu
+contribCommentThreadAdditionalMenu
+contribCommentsViewThreadMenus
+contribChatEditorInlineGutterMenu
+extensionAffinity
+newSymbolNamesProvider
+findFiles2
+chatReferenceDiagnostic
+extensionsAny
+authLearnMore
+testObserver
+aiTextSearchProvider
+documentFiltersExclusive
+chatParticipantPrivate
+contribDebugCreateConfiguration
+inlineCompletionsAdditions
+chatReferenceBinaryData
+languageModelSystem
+languageModelCapabilities
+languageModelThinkingPart
+languageModelToolSupportsModel
+chatStatusItem
+taskProblemMatcherStatus
+contribLanguageModelToolSets
+textDocumentChangeReason
+resolvers
+taskExecutionTerminal
+dataChannels
+chatSessionsProvider
+chatSessionCustomizationProvider
+devDeviceId
+contribEditorContentMenu
+tokenInformation
+toolInvocationApproveCombination
+chatPromptFiles
+mcpServerDefinitions
+tabInputMultiDiff
+workspaceTrust
+chatHooks
+chatDebug
+envIsConnectionMetered
+environmentPower
+terminalTitle
+languageModelPricing
+chatInputNotification
+DELTA: authIssuers
+2026-10-15 07:38:38.033 [info] [JakubKozera.csharp-dev-tools]: Command `bookmarks.refresh` already registered by Bookmarks (alefragnani.Bookmarks)
+2026-10-15 07:38:38.054 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.lightModeTheme'. This property is already registered.
+2026-10-15 07:38:38.054 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.darkModeTheme'. This property is already registered.
+2026-10-15 07:38:38.054 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.languages'. This property is already registered.
+2026-10-15 07:38:38.054 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.maxTextSize'. This property is already registered.
+2026-10-15 07:38:38.054 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.mouseNavigation.enabled'. This property is already registered.
+2026-10-15 07:38:38.054 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.controls.show'. This property is already registered.
+2026-10-15 07:38:38.055 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.resizable'. This property is already registered.
+2026-10-15 07:38:38.055 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.maxHeight'. This property is already registered.
+2026-10-15 07:38:38.851 [error] [Extension Host] (node:29660) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `Code --trace-deprecation ...` to show where the warning was created)
+2026-10-15 07:38:38.892 [error] [DefaultAccount] request: error TypeError: Failed to fetch https://api.github.com/copilot_internal/user
+2026-10-15 07:38:38.955 [info] [AccountPolicyGate] apply: state=inactive, reason=undefined, isRestricted=false
+2026-10-15 07:38:39.416 [info] [RemoteAgentHost] Reconciling: desired=[], current=[]
+2026-10-15 07:38:39.520 [error] [EricSia.pythonsnippets3]: Unknown language in `contributes.pythonsnippets3.language`. Provided value: django-html
+2026-10-15 07:38:39.521 [error] [EricSia.pythonsnippets3]: Unknown language in `contributes.pythonsnippets3.language`. Provided value: django-txt
+2026-10-15 07:38:40.328 [info] [AgentHost] Authenticating for resource: https://api.github.com
+2026-10-15 07:38:41.264 [error] [Extension Host] (node:29660) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-15 07:38:41.471 [error] Error while getting the latest version for the extension alefragnani.bookmarks from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.532 [error] Error while getting the latest version for the extension astrapios.pythonrepl from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.532 [error] Error while getting the latest version for the extension bierner.markdown-emoji from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.533 [error] Error while getting the latest version for the extension bierner.markdown-mermaid from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.534 [error] Error while getting the latest version for the extension davidanson.vscode-markdownlint from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.534 [error] Error while getting the latest version for the extension daylerees.rainglow from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.535 [error] Error while getting the latest version for the extension eamodio.gitlens from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.539 [error] Error while getting the latest version for the extension emallin.phpunit from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.541 [error] Error while getting the latest version for the extension ericsia.pythonsnippets3 from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.541 [error] Error while getting the latest version for the extension esbenp.prettier-vscode from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.542 [error] Error while getting the latest version for the extension gabrielgod1.indent-rainbow-blocks from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.543 [error] Error while getting the latest version for the extension github.vscode-pull-request-github from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.544 [error] Error while getting the latest version for the extension hbenl.vscode-test-explorer from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.544 [error] Error while getting the latest version for the extension alefragnani.bookmarks. TypeError: Failed to fetch
+2026-10-15 07:38:41.545 [error] Error while getting the latest version for the extension hirse.vscode-ungit from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.546 [error] Error while getting the latest version for the extension ibm.output-colorizer from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.546 [error] Error while getting the latest version for the extension icsharpcode.ilspy-vscode from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.547 [error] Error while getting the latest version for the extension jakubkozera.csharp-dev-tools from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.548 [error] Error while getting the latest version for the extension jakubkozera.github-copilot-code-reviewer from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.549 [error] Error while getting the latest version for the extension jakubkozera.ms-sql-manager from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.550 [error] Error while getting the latest version for the extension jetbrains.resharper-code from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.551 [error] Error while getting the latest version for the extension johnpapa.vscode-peacock from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.551 [error] Error while getting the latest version for the extension mechatroner.rainbow-csv from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.552 [error] Error while getting the latest version for the extension mgesbert.python-path from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.553 [error] Error while getting the latest version for the extension mrorz.language-gettext from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.554 [error] Error while getting the latest version for the extension ms-dotnettools.csdevkit from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.556 [error] Error while getting the latest version for the extension ms-dotnettools.csharp from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.558 [error] Error while getting the latest version for the extension ms-dotnettools.vscode-dotnet-runtime from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.558 [error] Error while getting the latest version for the extension ms-python.debugpy from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.559 [error] Error while getting the latest version for the extension ms-python.pylint from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.560 [error] Error while getting the latest version for the extension ms-python.python from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.561 [error] Error while getting the latest version for the extension ms-python.vscode-pylance from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.572 [error] Error while getting the latest version for the extension ms-python.vscode-python-envs from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.573 [error] Error while getting the latest version for the extension ms-toolsai.jupyter from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.573 [error] Error while getting the latest version for the extension ms-toolsai.jupyter-keymap from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.574 [error] Error while getting the latest version for the extension ms-toolsai.jupyter-renderers from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.574 [error] Error while getting the latest version for the extension ms-toolsai.vscode-jupyter-cell-tags from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.575 [error] Error while getting the latest version for the extension ms-toolsai.vscode-jupyter-slideshow from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.586 [error] Error while getting the latest version for the extension astrapios.pythonrepl. TypeError: Failed to fetch
+2026-10-15 07:38:41.586 [error] Error while getting the latest version for the extension ms-vscode.powershell from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.586 [error] Error while getting the latest version for the extension ms-vscode.test-adapter-converter from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.587 [error] Error while getting the latest version for the extension ms-vscode.vscode-typescript-next from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.587 [error] Error while getting the latest version for the extension oderwat.indent-rainbow from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.588 [error] Error while getting the latest version for the extension pkief.material-icon-theme from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.588 [error] Error while getting the latest version for the extension prateekmahendrakar.prettyxml from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.592 [error] Error while getting the latest version for the extension esbenp.prettier-vscode. TypeError: Failed to fetch
+2026-10-15 07:38:41.593 [error] Error while getting the latest version for the extension emallin.phpunit. TypeError: Failed to fetch
+2026-10-15 07:38:41.593 [error] Error while getting the latest version for the extension eamodio.gitlens. TypeError: Failed to fetch
+2026-10-15 07:38:41.593 [error] Error while getting the latest version for the extension daylerees.rainglow. TypeError: Failed to fetch
+2026-10-15 07:38:41.593 [error] Error while getting the latest version for the extension ericsia.pythonsnippets3. TypeError: Failed to fetch
+2026-10-15 07:38:41.594 [error] Error while getting the latest version for the extension davidanson.vscode-markdownlint. TypeError: Failed to fetch
+2026-10-15 07:38:41.594 [error] Error while getting the latest version for the extension redhat.vscode-xml from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.595 [error] Error while getting the latest version for the extension rhasan.gotomanual from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.595 [error] Error while getting the latest version for the extension saposs.xml-toolkit from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.595 [error] Error while getting the latest version for the extension se-dev-pion.rainbow-struct-field-tags from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.596 [error] Error while getting the latest version for the extension sonarsource.sonarlint-vscode from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.596 [error] Error while getting the latest version for the extension streetsidesoftware.code-spell-checker from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.597 [error] [Extension Host] (node:29660) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+2026-10-15 07:38:41.597 [error] Error while getting the latest version for the extension bierner.markdown-emoji. TypeError: Failed to fetch
+2026-10-15 07:38:41.598 [error] Error while getting the latest version for the extension bierner.markdown-mermaid. TypeError: Failed to fetch
+2026-10-15 07:38:41.598 [error] Error while getting the latest version for the extension gabrielgod1.indent-rainbow-blocks. TypeError: Failed to fetch
+2026-10-15 07:38:41.598 [error] Error while getting the latest version for the extension github.vscode-pull-request-github. TypeError: Failed to fetch
+2026-10-15 07:38:41.599 [error] Error while getting the latest version for the extension hbenl.vscode-test-explorer. TypeError: Failed to fetch
+2026-10-15 07:38:41.599 [error] Error while getting the latest version for the extension hirse.vscode-ungit. TypeError: Failed to fetch
+2026-10-15 07:38:41.599 [error] Error while getting the latest version for the extension talhakhalil.preprocessor-rainbow from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.600 [error] Error while getting the latest version for the extension twxs.cmake from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.600 [error] Error while getting the latest version for the extension wumbl3.rainbow-html from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.600 [error] Error while getting the latest version for the extension yzhang.markdown-all-in-one from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.601 [error] Error while getting the latest version for the extension zainchen.json from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Failed
+2026-10-15 07:38:41.607 [error] Error while getting the latest version for the extension ibm.output-colorizer. TypeError: Failed to fetch
+2026-10-15 07:38:41.607 [error] Error while getting the latest version for the extension icsharpcode.ilspy-vscode. TypeError: Failed to fetch
+2026-10-15 07:38:41.613 [error] Error while getting the latest version for the extension jakubkozera.csharp-dev-tools. TypeError: Failed to fetch
+2026-10-15 07:38:41.613 [error] Error while getting the latest version for the extension jakubkozera.github-copilot-code-reviewer. TypeError: Failed to fetch
+2026-10-15 07:38:41.614 [error] Error while getting the latest version for the extension jakubkozera.ms-sql-manager. TypeError: Failed to fetch
+2026-10-15 07:38:41.614 [error] Error while getting the latest version for the extension jetbrains.resharper-code. TypeError: Failed to fetch
+2026-10-15 07:38:41.614 [error] Error while getting the latest version for the extension johnpapa.vscode-peacock. TypeError: Failed to fetch
+2026-10-15 07:38:41.615 [error] Error while getting the latest version for the extension mechatroner.rainbow-csv. TypeError: Failed to fetch
+2026-10-15 07:38:41.628 [error] Error while getting the latest version for the extension mgesbert.python-path. TypeError: Failed to fetch
+2026-10-15 07:38:41.629 [error] Error while getting the latest version for the extension mrorz.language-gettext. TypeError: Failed to fetch
+2026-10-15 07:38:41.629 [error] Error while getting the latest version for the extension ms-dotnettools.csdevkit. TypeError: Failed to fetch
+2026-10-15 07:38:41.630 [error] Error while getting the latest version for the extension ms-dotnettools.csharp. TypeError: Failed to fetch
+2026-10-15 07:38:41.631 [error] Error while getting the latest version for the extension ms-dotnettools.vscode-dotnet-runtime. TypeError: Failed to fetch
+2026-10-15 07:38:41.631 [error] Error while getting the latest version for the extension ms-python.debugpy. TypeError: Failed to fetch
+2026-10-15 07:38:41.633 [error] Error while getting the latest version for the extension ms-python.pylint. TypeError: Failed to fetch
+2026-10-15 07:38:41.633 [error] Error while getting the latest version for the extension ms-python.python. TypeError: Failed to fetch
+2026-10-15 07:38:41.635 [error] Error while getting the latest version for the extension ms-python.vscode-pylance. TypeError: Failed to fetch
+2026-10-15 07:38:41.636 [error] Error while getting the latest version for the extension ms-python.vscode-python-envs. TypeError: Failed to fetch
+2026-10-15 07:38:41.636 [error] Error while getting the latest version for the extension ms-toolsai.jupyter. TypeError: Failed to fetch
+2026-10-15 07:38:41.636 [error] Error while getting the latest version for the extension ms-toolsai.jupyter-keymap. TypeError: Failed to fetch
+2026-10-15 07:38:41.643 [error] Error while getting the latest version for the extension ms-toolsai.jupyter-renderers. TypeError: Failed to fetch
+2026-10-15 07:38:41.644 [error] Error while getting the latest version for the extension ms-toolsai.vscode-jupyter-cell-tags. TypeError: Failed to fetch
+2026-10-15 07:38:41.645 [error] Error while getting the latest version for the extension ms-toolsai.vscode-jupyter-slideshow. TypeError: Failed to fetch
+2026-10-15 07:38:41.645 [error] Error while getting the latest version for the extension ms-vscode.powershell. TypeError: Failed to fetch
+2026-10-15 07:38:41.645 [error] Error while getting the latest version for the extension ms-vscode.test-adapter-converter. TypeError: Failed to fetch
+2026-10-15 07:38:41.645 [error] Error while getting the latest version for the extension ms-vscode.vscode-typescript-next. TypeError: Failed to fetch
+2026-10-15 07:38:41.651 [error] Error while getting the latest version for the extension oderwat.indent-rainbow. TypeError: Failed to fetch
+2026-10-15 07:38:41.651 [error] Error while getting the latest version for the extension pkief.material-icon-theme. TypeError: Failed to fetch
+2026-10-15 07:38:41.652 [error] Error while getting the latest version for the extension prateekmahendrakar.prettyxml. TypeError: Failed to fetch
+2026-10-15 07:38:41.653 [error] Error while getting the latest version for the extension redhat.vscode-xml. TypeError: Failed to fetch
+2026-10-15 07:38:41.660 [info] [AgentHost] Authenticating for resource: https://api.github.com/repos
+2026-10-15 07:38:41.717 [error] Error while getting the latest version for the extension rhasan.gotomanual. TypeError: Failed to fetch
+2026-10-15 07:38:41.717 [error] Error while getting the latest version for the extension saposs.xml-toolkit. TypeError: Failed to fetch
+2026-10-15 07:38:41.717 [error] Error while getting the latest version for the extension se-dev-pion.rainbow-struct-field-tags. TypeError: Failed to fetch
+2026-10-15 07:38:41.718 [error] Error while getting the latest version for the extension sonarsource.sonarlint-vscode. TypeError: Failed to fetch
+2026-10-15 07:38:41.718 [error] Error while getting the latest version for the extension streetsidesoftware.code-spell-checker. TypeError: Failed to fetch
+2026-10-15 07:38:41.718 [error] Error while getting the latest version for the extension talhakhalil.preprocessor-rainbow. TypeError: Failed to fetch
+2026-10-15 07:38:41.776 [error] Error while getting the latest version for the extension twxs.cmake. TypeError: Failed to fetch
+2026-10-15 07:38:41.776 [error] Error while getting the latest version for the extension wumbl3.rainbow-html. TypeError: Failed to fetch
+2026-10-15 07:38:41.777 [error] Error while getting the latest version for the extension yzhang.markdown-all-in-one. TypeError: Failed to fetch
+2026-10-15 07:38:41.777 [error] Error while getting the latest version for the extension zainchen.json. TypeError: Failed to fetch
+2026-10-15 07:38:42.281 [info] [perf] Render performance baseline is 25ms
+2026-10-15 07:38:42.421 [error] TypeError: Failed to fetch
+    at b4n (vscode-file://vscode-app/d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/workbench.desktop.main.js:5396:53663)
+    at vscode-file://vscode-app/d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/workbench.desktop.main.js:5396:54959
+    at GWt.logAndRequest (vscode-file://vscode-app/d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/workbench.desktop.main.js:635:10294)
+    at GWt.request (vscode-file://vscode-app/d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/workbench.desktop.main.js:5396:54939)
+    at llt.doFetchAlerts (vscode-file://vscode-app/d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/workbench.desktop.main.js:5885:6400)
+    at llt.fetchAlerts (vscode-file://vscode-app/d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/workbench.desktop.main.js:5885:6293)
+    at new llt (vscode-file://vscode-app/d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/workbench.desktop.main.js:5885:6124)
+    at s._createInstance (vscode-file://vscode-app/d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/workbench.desktop.main.js:1976:2000)
+    at s.createInstance (vscode-file://vscode-app/d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/workbench.desktop.main.js:1976:1440)
+    at s.safeCreateContribution (vscode-file://vscode-app/d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/workbench.desktop.main.js:620:47103)
+    at l (vscode-file://vscode-app/d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/workbench.desktop.main.js:620:46704)
+2026-10-15 07:38:42.672 [info] Settings Sync: Account status changed from uninitialized to unavailable
+2026-10-15 07:38:42.823 [error] [Extension Host] GET /user - 500 with id UNKNOWN in 79ms
+2026-10-15 07:38:42.826 [error] Error: net::ERR_NAME_NOT_RESOLVED
+	at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/utility_init:2:10645)
+	at SimpleURLLoaderWrapper.emit (node:events:514:28)
+2026-10-15 07:38:42.826 [error] [ChatSessionsService] Failed to resolve sessions for provider copilot-cloud-agent net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:42.826 [error] [ChatSessionsService] Failed to resolve sessions for provider copilot-cloud-agent net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:43.257 [error] TypeError: fetch failed
+2026-10-15 07:38:43.960 [info] [AccountPolicyGate] apply: state=inactive, reason=undefined, isRestricted=false
+2026-10-15 07:38:45.656 [error] Error: net::ERR_NAME_NOT_RESOLVED
+	at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/utility_init:2:10645)
+	at SimpleURLLoaderWrapper.emit (node:events:514:28)
+2026-10-15 07:39:07.046 [error] [DefaultAccount] request: error Offline: Offline https://api.github.com/copilot_internal/user

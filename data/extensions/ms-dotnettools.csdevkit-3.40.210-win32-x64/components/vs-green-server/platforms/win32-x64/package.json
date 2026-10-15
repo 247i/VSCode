@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "dependencies": {
+    "@microsoft/visualstudio-server.win32-x64": "3.40.210",
+    "@microsoft/visualstudio-server-shared.win32-x64": "3.40.210",
+    "@microsoft/vscode.templateengine.win32-x64": "3.40.210",
+    "@microsoft/visualstudio-code-servicehost.win32-x64": "3.40.210",
+    "@microsoft/visualstudio-reliability-monitor.win32-x64": "3.40.210",
+    "@microsoft/visualstudio-testwindow-vscode-service.win32-x64": "3.40.210",
+    "@microsoft/coverage-services.win32-x64": "3.40.210",
+    "@microsoft/visualstudio-controller.win32-x64": "3.40.210"
+  }
+}

@@ -1,0 +1,258 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.Psi.Xaml</name>
+    </assembly>
+    <members>
+        <member name="P:JetBrains.ReSharper.Psi.Xaml.DeclaredElements.IXamlNamespaceAlias.RawValue">
+            <summary>
+            Raw value with prefixes and full URI
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Psi.Xaml.DeclaredElements.IXamlNamespaceAlias.UriNoArguments">
+            <summary>
+            XmlNs URI without arguments (See RSRP-468300)
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Psi.Xaml.DeclaredElements.IXamlNamespaceAlias.UriArguments">
+            <summary>
+            Arguments of the URI (See RSRP-468300)
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Psi.Xaml.DeclaredElements.IXamlResource.ResourceType">
+            <summary>Type of the declared resource</summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Psi.Xaml.DeclaredElements.IXamlResource.TypeKey">
+            <summary>Type if resource key is {x:Type} markup key</summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Psi.Xaml.DeclaredElements.IXamlResource.StaticMemberKey">
+            <summary>Member if resource key is {x:Static} markup key</summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Psi.Xaml.DeclaredElements.IXamlResource.TargetType">
+            <summary>Target type of Style/ControlTemplate resources</summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Psi.Xaml.DeclaredElements.IXamlResource.XamarinFormsClass">
+            <summary>
+            Class in case of Xamarin.Forms Style with Class declaration
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Psi.Xaml.Impl.Tree.References.XamlConstructorReferenceBase`1.ResolveWithParameterCountFallback">
+            <remarks>
+            For C# and VB.NET, there are implementations of <see cref="T:JetBrains.ReSharper.Psi.Xaml.Impl.Resolve.IXamlFunctionResolver"/>, and this is not called.
+            For all the other languages (e.g., F#), this "fallback" will be invoked.
+            Basically, we filter the available ctor info by the parameter count, which should be the right thing to do.
+            <para>
+              <b>x:Bind doc:</b> "Overloading is based on the number of arguments, not type,
+              and it will try to match to the first overload with that many arguments."
+            </para>
+            </remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.Psi.Xaml.Impl.GeneratedFiles.XamlGeneratedFileUtil.TryGetSourceFilePath(JetBrains.Util.VirtualFileSystemPath)">
+            <summary>
+            Parsing first line of generated file:
+              #pragma checksum "..\..\..\foo\UserControl1.xaml"
+              #ExternalChecksum("..\..\MainWindow.xaml","{406ea660-64cf-4c82-b6f0-42d48172a799}","AE919C97FD19B80A065D1673E984D9D7")
+            </summary>
+            <param name="generatedFilePath">Path to generated file (.g.cs)</param>
+            <returns>Relative path to a file if managed to fetch</returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Psi.Xaml.Impl.Resolve.ContentTypeInfo">
+            <summary>
+            Caches data about Content property specified in a type
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Psi.Xaml.Impl.Resolve.ContentTypeInfo.TypeHasTypeConverter">
+            <summary>Whether there is a type converter for a type specified. If yes, text might be inside object element</summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Psi.Xaml.Impl.Resolve.ContentTypeInfo.ContentProperty">
+            <summary>Content property name of the type in question. Null or empty if none</summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Psi.Xaml.Impl.Resolve.ContentTypeInfo.ContentPropertyHasTypeConverter">
+            <summary>Whether there is a type converter for the content property specified. If yes, text might be inside property value</summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Psi.Xaml.Impl.Resolve.ContentTypeInfo.PropertyTypes">
+            <summary>Types of the content property</summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Psi.Xaml.Impl.Resolve.ContentTypeInfo.ContentTypes">
+            <summary>Expected content types including element type if property's type is a collection</summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Psi.Xaml.Impl.Resolve.ContentTypeInfo.IsCollection">
+            <summary>Whether Content property's type is collection</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Psi.Xaml.Impl.Util.AttachedMembersUtil.AttachedDefiningTypeFilter">
+            <summary>
+            Filter only attached properties/events defined by 'myAttachedOwnerType'
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Psi.Xaml.Impl.Util.AttachedMembersUtil.IsTypeAttachable(JetBrains.ReSharper.Psi.Tree.ITreeNode,JetBrains.ReSharper.Psi.IType)">
+            <summary>
+            Detects if type can has some property/event attached.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Psi.Xaml.Impl.Util.BindingUtil.TryGetMode(JetBrains.ReSharper.Psi.Xaml.Tree.IXamlObjectElement)">
+            <summary>
+            Obtains binding mode from the property declared in object element
+            </summary>
+            <param name="element">Binding or MultiBinding object element</param>
+            <returns>Binding mode if declared in object element, null otherwise</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Psi.Xaml.Impl.Util.LengthUtil.ValidateLengthArgument(System.String)">
+            <summary>
+            Validate string passed as Length argument (i.e. as for Thickness)
+            </summary>
+            <param name="argument">Argument value to validate</param>
+            <returns>True if validations succeeded</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Psi.Xaml.Impl.Util.XamlEventUtil.IsAddHandler(JetBrains.ReSharper.Psi.IDeclaredElement,JetBrains.ReSharper.Psi.Resolve.ISubstitution,JetBrains.ReSharper.Psi.Xaml.Impl.Resolve.IXamlTypeCache)">
+            <summary>
+            Checks method to be the Add-accesor method of attached event.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Psi.Xaml.Impl.Util.XamlEventUtil.IsRemoveHandler(JetBrains.ReSharper.Psi.IDeclaredElement,JetBrains.ReSharper.Psi.Resolve.ISubstitution,JetBrains.ReSharper.Psi.Xaml.Impl.Resolve.IXamlTypeCache)">
+            <summary>
+            Checks method to be the Remove-accesor method of attached event.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Psi.Xaml.Impl.Util.XamlEventUtil.IsRoutedEventField(JetBrains.ReSharper.Psi.IDeclaredElement,JetBrains.ReSharper.Psi.Xaml.Impl.Resolve.IXamlTypeCache)">
+            <summary>
+            Checks field to be the RoutedEvent descriptor field.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Psi.Xaml.Impl.Util.XamlEventUtil.GetAttachedEventType(JetBrains.ReSharper.Psi.IDeclaredElement,JetBrains.ReSharper.Psi.Resolve.ISubstitution)">
+            <summary>
+            Returns the event delegated type by attached event accessor.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Psi.Xaml.Impl.Util.XamlEventUtil.AttachedAccessorOwnerTypeFilter">
+            <summary>
+            Accepts method with the first parameter of type equal
+            or implicitly convertible to specified owner type.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Psi.Xaml.Impl.Util.XamlPropertyUtil.IsSetterMethod(JetBrains.ReSharper.Psi.IDeclaredElement,JetBrains.ReSharper.Psi.Resolve.ISubstitution,JetBrains.ReSharper.Psi.Xaml.Impl.Resolve.IXamlTypeCache)">
+            <summary>
+            Checks method to be the Set-accesor method of attached property.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Psi.Xaml.Impl.Util.XamlPropertyUtil.IsGetterMethod(JetBrains.ReSharper.Psi.IDeclaredElement,JetBrains.ReSharper.Psi.Resolve.ISubstitution,JetBrains.ReSharper.Psi.Xaml.Impl.Resolve.IXamlTypeCache)">
+            <summary>
+            Checks method to be the Get-accesor method of attached property.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Psi.Xaml.Impl.Util.XamlPropertyUtil.IsAccessorMethod(JetBrains.ReSharper.Psi.IDeclaredElement,JetBrains.ReSharper.Psi.Resolve.ISubstitution,JetBrains.ReSharper.Psi.Xaml.Impl.Resolve.IXamlTypeCache)">
+            <summary>
+            Checks method to be the Get- or Set-accesor method of attached property.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Psi.Xaml.Impl.Util.XamlPropertyUtil.IsDependencyPropertyField(JetBrains.ReSharper.Psi.IDeclaredElement,JetBrains.ReSharper.Psi.Xaml.Impl.Resolve.IXamlTypeCache)">
+            <summary>
+            Checks field to be DependencyProperty descriptor field.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Psi.Xaml.Impl.Util.XamlPropertyUtil.GetPropertyType(JetBrains.ReSharper.Psi.IDeclaredElement,JetBrains.ReSharper.Psi.Resolve.ISubstitution)">
+            <summary>
+            Returns the attached property type by accessor signature.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Psi.Xaml.Impl.XamlProjectFileLanguageService.GetPsiLanguageType(JetBrains.ProjectModel.IProjectFile,JetBrains.Util.Dotnet.TargetFrameworkIds.TargetFrameworkId)">
+            <summary>
+            Detects <see cref="T:JetBrains.ReSharper.Psi.PsiLanguageType"/> for given project file in given context. If context is unknown (<see cref="!:targetFrameworkId"/> is null)
+            it will try to guess 
+            </summary>
+            <param name="projectFile">Project file to detect language</param>
+            <param name="targetFrameworkId">Context</param>
+            <returns>Detected language</returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Psi.Xaml.ProjectModel.Editing.XamlReloadProjectOnChangePolicy">
+            <summary>
+            Reloads project after changing xaml files, it is important to recall `XamlMarkupCompile` targets
+              and regenerate all necessary .g.cs and .i.cs files in intermediate folder
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Psi.Xaml.Tree.BindingExtension.GetBindingSourceType(JetBrains.ReSharper.Psi.Tree.ITreeNode,JetBrains.ReSharper.Psi.Xaml.Tree.IXamlObjectElement@)">
+            <summary>Returns source type used to resolve paths in binding</summary>
+            <param name="binding">Binding element</param>
+            <param name="objectElement">Binding context</param>
+            <returns>Binding source type</returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Psi.Xaml.Tree.IXamarinFormsClassElement">
+            <summary>
+            Class name in Xamarin resource declaration
+            https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/styles/xaml/style-class
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Psi.Xaml.Tree.IFieldDeclaration">
+            <summary>
+            Xaml object element, that can declare field.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Psi.Xaml.Tree.IPropertyAttributeValue.GetTextToken">
+            <summary>Returns text within attribute, if it is not a markup attribute</summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Psi.Xaml.Tree.IPropertyAttributeValue.MarkupExtension">
+            <summary>Returns list of all top-level markup entries</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Psi.Xaml.Tree.IResourceDeclaration">
+            <summary>Xaml object element, that can declare resource</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Psi.Xaml.Tree.IResourceDeclaration.GetXamarinFormsClassElements">
+            <summary>
+            Returns enumerable of Xamarin.Forms class names. Only one is allowed.
+            </summary>
+            <returns>Enumerable of Xamarin.Forms class names</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Psi.Xaml.Tree.IXamlDeclaration.GetPossibleDeclaredNames">
+            <returns>
+            String that would be DeclaredName if declared element is created.
+            Called while building caches only
+            </returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Psi.Xaml.Tree.IXamlFile">
+            <summary>Xaml file</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Psi.Xaml.Tree.IXamlIdentifier">
+            <summary>
+            XamlIdentifier has the form [[XmlNamemespace:]Qualifier.]Id
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Psi.Xaml.Tree.IXamlObjectElement">
+            <summary>Xaml object element</summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Psi.Xaml.Tree.IXamlObjectElementDeclaration`1.Name">
+            <summary>Unquoted control name</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Psi.Xaml.Tree.IXamlPropertyElement">
+            <summary>Property element (i.e. Button.Content)</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Psi.Xaml.Tree.IXamlTypeDeclaration">
+            <summary>XAML root element. Declares partial type. Sometimes...</summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Psi.Xaml.Tree.MarkupExtensions.IMarkup.Name">
+            <summary>
+            Name of the markup
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Psi.Xaml.Tree.MarkupExtensions.IMarkup.Value">
+            <summary>
+            Value, that can be nested markup
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Psi.Xaml.Tree.MarkupExtensions.IMarkupAttribute.Name">
+            <summary>Attribute name</summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Psi.Xaml.Tree.MarkupExtensions.IMarkupAttribute.Value">
+            <summary>Markup value</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Psi.Xaml.Tree.MarkupExtensions.ISourceTraversalValue">
+            <summary>
+            Valid costructs are: /
+            qualifier/
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Psi.Xaml.Tree.MarkupExtensions.ITypeExpressionTypeArguments.TypeArguments">
+            <summary>
+            TypeArguments may be null though
+            </summary>
+        </member>
+    </members>
+</doc>

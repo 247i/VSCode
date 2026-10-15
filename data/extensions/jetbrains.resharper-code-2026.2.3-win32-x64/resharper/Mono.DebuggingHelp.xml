@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mono.DebuggingHelp</name>
+    </assembly>
+    <members>
+        <member name="M:DebuggingHelp.TargetDebuggingHelper.LoadAssemblyWithAppDomain(System.Byte[])">
+            <summary>
+            Isn't accessible in .Net core 1.1
+            </summary>
+        </member>
+        <member name="M:DebuggingHelp.TargetDebuggingHelper.GetAllPossibleExtensionsContainerNames">
+            <summary>
+            Return types separated by '|'
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DebuggingHelp.TargetDebuggingHelper.GetAllNamespacesFromCorLib">
+            <summary>
+            Return namespaces separated by '|'
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DebuggingHelp.TargetDebuggingHelper.GetAssemblyFromDomain(System.String)">
+            <summary>
+            Isn't accessible in .Net core 1.1
+            </summary>
+        </member>
+        <member name="M:DebuggingHelp.TargetDebuggingHelper.GetTypeByAssemblyAndTypeName(System.String,System.String)">
+            <param name="assemblyName">If empty => look for corlib type</param>
+            <param name="typeFqn">FQN of type</param>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:DebuggingHelp.TargetDebuggingHelper.PrepareType(System.Type)">
+            <summary>
+            This method can be deadlocked on `RuntimeHelpers.RunClassConstructor` if the target application is in the middle of the same static constructor call on some of its threads.
+            
+            </summary>
+            <param name="currentType"></param>
+        </member>
+        <member name="T:DebuggingHelp.ObjectsStorage">
+            <summary> Storage that persists indexes of added items </summary>
+            <remarks> We shouldn't use System.Collections here since it may force loading of the assembly in the target process</remarks>
+        </member>
+    </members>
+</doc>

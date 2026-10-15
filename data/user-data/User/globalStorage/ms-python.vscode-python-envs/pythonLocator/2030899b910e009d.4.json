@@ -1,0 +1,24 @@
+{
+  "environment": {
+    "executable": "d:\\TA\\தோனி-64\\python.exe",
+    "prefix": "d:\\TA\\தோனி-64",
+    "version": "3.14.4.final.0",
+    "is64Bit": true,
+    "symlinks": [
+      "d:\\TA\\தோனி-64\\python.exe"
+    ]
+  },
+  "symlinks": [
+    [
+      "d:\\TA\\தோனி-64\\python.exe",
+      {
+        "secs_since_epoch": 1787602075,
+        "nanos_since_epoch": 484059700
+      },
+      {
+        "secs_since_epoch": 1787602075,
+        "nanos_since_epoch": 483059200
+      }
+    ]
+  ]
+}

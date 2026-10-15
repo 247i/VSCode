@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Platform.ComponentModel.Legacy</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.ClassOrMemberWithPartAttributePassFilter">
+            <summary>
+            Lets in types which explicitly have the <see cref="T:JetBrains.Application.Parts.PartAttribute" /> on them, or which have static methods with the <see cref="T:JetBrains.Application.Parts.PartAttribute" /> in them.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.ClassWithPartAttributePassFilter">
+            <summary>
+            Lets in only types which explicitly have the <see cref="T:JetBrains.Application.Parts.PartAttribute" /> on them.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.IMetadataPartsPassFilter">
+            <summary>
+            Governs what gets picked into the parts catalog initially when it's constructed (before any of the <see cref="!:IPartsCatalogueFilter" /> is applied).
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogFacade.LegacyPartCatalogStorage.JetBrains#Application#Catalogs#IPartCatalogStorage#AssemblyGetPartMembers(JetBrains.Util.dataStructures.TypedIntrinsics.Int32{JetBrains.Application.Catalogs.CatalogAssemblyToken})">
+            <inheritdoc />
+        </member>
+        <member name="T:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogFacade.LegacyWrappedPartCatalogs">
+            <summary>
+            Factory methods for standard catalogs — an implementation that façades the old catalogs for the new API.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogFacade.LegacyWrappedPartCatalogs.Create(System.Collections.Generic.IList{JetBrains.Application.Catalogs.PartCatalogAssembly})">
+            <summary>
+            Creates the catalog from precalculated data.
+            </summary>
+            <param name="assemblies">The assemblies list.</param>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogFacade.LegacyWrappedPartCatalogs.CreateFromRuntimeTypes(System.Collections.Generic.IEnumerable{System.Type})">
+            <summary>
+            Creates a parts catalog over a few specific runtime types — for precision filtering of what gets consumed.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogFacade.LegacyWrappedPartCatalogs.CreateFromRuntimeTypes(System.Type[])">
+            <summary>
+            Creates a parts catalog over a few specific runtime types — for precision filtering of what gets consumed.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogFacade.LegacyWrappedPartCatalogs.CreateWithMetadataReader(System.Collections.Generic.IEnumerable{JetBrains.Metadata.Utils.AssemblyNameInfo},JetBrains.Application.Bindings.IAssemblyMasterBinder,JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.IPartCatalogueFactory,JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.IMetadataPartsPassFilter)">
+            <summary>
+            Loads assembly files from streams with our fast metadata reader.
+            </summary>
+            <param name="assemblies">The list of assembly names for assemblies which should be included with the catalog (and scanned for types).</param>
+            <param name="masterbinder">Knows how to bind assembly names for reading, including the listed names and their references.</param>
+            <param name="typeFactory">Factory, mainly for caching creation of equal types.</param>
+            <param name="filter">Which classes to take as parts into the catalog.</param>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogFacade.LegacyWrappedPartCatalogs.CreateWithMetadataReaderFromAssemblyFiles(System.Collections.Generic.IList{JetBrains.Util.FileSystemPath},JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.IPartCatalogueFactory,System.Func{JetBrains.Lifetimes.Lifetime,JetBrains.Metadata.Reader.API.IAssemblyResolver},JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.IMetadataPartsPassFilter)">
+            <summary>
+            Loads assembly files from disk with our fast metadata reader.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogFacade.LegacyWrappedPartCatalogs.CreateWithMetadataReaderFromAssemblyFiles(System.Collections.Generic.IList{JetBrains.Util.FileSystemPath},System.Collections.Generic.IList{JetBrains.Util.FileSystemPath},JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.IPartCatalogueFactory,System.Func{JetBrains.Lifetimes.Lifetime,JetBrains.Metadata.Reader.API.IAssemblyResolver},JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.IMetadataPartsPassFilter)">
+            <summary>
+            Loads assembly files from disk with our fast metadata reader.
+            </summary>
+        </member>
+        <member name="P:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueAssembly.Binder">
+            <summary>
+            Knows how to bind part catalog assemblies to various real-life stuff.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueAssembly.Bind">
+            <summary>
+            Same as <see cref="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueType.Bind" /> for a type, gets the runtime object for this assembly.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueAttribute.ConstructorFormalParameterTypes">
+            <summary>
+            The signature of the .ctor which is encoded for creation of the attr instance, if known.
+            An empty array means the attr is to be created with an empty .ctor.
+            <c>NULL</c> means we don't know which .ctor was encoded for creation of this attr (e.g. when getting it from Reflection rather then by reading metadata).
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueAttribute.GetInstance(JetBrains.Util.OnError)">
+            <summary>
+            Tries creating an attribute runtime instance if we got enough information.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueType.myNamePieces">
+            <summary>
+            For memory usage optimization purposes, the name is optionally split into two dot-separated pieces (first might be empty, the second always holds some name).
+            </summary>
+        </member>
+        <member name="F:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueType.myExtraTypes">
+            <summary>
+            Depending on the kind, holds either the generic parameters specialization, or the array item type, or the reference target type.
+            </summary>
+        </member>
+        <member name="P:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueType.NamePieces">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="P:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueType.IsGenericTypeSpecialization">
+            <summary>
+            This is a generic type specialized with some generic actual parameters, look in <see cref="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueType.GetGenericActualParameters" /> for their values.
+            </summary>
+        </member>
+        <member name="P:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueType.IsGenericTypeDeclaraion">
+            <summary>
+            This is a generic type declaration, an open generic which is not specialized with any parameters.
+            </summary>
+        </member>
+        <member name="P:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueType.IsArray">
+            <summary>
+              <para>The type is actually a single-dimensional array with zero lower bound. Other cases are not supported yet.</para>
+              <para>NOTE(H): If you ever need to support these, which requires a hierarchy of different type classes nesting each other, I'd rather recomment dropping this special class altogether and using the <see cref="T:JetBrains.Metadata.Reader.API.IMetadataType" /> interfaces family with a separate implementation which can be filled from runtime types, from metadata, or from cache.</para>
+              <para>Call <see cref="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueType.GetArrayItemType" /> to get the type of items in this array.</para>
+            </summary>
+        </member>
+        <member name="P:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueType.IsReference">
+            <summary>
+              <para>The type is a reference (as in ref/out parameters), a.k.a. <see cref="P:System.Type.IsByRef">ByRef type</see>.</para>
+              <para>Call <see cref="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueType.GetReferenceTargetType" /> to get the referenced type.</para>
+            </summary>
+        </member>
+        <member name="P:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueType.ExtraTypes">
+            <summary>
+            Raw access for serialization etc.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueType.GetGenericTypeDeclarationFullName">
+            <summary>
+            For a generic type specialization (<see cref="P:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueType.IsGenericTypeSpecialization" />), gets the full type name of the matching generic type definition, e.g. <c>System.Collections.Generic.IList`1</c>, which can be matched with the CLR non-specialized type.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueType.AssignRecursiveTypes(JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueType.RecursiveData)">
+            <summary>
+            Recursive types. Assigned later than .ctor because for building them we might need this type class already in factory cache (e.g. class CA : IIface{CA}).
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueType.GetArrayItemType">
+            <summary>
+            For an array type, returns a type of the array items (without the array rank). Much like getting the only generic parameter of the <see cref="T:System.Collections.Generic.IList`1" /> for its item type.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueType.GetReferenceTargetType">
+            <summary>
+            For a reference type, returns the type being referenced.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueType.GenericTypeParameterOwner">
+            <summary>
+            For a type which is a generic type parameter reference, gets the type which declares the generic formal parameter.
+            Note that this might be any class containing the usage (immediate, outer, outer-outer, etc).
+            For a method parameter, I believe the choice is limited to the containing method.
+            </summary>
+        </member>
+        <member name="P:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueTypeMember.DeclaringType">
+            <summary>
+            This object is a member of the type returned from this property.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartsCatalogue">
+            <summary>
+            A default implementation for a pre-calculated catalogue.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartsCatalogue.#ctor(System.Collections.Generic.IList{JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueType},System.Collections.Generic.IList{JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueAssembly})">
+            <summary>
+            Creates the catalogue from precalculated data.
+            </summary>
+            <param name="parts">The types (parts) in the catalog.</param>
+            <param name="assemblies">The assemblies list, if known by creator. If omitted, the list will be deduced from all unique assemblies of the submitted <paramref name="parts" />.</param>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartsCatalogueHelpers.ExpandMetadataValue(JetBrains.Metadata.Reader.API.MetadataAttributeValue)">
+            <summary>
+            Handles complex attribute values in metadata format, e.g. creates arrays and fills them with values recursively.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartsCatalogues">
+            <summary>
+            Factory methods for standard catalogs.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartsCatalogues.Create(System.Collections.Generic.IList{JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueType},System.Collections.Generic.IList{JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueAssembly})">
+            <summary>
+            Creates the catalogue from precalculated data.
+            </summary>
+            <param name="parts">The types (parts) in the catalog.</param>
+            <param name="assemblies">The assemblies list, if known by creator. If omitted, the list will be deduced from all unique assemblies of the submitted <paramref name="parts" />.</param>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartsCatalogues.CreateFromRuntimeTypes(System.Collections.Generic.IEnumerable{System.Type})">
+            <summary>
+            Creates a parts catalog over a few specific runtime types — for precision filtering of what gets consumed.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartsCatalogues.CreateFromRuntimeTypes(System.Type[])">
+            <summary>
+            Creates a parts catalog over a few specific runtime types — for precision filtering of what gets consumed.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartsCatalogues.CreateWithMetadataReader(System.Collections.Generic.IEnumerable{JetBrains.Metadata.Utils.AssemblyNameInfo},JetBrains.Application.Bindings.IAssemblyMasterBinder,JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.IPartCatalogueFactory,JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.IMetadataPartsPassFilter)">
+            <summary>
+            Loads assembly files from streams with our fast metadata reader.
+            </summary>
+            <param name="assemblies">The list of assembly names for assemblies which should be included with the catalog (and scanned for types).</param>
+            <param name="masterbinder">Knows how to bind assembly names for reading, including the listed names and their references.</param>
+            <param name="typeFactory">Factory, mainly for caching creation of equal types.</param>
+            <param name="filter">Which classes to take as parts into the catalog.</param>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartsCatalogues.CreateWithMetadataReaderFromAssemblyFiles(System.Collections.Generic.IList{JetBrains.Util.FileSystemPath},JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.IPartCatalogueFactory,System.Func{JetBrains.Lifetimes.Lifetime,JetBrains.Metadata.Reader.API.IAssemblyResolver},JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.IMetadataPartsPassFilter)">
+            <summary>
+            Loads assembly files from disk with our fast metadata reader.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartsCatalogues.CreateWithMetadataReaderFromAssemblyFiles(System.Collections.Generic.IList{JetBrains.Util.FileSystemPath},System.Collections.Generic.IList{JetBrains.Util.FileSystemPath},JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.IPartCatalogueFactory,System.Func{JetBrains.Lifetimes.Lifetime,JetBrains.Metadata.Reader.API.IAssemblyResolver},JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.IMetadataPartsPassFilter)">
+            <summary>
+            Loads assembly files from disk with our fast metadata reader.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartsCatalogues.CreateWithMetadataReaderFromAssemblyStreams(System.Collections.Generic.ICollection{System.IO.Stream},JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.IPartCatalogueFactory,System.Func{JetBrains.Lifetimes.Lifetime,JetBrains.Metadata.Reader.API.IAssemblyResolver},JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.IMetadataPartsPassFilter)">
+            <summary>
+            Loads assembly files from streams with our fast metadata reader.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartsCatalogues.CreateWithMetadataReaderFromAssemblyStreams(System.Collections.Generic.IEnumerable{JetBrains.Metadata.Utils.AssemblyNameInfo},System.Collections.Generic.IDictionary{JetBrains.Metadata.Utils.AssemblyNameInfo,System.Func{JetBrains.Lifetimes.Lifetime,System.IO.Stream}},JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.IPartCatalogueFactory,System.Func{JetBrains.Lifetimes.Lifetime,JetBrains.Metadata.Reader.API.IAssemblyResolver},JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.IMetadataPartsPassFilter)">
+            <summary>
+            Loads assembly files from streams with our fast metadata reader.
+            </summary>
+            <param name="assemblies">The list of assembly names for assemblies which should be included with the catalog (and scanned for types).</param>
+            <param name="mapResolver">Resolves assembly stream by its assembly name. Must include (1) the assemblies for scanning in <paramref name="assemblies" /> and (2) any of their assembly references, transitively, which might be needed for resolving catalog types/attrs, and which are not present in GAC.</param>
+            <param name="typeFactory">Factory, mainly for caching creation of equal types.</param>
+            <param name="createAdditionalResolversFunc">Any custom resolvers for metadata loader.</param>
+            <param name="filter">Which classes to take as parts into the catalog.</param>
+        </member>
+        <member name="M:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartsCatalogues.CheckLoadedAssemblyName(JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartCatalogueAssembly,JetBrains.Metadata.Utils.AssemblyNameInfo)">
+            <summary>
+            After the binder loads an assembly by its assembly name, checks that the assembly actually loaded matches what was requested.
+            </summary>
+            <param name="partassembly"></param>
+            <param name="assname"></param>
+        </member>
+        <member name="T:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.PartsCatalogues.RuntimePartsPassFilter">
+            <summary>
+            Similar to <see cref="T:JetBrains.Platform.ComponentModel.Legacy.PartsCatalogue.IMetadataPartsPassFilter" />, but for runtime types.
+            </summary>
+        </member>
+    </members>
+</doc>

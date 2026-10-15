@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mono.Debugging.Soft</name>
+    </assembly>
+    <members>
+        <member name="T:Mono.Debugging.Soft.Connections.StartArgs.SoftDebuggerConnectArgs">
+            <summary>
+            Args for the debugger to connect to target that is listening.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Soft.Connections.StartArgs.SoftDebuggerLaunchArgs">
+            <summary>
+            Options for the debugger to start a process directly.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Soft.Connections.StartArgs.SoftDebuggerLaunchArgs.MonoRuntimePrefix">
+            <summary>
+            Prefix into which the target Mono runtime is installed.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Soft.Connections.StartArgs.SoftDebuggerLaunchArgs.MonoRuntimeEnvironmentVariables">
+            <summary>
+            Environment variables for the Mono runtime.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Soft.Connections.StartArgs.SoftDebuggerLaunchArgs.ExternalConsoleLauncher">
+            <summary>
+            Launcher for the external console. May be null if the app does not run on an external console.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Soft.Connections.StartArgs.SoftDebuggerLaunchArgs.MonoExecutableFileName">
+            <summary>
+            Gets or sets the name of the mono executable file. e.g. "mono", "mono32", "mono64"...
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Soft.Connections.StartArgs.SoftDebuggerListenArgs">
+            <summary>
+            Args for the debugger to listen for an incoming connection from a debuggee.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Soft.Connections.StartArgs.SoftDebuggerRemoteArgs.Address">
+            <summary>
+            The IP address for the connection.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Soft.Connections.StartArgs.SoftDebuggerRemoteArgs.DebugPort">
+            <summary>
+            Port for the debugger connection. Zero means random port.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Soft.Connections.StartArgs.SoftDebuggerRemoteArgs.OutputPort">
+            <summary>
+            Port for the console connection. Zero means random port, less than zero means that output is not redirected.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Soft.Connections.StartArgs.SoftDebuggerRemoteArgs.AppName">
+            <summary>
+            Application name that will be shown in the debugger.
+            </summary>
+        </member>
+        <member name="F:Mono.Debugging.Soft.Connections.StartArgs.SoftDebuggerStartArgs.HandshakeTimeout">
+            <summary>
+            The time after which we will treat a connection attempt unsuccessful
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Soft.Connections.StartArgs.SoftDebuggerStartArgs.MaxConnectionAttempts">
+            <summary>
+            Maximum number of connection attempts. Zero or less means infinite attempts. Default is 1.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Soft.Connections.StartArgs.SoftDebuggerStartArgs.TimeBetweenConnectionAttempts">
+            <summary>
+            The time between connection attempts, in milliseconds. Default is 500.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Soft.Connections.StartArgs.SoftDebuggerStartArgs.UserAssemblyNames">
+            <summary>
+            Names of assemblies that are user code.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Soft.Connections.StartArgs.SoftDebuggerStartArgs.AssemblyPathMap">
+            <summary>
+            A mapping of AssemblyNames to their paths.
+            </summary>
+        </member>
+        <member name="P:Mono.Debugging.Soft.Connections.StartArgs.SoftDebuggerStartArgs.LogMessage">
+            <summary>
+            The session will output this to the debug log as soon as it starts. It can be used to log warnings from
+            creating the SoftDebuggerStartInfo
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Soft.Connections.StartArgs.SoftDebuggerVirtualMachineArgs">
+            <summary>
+            Args for the debugger to listen for an incoming connection from a debuggee.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Soft.Connections.StartArgs.SoftDebuggerVirtualMachineArgs.#ctor(System.Threading.Tasks.Task{Mono.Debugger.Soft.VirtualMachine})">
+            <summary>
+            Args for the debugger to listen for an incoming connection from a debuggee.
+            </summary>
+        </member>
+        <member name="T:Mono.Debugging.Soft.PathResolvers.MonoSymbolsOverProtocolResolver">
+            <summary>
+            Heuristic resolver that matches symbol file only using information provided by debugger-agent.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Soft.RuntimeEvents.SoftBreakEventsProcessor.ExceptionInUserCode(Mono.Debugger.Soft.ExceptionEvent)">
+            <summary>
+            Checks all frames in thread where exception occurred and if any frame has user code it returns true.
+            Also notice that this method already check if Options.ProjectAssembliesOnly==false
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Soft.SoftDebuggerAppDomainsInfo.SoftDebuggerAppDomainInfo.CheckAssemblyCache">
+            <summary>
+            This method can throw exception on AppDomain.GetAssemblies() if app domain in question was unloaded and we are not yet aware of it
+            This happens on attach when we get rundown events while VM is running without suspension. 
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Soft.SoftDebuggerSession.OnConnectionError(System.Exception)">
+            <summary>
+            Called if an error happens while making the connection. Default terminates the session.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Soft.SoftDebuggerSession.ConnectionStarted(Mono.Debugger.Soft.VirtualMachine)">
+            <summary>
+            If subclasses do an async connect in OnRun, they should pass the resulting VM to this method.
+            If the vm is null, the session will be closed.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Soft.SoftDebuggerSession.IsVersionAtLeast(System.Int32,System.Int32)">
+            <summary>
+            Determines whether the virtual machine's version is at least the specified major and minor version.
+            </summary>
+            <param name="major">The major version to compare against.</param>
+            <param name="minor">The minor version to compare against.</param>
+            <returns>
+            True if the virtual machine's version is at least the specified major and minor version; otherwise, false.
+            Returns false if the virtual machine is not initialized.
+            </returns>
+        </member>
+        <member name="M:Mono.Debugging.Soft.SoftDebuggerSession.EnsureExited">
+            <summary>This is a fallback in case the debugger agent doesn't respond to an exit call</summary>
+        </member>
+        <member name="M:Mono.Debugging.Soft.Threads.SoftThreadsManager.PumpThreads">
+            <summary>
+            This method allows us to ping Virtual Machine without clearing CurrentThread state which could be essential for
+            correct stepping.
+            </summary>
+        </member>
+        <member name="M:Mono.Debugging.Soft.TypeMirrorUtil.GetTypeAqn(Mono.Debugger.Soft.TypeMirror,System.Collections.Generic.IDictionary{System.String,Mono.Debugger.Soft.TypeMirror},System.Boolean,System.String@)">
+            <summary>
+            The return value is used in following way: if we've walked through the source type and haven't found instantiation for some type parameter 
+            we have to return unchanged source type from toplevel method. It's so because we may face with situation 
+            when we was asked to substitute only class type args into type which also contains method generic open parameters but it's class type parameters was already substituted
+            so we shouldn't do anything in this case. 
+            We have to do this check because we cannot create new intantiation with open type parameter (tnx to fucking SDB type api for this), 
+            but the passed type may be already good for the call site. Example:
+            <code>
+            <![CDATA[
+            class C<T> {
+            	void M<U>(Tuple<T, U> param) {}
+            }
+            
+            new C<int>().M(Tuple.Create(1, false))
+            ]]>
+            </code>
+            Type inference engine will get the following type of parameter 'param': <![CDATA[Tuple<int, U>]]> (class args substituted, but method args are open) 
+            and instantiation of owner class T -> int, 
+            so we just have return this type as is, because there is no possibility to recreate new instantiation <![CDATA[Tuple<int, U>]]> due to lack of this in SDB type API  
+            </summary>
+            <param name="typeMirror"></param>
+            <param name="instantiation"></param>
+            <param name="isRootType"></param>
+            <param name="resultAqn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mono.Debugging.Soft.Utils.TypeMirrorUtil.GetOpenAndClosedTypes(Mono.Debugging.Soft.SoftDebuggerAppDomainsInfo.SoftDebuggerAppDomainsManager,System.String)">
+            <summary>
+            Returns open type and closed types given the open type name
+            </summary>
+            <param name="manager"></param>
+            <param name="typeName">Open type name: System.GenericException`1</param>
+            <returns></returns>
+        </member>
+        <member name="M:Mono.Debugging.Soft.Utils.ValueUtil.GetValueType(Mono.Debugger.Soft.Value,Mono.Debugging.Client.CallStacks.IStackFrame)">
+            <summary>
+            Returns System.Object if obtaining the exact type of value fails
+            </summary>
+        </member>
+    </members>
+</doc>

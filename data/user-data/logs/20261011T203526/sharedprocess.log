@@ -1,0 +1,117 @@
+2026-10-11 20:35:27.538 [error] Error: Unable to read file 'd:\All\IDLE\t\vscode\data\extensions\sonarsource.sonarlint_ondemand-analyzers\package.json' (Error: Unable to resolve nonexistent file 'd:\All\IDLE\t\vscode\data\extensions\sonarsource.sonarlint_ondemand-analyzers\package.json')
+    at oo.restoreReadError (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:110349)
+    at oo.doReadFileStream (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:110132)
+    at async oo.doReadFile (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:109396)
+    at async Fa.scanExtensionManifest (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:54817)
+    at async Fa.scanExtension (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:53246)
+    at async Promise.all (index 58)
+    at async Fa.scanExtensionsFromLocation (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:51504)
+    at async El.scanAllUserExtensions (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:42557)
+    at async Td.scanAllUserExtensions (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:85395)
+    at async qf.deleteExtensionsNotInProfiles (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:72099)
+    at async qf.initialize (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:68923)
+2026-10-11 20:35:27.548 [error] Error: Unable to read file 'd:\All\IDLE\t\vscode\data\extensions\sonarsource.sonarlint_ondemand-analyzers\package.json' (Error: Unable to resolve nonexistent file 'd:\All\IDLE\t\vscode\data\extensions\sonarsource.sonarlint_ondemand-analyzers\package.json')
+    at oo.restoreReadError (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:110349)
+    at oo.doReadFileStream (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:110132)
+    at async oo.doReadFile (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:109396)
+    at async Fa.scanExtensionManifest (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:54817)
+    at async Fa.scanExtension (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:53246)
+    at async Promise.all (index 58)
+    at async Fa.scanExtensionsFromLocation (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:51504)
+    at async El.scanAllUserExtensions (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:42557)
+    at async Td.removeStaleAutoUpdateBuiltinExtensions (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:93709)
+    at async Td.cleanUp (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:84485)
+    at async Ba.cleanUp (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:77293)
+2026-10-11 20:35:27.811 [info] Marked extension as removed johnpapa.vscode-peacock-4.4.1
+2026-10-11 20:35:27.811 [info] Marked extension as removed prateekmahendrakar.prettyxml-7.1.0
+2026-10-11 20:35:27.834 [error] Error: Unable to read file 'd:\All\IDLE\t\vscode\data\extensions\sonarsource.sonarlint_ondemand-analyzers\package.json' (Error: Unable to resolve nonexistent file 'd:\All\IDLE\t\vscode\data\extensions\sonarsource.sonarlint_ondemand-analyzers\package.json')
+    at oo.restoreReadError (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:110349)
+    at oo.doReadFileStream (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:110132)
+    at async oo.doReadFile (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:109396)
+    at async Fa.scanExtensionManifest (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:54817)
+    at async Fa.scanExtension (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:53246)
+    at async Promise.all (index 58)
+    at async Fa.scanExtensionsFromLocation (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:51504)
+    at async El.scanAllUserExtensions (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:42557)
+    at async Td.scanAllUserExtensions (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:85395)
+    at async Td.deleteExtensionsMarkedForRemoval (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:94711)
+    at async Td.cleanUp (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:84537)
+    at async Ba.cleanUp (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:77293)
+2026-10-11 20:35:28.087 [info] Deleted marked for removal extension from disk prateekmahendrakar.prettyxml d:\All\IDLE\t\vscode\data\extensions\prateekmahendrakar.prettyxml-7.1.0
+2026-10-11 20:35:28.087 [info] Deleted marked for removal extension from disk johnpapa.vscode-peacock d:\All\IDLE\t\vscode\data\extensions\johnpapa.vscode-peacock-4.4.1
+2026-10-11 20:35:28.279 [error] Error: Unable to read file 'd:\All\IDLE\t\vscode\data\extensions\sonarsource.sonarlint_ondemand-analyzers\package.json' (Error: Unable to resolve nonexistent file 'd:\All\IDLE\t\vscode\data\extensions\sonarsource.sonarlint_ondemand-analyzers\package.json')
+    at oo.restoreReadError (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:110349)
+    at oo.doReadFileStream (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:110132)
+    at async oo.doReadFile (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:109396)
+    at async Fa.scanExtensionManifest (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:54817)
+    at async Fa.scanExtension (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:53246)
+    at async Promise.all (index 56)
+    at async Fa.scanExtensionsFromLocation (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:51504)
+    at async El.scanAllUserExtensions (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:42557)
+    at async Td.initializeExtensionSize (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:93249)
+    at async Td.cleanUp (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:84583)
+    at async Ba.cleanUp (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:77293)
+2026-10-11 20:35:32.255 [info] Getting Manifest... eamodio.gitlens
+2026-10-11 20:35:32.257 [info] Getting Manifest... jakubkozera.csharp-dev-tools
+2026-10-11 20:35:32.258 [info] Getting Manifest... jetbrains.resharper-code
+2026-10-11 20:35:32.259 [info] Getting Manifest... ms-python.python
+2026-10-11 20:35:32.260 [info] Getting Manifest... pkief.material-icon-theme
+2026-10-11 20:35:32.260 [info] Getting Manifest... sonarsource.sonarlint-vscode
+2026-10-11 20:35:32.650 [info] Installing extension: jakubkozera.csharp-dev-tools {"productVersion":{"version":"1.137.0","date":"2026-09-08T13:43:59-07:00"},"pinned":false,"operation":3,"isApplicationScoped":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/d%3A/All/IDLE/t/vscode/data/extensions/extensions.json","path":"/D:/All/IDLE/t/vscode/data/extensions/extensions.json","scheme":"vscode-userdata"},"isBuiltin":false}
+2026-10-11 20:35:32.978 [info] Installing extension: ms-python.python {"productVersion":{"version":"1.137.0","date":"2026-09-08T13:43:59-07:00"},"pinned":false,"operation":3,"isApplicationScoped":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/d%3A/All/IDLE/t/vscode/data/extensions/extensions.json","path":"/D:/All/IDLE/t/vscode/data/extensions/extensions.json","scheme":"vscode-userdata"},"isBuiltin":false}
+2026-10-11 20:35:33.170 [info] Installing extension: jetbrains.resharper-code {"productVersion":{"version":"1.137.0","date":"2026-09-08T13:43:59-07:00"},"pinned":false,"operation":3,"isApplicationScoped":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/d%3A/All/IDLE/t/vscode/data/extensions/extensions.json","path":"/D:/All/IDLE/t/vscode/data/extensions/extensions.json","scheme":"vscode-userdata"},"isBuiltin":false}
+2026-10-11 20:35:33.173 [info] Installing extension: sonarsource.sonarlint-vscode {"productVersion":{"version":"1.137.0","date":"2026-09-08T13:43:59-07:00"},"pinned":false,"operation":3,"isApplicationScoped":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/d%3A/All/IDLE/t/vscode/data/extensions/extensions.json","path":"/D:/All/IDLE/t/vscode/data/extensions/extensions.json","scheme":"vscode-userdata"},"isBuiltin":false}
+2026-10-11 20:35:33.177 [info] Installing extension: pkief.material-icon-theme {"productVersion":{"version":"1.137.0","date":"2026-09-08T13:43:59-07:00"},"pinned":false,"operation":3,"isApplicationScoped":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/d%3A/All/IDLE/t/vscode/data/extensions/extensions.json","path":"/D:/All/IDLE/t/vscode/data/extensions/extensions.json","scheme":"vscode-userdata"},"isBuiltin":false}
+2026-10-11 20:35:33.277 [info] Installing extension: eamodio.gitlens {"productVersion":{"version":"1.137.0","date":"2026-09-08T13:43:59-07:00"},"pinned":false,"operation":3,"isApplicationScoped":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/d%3A/All/IDLE/t/vscode/data/extensions/extensions.json","path":"/D:/All/IDLE/t/vscode/data/extensions/extensions.json","scheme":"vscode-userdata"},"isBuiltin":false}
+2026-10-11 20:35:34.034 [info] Extension signature verification result for pkief.material-icon-theme: Success. Internal Code: 0. Executed: true. Duration: 184ms.
+2026-10-11 20:35:36.229 [info] Extracted extension to file:///d%3A/All/IDLE/t/vscode/data/extensions/pkief.material-icon-theme-5.39.0: pkief.material-icon-theme
+2026-10-11 20:35:36.259 [info] Renamed to d:\All\IDLE\t\vscode\data\extensions\pkief.material-icon-theme-5.39.0
+2026-10-11 20:35:36.293 [info] Marked extension as removed pkief.material-icon-theme-5.38.1
+2026-10-11 20:35:36.311 [info] Extension installed successfully: pkief.material-icon-theme vscode-userdata:/d%3A/All/IDLE/t/vscode/data/extensions/extensions.json
+2026-10-11 20:35:36.885 [info] Extension signature verification result for eamodio.gitlens: Success. Internal Code: 0. Executed: true. Duration: 175ms.
+2026-10-11 20:35:37.610 [info] Extracted extension to file:///d%3A/All/IDLE/t/vscode/data/extensions/eamodio.gitlens-19.3.0: eamodio.gitlens
+2026-10-11 20:35:37.643 [info] Renamed to d:\All\IDLE\t\vscode\data\extensions\eamodio.gitlens-19.3.0
+2026-10-11 20:35:37.731 [info] Marked extension as removed eamodio.gitlens-19.2.0
+2026-10-11 20:35:37.759 [info] Extension installed successfully: eamodio.gitlens vscode-userdata:/d%3A/All/IDLE/t/vscode/data/extensions/extensions.json
+2026-10-11 20:35:40.223 [info] Extension signature verification result for ms-python.python: Success. Internal Code: 0. Executed: true. Duration: 224ms.
+2026-10-11 20:35:45.238 [info] Extracted extension to file:///d%3A/All/IDLE/t/vscode/data/extensions/ms-python.python-2026.8.0-win32-x64: ms-python.python
+2026-10-11 20:35:45.309 [info] Renamed to d:\All\IDLE\t\vscode\data\extensions\ms-python.python-2026.8.0-win32-x64
+2026-10-11 20:35:45.364 [info] Marked extension as removed ms-python.python-2026.4.0-win32-x64
+2026-10-11 20:35:45.398 [info] Extension installed successfully: ms-python.python vscode-userdata:/d%3A/All/IDLE/t/vscode/data/extensions/extensions.json
+2026-10-11 20:36:01.573 [info] Extension signature verification result for jakubkozera.csharp-dev-tools: Success. Internal Code: 0. Executed: true. Duration: 242ms.
+2026-10-11 20:36:13.754 [info] Extracted extension to file:///d%3A/All/IDLE/t/vscode/data/extensions/jakubkozera.csharp-dev-tools-1.14.2: jakubkozera.csharp-dev-tools
+2026-10-11 20:36:13.888 [info] Renamed to d:\All\IDLE\t\vscode\data\extensions\jakubkozera.csharp-dev-tools-1.14.2
+2026-10-11 20:36:13.933 [info] Marked extension as removed jakubkozera.csharp-dev-tools-1.12.11
+2026-10-11 20:36:13.951 [info] Extension installed successfully: jakubkozera.csharp-dev-tools vscode-userdata:/d%3A/All/IDLE/t/vscode/data/extensions/extensions.json
+2026-10-11 20:36:49.054 [info] Extension signature verification result for sonarsource.sonarlint-vscode: Success. Internal Code: 0. Executed: true. Duration: 694ms.
+2026-10-11 20:36:49.088 [info] Extension signature verification result for jetbrains.resharper-code: Success. Internal Code: 0. Executed: true. Duration: 711ms.
+2026-10-11 20:36:57.265 [info] Extracted extension to file:///d%3A/All/IDLE/t/vscode/data/extensions/sonarsource.sonarlint-vscode-6.0.1-win32-x64: sonarsource.sonarlint-vscode
+2026-10-11 20:36:57.302 [info] Renamed to d:\All\IDLE\t\vscode\data\extensions\sonarsource.sonarlint-vscode-6.0.1-win32-x64
+2026-10-11 20:36:57.370 [info] Marked extension as removed sonarsource.sonarlint-vscode-5.10.0-win32-x64
+2026-10-11 20:36:57.393 [info] Extension installed successfully: sonarsource.sonarlint-vscode vscode-userdata:/d%3A/All/IDLE/t/vscode/data/extensions/extensions.json
+2026-10-11 20:37:07.488 [info] Extracted extension to file:///d%3A/All/IDLE/t/vscode/data/extensions/jetbrains.resharper-code-2026.2.3-win32-x64: jetbrains.resharper-code
+2026-10-11 20:37:07.588 [info] Renamed to d:\All\IDLE\t\vscode\data\extensions\jetbrains.resharper-code-2026.2.3-win32-x64
+2026-10-11 20:37:07.628 [info] Marked extension as removed jetbrains.resharper-code-2026.2.2-win32-x64
+2026-10-11 20:37:07.644 [info] Extension installed successfully: jetbrains.resharper-code vscode-userdata:/d%3A/All/IDLE/t/vscode/data/extensions/extensions.json
+2026-10-11 20:37:07.708 [info] Getting Manifest... github.vscode-pull-request-github
+2026-10-11 20:37:08.506 [info] Installing extension: github.vscode-pull-request-github {"productVersion":{"version":"1.141.0","date":"2026-10-06T08:33:41.288Z"},"pinned":false,"operation":3,"isApplicationScoped":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/d%3A/All/IDLE/t/vscode/data/extensions/extensions.json","path":"/D:/All/IDLE/t/vscode/data/extensions/extensions.json","scheme":"vscode-userdata"},"isBuiltin":false}
+2026-10-11 20:37:10.084 [info] Extension signature verification result for github.vscode-pull-request-github: Success. Internal Code: 0. Executed: true. Duration: 169ms.
+2026-10-11 20:37:10.287 [info] Extracted extension to file:///d%3A/All/IDLE/t/vscode/data/extensions/github.vscode-pull-request-github-0.168.0: github.vscode-pull-request-github
+2026-10-11 20:37:10.295 [info] Renamed to d:\All\IDLE\t\vscode\data\extensions\github.vscode-pull-request-github-0.168.0
+2026-10-11 20:37:10.298 [error] [/d:/All/IDLE/t/vscode/data/extensions/github.vscode-pull-request-github-0.168.0]: Extension is not compatible with Code 1.137.0. Extension requires: ^1.141.0.
+2026-10-11 20:37:10.335 [error] [/D:/All/IDLE/t/vscode/data/extensions/github.vscode-pull-request-github-0.168.0]: Extension is not compatible with Code 1.137.0. Extension requires: ^1.141.0.
+2026-10-11 20:37:10.340 [error] Error while installing the extension github.vscode-pull-request-github Cannot read the extension from /d:/All/IDLE/t/vscode/data/extensions/github.vscode-pull-request-github-0.168.0 vscode-userdata:/d%3A/All/IDLE/t/vscode/data/extensions/extensions.json
+2026-10-11 20:37:10.417 [error] [/D:/All/IDLE/t/vscode/data/extensions/github.vscode-pull-request-github-0.168.0]: Extension is not compatible with Code 1.137.0. Extension requires: ^1.141.0.
+2026-10-11 20:37:39.623 [error] [/D:/All/IDLE/t/vscode/data/extensions/github.vscode-pull-request-github-0.168.0]: Extension is not compatible with Code 1.137.0. Extension requires: ^1.141.0.
+2026-10-11 20:37:39.717 [error] [/D:/All/IDLE/t/vscode/data/extensions/github.vscode-pull-request-github-0.168.0]: Extension is not compatible with Code 1.137.0. Extension requires: ^1.141.0.
+2026-10-11 20:37:42.599 [error] [/D:/All/IDLE/t/vscode/data/extensions/github.vscode-pull-request-github-0.168.0]: Extension is not compatible with Code 1.137.0. Extension requires: ^1.141.0.
+2026-10-11 20:37:45.269 [info] Getting Manifest... github.vscode-pull-request-github
+2026-10-11 20:37:45.876 [error] [/D:/All/IDLE/t/vscode/data/extensions/github.vscode-pull-request-github-0.168.0]: Extension is not compatible with Code 1.137.0. Extension requires: ^1.141.0.
+2026-10-11 20:37:45.920 [info] Installing extension: github.vscode-pull-request-github {"productVersion":{"version":"1.137.0","date":"2026-09-08T13:43:59-07:00"},"pinned":false,"operation":3,"isApplicationScoped":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/d%3A/All/IDLE/t/vscode/data/extensions/extensions.json","path":"/D:/All/IDLE/t/vscode/data/extensions/extensions.json","scheme":"vscode-userdata"},"isBuiltin":false}
+2026-10-11 20:37:46.016 [error] [/D:/All/IDLE/t/vscode/data/extensions/github.vscode-pull-request-github-0.168.0]: Extension is not compatible with Code 1.137.0. Extension requires: ^1.141.0.
+2026-10-11 20:37:46.065 [error] [/D:/All/IDLE/t/vscode/data/extensions/github.vscode-pull-request-github-0.168.0]: Extension is not compatible with Code 1.137.0. Extension requires: ^1.141.0.
+2026-10-11 20:37:46.121 [error] [/D:/All/IDLE/t/vscode/data/extensions/github.vscode-pull-request-github-0.168.0]: Extension is not compatible with Code 1.137.0. Extension requires: ^1.141.0.
+2026-10-11 20:37:46.170 [error] [/D:/All/IDLE/t/vscode/data/extensions/github.vscode-pull-request-github-0.168.0]: Extension is not compatible with Code 1.137.0. Extension requires: ^1.141.0.
+2026-10-11 20:37:46.178 [info] Extension installed successfully: github.vscode-pull-request-github vscode-userdata:/d%3A/All/IDLE/t/vscode/data/extensions/extensions.json
+2026-10-11 20:37:46.255 [error] [/D:/All/IDLE/t/vscode/data/extensions/github.vscode-pull-request-github-0.168.0]: Extension is not compatible with Code 1.137.0. Extension requires: ^1.141.0.
+2026-10-11 20:37:46.385 [error] [/D:/All/IDLE/t/vscode/data/extensions/github.vscode-pull-request-github-0.168.0]: Extension is not compatible with Code 1.137.0. Extension requires: ^1.141.0.

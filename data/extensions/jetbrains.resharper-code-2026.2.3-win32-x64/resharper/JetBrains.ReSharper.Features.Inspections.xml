@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.Features.Inspections</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.ReSharper.Features.Inspections.Actions.EnableMultilinePresentationOfTodoItemsAction.Multiline">
+             <summary>
+            	<para>
+            		<para>Multiline Themed Icon generated identifiers:</para>
+            		<para>— <see cref = "T:JetBrains.ReSharper.Features.Inspections.Actions.EnableMultilinePresentationOfTodoItemsAction.Multiline"></see> identifier class, for use in attributes, XAML, and generic parameters;</para>
+            		<para>— <see cref = "F:JetBrains.ReSharper.Features.Inspections.Actions.EnableMultilinePresentationOfTodoItemsAction.Multiline.Id"></see> identifier object, as a field in the identifier class, for use where an <see cref = "T:JetBrains.UI.Icons.IconId"></see> value is expected.</para>
+            		<para>
+            			<code>
+            
+            
+             iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+             ll                            ll
+             tt                            tt
+             {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+             xx                            xx
+             II                            II
+             uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu
+             oo                            oo
+             ee                            ee
+             aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+             VV              VV
+             kk              kk
+             ZZZZZZZZZZZZZZZZZZ
+            
+            </code>
+            		</para>
+            	</para>
+            </summary>
+            <remarks>
+            	<para>For details on Themed Icons and their use, see Remarks on the outer class.</para>
+            </remarks>
+            <example>
+            	<code>&lt;Image Source="{icons:ThemedIcon myres:RegExpThemedIcons+Multiline}" /&gt;        &lt;!-- XAML --&gt;</code>
+            </example>
+            <example>
+            	<code>[Item(Name="Sample", Icon=typeof(RegExpThemedIcons.Multiline))]        // C# Type attribute</code>
+            </example>
+            <example>
+            	<code>IconId iconid = RegExpThemedIcons.Multiline.Id;        // IconId identifier object</code>
+            </example>
+            <example>
+            	<code>themediconmanager.GetIcon&lt;RegExpThemedIcons.Multiline&gt;()        // Icon image for rendering</code>
+            </example>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Inspections.AnalyzeReferences.AnalyzeReferencesNugetDependencyGraph.UsedByOtherPackages(System.Collections.Generic.HashSet{JetBrains.ProjectModel.Assemblies.Interfaces.NugetId})">
+            <summary>
+            When you want to remove subset of packages you should ensure than no one else use packages from selected subset.
+            If any other package has dependency on any package on selected set packages uninstallation will fail.
+            </summary>
+            <param name="packagesSubset">returns packages used by non-selected set with its transitive dependencies.</param>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Inspections.AnalyzeReferences.ProjectModulesDependencyGraph.ModuleNode.TransitiveRoot">
+            <summary>
+            It is a transitive ProjectReference from SDK project.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Inspections.AnalyzeReferences.ProjectReferencesUtil.GetRootProjects(JetBrains.ProjectModel.IProject)">
+            <summary>
+            Return list of referenced project which are defined in main project file
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Inspections.AnalyzeReferences.ProjectReferencesUtil.CollectReferencedProjects(JetBrains.ProjectModel.IProject)">
+            <summary>
+            Return the list of all referenced projects including all sub-references.
+            </summary>
+            <param name="project">Root project</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Inspections.AnalyzeReferences.ReferencedCodeTreeBuilder.#ctor(JetBrains.ProjectModel.IProject,System.Collections.Generic.List{JetBrains.ProjectModel.IModule},JetBrains.ReSharper.Features.Inspections.AnalyzeReferences.SearchRequestFactory)">
+            <summary>
+            primary ctor
+            </summary>
+            <param name="project">owner project</param>
+            <param name="referencedCodeScope"> </param>
+            <param name="requestFactory"></param>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.Inspections.AnalyzeReferences.ReferencedCodeTreeBuilder.UnusedReferencedModules">
+            <summary>
+            Unused and non implicit-referenced modules
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Inspections.AnalyzeReferences.ReferencedModulesUsagesStore">
+            <summary>
+            Mutable container for <see cref="T:JetBrains.ReSharper.Features.Inspections.AnalyzeReferences.ReferencedModulesBuilder"/> result.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Inspections.AnalyzeReferences.RemoveUnused.RemoveUnusedReferencesHelper">
+            <summary>
+            Language specific part for 'workflow'
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Inspections.AnalyzeReferences.AnalyzeReferencesDescriptor.#ctor(JetBrains.ProjectModel.IProject,JetBrains.ReSharper.Features.Inspections.AnalyzeReferences.SearchRequestFactory,System.Collections.Generic.List{JetBrains.ProjectModel.IModule})">
+            <summary></summary>
+            <param name="targetProject"></param>
+            <param name="requestFactory"></param>
+            <param name="referencedCodeScope">
+            not null for safe delete refactoring. Should not contain sdk modules - only nested assemblies
+            </param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Inspections.AnalyzeReferences.AnalyzeReferencesDescriptor.BuildAssemblyReferencesTree">
+            <summary>
+            Rebuilds the tree and sets result occurrences to descriptor
+            </summary>
+            <returns>true if completed</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Inspections.AnalyzeReferences.AnalyzeReferencesDescriptor.BuildAssemblyReferencesTree(JetBrains.Application.Progress.IProgressIndicator)">
+            <summary>
+            Rebuilds the tree and sets result occurrences to descriptor using the given progress indicator
+            </summary>
+            <param name="progressIndicator"></param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Inspections.AnalyzeReferences.AnalyzeReferencesDescriptor.WaitNuGetUninstall(JetBrains.ReSharper.Feature.Services.Navigation.ReferencedCode.ProjectReferencesSelection)">
+            <summary>
+            In Visual Studio no robust way exists to track when NuGet package was removed.  To hack this limitation while
+            https://github.com/NuGet/Home/issues/6872 is not fixed this method will poll Visual Studio for a limited amount
+            of time with expectation that package will gone away.
+            </summary>
+            <param name="selection"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Inspections.AnalyzeReferences.UnusedNugetTreeClonesBuilder">
+            <summary>
+            Used to provide full occurrence copy to build "real tree" in occurrence browser
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Inspections.Bookmarks.BookmarkActions.ItemActionHandler.#ctor(System.Action{JetBrains.Application.UI.Controls.JetPopupMenu.JetPopupMenu,JetBrains.Application.UI.Controls.JetPopupMenu.Detail.JetPopupMenuDoc},System.Action{JetBrains.Application.UI.Controls.JetPopupMenu.JetPopupMenu,JetBrains.Application.UI.Controls.JetPopupMenu.Detail.JetPopupMenuDoc},System.Action{JetBrains.Application.UI.Controls.JetPopupMenu.JetPopupMenu,JetBrains.Application.UI.Controls.JetPopupMenu.Detail.JetPopupMenuDoc},System.Func{JetBrains.Application.UI.Controls.JetPopupMenu.JetPopupMenu,JetBrains.ReSharper.Features.Inspections.Bookmarks.BookmarkActions.UpdateResult})">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Object"/> class.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Inspections.Bookmarks.BookmarkActions.UpdateResult.#ctor(JetBrains.ReSharper.Features.Inspections.Bookmarks.BookmarkActions.UpdateResultType,JetBrains.Application.UI.Controls.JetPopupMenu.SimpleMenuItem)">
+            <summary>
+            Initializes a new instance.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Inspections.CallHierarchy.CallHierarchyExplorerViewManagerTreeAutomation.#ctor(JetBrains.ReSharper.Features.Inspections.CallHierarchy.CallHierarchyExplorerViewManager,JetBrains.ReSharper.Features.Inspections.CallHierarchy.Controller.CallHierarchyExplorerControllerBase,JetBrains.Lifetimes.Lifetime,JetBrains.Application.UI.ToolWindowManagement.ToolWindowInstance,JetBrains.ProjectModel.ISolution,JetBrains.ReSharper.Psi.AsyncCommitService,JetBrains.Application.UI.Components.Theming.ITheming,JetBrains.Application.UI.Components.IUIApplication)">
+            <inheritdoc />
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Inspections.Hierarchies.Core.Hierarchies.IHierarchyController`1">
+            <summary>
+            Responsible for logic of searching and grouping items to be displayed in the Hierarchy tool window.
+            State is allowed, because lifetime of the controller is the same as a descriptor's lifetime (lifetime of a toolwindow tab).
+            
+            Should be instantiated by <see cref="T:JetBrains.ReSharper.Features.Inspections.Hierarchies.Core.Hierarchies.IHierarchyDescriptorFactory"/>IHierarchyDescriptorFactory feature part component
+            and is necessary to create parameterized hierarchy descriptor.
+            </summary>
+            <typeparam name="THierarchyItem">type of items to be handled</typeparam>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Inspections.Hierarchies.Core.Hierarchies.IHierarchyController`1.GetSubtypeOccurrences(`0)">
+            <summary>
+            Get occurrences list for 'sub types' mode. 
+            </summary>
+            <param name="target"></param>
+            <returns>should include target occurrence</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Inspections.Hierarchies.Core.Hierarchies.IHierarchyController`1.GetClassHierarchyOccurrences(`0)">
+            <summary>
+            Get occurrences list for 'class hierarchy' mode (sub nodes + root path).
+            </summary>
+            <param name="target"></param>
+            <returns>should include target occurrence</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Inspections.Hierarchies.Core.Hierarchies.IHierarchyController`1.GetSuperTypesOccurrences(`0)">
+            <summary>
+            Get occurrences list for 'super types' mode.
+            </summary>
+            <param name="target"></param>
+            <returns>should include target occurrence</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Inspections.Hierarchies.Core.Hierarchies.IHierarchyController`1.OnRefreshed">
+            <summary>
+            Fires on clicking 'Refresh' button.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Inspections.Hierarchies.Core.Hierarchies.IHierarchyController`1.OnViewStyleChanged">
+            <summary>
+            Fires when the descriptor's view style has changed
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Inspections.Hierarchies.Core.Hierarchies.IHierarchyController`1.GetDefaultRootPath(JetBrains.ReSharper.Feature.Services.Occurrences.IOccurrence,JetBrains.ReSharper.Features.Inspections.Hierarchies.Core.Hierarchies.HierarchyDescriptor{`0})">
+            <summary>
+            Get root path for indicated occurrence to the root. Is necessary for building a tree.
+            Is not necessary if default grouping is overridden by custom grouping providers.
+            <seealso cref="T:JetBrains.ReSharper.Feature.Services.Tree.GroupingManagement.IGroupingProvider`1"/>
+            OCCURRENCES IN RESULT CASCADE SHOULD BE THE SAME (equals, gethashcode) AS GIVEN BY SEARCH METHODS! 
+            Use owner.Items property to get obtained occurrences.
+            </summary>
+            <param name="item"></param>
+            <param name="owner"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Inspections.Hierarchies.Core.Hierarchies.IHierarchyDescriptorFactory">
+            <summary>
+            Interface for feature parts needed to provide custom hierarchy browsing
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Inspections.Hierarchies.Core.Hierarchies.IHierarchyDescriptorFactory.CreateDescriptor(JetBrains.Application.DataContext.IDataContext)">
+            <summary>
+            Creates a descriptor to handle Browse Hierarchy feature.
+            <a cref="T:JetBrains.ReSharper.Features.Inspections.Hierarchies.Core.Hierarchies.HierarchyDescriptor`1">HierarchyDescriptor</a> inherits from this abstract class, so
+            to implemenet this method - just create an instance of <a cref="T:JetBrains.ReSharper.Features.Inspections.Hierarchies.Core.Hierarchies.HierarchyDescriptor`1">HierarchyDescriptor</a>.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Inspections.Hierarchies.Core.Hierarchies.TypeHierarchyController.GetSubtypeOccurrences(JetBrains.ReSharper.Psi.IDeclaredElementEnvoy)">
+            <summary>Gets sub tree occurrences including root occurrence
+             </summary>
+             <param name="target"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.Inspections.Hierarchies.TypeHierarchy.ITypeHierarchyDescriptorFactory">
+            <summary>
+              Marks classes that must be considered a type hierarchy, e.g. in Rider.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.Inspections.TodoItems.TodoExplorer.RequestToLocateItem">
+            <summary>
+            A signal-like prop. Set to requested node here, sinked by view when it's ready. A prop so that if the request comes before the view is ready, it would still be handled.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.Inspections.TodoItems.TodoExplorerToolWindowContent.#ctor(JetBrains.Lifetimes.Lifetime,JetBrains.Application.UI.ToolWindowManagement.ToolWindowInstance,JetBrains.ProjectModel.ISolution,JetBrains.Application.Settings.ISettingsStore,JetBrains.ReSharper.Feature.Services.TodoItems.IPrimaryTodoManager,JetBrains.ReSharper.Psi.Caches.IPsiCachesState,JetBrains.ReSharper.Psi.Caches.IPersistentIndexManager,JetBrains.Application.UI.Components.IUIApplication,JetBrains.ProjectModel.Interfaces.ProjectContext,JetBrains.ReSharper.Features.Inspections.TodoItems.TodoItemFontPainter,JetBrains.TextControl.ITextControlSchemeManager,JetBrains.Application.UI.BindableLinq.Aggregators.IFreeThreadedThrottlingGroupingEventFactory,JetBrains.Application.Threading.IThreading,JetBrains.ReSharper.Features.Inspections.TodoItems.ITodoPaintSettingsHolder,JetBrains.ProjectModel.Search.IBackendProjectModelLocator,JetBrains.ReSharper.Features.Inspections.TodoItems.TodoExplorer)">
+            <inheritdoc />
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.Inspections.ValueTracking.Impl.ValueTrackingTreeModelBrowserDescriptor.myModel">
+            <summary>
+            Async model based on adapter
+            </summary>
+        </member>
+    </members>
+</doc>

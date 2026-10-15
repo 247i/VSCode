@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Debugger.Tools.ProcessEnumerator.Core</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.Debugger.Tools.ProcessEnumerator.Core.ProcessInfoUtil.GetDotNetProcessesFromDiagnosticPipes_Windows">
+             <summary>
+             This method quickly enumerates possible .NET processes using a debug pipeline workaround: almost any process
+             that have some kind of .NET runtime enabled will open a debug pipe named "dotnet-diagnostic-[pid]". This is
+             known to work on Windows.
+            
+             It is okay if this method returns an empty set: processes will then be enumerated using orthodox methods.
+             </summary>
+        </member>
+    </members>
+</doc>

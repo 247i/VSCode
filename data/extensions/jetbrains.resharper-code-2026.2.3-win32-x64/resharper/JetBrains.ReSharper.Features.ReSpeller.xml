@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.Features.ReSpeller</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.ReSharper.Features.ReSpeller.Analyzers.IPsiHelper.ShouldSkipExpression(JetBrains.ReSharper.Psi.Tree.IExpression)">
+            <summary>
+            Checks if expression matches parameter annotated with [IgnoreSpellingAndGrammarErrors]
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.ReSpeller.SpellEngine.Sources.DictionarySourceOnSettings.#ctor(JetBrains.Lifetimes.Lifetime,JetBrains.Util.ILogger,JetBrains.Application.Settings.ISettingsStore,JetBrains.Application.Threading.IThreading)">
+            <summary>
+            You must call <see cref="M:JetBrains.ReSharper.Features.ReSpeller.SpellEngine.Sources.DictionarySourceOnSettings.Init"/> in derived constructor
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.ReSpeller.SpellEngine.Sources.DictionarySourceOnSettings.Init">
+            <summary>
+            Must be called in derived constructor to load initial content from settings
+            Can't be called in own ctor because virtual method GetCurrentContent can try accessing uninitialized data in an inheritor (virtual member call in ctor)
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.ReSpeller.SpellEngine.TextSplitter.IsSupportedLetter(System.Char)">
+            <summary>
+            Checks that char is letter and isn't CJK ideograph, because we don't know how to split CJK texts
+            <para>
+            Block                                   Range       Comment
+            Hiragana                                3040 — 309F
+            Katakana                                30A0 — 30FF
+            CJK Unified Ideographs                  4E00-9FFF   Common
+            CJK Unified Ideographs Extension A      3400-4DBF   Rare
+            CJK Unified Ideographs Extension B      20000-2A6DF Rare, historic
+            CJK Unified Ideographs Extension C      2A700–2B73F Rare, historic
+            CJK Unified Ideographs Extension D      2B740–2B81F Uncommon, some in current use
+            CJK Unified Ideographs Extension E      2B820–2CEAF Rare, historic
+            CJK Compatibility Ideographs            F900-FAFF   Duplicates, unifiable variants, corporate characters
+            CJK Compatibility Ideographs Supplement 2F800-2FA1F Unifiable variants
+            </para>
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

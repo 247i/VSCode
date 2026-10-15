@@ -1,0 +1,5 @@
+2026-10-15 07:53:04.648 [info] To enable debug logging, run "GitLens: Enable Debug Logging" or "Developer: Set Log Level..." from the Command Palette
+2026-10-15 07:53:04.648 [info]    [            1] GitLens v19.3.0  activating in Visual Studio Code (1.141.2) on the desktop; mode=production,language='en', logLevel='info', defaultDateLocale='null' (vscode|3722bbf6eef2c1a68268fff2835f7483c345134105edfb4d0b4714054b90237b|8c574c69-98ac-47ab-949e-cdada536322c1792030979846)
+2026-10-15 07:53:04.648 [info]    [            1] GitLens v19.3.0 activated [141ms]
+2026-10-15 07:53:04.648 [info]    [IPC          ] CLI capability published on http://127.0.0.1:64778
+2026-10-15 07:53:07.216 [info]    [CLI          ] CLI core version is 3.1.76

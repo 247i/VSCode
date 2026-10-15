@@ -1,0 +1,30 @@
+2026-10-11 13:03:23.161 [info] [RemoteAgentHost] Reconciling: desired=[], current=[]
+2026-10-11 13:03:23.186 [warning] Creation of workbench contribution 'workbench.contrib.agentHostChatDebug' took 26ms.
+2026-10-11 13:03:23.204 [info] [AgentHost:renderer] Acquiring MessagePort to agent host...
+2026-10-11 13:03:23.429 [info] [AgentHost:renderer] MessagePort acquired, creating client...
+2026-10-11 13:03:23.483 [info] Started local extension host with pid 31540.
+2026-10-11 13:03:23.863 [info] [JakubKozera.csharp-dev-tools]: Command `bookmarks.refresh` already registered by Bookmarks (alefragnani.Bookmarks)
+2026-10-11 13:03:23.891 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.lightModeTheme'. This property is already registered.
+2026-10-11 13:03:23.891 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.darkModeTheme'. This property is already registered.
+2026-10-11 13:03:23.891 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.languages'. This property is already registered.
+2026-10-11 13:03:23.892 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.maxTextSize'. This property is already registered.
+2026-10-11 13:03:23.892 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.mouseNavigation.enabled'. This property is already registered.
+2026-10-11 13:03:23.892 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.controls.show'. This property is already registered.
+2026-10-11 13:03:23.892 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.resizable'. This property is already registered.
+2026-10-11 13:03:23.892 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.maxHeight'. This property is already registered.
+2026-10-11 13:03:24.627 [info] [AgentHost:renderer] Protocol connection established; clientId=4ef68f08-29d5-4fde-9076-27e9ffd9e991
+2026-10-11 13:03:24.859 [info] [AccountPolicyGate] apply: state=inactive, reason=undefined, isRestricted=false
+2026-10-11 13:03:25.219 [error] [EricSia.pythonsnippets3]: Unknown language in `contributes.pythonsnippets3.language`. Provided value: django-html
+2026-10-11 13:03:25.220 [error] [EricSia.pythonsnippets3]: Unknown language in `contributes.pythonsnippets3.language`. Provided value: django-txt
+2026-10-11 13:03:25.953 [error] [Extension Host] (node:31540) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `Code --trace-deprecation ...` to show where the warning was created)
+2026-10-11 13:03:26.573 [info] [perf] Render performance baseline is 15ms
+2026-10-11 13:03:27.082 [info] [AgentHost] Authenticating for resource: https://api.github.com
+2026-10-11 13:03:27.310 [error] [Extension Host] (node:31540) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-11 13:03:27.841 [error] [Extension Host] (node:31540) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+2026-10-11 13:03:28.157 [info] Settings Sync: Account status changed from uninitialized to available
+2026-10-11 13:03:28.372 [info] Auto updating outdated extensions. eamodio.gitlens, jakubkozera.csharp-dev-tools, jetbrains.resharper-code, johnpapa.vscode-peacock, ms-python.python, pkief.material-icon-theme, prateekmahendrakar.prettyxml, sonarsource.sonarlint-vscode
+2026-10-11 13:03:29.130 [info] [AgentHost] Authenticating for resource: https://api.github.com/repos
+2026-10-11 13:03:29.863 [info] [AccountPolicyGate] apply: state=inactive, reason=undefined, isRestricted=false
+2026-10-11 13:03:30.915 [error] An unknown error occurred. Please consult the log for more details.
+2026-10-11 13:03:33.196 [info] [JakubKozera.csharp-dev-tools]: Command `bookmarks.refresh` already registered by Bookmarks (alefragnani.Bookmarks)

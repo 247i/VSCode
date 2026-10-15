@@ -1,0 +1,15 @@
+{
+  "runtimeOptions": {
+    "tfm": "net8.0",
+    "rollForward": "LatestMajor",
+    "framework": {
+      "name": "Microsoft.NETCore.App",
+      "version": "8.0.0.0"
+    },
+    "configProperties": {
+      "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true,
+      "DEFAULT_STACK_SIZE": 200000,
+      "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": true
+    }
+  }
+}

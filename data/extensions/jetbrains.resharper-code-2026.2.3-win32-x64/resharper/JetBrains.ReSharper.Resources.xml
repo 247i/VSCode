@@ -1,0 +1,336 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.Resources</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.ReSharper.Resources.BuildScript.Compile.PsiFeaturesZonesActivatorForBuild.ProductMetaDependency(JetBrains.Application.BuildScript.Solution.AllAssembliesOnSources)">
+            <summary>
+            Emitted by select packages in their build steps.
+            Goes into nupkg's Release Notes as text, for reading from gallery when package bodies are not available.
+            </summary>
+            <param name="allassSrc"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Resources.AssemblyReferenceClass_PsiFeaturesResources">
+            <summary>
+            Forces the compiler to add assembly references.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Resources.resources.Clipart.ReSharperClipart">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Resources.resources.Clipart.ReSharperClipart.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Resources.resources.Clipart.ReSharperClipart.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Resources.PsiFeaturesUnsortedIcons.IconsForIconThemeSelectionSamplePsiUnsorted">
+            <summary>
+            Generic PSI-Features theme-sample icons.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Resources.ReSharperInfo">
+            <summary>
+            Pieces of the product-specific info and settings, condensed.
+            Note: look in Product.Defines.Targets for most of the configurable product parameters.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Resources.Shell.ReadLockCookie">
+            <summary>
+            Read lock object. This object is used as a stakeholder for read lock.
+            </summary>
+            <example>
+            Use the following pattern to acquire read lock and safely release it.
+            <code>
+            using (ReadLockCookie.Create())
+            {
+              // Your code goes here
+            }
+            </code>
+            </example>
+            <seealso>Shell.AcquireReadLock</seealso>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ReadLockCookie.Execute(System.Action)">
+            <summary>
+            Executes the <see cref="!:action"/> under a read lock.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ReadLockCookie.Execute(System.Action,System.String,System.String)">
+            <summary>
+            Executes the <see cref="!:action"/> under a read lock.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ReadLockCookie.Execute(System.Action,JetBrains.Util.Threading.CallerInfo@)">
+            <summary>
+            Executes the <see cref="!:action"/> under a read lock.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ReadLockCookie.Execute``1(System.Func{``0})">
+            <summary>
+            Executes the <see cref="!:func"/> under a read lock.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ReadLockCookie.Execute``1(System.Func{``0},System.String,System.String)">
+            <summary>
+            Executes the <see cref="!:func"/> under a read lock.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ReadLockCookie.Execute``1(System.Func{``0},JetBrains.Util.Threading.CallerInfo@)">
+            <summary>
+            Executes the <see cref="!:func"/> under a read lock.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Resources.Shell.Shell">
+            <summary>
+            Interface which represents root point for environment API.
+            Use the <see cref="P:JetBrains.ReSharper.Resources.Shell.Shell.Instance" /> property to obtain the <i>Shell</i> instance.  
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Resources.Shell.Shell.HasInstance">
+            <summary>
+            Tells whether the <see cref="P:JetBrains.ReSharper.Resources.Shell.Shell.Instance"/> is available, and the property could be read.
+            When <c>False</c>, <see cref="P:JetBrains.ReSharper.Resources.Shell.Shell.Instance"/> throws an exception.
+            </summary>
+            <remarks>Notes to inheritors: <see cref="P:JetBrains.ReSharper.Resources.Shell.Shell.HasInstance"/> and <see cref="P:JetBrains.ReSharper.Resources.Shell.Shell.Instance"/> must be overridden in sync.</remarks>
+        </member>
+        <member name="P:JetBrains.ReSharper.Resources.Shell.Shell.Instance">
+            <summary>
+            Gets the instance of the Application Shell.
+            If not available, throws an exception. Check the <see cref="P:JetBrains.ReSharper.Resources.Shell.Shell.HasInstance"/> property value to see if <see cref="P:JetBrains.ReSharper.Resources.Shell.Shell.Instance"/> can be accessed. 
+            </summary>
+            <remarks>Notes to inheritors: <see cref="P:JetBrains.ReSharper.Resources.Shell.Shell.HasInstance"/> and <see cref="P:JetBrains.ReSharper.Resources.Shell.Shell.Instance"/> must be overridden in sync.</remarks>
+        </member>
+        <member name="P:JetBrains.ReSharper.Resources.Shell.Shell.Invocator">
+            <summary>
+            Gets the invocator that executes arbitrary actions on the application's primary thread in a reentrant-safe manner.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Resources.Shell.Shell.IsInInternalMode">
+            <summary>
+            Indicates that the current shell is running in the internal mode, so some extra functionality is available.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Resources.Shell.Shell.IsTestShell">
+            <summary>
+            Indicates that the current shell is a unit-test shell
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Resources.Shell.Shell.Locks">
+            <summary>
+            Exposes the Read/Write Lock API.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Resources.Shell.Shell.PrimaryDispatcher">
+            <summary>
+            Gets the dispatcher attached to the <see cref="P:JetBrains.ReSharper.Resources.Shell.Shell.PrimaryThread">UI thread</see>.
+            Can be used for marshalling or async queueing of the tasks.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Resources.Shell.ShellLifetimes">
+             <summary>
+             Main entry point for structured concurrency: bunch of extension functions on lifetimes. 
+            
+             Typical usage:
+             <code>
+                await componentLifetime.StartMainRead(() =>
+                {
+                  DoSomethingOn_MainThread_UnderReadLock_1();
+                  await ShellLifetimes.ReadActivityLifetime.StartBackgroundRead(() => {
+                    DoSomethingOn_PoolThread_UnderReadLock();
+                  });
+                  DoSomethingOn_MainThread_UnderReadLock_2();
+                })
+                
+             </code>
+             <remarks>Please use this extensions of <see cref="T:JetBrains.Lifetimes.Lifetime"/> class over direct reference of schedulers from <see cref="T:JetBrains.Application.Threading.Tasks.ITaskHost"/> class.</remarks>
+             </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.ReadActivityLifetime">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ContentModelReadWriteLock.BackgroundReadersAllowedLifetime"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartMainRead(JetBrains.Lifetimes.Lifetime,System.Action)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.IShellLocksExAsync.StartMainRead(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Action,System.String,System.String)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartMainRead``1(JetBrains.Lifetimes.Lifetime,System.Func{``0})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.IShellLocksExAsync.StartMainRead``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{``0},System.String,System.String)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartMainReadAsync(JetBrains.Lifetimes.Lifetime,System.Func{System.Threading.Tasks.Task})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.IShellLocksExAsync.StartMainReadAsync(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{System.Threading.Tasks.Task},System.String,System.String)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartMainReadAsync``1(JetBrains.Lifetimes.Lifetime,System.Func{System.Threading.Tasks.Task{``0}})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.IShellLocksExAsync.StartMainReadAsync``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{System.Threading.Tasks.Task{``0}},System.String,System.String)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartBackground(JetBrains.Lifetimes.Lifetime,System.Action)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.IShellLocksExAsync.StartBackground(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Action)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartBackground``1(JetBrains.Lifetimes.Lifetime,System.Func{``0})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.IShellLocksExAsync.StartBackground``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{``0})"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartBackgroundAsync(JetBrains.Lifetimes.Lifetime,System.Func{System.Threading.Tasks.Task})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.IShellLocksExAsync.StartBackgroundAsync(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{System.Threading.Tasks.Task})"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartBackgroundAsync``1(JetBrains.Lifetimes.Lifetime,System.Func{System.Threading.Tasks.Task{``0}})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.IShellLocksExAsync.StartBackgroundAsync``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{System.Threading.Tasks.Task{``0}})"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartBackgroundRead(JetBrains.Lifetimes.Lifetime,System.Action,System.Boolean,System.String,System.String)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.IShellLocksExAsync.StartBackgroundRead(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Action,System.Boolean,System.String,System.String)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartBackgroundRead``1(JetBrains.Lifetimes.Lifetime,System.Func{``0},System.Boolean,System.String,System.String)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.IShellLocksExAsync.StartBackgroundRead``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{``0},System.Boolean,System.String,System.String)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartBackgroundInterruptableRead(JetBrains.Lifetimes.Lifetime,System.Action,System.Boolean,System.String,System.String)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.IShellLocksExAsync.StartBackgroundInterruptableRead(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Action,System.Boolean,System.String,System.String)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartBackgroundInterruptableRead``1(JetBrains.Lifetimes.Lifetime,System.Func{``0},System.Boolean,System.String,System.String)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.IShellLocksExAsync.StartBackgroundInterruptableRead``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{``0},System.Boolean,System.String,System.String)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartReadActionAsync(JetBrains.Lifetimes.Lifetime,System.Action)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartReadActionAsync(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Action)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartReadActionAsync(JetBrains.Lifetimes.Lifetime,System.Action,System.Threading.Tasks.TaskScheduler)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartReadActionAsync(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Action,System.Threading.Tasks.TaskScheduler)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartReadActionAsync``1(JetBrains.Lifetimes.Lifetime,System.Func{``0})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartReadActionAsync``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{``0})"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartReadActionAsync``1(JetBrains.Lifetimes.Lifetime,System.Func{``0},System.Threading.Tasks.TaskScheduler)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartReadActionAsync``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{``0},System.Threading.Tasks.TaskScheduler)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartReadActionAsync(JetBrains.Lifetimes.Lifetime,System.Action{JetBrains.Lifetimes.Lifetime})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartReadActionAsync(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Action{JetBrains.Lifetimes.Lifetime})"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartReadActionAsync(JetBrains.Lifetimes.Lifetime,System.Action{JetBrains.Lifetimes.Lifetime},System.Threading.Tasks.TaskScheduler)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartReadActionAsync(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Action{JetBrains.Lifetimes.Lifetime},System.Threading.Tasks.TaskScheduler)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartReadActionAsync``1(JetBrains.Lifetimes.Lifetime,System.Func{JetBrains.Lifetimes.Lifetime,``0})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartReadActionAsync``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{JetBrains.Lifetimes.Lifetime,``0})"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartReadActionAsync``1(JetBrains.Lifetimes.Lifetime,System.Func{JetBrains.Lifetimes.Lifetime,``0},System.Threading.Tasks.TaskScheduler)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartReadActionAsync``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{JetBrains.Lifetimes.Lifetime,``0},System.Threading.Tasks.TaskScheduler)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartConstrainedReadActionAsync(JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Action)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartConstrainedReadActionAsync(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Action)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartConstrainedReadActionAsync(JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Action,System.Threading.Tasks.TaskScheduler)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartConstrainedReadActionAsync(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Action,System.Threading.Tasks.TaskScheduler)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartConstrainedReadActionAsync``1(JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Func{``0})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartConstrainedReadActionAsync``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Func{``0})"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartConstrainedReadActionAsync``1(JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Func{``0},System.Threading.Tasks.TaskScheduler)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartConstrainedReadActionAsync``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Func{``0},System.Threading.Tasks.TaskScheduler)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartConstrainedReadActionAsync(JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Action{JetBrains.Lifetimes.Lifetime})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartConstrainedReadActionAsync(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Action{JetBrains.Lifetimes.Lifetime})"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartConstrainedReadActionAsync(JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Action{JetBrains.Lifetimes.Lifetime},System.Threading.Tasks.TaskScheduler)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartConstrainedReadActionAsync(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Action{JetBrains.Lifetimes.Lifetime},System.Threading.Tasks.TaskScheduler)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartConstrainedReadActionAsync``1(JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Func{JetBrains.Lifetimes.Lifetime,``0})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartConstrainedReadActionAsync``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Func{JetBrains.Lifetimes.Lifetime,``0})"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartConstrainedReadActionAsync``1(JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Func{JetBrains.Lifetimes.Lifetime,``0},System.Threading.Tasks.TaskScheduler)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartConstrainedReadActionAsync``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Func{JetBrains.Lifetimes.Lifetime,``0},System.Threading.Tasks.TaskScheduler)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartReadAndMainThreadActionAsync``1(JetBrains.Lifetimes.Lifetime,System.Func{JetBrains.Application.Threading.ReadAndWriteScope,JetBrains.Application.Threading.ReadAndWriteScope.ReadResult{``0}})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartReadAndMainThreadActionAsync``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{JetBrains.Application.Threading.ReadAndWriteScope,JetBrains.Application.Threading.ReadAndWriteScope.ReadResult{``0}})"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartReadAndMainThreadActionAsync``1(JetBrains.Lifetimes.Lifetime,System.Func{JetBrains.Application.Threading.ReadAndWriteScope,JetBrains.Application.Threading.ReadAndWriteScope.ReadResult{``0}},System.Threading.Tasks.TaskScheduler)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartReadAndMainThreadActionAsync``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{JetBrains.Application.Threading.ReadAndWriteScope,JetBrains.Application.Threading.ReadAndWriteScope.ReadResult{``0}},System.Threading.Tasks.TaskScheduler)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartConstrainedReadAndMainThreadActionAsync``1(JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Func{JetBrains.Application.Threading.ReadAndWriteScope,JetBrains.Application.Threading.ReadAndWriteScope.ReadResult{``0}})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartConstrainedReadAndMainThreadActionAsync``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Func{JetBrains.Application.Threading.ReadAndWriteScope,JetBrains.Application.Threading.ReadAndWriteScope.ReadResult{``0}})"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartConstrainedReadAndMainThreadActionAsync``1(JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Func{JetBrains.Application.Threading.ReadAndWriteScope,JetBrains.Application.Threading.ReadAndWriteScope.ReadResult{``0}},System.Threading.Tasks.TaskScheduler)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartConstrainedReadAndMainThreadActionAsync``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Func{JetBrains.Application.Threading.ReadAndWriteScope,JetBrains.Application.Threading.ReadAndWriteScope.ReadResult{``0}},System.Threading.Tasks.TaskScheduler)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartReadAndMainThreadActionAsync(JetBrains.Lifetimes.Lifetime,System.Func{JetBrains.Application.Threading.ReadAndWriteScope,JetBrains.Application.Threading.ReadAndWriteScope.ReadResult})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartReadAndMainThreadActionAsync(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{JetBrains.Application.Threading.ReadAndWriteScope,JetBrains.Application.Threading.ReadAndWriteScope.ReadResult})"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartReadAndMainThreadActionAsync(JetBrains.Lifetimes.Lifetime,System.Func{JetBrains.Application.Threading.ReadAndWriteScope,JetBrains.Application.Threading.ReadAndWriteScope.ReadResult},System.Threading.Tasks.TaskScheduler)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartReadAndMainThreadActionAsync(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{JetBrains.Application.Threading.ReadAndWriteScope,JetBrains.Application.Threading.ReadAndWriteScope.ReadResult},System.Threading.Tasks.TaskScheduler)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartConstrainedReadAndMainThreadActionAsync(JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Func{JetBrains.Application.Threading.ReadAndWriteScope,JetBrains.Application.Threading.ReadAndWriteScope.ReadResult})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartConstrainedReadAndMainThreadActionAsync(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Func{JetBrains.Application.Threading.ReadAndWriteScope,JetBrains.Application.Threading.ReadAndWriteScope.ReadResult})"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartConstrainedReadAndMainThreadActionAsync(JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Func{JetBrains.Application.Threading.ReadAndWriteScope,JetBrains.Application.Threading.ReadAndWriteScope.ReadResult},System.Threading.Tasks.TaskScheduler)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.ReadActionUtil.StartConstrainedReadAndMainThreadActionAsync(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,JetBrains.Application.Threading.IReadConstraint,System.Func{JetBrains.Application.Threading.ReadAndWriteScope,JetBrains.Application.Threading.ReadAndWriteScope.ReadResult},System.Threading.Tasks.TaskScheduler)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartMainUnguarded(JetBrains.Lifetimes.Lifetime,System.Action)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.IShellLocksExAsync.StartMainUnguarded(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Action,System.String,System.String)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartMainUnguarded``1(JetBrains.Lifetimes.Lifetime,System.Func{``0})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.IShellLocksExAsync.StartMainUnguarded``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{``0},System.String,System.String)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartMainUnguardedAsync(JetBrains.Lifetimes.Lifetime,System.Func{System.Threading.Tasks.Task})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.IShellLocksExAsync.StartMainUnguardedAsync(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{System.Threading.Tasks.Task},System.String,System.String)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartMainUnguardedAsync``1(JetBrains.Lifetimes.Lifetime,System.Func{System.Threading.Tasks.Task{``0}})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.IShellLocksExAsync.StartMainUnguardedAsync``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{System.Threading.Tasks.Task{``0}},System.String,System.String)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartMainWrite(JetBrains.Lifetimes.Lifetime,System.Action)">
+            <inheritdoc cref="M:JetBrains.Application.Threading.IShellLocksExAsync.StartMainWrite(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Action,System.String,System.String)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartMainWrite``1(JetBrains.Lifetimes.Lifetime,System.Func{``0})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.IShellLocksExAsync.StartMainWrite``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{``0},System.String,System.String)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartMainWriteAsync(JetBrains.Lifetimes.Lifetime,System.Func{System.Threading.Tasks.Task})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.IShellLocksExAsync.StartMainWriteAsync(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{System.Threading.Tasks.Task},System.String,System.String)"/>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.ShellLifetimes.StartMainWriteAsync``1(JetBrains.Lifetimes.Lifetime,System.Func{System.Threading.Tasks.Task{``0}})">
+            <inheritdoc cref="M:JetBrains.Application.Threading.IShellLocksExAsync.StartMainWriteAsync``1(JetBrains.Application.Threading.IShellLocks,JetBrains.Lifetimes.Lifetime,System.Func{System.Threading.Tasks.Task{``0}},System.String,System.String)"/>
+        </member>
+        <member name="T:JetBrains.ReSharper.Resources.Shell.WriteLockCookie">
+            <summary>
+            Write lock object. This object is used as a stakeholder for write lock.
+            </summary>
+            <example>
+            Use the following pattern to acquire write lock and safely release it.
+            <code>
+            using (WriteLockCookie.Create())
+            {
+              // Your code goes here
+            }
+            </code>
+            </example>
+            <seealso>Shell.AcquireWriteLock</seealso>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.WriteLockCookie.Execute(System.Action,System.String,System.String)">
+            <summary>
+            Executes the <see cref="!:action"/> under a write lock.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Resources.Shell.WriteLockCookie.Execute(System.Action,JetBrains.Util.Threading.CallerInfo@)">
+            <inheritdoc cref="M:JetBrains.ReSharper.Resources.Shell.WriteLockCookie.Execute(System.Action,System.String,System.String)"/>>
+        </member>
+        <member name="T:JetBrains.ReSharper.Resources.Shell.ReplaceableByIntelliJPlatformZone">
+            <summary>
+            A special zone which states that a certain feature/language is not needed in Rider,
+            as it's been already implemented in IDEA, WebStorm, or other IJ-based product.
+            Requiring it for your zone will make the zone unavailable in Rider. 
+            </summary>
+        </member>
+        <member name="T:JetBrains.Application.Threading.SlowOperations">
+            <summary>
+            Controls the access to potentially slow semantic-related operations.
+            The operations currently include resolving references, getting expression types, or accessing declared elements.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Application.Threading.SlowOperations.DisableInterruptionChecks(System.String)">
+            <summary>
+            Temporarily disables the interruption checks for known and investigated cases. 
+            Please only use this method after discussing it with the PSI team
+            and only after assigning the exception to the responsible person.
+            </summary>
+        </member>
+    </members>
+</doc>

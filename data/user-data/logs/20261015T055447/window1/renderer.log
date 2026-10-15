@@ -1,0 +1,192 @@
+2026-10-15 05:54:48.201 [info] [RemoteAgentHost] Reconciling: desired=[], current=[]
+2026-10-15 05:54:48.223 [info] [AgentHost:renderer] Acquiring MessagePort to agent host...
+2026-10-15 05:54:48.431 [info] [AgentHost:renderer] MessagePort acquired, creating client...
+2026-10-15 05:54:48.493 [error] Extension 'github.copilot-chat' appears in product.json but enables LESS API proposals than the extension wants.
+package.json (LOSES): agentSessionsWorkspace
+agentsWindowConfiguration
+chatDebug
+chatHooks
+envIsConnectionMetered
+extensionsAny
+newSymbolNamesProvider
+interactive
+codeActionAI
+activeComment
+commentReveal
+contribCommentThreadAdditionalMenu
+contribCommentsViewThreadMenus
+contribChatEditorInlineGutterMenu
+documentFiltersExclusive
+embeddings
+findTextInFiles
+findTextInFiles2
+languageModelToolSupportsModel
+findFiles2
+textSearchProvider
+terminalDataWriteEvent
+terminalExecuteCommandEvent
+terminalSelection
+terminalQuickFixProvider
+mappedEditsProvider
+aiRelatedInformation
+aiSettingsSearch
+chatParticipantAdditions
+defaultChatParticipant
+contribSourceControlInputBoxMenu
+authLearnMore
+authIssuers
+testObserver
+aiTextSearchProvider
+chatParticipantPrivate
+chatProvider
+contribDebugCreateConfiguration
+chatReferenceDiagnostic
+textSearchProvider2
+chatReferenceBinaryData
+languageModelSystem
+languageModelCapabilities
+languageModelPricing
+inlineCompletionsAdditions
+chatStatusItem
+chatInputNotification
+taskProblemMatcherStatus
+contribLanguageModelToolSets
+textDocumentChangeReason
+resolvers
+taskExecutionTerminal
+dataChannels
+languageModelThinkingPart
+chatSessionsProvider
+devDeviceId
+contribEditorContentMenu
+chatPromptFiles
+mcpServerDefinitions
+tabInputMultiDiff
+workspaceTrust
+environmentPower
+terminalTitle
+toolInvocationApproveCombination
+chatSessionCustomizationProvider
+product.json (WINS): agentSessionsWorkspace
+agentsWindowConfiguration
+interactive
+terminalDataWriteEvent
+terminalExecuteCommandEvent
+terminalSelection
+terminalQuickFixProvider
+chatParticipantAdditions
+defaultChatParticipant
+embeddings
+chatProvider
+mappedEditsProvider
+aiRelatedInformation
+aiSettingsSearch
+codeActionAI
+findTextInFiles
+findTextInFiles2
+textSearchProvider
+textSearchProvider2
+activeComment
+commentReveal
+contribSourceControlInputBoxMenu
+contribCommentEditorActionsMenu
+contribCommentThreadAdditionalMenu
+contribCommentsViewThreadMenus
+contribChatEditorInlineGutterMenu
+extensionAffinity
+newSymbolNamesProvider
+findFiles2
+chatReferenceDiagnostic
+extensionsAny
+authLearnMore
+testObserver
+aiTextSearchProvider
+documentFiltersExclusive
+chatParticipantPrivate
+contribDebugCreateConfiguration
+inlineCompletionsAdditions
+chatReferenceBinaryData
+languageModelSystem
+languageModelCapabilities
+languageModelThinkingPart
+languageModelToolSupportsModel
+chatStatusItem
+taskProblemMatcherStatus
+contribLanguageModelToolSets
+textDocumentChangeReason
+resolvers
+taskExecutionTerminal
+dataChannels
+chatSessionsProvider
+chatSessionCustomizationProvider
+devDeviceId
+contribEditorContentMenu
+tokenInformation
+toolInvocationApproveCombination
+chatPromptFiles
+mcpServerDefinitions
+tabInputMultiDiff
+workspaceTrust
+chatHooks
+chatDebug
+envIsConnectionMetered
+environmentPower
+terminalTitle
+languageModelPricing
+chatInputNotification
+DELTA: authIssuers
+2026-10-15 05:54:48.528 [info] [JakubKozera.csharp-dev-tools]: Command `bookmarks.refresh` already registered by Bookmarks (alefragnani.Bookmarks)
+2026-10-15 05:54:48.558 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.lightModeTheme'. This property is already registered.
+2026-10-15 05:54:48.559 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.darkModeTheme'. This property is already registered.
+2026-10-15 05:54:48.559 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.languages'. This property is already registered.
+2026-10-15 05:54:48.560 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.maxTextSize'. This property is already registered.
+2026-10-15 05:54:48.560 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.mouseNavigation.enabled'. This property is already registered.
+2026-10-15 05:54:48.560 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.controls.show'. This property is already registered.
+2026-10-15 05:54:48.561 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.resizable'. This property is already registered.
+2026-10-15 05:54:48.561 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.maxHeight'. This property is already registered.
+2026-10-15 05:54:48.720 [info] Started local extension host with pid 27844.
+2026-10-15 05:54:48.944 [info] [RemoteAgentHostProtocol] Sending initialize: address=local clientId=24eba566-ed42-4ce5-8d90-b8d8bce796f1 requestId=1
+2026-10-15 05:54:49.339 [error] [Extension Host] (node:27844) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `Code --trace-deprecation ...` to show where the warning was created)
+2026-10-15 05:54:49.480 [info] [RemoteAgentHostProtocol] Initialized: address=local clientId=24eba566-ed42-4ce5-8d90-b8d8bce796f1 durationMs=1255
+2026-10-15 05:54:49.484 [info] [AgentHost:renderer] Protocol connection established; clientId=24eba566-ed42-4ce5-8d90-b8d8bce796f1
+2026-10-15 05:54:49.565 [info] [AccountPolicyGate] apply: state=inactive, reason=undefined, isRestricted=false
+2026-10-15 05:54:49.625 [info] [RemoteAgentHost] Reconciling: desired=[], current=[]
+2026-10-15 05:54:50.069 [error] [EricSia.pythonsnippets3]: Unknown language in `contributes.pythonsnippets3.language`. Provided value: django-html
+2026-10-15 05:54:50.070 [error] [EricSia.pythonsnippets3]: Unknown language in `contributes.pythonsnippets3.language`. Provided value: django-txt
+2026-10-15 05:54:50.373 [info] [RemoteAgentHostProtocol] Mirroring configuration to host root config from DEFAULT: artifactTools=true (chat.artifactTools.enabled), autoAttachPullRequests=false (chat.agentHost.experimental.autoAttachPullRequests), copilotMultiRootEnabled=true (chat.agentHost.copilotAgent.multiRootEnabled), claudeMultiRootEnabled=true (chat.agentHost.claudeAgent.multiRootEnabled), codexMultiRootEnabled=true (chat.agentHost.codexAgent.multiRootEnabled), byokModelsEnabled=true (chat.agentHost.byokModels.enabled), codexAgentEnabled=true (chat.agentHost.codexAgent.enabled), skillCharBudget=30000 (chat.copilot.skillCharBudget)
+2026-10-15 05:54:52.282 [error] [Extension Host] (node:27844) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-15 05:54:52.435 [info] [perf] Render performance baseline is 17ms
+2026-10-15 05:54:52.521 [error] [Extension Host] (node:27844) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+2026-10-15 05:54:52.707 [info] [AgentHost] Authenticating for resource: https://api.github.com
+2026-10-15 05:54:53.518 [info] [AgentHost] Authenticating for resource: https://api.github.com/repos
+2026-10-15 05:54:54.128 [info] [RemoteAgentHostProtocol] Mirroring configuration to host root config from DEFAULT: workspaceSnapshotEnabled=true (chat.experimental.workspaceSnapshot)
+2026-10-15 05:54:54.571 [info] [AccountPolicyGate] apply: state=inactive, reason=undefined, isRestricted=false
+2026-10-15 05:54:55.097 [info] Auto updating outdated extensions. github.vscode-pull-request-github, jakubkozera.csharp-dev-tools, ms-python.python, ms-python.vscode-python-envs, sonarsource.sonarlint-vscode
+2026-10-15 05:54:56.132 [info] Settings Sync: Account status changed from uninitialized to available
+2026-10-15 05:55:06.145 [info] [JakubKozera.csharp-dev-tools]: Command `bookmarks.refresh` already registered by Bookmarks (alefragnani.Bookmarks)
+2026-10-15 05:55:14.889 [warning] Extension host was not stopped because of veto (stop reason: Changing extension enablement, veto reason: An extension provided text editor for 'home.csdt-home' is still open that would close otherwise.)
+2026-10-15 05:55:14.980 [info] [JakubKozera.csharp-dev-tools]: Command `bookmarks.refresh` already registered by Bookmarks (alefragnani.Bookmarks)
+2026-10-15 05:55:21.142 [info] [JakubKozera.csharp-dev-tools]: Command `bookmarks.refresh` already registered by Bookmarks (alefragnani.Bookmarks)
+2026-10-15 05:55:21.200 [warning] [DefaultAccount] Attempt 1 to get sessions failed: Canceled
+2026-10-15 05:55:21.200 [info] Started local extension host with pid 4696.
+2026-10-15 05:55:21.705 [warning] [DefaultAccount] Attempt 2 to get sessions failed: Canceled
+2026-10-15 05:55:22.206 [warning] [DefaultAccount] Attempt 3 to get sessions failed: Canceled
+2026-10-15 05:55:22.206 [error] [DefaultAccount] Failed to get default account for provider: github Canceled
+2026-10-15 05:55:22.207 [info] [DefaultAccount] Keeping the current default account after the session lookup failed
+2026-10-15 05:55:22.824 [error] [Extension Host] (node:4696) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `Code --trace-deprecation ...` to show where the warning was created)
+2026-10-15 05:55:23.825 [error] [Extension Host] (node:4696) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-15 05:55:24.575 [error] [Extension Host] (node:4696) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+2026-10-15 05:55:47.296 [warning] Extension host was not stopped because of veto (stop reason: Changing extension enablement, veto reason: An extension provided text editor for 'home.csdt-home' is still open that would close otherwise.)
+2026-10-15 05:55:59.543 [info] [JakubKozera.csharp-dev-tools]: Command `bookmarks.refresh` already registered by Bookmarks (alefragnani.Bookmarks)
+2026-10-15 05:55:59.615 [warning] [DefaultAccount] Attempt 1 to get sessions failed: Canceled
+2026-10-15 05:55:59.625 [info] Started local extension host with pid 27500.
+2026-10-15 05:56:00.118 [warning] [DefaultAccount] Attempt 2 to get sessions failed: Canceled
+2026-10-15 05:56:00.621 [warning] [DefaultAccount] Attempt 3 to get sessions failed: Canceled
+2026-10-15 05:56:00.621 [error] [DefaultAccount] Failed to get default account for provider: github Canceled
+2026-10-15 05:56:00.621 [info] [DefaultAccount] Keeping the current default account after the session lookup failed
+2026-10-15 05:56:01.179 [error] [Extension Host] (node:27500) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `Code --trace-deprecation ...` to show where the warning was created)
+2026-10-15 05:56:02.535 [error] [Extension Host] (node:27500) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-15 05:56:02.797 [error] [Extension Host] (node:27500) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.

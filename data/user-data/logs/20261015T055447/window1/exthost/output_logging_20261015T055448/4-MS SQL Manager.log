@@ -1,0 +1,27 @@
+[Extension] Skipped obsolete useReactWebview cleanup for workspace settings: CodeExpectedError: Unable to write to Workspace Settings because no workspace is opened. Please open a workspace first and try again.
+MS SQL Manager extension activated
+[Extension] Docker is not running
+[ConnectionProvider] Loaded 0 database filters
+[ConnectionProvider] Loaded 0 table filters
+[ConnectionProvider] Local discovery already executed, skipping
+[ConnectionProvider] Azure discovery already executed, skipping
+[ConnectionProvider] Docker discovery already executed, skipping
+[Extension] Initializing query history...
+[Extension] Query history initialized
+[Extension] Query executor initialized with history manager
+[Extension] Schema context builder initialized
+[Extension] Database instructions manager initialized
+[SqlEditorProvider] Searching for SQL snippets in 3 paths:
+  - C:\Users\inthirua\AppData\Roaming\Code\User\snippets\sql.json
+  - C:\Users\inthirua\AppData\Roaming\Code - Insiders\User\snippets\sql.json
+  - d:\All\IDLE\t\VSCode\data\extensions\jakubkozera.ms-sql-manager-0.20.5\.vscode\sql.json
+[SqlEditorProvider] Snippets file not found: C:\Users\inthirua\AppData\Roaming\Code\User\snippets\sql.json
+[SqlEditorProvider] Snippets file not found: C:\Users\inthirua\AppData\Roaming\Code - Insiders\User\snippets\sql.json
+[SqlEditorProvider] Snippets file not found: d:\All\IDLE\t\VSCode\data\extensions\jakubkozera.ms-sql-manager-0.20.5\.vscode\sql.json
+[SqlEditorProvider] Total SQL snippets loaded: 0
+[ConnectionProvider] Adding connection change callback
+[Extension] Query history tree view registered
+[Extension] Notebook tree view registered
+[ConnectionProvider] Adding connection change callback
+MS SQL Manager commands registered successfully
+SQL Chat participant registered successfully

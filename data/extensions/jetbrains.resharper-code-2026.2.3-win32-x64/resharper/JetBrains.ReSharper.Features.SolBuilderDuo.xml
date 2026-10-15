@@ -1,0 +1,785 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.Features.SolBuilderDuo</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.AssemblyHasher.SortedHashesSet">
+            Thin abstraction to make <see cref="T:System.Collections.Generic.List`1"/> poolable
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.AssemblyHasher.AssemblySurfaceCache">
+            <summary>
+            A list of <see cref="T:JetBrains.ReSharper.Features.SolBuilderDuo.AssemblyHasher.AssemblySurfaceHash"/> and "ProjectBuildSignature" objects
+            for storing during the build and between sessions.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.AssemblyHasher.AssemblySurfaceCache.GetAssemblySurfaceHash(JetBrains.Util.VirtualFileSystemPath,JetBrains.Application.Threading.Tasks.ITaskHost,JetBrains.ProjectModel.ISolution,JetBrains.Util.ILogger)">
+            <summary>
+            It looks up an existing hash by the assembly path if it's available and still valid, or computes a new one.
+            Does not throw if missing.
+            The caller does not need to know if it is missing or not.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.AssemblyHasher.AssemblySurfaceHash">
+            Holds a hash of the assembly's public API surface.
+            Whenever there is a breaking change in the surface,
+            all the projects referencing this assembly must be rebuilt.
+            The default equality definition is not strict; it checks assembly name, version,
+            and surface hash only (modification time is ignored).
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.AssemblyHasher.AssemblySurfaceHash.#ctor(JetBrains.Util.VirtualFileSystemPath,JetBrains.ProjectModel.ISolution,JetBrains.Util.ILogger)">
+            Captures the signature from the file.
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.AssemblyHasher.AssemblySurfaceHash.StrictEqualityComparer">
+            Compares for equality using all the fields, which includes modification time.
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.AssemblyHasher.AssemblySurfaceHash.AssemblyName">
+            The serialized form of the <see cref="T:System.Reflection.AssemblyName"/>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.AssemblyHasher.AssemblySurfaceHash.AssemblyLocation">
+            Full path to the assembly. This is the key
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.AssemblyHasher.AssemblySurfaceHash.ModificationTime">
+            Modification time of the assembly
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.AssemblyHasher.AssemblySurfaceHash.PublicApiHash">
+            The public API surface of the assembly, compacted with a hash
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.AssemblyHasher.AssemblySurfaceHash.IsUpToDate">
+            <summary>
+            Checks if this signature is still up to date for its file (only timestamp is considered).
+            If not, you should create a new one with the ctor.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.AssemblyHasher.AssemblySurfaceHash.EqualsStrict(JetBrains.ReSharper.Features.SolBuilderDuo.AssemblyHasher.AssemblySurfaceHash,JetBrains.ReSharper.Features.SolBuilderDuo.AssemblyHasher.AssemblySurfaceHash)">
+            Includes modification time.
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.AssemblyHasher.AssemblySurfaceHash.GetHashCodeStrict(JetBrains.ReSharper.Features.SolBuilderDuo.AssemblyHasher.AssemblySurfaceHash)">
+            Includes modification time.
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.AssemblyHasher.SignatureHasher`1">
+            Decodes and hashes signature blobs.
+            Zero-allocating version of the 'SignatureDecoder' type.
+            See Metadata Specification section II.23.2: Blobs and signatures
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.AssemblyHasher.SignatureHasher`1.#ctor(`0,System.Reflection.Metadata.MetadataReader)">
+            Creates a new SignatureHasher
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.AssemblyHasher.SignatureHasher`1.HashMethodSignature(System.Reflection.Metadata.BlobHandle)">
+            Decodes and hashes a method (definition, reference, or standalone) or property signature blob
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.AssemblyHasher.SignatureHasher`1.HashFieldSignature(System.Reflection.Metadata.BlobHandle)">
+            Decodes and hashes a field signature blob and advances the reader past the signature.
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.ConsoleRunner.MsBuildExeBuildRunner.ExecutePartialBuildRequest(JetBrains.ProjectModel.Features.SolutionBuilders.SolutionBuilderRequest,JetBrains.ProjectModel.IProject,System.Action,JetBrains.ReSharper.Features.SolBuilderDuo.ConsoleRunner.ProjectIdCounter,JetBrains.Lifetimes.Lifetime)">
+            <summary>
+            Executing partial build request allows to build one specified project even though whole solution is being built.
+            All build events will be added to output as usual but SolutionBuilderRequest's state won't be changed.
+            Specified action will be called when building project will be completed (successfully or not).
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.ConsoleRunner.Models.MsBuildExeLoggerModel">
+            <summary>
+            <p>Generated from: MsBuildExeLoggerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.ConsoleRunner.Models.MsBuildEventNotification">
+            <summary>
+            <p>Generated from: MsBuildExeLoggerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.ConsoleRunner.Models.MsBuildEventNotificationKind">
+            <summary>
+            <p>Generated from: MsBuildExeLoggerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.ConsoleRunner.Models.MsBuildExeBuildEvent">
+            <summary>
+            <p>Generated from: MsBuildExeLoggerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.ConsoleRunner.Models.MsBuildExeBuildModelInitialized">
+            <summary>
+            <p>Generated from: MsBuildExeLoggerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.ConsoleRunner.Models.MsBuildExeBuildModelWithParameters">
+            <summary>
+            <p>Generated from: MsBuildExeLoggerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.ConsoleRunner.Models.MsBuildExeBuildResult">
+            <summary>
+            <p>Generated from: MsBuildExeLoggerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.ConsoleRunner.Models.MsBuildExeEventKind">
+            <summary>
+            <p>Generated from: MsBuildExeLoggerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.ConsoleRunner.Models.MsBuildExeLogEntry">
+            <summary>
+            <p>Generated from: MsBuildExeLoggerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.ConsoleRunner.Models.MsBuildExeLogEntryType">
+            <summary>
+            <p>Generated from: MsBuildExeLoggerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.GraphBuilders.IBuildDependencyProvider">
+            <summary>
+            Provider build dependencies between projects
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Helpers.ProjectConfigurationFactory.GetActiveConfigurationProperties(JetBrains.ProjectModel.IProject,JetBrains.ReSharper.Features.SolBuilderDuo.Model.BuildSessionContext)">
+            <summary>
+            Retrieves the build properties for the active configuration and platform.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Helpers.ProjectConfigurationFactory.GetCurrentProjectPropertiesForResharperBuild(JetBrains.ProjectModel.IProject,System.Collections.Generic.IReadOnlySet{JetBrains.ProjectModel.IProject},JetBrains.ReSharper.Features.SolBuilderDuo.Model.BuildSessionContext)">
+            <summary>
+            Retrieves the build properties for the specified project.
+            </summary>
+            <remarks>
+            ProjectReference isolation uses <c>_JetBrainsProjectReferenceGlobalPropertiesToRemove</c> (MsBuild.Task).
+            </remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Helpers.ProjectConfigurationFactory.GetCurrentProjectPropertiesForConsoleBuild(JetBrains.ProjectModel.IProject,JetBrains.ProjectModel.Features.SolutionBuilders.SolutionBuilderRequest)">
+            <summary>
+            Retrieves the build properties for the specified project.
+            </summary>
+            <remarks>
+            Builds one project per invocation. ProjectReference isolation is injected as XML in the generated .props file.
+            </remarks>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.BuildSessionContext.Executor">
+            <summary>
+            The connected MSBuild session. Callers connect it first: the command processor after awaiting the connection
+            (regular build), out-of-band synchronous consumers through <see cref="M:JetBrains.ReSharper.Features.SolBuilderDuo.Services.OutOfProcBuildSessionContextFactory.UseConnected``1(JetBrains.Lifetimes.Lifetime,JetBrains.ProjectModel.Features.SolutionBuilders.IBuildSessionTarget,JetBrains.ProjectModel.Features.SolutionBuilders.Prototype.Model.ProjectCollectionActiveConfiguration,JetBrains.ProjectModel.Features.SolutionBuilders.SolutionBuilderRequest,System.Func{JetBrains.ReSharper.Features.SolBuilderDuo.Model.BuildSessionContext,``0})"/>
+            (the MAUI deploy providers). Accessing it before the session is connected throws.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Model.BuildSessionContext.SetSession(JetBrains.Platform.MsBuildHost.Build.IMsBuildSession,System.Int32)">
+            <summary>
+            Sets the connected session and its worker process id. Called once by the connection owner: the command
+            processor on the regular build path, <see cref="M:JetBrains.ReSharper.Features.SolBuilderDuo.Services.OutOfProcBuildSessionContextFactory.UseConnected``1(JetBrains.Lifetimes.Lifetime,JetBrains.ProjectModel.Features.SolutionBuilders.IBuildSessionTarget,JetBrains.ProjectModel.Features.SolutionBuilders.Prototype.Model.ProjectCollectionActiveConfiguration,JetBrains.ProjectModel.Features.SolutionBuilders.SolutionBuilderRequest,System.Func{JetBrains.ReSharper.Features.SolBuilderDuo.Model.BuildSessionContext,``0})"/> on the ad-hoc path.
+            The single volatile write publishes the session to Executor readers.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.AbortBuildSessionCommand">
+            <summary>
+            Command to immediately halt the build process due to critical failure.
+            Triggered by unexpected process exits or unhandled exceptions.
+            Forces process termination and reports error to build request.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.AbortBuildSessionCommand.#ctor(JetBrains.Lifetimes.Lifetime,System.String)">
+            <summary>
+            Command to immediately halt the build process due to critical failure.
+            Triggered by unexpected process exits or unhandled exceptions.
+            Forces process termination and reports error to build request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.AbortBuildSessionCommand.Message">
+            <summary>
+            Error message describing the emergency condition that triggered the stop.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.CancelBuildSessionCommand">
+            <summary>
+            Command to gracefully cancel the currently running build session.
+            Transitions builder to the cancelling state, marks running projects as cancelled, and performs cleanup.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.CancelBuildSessionCommand.#ctor(JetBrains.Lifetimes.Lifetime)">
+            <summary>
+            Command to gracefully cancel the currently running build session.
+            Transitions builder to the cancelling state, marks running projects as cancelled, and performs cleanup.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.ISolutionBuilderCommand">
+            <summary>
+            Base interface for command pattern implementation in solution builder.
+            Commands are queued and processed sequentially by the command processor.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.ISolutionBuilderCommand.BuildSessionLifetime">
+            <summary>
+            Lifetime associated with the build session that created this command.
+            Used to ensure command validity and cleanup when the session terminates.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.ProjectBuildCompletedCommand">
+            <summary>
+            Command dispatched when an individual project build completes.
+            Triggers state updates, dependency propagation, and scheduling of subsequent builds.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.ProjectBuildCompletedCommand.#ctor(JetBrains.ReSharper.Features.SolBuilderDuo.Model.BuildExecutionResult)">
+            <summary>
+            Command dispatched when an individual project build completes.
+            Triggers state updates, dependency propagation, and scheduling of subsequent builds.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.ProjectBuildCompletedCommand.BuildExecutionResult">
+            <summary>
+            Contains the completed build result including success/failure status,
+            error counts, warnings, and evaluated project properties.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.SolutionBuilderInitializedCommand">
+            <summary>
+            Command dispatched when the Solution Builder completes initialization.
+            Fired after loading the solution configuration cache or on the first solution load.
+            Transitions builder from None to Initialized state, enabling build command processing.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.SolutionBuilderInitializedCommand.#ctor(JetBrains.ReSharper.Features.SolBuilderDuo.Model.SolutionStoringState,System.Collections.Generic.IReadOnlyCollection{JetBrains.ProjectModel.IProject},JetBrains.Lifetimes.Lifetime)">
+            <summary>
+            Command dispatched when the Solution Builder completes initialization.
+            Fired after loading the solution configuration cache or on the first solution load.
+            Transitions builder from None to Initialized state, enabling build command processing.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.SolutionBuilderInitializedCommand.SolutionStoringState">
+            <summary>
+            Previously persisted build state including graph state, timestamps, and heuristics.
+            May be <see cref="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.SolutionStoringState.Empty"/> if no valid cache exists.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.SolutionBuilderInitializedCommand.CurrentProjects">
+            <summary>
+            Current projects loaded in the solution at initialization time.
+            Used to reconcile the persisted state with the current solution structure.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.SolutionConfigurationChangedCommand">
+            <summary>
+            Command notifying that the solution configuration or platform has changed (e.g., Debug to Release).
+            Triggers full builder state reset, cache invalidation, and dirty state cleanup.
+            Deferred until the current build completes if one is running.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.SolutionConfigurationChangedCommand.#ctor(JetBrains.Lifetimes.Lifetime)">
+            <summary>
+            Command notifying that the solution configuration or platform has changed (e.g., Debug to Release).
+            Triggers full builder state reset, cache invalidation, and dirty state cleanup.
+            Deferred until the current build completes if one is running.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.StartBuildSessionCommand">
+            <summary>
+            Command that initiates a build session with complete project configuration.
+            Triggers project graph construction, dirty state analysis, and initial build scheduling.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.StartBuildSessionCommand.AllProjectsInSolution">
+            <summary>
+            All projects currently loaded in the solution snapshot.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.StartBuildSessionCommand.AlwaysBuildProjects">
+            <summary>
+            Projects marked to always build regardless of dependency state or changes.
+            Typically, includes entry points or explicitly marked projects.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.StartBuildSessionCommand.NeverBuildProjects">
+            <summary>
+            Projects explicitly excluded from the build (e.g., disabled project types, test projects).
+            Can be overridden if explicitly requested as a single target.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.StartBuildSessionCommand.SolutionActiveConfiguration">
+            <summary>
+            Active solution configuration and platform (e.g., Debug|AnyCPU, Release|x64).
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.StartBuildSessionCommand.ProjectCollectionActiveConfiguration">
+            <summary>
+            Per-project configurations including build enablement flags for the current solution configuration.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.StartBuildSessionCommand.BuildRequest">
+            <summary>
+            The originating build request containing target type (Build/Rebuild/Clean),
+            selected projects, and advanced options (e.g., build without dependencies).
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.StartBuildSessionCommand.ProjectsPerKeys">
+            <summary>
+            Fast lookup dictionary from a project unique key to a project instance.
+            Used for efficient project resolution during graph traversal.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.HandleBuildEventCommand">
+            <summary>
+            Command to process build lifecycle events for a project.
+            Updates the project building state based on build completion status, applies build heuristics
+            to determine which dependent projects need rebuilding, and propagates state changes through
+            the dependency graph.
+            </summary>
+            <param name="Project">The project that triggered the build event.</param>
+            <param name="IsBuilding">True if this is a build, rebuild; false - a clean, restore, etc.</param>
+            <param name="IsProjectBuildingFinished">True if the project has finished building/cleaning.</param>
+            <param name="SessionGuid">Unique identifier for the current build session.</param>
+            <param name="Succeeded">True if the build/clean operation completed successfully.</param>
+            <param name="HasWarnings">True if the build completed with warnings (only relevant when Succeeded is true).</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.HandleBuildEventCommand.#ctor(JetBrains.ProjectModel.IProject,System.Boolean,System.Boolean,System.Guid,System.Boolean,System.Boolean)">
+            <summary>
+            Command to process build lifecycle events for a project.
+            Updates the project building state based on build completion status, applies build heuristics
+            to determine which dependent projects need rebuilding, and propagates state changes through
+            the dependency graph.
+            </summary>
+            <param name="Project">The project that triggered the build event.</param>
+            <param name="IsBuilding">True if this is a build, rebuild; false - a clean, restore, etc.</param>
+            <param name="IsProjectBuildingFinished">True if the project has finished building/cleaning.</param>
+            <param name="SessionGuid">Unique identifier for the current build session.</param>
+            <param name="Succeeded">True if the build/clean operation completed successfully.</param>
+            <param name="HasWarnings">True if the build completed with warnings (only relevant when Succeeded is true).</param>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.HandleBuildEventCommand.Project">
+            <summary>The project that triggered the build event.</summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.HandleBuildEventCommand.IsBuilding">
+            <summary>True if this is a build, rebuild; false - a clean, restore, etc.</summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.HandleBuildEventCommand.IsProjectBuildingFinished">
+            <summary>True if the project has finished building/cleaning.</summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.HandleBuildEventCommand.SessionGuid">
+            <summary>Unique identifier for the current build session.</summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.HandleBuildEventCommand.Succeeded">
+            <summary>True if the build/clean operation completed successfully.</summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.HandleBuildEventCommand.HasWarnings">
+            <summary>True if the build completed with warnings (only relevant when Succeeded is true).</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.IProjectStateCommand">
+            <summary>
+            Marker interface for commands that modify project graph state during solution build sessions.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.MarkAlwaysBuildCommand">
+            <summary>
+            Command to mark a project as always requiring a build.
+            Sets the project's <see cref="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState"/> to <see cref="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.AlwaysBuild"/>,
+            ensuring it will be built in every build session regardless of detected changes.
+            </summary>
+            <param name="Project">The project to mark as always build.</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.MarkAlwaysBuildCommand.#ctor(JetBrains.ProjectModel.IProject)">
+            <summary>
+            Command to mark a project as always requiring a build.
+            Sets the project's <see cref="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState"/> to <see cref="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.AlwaysBuild"/>,
+            ensuring it will be built in every build session regardless of detected changes.
+            </summary>
+            <param name="Project">The project to mark as always build.</param>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.MarkAlwaysBuildCommand.Project">
+            <summary>The project to mark as always build.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.MarkBlackCommand">
+            <summary>
+            Command to mark a project as dirty (changed) and requiring a build.
+            Sets the project's <see cref="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState"/> to <see cref="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.Black"/>,
+            indicating detected changes that necessitate rebuilding. Also propagates gray state to dependent projects,
+            marking their transitive dependencies as potentially affected.
+            </summary>
+            <param name="Project">The project to mark as dirty.</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.MarkBlackCommand.#ctor(JetBrains.ProjectModel.IProject)">
+            <summary>
+            Command to mark a project as dirty (changed) and requiring a build.
+            Sets the project's <see cref="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState"/> to <see cref="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.Black"/>,
+            indicating detected changes that necessitate rebuilding. Also propagates gray state to dependent projects,
+            marking their transitive dependencies as potentially affected.
+            </summary>
+            <param name="Project">The project to mark as dirty.</param>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.MarkBlackCommand.Project">
+            <summary>The project to mark as dirty.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.MarkBuildIsDisabledCommand">
+            <summary>
+            Command to mark a project as disabled for building in the current configuration.
+            Sets the project's <see cref="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState"/> to <see cref="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.BuildIsDisabled"/>,
+            typically used when a project is excluded from build in the active solution configuration or platform.
+            </summary>
+            <param name="Project">The project to mark as build-disabled.</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.MarkBuildIsDisabledCommand.#ctor(JetBrains.ProjectModel.IProject)">
+            <summary>
+            Command to mark a project as disabled for building in the current configuration.
+            Sets the project's <see cref="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState"/> to <see cref="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.BuildIsDisabled"/>,
+            typically used when a project is excluded from build in the active solution configuration or platform.
+            </summary>
+            <param name="Project">The project to mark as build-disabled.</param>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.MarkBuildIsDisabledCommand.Project">
+            <summary>The project to mark as build-disabled.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.MarkChosenReferrersCommand">
+            <summary>
+            Command to mark specific projects that reference projects being built with a given state.
+            Uses a predicate function to determine which referencing projects should be marked.
+            </summary>
+            <param name="ShouldMark">Predicate to determine which referencing projects should be marked.</param>
+            <param name="TargetState">The state to assign to matched projects.</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.MarkChosenReferrersCommand.#ctor(System.Func{JetBrains.ProjectModel.IProject,System.Boolean},JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState)">
+            <summary>
+            Command to mark specific projects that reference projects being built with a given state.
+            Uses a predicate function to determine which referencing projects should be marked.
+            </summary>
+            <param name="ShouldMark">Predicate to determine which referencing projects should be marked.</param>
+            <param name="TargetState">The state to assign to matched projects.</param>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.MarkChosenReferrersCommand.ShouldMark">
+            <summary>Predicate to determine which referencing projects should be marked.</summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.MarkChosenReferrersCommand.TargetState">
+            <summary>The state to assign to matched projects.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.MarkNeverBuildCommand">
+            <summary>
+            Command to mark a project as permanently excluded from builds.
+            Sets the project's <see cref="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState"/> to <see cref="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.NeverBuild"/>,
+            used for projects that should never participate in build operations, such as unloaded or unsupported projects.
+            </summary>
+            <param name="Project">The project to mark as never build.</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.MarkNeverBuildCommand.#ctor(JetBrains.ProjectModel.IProject)">
+            <summary>
+            Command to mark a project as permanently excluded from builds.
+            Sets the project's <see cref="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState"/> to <see cref="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.NeverBuild"/>,
+            used for projects that should never participate in build operations, such as unloaded or unsupported projects.
+            </summary>
+            <param name="Project">The project to mark as never build.</param>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.MarkNeverBuildCommand.Project">
+            <summary>The project to mark as never build.</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.RecalculateHasBuildingParentCommand">
+            <summary>
+            Command to recalculate which projects have parent projects currently being built.
+            Resets <see cref="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectBuildingState.HasRunningParent"/> states and then traverses the dependency
+            graph from all running projects, marking their dependents with <see cref="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectBuildingState.HasRunningParent"/>.
+            This ensures correct tracking of build order dependencies during concurrent build operations.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.Model.GraphStateCommands.RecalculateOnlyIndirectReferencesChangedCommand">
+            <summary>
+            Command to identify projects affected only by transitive dependency changes.
+            Traverses the dependency graph from projects with no direct changes (<see cref="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.None"/>
+            or <see cref="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.Black"/>) and marks their clean dependents as
+            <see cref="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.OnlyIndirectReferencesChanged"/>. This enables optimized rebuild strategies
+            where only linking/metadata updates may be needed instead of full recompilation.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ISolutionDirtyState.SolutionChanged">
+            <summary>
+            If sln file has been changed.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ISolutionDirtyState.ChangedProjects">
+            <summary>
+            List of projects, where a project file has been changed, e.g., added files or changed reference array.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ISolutionDirtyState.DirtyProjects">
+            <summary>
+            Projects, which have changing in their inputs, e.g, changing in file with code.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectBuildingState.None">
+            <summary>
+            No information about previous build.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectBuildingState.HasRunningParent">
+            <summary>
+            One of project parents are being built now.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectBuildingState.Skipped">
+            <summary>
+            Project should be built because of file changes or heuristics.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectBuildingState.Running">
+            <summary>
+            Project is being built now.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectBuildingState.SuccessfulWithoutWarnings">
+            <summary>
+            Project was succesfully built without errors and warnings.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectBuildingState.SuccessfulWithWarnings">
+            <summary>
+            Project was built without errors but with warnings.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectBuildingState.Failed">
+            <summary>
+            Project building failed with errors.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectBuildingState.Cleaned">
+            <summary>
+            Project was cleaned.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.None">
+            <summary>
+            No information. Equals to Dirty. Should be built.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.White">
+            <summary>
+            Clean. Project doesn't have any changes and doesn't have dirty parent. Should not be built.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.Black">
+            <summary>
+            Dirty. Project has changes. Should be built.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.Gray">
+            <summary>
+            Project doesn't have any changes, but has at least one parent(it's not necessarily - parent is direct or not) should be built. Decision(to build or not to build) will be made after building parents.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.GrayToSkip">
+            <summary>
+            Project had state Gray before, but after building parents we decide to SKIP building because of heuristics.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.GrayToBuild">
+            <summary>
+            Project had state Gray before, but after building parents we decide to BUILD building because of heuristics.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.NeverBuild">
+            <summary>
+            Project had state Gray, but this project marked as "NeverBuild".
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.AlwaysBuild">
+            <summary>
+            Project had state Gray, but this project marked as "AlwaysBuild".
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.OnlyIndirectReferencesChanged">
+            <summary>
+            Project was White but some of indirect references were changed.
+            Analyzing surface could affect only first-level dependencies.
+            This state could be used for executing
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.BuildIsDisabled">
+            <summary>
+            Build is disabled in current solution configuration+platform.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectChangingState.PendingBuildBeforeRunOrPublish">
+            <summary>
+            A referenced project was rebuilt, but this project (e.g. MAUI/WASM/UNO) was skipped during that build session.
+            The project must be rebuilt before the next run or publish.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectForBuildingChooseResult.Projects">
+            <summary>
+            Projects could be built now. We could even build them in parallel. They don't reference each other.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Model.ProjectState.IncludedBySelection">
+            <summary>
+            If user build selected project/projects, than some projects could be skipped for building.
+            If use build all, all projects have IncludedBySelection = true.
+            default == true
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Model.SolutionBuilderNextSettings.MsbuildVersion">
+            <summary>
+            Version of MSBuild to use when building.
+            <c>0</c> means "as the runtime version of the application initiating the build" (in case of Visual Studio, this is the same MSBuild VS itself uses for building).
+            <see cref="F:System.Int32.MaxValue"/> means use the highest version available on this machine.
+            Any other number: <see cref="M:JetBrains.Interop.WinApi.Macros.HIWORD(System.UInt32)"/> is the major version number, <see cref="M:JetBrains.Interop.WinApi.Macros.LOWORD(System.UInt32)"/> is the minor version number.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Services.Common.ISolutionBuilderMsBuildConnectionTimeoutProvider.ConnectionTimeoutMs">
+            <summary>Current spawn+connect timeout in milliseconds, resolved from the host (e.g. Rider registry).</summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.Services.IConfigurationReloadingStateProvider">
+            <summary>
+            Provides an observable state indicating whether solution builder configuration reload is in progress.
+            Multiple sources can contribute to the reloading state.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Services.IConfigurationReloadingStateProvider.IsReloading">
+            <summary>
+            Gets a value indicating whether any configuration reload operation is currently in progress.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Services.IncrementalRunner.IsAvailableMixin">
+            <summary>
+            Extra availability criterion that can disable this runner in other environments
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Features.SolBuilderDuo.Services.IncrementalRunnerApplicabilityChecker.ApplicabilityState">
+            <summary>
+            the builder can work for whole current solution.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.Services.ISolutionBuilderInitializationPhaseController">
+            <summary>
+            Controls the solution builder initialization phase that restores state from persistent cache.
+            Blocks build requests until initialization completes.
+            Supports reference counting for concurrent initialization requests.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Services.ISolutionBuilderInitializationPhaseController.BeginInitialization">
+            <summary>
+            Signals that initialization has started.
+            Called after cache is loaded, before restoring graph state and heuristics.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Services.ISolutionBuilderInitializationPhaseController.EndInitialization">
+            <summary>
+            Signals that initialization has completed.
+            Called after graph state, timestamps, and heuristics are restored.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Services.OutOfProcBuildSessionContextFactory.UseConnected``1(JetBrains.Lifetimes.Lifetime,JetBrains.ProjectModel.Features.SolutionBuilders.IBuildSessionTarget,JetBrains.ProjectModel.Features.SolutionBuilders.Prototype.Model.ProjectCollectionActiveConfiguration,JetBrains.ProjectModel.Features.SolutionBuilders.SolutionBuilderRequest,System.Func{JetBrains.ReSharper.Features.SolBuilderDuo.Model.BuildSessionContext,``0})">
+            <summary>
+            Creates a build session context, connects an MSBuild worker to it, runs the action against the connected
+            context, and releases the worker afterward. Use for synchronous out-of-band evaluations (the MAUI deploy
+            providers) that do not go through a full build request and so never get the request-completed teardown.
+            The context never escapes this method, so callers do not manage the session lifetime themselves. If context
+            creation fails, it returns <c>default(T)</c> without running the action.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Services.OutOfProcBuildSessionContextFactory.ConnectSessionSync(JetBrains.ReSharper.Features.SolBuilderDuo.Model.BuildSessionContext)">
+            <summary>
+            Synchronous counterpart of the command processor's async connect (<c>OnMsBuildConnectionCompleted</c>): waits on the
+            connection task with a timeout, builds the session, and publishes it.
+            </summary>
+            <remarks>
+            The wait blocks on purpose. <see cref="M:JetBrains.ReSharper.Features.SolBuilderDuo.Services.OutOfProcBuildSessionContextFactory.UseConnected``1(JetBrains.Lifetimes.Lifetime,JetBrains.ProjectModel.Features.SolutionBuilders.IBuildSessionTarget,JetBrains.ProjectModel.Features.SolutionBuilders.Prototype.Model.ProjectCollectionActiveConfiguration,JetBrains.ProjectModel.Features.SolutionBuilders.SolutionBuilderRequest,System.Func{JetBrains.ReSharper.Features.SolBuilderDuo.Model.BuildSessionContext,``0})"/> runs only from the deploy providers, which <c>DeploymentBackendHost</c>
+            starts on a dedicated background thread (<c>lifetime.StartBackground</c>) that has nothing to do until the worker is
+            connected; it is not the executor or UI thread. The connection runs on its own background thread
+            (<c>MsBuildConnectionFactory.CreateAsync</c>), so the wait cannot deadlock, and the timeout bounds it. An async
+            deploy path would free this idle thread but would force both deploy providers async, which is not worth it here.
+            </remarks>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Services.SolutionBuilderCommandProcessor.myQueueOnExecutor">
+            <summary>
+            Runs an action on the build command executor, where all build-state mutations must happen.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Services.SolutionBuilderCommandProcessor.myRunInBackground">
+            <summary>
+            Runs work on a background thread, off the command executor (the blocking MSBuild spawn/connect).
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Services.SolutionBuilderCommandProcessor.myPendingBuildSessionContext">
+            <summary>
+            Worker whose process is spawned but whose connection handshake has not completed yet.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Services.SolutionBuilderCommandProcessor.myConnectionInProgress">
+            <summary>
+            <c>true</c> while a spawn/connect runs in the background, before its outcome is processed.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Services.SolutionBuilderCommandProcessor.myConnectionGeneration">
+            <summary>
+            Bumped to invalidate an in-flight connection attempt superseded by cancel or a new build.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Services.SolutionBuilderCommandProcessor.StartAsyncMsBuildConnection(JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.StartBuildSessionCommand)">
+            <summary>
+            Spawns and connects the MSBuild worker off the command executor so the executor stays responsive (e.g. to cancel).
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Services.SolutionBuilderCommandProcessor.InvalidateConnectionAttempts">
+            <summary>
+            Bumps the connection generation and returns the new value, marking any earlier in-flight attempt stale.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Services.SolutionBuilderCommandProcessor.IsStaleConnectionAttempt(System.Int64,System.Guid)">
+            <summary>
+            Returns whether the attempt with the given generation and request id has been superseded by a cancel or a newer build.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Services.SolutionBuilderCommandProcessor.CreateBuildSessionContextOnExecutorAsync(JetBrains.ReSharper.Features.SolBuilderDuo.Model.Commands.StartBuildSessionCommand,JetBrains.ProjectModel.Features.SolutionBuilders.SolutionBuilderRequest)">
+            <summary>
+            Runs the state-mutating Create on the executor and hands the result back to the background caller.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Services.SolutionBuilderCommandProcessor.WaitForPreviousWorkerExitBoundedAsync(JetBrains.ReSharper.Features.SolBuilderDuo.Model.BuildSessionContext)">
+            <summary>
+            Waits up to a time limit for the previous worker to terminate (session lifetime, then OS process) before a new spawn.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Services.SolutionBuilderCommandProcessor.OnMsBuildConnectionCompleted(System.Threading.Tasks.Task,System.Threading.Tasks.Task{JetBrains.Platform.MsBuildHost.MsBuildConnection},JetBrains.ReSharper.Features.SolBuilderDuo.Model.BuildSessionContext,System.Int64,System.Guid)">
+            <summary>
+            Resolves the spawn+connect outcome. Always runs on the executor. Every non-success branch terminates the worker.
+            </summary>
+            <param name="completedTask">Task that won the <c>Task.WhenAny</c> race: either <paramref name="connectionTask"/> or the timeout delay.</param>
+            <param name="connectionTask">The MSBuild worker spawn+connect task (the handshake).</param>
+            <param name="context">Build session context of this attempt; its worker may already be running.</param>
+            <param name="connectionGeneration">Generation stamp of this attempt; used to detect a superseded attempt.</param>
+            <param name="requestId">Build request id of this attempt; used together with the generation to detect staleness.</param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Services.SolutionBuilderControllerPrototype.QueueOnExecutor(System.Action)">
+            <summary>
+            Runs an action on the build command executor, where all build-state mutations must happen.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Services.SolutionBuilderControllerPrototype.RunInBackground(System.Func{System.Threading.Tasks.Task})">
+            <summary>
+            Runs work on a background thread, off the command executor (the blocking MSBuild spawn/connect).
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Services.SolutionBuilderMsBuildConnectionSettings.DefaultConnectionTimeoutMs">
+            <summary>
+            Default time in milliseconds allowed for MSBuild worker spawn and connect, used when no registry value is set.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Features.SolBuilderDuo.Services.SolutionBuilderMsBuildConnectionSettings.PreviousWorkerExitWaitMs">
+            <summary>
+            How long in milliseconds to wait for the previous MSBuild worker to exit before spawning a new one.
+            Matches <c>ProtocolExternalProcess.DoShutdown</c> <c>WaitForExit(5000)</c> plus margin.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Services.SolutionBuilderMsBuildConnectionSettings.ResolveConnectionTimeoutMs(JetBrains.ReSharper.Features.SolBuilderDuo.Services.Common.ISolutionBuilderMsBuildConnectionTimeoutProvider)">
+            <summary>
+            Resolves the spawn+connect timeout: the provider (registry) when present, otherwise the default.
+            </summary>
+            <param name="provider">Host timeout source (Rider reads the registry); <c>null</c> in headless/tests.</param>
+            <returns>Timeout in milliseconds, always a positive value.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Features.SolBuilderDuo.Services.SolutionBuilderMsBuildConnectionSettings.NormalizeConnectionTimeoutMs(System.Int32)">
+            <summary>
+            Clamps a non-positive timeout to the default; <c>Task.Delay(0)</c> would otherwise fail every build.
+            </summary>
+            <param name="timeoutMs">Candidate timeout in milliseconds.</param>
+        </member>
+        <member name="T:JetBrains.ReSharper.Features.SolBuilderDuo.Services.TriggerSolutionBuildAfterOpen">
+            <summary>
+            Queue build after opening the first solution if %RESHARPER_BUILD_SOLUTION_AFTER_OPEN% is true.
+            Used in ArtOfBuild for OpenInVs action
+            <see cref="T:JetBrains.Application.BuildScript.PreCompile.EntryOpenInVisualStudioTasks"/>
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,61 @@
+2026-10-15 07:38:37.899 [info] Agent Host process started successfully
+2026-10-15 07:38:37.910 [info] AgentService initialized
+2026-10-15 07:38:37.917 [info] Registering agent provider: copilotcli
+2026-10-15 07:38:37.918 [info] Registering agent provider: claude
+2026-10-15 07:38:37.919 [info] Registering agent provider: codex
+2026-10-15 07:38:37.930 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-10-15 07:38:37.931 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-10-15 07:38:37.963 [info] [Claude] Models refreshed (merged). Count: 0, 
+2026-10-15 07:38:37.989 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-10-15 07:38:37.989 [info] [ProtocolServer] Initialize: clientId=e4797e94-316d-4bea-ac9d-ca6f39858e44, protocolVersions=[0.10.0, 0.9.0, 0.7.0, 0.6.0, 0.5.2, 0.5.1]
+2026-10-15 07:38:38.006 [info] [CommandAutoApprover] Tree-sitter initialized (bash=available, powershell=available)
+2026-10-15 07:38:38.007 [info] [Claude] SDK not downloaded yet; deferring the migratable chat list
+2026-10-15 07:38:38.009 [info] [AgentService] sessions_v2 import for provider copilotcli: 0 synchronized, 0 current, 0 excluded, 0 stale exclusions, 0 incomplete, 0 failed, marker set in 91ms (0 db opens, 0 db stats)
+2026-10-15 07:38:38.460 [info] [WebSocketProtocol] Server listening on socket \\.\pipe\vscode-agent-host-56882b2788e6bc1803d38877c1d56ce604dff2a855b9884b204b81fd619b3986-3HorE9wjrP7NZcBFg1wTyA
+2026-10-15 07:38:38.935 [info] [node-compile-cache] agent-host: packaged cache enabled (status: enabled, configured: D:\All\IDLE\t\VSCode\16507d91be\resources\app\node-compile-cache\agent-host, active: D:\All\IDLE\t\VSCode\16507d91be\resources\app\node-compile-cache\agent-host\v24.21.0-x64-c3a7e8f2)
+2026-10-15 07:38:38.976 [info] [AgentService] pruned 0 stale external session row(s) older than 30 days
+2026-10-15 07:38:38.976 [info] [CopilotDiscovery] Started: maxCandidateWatches=32, maxConcurrentStats=4, coalesceMs=500
+2026-10-15 07:38:38.977 [info] [Claude] SDK not downloaded yet; deferring chat discovery
+2026-10-15 07:38:38.980 [info] [CopilotDiscovery] Scan 1 started: initial=true, candidates=2, reasons={"startup":2}, watched=2, pending=2, ignoredHostEvents=0
+2026-10-15 07:38:38.980 [info] [Copilot] Listing discoverable chats...
+2026-10-15 07:38:38.980 [info] [Copilot] Starting CopilotClient...
+2026-10-15 07:38:38.981 [info] [Copilot] Set CLI env: GITHUB_COPILOT_INTEGRATION_ID=vscode-chat
+2026-10-15 07:38:38.983 [info] [Copilot] Using bundled runtime path: d:\All\IDLE\t\VSCode\16507d91be\resources\app\node_modules.asar.unpacked\@github\copilot-sdk-win32-x64\prebuilds\win32-x64\copilot-runtime.exe
+2026-10-15 07:38:39.019 [info] [Copilot] Auth token updated
+2026-10-15 07:38:39.062 [info] [ClaudeProxyService] listening on http://127.0.0.1:52985
+2026-10-15 07:38:39.063 [info] [Claude] Auth token updated
+2026-10-15 07:38:39.150 [info] [Copilot] CopilotClient started successfully
+2026-10-15 07:38:39.153 [info] [Copilot] Listed 0 SDK session(s) for discoverable chats
+2026-10-15 07:38:39.153 [info] [CopilotDiscovery] Scan 1 catalog: sdkSessions=0, candidates=0, listMs=173, classifyMs=0, published=0, external=0, legacy=0, known=0, disabledLegacy=0, archivedLegacy=0, missingCwd=0, unsupportedClient=0, stale=0, failed=0
+2026-10-15 07:38:39.154 [info] [CopilotDiscovery] Scan 1 finished: elapsedMs=173, completed=0, pending=2, watched=2, overflow=0, ignoredHostEvents=0
+2026-10-15 07:38:40.265 [warning] [Codex] Failed to resolve the GitHub MCP server endpoint: fetch failed
+2026-10-15 07:38:40.265 [info] [Codex] Auth token updated
+2026-10-15 07:38:40.265 [error] [Claude] All attempted model sources failed (merged refresh); keeping last known-good catalog
+2026-10-15 07:38:40.275 [info] [Copilot] Listing models...
+2026-10-15 07:38:40.277 [warning] [Codex] Failed to refresh models (attempt 1), retrying in 771ms: fetch failed
+2026-10-15 07:38:40.999 [error] #1: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST fetch failed
+2026-10-15 07:38:41.065 [warning] [Codex] Failed to refresh models (attempt 2), retrying in 1515ms: fetch failed
+2026-10-15 07:38:41.836 [warning] [Copilot] Failed to refresh models (attempt 1), retrying in 921ms Request models.list failed with message: GenericFailure, {"kind":"network","message":"error sending request for url (https://api.business.githubcopilot.com/models): client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001) [ENOTFOUND]"}
+2026-10-15 07:38:42.597 [warning] [Codex] Failed to refresh models (attempt 3), retrying in 3154ms: fetch failed
+2026-10-15 07:38:42.769 [info] [Copilot] Listing models...
+2026-10-15 07:38:43.910 [error] #2: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST fetch failed
+2026-10-15 07:38:44.307 [warning] [Copilot] Failed to refresh models (attempt 2), retrying in 1439ms Request models.list failed with message: GenericFailure, {"kind":"network","message":"error sending request for url (https://api.business.githubcopilot.com/models): client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001) [ENOTFOUND]"}
+2026-10-15 07:38:45.750 [info] [Copilot] Listing models...
+2026-10-15 07:38:45.762 [warning] [Codex] Failed to refresh models (attempt 4), retrying in 4442ms: fetch failed
+2026-10-15 07:38:47.275 [warning] [Copilot] Failed to refresh models (attempt 3), retrying in 3283ms Request models.list failed with message: GenericFailure, {"kind":"network","message":"error sending request for url (https://api.business.githubcopilot.com/models): client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001) [ENOTFOUND]"}
+2026-10-15 07:38:50.232 [warning] [Codex] Failed to refresh models after 5 attempts: fetch failed
+2026-10-15 07:38:50.566 [info] [Copilot] Listing models...
+2026-10-15 07:38:52.087 [warning] [Copilot] Failed to refresh models (attempt 4), retrying in 4914ms Request models.list failed with message: GenericFailure, {"kind":"network","message":"error sending request for url (https://api.business.githubcopilot.com/models): client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001) [ENOTFOUND]"}
+2026-10-15 07:38:57.009 [info] [Copilot] Listing models...
+2026-10-15 07:38:58.531 [error] Error: Request models.list failed with message: GenericFailure, {"kind":"network","message":"error sending request for url (https://api.business.githubcopilot.com/models): client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001) [ENOTFOUND]"}
+    at handleResponse (d:\All\IDLE\t\VSCode\16507d91be\resources\app\node_modules.asar\vscode-jsonrpc\lib\common\connection.js:565:48)
+    at handleMessage (d:\All\IDLE\t\VSCode\16507d91be\resources\app\node_modules.asar\vscode-jsonrpc\lib\common\connection.js:345:13)
+    at Object.handleMessage (file:///d:/All/IDLE/t/VSCode/16507d91be/resources/app/node_modules.asar/@github/copilot-sdk/dist/client.js:61:13)
+    at processMessageQueue (d:\All\IDLE\t\VSCode\16507d91be\resources\app\node_modules.asar\vscode-jsonrpc\lib\common\connection.js:359:33)
+    at Immediate.<anonymous> (d:\All\IDLE\t\VSCode\16507d91be\resources\app\node_modules.asar\vscode-jsonrpc\lib\common\connection.js:334:13)
+    at process.processImmediate (node:internal/timers:574:21) [Copilot] Failed to refresh models
+2026-10-15 07:39:09.020 [info] [ProtocolServer] Client disconnected: e4797e94-316d-4bea-ac9d-ca6f39858e44, subscriptions=1
+2026-10-15 07:39:09.020 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-10-15 07:39:09.021 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-10-15 07:39:09.022 [info] AgentService: shutting down all providers...
+2026-10-15 07:39:09.022 [info] [Copilot] Shutting down...

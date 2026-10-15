@@ -1,0 +1,89 @@
+2026-10-15 07:49:08.300 [info] [GitExtensionServiceImpl] Initializing Git extension service.
+2026-10-15 07:49:08.300 [info] FetcherService: Experimentation service not available yet, using default fetcher configuration.
+2026-10-15 07:49:08.300 [info] Using the Electron fetcher.
+2026-10-15 07:49:08.300 [info] [GitExtensionServiceImpl] Successfully activated the vscode.git extension.
+2026-10-15 07:49:08.300 [info] [GitExtensionServiceImpl] Enablement state of the vscode.git extension: true.
+2026-10-15 07:49:08.301 [info] [GitExtensionServiceImpl] Successfully registered Git commit message provider.
+2026-10-15 07:49:08.301 [info] ConversationFeature: Waiting for copilot token or BYOK model to activate conversation feature
+2026-10-15 07:49:08.301 [warning] [LanguageModelAccess] LanguageModel/Embeddings are not available without a Copilot token source
+2026-10-15 07:49:08.301 [info] [CopilotCLIModels] Skipping model fetch since there is no Copilot token source
+2026-10-15 07:49:08.301 [info] BYOK: registered 9 provider(s): ollama, anthropic, gemini, xai, openai, openrouter, azure, customoai, customendpoint
+2026-10-15 07:49:08.301 [info] BYOK: fetching known models list
+2026-10-15 07:49:08.301 [info] activationBlocker from 'languageModelAccess' took for 70ms
+2026-10-15 07:49:08.301 [info] [CopilotCLI] OpenTelemetry enabled: exporter=file, source=github.copilot
+2026-10-15 07:49:08.301 [info] [CopilotCLIChatSessionContentProvider] listSessions took 30.260600000000522ms
+2026-10-15 07:49:08.301 [info] BYOK: Copilot Chat known models list fetched successfully.
+2026-10-15 07:49:08.301 [warning] [LanguageModelAccess] LanguageModel/Embeddings are not available without a Copilot token source
+2026-10-15 07:49:08.302 [info] [CopilotCLI] MCP server started. Lock file: C:\Users\inthirua\.copilot\ide\d7ca0af2-ffa9-439a-bac9-7b59d75af609.lock
+2026-10-15 07:49:08.302 [info] [CopilotCLI] Server URI: pipe:%5C%5C.%5Cpipe%5Cmcp-9bf87ff8-00bd-453d-9e04-2ac87489b89d.sock#%2Fmcp
+2026-10-15 07:49:08.305 [warning] [LanguageModelAccess] LanguageModel/Embeddings are not available without a Copilot token source
+2026-10-15 07:49:08.415 [info] ConversationFeature: BYOK models available
+2026-10-15 07:49:08.415 [info] ConversationFeature: Activating contributions
+2026-10-15 07:49:08.425 [warning] Unable to fetch remote agents because user is not signed in.
+2026-10-15 07:49:08.426 [info] activationBlocker from 'conversationFeature' took for 497ms
+2026-10-15 07:49:08.433 [info] Logged in as nitamil
+2026-10-15 07:49:08.484 [info] [CopilotCLIChatSessionContentProvider] listSessions took 1.3686999999999898ms
+2026-10-15 07:49:08.667 [info] Successfully activated the GitHub.vscode-pull-request-github extension.
+2026-10-15 07:49:08.667 [info] [githubTitleAndDescriptionProvider] Initializing GitHub PR title and description provider provider.
+2026-10-15 07:49:08.667 [info] Successfully registered GitHub PR title and description provider.
+2026-10-15 07:49:09.046 [info] Got Copilot token for nitamil
+2026-10-15 07:49:09.046 [info] Copilot Chat: 0.69.0, VS Code: 1.141.2
+2026-10-15 07:49:09.116 [info] copilot token sku: copilot_for_business_seat_quota
+2026-10-15 07:49:09.118 [info] copilot token sku: copilot_for_business_seat_quota
+2026-10-15 07:49:09.119 [info] copilot token sku: copilot_for_business_seat_quota
+2026-10-15 07:49:09.120 [info] copilot token sku: copilot_for_business_seat_quota
+2026-10-15 07:49:09.122 [info] [context keys] Setting context key: github.copilot-chat.activated
+2026-10-15 07:49:10.197 [info] Logged in as nitamil
+2026-10-15 07:49:10.224 [info] Fetched model metadata in 2271ms 3b8a9eeb-9377-49a7-b109-8b47920977bb
+2026-10-15 07:49:10.445 [info] Latest entry: ccreq:latest.copilotmd
+2026-10-15 07:49:10.446 [info] ccreq:97edb303.copilotmd | markdown
+2026-10-15 07:49:10.727 [info] Got Copilot token for nitamil
+2026-10-15 07:49:10.727 [info] Copilot Chat: 0.69.0, VS Code: 1.141.2
+2026-10-15 07:49:10.746 [info] copilot token sku: copilot_for_business_seat_quota
+2026-10-15 07:49:10.749 [info] copilot token sku: copilot_for_business_seat_quota
+2026-10-15 07:49:10.752 [info] AuthenticationService: firing onDidAuthenticationChange from handleAuthChangeEvent identity change. Has token: true
+2026-10-15 07:49:10.752 [info] copilot token sku: copilot_for_business_seat_quota
+2026-10-15 07:49:10.752 [info] Registering default platform agent...
+2026-10-15 07:49:10.753 [info] AuthenticationService: firing onDidAuthenticationChange from handleAuthChangeEvent identity change. Has token: true
+2026-10-15 07:49:10.753 [info] copilot token sku: copilot_for_business_seat_quota
+2026-10-15 07:49:10.764 [info] GithubAvailableEmbeddingTypesManager: Got embeddings. Primary: metis-1024-I16-Binary. Deprecated: 
+2026-10-15 07:49:10.766 [info] GithubAvailableEmbeddingTypesManager: Got embeddings. Primary: metis-1024-I16-Binary. Deprecated: 
+2026-10-15 07:49:10.767 [info] WorkspaceChunkSearchService: using embedding type metis-1024-I16-Binary
+2026-10-15 07:49:11.017 [info] Fetched model metadata in 277ms b84d0598-1dc9-433f-9d7f-2a502b2a78e0
+2026-10-15 07:49:11.021 [info] ccreq:33df491e.copilotmd | markdown
+2026-10-15 07:52:17.507 [info] [GitExtensionServiceImpl] Initializing Git extension service.
+2026-10-15 07:52:17.507 [info] FetcherService: Experimentation service not available yet, using default fetcher configuration.
+2026-10-15 07:52:17.507 [info] Using the Electron fetcher.
+2026-10-15 07:52:17.623 [info] ConversationFeature: Waiting for copilot token or BYOK model to activate conversation feature
+2026-10-15 07:52:17.624 [warning] [LanguageModelAccess] LanguageModel/Embeddings are not available without a Copilot token source
+2026-10-15 07:52:17.624 [info] [CopilotCLIModels] Skipping model fetch since there is no Copilot token source
+2026-10-15 07:52:17.624 [info] BYOK: registered 9 provider(s): ollama, anthropic, gemini, xai, openai, openrouter, azure, customoai, customendpoint
+2026-10-15 07:52:17.624 [info] BYOK: fetching known models list
+2026-10-15 07:52:17.669 [info] activationBlocker from 'languageModelAccess' took for 109ms
+2026-10-15 07:52:17.673 [error] Error getting a session: Canceled: Canceled
+2026-10-15 07:52:17.834 [info] [CopilotCLI] OpenTelemetry enabled: exporter=file, source=github.copilot
+2026-10-15 07:52:17.849 [info] BYOK: Copilot Chat known models list fetched successfully.
+2026-10-15 07:52:17.860 [info] [CopilotCLIChatSessionContentProvider] listSessions took 26.92390000000023ms
+2026-10-15 07:52:17.883 [info] [CopilotCLI] MCP server started. Lock file: C:\Users\inthirua\.copilot\ide\ef459298-7720-4b2b-a13a-3e02f5085476.lock
+2026-10-15 07:52:17.883 [info] [CopilotCLI] Server URI: pipe:%5C%5C.%5Cpipe%5Cmcp-94a71e64-0098-43b5-aca2-6644e3a2e7d4.sock#%2Fmcp
+2026-10-15 07:52:17.909 [info] Logged in as nitamil
+2026-10-15 07:52:18.079 [info] [GitExtensionServiceImpl] Successfully activated the vscode.git extension.
+2026-10-15 07:52:18.079 [info] [GitExtensionServiceImpl] Enablement state of the vscode.git extension: true.
+2026-10-15 07:52:18.080 [info] [GitExtensionServiceImpl] Successfully registered Git commit message provider.
+2026-10-15 07:52:19.133 [warning] ConversationFeature: failed to query language models: Canceled: Canceled
+2026-10-15 07:52:19.136 [warning] ConversationFeature: failed to query language models: Canceled: Canceled
+2026-10-15 07:52:19.159 [error] Canceled: Canceled
+	at Ea (file:///d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:8:1546)
+	at file:///d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:32:155489
+	at Array.forEach (<anonymous>)
+	at r.dispose (file:///d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:32:155397)
+	at g_.terminate (file:///d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:12474)
+	at r.terminate (file:///d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:171:1076)
+	at Sa (file:///d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:474:11797)
+	at jp.value (file:///d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:474:9939)
+	at T._deliver (file:///d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:3617)
+	at T.fire (file:///d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:3935)
+	at ks.fire (file:///d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:8627)
+	at MessagePortMain.<anonymous> (file:///d:/All/IDLE/t/VSCode/16507d91be/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:474:8171)
+	at MessagePortMain.emit (node:events:514:28)
+	at Object.emit (node:electron/js2c/utility_init:2:2934)

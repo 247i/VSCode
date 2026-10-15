@@ -1,0 +1,22 @@
+2026-10-15 07:38:36.333 [info] [node-compile-cache] main: packaged cache enabled (status: enabled, configured: D:\All\IDLE\t\VSCode\16507d91be\resources\app\node-compile-cache\main, active: D:\All\IDLE\t\VSCode\16507d91be\resources\app\node-compile-cache\main\v24.21.0-x64-c3a7e8f2)
+2026-10-15 07:38:36.333 [info] StorageMainService: creating application shared storage
+2026-10-15 07:38:36.333 [info] [shared storage] Creating shared storage database at 'd:\All\IDLE\t\VSCode\data\shared-data\sharedStorage\state.vscdb' (wasCreated: false)
+2026-10-15 07:38:36.333 [info] [shared storage] Initializing fallback application storage (path: d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\state.vscdb)
+2026-10-15 07:38:36.361 [info] [shared storage] Fallback application storage initialized with 193 items
+2026-10-15 07:38:37.395 [info] update#setState idle
+2026-10-15 07:38:37.427 [info] AgentHostProcessManager: agent host started
+2026-10-15 07:38:37.951 [error] [AgentHost:stderr] (node:29540) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `Code --trace-deprecation ...` to show where the warning was created)
+
+2026-10-15 07:38:38.959 [error] #1: https://update.code.visualstudio.com/api/update/win32-x64-archive/stable/16507d91be0dc1ce4f94c04d4d0430210b8685d9?u=none - error undefined net::ERR_NAME_NOT_RESOLVED
+2026-10-15 07:38:38.960 [error] update#isLatestVersion(): failed to check for updates
+2026-10-15 07:38:38.960 [error] Error: net::ERR_NAME_NOT_RESOLVED
+    at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/browser_init:2:140423)
+    at SimpleURLLoaderWrapper.emit (node:events:514:28)
+2026-10-15 07:39:07.397 [info] update#setState checking for updates
+2026-10-15 07:39:07.406 [error] #2: https://update.code.visualstudio.com/api/update/win32-x64-archive/stable/16507d91be0dc1ce4f94c04d4d0430210b8685d9?bg=true&u=none - error undefined net::ERR_INTERNET_DISCONNECTED
+2026-10-15 07:39:07.407 [error] Error: net::ERR_INTERNET_DISCONNECTED
+    at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/browser_init:2:140423)
+    at SimpleURLLoaderWrapper.emit (node:events:514:28)
+2026-10-15 07:39:07.407 [info] update#setState idle
+2026-10-15 07:39:10.939 [info] Extension host with pid 29660 exited with code: 0, signal: unknown.

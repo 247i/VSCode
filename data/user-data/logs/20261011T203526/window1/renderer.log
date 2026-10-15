@@ -1,0 +1,36 @@
+2026-10-11 20:35:26.925 [info] [RemoteAgentHost] Reconciling: desired=[], current=[]
+2026-10-11 20:35:26.949 [warning] Creation of workbench contribution 'workbench.contrib.agentHostChatDebug' took 26ms.
+2026-10-11 20:35:26.968 [info] [AgentHost:renderer] Acquiring MessagePort to agent host...
+2026-10-11 20:35:27.202 [info] [AgentHost:renderer] MessagePort acquired, creating client...
+2026-10-11 20:35:27.256 [info] Started local extension host with pid 19996.
+2026-10-11 20:35:27.590 [info] [AgentHost:renderer] Protocol connection established; clientId=c15f272f-d727-4674-9ff9-25456c3527c1
+2026-10-11 20:35:27.643 [info] [JakubKozera.csharp-dev-tools]: Command `bookmarks.refresh` already registered by Bookmarks (alefragnani.Bookmarks)
+2026-10-11 20:35:27.671 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.lightModeTheme'. This property is already registered.
+2026-10-11 20:35:27.672 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.darkModeTheme'. This property is already registered.
+2026-10-11 20:35:27.672 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.languages'. This property is already registered.
+2026-10-11 20:35:27.672 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.maxTextSize'. This property is already registered.
+2026-10-11 20:35:27.673 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.mouseNavigation.enabled'. This property is already registered.
+2026-10-11 20:35:27.673 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.controls.show'. This property is already registered.
+2026-10-11 20:35:27.673 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.resizable'. This property is already registered.
+2026-10-11 20:35:27.673 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.maxHeight'. This property is already registered.
+2026-10-11 20:35:28.676 [info] [AccountPolicyGate] apply: state=inactive, reason=undefined, isRestricted=false
+2026-10-11 20:35:28.956 [error] [EricSia.pythonsnippets3]: Unknown language in `contributes.pythonsnippets3.language`. Provided value: django-html
+2026-10-11 20:35:28.957 [error] [EricSia.pythonsnippets3]: Unknown language in `contributes.pythonsnippets3.language`. Provided value: django-txt
+2026-10-11 20:35:29.873 [error] [Extension Host] (node:19996) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `Code --trace-deprecation ...` to show where the warning was created)
+2026-10-11 20:35:30.026 [info] [perf] Render performance baseline is 23ms
+2026-10-11 20:35:30.603 [info] [AgentHost] Authenticating for resource: https://api.github.com
+2026-10-11 20:35:31.049 [error] [Extension Host] (node:19996) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-11 20:35:31.250 [info] Auto updating outdated extensions. eamodio.gitlens, jakubkozera.csharp-dev-tools, jetbrains.resharper-code, ms-python.python, pkief.material-icon-theme, sonarsource.sonarlint-vscode
+2026-10-11 20:35:31.567 [error] [Extension Host] (node:19996) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+2026-10-11 20:35:31.696 [info] Settings Sync: Account status changed from uninitialized to available
+2026-10-11 20:35:32.040 [info] [AgentHost] Authenticating for resource: https://api.github.com/repos
+2026-10-11 20:35:33.689 [info] [AccountPolicyGate] apply: state=inactive, reason=undefined, isRestricted=false
+2026-10-11 20:35:33.742 [error] An unknown error occurred. Please consult the log for more details.
+2026-10-11 20:35:45.409 [info] [JakubKozera.csharp-dev-tools]: Command `bookmarks.refresh` already registered by Bookmarks (alefragnani.Bookmarks)
+2026-10-11 20:35:57.245 [info] Auto updating outdated extensions. github.vscode-pull-request-github
+2026-10-11 20:37:07.657 [info] [JakubKozera.csharp-dev-tools]: Command `bookmarks.refresh` already registered by Bookmarks (alefragnani.Bookmarks)
+2026-10-11 20:37:10.341 [error] Cannot read the extension from /d:/All/IDLE/t/vscode/data/extensions/github.vscode-pull-request-github-0.168.0: ScanningExtension: Cannot read the extension from /d:/All/IDLE/t/vscode/data/extensions/github.vscode-pull-request-github-0.168.0
+    at Td.scanLocalExtension (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:92012)
+    at async Rd.doRun (file:///d:/All/IDLE/t/vscode/645f29cc31/resources/app/out/vs/code/electron-utility/sharedProcess/sharedProcessMain.js:482:99337)
+2026-10-11 20:37:43.131 [info] Auto updating outdated extensions. github.vscode-pull-request-github

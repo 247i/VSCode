@@ -1,0 +1,17 @@
+{
+	"//": [
+		"Why this file exists: its mere presence makes VS Code's chat host detect this plugin as the 'Open Plugin' format.",
+		"The host has a hard-coded format table; its detector picks the format by which manifest file is present:",
+		"  '.plugin/plugin.json' present       -> Open Plugin format  (token '${PLUGIN_ROOT}', env var PLUGIN_ROOT)",
+		"  '.claude-plugin/plugin.json' present -> Claude format       (token '${CLAUDE_PLUGIN_ROOT}')",
+		"  otherwise                            -> legacy Copilot format (NO token expansion at all)",
+		"Open Plugin is the only format that expands '${PLUGIN_ROOT}' in our hook commands and injects PLUGIN_ROOT into the",
+		"hook process environment. If we shipped a bare 'plugin.json' instead, the host would pick the legacy Copilot format,",
+		"'${PLUGIN_ROOT}' in hooks/hooks.json would be left literal, and the hook command would point at a nonexistent path",
+		"and never run. So this manifest is required even though it carries no real content of its own.",
+		"The actual hook is in hooks/hooks.json, which the host auto-loads because this manifest declares no exclusive 'hooks.paths'.",
+		"Precedent: microsoft/GitHub-Copilot-for-Azure ships plugin/.plugin/plugin.json for exactly this reason."
+	],
+	"name": "csharp-dev-kit-skill-tracker",
+	"description": "Tracks Copilot skill activations so the skill-usage feedback survey can be triggered. Only loaded while C# Dev Kit is active (chatPlugins 'when' gate). The PostToolUse hook lives in hooks/hooks.json."
+}

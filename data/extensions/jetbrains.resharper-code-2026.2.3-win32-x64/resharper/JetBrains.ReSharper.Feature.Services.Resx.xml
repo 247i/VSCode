@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.Feature.Services.Resx</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resx.ResourceCultureEx.GetNameWithoutCulture(JetBrains.ReSharper.Psi.IPsiSourceFile)">
+            <summary>
+            Get name without culture for the specified <paramref name="projectFile"/>.
+            </summary>
+            <param name="projectFile">resource file.</param>
+            <returns>resource name, e.g. for 'SR.ru-ru.resx' returns 'SR'.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resx.ResourceCultureEx.IsDefaultCulture(JetBrains.ReSharper.Psi.IPsiSourceFile)">
+            <summary>
+            Checks if <paramref name="projectFile"/> is resx file for the default culture.
+            </summary>
+            <param name="projectFile">resx project file</param>
+            <returns><c>true</c> - is default culture; otherwise - <c>false</c></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resx.ResourceCultureEx.GetCultureName(JetBrains.ProjectModel.IProjectFile)">
+            <summary>
+            Gets the name of the culture.
+            </summary>
+            <returns><c>String.Empty</c> for default culture</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resx.ResourceCultureEx.GetCultureName(JetBrains.ReSharper.Psi.IPsiSourceFile)">
+            <summary>
+            Gets the name of the culture.
+            </summary>
+            <returns><c>String.Empty</c> for default culture</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resx.ResxFileUtil.VerifyResourceFileName(System.String)">
+            <summary>
+            Get verified resource name for the specified <paramref name="fileName"/>.
+            </summary>
+            <param name="fileName">resource file.</param>
+            <returns>resource name, e.g. for 'SR.ru-ru.resx' returns 'SR'.</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resx.ResxFileUtil.IsDefaultCulture(System.String)">
+            <summary>
+            Checks if <paramref name="fileName"/> is default culture.
+            </summary>
+            <param name="fileName">resx file name</param>
+            <returns><c>true</c> - is default culture; otherwise - <c>false</c></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resx.ResxFileUtil.GetCultureName(System.String)">
+            <summary>
+            Gets the name of the culture.
+            </summary>
+            <returns><c>String.Empty</c> for default culture</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resx.Services.ResxResourceServiceBase.GetBaseCultureFile(JetBrains.ReSharper.Psi.IPsiSourceFile,System.String)">
+            <summary>
+            Gets base culture
+            </summary>
+            <param name="projectFile"></param>
+            <param name="baseCultureName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resx.Services.ResxResourceServiceBase.GetResourceWithCulture(JetBrains.ReSharper.Psi.IPsiSourceFile,System.String)">
+            <summary>
+            Gets base culture
+            </summary>
+            <param name="resourceFile"></param>
+            <param name="cultureName"><c>null</c> for default culture</param>
+            <returns></returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Feature.Services.Resx.StringUtil.TrimToLength(System.String)">
+            <summary>
+            Trims text to 40 chars
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

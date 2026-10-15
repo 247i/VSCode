@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.Engine.Core</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher">
+            <devdoc>
+               Listens to the system directory change notifications and
+               raises events when a directory or file within a directory changes.
+            </devdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.#ctor">
+            <devdoc>
+               Initializes a new instance of the <see cref='T:System.IO.FileSystemWatcher'/> class.
+            </devdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.#ctor(System.String)">
+            <devdoc>
+               Initializes a new instance of the <see cref='T:System.IO.FileSystemWatcher'/> class,
+               given the specified directory to monitor.
+            </devdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.#ctor(System.String,System.String)">
+            <devdoc>
+               Initializes a new instance of the <see cref='T:System.IO.FileSystemWatcher'/> class,
+               given the specified directory and type of files to monitor.
+            </devdoc>
+        </member>
+        <member name="P:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.NotifyFilter">
+            <devdoc>
+               Gets or sets the type of changes to watch for.
+            </devdoc>
+        </member>
+        <member name="P:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.EnableRaisingEvents">
+            <devdoc>
+               Gets or sets a value indicating whether the component is enabled.
+            </devdoc>
+        </member>
+        <member name="P:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.Filter">
+            <devdoc>
+               Gets or sets the filter string, used to determine what files are monitored in a directory.
+            </devdoc>
+        </member>
+        <member name="P:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.IncludeSubdirectories">
+            <devdoc>
+               Gets or sets a value indicating whether subdirectories within the specified path should be monitored.
+            </devdoc>
+        </member>
+        <member name="P:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.InternalBufferSize">
+            <devdoc>
+               Gets or sets the size of the internal buffer.
+            </devdoc>
+        </member>
+        <member name="P:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.Path">
+            <devdoc>
+               Gets or sets the path of the directory to watch.
+            </devdoc>
+        </member>
+        <member name="E:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.Changed">
+            <devdoc>
+               Occurs when a file or directory in the specified <see cref='P:System.IO.FileSystemWatcher.Path'/> is changed.
+            </devdoc>
+        </member>
+        <member name="E:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.Created">
+            <devdoc>
+               Occurs when a file or directory in the specified <see cref='P:System.IO.FileSystemWatcher.Path'/> is created.
+            </devdoc>
+        </member>
+        <member name="E:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.Deleted">
+            <devdoc>
+               Occurs when a file or directory in the specified <see cref='P:System.IO.FileSystemWatcher.Path'/> is deleted.
+            </devdoc>
+        </member>
+        <member name="E:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.Error">
+            <devdoc>
+               Occurs when the internal buffer overflows.
+            </devdoc>
+        </member>
+        <member name="E:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.Renamed">
+            <devdoc>
+               Occurs when a file or directory in the specified <see cref='P:System.IO.FileSystemWatcher.Path'/>
+               is renamed.
+            </devdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.MatchPattern(System.ReadOnlySpan{System.Char})">
+            <summary>
+            Sees if the name given matches the name filter we have.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.NotifyInternalBufferOverflowEvent">
+            <summary>
+            Raises the event to each handler in the list.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.NotifyRenameEventArgs(System.IO.WatcherChangeTypes,System.ReadOnlySpan{System.Char},System.ReadOnlySpan{System.Char})">
+            <summary>
+            Raises the event to each handler in the list.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.NotifyFileSystemEventArgs(System.IO.WatcherChangeTypes,System.ReadOnlySpan{System.Char})">
+            <summary>
+            Raises the event to each handler in the list.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.NotifyFileSystemEventArgs(System.IO.WatcherChangeTypes,System.String)">
+            <summary>
+            Raises the event to each handler in the list.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.OnChanged(System.IO.FileSystemEventArgs)">
+            <devdoc>
+               Raises the <see cref='E:System.IO.FileSystemWatcher.Changed'/> event.
+            </devdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.OnCreated(System.IO.FileSystemEventArgs)">
+            <devdoc>
+               Raises the <see cref='E:System.IO.FileSystemWatcher.Created'/> event.
+            </devdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.OnDeleted(System.IO.FileSystemEventArgs)">
+            <devdoc>
+               Raises the <see cref='E:System.IO.FileSystemWatcher.Deleted'/> event.
+            </devdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.OnError(System.IO.ErrorEventArgs)">
+            <devdoc>
+               Raises the <see cref='E:System.IO.FileSystemWatcher.Error'/> event.
+            </devdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.OnRenamed(System.IO.RenamedEventArgs)">
+            <devdoc>
+               Raises the <see cref='E:System.IO.FileSystemWatcher.Renamed'/> event.
+            </devdoc>
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.Restart">
+            <devdoc>
+                Stops and starts this object.
+            </devdoc>
+            <internalonly/>
+        </member>
+        <member name="T:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.NormalizedFilterCollection.ImmutableStringList">
+            <summary>
+            List that maintains its underlying data in an immutable array, such that the list
+            will never modify an array returned from its Items property. This is to allow
+            the array to be enumerated safely while another thread might be concurrently mutating
+            the collection.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.StartRaisingEvents">
+            <summary>Starts a new watch operation if one is not currently running.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.StopRaisingEvents">
+            <summary>Cancels the currently running watch operation if there is one.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.FinalizeDispose">
+            <summary>Called when FileSystemWatcher is finalized.</summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.MaxUserInstancesPath">
+            <summary>Path to the procfs file that contains the maximum number of inotify instances an individual user may create.</summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.MaxUserWatchesPath">
+            <summary>Path to the procfs file that contains the maximum number of inotify watches an individual user may create.</summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.ReadMaxUserLimit(System.String)">
+            <summary>Reads the value of a max user limit path from procfs.</summary>
+            <param name="path">The path to read.</param>
+            <returns>The value read, or "0" if a failure occurred.</returns>
+        </member>
+        <member name="F:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.INotify.INotifyEventSize">
+            <summary>
+            The size of the native struct inotify_event.  4 32-bit integer values, the last of which is a length
+            that indicates how many bytes follow to form the string name.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.INotify.ReadName(System.Int32,System.Int32)">
+            <summary>
+            Reads a UTF-8 string from _buffer starting at the specified position and up to
+            the specified length.  Null termination is trimmed off (the length may include
+            many null bytes, not just one, or it may include none).
+            </summary>
+            <param name="position"></param>
+            <param name="nameLength"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.INotify.NotifyEvent">
+            <summary>An event read and translated from the inotify handle.</summary>
+            <remarks>
+            Unlike it's native counterpart, this struct stores a string name rather than
+            an integer length and a char[].  It is not directly marshalable.
+            </remarks>
+        </member>
+        <member name="F:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.INotify.Watcher._weakFsw">
+            <summary>
+            Weak reference to the associated watcher.  A weak reference is used so that the FileSystemWatcher may be collected and finalized,
+            causing an active operation to be torn down.  With a strong reference, a blocking read on the inotify handle will keep alive this
+            instance which will keep alive the FileSystemWatcher which will not be finalizable and thus which will never signal to the blocking
+            read to wake up in the event that the user neglects to stop raising events.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.Linux.LinuxFileSystemWatcher.INotify.Watcher.TranslateFilters(System.IO.NotifyFilters)">
+            <summary>
+            Maps the FileSystemWatcher's NotifyFilters enumeration to the
+            corresponding Interop.Sys.NotifyEvents values.
+            </summary>
+            <param name="filters">The filters provided the by user.</param>
+            <returns>The corresponding NotifyEvents values to use with inotify.</returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Engine.Core.FileSystemWatcher.INetCoreFileSystemWatcherOverrideEnvironmentZone">
+            <summary>
+            Contains custom implementations of file system watchers to improve performance and resource utilization
+            on platforms where the standard .NET Core file system watchers have known issues.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Engine.Core.ProjectModel.View.Actions.AddItemPreserveCreationContextInSolutionFolder">
+            <summary>
+            AddItemInSolutionFolder task action, which preserves 'ProjectItemCreationContext' inside
+            ProjectItem's user data, so ProjectModelTree can access it when handling the item addition
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Engine.Core.ProjectModel.View.Actions.AddItemPreserveDirectoriesWithCreationContextTaskAction">
+            <summary>
+            AddItemPreserveDirectoriesTaskAction, which preserves 'ProjectItemCreationContext' inside
+            ProjectItem's user data, so ProjectModelTree can access it when handling the item addition
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.ProjectModel.View.ProjectModelLazyTreeBase`1.TryGetId(System.Object,System.Int32@)">
+            Returns false for a node that is not materialized in the tree yet, i.e. whose parent was never expanded.
+        </member>
+        <member name="M:JetBrains.ReSharper.Engine.Core.ProjectModel.View.ProjectModelLazyTreeBase`1.TryGetParentId(System.Int32,System.Int32@)">
+            Returns false for the root node, which has no parent.
+        </member>
+    </members>
+</doc>

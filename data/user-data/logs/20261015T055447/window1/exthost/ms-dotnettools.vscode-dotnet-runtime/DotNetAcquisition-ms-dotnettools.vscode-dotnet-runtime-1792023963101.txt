@@ -1,0 +1,1737 @@
+10/15/2026, 5:56:03 AM 102 AutomaticUpdateCheck
+Checking for updates after 300000. Last Update Date: 2026-10-12T23:44:38.652Z. Current Date: 2026-10-15T00:26:03.101Z
+
+10/15/2026, 5:56:03 AM 102 AutomaticUpdateCheck
+Commencing updates at 1792023963102 in 300000 ms.
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension TypeScriptTeam.jsts-chat-features for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.csharp for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.dotenv for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.mermaid-markdown-features for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.prompt for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.vscode-modern-icons for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension alefragnani.Bookmarks for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension astrapios.pythonrepl for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension bierner.markdown-emoji for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension bierner.markdown-mermaid for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension DavidAnson.vscode-markdownlint for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension daylerees.rainglow for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension eamodio.gitlens for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension emallin.phpunit for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension EricSia.pythonsnippets3 for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension esbenp.prettier-vscode for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension Gabrielgod1.indent-rainbow-blocks for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension hbenl.vscode-test-explorer for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension Hirse.vscode-ungit for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension IBM.output-colorizer for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension icsharpcode.ilspy-vscode for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension JakubKozera.csharp-dev-tools for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension jakubkozera.github-copilot-code-reviewer for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension jakubkozera.ms-sql-manager for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension JetBrains.resharper-code for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension johnpapa.vscode-peacock for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension mechatroner.rainbow-csv for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension mgesbert.python-path for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension mrorz.language-gettext for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension ms-dotnettools.csdevkit for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension ms-dotnettools.csharp for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension ms-dotnettools.vscode-dotnet-runtime for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension ms-python.pylint for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension ms-python.vscode-python-envs for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension ms-toolsai.vscode-jupyter-cell-tags for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension ms-toolsai.vscode-jupyter-slideshow for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension ms-vscode.test-adapter-converter for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension oderwat.indent-rainbow for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension PKief.material-icon-theme for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension PrateekMahendrakar.prettyxml for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension redhat.vscode-xml for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension rhasan.gotomanual for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension SAPOSS.xml-toolkit for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension se-dev-pion.rainbow-struct-field-tags for .NET installation requests
+
+10/15/2026, 5:56:03 AM 104 DotnetVSCodeExtensionFound
+true
+Checking extension SonarSource.sonarlint-vscode for .NET installation requests
+
+10/15/2026, 5:56:03 AM 105 DotnetVSCodeExtensionFound
+true
+Checking extension streetsidesoftware.code-spell-checker for .NET installation requests
+
+10/15/2026, 5:56:03 AM 105 DotnetVSCodeExtensionFound
+true
+Checking extension TalhaKhalil.preprocessor-rainbow for .NET installation requests
+
+10/15/2026, 5:56:03 AM 105 DotnetVSCodeExtensionFound
+true
+Checking extension twxs.cmake for .NET installation requests
+
+10/15/2026, 5:56:03 AM 105 DotnetVSCodeExtensionFound
+true
+Checking extension wumbl3.rainbow-html for .NET installation requests
+
+10/15/2026, 5:56:03 AM 105 DotnetVSCodeExtensionFound
+true
+Checking extension yzhang.markdown-all-in-one for .NET installation requests
+
+10/15/2026, 5:56:03 AM 105 DotnetVSCodeExtensionFound
+true
+Checking extension ZainChen.json for .NET installation requests
+
+10/15/2026, 5:56:04 AM 358 DotnetAcquisitionRequested
+10.0
+fdbe9d2a825d21a953cf5a1d3c5284bf1240a5aa09800f57c4f467a4d0c8e84b
+
+10/15/2026, 5:56:04 AM 359 DotnetRuntimeAcquisitionRequested
+10.0
+fdbe9d2a825d21a953cf5a1d3c5284bf1240a5aa09800f57c4f467a4d0c8e84b
+runtime
+
+10/15/2026, 5:56:04 AM 522 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-bb003ec86c Lock acquired: \\.\pipe\vscd-session-bb003ec86c-sock
+2026-10-15T00:26:04.522Z
+session-bb003ec86c
+session-bb003ec86c
+true
+
+10/15/2026, 5:56:04 AM 522 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-074128f7-6e69-4dd8-8c16-1fa43bf8fe19 Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:26:04.522Z
+installedLk
+installedLk
+true
+
+10/15/2026, 5:56:04 AM 530 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+10/15/2026, 5:56:04 AM 530 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-074128f7-6e69-4dd8-8c16-1fa43bf8fe19 Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:26:04.530Z
+installedLk
+installedLk
+true
+
+10/15/2026, 5:56:04 AM 530 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] DotnetAcquisitionStatusResolved
+10.0~x64
+10.0~x64
+10.0
+x64
+false
+runtime
+10.0
+
+10/15/2026, 5:56:04 AM 531 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-5dd9d827-dbbd-4573-8cf8-39cfb2c44fac Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:26:04.531Z
+installedLk
+installedLk
+true
+
+10/15/2026, 5:56:04 AM 531 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] AddTrackingVersions
+true
+Adding {"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} with id 10.0.11~x64 from the state.
+
+10/15/2026, 5:56:04 AM 532 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] DotnetInstallationValidated
+10.0.11~x64
+10.0.11~x64
+10.0.11
+x64
+false
+runtime
+
+10/15/2026, 5:56:04 AM 532 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] MarkedInstallInUse
+Session session-bb003ec86c marked d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.11~x64\dotnet.exe as in use.
+Sessions: {"session-e8910866a2":["d:\\All\\IDLE\\t\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe","d:\\All\\IDLE\\t\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.12~x64\\dotnet.exe","d:\\All\\IDLE\\t\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\9.0.20~x64~aspnetcore\\dotnet.exe"],"session-bcef84c136":["d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe"],"session-90cda152d9":["d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe"],"session-9c355825ce":["d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe"],"session-bb003ec86c":["d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe"]}
+
+10/15/2026, 5:56:04 AM 560 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+10/15/2026, 5:56:04 AM 560 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] AddTrackingVersions
+true
+Updated installed :
+{"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+ 
+
+10/15/2026, 5:56:04 AM 578 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-5dd9d827-dbbd-4573-8cf8-39cfb2c44fac Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:26:04.577Z
+installedLk
+installedLk
+true
+
+10/15/2026, 5:56:04 AM 578 DotnetCommandSucceeded
+acquire
+
+10/15/2026, 5:56:04 AM 578 DotnetAcquisitionTotalSuccessEvent
+10.0
+10.0~x64
+10.0~x64
+10.0
+x64
+false
+runtime
+fdbe9d2a825d21a953cf5a1d3c5284bf1240a5aa09800f57c4f467a4d0c8e84b
+d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.11~x64\dotnet.exe
+
+10/15/2026, 5:56:04 AM 579 DotnetRuntimeAcquisitionTotalSuccessEvent
+10.0~x64
+10.0
+x64
+false
+runtime
+
+10/15/2026, 5:56:04 AM 580 DotnetCommandSucceeded
+ensureDependencies
+
+10/15/2026, 6:01:03 AM 342 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-af013f85-b33e-4a34-b741-42dc625acffc Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:03.342Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:03 AM 353 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+10/15/2026, 6:01:03 AM 353 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-af013f85-b33e-4a34-b741-42dc625acffc Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:03.353Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:03 AM 354 UpdatingInstallGroups
+Automatic update triggered and detected the following install groups: [[{"mode":"runtime","architecture":"x64","majorMinor":"10.0"},[{"dotnetInstall":{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"},"installingExtensions":["icsharpcode.ilspy-vscode"]},{"dotnetInstall":{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"},"installingExtensions":["dotnet-runtime-library","icsharpcode.ilspy-vscode"]}]],[{"mode":"aspnetcore","architecture":"x64","majorMinor":"9.0"},[{"dotnetInstall":{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"},"installingExtensions":["dotnet-runtime-library","ms-dotnettools.csharp","ms-dotnettools.csdevkit"]}]]]
+
+10/15/2026, 6:01:03 AM 355 DotnetAcquisitionRequested
+10.0
+fe0bcfb547df7e433612160f21d323162769839b4b2e35033cf1c0724624f408
+
+10/15/2026, 6:01:03 AM 356 DotnetRuntimeAcquisitionRequested
+10.0
+fe0bcfb547df7e433612160f21d323162769839b4b2e35033cf1c0724624f408
+runtime
+
+10/15/2026, 6:01:03 AM 620 [0a8f5f06-303f-4489-ad77-7964e0421059] WebRequestInitiated
+Making Web Request For https://builds.dotnet.microsoft.com/dotnet/release-metadata/releases-index.json
+
+10/15/2026, 6:01:03 AM 695 [0a8f5f06-303f-4489-ad77-7964e0421059] WebRequestSent
+https://builds.dotnet.microsoft.com/dotnet/release-metadata/releases-index.json
+
+10/15/2026, 6:01:05 AM 361 [0a8f5f06-303f-4489-ad77-7964e0421059] WebRequestTime
+Timer for request:
+1662.89
+true
+https:..builds.dotnet.microsoft.com.dotnet.release-metadata.releases-index.json
+200
+
+10/15/2026, 6:01:05 AM 362 [0a8f5f06-303f-4489-ad77-7964e0421059] DotnetVersionResolutionCompleted
+10.0
+10.0.13
+
+10/15/2026, 6:01:05 AM 363 [0a8f5f06-303f-4489-ad77-7964e0421059] DotnetInstallIdCreatedEvent
+true
+The requested version 10.0.13 is now marked under the install: {"installId":"10.0.13~x64","version":"10.0.13","architecture":"x64","isGlobal":false,"installMode":"runtime"}.
+
+10/15/2026, 6:01:05 AM 364 [0a8f5f06-303f-4489-ad77-7964e0421059] GenericDotnetLockEvent
+Action: 10.0.13~x64-8c7a4020-165b-4599-b762-c704733aea12 Lock acquired: \\.\pipe\vscd-10.0.13~x64-sock
+2026-10-15T00:31:05.364Z
+10.0.13~x64
+10.0.13~x64
+true
+
+10/15/2026, 6:01:05 AM 365 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-7d4ea2e6-5868-4154-918d-d30203060767 Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:05.365Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:05 AM 380 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+10/15/2026, 6:01:05 AM 380 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-7d4ea2e6-5868-4154-918d-d30203060767 Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:05.380Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:05 AM 381 [0a8f5f06-303f-4489-ad77-7964e0421059] DotnetAcquisitionStarted
+10.0.13~x64
+10.0.13
+x64
+false
+runtime
+10.0.13
+10.0.13~x64
+dotnet-runtime-library
+
+10/15/2026, 6:01:05 AM 381 DotnetRuntimeAcquisitionStarted
+fe0bcfb547df7e433612160f21d323162769839b4b2e35033cf1c0724624f408
+
+10/15/2026, 6:01:05 AM 382 [0a8f5f06-303f-4489-ad77-7964e0421059] WebRequestInitiated
+Making Web Request For https://builds.dotnet.microsoft.com/dotnet/scripts/v1/dotnet-install.ps1
+
+10/15/2026, 6:01:05 AM 484 [0a8f5f06-303f-4489-ad77-7964e0421059] WebRequestSent
+https://builds.dotnet.microsoft.com/dotnet/scripts/v1/dotnet-install.ps1
+
+10/15/2026, 6:01:05 AM 603 [0a8f5f06-303f-4489-ad77-7964e0421059] WebRequestTime
+Timer for request:
+117.85
+true
+https:..builds.dotnet.microsoft.com.dotnet.scripts.v1.dotnet-install.ps1
+200
+
+10/15/2026, 6:01:05 AM 603 [0a8f5f06-303f-4489-ad77-7964e0421059] DotnetFileWriteRequestEvent
+true
+Request to write d:\All\IDLE\t\VSCode\data\extensions\ms-dotnettools.vscode-dotnet-runtime-3.2.0\dist\install scripts\dotnet-install.ps1
+2026-10-15T00:31:05.603Z
+a860b83c5031d361af33f7acd2e3f1fed3a2bec8fd9dd49d9b0ab8d468904c38
+
+10/15/2026, 6:01:05 AM 607 [0a8f5f06-303f-4489-ad77-7964e0421059] DotnetFileWriteRequestEvent
+true
+File content is an exact match, not writing file.
+2026-10-15T00:31:05.607Z
+a860b83c5031d361af33f7acd2e3f1fed3a2bec8fd9dd49d9b0ab8d468904c38
+
+10/15/2026, 6:01:05 AM 608 [0a8f5f06-303f-4489-ad77-7964e0421059] DotnetInstallScriptAcquisitionCompleted
+
+10/15/2026, 6:01:29 AM 112 [0a8f5f06-303f-4489-ad77-7964e0421059] DotnetAcquisitionScriptOutput
+10.0.13~x64
+10.0.13~x64
+10.0.13
+x64
+false
+runtime
+ VERBOSE: dotnet-install: Note that the intended use of this script is for Continuous Integration (CI) scenarios, where:
+VERBOSE: dotnet-install: - The SDK needs to be installed without user interaction and without admin rights.
+VERBOSE: dotnet-install: - The SDK installation doesn't need to persist across multiple CI runs.
+VERBOSE: dotnet-install: To set up a development environment or to run apps, use installers rather than this script. 
+Visit https://dotnet.microsoft.com/download to get the installer.
+VERBOSE: dotnet-install: Get-CLIArchitecture-From-Architecture -Architecture "x64"
+VERBOSE: dotnet-install: Get-NormalizedQuality -Quality ""
+VERBOSE: dotnet-install: Normalized quality: ''
+VERBOSE: dotnet-install: Get-NormalizedChannel -Channel "LTS"
+VERBOSE: dotnet-install: Normalized channel: 'LTS'
+VERBOSE: dotnet-install: Get-NormalizedProduct -Runtime "dotnet"
+VERBOSE: dotnet-install: Normalized product: 'dotnet-runtime'
+VERBOSE: dotnet-install: Tar available: 'True'
+VERBOSE: dotnet-install: Action 'Product discovery' took 0.0438788 seconds
+VERBOSE: dotnet-install: Resolve-Installation-Path -InstallDir 
+"d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.13~x64"
+VERBOSE: dotnet-install: InstallRoot: 
+d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.13~x64
+VERBOSE: Initialized feeds: https://builds.dotnet.microsoft.com/dotnet https://ci.dot.net/public
+VERBOSE: dotnet-install: Get-Specific-Version-From-Version -AzureFeed "https://builds.dotnet.microsoft.com/dotnet" 
+-Channel "LTS" -Version "10.0.13" -JSonFile ""
+VERBOSE: dotnet-install: Get-Download-Link -AzureFeed "https://builds.dotnet.microsoft.com/dotnet" -SpecificVersion 
+"10.0.13" -CLIArchitecture "x64"
+VERBOSE: dotnet-install: Get-Product-Version -AzureFeed "https://builds.dotnet.microsoft.com/dotnet" -SpecificVersion 
+"10.0.13"
+VERBOSE: dotnet-install: Get-Product-Version-Url -Flattened "True" -AzureFeed 
+"https://builds.dotnet.microsoft.com/dotnet" -SpecificVersion "10.0.13" -PackageDownloadLink ""
+VERBOSE: dotnet-install: Constructed productVersion link: 
+https://builds.dotnet.microsoft.com/dotnet/Runtime/10.0.13/runtime-productVersion.txt
+VERBOSE: dotnet-install: Get-Product-Version-Url -Flattened "False" -AzureFeed 
+"https://builds.dotnet.microsoft.com/dotnet" -SpecificVersion "10.0.13" -PackageDownloadLink ""
+VERBOSE: dotnet-install: Constructed productVersion link: 
+https://builds.dotnet.microsoft.com/dotnet/Runtime/10.0.13/productVersion.txt
+VERBOSE: dotnet-install: Checking for the existence of 
+https://builds.dotnet.microsoft.com/dotnet/Runtime/10.0.13/runtime-productVersion.txt
+VERBOSE: dotnet-install: Constructed primary named payload URL: 
+https://builds.dotnet.microsoft.com/dotnet/Runtime/10.0.13/dotnet-runtime-10.0.13-win-x64.zip
+VERBOSE: dotnet-install: Get-LegacyDownload-Link -AzureFeed "https://builds.dotnet.microsoft.com/dotnet" 
+-SpecificVersion "10.0.13" -CLIArchitecture "x64"
+VERBOSE: dotnet-install: Constructed legacy named payload URL: 
+https://builds.dotnet.microsoft.com/dotnet/Runtime/10.0.13/dotnet-win-x64.10.0.13.zip
+VERBOSE: dotnet-install: Generated primary link 
+https://builds.dotnet.microsoft.com/dotnet/Runtime/10.0.13/dotnet-runtime-10.0.13-win-x64.zip with version 10.0.13
+VERBOSE: dotnet-install: Generated legacy link 
+https://builds.dotnet.microsoft.com/dotnet/Runtime/10.0.13/dotnet-win-x64.10.0.13.zip with version 10.0.13
+VERBOSE: dotnet-install: Checking if the version 10.0.13 is already installed
+VERBOSE: dotnet-install: Is-Dotnet-Package-Installed -InstallRoot 
+"d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.13~x64" 
+-RelativePathToPackage "shared\Microsoft.NETCore.App" -SpecificVersion "10.0.13"
+VERBOSE: dotnet-install: Is-Dotnet-Package-Installed: 
+DotnetPackagePath=d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\1
+0.0.13~x64\shared\Microsoft.NETCore.App\10.0.13
+VERBOSE: dotnet-install: Get-Specific-Version-From-Version -AzureFeed "https://ci.dot.net/public" -Channel "LTS" 
+-Version "10.0.13" -JSonFile ""
+VERBOSE: dotnet-install: Get-Download-Link -AzureFeed "https://ci.dot.net/public" -SpecificVersion "10.0.13" 
+-CLIArchitecture "x64"
+VERBOSE: dotnet-install: Get-Product-Version -AzureFeed "https://ci.dot.net/public" -SpecificVersion "10.0.13"
+VERBOSE: dotnet-install: Get-Product-Version-Url -Flattened "True" -AzureFeed "https://ci.dot.net/public" 
+-SpecificVersion "10.0.13" -PackageDownloadLink ""
+VERBOSE: dotnet-install: Constructed productVersion link: 
+https://ci.dot.net/public/Runtime/10.0.13/runtime-productVersion.txt
+VERBOSE: dotnet-install: Get-Product-Version-Url -Flattened "False" -AzureFeed "https://ci.dot.net/public" 
+-SpecificVersion "10.0.13" -PackageDownloadLink ""
+VERBOSE: dotnet-install: Constructed productVersion link: https://ci.dot.net/public/Runtime/10.0.13/productVersion.txt
+VERBOSE: dotnet-install: Checking for the existence of 
+https://ci.dot.net/public/Runtime/10.0.13/runtime-productVersion.txt
+VERBOSE: dotnet-install: Could not read productVersion.txt at 
+https://ci.dot.net/public/Runtime/10.0.13/runtime-productVersion.txt (Exception: 'Unable to download 
+https://ci.dot.net/public/Runtime/10.0.13/runtime-productVersion.txt.'. )
+VERBOSE: dotnet-install: Checking for the existence of https://ci.dot.net/public/Runtime/10.0.13/productVersion.txt
+VERBOSE: dotnet-install: Could not read productVersion.txt at 
+https://ci.dot.net/public/Runtime/10.0.13/productVersion.txt (Exception: 'Unable to download 
+https://ci.dot.net/public/Runtime/10.0.13/productVersion.txt.'. )
+VERBOSE: dotnet-install: Using the default value '10.0.13' as the product version.
+VERBOSE: dotnet-install: Constructed primary named payload URL: 
+https://ci.dot.net/public/Runtime/10.0.13/dotnet-runtime-10.0.13-win-x64.zip
+VERBOSE: dotnet-install: Get-LegacyDownload-Link -AzureFeed "https://ci.dot.net/public" -SpecificVersion "10.0.13" 
+-CLIArchitecture "x64"
+VERBOSE: dotnet-install: Constructed legacy named payload URL: 
+https://ci.dot.net/public/Runtime/10.0.13/dotnet-win-x64.10.0.13.zip
+VERBOSE: dotnet-install: Generated primary link 
+https://ci.dot.net/public/Runtime/10.0.13/dotnet-runtime-10.0.13-win-x64.zip with version 10.0.13
+VERBOSE: dotnet-install: Generated legacy link https://ci.dot.net/public/Runtime/10.0.13/dotnet-win-x64.10.0.13.zip 
+with version 10.0.13
+VERBOSE: dotnet-install: Checking if the version 10.0.13 is already installed
+VERBOSE: dotnet-install: Is-Dotnet-Package-Installed -InstallRoot 
+"d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.13~x64" 
+-RelativePathToPackage "shared\Microsoft.NETCore.App" -SpecificVersion "10.0.13"
+VERBOSE: dotnet-install: Is-Dotnet-Package-Installed: 
+DotnetPackagePath=d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\1
+0.0.13~x64\shared\Microsoft.NETCore.App\10.0.13
+VERBOSE: dotnet-install: Failed to check the disk space. Installation will continue, but it may fail if you do not have
+ enough disk space.
+VERBOSE: dotnet-install: Action 'Installation directory preparation' took 0.0117362 seconds
+VERBOSE: dotnet-install: Zip path: C:\Users\inthirua\AppData\Local\Temp\o4qnzlnp.xpr
+VERBOSE: dotnet-install: Downloading "primary" link 
+https://builds.dotnet.microsoft.com/dotnet/Runtime/10.0.13/dotnet-runtime-10.0.13-win-x64.zip
+VERBOSE: HEAD with 0-byte payload
+VERBOSE: received 36970749-byte response of content type application/octet-stream
+dotnet-install: Remote file https://builds.dotnet.microsoft.com/dotnet/Runtime/10.0.13/dotnet-runtime-10.0.13-win-x64.zip size is 36970749 bytes.
+dotnet-install: Downloaded file https://builds.dotnet.microsoft.com/dotnet/Runtime/10.0.13/dotnet-runtime-10.0.13-win-x64.zip size is 36970749 bytes.
+dotnet-install: The remote and local file sizes are equal.
+VERBOSE: dotnet-install: Action 'Package download' took 15.4136881 seconds
+VERBOSE: dotnet-install: Download succeeded.
+dotnet-install: Extracting the archive.
+VERBOSE: dotnet-install: Extract-Dotnet-Package -ZipPath "C:\Users\inthirua\AppData\Local\Temp\o4qnzlnp.xpr" -OutPath 
+"d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.13~x64"
+VERBOSE: dotnet-install: Get-List-Of-Directories-And-Versions-To-Unpack-From-Dotnet-Package -Zip 
+"System.IO.Compression.ZipArchive" -OutPath 
+"d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.13~x64"
+VERBOSE: dotnet-install: Directories to unpack: host/fxr/10.0.13/;shared/Microsoft.NETCore.App/10.0.13/
+VERBOSE: dotnet-install: Action 'Package extraction' took 2.413104 seconds
+VERBOSE: dotnet-install: Checking installation: version = 10.0.13
+VERBOSE: dotnet-install: Is-Dotnet-Package-Installed -InstallRoot 
+"d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.13~x64" 
+-RelativePathToPackage "shared\Microsoft.NETCore.App" -SpecificVersion "10.0.13"
+VERBOSE: dotnet-install: Is-Dotnet-Package-Installed: 
+DotnetPackagePath=d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\1
+0.0.13~x64\shared\Microsoft.NETCore.App\10.0.13
+VERBOSE: dotnet-install: The temporary file "C:\Users\inthirua\AppData\Local\Temp\o4qnzlnp.xpr" was removed.
+dotnet-install: Adding to current process PATH: "D:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.13~x64\". Note: This change will not be visible if PowerShell was run as a child process.
+VERBOSE: dotnet-install: Action 'Setting up shell environment' took 0.0057937 seconds
+dotnet-install: Note that the script does not ensure your Windows version is supported during the installation.
+dotnet-install: To check the list of supported versions, go to https://learn.microsoft.com/dotnet/core/install/windows#supported-versions
+dotnet-install: Installed version is 10.0.13
+dotnet-install: Installation finished
+
+
+10/15/2026, 6:01:29 AM 113 [0a8f5f06-303f-4489-ad77-7964e0421059] DotnetAcquisitionCompleted
+10.0.13~x64
+10.0.13
+x64
+false
+runtime
+10.0.13
+10.0.13~x64
+d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.13~x64\dotnet.exe
+
+10/15/2026, 6:01:29 AM 114 [0a8f5f06-303f-4489-ad77-7964e0421059] DotnetInstallationValidated
+10.0.13~x64
+10.0.13~x64
+10.0.13
+x64
+false
+runtime
+
+10/15/2026, 6:01:29 AM 115 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-1451c93b-1683-43d3-a507-3044647060af Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:29.115Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:29 AM 115 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] AddTrackingVersions
+true
+Adding {"installId":"10.0.13~x64","version":"10.0.13","architecture":"x64","isGlobal":false,"installMode":"runtime"} with id 10.0.13~x64 from the state.
+
+10/15/2026, 6:01:29 AM 115 [0a8f5f06-303f-4489-ad77-7964e0421059] DotnetInstallationValidated
+10.0.13~x64
+10.0.13~x64
+10.0.13
+x64
+false
+runtime
+
+10/15/2026, 6:01:29 AM 115 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] MarkedInstallInUse
+Session session-bb003ec86c marked d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.13~x64\dotnet.exe as in use.
+Sessions: {"session-e8910866a2":["d:\\All\\IDLE\\t\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe","d:\\All\\IDLE\\t\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.12~x64\\dotnet.exe","d:\\All\\IDLE\\t\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\9.0.20~x64~aspnetcore\\dotnet.exe"],"session-bcef84c136":["d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe"],"session-90cda152d9":["d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe"],"session-9c355825ce":["d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe"],"session-bb003ec86c":["d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe","d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.13~x64\\dotnet.exe"]}
+
+10/15/2026, 6:01:29 AM 143 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+10/15/2026, 6:01:29 AM 143 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] AddTrackingVersions
+true
+Updated installed :
+{"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+,{"installId":"10.0.13~x64","version":"10.0.13","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library
+ 
+
+10/15/2026, 6:01:29 AM 159 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-1451c93b-1683-43d3-a507-3044647060af Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:29.159Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:29 AM 159 [0a8f5f06-303f-4489-ad77-7964e0421059] GenericDotnetLockEvent
+Action: 10.0.13~x64-8c7a4020-165b-4599-b762-c704733aea12 Lock freed: \\.\pipe\vscd-10.0.13~x64-sock
+2026-10-15T00:31:29.159Z
+10.0.13~x64
+10.0.13~x64
+true
+
+10/15/2026, 6:01:29 AM 159 DotnetCommandSucceeded
+acquire
+
+10/15/2026, 6:01:29 AM 159 DotnetAcquisitionTotalSuccessEvent
+10.0.13
+10.0.13~x64
+10.0.13~x64
+10.0.13
+x64
+false
+runtime
+fe0bcfb547df7e433612160f21d323162769839b4b2e35033cf1c0724624f408
+d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.13~x64\dotnet.exe
+
+10/15/2026, 6:01:29 AM 159 DotnetRuntimeAcquisitionTotalSuccessEvent
+10.0.13~x64
+10.0.13
+x64
+false
+runtime
+
+10/15/2026, 6:01:29 AM 160 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-58afed15-bcd9-4505-81a9-4124fb4d7aeb Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:29.160Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:29 AM 164 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+,{"installId":"10.0.13~x64","version":"10.0.13","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library
+
+
+10/15/2026, 6:01:29 AM 164 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-58afed15-bcd9-4505-81a9-4124fb4d7aeb Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:29.164Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:29 AM 165 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-cf45c83b-7b54-4aa3-8594-fd4b361173b1 Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:29.165Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:29 AM 174 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+,{"installId":"10.0.13~x64","version":"10.0.13","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library
+
+
+10/15/2026, 6:01:29 AM 174 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] AddTrackingVersions
+true
+Adding owners icsharpcode.ilspy-vscode, dotnet-runtime-library to existing install record {"installId":"10.0.13~x64","version":"10.0.13","architecture":"x64","isGlobal":"false","installMode":"runtime"}
+
+10/15/2026, 6:01:29 AM 190 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-cf45c83b-7b54-4aa3-8594-fd4b361173b1 Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:29.190Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:29 AM 191 UninstallingOutdatedInstalls
+The installs [{"dotnetInstall":{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"},"installingExtensions":["icsharpcode.ilspy-vscode"]},{"dotnetInstall":{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"},"installingExtensions":["dotnet-runtime-library","icsharpcode.ilspy-vscode"]}] are outdated - attempting to uninstall. The latest install was {"dotnetInstall":{"installId":"10.0.13~x64","version":"10.0.13","architecture":"x64","isGlobal":false,"installMode":"runtime"},"installingExtensions":["dotnet-runtime-library"]}
+
+10/15/2026, 6:01:29 AM 192 [5cc148dc-8bbe-4afd-bcbb-419e5c53f8c9] GenericDotnetLockEvent
+Action: 10.0.11~x64-a579c2a8-6153-4e7b-91b0-debc47b19a71 Lock acquired: \\.\pipe\vscd-10.0.11~x64-sock
+2026-10-15T00:31:29.192Z
+10.0.11~x64
+10.0.11~x64
+true
+
+10/15/2026, 6:01:29 AM 193 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-c21a288d-aac8-483a-8f1e-57ceeb45001b Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:29.193Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:29 AM 193 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] RemovingVersionFromExtensionState
+true
+Removing {"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} with id installed from the state.
+
+10/15/2026, 6:01:29 AM 194 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+,{"installId":"10.0.13~x64","version":"10.0.13","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+10/15/2026, 6:01:29 AM 194 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] RemovingOwnerFromList
+true
+The owner dotnet-runtime-library removed {"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} itself from the list, but icsharpcode.ilspy-vscode remain.
+
+10/15/2026, 6:01:29 AM 206 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-c21a288d-aac8-483a-8f1e-57ceeb45001b Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:29.206Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:29 AM 206 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-3c95c216-68e8-4303-b5ec-3b6edfcdcb4b Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:29.206Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:29 AM 206 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] SearchingLiveDependents
+Searching for live dependents of install at d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.11~x64\dotnet.exe. Sessions: {"session-e8910866a2":["d:\\All\\IDLE\\t\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe","d:\\All\\IDLE\\t\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.12~x64\\dotnet.exe","d:\\All\\IDLE\\t\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\9.0.20~x64~aspnetcore\\dotnet.exe"],"session-bcef84c136":["d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe"],"session-90cda152d9":["d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe"],"session-9c355825ce":["d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe"],"session-bb003ec86c":["d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe","d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.13~x64\\dotnet.exe"]}
+
+10/15/2026, 6:01:29 AM 222 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+,{"installId":"10.0.13~x64","version":"10.0.13","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+10/15/2026, 6:01:29 AM 222 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-e8910866a2-326e002c-702d-416c-ad81-83a8e5d96496 Lock acquired: \\.\pipe\vscd-session-e8910866a2-sock
+2026-10-15T00:31:29.222Z
+session-e8910866a2
+session-e8910866a2
+true
+
+10/15/2026, 6:01:29 AM 222 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] DependentIsDead
+Session session-e8910866a2 is no longer live.
+
+10/15/2026, 6:01:29 AM 222 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-e8910866a2-326e002c-702d-416c-ad81-83a8e5d96496 Lock freed: \\.\pipe\vscd-session-e8910866a2-sock
+2026-10-15T00:31:29.222Z
+session-e8910866a2
+session-e8910866a2
+true
+
+10/15/2026, 6:01:29 AM 222 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] DependentIsDead
+Dependent Session session-e8910866a2 is no longer live - continue searching dependents.
+
+10/15/2026, 6:01:29 AM 238 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-bcef84c136-09e65dc2-6e98-4558-ab4a-2b12a76ed29f Lock acquired: \\.\pipe\vscd-session-bcef84c136-sock
+2026-10-15T00:31:29.238Z
+session-bcef84c136
+session-bcef84c136
+true
+
+10/15/2026, 6:01:29 AM 238 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] DependentIsDead
+Session session-bcef84c136 is no longer live.
+
+10/15/2026, 6:01:29 AM 239 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-bcef84c136-09e65dc2-6e98-4558-ab4a-2b12a76ed29f Lock freed: \\.\pipe\vscd-session-bcef84c136-sock
+2026-10-15T00:31:29.239Z
+session-bcef84c136
+session-bcef84c136
+true
+
+10/15/2026, 6:01:29 AM 239 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] DependentIsDead
+Dependent Session session-bcef84c136 is no longer live - continue searching dependents.
+
+10/15/2026, 6:01:29 AM 253 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-90cda152d9-598531fe-e8f8-4ccc-b7ff-0ab3013d00b1 Lock acquired: \\.\pipe\vscd-session-90cda152d9-sock
+2026-10-15T00:31:29.253Z
+session-90cda152d9
+session-90cda152d9
+true
+
+10/15/2026, 6:01:29 AM 253 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] DependentIsDead
+Session session-90cda152d9 is no longer live.
+
+10/15/2026, 6:01:29 AM 253 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-90cda152d9-598531fe-e8f8-4ccc-b7ff-0ab3013d00b1 Lock freed: \\.\pipe\vscd-session-90cda152d9-sock
+2026-10-15T00:31:29.253Z
+session-90cda152d9
+session-90cda152d9
+true
+
+10/15/2026, 6:01:29 AM 254 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] DependentIsDead
+Dependent Session session-90cda152d9 is no longer live - continue searching dependents.
+
+10/15/2026, 6:01:29 AM 270 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-9c355825ce-a11ad157-1654-436d-bfb4-3ad4da8f19bb Lock acquired: \\.\pipe\vscd-session-9c355825ce-sock
+2026-10-15T00:31:29.270Z
+session-9c355825ce
+session-9c355825ce
+true
+
+10/15/2026, 6:01:29 AM 270 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] DependentIsDead
+Session session-9c355825ce is no longer live.
+
+10/15/2026, 6:01:29 AM 270 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-9c355825ce-a11ad157-1654-436d-bfb4-3ad4da8f19bb Lock freed: \\.\pipe\vscd-session-9c355825ce-sock
+2026-10-15T00:31:29.270Z
+session-9c355825ce
+session-9c355825ce
+true
+
+10/15/2026, 6:01:29 AM 270 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] DependentIsDead
+Dependent Session session-9c355825ce is no longer live - continue searching dependents.
+
+10/15/2026, 6:01:29 AM 271 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] LiveDependentInUse
+Dependent is in use by this session, so we can't uninstall it.
+
+10/15/2026, 6:01:29 AM 272 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-3c95c216-68e8-4303-b5ec-3b6edfcdcb4b Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:29.272Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:29 AM 272 [5cc148dc-8bbe-4afd-bcbb-419e5c53f8c9] DotnetUninstallSkipped
+Removed reference of {"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} in path d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.11~x64, but did not uninstall.
+Other dependents remain.
+
+10/15/2026, 6:01:29 AM 272 [5cc148dc-8bbe-4afd-bcbb-419e5c53f8c9] GenericDotnetLockEvent
+Action: 10.0.11~x64-a579c2a8-6153-4e7b-91b0-debc47b19a71 Lock freed: \\.\pipe\vscd-10.0.11~x64-sock
+2026-10-15T00:31:29.272Z
+10.0.11~x64
+10.0.11~x64
+true
+
+10/15/2026, 6:01:29 AM 272 DotnetCommandSucceeded
+uninstall
+
+10/15/2026, 6:01:29 AM 273 [2033aa65-002d-48f8-a3a3-f10667940dc5] GenericDotnetLockEvent
+Action: 10.0.12~x64-829add9a-65fe-4924-955b-f857d2870e2b Lock acquired: \\.\pipe\vscd-10.0.12~x64-sock
+2026-10-15T00:31:29.273Z
+10.0.12~x64
+10.0.12~x64
+true
+
+10/15/2026, 6:01:29 AM 273 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-dd5c6e11-3ffd-493c-9f1b-0a35f462548b Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:29.273Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:29 AM 273 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] RemovingVersionFromExtensionState
+true
+Removing {"installId":"10.0.12~x64","version":"10.0.12","installMode":"runtime","isGlobal":false,"architecture":"x64"} with id installed from the state.
+
+10/15/2026, 6:01:29 AM 274 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+,{"installId":"10.0.13~x64","version":"10.0.13","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+10/15/2026, 6:01:29 AM 274 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] RemovingOwnerFromList
+true
+The owner dotnet-runtime-library removed {"installId":"10.0.12~x64","version":"10.0.12","installMode":"runtime","isGlobal":false,"architecture":"x64"} itself from the list, but icsharpcode.ilspy-vscode remain.
+
+10/15/2026, 6:01:29 AM 286 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-dd5c6e11-3ffd-493c-9f1b-0a35f462548b Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:29.286Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:29 AM 287 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-cdac4665-86d0-49d0-afc9-d8d681ce1084 Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:29.287Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:29 AM 287 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] SearchingLiveDependents
+Searching for live dependents of install at d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.12~x64\dotnet.exe. Sessions: {"session-bb003ec86c":["d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe","d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.13~x64\\dotnet.exe"]}
+
+10/15/2026, 6:01:29 AM 300 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"10.0.13~x64","version":"10.0.13","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+10/15/2026, 6:01:29 AM 300 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-bb003ec86c-9de62537-4ad9-4bf6-8141-df5080148a0b Lock acquire retryable error: EADDRINUSE (listen EADDRINUSE: address already in use \\.\pipe\vscd-session-bb003ec86c-sock) retry 1/4
+2026-10-15T00:31:29.300Z
+session-bb003ec86c
+session-bb003ec86c
+true
+
+10/15/2026, 6:01:29 AM 301 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-bb003ec86c-9de62537-4ad9-4bf6-8141-df5080148a0b Connected to existing lock.
+2026-10-15T00:31:29.301Z
+session-bb003ec86c
+session-bb003ec86c
+true
+
+10/15/2026, 6:01:29 AM 315 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-bb003ec86c-9de62537-4ad9-4bf6-8141-df5080148a0b Lock acquire retryable error: EADDRINUSE (listen EADDRINUSE: address already in use \\.\pipe\vscd-session-bb003ec86c-sock) retry 2/4
+2026-10-15T00:31:29.315Z
+session-bb003ec86c
+session-bb003ec86c
+true
+
+10/15/2026, 6:01:29 AM 315 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-bb003ec86c-9de62537-4ad9-4bf6-8141-df5080148a0b Connected to existing lock.
+2026-10-15T00:31:29.315Z
+session-bb003ec86c
+session-bb003ec86c
+true
+
+10/15/2026, 6:01:29 AM 331 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-bb003ec86c-9de62537-4ad9-4bf6-8141-df5080148a0b Lock acquire retryable error: EADDRINUSE (listen EADDRINUSE: address already in use \\.\pipe\vscd-session-bb003ec86c-sock) retry 3/4
+2026-10-15T00:31:29.331Z
+session-bb003ec86c
+session-bb003ec86c
+true
+
+10/15/2026, 6:01:29 AM 332 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-bb003ec86c-9de62537-4ad9-4bf6-8141-df5080148a0b Connected to existing lock.
+2026-10-15T00:31:29.332Z
+session-bb003ec86c
+session-bb003ec86c
+true
+
+10/15/2026, 6:01:29 AM 346 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-bb003ec86c-9de62537-4ad9-4bf6-8141-df5080148a0b Lock acquire retryable error: EADDRINUSE (listen EADDRINUSE: address already in use \\.\pipe\vscd-session-bb003ec86c-sock) retry 4/4
+2026-10-15T00:31:29.346Z
+session-bb003ec86c
+session-bb003ec86c
+true
+
+10/15/2026, 6:01:29 AM 347 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-bb003ec86c-9de62537-4ad9-4bf6-8141-df5080148a0b Connected to existing lock.
+2026-10-15T00:31:29.347Z
+session-bb003ec86c
+session-bb003ec86c
+true
+
+10/15/2026, 6:01:29 AM 362 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-bb003ec86c-9de62537-4ad9-4bf6-8141-df5080148a0b Lock acquire retryable error: EADDRINUSE (listen EADDRINUSE: address already in use \\.\pipe\vscd-session-bb003ec86c-sock) retry 5/4
+2026-10-15T00:31:29.362Z
+session-bb003ec86c
+session-bb003ec86c
+true
+
+10/15/2026, 6:01:29 AM 362 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] ProcessEnvironmentCheck
+Process environment PATH or DOTNET_ROOT depends on install? false
+
+10/15/2026, 6:01:29 AM 363 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-cdac4665-86d0-49d0-afc9-d8d681ce1084 Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:29.363Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:29 AM 364 [2033aa65-002d-48f8-a3a3-f10667940dc5] DotnetUninstallStarted
+Attempting to remove .NET 10.0.12~x64.
+
+10/15/2026, 6:01:29 AM 368 [2033aa65-002d-48f8-a3a3-f10667940dc5] FileIsNotBusy
+The file d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.12~x64\dotnet.exe is not busy due to another file handle
+true
+
+10/15/2026, 6:01:29 AM 369 [2033aa65-002d-48f8-a3a3-f10667940dc5] FileToWipe
+true
+Path dotnet.exe may be deleted.
+
+10/15/2026, 6:01:29 AM 370 [2033aa65-002d-48f8-a3a3-f10667940dc5] FileToWipe
+true
+Path  dotnet.exe is being deleted -- if no error is reported, it should be wiped.
+
+10/15/2026, 6:01:29 AM 374 [2033aa65-002d-48f8-a3a3-f10667940dc5] FileToWipe
+true
+Path host may be deleted.
+
+10/15/2026, 6:01:29 AM 374 [2033aa65-002d-48f8-a3a3-f10667940dc5] FileToWipe
+true
+Path  host is being deleted -- if no error is reported, it should be wiped.
+
+10/15/2026, 6:01:29 AM 388 [2033aa65-002d-48f8-a3a3-f10667940dc5] FileToWipe
+true
+Path LICENSE.txt may be deleted.
+
+10/15/2026, 6:01:29 AM 388 [2033aa65-002d-48f8-a3a3-f10667940dc5] FileToWipe
+true
+Path  LICENSE.txt is being deleted -- if no error is reported, it should be wiped.
+
+10/15/2026, 6:01:29 AM 391 [2033aa65-002d-48f8-a3a3-f10667940dc5] FileToWipe
+true
+Path shared may be deleted.
+
+10/15/2026, 6:01:29 AM 391 [2033aa65-002d-48f8-a3a3-f10667940dc5] FileToWipe
+true
+Path  shared is being deleted -- if no error is reported, it should be wiped.
+
+10/15/2026, 6:01:29 AM 436 [2033aa65-002d-48f8-a3a3-f10667940dc5] FileToWipe
+true
+Path ThirdPartyNotices.txt may be deleted.
+
+10/15/2026, 6:01:29 AM 436 [2033aa65-002d-48f8-a3a3-f10667940dc5] FileToWipe
+true
+Path  ThirdPartyNotices.txt is being deleted -- if no error is reported, it should be wiped.
+
+10/15/2026, 6:01:29 AM 438 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-aa0cd4c2-f867-4b2d-9ec9-31622b280e6b Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:29.438Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:29 AM 438 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] RemovingVersionFromExtensionState
+true
+After Uninstallation, Removing {"installId":"10.0.12~x64","version":"10.0.12","installMode":"runtime","isGlobal":false,"architecture":"x64"} with id installed from the state.
+
+10/15/2026, 6:01:29 AM 439 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"10.0.13~x64","version":"10.0.13","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+10/15/2026, 6:01:29 AM 439 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] RemovingExtensionFromList
+true
+The last owner dotnet-runtime-library removed {"installId":"10.0.12~x64","version":"10.0.12","installMode":"runtime","isGlobal":false,"architecture":"x64"} entirely from the state.
+
+10/15/2026, 6:01:29 AM 457 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-aa0cd4c2-f867-4b2d-9ec9-31622b280e6b Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:29.457Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:29 AM 458 [2033aa65-002d-48f8-a3a3-f10667940dc5] DotnetUninstallCompleted
+Uninstalled .NET 10.0.12~x64.
+
+10/15/2026, 6:01:29 AM 458 [2033aa65-002d-48f8-a3a3-f10667940dc5] GenericDotnetLockEvent
+Action: 10.0.12~x64-829add9a-65fe-4924-955b-f857d2870e2b Lock freed: \\.\pipe\vscd-10.0.12~x64-sock
+2026-10-15T00:31:29.458Z
+10.0.12~x64
+10.0.12~x64
+true
+
+10/15/2026, 6:01:29 AM 458 DotnetCommandSucceeded
+uninstall
+
+10/15/2026, 6:01:29 AM 459 DotnetAcquisitionRequested
+9.0
+fe0bcfb547df7e433612160f21d323162769839b4b2e35033cf1c0724624f408
+
+10/15/2026, 6:01:29 AM 459 DotnetASPNetRuntimeAcquisitionRequested
+9.0
+fe0bcfb547df7e433612160f21d323162769839b4b2e35033cf1c0724624f408
+aspnetcore
+
+10/15/2026, 6:01:29 AM 552 [c754c81c-9454-4739-bb5e-fd05c459ff07] WebRequestInitiated
+Making Web Request For https://builds.dotnet.microsoft.com/dotnet/release-metadata/releases-index.json
+
+10/15/2026, 6:01:29 AM 647 [c754c81c-9454-4739-bb5e-fd05c459ff07] WebRequestSent
+https://builds.dotnet.microsoft.com/dotnet/release-metadata/releases-index.json
+
+10/15/2026, 6:01:30 AM 9 [c754c81c-9454-4739-bb5e-fd05c459ff07] WebRequestTime
+Timer for request:
+360.33
+true
+https:..builds.dotnet.microsoft.com.dotnet.release-metadata.releases-index.json
+200
+
+10/15/2026, 6:01:30 AM 9 [c754c81c-9454-4739-bb5e-fd05c459ff07] DotnetVersionResolutionCompleted
+9.0
+9.0.21
+
+10/15/2026, 6:01:30 AM 9 [c754c81c-9454-4739-bb5e-fd05c459ff07] DotnetInstallIdCreatedEvent
+true
+The requested version 9.0.21 is now marked under the install: {"installId":"9.0.21~x64~aspnetcore","version":"9.0.21","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"}.
+
+10/15/2026, 6:01:30 AM 10 [c754c81c-9454-4739-bb5e-fd05c459ff07] GenericDotnetLockEvent
+Action: 9.0.21~x64~aspnetcore-f3692e9e-448e-43ce-9abb-4cfddb7dc3d0 Lock acquired: \\.\pipe\vscd-9.0.21~x64~aspnetcore-sock
+2026-10-15T00:31:30.010Z
+9.0.21~x64~aspnetcore
+9.0.21~x64~aspnetcore
+true
+
+10/15/2026, 6:01:30 AM 10 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-1a6c076f-a53d-4a59-b48c-52e17eb3b04e Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:30.010Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:30 AM 20 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.13~x64","version":"10.0.13","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+10/15/2026, 6:01:30 AM 21 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-1a6c076f-a53d-4a59-b48c-52e17eb3b04e Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:30.021Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:30 AM 21 [c754c81c-9454-4739-bb5e-fd05c459ff07] DotnetAcquisitionStarted
+9.0.21~x64~aspnetcore
+9.0.21
+x64
+false
+aspnetcore
+9.0.21
+9.0.21~x64~aspnetcore
+dotnet-runtime-library
+
+10/15/2026, 6:01:30 AM 22 DotnetASPNetRuntimeAcquisitionStarted
+fe0bcfb547df7e433612160f21d323162769839b4b2e35033cf1c0724624f408
+
+10/15/2026, 6:01:30 AM 22 [c754c81c-9454-4739-bb5e-fd05c459ff07] WebRequestInitiated
+Making Web Request For https://builds.dotnet.microsoft.com/dotnet/scripts/v1/dotnet-install.ps1
+
+10/15/2026, 6:01:30 AM 99 [c754c81c-9454-4739-bb5e-fd05c459ff07] WebRequestSent
+https://builds.dotnet.microsoft.com/dotnet/scripts/v1/dotnet-install.ps1
+
+10/15/2026, 6:01:30 AM 214 [c754c81c-9454-4739-bb5e-fd05c459ff07] WebRequestTime
+Timer for request:
+114.08
+true
+https:..builds.dotnet.microsoft.com.dotnet.scripts.v1.dotnet-install.ps1
+200
+
+10/15/2026, 6:01:30 AM 215 [c754c81c-9454-4739-bb5e-fd05c459ff07] DotnetFileWriteRequestEvent
+true
+Request to write d:\All\IDLE\t\VSCode\data\extensions\ms-dotnettools.vscode-dotnet-runtime-3.2.0\dist\install scripts\dotnet-install.ps1
+2026-10-15T00:31:30.215Z
+a860b83c5031d361af33f7acd2e3f1fed3a2bec8fd9dd49d9b0ab8d468904c38
+
+10/15/2026, 6:01:30 AM 217 [c754c81c-9454-4739-bb5e-fd05c459ff07] DotnetFileWriteRequestEvent
+true
+File content is an exact match, not writing file.
+2026-10-15T00:31:30.217Z
+a860b83c5031d361af33f7acd2e3f1fed3a2bec8fd9dd49d9b0ab8d468904c38
+
+10/15/2026, 6:01:30 AM 217 [c754c81c-9454-4739-bb5e-fd05c459ff07] DotnetInstallScriptAcquisitionCompleted
+
+10/15/2026, 6:01:56 AM 803 [c754c81c-9454-4739-bb5e-fd05c459ff07] DotnetAcquisitionScriptOutput
+9.0.21~x64~aspnetcore
+9.0.21~x64~aspnetcore
+9.0.21
+x64
+false
+aspnetcore
+ VERBOSE: dotnet-install: Note that the intended use of this script is for Continuous Integration (CI) scenarios, where:
+VERBOSE: dotnet-install: - The SDK needs to be installed without user interaction and without admin rights.
+VERBOSE: dotnet-install: - The SDK installation doesn't need to persist across multiple CI runs.
+VERBOSE: dotnet-install: To set up a development environment or to run apps, use installers rather than this script. 
+Visit https://dotnet.microsoft.com/download to get the installer.
+VERBOSE: dotnet-install: Get-CLIArchitecture-From-Architecture -Architecture "x64"
+VERBOSE: dotnet-install: Get-NormalizedQuality -Quality ""
+VERBOSE: dotnet-install: Normalized quality: ''
+VERBOSE: dotnet-install: Get-NormalizedChannel -Channel "LTS"
+VERBOSE: dotnet-install: Normalized channel: 'LTS'
+VERBOSE: dotnet-install: Get-NormalizedProduct -Runtime "aspnetcore"
+VERBOSE: dotnet-install: Normalized product: 'aspnetcore-runtime'
+VERBOSE: dotnet-install: Tar available: 'True'
+VERBOSE: dotnet-install: Action 'Product discovery' took 0.0441644 seconds
+VERBOSE: dotnet-install: Resolve-Installation-Path -InstallDir 
+"d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.21~x64~aspnetc
+ore"
+VERBOSE: dotnet-install: InstallRoot: 
+d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.21~x64~aspnetco
+re
+VERBOSE: Initialized feeds: https://builds.dotnet.microsoft.com/dotnet https://ci.dot.net/public
+VERBOSE: dotnet-install: Get-Specific-Version-From-Version -AzureFeed "https://builds.dotnet.microsoft.com/dotnet" 
+-Channel "LTS" -Version "9.0.21" -JSonFile ""
+VERBOSE: dotnet-install: Get-Download-Link -AzureFeed "https://builds.dotnet.microsoft.com/dotnet" -SpecificVersion 
+"9.0.21" -CLIArchitecture "x64"
+VERBOSE: dotnet-install: Get-Product-Version -AzureFeed "https://builds.dotnet.microsoft.com/dotnet" -SpecificVersion 
+"9.0.21"
+VERBOSE: dotnet-install: Get-Product-Version-Url -Flattened "True" -AzureFeed 
+"https://builds.dotnet.microsoft.com/dotnet" -SpecificVersion "9.0.21" -PackageDownloadLink ""
+VERBOSE: dotnet-install: Constructed productVersion link: 
+https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/9.0.21/aspnetcore-productVersion.txt
+VERBOSE: dotnet-install: Get-Product-Version-Url -Flattened "False" -AzureFeed 
+"https://builds.dotnet.microsoft.com/dotnet" -SpecificVersion "9.0.21" -PackageDownloadLink ""
+VERBOSE: dotnet-install: Constructed productVersion link: 
+https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/9.0.21/productVersion.txt
+VERBOSE: dotnet-install: Checking for the existence of 
+https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/9.0.21/aspnetcore-productVersion.txt
+VERBOSE: dotnet-install: Constructed primary named payload URL: 
+https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/9.0.21/aspnetcore-runtime-9.0.21-win-x64.zip
+VERBOSE: dotnet-install: Get-LegacyDownload-Link -AzureFeed "https://builds.dotnet.microsoft.com/dotnet" 
+-SpecificVersion "9.0.21" -CLIArchitecture "x64"
+VERBOSE: dotnet-install: Generated primary link 
+https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/9.0.21/aspnetcore-runtime-9.0.21-win-x64.zip with version
+ 9.0.21
+VERBOSE: dotnet-install: Checking if the version 9.0.21 is already installed
+VERBOSE: dotnet-install: Is-Dotnet-Package-Installed -InstallRoot 
+"d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.21~x64~aspnetc
+ore" -RelativePathToPackage "shared\Microsoft.AspNetCore.App" -SpecificVersion "9.0.21"
+VERBOSE: dotnet-install: Is-Dotnet-Package-Installed: 
+DotnetPackagePath=d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9
+.0.21~x64~aspnetcore\shared\Microsoft.AspNetCore.App\9.0.21
+VERBOSE: dotnet-install: Get-Specific-Version-From-Version -AzureFeed "https://ci.dot.net/public" -Channel "LTS" 
+-Version "9.0.21" -JSonFile ""
+VERBOSE: dotnet-install: Get-Download-Link -AzureFeed "https://ci.dot.net/public" -SpecificVersion "9.0.21" 
+-CLIArchitecture "x64"
+VERBOSE: dotnet-install: Get-Product-Version -AzureFeed "https://ci.dot.net/public" -SpecificVersion "9.0.21"
+VERBOSE: dotnet-install: Get-Product-Version-Url -Flattened "True" -AzureFeed "https://ci.dot.net/public" 
+-SpecificVersion "9.0.21" -PackageDownloadLink ""
+VERBOSE: dotnet-install: Constructed productVersion link: 
+https://ci.dot.net/public/aspnetcore/Runtime/9.0.21/aspnetcore-productVersion.txt
+VERBOSE: dotnet-install: Get-Product-Version-Url -Flattened "False" -AzureFeed "https://ci.dot.net/public" 
+-SpecificVersion "9.0.21" -PackageDownloadLink ""
+VERBOSE: dotnet-install: Constructed productVersion link: 
+https://ci.dot.net/public/aspnetcore/Runtime/9.0.21/productVersion.txt
+VERBOSE: dotnet-install: Checking for the existence of 
+https://ci.dot.net/public/aspnetcore/Runtime/9.0.21/aspnetcore-productVersion.txt
+VERBOSE: dotnet-install: Could not read productVersion.txt at 
+https://ci.dot.net/public/aspnetcore/Runtime/9.0.21/aspnetcore-productVersion.txt (Exception: 'Unable to download 
+https://ci.dot.net/public/aspnetcore/Runtime/9.0.21/aspnetcore-productVersion.txt.'. )
+VERBOSE: dotnet-install: Checking for the existence of 
+https://ci.dot.net/public/aspnetcore/Runtime/9.0.21/productVersion.txt
+VERBOSE: dotnet-install: Could not read productVersion.txt at 
+https://ci.dot.net/public/aspnetcore/Runtime/9.0.21/productVersion.txt (Exception: 'Unable to download 
+https://ci.dot.net/public/aspnetcore/Runtime/9.0.21/productVersion.txt.'. )
+VERBOSE: dotnet-install: Using the default value '9.0.21' as the product version.
+VERBOSE: dotnet-install: Constructed primary named payload URL: 
+https://ci.dot.net/public/aspnetcore/Runtime/9.0.21/aspnetcore-runtime-9.0.21-win-x64.zip
+VERBOSE: dotnet-install: Get-LegacyDownload-Link -AzureFeed "https://ci.dot.net/public" -SpecificVersion "9.0.21" 
+-CLIArchitecture "x64"
+VERBOSE: dotnet-install: Generated primary link 
+https://ci.dot.net/public/aspnetcore/Runtime/9.0.21/aspnetcore-runtime-9.0.21-win-x64.zip with version 9.0.21
+VERBOSE: dotnet-install: Checking if the version 9.0.21 is already installed
+VERBOSE: dotnet-install: Is-Dotnet-Package-Installed -InstallRoot 
+"d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.21~x64~aspnetc
+ore" -RelativePathToPackage "shared\Microsoft.AspNetCore.App" -SpecificVersion "9.0.21"
+VERBOSE: dotnet-install: Is-Dotnet-Package-Installed: 
+DotnetPackagePath=d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9
+.0.21~x64~aspnetcore\shared\Microsoft.AspNetCore.App\9.0.21
+VERBOSE: dotnet-install: Failed to check the disk space. Installation will continue, but it may fail if you do not have
+ enough disk space.
+VERBOSE: dotnet-install: Action 'Installation directory preparation' took 0.0107535 seconds
+VERBOSE: dotnet-install: Zip path: C:\Users\inthirua\AppData\Local\Temp\ir1inul3.rk2
+VERBOSE: dotnet-install: Downloading "primary" link 
+https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/9.0.21/aspnetcore-runtime-9.0.21-win-x64.zip
+VERBOSE: HEAD with 0-byte payload
+VERBOSE: received 48732749-byte response of content type application/octet-stream
+dotnet-install: Remote file https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/9.0.21/aspnetcore-runtime-9.0.21-win-x64.zip size is 48732749 bytes.
+dotnet-install: Downloaded file https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/9.0.21/aspnetcore-runtime-9.0.21-win-x64.zip size is 48732749 bytes.
+dotnet-install: The remote and local file sizes are equal.
+VERBOSE: dotnet-install: Action 'Package download' took 19.0594381 seconds
+VERBOSE: dotnet-install: Download succeeded.
+dotnet-install: Extracting the archive.
+VERBOSE: dotnet-install: Extract-Dotnet-Package -ZipPath "C:\Users\inthirua\AppData\Local\Temp\ir1inul3.rk2" -OutPath 
+"d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.21~x64~aspnetc
+ore"
+VERBOSE: dotnet-install: Get-List-Of-Directories-And-Versions-To-Unpack-From-Dotnet-Package -Zip 
+"System.IO.Compression.ZipArchive" -OutPath 
+"d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.21~x64~aspnetc
+ore"
+VERBOSE: dotnet-install: Directories to unpack: 
+host/fxr/9.0.21/;shared/Microsoft.AspNetCore.App/9.0.21/;shared/Microsoft.NETCore.App/9.0.21/
+VERBOSE: dotnet-install: Action 'Package extraction' took 3.2660536 seconds
+VERBOSE: dotnet-install: Checking installation: version = 9.0.21
+VERBOSE: dotnet-install: Is-Dotnet-Package-Installed -InstallRoot 
+"d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.21~x64~aspnetc
+ore" -RelativePathToPackage "shared\Microsoft.AspNetCore.App" -SpecificVersion "9.0.21"
+VERBOSE: dotnet-install: Is-Dotnet-Package-Installed: 
+DotnetPackagePath=d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9
+.0.21~x64~aspnetcore\shared\Microsoft.AspNetCore.App\9.0.21
+VERBOSE: dotnet-install: The temporary file "C:\Users\inthirua\AppData\Local\Temp\ir1inul3.rk2" was removed.
+dotnet-install: Adding to current process PATH: "D:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.21~x64~aspnetcore\". Note: This change will not be visible if PowerShell was run as a child process.
+VERBOSE: dotnet-install: Action 'Setting up shell environment' took 0.0068547 seconds
+dotnet-install: Note that the script does not ensure your Windows version is supported during the installation.
+dotnet-install: To check the list of supported versions, go to https://learn.microsoft.com/dotnet/core/install/windows#supported-versions
+dotnet-install: Installed version is 9.0.21
+dotnet-install: Installation finished
+
+
+10/15/2026, 6:01:56 AM 804 [c754c81c-9454-4739-bb5e-fd05c459ff07] DotnetAcquisitionCompleted
+9.0.21~x64~aspnetcore
+9.0.21
+x64
+false
+aspnetcore
+9.0.21
+9.0.21~x64~aspnetcore
+d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.21~x64~aspnetcore\dotnet.exe
+
+10/15/2026, 6:01:56 AM 805 [c754c81c-9454-4739-bb5e-fd05c459ff07] DotnetInstallationValidated
+9.0.21~x64~aspnetcore
+9.0.21~x64~aspnetcore
+9.0.21
+x64
+false
+aspnetcore
+
+10/15/2026, 6:01:56 AM 806 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-56c4eff6-a913-4efa-b312-d02bbe252513 Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:56.806Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:56 AM 806 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] AddTrackingVersions
+true
+Adding {"installId":"9.0.21~x64~aspnetcore","version":"9.0.21","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} with id 9.0.21~x64~aspnetcore from the state.
+
+10/15/2026, 6:01:56 AM 806 [c754c81c-9454-4739-bb5e-fd05c459ff07] DotnetInstallationValidated
+9.0.21~x64~aspnetcore
+9.0.21~x64~aspnetcore
+9.0.21
+x64
+false
+aspnetcore
+
+10/15/2026, 6:01:56 AM 806 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] MarkedInstallInUse
+Session session-bb003ec86c marked d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.21~x64~aspnetcore\dotnet.exe as in use.
+Sessions: {"session-bb003ec86c":["d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe","d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.13~x64\\dotnet.exe","d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\9.0.21~x64~aspnetcore\\dotnet.exe"]}
+
+10/15/2026, 6:01:56 AM 812 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.13~x64","version":"10.0.13","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+10/15/2026, 6:01:56 AM 812 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] AddTrackingVersions
+true
+Updated installed :
+{"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.13~x64","version":"10.0.13","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+,{"installId":"9.0.21~x64~aspnetcore","version":"9.0.21","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library
+ 
+
+10/15/2026, 6:01:56 AM 828 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-56c4eff6-a913-4efa-b312-d02bbe252513 Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:56.828Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:56 AM 828 [c754c81c-9454-4739-bb5e-fd05c459ff07] GenericDotnetLockEvent
+Action: 9.0.21~x64~aspnetcore-f3692e9e-448e-43ce-9abb-4cfddb7dc3d0 Lock freed: \\.\pipe\vscd-9.0.21~x64~aspnetcore-sock
+2026-10-15T00:31:56.828Z
+9.0.21~x64~aspnetcore
+9.0.21~x64~aspnetcore
+true
+
+10/15/2026, 6:01:56 AM 828 DotnetCommandSucceeded
+acquire
+
+10/15/2026, 6:01:56 AM 828 DotnetAcquisitionTotalSuccessEvent
+9.0.21
+9.0.21~x64~aspnetcore
+9.0.21~x64~aspnetcore
+9.0.21
+x64
+false
+aspnetcore
+fe0bcfb547df7e433612160f21d323162769839b4b2e35033cf1c0724624f408
+d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.21~x64~aspnetcore\dotnet.exe
+
+10/15/2026, 6:01:56 AM 828 DotnetASPNetRuntimeAcquisitionTotalSuccessEvent
+9.0.21~x64~aspnetcore
+9.0.21
+x64
+false
+aspnetcore
+
+10/15/2026, 6:01:56 AM 829 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-72a2eab0-0515-414e-a4c5-068c7f8aeb7b Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:56.829Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:56 AM 830 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.13~x64","version":"10.0.13","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+,{"installId":"9.0.21~x64~aspnetcore","version":"9.0.21","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library
+
+
+10/15/2026, 6:01:56 AM 830 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-72a2eab0-0515-414e-a4c5-068c7f8aeb7b Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:56.830Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:56 AM 831 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-3e0be32f-16cd-452a-bce0-b7f3489f1441 Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:56.831Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:56 AM 833 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.13~x64","version":"10.0.13","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+,{"installId":"9.0.21~x64~aspnetcore","version":"9.0.21","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library
+
+
+10/15/2026, 6:01:56 AM 833 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] AddTrackingVersions
+true
+Adding owners dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit to existing install record {"installId":"9.0.21~x64~aspnetcore","version":"9.0.21","architecture":"x64","isGlobal":"false","installMode":"aspnetcore"}
+
+10/15/2026, 6:01:56 AM 843 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-3e0be32f-16cd-452a-bce0-b7f3489f1441 Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:56.843Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:56 AM 843 UninstallingOutdatedInstalls
+The installs [{"dotnetInstall":{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"},"installingExtensions":["dotnet-runtime-library","ms-dotnettools.csharp","ms-dotnettools.csdevkit"]}] are outdated - attempting to uninstall. The latest install was {"dotnetInstall":{"installId":"9.0.21~x64~aspnetcore","version":"9.0.21","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"},"installingExtensions":["dotnet-runtime-library"]}
+
+10/15/2026, 6:01:56 AM 844 [18536967-fbe8-4da8-94aa-0405cfd24b77] GenericDotnetLockEvent
+Action: 9.0.20~x64~aspnetcore-ae52c16b-54c1-424b-8264-73d6ef5aee89 Lock acquired: \\.\pipe\vscd-9.0.20~x64~aspnetcore-sock
+2026-10-15T00:31:56.844Z
+9.0.20~x64~aspnetcore
+9.0.20~x64~aspnetcore
+true
+
+10/15/2026, 6:01:56 AM 845 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-fbe8d446-c3b9-4de2-9e7b-efb5b95445a3 Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:56.845Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:56 AM 845 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] RemovingVersionFromExtensionState
+true
+Removing {"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","installMode":"aspnetcore","isGlobal":false,"architecture":"x64"} with id installed from the state.
+
+10/15/2026, 6:01:56 AM 846 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.13~x64","version":"10.0.13","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+,{"installId":"9.0.21~x64~aspnetcore","version":"9.0.21","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+
+
+10/15/2026, 6:01:56 AM 847 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] RemovingOwnerFromList
+true
+The owner dotnet-runtime-library removed {"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","installMode":"aspnetcore","isGlobal":false,"architecture":"x64"} itself from the list, but ms-dotnettools.csharp, ms-dotnettools.csdevkit remain.
+
+10/15/2026, 6:01:56 AM 859 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-fbe8d446-c3b9-4de2-9e7b-efb5b95445a3 Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:56.859Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:56 AM 859 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-4b953087-64eb-4ff0-86ac-da4a3184bfc8 Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:56.859Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:56 AM 859 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] SearchingLiveDependents
+Searching for live dependents of install at d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.20~x64~aspnetcore\dotnet.exe. Sessions: {"session-bb003ec86c":["d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe","d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.13~x64\\dotnet.exe","d:\\All\\IDLE\\t\\VSCode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\9.0.21~x64~aspnetcore\\dotnet.exe"]}
+
+10/15/2026, 6:01:56 AM 874 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","installMode":"aspnetcore","isGlobal":false,"architecture":"x64"} owned by ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.13~x64","version":"10.0.13","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+,{"installId":"9.0.21~x64~aspnetcore","version":"9.0.21","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+
+
+10/15/2026, 6:01:56 AM 874 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-bb003ec86c-15a12333-f850-4ee3-9b57-1492f3babcd0 Lock acquire retryable error: EADDRINUSE (listen EADDRINUSE: address already in use \\.\pipe\vscd-session-bb003ec86c-sock) retry 1/4
+2026-10-15T00:31:56.874Z
+session-bb003ec86c
+session-bb003ec86c
+true
+
+10/15/2026, 6:01:56 AM 875 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-bb003ec86c-15a12333-f850-4ee3-9b57-1492f3babcd0 Connected to existing lock.
+2026-10-15T00:31:56.874Z
+session-bb003ec86c
+session-bb003ec86c
+true
+
+10/15/2026, 6:01:56 AM 888 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-bb003ec86c-15a12333-f850-4ee3-9b57-1492f3babcd0 Lock acquire retryable error: EADDRINUSE (listen EADDRINUSE: address already in use \\.\pipe\vscd-session-bb003ec86c-sock) retry 2/4
+2026-10-15T00:31:56.888Z
+session-bb003ec86c
+session-bb003ec86c
+true
+
+10/15/2026, 6:01:56 AM 888 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-bb003ec86c-15a12333-f850-4ee3-9b57-1492f3babcd0 Connected to existing lock.
+2026-10-15T00:31:56.888Z
+session-bb003ec86c
+session-bb003ec86c
+true
+
+10/15/2026, 6:01:56 AM 904 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-bb003ec86c-15a12333-f850-4ee3-9b57-1492f3babcd0 Lock acquire retryable error: EADDRINUSE (listen EADDRINUSE: address already in use \\.\pipe\vscd-session-bb003ec86c-sock) retry 3/4
+2026-10-15T00:31:56.904Z
+session-bb003ec86c
+session-bb003ec86c
+true
+
+10/15/2026, 6:01:56 AM 904 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-bb003ec86c-15a12333-f850-4ee3-9b57-1492f3babcd0 Connected to existing lock.
+2026-10-15T00:31:56.904Z
+session-bb003ec86c
+session-bb003ec86c
+true
+
+10/15/2026, 6:01:56 AM 919 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-bb003ec86c-15a12333-f850-4ee3-9b57-1492f3babcd0 Lock acquire retryable error: EADDRINUSE (listen EADDRINUSE: address already in use \\.\pipe\vscd-session-bb003ec86c-sock) retry 4/4
+2026-10-15T00:31:56.919Z
+session-bb003ec86c
+session-bb003ec86c
+true
+
+10/15/2026, 6:01:56 AM 920 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-bb003ec86c-15a12333-f850-4ee3-9b57-1492f3babcd0 Connected to existing lock.
+2026-10-15T00:31:56.920Z
+session-bb003ec86c
+session-bb003ec86c
+true
+
+10/15/2026, 6:01:56 AM 936 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: session-bb003ec86c-15a12333-f850-4ee3-9b57-1492f3babcd0 Lock acquire retryable error: EADDRINUSE (listen EADDRINUSE: address already in use \\.\pipe\vscd-session-bb003ec86c-sock) retry 5/4
+2026-10-15T00:31:56.936Z
+session-bb003ec86c
+session-bb003ec86c
+true
+
+10/15/2026, 6:01:56 AM 936 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] ProcessEnvironmentCheck
+Process environment PATH or DOTNET_ROOT depends on install? false
+
+10/15/2026, 6:01:56 AM 936 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-4b953087-64eb-4ff0-86ac-da4a3184bfc8 Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:56.936Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:56 AM 936 [18536967-fbe8-4da8-94aa-0405cfd24b77] DotnetUninstallStarted
+Attempting to remove .NET 9.0.20~x64~aspnetcore.
+
+10/15/2026, 6:01:56 AM 938 [18536967-fbe8-4da8-94aa-0405cfd24b77] FileIsNotBusy
+The file d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.20~x64~aspnetcore\dotnet.exe is not busy due to another file handle
+true
+
+10/15/2026, 6:01:56 AM 939 [18536967-fbe8-4da8-94aa-0405cfd24b77] FileToWipe
+true
+Path dotnet.exe may be deleted.
+
+10/15/2026, 6:01:56 AM 939 [18536967-fbe8-4da8-94aa-0405cfd24b77] FileToWipe
+true
+Path  dotnet.exe is being deleted -- if no error is reported, it should be wiped.
+
+10/15/2026, 6:01:56 AM 941 [18536967-fbe8-4da8-94aa-0405cfd24b77] FileToWipe
+true
+Path host may be deleted.
+
+10/15/2026, 6:01:56 AM 941 [18536967-fbe8-4da8-94aa-0405cfd24b77] FileToWipe
+true
+Path  host is being deleted -- if no error is reported, it should be wiped.
+
+10/15/2026, 6:01:56 AM 949 [18536967-fbe8-4da8-94aa-0405cfd24b77] FileToWipe
+true
+Path LICENSE.txt may be deleted.
+
+10/15/2026, 6:01:56 AM 949 [18536967-fbe8-4da8-94aa-0405cfd24b77] FileToWipe
+true
+Path  LICENSE.txt is being deleted -- if no error is reported, it should be wiped.
+
+10/15/2026, 6:01:56 AM 950 [18536967-fbe8-4da8-94aa-0405cfd24b77] FileToWipe
+true
+Path shared may be deleted.
+
+10/15/2026, 6:01:56 AM 950 [18536967-fbe8-4da8-94aa-0405cfd24b77] FileToWipe
+true
+Path  shared is being deleted -- if no error is reported, it should be wiped.
+
+10/15/2026, 6:01:57 AM 8 [18536967-fbe8-4da8-94aa-0405cfd24b77] FileToWipe
+true
+Path ThirdPartyNotices.txt may be deleted.
+
+10/15/2026, 6:01:57 AM 8 [18536967-fbe8-4da8-94aa-0405cfd24b77] FileToWipe
+true
+Path  ThirdPartyNotices.txt is being deleted -- if no error is reported, it should be wiped.
+
+10/15/2026, 6:01:57 AM 9 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-58c119ea-1087-4372-8094-02b953b540c7 Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:57.009Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:57 AM 9 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] RemovingVersionFromExtensionState
+true
+After Uninstallation, Removing {"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","installMode":"aspnetcore","isGlobal":false,"architecture":"x64"} with id installed from the state.
+
+10/15/2026, 6:01:57 AM 14 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","installMode":"aspnetcore","isGlobal":false,"architecture":"x64"} owned by ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.13~x64","version":"10.0.13","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+,{"installId":"9.0.21~x64~aspnetcore","version":"9.0.21","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+
+
+10/15/2026, 6:01:57 AM 14 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] RemovingExtensionFromList
+true
+The last owner dotnet-runtime-library removed {"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","installMode":"aspnetcore","isGlobal":false,"architecture":"x64"} entirely from the state.
+
+10/15/2026, 6:01:57 AM 29 [4efad63b-d4a9-48f7-bd5f-ef5509292ca7] GenericDotnetLockEvent
+Action: installedLk-58c119ea-1087-4372-8094-02b953b540c7 Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-10-15T00:31:57.029Z
+installedLk
+installedLk
+true
+
+10/15/2026, 6:01:57 AM 29 [18536967-fbe8-4da8-94aa-0405cfd24b77] DotnetUninstallCompleted
+Uninstalled .NET 9.0.20~x64~aspnetcore.
+
+10/15/2026, 6:01:57 AM 30 [18536967-fbe8-4da8-94aa-0405cfd24b77] GenericDotnetLockEvent
+Action: 9.0.20~x64~aspnetcore-ae52c16b-54c1-424b-8264-73d6ef5aee89 Lock freed: \\.\pipe\vscd-9.0.20~x64~aspnetcore-sock
+2026-10-15T00:31:57.030Z
+9.0.20~x64~aspnetcore
+9.0.20~x64~aspnetcore
+true
+
+10/15/2026, 6:01:57 AM 30 DotnetCommandSucceeded
+uninstall
+

@@ -1,0 +1,52 @@
+2026-10-15 07:53:04.639 [info] [GitExtensionServiceImpl] Initializing Git extension service.
+2026-10-15 07:53:04.639 [info] FetcherService: Experimentation service not available yet, using default fetcher configuration.
+2026-10-15 07:53:04.639 [info] Using the Electron fetcher.
+2026-10-15 07:53:04.639 [info] [GitExtensionServiceImpl] Successfully activated the vscode.git extension.
+2026-10-15 07:53:04.639 [info] [GitExtensionServiceImpl] Enablement state of the vscode.git extension: true.
+2026-10-15 07:53:04.639 [info] [GitExtensionServiceImpl] Successfully registered Git commit message provider.
+2026-10-15 07:53:04.639 [info] ConversationFeature: Waiting for copilot token or BYOK model to activate conversation feature
+2026-10-15 07:53:04.640 [warning] [LanguageModelAccess] LanguageModel/Embeddings are not available without a Copilot token source
+2026-10-15 07:53:04.640 [info] [CopilotCLIModels] Skipping model fetch since there is no Copilot token source
+2026-10-15 07:53:04.640 [info] BYOK: registered 9 provider(s): ollama, anthropic, gemini, xai, openai, openrouter, azure, customoai, customendpoint
+2026-10-15 07:53:04.640 [info] BYOK: fetching known models list
+2026-10-15 07:53:04.640 [info] activationBlocker from 'languageModelAccess' took for 71ms
+2026-10-15 07:53:04.640 [info] [CopilotCLI] OpenTelemetry enabled: exporter=file, source=github.copilot
+2026-10-15 07:53:04.640 [info] BYOK: Copilot Chat known models list fetched successfully.
+2026-10-15 07:53:04.640 [info] [CopilotCLIChatSessionContentProvider] listSessions took 24.375500000000102ms
+2026-10-15 07:53:04.641 [info] [CopilotCLI] MCP server started. Lock file: C:\Users\inthirua\.copilot\ide\7bd9c08b-bfe6-4070-8fdc-e83cedd30aa0.lock
+2026-10-15 07:53:04.641 [info] [CopilotCLI] Server URI: pipe:%5C%5C.%5Cpipe%5Cmcp-194afa62-36b7-41c7-b56a-e442c7c6496b.sock#%2Fmcp
+2026-10-15 07:53:04.642 [warning] [LanguageModelAccess] LanguageModel/Embeddings are not available without a Copilot token source
+2026-10-15 07:53:04.648 [info] [CopilotCLI] Cleaned up 1 stale lock file(s).
+2026-10-15 07:53:04.654 [info] Logged in as nitamil
+2026-10-15 07:53:04.811 [info] ConversationFeature: BYOK models available
+2026-10-15 07:53:04.811 [info] ConversationFeature: Activating contributions
+2026-10-15 07:53:04.821 [info] Registering default platform agent...
+2026-10-15 07:53:04.822 [info] activationBlocker from 'conversationFeature' took for 510ms
+2026-10-15 07:53:04.861 [info] [CopilotCLIChatSessionContentProvider] listSessions took 4.243199999999888ms
+2026-10-15 07:53:05.014 [info] Successfully activated the GitHub.vscode-pull-request-github extension.
+2026-10-15 07:53:05.014 [info] [githubTitleAndDescriptionProvider] Initializing GitHub PR title and description provider provider.
+2026-10-15 07:53:05.014 [info] Successfully registered GitHub PR title and description provider.
+2026-10-15 07:53:05.269 [info] Got Copilot token for nitamil
+2026-10-15 07:53:05.269 [info] Copilot Chat: 0.69.0, VS Code: 1.141.2
+2026-10-15 07:53:05.327 [info] copilot token sku: copilot_for_business_seat_quota
+2026-10-15 07:53:05.329 [info] copilot token sku: copilot_for_business_seat_quota
+2026-10-15 07:53:05.330 [info] copilot token sku: copilot_for_business_seat_quota
+2026-10-15 07:53:05.330 [info] copilot token sku: copilot_for_business_seat_quota
+2026-10-15 07:53:05.332 [info] [context keys] Setting context key: github.copilot-chat.activated
+2026-10-15 07:53:05.654 [info] Logged in as nitamil
+2026-10-15 07:53:06.128 [info] Fetched model metadata in 1792ms 1482ed7d-a5d1-4beb-9dc1-9127d092939b
+2026-10-15 07:53:06.150 [info] Got Copilot token for nitamil
+2026-10-15 07:53:06.150 [info] Copilot Chat: 0.69.0, VS Code: 1.141.2
+2026-10-15 07:53:06.221 [info] copilot token sku: copilot_for_business_seat_quota
+2026-10-15 07:53:06.223 [info] copilot token sku: copilot_for_business_seat_quota
+2026-10-15 07:53:06.225 [info] AuthenticationService: firing onDidAuthenticationChange from handleAuthChangeEvent identity change. Has token: true
+2026-10-15 07:53:06.225 [info] copilot token sku: copilot_for_business_seat_quota
+2026-10-15 07:53:06.230 [info] AuthenticationService: firing onDidAuthenticationChange from handleAuthChangeEvent identity change. Has token: true
+2026-10-15 07:53:06.230 [info] copilot token sku: copilot_for_business_seat_quota
+2026-10-15 07:53:06.241 [info] GithubAvailableEmbeddingTypesManager: Got embeddings. Primary: metis-1024-I16-Binary. Deprecated: 
+2026-10-15 07:53:06.243 [info] GithubAvailableEmbeddingTypesManager: Got embeddings. Primary: metis-1024-I16-Binary. Deprecated: 
+2026-10-15 07:53:06.243 [info] WorkspaceChunkSearchService: using embedding type metis-1024-I16-Binary
+2026-10-15 07:53:06.556 [info] Latest entry: ccreq:latest.copilotmd
+2026-10-15 07:53:06.557 [info] ccreq:9a42f73b.copilotmd | markdown
+2026-10-15 07:53:06.843 [info] Fetched model metadata in 268ms 84baf942-b10c-4f3b-b0fd-0e3ead103fe1
+2026-10-15 07:53:06.852 [info] ccreq:e1700e74.copilotmd | markdown

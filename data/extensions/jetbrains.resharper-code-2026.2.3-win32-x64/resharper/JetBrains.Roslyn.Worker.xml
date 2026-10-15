@@ -1,0 +1,919 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Roslyn.Worker</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.Roslyn.Worker.Core.AssemblyLoaders.RiderAnalyzerAssemblyLoader">
+            <remarks>Modified version of Microsoft.CodeAnalysis.AnalyzerAssemblyLoader</remarks>
+            <summary>
+            The base implementation for <see cref="T:Microsoft.CodeAnalysis.IAnalyzerAssemblyLoader"/>. This type provides caching and tracking of inputs given
+            to <see cref="M:JetBrains.Roslyn.Worker.Core.AssemblyLoaders.RiderAnalyzerAssemblyLoader.AddDependencyLocation(System.String)"/>.
+            </summary>
+            <remarks>
+            This type generally assumes that files on disk aren't changing, since it ensure that two calls to <see cref="M:JetBrains.Roslyn.Worker.Core.AssemblyLoaders.RiderAnalyzerAssemblyLoader.LoadFromPath(System.String)"/>
+            will always return the same thing, per that interface's contract.
+            </remarks>
+        </member>
+        <member name="M:JetBrains.Roslyn.Worker.Core.AssemblyLoaders.RiderAnalyzerAssemblyLoader.LoadFromPathUncheckedImpl(System.String)">
+            <summary>
+            Implemented by derived types to actually perform the load for an assembly that doesn't have a cached result.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Roslyn.Worker.Core.AssemblyLoaders.RiderAnalyzerAssemblyLoader.LoadFromPathUnchecked(System.String)">
+            <summary>
+            Returns the cached assembly for fullPath if we've done a load for this path before, or calls <see cref="M:JetBrains.Roslyn.Worker.Core.AssemblyLoaders.RiderAnalyzerAssemblyLoader.LoadFromPathUncheckedImpl(System.String)"/> if
+            it needs to be loaded. This method skips the check in release builds that the path is an absolute path, hence the "Unchecked" in the name.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Roslyn.Worker.Core.AssemblyLoaders.RiderAnalyzerAssemblyLoader.GetPathToLoad(System.String)">
+            <summary>
+            When overridden in a derived class, allows substituting an assembly path after we've
+            identified the context to load an assembly in, but before the assembly is actually
+            loaded from disk. This is used to substitute out the original path with the shadow-copied version.
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Core.AssemblyLoaders.RiderDefaultAnalyzerAssemblyLoader">
+            <remarks>Modified version of Microsoft.CodeAnalysis.DefaultAnalyzerAssemblyLoader</remarks>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Core.AssemblyLoaders.RiderShadowCopyRiderAnalyzerAssemblyLoader">
+            <remarks>Modified version of Microsoft.CodeAnalysis.ShadowCopyAnalyzerAssemblyLoader</remarks>
+        </member>
+        <member name="F:JetBrains.Roslyn.Worker.Core.AssemblyLoaders.RiderShadowCopyRiderAnalyzerAssemblyLoader.myBaseDirectory">
+            <summary>
+            The base directory for shadow copies. Each instance of
+            <see cref="T:JetBrains.Roslyn.Worker.Core.AssemblyLoaders.RiderShadowCopyRiderAnalyzerAssemblyLoader"/> gets its own
+            subdirectory under this directory. This is also the starting point
+            for scavenge operations.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Roslyn.Worker.Core.AssemblyLoaders.RiderShadowCopyRiderAnalyzerAssemblyLoader.myShadowCopyDirectoryAndMutex">
+            <summary>
+            The directory where this instance of <see cref="T:JetBrains.Roslyn.Worker.Core.AssemblyLoaders.RiderShadowCopyRiderAnalyzerAssemblyLoader"/>
+            will shadow-copy assemblies, and the mutex created to mark that the owner of it is still active.
+            </summary>
+        </member>
+        <member name="F:JetBrains.Roslyn.Worker.Core.AssemblyLoaders.RiderShadowCopyRiderAnalyzerAssemblyLoader.myAssemblyDirectoryId">
+            <summary>
+            Used to generate unique names for per-assembly directories. Should be updated with <see cref="M:System.Threading.Interlocked.Increment(System.Int32@)"/>.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Roslyn.Worker.Core.Workspaces.RiderWorkspace.OpenSolution(Microsoft.CodeAnalysis.SolutionInfo)">
+            <summary>
+            Adds an entire solution to the workspace, replacing any existing solution.
+            </summary>
+        </member>
+        <member name="M:JetBrains.Roslyn.Worker.Features.Analyzers.Impl.CodeActions.QuickFixChangesCollector.TryCollectAddedProjectReference(Microsoft.CodeAnalysis.ProjectId,Microsoft.CodeAnalysis.ProjectReference)">
+            <summary>
+            Used for project reference added events
+            </summary>
+            <param name="projectId">Where to add reference</param>
+            <param name="projectReference">Reference to add</param>
+            <returns>Returns true if changes are successfully added to collector, false otherwise.</returns>
+        </member>
+        <member name="M:JetBrains.Roslyn.Worker.Features.Analyzers.Impl.CodeActions.QuickFixChangesCollector.TryCollectAddedDocument(Microsoft.CodeAnalysis.DocumentInfo,Microsoft.CodeAnalysis.Text.SourceText,Microsoft.CodeAnalysis.Solution,System.Boolean)">
+            <summary>
+            Used for Document Added events
+            </summary>
+            <param name="info">Information about new document</param>
+            <param name="text">Text of new document</param>
+            <param name="currentSolution">Solution before changes</param>
+            <param name="isAdditional">Indicate if document should be added to additional documents</param>
+            <returns >Returns true if changes are successfully added to collector, false otherwise.</returns>
+        </member>
+        <member name="M:JetBrains.Roslyn.Worker.Features.Analyzers.Impl.CodeActions.QuickFixChangesCollector.TryCollectRemovedDocument(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.Solution)">
+            <summary>
+            Used for Document Removed events
+            </summary>
+            <param name="documentId"></param>
+            <param name="currentSolution"></param>
+            <returns >Returns true if changes are successfully added to collector, false otherwise.</returns>
+        </member>
+        <member name="M:JetBrains.Roslyn.Worker.Features.Analyzers.Impl.CodeActions.QuickFixChangesCollector.TryCollectDocumentTextChanges(Microsoft.CodeAnalysis.DocumentId,Microsoft.CodeAnalysis.Text.SourceText,Microsoft.CodeAnalysis.Solution)">
+            <summary>
+            Used for Document Text Changes
+            </summary>
+            <param name="documentId"></param>
+            <param name="newText"></param>
+            <param name="currentSolution"></param>
+            <returns>Returns true if changes are successfully added to collector, false otherwise.</returns>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Features.Analyzers.Impl.OpenDocumentHighlighters">
+            <summary>
+            Keep diagnostic info in memory to use it on quick fix execution
+            </summary>
+        </member>
+        <member name="M:JetBrains.Roslyn.Worker.Features.SourceGenerators.Impl.SourceGeneratorsRunner.GenerateAsync(Microsoft.CodeAnalysis.Project,JetBrains.Lifetimes.Lifetime)">
+            <remarks>
+            Relevant for .net6: Compile-only generators will not be called. For example, RazorSourceGenerator
+            RazorSourceGenerator is disabled using RazorSourceGenerator.razorencconfig.
+            Sometimes msbuild does not add this config file to the compilation, which can cause RazorSourceGenerator to be called in some cases
+            </remarks>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.RoslynWorkerToDebuggerWorkerModel.DebuggerWorkerToRoslynWorkerModel">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.RoslynWorkerToDebuggerWorkerModel.ActiveInstructionId">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.RoslynWorkerToDebuggerWorkerModel.ActiveMethodId">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.RoslynWorkerToDebuggerWorkerModel.ActiveStatementDebugInfo">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.RoslynWorkerToDebuggerWorkerModel.ActiveStatementDelta">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.RoslynWorkerToDebuggerWorkerModel.ActiveStatementFlags">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.RoslynWorkerToDebuggerWorkerModel.ApplyChangesResult">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.RoslynWorkerToDebuggerWorkerModel.ApplyChangesResultType">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.RoslynWorkerToDebuggerWorkerModel.Delta">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.RoslynWorkerToDebuggerWorkerModel.DeltasResult">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.RoslynWorkerToDebuggerWorkerModel.EncDiagnosticData">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.RoslynWorkerToDebuggerWorkerModel.GetDeltasArg">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.RoslynWorkerToDebuggerWorkerModel.LineChange">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.RoslynWorkerToDebuggerWorkerModel.LineEdit">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.RoslynWorkerToDebuggerWorkerModel.LinePositionSpan">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.RoslynWorkerToDebuggerWorkerModel.ManagedExceptionRegionUpdate">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.RoslynWorkerToDebuggerWorkerModel.ManagedModuleMethodId">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.RoslynWorkerToDebuggerWorkerModel.MetadataAndPdb">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.RoslynWorkerToDebuggerWorkerModel.PdbType">
+            <summary>
+            <p>Generated from: DebuggerWorkerToRoslynWorkerModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RoslynModel">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.AnalyzersKind">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.NullableOptions">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdAnalyzerReference">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdAnalyzerReferenceReloadRequest">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdAnalyzerReferenceRemove">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdAnalyzerReferenceRemoveCompletely">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdAnalyzersEntry">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdAnalyzersKey">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdApplyChangesRequest">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdApplyDeltaResult">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectAssemblyReferencesUpdate">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectBase">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectDocumentAdded">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectDocumentRemoved">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectModelBase">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectProperties">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectRulesetRulesClear">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectRulesetRulesSet">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectTargetFrameworksSync">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectTfmAdditionalDocumentAdd">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectTfmAdditionalDocumentReload">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectTfmAdditionalDocumentRemove">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectTfmAdditionalDocumentsSync">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectTfmAnalyzerConfigFileAdd">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectTfmAnalyzerConfigFileRemove">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectTfmAnalyzerConfigFileSync">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectTfmAnalyzerReferenceAdd">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectTfmAnalyzerReferenceRemove">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectTfmAssemblyReferenceAdd">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectTfmAssemblyReferenceRemove">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectTfmBase">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectTfmDocumentAdd">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectTfmDocumentRemove">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectTfmProjectReferenceAdd">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeProjectTfmProjectReferenceRemove">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeSolutionProjectAdd">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeSolutionProjectRemove">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeSolutionReset">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeSolutionTopLevelEditorConfigAdd">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeSolutionTopLevelEditorConfigClear">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangeSolutionTopLevelEditorConfigRemove">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdChangesVersion">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdCloseDocumentRequest">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdCodeActionInfo">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdCodeActionRequestBase">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdCodeActionResult">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdCodeActionStatus">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdCompilationOutcome">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdCompilationsEntry">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdCompletionProviderInfo">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdCompletionProvidersPerProject">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdCoords">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdDebugHotReloadService">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdDebugHotReloadServiceArg">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdDebugPauseSessionModel">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdDiagnosticDescriptor">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdDiagnosticHighlighter">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdDiagnosticHighlighterKey">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdDiagnosticProperty">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdDiagnosticsSync">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdDocumentAddedChange">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdDocumentPatch">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdDocumentRemovedChange">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdDocumentRequest">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdDocumentTextChange">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdDumpEntry">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdFailure">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdGeneratedDocument">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdGeneratedResult">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdGetHighlighterArgs">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdGetNewSeverity">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdHighlighter">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdHotReloadApplyDeltaDiagnostic">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdHotReloadBuildDeltaResult">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdHotReloadBuildRoslynDeltaResultKind">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdHotReloadDelta">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdHotReloadDiagnostic">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdHotReloadManagerModel">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdHotReloadSessionModel">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="P:JetBrains.Roslyn.Worker.Models.RdHotReloadSessionModel.Flush">
+            <summary>
+            This method waits for all updates and lifetime terminations to be processed by Roslyn.Worker during the HotReload mode switch
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdLaunchQuickFixArgs">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdLaunchRefactoringArgs">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdLineEndings">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdLinePosition">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdNodeAndFilePathsBackend">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdNotHandledProject">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdObservabilityEntry">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdOpenDocumentRequest">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdOpenDocumentsEndpoints">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdPairBackendModel">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdPrepareDebugHotReloadArg">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdPrepareDebugHotReloadResult">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdPrepareRuntimeHotReloadArg">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdPrepareRuntimeHotReloadResult">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdProcedureResult">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdProjectAdded">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdProjectCommonInfo">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdProjectConfigProperties">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdProjectId">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdProjectModelEntry">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdProjectProperties">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdProjectReferenceAddedChange">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdProjectReferenceRemovedChange">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdProjectRemoved">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdProjectTargetFramework">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdProjectTfmRemoved">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdQuickFixChangeBase">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdQuickFixDescriptor">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdQuickFixDescriptorScope">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdQuickFixRequest">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdQuickFixRequestBase">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdRefactoringCodeAction">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdRefactoringProvider">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdRefactoringRequest">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdRefactoringRequestBase">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdRefactoringsSync">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdRoslynCodeCompletionArgs">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdRoslynCodeCompletionEntry">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdRoslynCodeCompletionItem">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdRoslynSyntaxItemBackend">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdRoslynSyntaxNodeAdditionalDataBackend">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdRoslynSyntaxTreeEntryBackend">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdRoslynSyntaxTreeEventBackend">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdRulesetAction">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdRulesetRule">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdRuntimeHotReloadService">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdSolution">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdSourceGeneratorsEntry">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdSourceGeneratorsError">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdSpanBackendModel">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdSyntaxTreeAddEventBackend">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdSyntaxTreeNewVersionEventBackend">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdSyntaxTreeNodeDataBackend">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdSyntaxTreeRemoveEventBackend">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdSyntaxTreeUpdateEventBackend">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdTargetFramework">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdTargetFrameworkInfo">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdThirdPartyError">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdThirdPartyErrorCause">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RdUpdateDocumentRequest">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+        <member name="T:JetBrains.Roslyn.Worker.Models.RoslynMemoryConsumptionInfo">
+            <summary>
+            <p>Generated from: RoslynModel.kt</p>
+            </summary>
+        </member>
+    </members>
+</doc>

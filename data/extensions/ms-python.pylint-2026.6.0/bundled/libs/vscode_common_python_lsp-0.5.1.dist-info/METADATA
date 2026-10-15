@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: vscode-common-python-lsp
+Version: 0.5.1
+Summary: Shared Python utilities for VS Code Python tool extensions
+Author: Microsoft Corporation
+License-Expression: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: pygls>=1.1.0
+Requires-Dist: lsprotocol>=2023.0.0
+Requires-Dist: packaging>=22.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: isort; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+
+# vscode-common-python-lsp (Python)
+
+Shared Python utilities for VS Code Python tool extensions.
+
+See the [main README](../README.md) for full documentation.

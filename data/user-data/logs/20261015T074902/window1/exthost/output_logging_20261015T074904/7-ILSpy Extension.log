@@ -1,0 +1,12 @@
+[07:49:08.017] Checking for .NET runtime v10.0
+[07:49:08.017] Already acquired d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.11~x64\dotnet.exe, use that for now and update after backend startup
+[07:49:08.020] ILSpy Backend: d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\bin\ilspy-backend\ILSpyX.Backend.LSP.dll
+[07:49:08.020] Starting LSP client...
+[07:49:08.020] ILSpy LSP Backend is starting...
+[07:49:08.021] Started LSP client
+[07:49:09.040] ILSpy LSP Backend is running
+[07:49:09.040] Checking for updates...
+[07:49:09.173] Aquiring finished, runtime path is: d:\All\IDLE\t\VSCode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.11~x64\dotnet.exe
+[07:49:09.173] Checking for additional runtime dependencies (Linux only)
+[07:49:09.174] Check for additional dependencies finished
+[07:52:15.484] ILSpy LSP Backend has stopped

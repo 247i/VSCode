@@ -1,0 +1,381 @@
+2026-10-15 05:54:48.956 [info] Extension host with pid 27844 started
+2026-10-15 05:54:48.985 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2026-10-15 05:54:49.004 [info] ExtensionService#_doActivateExtension mechatroner.rainbow-csv, startup: false, activationEvent: 'onLanguage:plaintext'
+2026-10-15 05:54:49.011 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2026-10-15 05:54:49.025 [info] ExtensionService#_doActivateExtension JakubKozera.csharp-dev-tools, startup: false, activationEvent: 'onCustomEditor:csharp-dev-tools.homepageEditor'
+2026-10-15 05:54:50.025 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2026-10-15 05:54:50.034 [info] ExtensionService#_doActivateExtension ms-vscode.test-adapter-converter, startup: true, activationEvent: '*', root cause: hbenl.vscode-test-explorer
+2026-10-15 05:54:50.042 [info] ExtensionService#_doActivateExtension jakubkozera.ms-sql-manager, startup: true, activationEvent: '*'
+2026-10-15 05:54:50.207 [info] ExtensionService#_doActivateExtension johnpapa.vscode-peacock, startup: true, activationEvent: '*'
+2026-10-15 05:54:50.221 [info] ExtensionService#_doActivateExtension oderwat.indent-rainbow, startup: true, activationEvent: '*'
+2026-10-15 05:54:50.226 [info] ExtensionService#_doActivateExtension vscode.microsoft-authentication, startup: false, activationEvent: 'onAuthenticationRequest:microsoft'
+2026-10-15 05:54:50.502 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2026-10-15 05:54:50.536 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2026-10-15 05:54:50.548 [info] ExtensionService#_doActivateExtension hbenl.vscode-test-explorer, startup: true, activationEvent: '*'
+2026-10-15 05:54:50.683 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-10-15 05:54:50.692 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-10-15 05:54:50.777 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-10-15 05:54:51.223 [info] Eager extensions activated
+2026-10-15 05:54:51.223 [info] [node-compile-cache] extension-host: packaged cache enabled (status: enabled, configured: D:\All\IDLE\t\VSCode\2a59476c9b\resources\app\node-compile-cache\extension-host, active: D:\All\IDLE\t\VSCode\2a59476c9b\resources\app\node-compile-cache\extension-host\v24.21.0-x64-c3a7e8f2)
+2026-10-15 05:54:51.306 [info] ExtensionService#_doActivateExtension GitHub.copilot-chat, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:54:52.053 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:54:52.056 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:54:52.066 [info] ExtensionService#_doActivateExtension alefragnani.Bookmarks, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:54:52.075 [info] ExtensionService#_doActivateExtension eamodio.gitlens, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:54:52.181 [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:54:52.189 [info] ExtensionService#_doActivateExtension Gabrielgod1.indent-rainbow-blocks, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:54:52.192 [info] ExtensionService#_doActivateExtension GitHub.vscode-pull-request-github, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:54:52.258 [info] ExtensionService#_doActivateExtension ms-dotnettools.vscode-dotnet-runtime, startup: false, activationEvent: 'onStartupFinished', root cause: icsharpcode.ilspy-vscode
+2026-10-15 05:54:52.308 [info] ExtensionService#_doActivateExtension PKief.material-icon-theme, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:54:52.322 [info] ExtensionService#_doActivateExtension SonarSource.sonarlint-vscode, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:54:52.520 [info] ExtensionService#_doActivateExtension streetsidesoftware.code-spell-checker, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:54:52.593 [info] ExtensionService#_doActivateExtension wumbl3.rainbow-html, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:54:52.692 [error] Activating extension alefragnani.Bookmarks failed due to an error:
+2026-10-15 05:54:52.692 [error] Error: command 'bookmarks.refresh' already exists
+	at Rf.registerCommand (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:165:47749)
+	at Object.registerCommand (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:295:139202)
+	at e.activate (d:\All\IDLE\t\VSCode\data\extensions\alefragnani.bookmarks-14.1.1\dist\extension-node.js:1:133472)
+	at async lI._activate (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:165:16021)
+	at async lI._waitForDepsThenActivate (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:165:15963)
+	at async lI._initialize (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:165:15330)
+2026-10-15 05:54:53.457 [info] ExtensionService#_doActivateExtension icsharpcode.ilspy-vscode, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:55:21.126 [info] Extension host terminating: received terminate message from renderer
+2026-10-15 05:55:21.143 [error] An error occurred when disposing the subscriptions for extension 'eamodio.gitlens':
+2026-10-15 05:55:21.147 [error] Error: Channel has been closed
+	at i (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:172:3935)
+	at Object.info (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:172:4305)
+	at Logger.info (d:\All\IDLE\t\VSCode\data\extensions\eamodio.gitlens-19.3.0\dist\gitlens.js:639:114789)
+	at GkCliService.stopIpc (d:\All\IDLE\t\VSCode\data\extensions\eamodio.gitlens-19.3.0\dist\gitlens.js:1120:55595)
+	at GkCliService.dispose (d:\All\IDLE\t\VSCode\data\extensions\eamodio.gitlens-19.3.0\dist\gitlens.js:1120:53429)
+	at d:\All\IDLE\t\VSCode\data\extensions\eamodio.gitlens-19.3.0\dist\gitlens.js:1007:70089
+	at Array.forEach (<anonymous>)
+	at Object.dispose (d:\All\IDLE\t\VSCode\data\extensions\eamodio.gitlens-19.3.0\dist\gitlens.js:1007:70070)
+	at Pn (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:26:736)
+	at Y_._fn (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:18537)
+	at Y_.dispose (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:26:1248)
+	at f_._deactivate (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:14854)
+	at file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:12156
+	at Array.map (<anonymous>)
+	at f_._deactivateAll (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:12144)
+	at f_.terminate (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:12495)
+	at r.terminate (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:171:1076)
+	at Sa (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:474:11797)
+	at Kp.value (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:474:9939)
+	at T._deliver (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:3617)
+	at T.fire (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:3935)
+	at ks.fire (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:8627)
+	at MessagePortMain.<anonymous> (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:474:8171)
+	at MessagePortMain.emit (node:events:514:28)
+	at Object.emit (node:electron/js2c/utility_init:2:2934)
+2026-10-15 05:55:21.162 [error] Canceled: Canceled
+	at new Rx (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:32:153847)
+	at r._remoteCall (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:32:159931)
+	at Proxy.<anonymous> (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:32:156684)
+	at bf.setValue (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:165:17022)
+	at file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:165:17838
+	at En.runner (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:165:17965)
+	at En.doRun (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:78705)
+	at En.onTimeout (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:78676)
+	at listOnTimeout (node:internal/timers:685:17)
+	at process.processTimers (node:internal/timers:618:7)
+2026-10-15 05:55:21.180 [error] Error: Channel has been closed
+	at i (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:172:3935)
+	at Object.info (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:172:4305)
+	at PT.info (d:\All\IDLE\t\VSCode\2a59476c9b\resources\app\extensions\json-language-features\client\dist\node\jsonClientMain.js:14:709)
+	at ChildProcess.<anonymous> (d:\All\IDLE\t\VSCode\2a59476c9b\resources\app\extensions\json-language-features\client\dist\node\jsonClientMain.js:28:36254)
+	at ChildProcess.emit (node:events:514:28)
+	at ChildProcess._handle.onexit (node:internal/child_process:295:12)
+2026-10-15 05:55:21.197 [error] Error: Pending response rejected since connection got disposed
+	at Object.dispose (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:132300)
+	at Object.dispose (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:186868)
+	at S.handleConnectionClosed (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:187266)
+	at S.handleConnectionClosed (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:347652)
+	at d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:187012
+	at r.invoke (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:134010)
+	at s.fire (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:134775)
+	at te (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:120453)
+	at r.invoke (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:134010)
+	at s.fire (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:134775)
+	at v.fireClose (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:142609)
+	at Socket.<anonymous> (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:144198)
+	at Socket.emit (node:events:526:24)
+	at Pipe.<anonymous> (node:net:362:12)
+2026-10-15 05:55:21.628 [info] Extension host with pid 4696 started
+2026-10-15 05:55:21.653 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2026-10-15 05:55:21.669 [info] ExtensionService#_doActivateExtension mechatroner.rainbow-csv, startup: false, activationEvent: 'onLanguage:plaintext'
+2026-10-15 05:55:21.674 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2026-10-15 05:55:21.686 [info] ExtensionService#_doActivateExtension JakubKozera.csharp-dev-tools, startup: false, activationEvent: 'onCustomEditor:csharp-dev-tools.homepageEditor'
+2026-10-15 05:55:21.907 [info] ExtensionService#_doActivateExtension vscode.microsoft-authentication, startup: false, activationEvent: 'onAuthenticationRequest:microsoft'
+2026-10-15 05:55:21.941 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-10-15 05:55:21.948 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-10-15 05:55:22.020 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-10-15 05:55:22.064 [info] ExtensionService#_doActivateExtension ms-vscode.test-adapter-converter, startup: false, activationEvent: 'onCommand:testExplorerConverter.activate'
+2026-10-15 05:55:22.069 [info] ExtensionService#_doActivateExtension GitHub.copilot-chat, startup: false, activationEvent: 'onLanguageModelChatProvider:copilot'
+2026-10-15 05:55:22.936 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2026-10-15 05:55:22.941 [info] ExtensionService#_doActivateExtension jakubkozera.ms-sql-manager, startup: true, activationEvent: '*'
+2026-10-15 05:55:23.017 [info] ExtensionService#_doActivateExtension johnpapa.vscode-peacock, startup: true, activationEvent: '*'
+2026-10-15 05:55:23.023 [info] ExtensionService#_doActivateExtension oderwat.indent-rainbow, startup: true, activationEvent: '*'
+2026-10-15 05:55:23.080 [info] ExtensionService#_doActivateExtension hbenl.vscode-test-explorer, startup: true, activationEvent: '*'
+2026-10-15 05:55:23.167 [error] Error: Channel has been closed
+	at i (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:172:3935)
+	at Object.error (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:172:4394)
+	at s.error (d:\All\IDLE\t\VSCode\data\extensions\sonarsource.sonarlint-vscode-6.0.1-win32-x64\dist\extension.js:2:866841)
+	at d:\All\IDLE\t\VSCode\data\extensions\sonarsource.sonarlint-vscode-6.0.1-win32-x64\dist\extension.js:2:875293
+	at runNextTicks (node:internal/process/task_queues:65:5)
+	at listOnTimeout (node:internal/timers:644:9)
+	at process.processTimers (node:internal/timers:618:7)
+	at async Promise.all (index 27)
+	at async f_._deactivateAll (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:12179)
+2026-10-15 05:55:23.167 [info] Extension host with pid 27844 exiting with code 0
+2026-10-15 05:55:23.223 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2026-10-15 05:55:23.250 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2026-10-15 05:55:23.759 [info] ExtensionService#_doActivateExtension GitHub.vscode-pull-request-github, startup: false, activationEvent: 'api', root cause: GitHub.copilot-chat
+2026-10-15 05:55:24.172 [info] Eager extensions activated
+2026-10-15 05:55:24.172 [info] [node-compile-cache] extension-host: packaged cache enabled (status: enabled, configured: D:\All\IDLE\t\VSCode\2a59476c9b\resources\app\node-compile-cache\extension-host, active: D:\All\IDLE\t\VSCode\2a59476c9b\resources\app\node-compile-cache\extension-host\v24.21.0-x64-c3a7e8f2)
+2026-10-15 05:55:24.187 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:55:24.189 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:55:24.198 [info] ExtensionService#_doActivateExtension alefragnani.Bookmarks, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:55:24.205 [info] ExtensionService#_doActivateExtension eamodio.gitlens, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:55:24.310 [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:55:24.317 [info] ExtensionService#_doActivateExtension Gabrielgod1.indent-rainbow-blocks, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:55:24.319 [info] ExtensionService#_doActivateExtension ms-dotnettools.vscode-dotnet-runtime, startup: false, activationEvent: 'onStartupFinished', root cause: icsharpcode.ilspy-vscode
+2026-10-15 05:55:24.368 [info] ExtensionService#_doActivateExtension PKief.material-icon-theme, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:55:24.380 [info] ExtensionService#_doActivateExtension SonarSource.sonarlint-vscode, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:55:24.575 [info] ExtensionService#_doActivateExtension streetsidesoftware.code-spell-checker, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:55:24.635 [info] ExtensionService#_doActivateExtension wumbl3.rainbow-html, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:55:24.672 [error] Activating extension alefragnani.Bookmarks failed due to an error:
+2026-10-15 05:55:24.672 [error] Error: command 'bookmarks.refresh' already exists
+	at Rf.registerCommand (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:165:47749)
+	at Object.registerCommand (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:295:139202)
+	at e.activate (d:\All\IDLE\t\VSCode\data\extensions\alefragnani.bookmarks-14.1.1\dist\extension-node.js:1:133472)
+	at async lI._activate (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:165:16021)
+	at async lI._waitForDepsThenActivate (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:165:15963)
+	at async lI._initialize (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:165:15330)
+2026-10-15 05:55:24.962 [info] ExtensionService#_doActivateExtension icsharpcode.ilspy-vscode, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:55:59.522 [info] Extension host terminating: received terminate message from renderer
+2026-10-15 05:55:59.541 [error] An error occurred when disposing the subscriptions for extension 'eamodio.gitlens':
+2026-10-15 05:55:59.545 [error] Error: Channel has been closed
+	at i (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:172:3935)
+	at Object.info (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:172:4305)
+	at Logger.info (d:\All\IDLE\t\VSCode\data\extensions\eamodio.gitlens-19.3.0\dist\gitlens.js:639:114789)
+	at GkCliService.stopIpc (d:\All\IDLE\t\VSCode\data\extensions\eamodio.gitlens-19.3.0\dist\gitlens.js:1120:55595)
+	at GkCliService.dispose (d:\All\IDLE\t\VSCode\data\extensions\eamodio.gitlens-19.3.0\dist\gitlens.js:1120:53429)
+	at d:\All\IDLE\t\VSCode\data\extensions\eamodio.gitlens-19.3.0\dist\gitlens.js:1007:70089
+	at Array.forEach (<anonymous>)
+	at Object.dispose (d:\All\IDLE\t\VSCode\data\extensions\eamodio.gitlens-19.3.0\dist\gitlens.js:1007:70070)
+	at Pn (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:26:736)
+	at Y_._fn (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:18537)
+	at Y_.dispose (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:26:1248)
+	at f_._deactivate (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:14854)
+	at file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:12156
+	at Array.map (<anonymous>)
+	at f_._deactivateAll (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:12144)
+	at f_.terminate (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:12495)
+	at r.terminate (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:171:1076)
+	at Sa (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:474:11797)
+	at Kp.value (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:474:9939)
+	at T._deliver (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:3617)
+	at T.fire (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:3935)
+	at ks.fire (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:8627)
+	at MessagePortMain.<anonymous> (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:474:8171)
+	at MessagePortMain.emit (node:events:514:28)
+	at Object.emit (node:electron/js2c/utility_init:2:2934)
+2026-10-15 05:55:59.558 [error] Canceled: Canceled
+	at new Rx (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:32:153847)
+	at r._remoteCall (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:32:159931)
+	at Proxy.<anonymous> (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:32:156684)
+	at bf.setValue (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:165:17022)
+	at file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:165:17838
+	at En.runner (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:165:17965)
+	at En.doRun (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:78705)
+	at En.onTimeout (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:78676)
+	at listOnTimeout (node:internal/timers:685:17)
+	at process.processTimers (node:internal/timers:618:7)
+2026-10-15 05:55:59.577 [error] Error: Channel has been closed
+	at i (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:172:3935)
+	at Object.info (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:172:4305)
+	at PT.info (d:\All\IDLE\t\VSCode\2a59476c9b\resources\app\extensions\json-language-features\client\dist\node\jsonClientMain.js:14:709)
+	at ChildProcess.<anonymous> (d:\All\IDLE\t\VSCode\2a59476c9b\resources\app\extensions\json-language-features\client\dist\node\jsonClientMain.js:28:36254)
+	at ChildProcess.emit (node:events:514:28)
+	at ChildProcess._handle.onexit (node:internal/child_process:295:12)
+2026-10-15 05:55:59.591 [error] Error: Pending response rejected since connection got disposed
+	at Object.dispose (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:132300)
+	at Object.dispose (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:186868)
+	at S.handleConnectionClosed (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:187266)
+	at S.handleConnectionClosed (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:347652)
+	at d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:187012
+	at r.invoke (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:134010)
+	at s.fire (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:134775)
+	at te (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:120453)
+	at r.invoke (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:134010)
+	at s.fire (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:134775)
+	at v.fireClose (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:142609)
+	at Socket.<anonymous> (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:144198)
+	at Socket.emit (node:events:526:24)
+	at Pipe.<anonymous> (node:net:362:12)
+2026-10-15 05:56:00.038 [info] Extension host with pid 27500 started
+2026-10-15 05:56:00.064 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2026-10-15 05:56:00.079 [info] ExtensionService#_doActivateExtension mechatroner.rainbow-csv, startup: false, activationEvent: 'onLanguage:plaintext'
+2026-10-15 05:56:00.084 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2026-10-15 05:56:00.096 [info] ExtensionService#_doActivateExtension JakubKozera.csharp-dev-tools, startup: false, activationEvent: 'onCustomEditor:csharp-dev-tools.homepageEditor'
+2026-10-15 05:56:00.302 [info] ExtensionService#_doActivateExtension vscode.microsoft-authentication, startup: false, activationEvent: 'onAuthenticationRequest:microsoft'
+2026-10-15 05:56:00.333 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-10-15 05:56:00.340 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-10-15 05:56:00.406 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-10-15 05:56:00.449 [info] ExtensionService#_doActivateExtension ms-vscode.test-adapter-converter, startup: false, activationEvent: 'onCommand:testExplorerConverter.activate'
+2026-10-15 05:56:00.454 [info] ExtensionService#_doActivateExtension GitHub.copilot-chat, startup: false, activationEvent: 'onLanguageModelChatProvider:copilot'
+2026-10-15 05:56:01.287 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2026-10-15 05:56:01.291 [info] ExtensionService#_doActivateExtension jakubkozera.ms-sql-manager, startup: true, activationEvent: '*'
+2026-10-15 05:56:01.369 [info] ExtensionService#_doActivateExtension johnpapa.vscode-peacock, startup: true, activationEvent: '*'
+2026-10-15 05:56:01.375 [info] ExtensionService#_doActivateExtension oderwat.indent-rainbow, startup: true, activationEvent: '*'
+2026-10-15 05:56:01.430 [info] ExtensionService#_doActivateExtension hbenl.vscode-test-explorer, startup: true, activationEvent: '*'
+2026-10-15 05:56:01.467 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2026-10-15 05:56:01.496 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2026-10-15 05:56:01.557 [error] Error: Channel has been closed
+	at i (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:172:3935)
+	at Object.error (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:172:4394)
+	at s.error (d:\All\IDLE\t\VSCode\data\extensions\sonarsource.sonarlint-vscode-6.0.1-win32-x64\dist\extension.js:2:866841)
+	at d:\All\IDLE\t\VSCode\data\extensions\sonarsource.sonarlint-vscode-6.0.1-win32-x64\dist\extension.js:2:875293
+	at runNextTicks (node:internal/process/task_queues:65:5)
+	at listOnTimeout (node:internal/timers:644:9)
+	at process.processTimers (node:internal/timers:618:7)
+	at async Promise.all (index 27)
+	at async f_._deactivateAll (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:12179)
+2026-10-15 05:56:01.558 [info] Extension host with pid 4696 exiting with code 0
+2026-10-15 05:56:02.310 [info] Eager extensions activated
+2026-10-15 05:56:02.310 [info] [node-compile-cache] extension-host: packaged cache enabled (status: enabled, configured: D:\All\IDLE\t\VSCode\2a59476c9b\resources\app\node-compile-cache\extension-host, active: D:\All\IDLE\t\VSCode\2a59476c9b\resources\app\node-compile-cache\extension-host\v24.21.0-x64-c3a7e8f2)
+2026-10-15 05:56:02.324 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:56:02.326 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:56:02.334 [info] ExtensionService#_doActivateExtension alefragnani.Bookmarks, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:56:02.342 [info] ExtensionService#_doActivateExtension eamodio.gitlens, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:56:02.460 [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:56:02.467 [info] ExtensionService#_doActivateExtension Gabrielgod1.indent-rainbow-blocks, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:56:02.469 [info] ExtensionService#_doActivateExtension GitHub.vscode-pull-request-github, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:56:02.535 [info] ExtensionService#_doActivateExtension ms-dotnettools.vscode-dotnet-runtime, startup: false, activationEvent: 'onStartupFinished', root cause: icsharpcode.ilspy-vscode
+2026-10-15 05:56:02.588 [info] ExtensionService#_doActivateExtension PKief.material-icon-theme, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:56:02.601 [info] ExtensionService#_doActivateExtension SonarSource.sonarlint-vscode, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:56:02.797 [info] ExtensionService#_doActivateExtension streetsidesoftware.code-spell-checker, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:56:02.858 [info] ExtensionService#_doActivateExtension wumbl3.rainbow-html, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 05:56:02.871 [error] Activating extension alefragnani.Bookmarks failed due to an error:
+2026-10-15 05:56:02.871 [error] Error: command 'bookmarks.refresh' already exists
+	at Rf.registerCommand (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:165:47749)
+	at Object.registerCommand (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:295:139202)
+	at e.activate (d:\All\IDLE\t\VSCode\data\extensions\alefragnani.bookmarks-14.1.1\dist\extension-node.js:1:133472)
+	at async lI._activate (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:165:16021)
+	at async lI._waitForDepsThenActivate (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:165:15963)
+	at async lI._initialize (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:165:15330)
+2026-10-15 05:56:03.252 [info] ExtensionService#_doActivateExtension icsharpcode.ilspy-vscode, startup: false, activationEvent: 'onStartupFinished'
+2026-10-15 07:20:48.376 [info] ExtensionService#_doActivateExtension ms-python.vscode-python-envs, startup: false, activationEvent: 'onView:python-projects'
+2026-10-15 07:23:05.584 [info] Extension host terminating: received terminate message from renderer
+2026-10-15 07:23:05.617 [error] An error occurred when disposing the subscriptions for extension 'eamodio.gitlens':
+2026-10-15 07:23:05.622 [error] Error: Channel has been closed
+	at i (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:172:3935)
+	at Object.info (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:172:4305)
+	at Logger.info (d:\All\IDLE\t\VSCode\data\extensions\eamodio.gitlens-19.3.0\dist\gitlens.js:639:114789)
+	at GkCliService.stopIpc (d:\All\IDLE\t\VSCode\data\extensions\eamodio.gitlens-19.3.0\dist\gitlens.js:1120:55595)
+	at GkCliService.dispose (d:\All\IDLE\t\VSCode\data\extensions\eamodio.gitlens-19.3.0\dist\gitlens.js:1120:53429)
+	at d:\All\IDLE\t\VSCode\data\extensions\eamodio.gitlens-19.3.0\dist\gitlens.js:1007:70089
+	at Array.forEach (<anonymous>)
+	at Object.dispose (d:\All\IDLE\t\VSCode\data\extensions\eamodio.gitlens-19.3.0\dist\gitlens.js:1007:70070)
+	at Pn (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:26:736)
+	at Y_._fn (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:18537)
+	at Y_.dispose (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:26:1248)
+	at f_._deactivate (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:14854)
+	at file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:12156
+	at Array.map (<anonymous>)
+	at f_._deactivateAll (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:12144)
+	at f_.terminate (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:12495)
+	at r.terminate (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:171:1076)
+	at Sa (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:474:11797)
+	at Kp.value (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:474:9939)
+	at T._deliver (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:3617)
+	at T.fire (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:3935)
+	at ks.fire (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:8627)
+	at MessagePortMain.<anonymous> (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:474:8171)
+	at MessagePortMain.emit (node:events:514:28)
+	at Object.emit (node:electron/js2c/utility_init:2:2934)
+2026-10-15 07:23:05.632 [error] An error occurred when disposing the subscriptions for extension 'ms-python.vscode-python-envs':
+2026-10-15 07:23:05.632 [error] Error: Channel has been closed
+	at i (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:172:3935)
+	at Object.error (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:172:4394)
+	at Object.dispose (d:\All\IDLE\t\VSCode\data\extensions\ms-python.vscode-python-envs-1.40.0-win32-x64\dist\extension.js:2:810930)
+	at d:\All\IDLE\t\VSCode\data\extensions\ms-python.vscode-python-envs-1.40.0-win32-x64\dist\extension.js:2:809517
+	at Array.forEach (<anonymous>)
+	at D.dispose (d:\All\IDLE\t\VSCode\data\extensions\ms-python.vscode-python-envs-1.40.0-win32-x64\dist\extension.js:2:809504)
+	at Pn (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:26:736)
+	at Y_._fn (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:18537)
+	at Y_.dispose (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:26:1248)
+	at f_._deactivate (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:14854)
+	at file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:12156
+	at Array.map (<anonymous>)
+	at f_._deactivateAll (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:12144)
+	at f_.terminate (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:12495)
+	at r.terminate (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:171:1076)
+	at Sa (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:474:11797)
+	at Kp.value (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:474:9939)
+	at T._deliver (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:3617)
+	at T.fire (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:3935)
+	at ks.fire (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:8627)
+	at MessagePortMain.<anonymous> (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:474:8171)
+	at MessagePortMain.emit (node:events:514:28)
+	at Object.emit (node:electron/js2c/utility_init:2:2934)
+2026-10-15 07:23:05.636 [error] TypeError: Cannot read properties of undefined (reading 'subscriptions')
+	at Object.ce [as deactivate] (d:\All\IDLE\t\VSCode\data\extensions\ms-python.vscode-python-envs-1.40.0-win32-x64\dist\extension.js:2:1037080)
+	at f_._deactivate (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:14629)
+	at file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:12156
+	at Array.map (<anonymous>)
+	at f_._deactivateAll (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:12144)
+	at f_.terminate (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:12495)
+	at r.terminate (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:171:1076)
+	at Sa (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:474:11797)
+	at Kp.value (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:474:9939)
+	at T._deliver (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:3617)
+	at T.fire (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:3935)
+	at ks.fire (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:8627)
+	at MessagePortMain.<anonymous> (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:474:8171)
+	at MessagePortMain.emit (node:events:514:28)
+	at Object.emit (node:electron/js2c/utility_init:2:2934)
+2026-10-15 07:23:05.641 [error] Canceled: Canceled
+	at new Rx (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:32:153847)
+	at r._remoteCall (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:32:159931)
+	at Proxy.<anonymous> (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:32:156684)
+	at bf.setValue (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:165:17022)
+	at file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:165:17838
+	at En.runner (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:165:17965)
+	at En.doRun (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:78705)
+	at En.onTimeout (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:78676)
+	at listOnTimeout (node:internal/timers:685:17)
+	at process.processTimers (node:internal/timers:618:7)
+2026-10-15 07:23:05.662 [error] Error: Channel has been closed
+	at i (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:172:3935)
+	at Object.info (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:172:4305)
+	at PT.info (d:\All\IDLE\t\VSCode\2a59476c9b\resources\app\extensions\json-language-features\client\dist\node\jsonClientMain.js:14:709)
+	at ChildProcess.<anonymous> (d:\All\IDLE\t\VSCode\2a59476c9b\resources\app\extensions\json-language-features\client\dist\node\jsonClientMain.js:28:36254)
+	at ChildProcess.emit (node:events:514:28)
+	at ChildProcess._handle.onexit (node:internal/child_process:295:12)
+2026-10-15 07:23:05.675 [error] Error: Pending response rejected since connection got disposed
+	at Object.dispose (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:132300)
+	at Object.dispose (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:186868)
+	at S.handleConnectionClosed (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:187266)
+	at S.handleConnectionClosed (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:347652)
+	at d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:187012
+	at r.invoke (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:134010)
+	at s.fire (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:134775)
+	at te (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:120453)
+	at r.invoke (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:134010)
+	at s.fire (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:134775)
+	at v.fireClose (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:142609)
+	at Socket.<anonymous> (d:\All\IDLE\t\VSCode\data\extensions\icsharpcode.ilspy-vscode-1.0.0\dist\extension.js:1:144198)
+	at Socket.emit (node:events:526:24)
+	at Pipe.<anonymous> (node:net:362:12)
+2026-10-15 07:23:07.640 [error] Error: Channel has been closed
+	at i (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:172:3935)
+	at Object.error (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:172:4394)
+	at s.error (d:\All\IDLE\t\VSCode\data\extensions\sonarsource.sonarlint-vscode-6.0.1-win32-x64\dist\extension.js:2:866841)
+	at d:\All\IDLE\t\VSCode\data\extensions\sonarsource.sonarlint-vscode-6.0.1-win32-x64\dist\extension.js:2:875293
+	at runNextTicks (node:internal/process/task_queues:65:5)
+	at listOnTimeout (node:internal/timers:644:9)
+	at process.processTimers (node:internal/timers:618:7)
+	at async Promise.all (index 28)
+	at async f_._deactivateAll (file:///d:/All/IDLE/t/VSCode/2a59476c9b/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:169:12179)
+2026-10-15 07:23:07.640 [info] Extension host with pid 27500 exiting with code 0

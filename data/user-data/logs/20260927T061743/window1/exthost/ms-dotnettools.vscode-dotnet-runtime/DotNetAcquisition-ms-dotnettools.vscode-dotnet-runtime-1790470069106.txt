@@ -1,0 +1,2046 @@
+9/27/2026, 6:17:49 AM 107 AutomaticUpdateCheck
+Checking for updates after 300000. Last Update Date: 2026-09-12T20:29:48.871Z. Current Date: 2026-09-27T00:47:49.106Z
+
+9/27/2026, 6:17:49 AM 107 AutomaticUpdateCheck
+Commencing updates at 1790470069107 in 300000 ms.
+
+9/27/2026, 6:17:49 AM 109 DotnetVSCodeExtensionFound
+true
+Checking extension TypeScriptTeam.jsts-chat-features for .NET installation requests
+
+9/27/2026, 6:17:49 AM 109 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.csharp for .NET installation requests
+
+9/27/2026, 6:17:49 AM 109 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.dotenv for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.mermaid-markdown-features for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.prompt for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.vscode-modern-icons for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension alefragnani.Bookmarks for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension astrapios.pythonrepl for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension bierner.markdown-emoji for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension bierner.markdown-mermaid for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension DavidAnson.vscode-markdownlint for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension daylerees.rainglow for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension eamodio.gitlens for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension emallin.phpunit for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension EricSia.pythonsnippets3 for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension esbenp.prettier-vscode for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension Gabrielgod1.indent-rainbow-blocks for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension hbenl.vscode-test-explorer for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension Hirse.vscode-ungit for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension IBM.output-colorizer for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension icsharpcode.ilspy-vscode for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension JakubKozera.csharp-dev-tools for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension jakubkozera.github-copilot-code-reviewer for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension jakubkozera.ms-sql-manager for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension JetBrains.resharper-code for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension johnpapa.vscode-peacock for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension mechatroner.rainbow-csv for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension mgesbert.python-path for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension mrorz.language-gettext for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension ms-dotnettools.csdevkit for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension ms-dotnettools.csharp for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension ms-dotnettools.vscode-dotnet-runtime for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension ms-python.pylint for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension ms-python.vscode-python-envs for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension ms-toolsai.vscode-jupyter-cell-tags for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension ms-toolsai.vscode-jupyter-slideshow for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension ms-vscode.test-adapter-converter for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension oderwat.indent-rainbow for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension PKief.material-icon-theme for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension PrateekMahendrakar.prettyxml for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension redhat.vscode-xml for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension rhasan.gotomanual for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension SAPOSS.xml-toolkit for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension se-dev-pion.rainbow-struct-field-tags for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension SonarSource.sonarlint-vscode for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension streetsidesoftware.code-spell-checker for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension TalhaKhalil.preprocessor-rainbow for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension twxs.cmake for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension wumbl3.rainbow-html for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension yzhang.markdown-all-in-one for .NET installation requests
+
+9/27/2026, 6:17:49 AM 110 DotnetVSCodeExtensionFound
+true
+Checking extension ZainChen.json for .NET installation requests
+
+9/27/2026, 6:17:51 AM 697 DotnetAcquisitionRequested
+10.0
+fdbe9d2a825d21a953cf5a1d3c5284bf1240a5aa09800f57c4f467a4d0c8e84b
+
+9/27/2026, 6:17:51 AM 698 DotnetRuntimeAcquisitionRequested
+10.0
+fdbe9d2a825d21a953cf5a1d3c5284bf1240a5aa09800f57c4f467a4d0c8e84b
+runtime
+
+9/27/2026, 6:17:51 AM 856 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: session-9acf9df1c0 Lock acquired: \\.\pipe\vscd-session-9acf9df1c0-sock
+2026-09-27T00:47:51.856Z
+session-9acf9df1c0
+session-9acf9df1c0
+true
+
+9/27/2026, 6:17:51 AM 856 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-cd6148e6-c91f-46db-9610-c270aa58142b Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:47:51.856Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:17:51 AM 860 [e692af44-53a7-4194-883e-983be6469453] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+9/27/2026, 6:17:51 AM 860 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-cd6148e6-c91f-46db-9610-c270aa58142b Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:47:51.860Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:17:51 AM 861 [e692af44-53a7-4194-883e-983be6469453] DotnetAcquisitionStatusResolved
+10.0~x64
+10.0~x64
+10.0
+x64
+false
+runtime
+10.0
+
+9/27/2026, 6:17:51 AM 862 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-ca82001a-be60-48e0-9f4a-e230e32e2f11 Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:47:51.862Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:17:51 AM 863 [e692af44-53a7-4194-883e-983be6469453] AddTrackingVersions
+true
+Adding {"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} with id 10.0.11~x64 from the state.
+
+9/27/2026, 6:17:51 AM 863 [e692af44-53a7-4194-883e-983be6469453] DotnetInstallationValidated
+10.0.11~x64
+10.0.11~x64
+10.0.11
+x64
+false
+runtime
+
+9/27/2026, 6:17:51 AM 864 [e692af44-53a7-4194-883e-983be6469453] MarkedInstallInUse
+Session session-9acf9df1c0 marked d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.11~x64\dotnet.exe as in use.
+Sessions: {"session-069fb0288b":["d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe","d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\9.0.20~x64~aspnetcore\\dotnet.exe","d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.12~x64\\dotnet.exe"],"session-0185600f61":["d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe"],"session-720b1e9705":["d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe"],"session-9acf9df1c0":["d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe"]}
+
+9/27/2026, 6:17:51 AM 875 [e692af44-53a7-4194-883e-983be6469453] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+9/27/2026, 6:17:51 AM 875 [e692af44-53a7-4194-883e-983be6469453] AddTrackingVersions
+true
+Updated installed :
+{"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+ 
+
+9/27/2026, 6:17:51 AM 888 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-ca82001a-be60-48e0-9f4a-e230e32e2f11 Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:47:51.888Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:17:51 AM 888 DotnetCommandSucceeded
+acquire
+
+9/27/2026, 6:17:51 AM 889 DotnetAcquisitionTotalSuccessEvent
+10.0
+10.0~x64
+10.0~x64
+10.0
+x64
+false
+runtime
+fdbe9d2a825d21a953cf5a1d3c5284bf1240a5aa09800f57c4f467a4d0c8e84b
+d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.11~x64\dotnet.exe
+
+9/27/2026, 6:17:51 AM 890 DotnetRuntimeAcquisitionTotalSuccessEvent
+10.0~x64
+10.0
+x64
+false
+runtime
+
+9/27/2026, 6:17:51 AM 891 DotnetCommandSucceeded
+ensureDependencies
+
+9/27/2026, 6:17:55 AM 795 DotnetVSCodeExtensionChange
+true
+A change was detected in the extensions. Installing .NET for new extensions.
+
+9/27/2026, 6:17:55 AM 795 DotnetVSCodeExtensionFound
+true
+Checking extension TypeScriptTeam.jsts-chat-features for .NET installation requests
+
+9/27/2026, 6:17:55 AM 795 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.csharp for .NET installation requests
+
+9/27/2026, 6:17:55 AM 795 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.dotenv for .NET installation requests
+
+9/27/2026, 6:17:55 AM 795 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.mermaid-markdown-features for .NET installation requests
+
+9/27/2026, 6:17:55 AM 795 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.prompt for .NET installation requests
+
+9/27/2026, 6:17:55 AM 795 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.vscode-modern-icons for .NET installation requests
+
+9/27/2026, 6:17:55 AM 795 DotnetVSCodeExtensionFound
+true
+Checking extension alefragnani.Bookmarks for .NET installation requests
+
+9/27/2026, 6:17:55 AM 795 DotnetVSCodeExtensionFound
+true
+Checking extension astrapios.pythonrepl for .NET installation requests
+
+9/27/2026, 6:17:55 AM 795 DotnetVSCodeExtensionFound
+true
+Checking extension bierner.markdown-emoji for .NET installation requests
+
+9/27/2026, 6:17:55 AM 795 DotnetVSCodeExtensionFound
+true
+Checking extension bierner.markdown-mermaid for .NET installation requests
+
+9/27/2026, 6:17:55 AM 795 DotnetVSCodeExtensionFound
+true
+Checking extension DavidAnson.vscode-markdownlint for .NET installation requests
+
+9/27/2026, 6:17:55 AM 795 DotnetVSCodeExtensionFound
+true
+Checking extension daylerees.rainglow for .NET installation requests
+
+9/27/2026, 6:17:55 AM 795 DotnetVSCodeExtensionFound
+true
+Checking extension eamodio.gitlens for .NET installation requests
+
+9/27/2026, 6:17:55 AM 795 DotnetVSCodeExtensionFound
+true
+Checking extension emallin.phpunit for .NET installation requests
+
+9/27/2026, 6:17:55 AM 795 DotnetVSCodeExtensionFound
+true
+Checking extension EricSia.pythonsnippets3 for .NET installation requests
+
+9/27/2026, 6:17:55 AM 795 DotnetVSCodeExtensionFound
+true
+Checking extension esbenp.prettier-vscode for .NET installation requests
+
+9/27/2026, 6:17:55 AM 795 DotnetVSCodeExtensionFound
+true
+Checking extension Gabrielgod1.indent-rainbow-blocks for .NET installation requests
+
+9/27/2026, 6:17:55 AM 795 DotnetVSCodeExtensionFound
+true
+Checking extension hbenl.vscode-test-explorer for .NET installation requests
+
+9/27/2026, 6:17:55 AM 795 DotnetVSCodeExtensionFound
+true
+Checking extension Hirse.vscode-ungit for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension IBM.output-colorizer for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension icsharpcode.ilspy-vscode for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension JakubKozera.csharp-dev-tools for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension jakubkozera.github-copilot-code-reviewer for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension jakubkozera.ms-sql-manager for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension JetBrains.resharper-code for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension johnpapa.vscode-peacock for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension mechatroner.rainbow-csv for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension mgesbert.python-path for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension mrorz.language-gettext for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension ms-dotnettools.csdevkit for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension ms-dotnettools.csharp for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension ms-dotnettools.vscode-dotnet-runtime for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension ms-python.pylint for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension ms-python.vscode-python-envs for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension ms-toolsai.vscode-jupyter-cell-tags for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension ms-toolsai.vscode-jupyter-slideshow for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension ms-vscode.test-adapter-converter for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension oderwat.indent-rainbow for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension PKief.material-icon-theme for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension PrateekMahendrakar.prettyxml for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension redhat.vscode-xml for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension rhasan.gotomanual for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension SAPOSS.xml-toolkit for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension se-dev-pion.rainbow-struct-field-tags for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension SonarSource.sonarlint-vscode for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension streetsidesoftware.code-spell-checker for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension TalhaKhalil.preprocessor-rainbow for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension twxs.cmake for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension wumbl3.rainbow-html for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension yzhang.markdown-all-in-one for .NET installation requests
+
+9/27/2026, 6:17:55 AM 796 DotnetVSCodeExtensionFound
+true
+Checking extension ZainChen.json for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionChange
+true
+A change was detected in the extensions. Installing .NET for new extensions.
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension TypeScriptTeam.jsts-chat-features for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.csharp for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.dotenv for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.mermaid-markdown-features for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.prompt for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.vscode-modern-icons for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension alefragnani.Bookmarks for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension astrapios.pythonrepl for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension bierner.markdown-emoji for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension bierner.markdown-mermaid for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension DavidAnson.vscode-markdownlint for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension daylerees.rainglow for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension eamodio.gitlens for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension emallin.phpunit for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension EricSia.pythonsnippets3 for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension esbenp.prettier-vscode for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension Gabrielgod1.indent-rainbow-blocks for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension hbenl.vscode-test-explorer for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension Hirse.vscode-ungit for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension IBM.output-colorizer for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension icsharpcode.ilspy-vscode for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension JakubKozera.csharp-dev-tools for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension jakubkozera.github-copilot-code-reviewer for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension jakubkozera.ms-sql-manager for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension JetBrains.resharper-code for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension johnpapa.vscode-peacock for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension mechatroner.rainbow-csv for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension mgesbert.python-path for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension mrorz.language-gettext for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension ms-dotnettools.csdevkit for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension ms-dotnettools.csharp for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension ms-dotnettools.vscode-dotnet-runtime for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension ms-python.pylint for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension ms-python.vscode-python-envs for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension ms-toolsai.vscode-jupyter-cell-tags for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension ms-toolsai.vscode-jupyter-slideshow for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension ms-vscode.test-adapter-converter for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension oderwat.indent-rainbow for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension PKief.material-icon-theme for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension PrateekMahendrakar.prettyxml for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension redhat.vscode-xml for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension rhasan.gotomanual for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension SAPOSS.xml-toolkit for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension se-dev-pion.rainbow-struct-field-tags for .NET installation requests
+
+9/27/2026, 6:18:06 AM 475 DotnetVSCodeExtensionFound
+true
+Checking extension SonarSource.sonarlint-vscode for .NET installation requests
+
+9/27/2026, 6:18:06 AM 476 DotnetVSCodeExtensionFound
+true
+Checking extension streetsidesoftware.code-spell-checker for .NET installation requests
+
+9/27/2026, 6:18:06 AM 476 DotnetVSCodeExtensionFound
+true
+Checking extension TalhaKhalil.preprocessor-rainbow for .NET installation requests
+
+9/27/2026, 6:18:06 AM 476 DotnetVSCodeExtensionFound
+true
+Checking extension twxs.cmake for .NET installation requests
+
+9/27/2026, 6:18:06 AM 476 DotnetVSCodeExtensionFound
+true
+Checking extension wumbl3.rainbow-html for .NET installation requests
+
+9/27/2026, 6:18:06 AM 476 DotnetVSCodeExtensionFound
+true
+Checking extension yzhang.markdown-all-in-one for .NET installation requests
+
+9/27/2026, 6:18:06 AM 476 DotnetVSCodeExtensionFound
+true
+Checking extension ZainChen.json for .NET installation requests
+
+9/27/2026, 6:18:25 AM 705 DotnetVSCodeExtensionChange
+true
+A change was detected in the extensions. Installing .NET for new extensions.
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension TypeScriptTeam.jsts-chat-features for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.csharp for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.dotenv for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.mermaid-markdown-features for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.prompt for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.vscode-modern-icons for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension alefragnani.Bookmarks for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension astrapios.pythonrepl for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension bierner.markdown-emoji for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension bierner.markdown-mermaid for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension DavidAnson.vscode-markdownlint for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension daylerees.rainglow for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension eamodio.gitlens for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension emallin.phpunit for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension EricSia.pythonsnippets3 for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension esbenp.prettier-vscode for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension Gabrielgod1.indent-rainbow-blocks for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension hbenl.vscode-test-explorer for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension Hirse.vscode-ungit for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension IBM.output-colorizer for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension icsharpcode.ilspy-vscode for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension JakubKozera.csharp-dev-tools for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension jakubkozera.github-copilot-code-reviewer for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension jakubkozera.ms-sql-manager for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension JetBrains.resharper-code for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension johnpapa.vscode-peacock for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension mechatroner.rainbow-csv for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension mgesbert.python-path for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension mrorz.language-gettext for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension ms-dotnettools.csdevkit for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension ms-dotnettools.csharp for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension ms-dotnettools.vscode-dotnet-runtime for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension ms-python.pylint for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension ms-python.vscode-python-envs for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension ms-toolsai.vscode-jupyter-cell-tags for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension ms-toolsai.vscode-jupyter-slideshow for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension ms-vscode.test-adapter-converter for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension oderwat.indent-rainbow for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension PKief.material-icon-theme for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension PrateekMahendrakar.prettyxml for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension redhat.vscode-xml for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension rhasan.gotomanual for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension SAPOSS.xml-toolkit for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension se-dev-pion.rainbow-struct-field-tags for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension SonarSource.sonarlint-vscode for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension streetsidesoftware.code-spell-checker for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension TalhaKhalil.preprocessor-rainbow for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension twxs.cmake for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension wumbl3.rainbow-html for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension yzhang.markdown-all-in-one for .NET installation requests
+
+9/27/2026, 6:18:25 AM 706 DotnetVSCodeExtensionFound
+true
+Checking extension ZainChen.json for .NET installation requests
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionChange
+true
+A change was detected in the extensions. Installing .NET for new extensions.
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionFound
+true
+Checking extension TypeScriptTeam.jsts-chat-features for .NET installation requests
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.csharp for .NET installation requests
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.dotenv for .NET installation requests
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.mermaid-markdown-features for .NET installation requests
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.prompt for .NET installation requests
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.vscode-modern-icons for .NET installation requests
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionFound
+true
+Checking extension alefragnani.Bookmarks for .NET installation requests
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionFound
+true
+Checking extension astrapios.pythonrepl for .NET installation requests
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionFound
+true
+Checking extension bierner.markdown-emoji for .NET installation requests
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionFound
+true
+Checking extension bierner.markdown-mermaid for .NET installation requests
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionFound
+true
+Checking extension DavidAnson.vscode-markdownlint for .NET installation requests
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionFound
+true
+Checking extension daylerees.rainglow for .NET installation requests
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionFound
+true
+Checking extension eamodio.gitlens for .NET installation requests
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionFound
+true
+Checking extension emallin.phpunit for .NET installation requests
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionFound
+true
+Checking extension EricSia.pythonsnippets3 for .NET installation requests
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionFound
+true
+Checking extension esbenp.prettier-vscode for .NET installation requests
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionFound
+true
+Checking extension Gabrielgod1.indent-rainbow-blocks for .NET installation requests
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionFound
+true
+Checking extension hbenl.vscode-test-explorer for .NET installation requests
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionFound
+true
+Checking extension Hirse.vscode-ungit for .NET installation requests
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionFound
+true
+Checking extension IBM.output-colorizer for .NET installation requests
+
+9/27/2026, 6:18:47 AM 133 DotnetVSCodeExtensionFound
+true
+Checking extension icsharpcode.ilspy-vscode for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension JakubKozera.csharp-dev-tools for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension jakubkozera.github-copilot-code-reviewer for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension jakubkozera.ms-sql-manager for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension JetBrains.resharper-code for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension johnpapa.vscode-peacock for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension mechatroner.rainbow-csv for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension mgesbert.python-path for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension mrorz.language-gettext for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension ms-dotnettools.csdevkit for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension ms-dotnettools.csharp for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension ms-dotnettools.vscode-dotnet-runtime for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension ms-python.pylint for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension ms-python.vscode-python-envs for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension ms-toolsai.vscode-jupyter-cell-tags for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension ms-toolsai.vscode-jupyter-slideshow for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension ms-vscode.test-adapter-converter for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension oderwat.indent-rainbow for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension PKief.material-icon-theme for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension PrateekMahendrakar.prettyxml for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension redhat.vscode-xml for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension rhasan.gotomanual for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension SAPOSS.xml-toolkit for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension se-dev-pion.rainbow-struct-field-tags for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension SonarSource.sonarlint-vscode for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension streetsidesoftware.code-spell-checker for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension TalhaKhalil.preprocessor-rainbow for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension twxs.cmake for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension wumbl3.rainbow-html for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension yzhang.markdown-all-in-one for .NET installation requests
+
+9/27/2026, 6:18:47 AM 134 DotnetVSCodeExtensionFound
+true
+Checking extension ZainChen.json for .NET installation requests
+
+9/27/2026, 6:19:02 AM 241 DotnetVSCodeExtensionChange
+true
+A change was detected in the extensions. Installing .NET for new extensions.
+
+9/27/2026, 6:19:02 AM 241 DotnetVSCodeExtensionFound
+true
+Checking extension TypeScriptTeam.jsts-chat-features for .NET installation requests
+
+9/27/2026, 6:19:02 AM 241 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.csharp for .NET installation requests
+
+9/27/2026, 6:19:02 AM 241 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.dotenv for .NET installation requests
+
+9/27/2026, 6:19:02 AM 241 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.mermaid-markdown-features for .NET installation requests
+
+9/27/2026, 6:19:02 AM 241 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.prompt for .NET installation requests
+
+9/27/2026, 6:19:02 AM 241 DotnetVSCodeExtensionFound
+true
+Checking extension vscode.vscode-modern-icons for .NET installation requests
+
+9/27/2026, 6:19:02 AM 241 DotnetVSCodeExtensionFound
+true
+Checking extension alefragnani.Bookmarks for .NET installation requests
+
+9/27/2026, 6:19:02 AM 241 DotnetVSCodeExtensionFound
+true
+Checking extension astrapios.pythonrepl for .NET installation requests
+
+9/27/2026, 6:19:02 AM 241 DotnetVSCodeExtensionFound
+true
+Checking extension bierner.markdown-emoji for .NET installation requests
+
+9/27/2026, 6:19:02 AM 241 DotnetVSCodeExtensionFound
+true
+Checking extension bierner.markdown-mermaid for .NET installation requests
+
+9/27/2026, 6:19:02 AM 241 DotnetVSCodeExtensionFound
+true
+Checking extension DavidAnson.vscode-markdownlint for .NET installation requests
+
+9/27/2026, 6:19:02 AM 241 DotnetVSCodeExtensionFound
+true
+Checking extension daylerees.rainglow for .NET installation requests
+
+9/27/2026, 6:19:02 AM 241 DotnetVSCodeExtensionFound
+true
+Checking extension eamodio.gitlens for .NET installation requests
+
+9/27/2026, 6:19:02 AM 241 DotnetVSCodeExtensionFound
+true
+Checking extension emallin.phpunit for .NET installation requests
+
+9/27/2026, 6:19:02 AM 241 DotnetVSCodeExtensionFound
+true
+Checking extension EricSia.pythonsnippets3 for .NET installation requests
+
+9/27/2026, 6:19:02 AM 241 DotnetVSCodeExtensionFound
+true
+Checking extension esbenp.prettier-vscode for .NET installation requests
+
+9/27/2026, 6:19:02 AM 241 DotnetVSCodeExtensionFound
+true
+Checking extension Gabrielgod1.indent-rainbow-blocks for .NET installation requests
+
+9/27/2026, 6:19:02 AM 241 DotnetVSCodeExtensionFound
+true
+Checking extension hbenl.vscode-test-explorer for .NET installation requests
+
+9/27/2026, 6:19:02 AM 241 DotnetVSCodeExtensionFound
+true
+Checking extension Hirse.vscode-ungit for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension IBM.output-colorizer for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension icsharpcode.ilspy-vscode for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension JakubKozera.csharp-dev-tools for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension jakubkozera.github-copilot-code-reviewer for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension jakubkozera.ms-sql-manager for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension JetBrains.resharper-code for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension johnpapa.vscode-peacock for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension mechatroner.rainbow-csv for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension mgesbert.python-path for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension mrorz.language-gettext for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension ms-dotnettools.csdevkit for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension ms-dotnettools.csharp for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension ms-dotnettools.vscode-dotnet-runtime for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension ms-python.pylint for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension ms-python.vscode-python-envs for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension ms-toolsai.vscode-jupyter-cell-tags for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension ms-toolsai.vscode-jupyter-slideshow for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension ms-vscode.test-adapter-converter for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension oderwat.indent-rainbow for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension PKief.material-icon-theme for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension PrateekMahendrakar.prettyxml for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension redhat.vscode-xml for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension rhasan.gotomanual for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension SAPOSS.xml-toolkit for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension se-dev-pion.rainbow-struct-field-tags for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension SonarSource.sonarlint-vscode for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension streetsidesoftware.code-spell-checker for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension TalhaKhalil.preprocessor-rainbow for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension twxs.cmake for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension wumbl3.rainbow-html for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension yzhang.markdown-all-in-one for .NET installation requests
+
+9/27/2026, 6:19:02 AM 242 DotnetVSCodeExtensionFound
+true
+Checking extension ZainChen.json for .NET installation requests
+
+9/27/2026, 6:22:49 AM 222 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-a0944281-81ff-4b73-861d-49590b763d34 Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:49.221Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:49 AM 236 [e692af44-53a7-4194-883e-983be6469453] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+9/27/2026, 6:22:49 AM 236 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-a0944281-81ff-4b73-861d-49590b763d34 Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:49.236Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:49 AM 237 UpdatingInstallGroups
+Automatic update triggered and detected the following install groups: [[{"mode":"runtime","architecture":"x64","majorMinor":"10.0"},[{"dotnetInstall":{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"},"installingExtensions":["icsharpcode.ilspy-vscode"]},{"dotnetInstall":{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"},"installingExtensions":["dotnet-runtime-library","icsharpcode.ilspy-vscode"]}]],[{"mode":"aspnetcore","architecture":"x64","majorMinor":"9.0"},[{"dotnetInstall":{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"},"installingExtensions":["dotnet-runtime-library","ms-dotnettools.csharp","ms-dotnettools.csdevkit"]}]]]
+
+9/27/2026, 6:22:49 AM 237 DotnetAcquisitionRequested
+10.0
+fe0bcfb547df7e433612160f21d323162769839b4b2e35033cf1c0724624f408
+
+9/27/2026, 6:22:49 AM 238 DotnetRuntimeAcquisitionRequested
+10.0
+fe0bcfb547df7e433612160f21d323162769839b4b2e35033cf1c0724624f408
+runtime
+
+9/27/2026, 6:22:49 AM 449 [c68f9c74-828a-4239-a3d4-6635ee514f39] WebRequestInitiated
+Making Web Request For https://builds.dotnet.microsoft.com/dotnet/release-metadata/releases-index.json
+
+9/27/2026, 6:22:49 AM 532 [c68f9c74-828a-4239-a3d4-6635ee514f39] WebRequestSent
+https://builds.dotnet.microsoft.com/dotnet/release-metadata/releases-index.json
+
+9/27/2026, 6:22:49 AM 820 [c68f9c74-828a-4239-a3d4-6635ee514f39] WebRequestTime
+Timer for request:
+284.54
+true
+https:..builds.dotnet.microsoft.com.dotnet.release-metadata.releases-index.json
+200
+
+9/27/2026, 6:22:49 AM 821 [c68f9c74-828a-4239-a3d4-6635ee514f39] DotnetVersionResolutionCompleted
+10.0
+10.0.12
+
+9/27/2026, 6:22:49 AM 822 [c68f9c74-828a-4239-a3d4-6635ee514f39] DotnetInstallIdCreatedEvent
+true
+The requested version 10.0.12 is now marked under the install: {"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"}.
+
+9/27/2026, 6:22:49 AM 822 [c68f9c74-828a-4239-a3d4-6635ee514f39] GenericDotnetLockEvent
+Action: 10.0.12~x64-a6e5a567-099a-4ea9-8f4d-fb553a0c4038 Lock acquired: \\.\pipe\vscd-10.0.12~x64-sock
+2026-09-27T00:52:49.822Z
+10.0.12~x64
+10.0.12~x64
+true
+
+9/27/2026, 6:22:49 AM 823 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-4e10d12b-85c6-46b8-8a38-149460e2bb40 Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:49.823Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:49 AM 827 [e692af44-53a7-4194-883e-983be6469453] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+9/27/2026, 6:22:49 AM 827 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-4e10d12b-85c6-46b8-8a38-149460e2bb40 Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:49.827Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:49 AM 828 [c68f9c74-828a-4239-a3d4-6635ee514f39] DotnetInstallationValidated
+10.0.12~x64
+10.0.12~x64
+10.0.12
+x64
+false
+runtime
+
+9/27/2026, 6:22:49 AM 831 [c68f9c74-828a-4239-a3d4-6635ee514f39] CacheGetEvent
+Checking the cache at 2026-09-27T00:52:49.831Z
+"d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.12~x64\dotnet.exe" --list-runtimes --arch x64{"cwd":"d:\\All\\SCM.Gui\\vscode\\data\\extensions\\ms-dotnettools.vscode-dotnet-runtime-3.1.0\\dist","encoding":"utf8","env":"ALLUSERSPROFILE: C:\\ProgramData\nComSpec: C:\\WINDOWS\\system32\\cmd.exe\nCommonProgramFiles: C:\\Program Files\\Common Files\nDOTNET_MULTILEVEL_LOOKUP: 0\nELECTRON_RUN_AS_NODE: 1\nPATHEXT: .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC,;.MSC\nPROCESSOR_ARCHITECTURE: AMD64\nPROCESSOR_IDENTIFIER: Intel64 Family 6 Model 183 Stepping 1, GenuineIntel\nPSModulePath: C:\\Program Files (x86)\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\nPath: C:\\tools\\ruby30\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin\\;C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\;C:\\Program Files (x86)\\National Instruments\\Shared\\LabVIEW CLI;C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin;C:\\Program Files (x86)\\IVI Foundation\\IVI\\Bin\\;C:\\Program Files\\IVI Foundation\\IVI\\Bin\\;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\GitHub CLI\\;D:\\All\\SCM.Gui\\Git.Ext\\Git-64\\cmd;D:\\All\\SCM.Gui\\Git.Ext\\Git-64\\bin;D:\\TA\\.பிணை07-64;D:\\TA\\7ஃ-64;D:\\TA\\தோனி-64\\;D:\\TA\\வளர்சி\\MinGW64\\bin;C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Users\\inthirua\\.local\\bin;C:\\Users\\inthirua\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\inthirua\\.dotnet\\tools;C:\\Users\\inthirua\\AppData\\Local\\Muse Hub\\lib;C:\\Users\\inthirua\\AppData\\Local\\GitHubDesktop\\bin;\nProgramFiles: C:\\Program Files\nSystemRoot: C:\\WINDOWS\nVSCODE_CODE_CACHE_PATH: D:\\All\\SCM.Gui\\vscode\\data\\user-data\\CachedData\\645f29cc3176500b4b5762ba887cf2a7f0ffdf2c\nVSCODE_HANDLES_UNCAUGHT_ERRORS: true\nVSCODE_PID: 35008\nwindir: C:\\WINDOWS\nDOTNET_CLI_UI_LANGUAGE: en-US\nDOTNET_NOLOGO: true\n","shell":true}
+undefined
+true
+
+9/27/2026, 6:22:49 AM 831 [c68f9c74-828a-4239-a3d4-6635ee514f39] CommandExecutionEvent
+Executing command "d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.12~x64\dotnet.exe" --list-runtimes --arch x64 with options {"env":"ALLUSERSPROFILE: C:\\ProgramData\nComSpec: C:\\WINDOWS\\system32\\cmd.exe\nCommonProgramFiles: C:\\Program Files\\Common Files\nDOTNET_MULTILEVEL_LOOKUP: 0\nELECTRON_RUN_AS_NODE: 1\nPATHEXT: .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC,;.MSC\nPROCESSOR_ARCHITECTURE: AMD64\nPROCESSOR_IDENTIFIER: Intel64 Family 6 Model 183 Stepping 1, GenuineIntel\nPSModulePath: C:\\Program Files (x86)\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\nPath: C:\\tools\\ruby30\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin\\;C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\;C:\\Program Files (x86)\\National Instruments\\Shared\\LabVIEW CLI;C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin;C:\\Program Files (x86)\\IVI Foundation\\IVI\\Bin\\;C:\\Program Files\\IVI Foundation\\IVI\\Bin\\;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\GitHub CLI\\;D:\\All\\SCM.Gui\\Git.Ext\\Git-64\\cmd;D:\\All\\SCM.Gui\\Git.Ext\\Git-64\\bin;D:\\TA\\.பிணை07-64;D:\\TA\\7ஃ-64;D:\\TA\\தோனி-64\\;D:\\TA\\வளர்சி\\MinGW64\\bin;C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Users\\inthirua\\.local\\bin;C:\\Users\\inthirua\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\inthirua\\.dotnet\\tools;C:\\Users\\inthirua\\AppData\\Local\\Muse Hub\\lib;C:\\Users\\inthirua\\AppData\\Local\\GitHubDesktop\\bin;\nProgramFiles: C:\\Program Files\nSystemRoot: C:\\WINDOWS\nVSCODE_CODE_CACHE_PATH: D:\\All\\SCM.Gui\\vscode\\data\\user-data\\CachedData\\645f29cc3176500b4b5762ba887cf2a7f0ffdf2c\nVSCODE_HANDLES_UNCAUGHT_ERRORS: true\nVSCODE_PID: 35008\nwindir: C:\\WINDOWS\nDOTNET_CLI_UI_LANGUAGE: en-US\nDOTNET_NOLOGO: true\n","dotnetInstallToolCacheTtlMs":9000,"cwd":"d:\\All\\SCM.Gui\\vscode\\data\\extensions\\ms-dotnettools.vscode-dotnet-runtime-3.1.0\\dist","shell":true,"encoding":"utf8"}.
+
+9/27/2026, 6:22:49 AM 947 [c68f9c74-828a-4239-a3d4-6635ee514f39] CommandExecutionTimer
+The command "d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.12~x64\dotnet.exe" --list-runtimes --arch x64 took 112.47 ms to run.
+112.47
+ "d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.12~x64\dotnet.exe" --list-runtimes --arch x64
+2f37f1f8d4649fd8537c641e396a1f58e90e5f03df73301c7acba45828bf0530
+
+9/27/2026, 6:22:49 AM 947 [c68f9c74-828a-4239-a3d4-6635ee514f39] CommandExecutionStatusEvent
+The command "d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.12~x64\dotnet.exe" --list-runtimes --arch x64 exited:
+0.
+
+9/27/2026, 6:22:49 AM 947 [c68f9c74-828a-4239-a3d4-6635ee514f39] CommandExecutionStdOut
+The command "d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.12~x64\dotnet.exe" --list-runtimes --arch x64 encountered stdout:
+Microsoft.NETCore.App 10.0.12 [d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.12~x64\shared\Microsoft.NETCore.App]
+
+
+9/27/2026, 6:22:49 AM 947 [c68f9c74-828a-4239-a3d4-6635ee514f39] CommandExecutionStdError
+The command "d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.12~x64\dotnet.exe" --list-runtimes --arch x64 encountered stderr:
+
+
+9/27/2026, 6:22:49 AM 948 [c68f9c74-828a-4239-a3d4-6635ee514f39] CachePutEvent
+Adding to the cache at 2026-09-27T00:52:49.948Z
+"d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.12~x64\dotnet.exe" --list-runtimes --arch x64{"cwd":"d:\\All\\SCM.Gui\\vscode\\data\\extensions\\ms-dotnettools.vscode-dotnet-runtime-3.1.0\\dist","encoding":"utf8","env":"ALLUSERSPROFILE: C:\\ProgramData\nComSpec: C:\\WINDOWS\\system32\\cmd.exe\nCommonProgramFiles: C:\\Program Files\\Common Files\nDOTNET_MULTILEVEL_LOOKUP: 0\nELECTRON_RUN_AS_NODE: 1\nPATHEXT: .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC,;.MSC\nPROCESSOR_ARCHITECTURE: AMD64\nPROCESSOR_IDENTIFIER: Intel64 Family 6 Model 183 Stepping 1, GenuineIntel\nPSModulePath: C:\\Program Files (x86)\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\nPath: C:\\tools\\ruby30\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin\\;C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\;C:\\Program Files (x86)\\National Instruments\\Shared\\LabVIEW CLI;C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin;C:\\Program Files (x86)\\IVI Foundation\\IVI\\Bin\\;C:\\Program Files\\IVI Foundation\\IVI\\Bin\\;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\GitHub CLI\\;D:\\All\\SCM.Gui\\Git.Ext\\Git-64\\cmd;D:\\All\\SCM.Gui\\Git.Ext\\Git-64\\bin;D:\\TA\\.பிணை07-64;D:\\TA\\7ஃ-64;D:\\TA\\தோனி-64\\;D:\\TA\\வளர்சி\\MinGW64\\bin;C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Users\\inthirua\\.local\\bin;C:\\Users\\inthirua\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\inthirua\\.dotnet\\tools;C:\\Users\\inthirua\\AppData\\Local\\Muse Hub\\lib;C:\\Users\\inthirua\\AppData\\Local\\GitHubDesktop\\bin;\nProgramFiles: C:\\Program Files\nSystemRoot: C:\\WINDOWS\nVSCODE_CODE_CACHE_PATH: D:\\All\\SCM.Gui\\vscode\\data\\user-data\\CachedData\\645f29cc3176500b4b5762ba887cf2a7f0ffdf2c\nVSCODE_HANDLES_UNCAUGHT_ERRORS: true\nVSCODE_PID: 35008\nwindir: C:\\WINDOWS\nDOTNET_CLI_UI_LANGUAGE: en-US\nDOTNET_NOLOGO: true\n","shell":true}
+{"stdout":"Microsoft.NETCore.App 10.0.12 [d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.12~x64\\shared\\Microsoft.NETCore.App]\r\n","stderr":"","status":"0"}
+9000
+true
+
+9/27/2026, 6:22:49 AM 949 [c68f9c74-828a-4239-a3d4-6635ee514f39] CacheGetEvent
+Checking the cache at 2026-09-27T00:52:49.949Z
+"d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.12~x64\dotnet.exe" --list-runtimes --arch x64{"cwd":"d:\\All\\SCM.Gui\\vscode\\data\\extensions\\ms-dotnettools.vscode-dotnet-runtime-3.1.0\\dist","encoding":"utf8","env":"ALLUSERSPROFILE: C:\\ProgramData\nComSpec: C:\\WINDOWS\\system32\\cmd.exe\nCommonProgramFiles: C:\\Program Files\\Common Files\nDOTNET_MULTILEVEL_LOOKUP: 0\nELECTRON_RUN_AS_NODE: 1\nPATHEXT: .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC,;.MSC\nPROCESSOR_ARCHITECTURE: AMD64\nPROCESSOR_IDENTIFIER: Intel64 Family 6 Model 183 Stepping 1, GenuineIntel\nPSModulePath: C:\\Program Files (x86)\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\nPath: C:\\tools\\ruby30\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin\\;C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\;C:\\Program Files (x86)\\National Instruments\\Shared\\LabVIEW CLI;C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin;C:\\Program Files (x86)\\IVI Foundation\\IVI\\Bin\\;C:\\Program Files\\IVI Foundation\\IVI\\Bin\\;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\GitHub CLI\\;D:\\All\\SCM.Gui\\Git.Ext\\Git-64\\cmd;D:\\All\\SCM.Gui\\Git.Ext\\Git-64\\bin;D:\\TA\\.பிணை07-64;D:\\TA\\7ஃ-64;D:\\TA\\தோனி-64\\;D:\\TA\\வளர்சி\\MinGW64\\bin;C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Users\\inthirua\\.local\\bin;C:\\Users\\inthirua\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\inthirua\\.dotnet\\tools;C:\\Users\\inthirua\\AppData\\Local\\Muse Hub\\lib;C:\\Users\\inthirua\\AppData\\Local\\GitHubDesktop\\bin;\nProgramFiles: C:\\Program Files\nSystemRoot: C:\\WINDOWS\nVSCODE_CODE_CACHE_PATH: D:\\All\\SCM.Gui\\vscode\\data\\user-data\\CachedData\\645f29cc3176500b4b5762ba887cf2a7f0ffdf2c\nVSCODE_HANDLES_UNCAUGHT_ERRORS: true\nVSCODE_PID: 35008\nwindir: C:\\WINDOWS\nDOTNET_CLI_UI_LANGUAGE: en-US\nDOTNET_NOLOGO: true\n","shell":true}
+{"stdout":"Microsoft.NETCore.App 10.0.12 [d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.12~x64\\shared\\Microsoft.NETCore.App]\r\n","stderr":"","status":"0"}
+true
+
+9/27/2026, 6:22:49 AM 949 [c68f9c74-828a-4239-a3d4-6635ee514f39] CacheAliasCreated
+Aliasing command root "d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.12~x64\dotnet.exe" to "d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.12~x64\dotnet.exe"
+true
+
+9/27/2026, 6:22:49 AM 950 [c68f9c74-828a-4239-a3d4-6635ee514f39] DotnetConditionsValidated
+true
+d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.12~x64\dotnet.exe satisfies the conditions.
+
+9/27/2026, 6:22:49 AM 950 [c68f9c74-828a-4239-a3d4-6635ee514f39] DotnetAcquisitionAlreadyInstalled
+10.0.12~x64
+10.0.12
+x64
+false
+runtime
+fe0bcfb547df7e433612160f21d323162769839b4b2e35033cf1c0724624f408
+
+9/27/2026, 6:22:49 AM 951 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-a440fd76-4fcc-46de-b0e3-b0f5a7d7b196 Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:49.951Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:49 AM 951 [e692af44-53a7-4194-883e-983be6469453] AddTrackingVersions
+true
+Adding {"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} with id 10.0.12~x64 from the state.
+
+9/27/2026, 6:22:49 AM 951 [c68f9c74-828a-4239-a3d4-6635ee514f39] DotnetInstallationValidated
+10.0.12~x64
+10.0.12~x64
+10.0.12
+x64
+false
+runtime
+
+9/27/2026, 6:22:49 AM 951 [e692af44-53a7-4194-883e-983be6469453] MarkedInstallInUse
+Session session-9acf9df1c0 marked d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.12~x64\dotnet.exe as in use.
+Sessions: {"session-069fb0288b":["d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe","d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\9.0.20~x64~aspnetcore\\dotnet.exe","d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.12~x64\\dotnet.exe"],"session-0185600f61":["d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe"],"session-720b1e9705":["d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe"],"session-9acf9df1c0":["d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe","d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.12~x64\\dotnet.exe"]}
+
+9/27/2026, 6:22:49 AM 984 [e692af44-53a7-4194-883e-983be6469453] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+9/27/2026, 6:22:49 AM 985 [e692af44-53a7-4194-883e-983be6469453] AddTrackingVersions
+true
+Updated installed :
+{"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+ 
+
+9/27/2026, 6:22:50 AM 0 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-a440fd76-4fcc-46de-b0e3-b0f5a7d7b196 Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:50.000Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:50 AM 0 [c68f9c74-828a-4239-a3d4-6635ee514f39] GenericDotnetLockEvent
+Action: 10.0.12~x64-a6e5a567-099a-4ea9-8f4d-fb553a0c4038 Lock freed: \\.\pipe\vscd-10.0.12~x64-sock
+2026-09-27T00:52:50.000Z
+10.0.12~x64
+10.0.12~x64
+true
+
+9/27/2026, 6:22:50 AM 0 DotnetCommandSucceeded
+acquire
+
+9/27/2026, 6:22:50 AM 1 DotnetAcquisitionTotalSuccessEvent
+10.0.12
+10.0.12~x64
+10.0.12~x64
+10.0.12
+x64
+false
+runtime
+fe0bcfb547df7e433612160f21d323162769839b4b2e35033cf1c0724624f408
+d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.12~x64\dotnet.exe
+
+9/27/2026, 6:22:50 AM 1 DotnetRuntimeAcquisitionTotalSuccessEvent
+10.0.12~x64
+10.0.12
+x64
+false
+runtime
+
+9/27/2026, 6:22:50 AM 3 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-7d0f7b33-9d23-4577-b1b7-22793f7c6370 Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:50.003Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:50 AM 6 [e692af44-53a7-4194-883e-983be6469453] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+9/27/2026, 6:22:50 AM 6 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-7d0f7b33-9d23-4577-b1b7-22793f7c6370 Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:50.006Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:50 AM 7 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-09cf445d-de03-4299-9c32-e7c164fb8bf0 Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:50.007Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:50 AM 10 [e692af44-53a7-4194-883e-983be6469453] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+9/27/2026, 6:22:50 AM 10 [e692af44-53a7-4194-883e-983be6469453] AddTrackingVersions
+true
+Adding owners icsharpcode.ilspy-vscode, dotnet-runtime-library to existing install record {"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":"false","installMode":"runtime"}
+
+9/27/2026, 6:22:50 AM 15 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-09cf445d-de03-4299-9c32-e7c164fb8bf0 Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:50.015Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:50 AM 16 UninstallingOutdatedInstalls
+The installs [{"dotnetInstall":{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"},"installingExtensions":["icsharpcode.ilspy-vscode"]}] are outdated - attempting to uninstall. The latest install was {"dotnetInstall":{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"},"installingExtensions":["dotnet-runtime-library","icsharpcode.ilspy-vscode"]}
+
+9/27/2026, 6:22:50 AM 18 [fc5ed040-1301-4a62-9275-fb5b1e634e07] GenericDotnetLockEvent
+Action: 10.0.11~x64-7ea401ec-89fd-483f-9088-f3a85c5a7898 Lock acquired: \\.\pipe\vscd-10.0.11~x64-sock
+2026-09-27T00:52:50.018Z
+10.0.11~x64
+10.0.11~x64
+true
+
+9/27/2026, 6:22:50 AM 20 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-9221d2a1-50ea-4814-978f-2d2634958b44 Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:50.020Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:50 AM 20 [e692af44-53a7-4194-883e-983be6469453] RemovingVersionFromExtensionState
+true
+Removing {"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} with id installed from the state.
+
+9/27/2026, 6:22:50 AM 23 [e692af44-53a7-4194-883e-983be6469453] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+9/27/2026, 6:22:50 AM 23 [e692af44-53a7-4194-883e-983be6469453] RemovingOwnerFromList
+true
+The owner dotnet-runtime-library removed {"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} itself from the list, but icsharpcode.ilspy-vscode remain.
+
+9/27/2026, 6:22:50 AM 31 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-9221d2a1-50ea-4814-978f-2d2634958b44 Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:50.031Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:50 AM 32 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-6322396c-0532-46f4-be6e-2ded912a7bf7 Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:50.032Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:50 AM 32 [e692af44-53a7-4194-883e-983be6469453] SearchingLiveDependents
+Searching for live dependents of install at d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.11~x64\dotnet.exe. Sessions: {"session-069fb0288b":["d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe","d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\9.0.20~x64~aspnetcore\\dotnet.exe","d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.12~x64\\dotnet.exe"],"session-0185600f61":["d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe"],"session-720b1e9705":["d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe"],"session-9acf9df1c0":["d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe","d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.12~x64\\dotnet.exe"]}
+
+9/27/2026, 6:22:50 AM 47 [e692af44-53a7-4194-883e-983be6469453] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+9/27/2026, 6:22:50 AM 47 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: session-069fb0288b-c547e06b-d6a7-4284-bb6f-552e743f656f Lock acquired: \\.\pipe\vscd-session-069fb0288b-sock
+2026-09-27T00:52:50.047Z
+session-069fb0288b
+session-069fb0288b
+true
+
+9/27/2026, 6:22:50 AM 47 [e692af44-53a7-4194-883e-983be6469453] DependentIsDead
+Session session-069fb0288b is no longer live.
+
+9/27/2026, 6:22:50 AM 48 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: session-069fb0288b-c547e06b-d6a7-4284-bb6f-552e743f656f Lock freed: \\.\pipe\vscd-session-069fb0288b-sock
+2026-09-27T00:52:50.048Z
+session-069fb0288b
+session-069fb0288b
+true
+
+9/27/2026, 6:22:50 AM 48 [e692af44-53a7-4194-883e-983be6469453] DependentIsDead
+Dependent Session session-069fb0288b is no longer live - continue searching dependents.
+
+9/27/2026, 6:22:50 AM 64 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: session-0185600f61-53194db6-11ba-40dc-bbdb-a67716e91285 Lock acquired: \\.\pipe\vscd-session-0185600f61-sock
+2026-09-27T00:52:50.064Z
+session-0185600f61
+session-0185600f61
+true
+
+9/27/2026, 6:22:50 AM 64 [e692af44-53a7-4194-883e-983be6469453] DependentIsDead
+Session session-0185600f61 is no longer live.
+
+9/27/2026, 6:22:50 AM 65 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: session-0185600f61-53194db6-11ba-40dc-bbdb-a67716e91285 Lock freed: \\.\pipe\vscd-session-0185600f61-sock
+2026-09-27T00:52:50.065Z
+session-0185600f61
+session-0185600f61
+true
+
+9/27/2026, 6:22:50 AM 65 [e692af44-53a7-4194-883e-983be6469453] DependentIsDead
+Dependent Session session-0185600f61 is no longer live - continue searching dependents.
+
+9/27/2026, 6:22:50 AM 79 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: session-720b1e9705-8a40d2bc-5539-489d-8d33-b01bd798b0fc Lock acquired: \\.\pipe\vscd-session-720b1e9705-sock
+2026-09-27T00:52:50.079Z
+session-720b1e9705
+session-720b1e9705
+true
+
+9/27/2026, 6:22:50 AM 79 [e692af44-53a7-4194-883e-983be6469453] DependentIsDead
+Session session-720b1e9705 is no longer live.
+
+9/27/2026, 6:22:50 AM 79 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: session-720b1e9705-8a40d2bc-5539-489d-8d33-b01bd798b0fc Lock freed: \\.\pipe\vscd-session-720b1e9705-sock
+2026-09-27T00:52:50.079Z
+session-720b1e9705
+session-720b1e9705
+true
+
+9/27/2026, 6:22:50 AM 79 [e692af44-53a7-4194-883e-983be6469453] DependentIsDead
+Dependent Session session-720b1e9705 is no longer live - continue searching dependents.
+
+9/27/2026, 6:22:50 AM 82 [e692af44-53a7-4194-883e-983be6469453] LiveDependentInUse
+Dependent is in use by this session, so we can't uninstall it.
+
+9/27/2026, 6:22:50 AM 82 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-6322396c-0532-46f4-be6e-2ded912a7bf7 Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:50.082Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:50 AM 82 [fc5ed040-1301-4a62-9275-fb5b1e634e07] DotnetUninstallSkipped
+Removed reference of {"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} in path d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\10.0.11~x64, but did not uninstall.
+Other dependents remain.
+
+9/27/2026, 6:22:50 AM 83 [fc5ed040-1301-4a62-9275-fb5b1e634e07] GenericDotnetLockEvent
+Action: 10.0.11~x64-7ea401ec-89fd-483f-9088-f3a85c5a7898 Lock freed: \\.\pipe\vscd-10.0.11~x64-sock
+2026-09-27T00:52:50.083Z
+10.0.11~x64
+10.0.11~x64
+true
+
+9/27/2026, 6:22:50 AM 83 DotnetCommandSucceeded
+uninstall
+
+9/27/2026, 6:22:50 AM 84 DotnetAcquisitionRequested
+9.0
+fe0bcfb547df7e433612160f21d323162769839b4b2e35033cf1c0724624f408
+
+9/27/2026, 6:22:50 AM 84 DotnetASPNetRuntimeAcquisitionRequested
+9.0
+fe0bcfb547df7e433612160f21d323162769839b4b2e35033cf1c0724624f408
+aspnetcore
+
+9/27/2026, 6:22:50 AM 171 [d18f60d0-9a66-43bb-ba0e-ca2f73f92d83] WebRequestInitiated
+Making Web Request For https://builds.dotnet.microsoft.com/dotnet/release-metadata/releases-index.json
+
+9/27/2026, 6:22:50 AM 246 [d18f60d0-9a66-43bb-ba0e-ca2f73f92d83] WebRequestSent
+https://builds.dotnet.microsoft.com/dotnet/release-metadata/releases-index.json
+
+9/27/2026, 6:22:50 AM 292 [d18f60d0-9a66-43bb-ba0e-ca2f73f92d83] WebRequestTime
+Timer for request:
+45.37
+true
+https:..builds.dotnet.microsoft.com.dotnet.release-metadata.releases-index.json
+200
+
+9/27/2026, 6:22:50 AM 293 [d18f60d0-9a66-43bb-ba0e-ca2f73f92d83] DotnetVersionResolutionCompleted
+9.0
+9.0.20
+
+9/27/2026, 6:22:50 AM 293 [d18f60d0-9a66-43bb-ba0e-ca2f73f92d83] DotnetInstallIdCreatedEvent
+true
+The requested version 9.0.20 is now marked under the install: {"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"}.
+
+9/27/2026, 6:22:50 AM 294 [d18f60d0-9a66-43bb-ba0e-ca2f73f92d83] GenericDotnetLockEvent
+Action: 9.0.20~x64~aspnetcore-35322287-ad5a-446f-8b80-a08cdc29dc98 Lock acquired: \\.\pipe\vscd-9.0.20~x64~aspnetcore-sock
+2026-09-27T00:52:50.294Z
+9.0.20~x64~aspnetcore
+9.0.20~x64~aspnetcore
+true
+
+9/27/2026, 6:22:50 AM 295 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-a7af7e09-8fa1-4da0-9e9f-b40fd31530bc Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:50.295Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:50 AM 313 [e692af44-53a7-4194-883e-983be6469453] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+9/27/2026, 6:22:50 AM 313 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-a7af7e09-8fa1-4da0-9e9f-b40fd31530bc Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:50.313Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:50 AM 315 [d18f60d0-9a66-43bb-ba0e-ca2f73f92d83] DotnetInstallationValidated
+9.0.20~x64~aspnetcore
+9.0.20~x64~aspnetcore
+9.0.20
+x64
+false
+aspnetcore
+
+9/27/2026, 6:22:50 AM 317 [d18f60d0-9a66-43bb-ba0e-ca2f73f92d83] CacheGetEvent
+Checking the cache at 2026-09-27T00:52:50.317Z
+"d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.20~x64~aspnetcore\dotnet.exe" --list-runtimes --arch x64{"cwd":"d:\\All\\SCM.Gui\\vscode\\data\\extensions\\ms-dotnettools.vscode-dotnet-runtime-3.1.0\\dist","encoding":"utf8","env":"ALLUSERSPROFILE: C:\\ProgramData\nComSpec: C:\\WINDOWS\\system32\\cmd.exe\nCommonProgramFiles: C:\\Program Files\\Common Files\nDOTNET_MULTILEVEL_LOOKUP: 0\nELECTRON_RUN_AS_NODE: 1\nPATHEXT: .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC,;.MSC\nPROCESSOR_ARCHITECTURE: AMD64\nPROCESSOR_IDENTIFIER: Intel64 Family 6 Model 183 Stepping 1, GenuineIntel\nPSModulePath: C:\\Program Files (x86)\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\nPath: C:\\tools\\ruby30\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin\\;C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\;C:\\Program Files (x86)\\National Instruments\\Shared\\LabVIEW CLI;C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin;C:\\Program Files (x86)\\IVI Foundation\\IVI\\Bin\\;C:\\Program Files\\IVI Foundation\\IVI\\Bin\\;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\GitHub CLI\\;D:\\All\\SCM.Gui\\Git.Ext\\Git-64\\cmd;D:\\All\\SCM.Gui\\Git.Ext\\Git-64\\bin;D:\\TA\\.பிணை07-64;D:\\TA\\7ஃ-64;D:\\TA\\தோனி-64\\;D:\\TA\\வளர்சி\\MinGW64\\bin;C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Users\\inthirua\\.local\\bin;C:\\Users\\inthirua\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\inthirua\\.dotnet\\tools;C:\\Users\\inthirua\\AppData\\Local\\Muse Hub\\lib;C:\\Users\\inthirua\\AppData\\Local\\GitHubDesktop\\bin;\nProgramFiles: C:\\Program Files\nSystemRoot: C:\\WINDOWS\nVSCODE_CODE_CACHE_PATH: D:\\All\\SCM.Gui\\vscode\\data\\user-data\\CachedData\\645f29cc3176500b4b5762ba887cf2a7f0ffdf2c\nVSCODE_HANDLES_UNCAUGHT_ERRORS: true\nVSCODE_PID: 35008\nwindir: C:\\WINDOWS\nDOTNET_CLI_UI_LANGUAGE: en-US\nDOTNET_NOLOGO: true\n","shell":true}
+undefined
+true
+
+9/27/2026, 6:22:50 AM 317 [d18f60d0-9a66-43bb-ba0e-ca2f73f92d83] CommandExecutionEvent
+Executing command "d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.20~x64~aspnetcore\dotnet.exe" --list-runtimes --arch x64 with options {"env":"ALLUSERSPROFILE: C:\\ProgramData\nComSpec: C:\\WINDOWS\\system32\\cmd.exe\nCommonProgramFiles: C:\\Program Files\\Common Files\nDOTNET_MULTILEVEL_LOOKUP: 0\nELECTRON_RUN_AS_NODE: 1\nPATHEXT: .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC,;.MSC\nPROCESSOR_ARCHITECTURE: AMD64\nPROCESSOR_IDENTIFIER: Intel64 Family 6 Model 183 Stepping 1, GenuineIntel\nPSModulePath: C:\\Program Files (x86)\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\nPath: C:\\tools\\ruby30\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin\\;C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\;C:\\Program Files (x86)\\National Instruments\\Shared\\LabVIEW CLI;C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin;C:\\Program Files (x86)\\IVI Foundation\\IVI\\Bin\\;C:\\Program Files\\IVI Foundation\\IVI\\Bin\\;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\GitHub CLI\\;D:\\All\\SCM.Gui\\Git.Ext\\Git-64\\cmd;D:\\All\\SCM.Gui\\Git.Ext\\Git-64\\bin;D:\\TA\\.பிணை07-64;D:\\TA\\7ஃ-64;D:\\TA\\தோனி-64\\;D:\\TA\\வளர்சி\\MinGW64\\bin;C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Users\\inthirua\\.local\\bin;C:\\Users\\inthirua\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\inthirua\\.dotnet\\tools;C:\\Users\\inthirua\\AppData\\Local\\Muse Hub\\lib;C:\\Users\\inthirua\\AppData\\Local\\GitHubDesktop\\bin;\nProgramFiles: C:\\Program Files\nSystemRoot: C:\\WINDOWS\nVSCODE_CODE_CACHE_PATH: D:\\All\\SCM.Gui\\vscode\\data\\user-data\\CachedData\\645f29cc3176500b4b5762ba887cf2a7f0ffdf2c\nVSCODE_HANDLES_UNCAUGHT_ERRORS: true\nVSCODE_PID: 35008\nwindir: C:\\WINDOWS\nDOTNET_CLI_UI_LANGUAGE: en-US\nDOTNET_NOLOGO: true\n","dotnetInstallToolCacheTtlMs":9000,"cwd":"d:\\All\\SCM.Gui\\vscode\\data\\extensions\\ms-dotnettools.vscode-dotnet-runtime-3.1.0\\dist","shell":true,"encoding":"utf8"}.
+
+9/27/2026, 6:22:50 AM 476 [d18f60d0-9a66-43bb-ba0e-ca2f73f92d83] CommandExecutionTimer
+The command "d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.20~x64~aspnetcore\dotnet.exe" --list-runtimes --arch x64 took 158.39 ms to run.
+158.39
+ "d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.20~x64~aspnetcore\dotnet.exe" --list-runtimes --arch x64
+024752c4204023627b03a475bb81c3214a6e60bd005ffcd9d95fbc5bb662ceed
+
+9/27/2026, 6:22:50 AM 476 [d18f60d0-9a66-43bb-ba0e-ca2f73f92d83] CommandExecutionStatusEvent
+The command "d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.20~x64~aspnetcore\dotnet.exe" --list-runtimes --arch x64 exited:
+0.
+
+9/27/2026, 6:22:50 AM 476 [d18f60d0-9a66-43bb-ba0e-ca2f73f92d83] CommandExecutionStdOut
+The command "d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.20~x64~aspnetcore\dotnet.exe" --list-runtimes --arch x64 encountered stdout:
+Microsoft.AspNetCore.App 9.0.20 [d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.20~x64~aspnetcore\shared\Microsoft.AspNetCore.App]
+Microsoft.NETCore.App 9.0.20 [d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.20~x64~aspnetcore\shared\Microsoft.NETCore.App]
+
+
+9/27/2026, 6:22:50 AM 476 [d18f60d0-9a66-43bb-ba0e-ca2f73f92d83] CommandExecutionStdError
+The command "d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.20~x64~aspnetcore\dotnet.exe" --list-runtimes --arch x64 encountered stderr:
+
+
+9/27/2026, 6:22:50 AM 477 [d18f60d0-9a66-43bb-ba0e-ca2f73f92d83] CachePutEvent
+Adding to the cache at 2026-09-27T00:52:50.477Z
+"d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.20~x64~aspnetcore\dotnet.exe" --list-runtimes --arch x64{"cwd":"d:\\All\\SCM.Gui\\vscode\\data\\extensions\\ms-dotnettools.vscode-dotnet-runtime-3.1.0\\dist","encoding":"utf8","env":"ALLUSERSPROFILE: C:\\ProgramData\nComSpec: C:\\WINDOWS\\system32\\cmd.exe\nCommonProgramFiles: C:\\Program Files\\Common Files\nDOTNET_MULTILEVEL_LOOKUP: 0\nELECTRON_RUN_AS_NODE: 1\nPATHEXT: .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC,;.MSC\nPROCESSOR_ARCHITECTURE: AMD64\nPROCESSOR_IDENTIFIER: Intel64 Family 6 Model 183 Stepping 1, GenuineIntel\nPSModulePath: C:\\Program Files (x86)\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\nPath: C:\\tools\\ruby30\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin\\;C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\;C:\\Program Files (x86)\\National Instruments\\Shared\\LabVIEW CLI;C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin;C:\\Program Files (x86)\\IVI Foundation\\IVI\\Bin\\;C:\\Program Files\\IVI Foundation\\IVI\\Bin\\;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\GitHub CLI\\;D:\\All\\SCM.Gui\\Git.Ext\\Git-64\\cmd;D:\\All\\SCM.Gui\\Git.Ext\\Git-64\\bin;D:\\TA\\.பிணை07-64;D:\\TA\\7ஃ-64;D:\\TA\\தோனி-64\\;D:\\TA\\வளர்சி\\MinGW64\\bin;C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Users\\inthirua\\.local\\bin;C:\\Users\\inthirua\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\inthirua\\.dotnet\\tools;C:\\Users\\inthirua\\AppData\\Local\\Muse Hub\\lib;C:\\Users\\inthirua\\AppData\\Local\\GitHubDesktop\\bin;\nProgramFiles: C:\\Program Files\nSystemRoot: C:\\WINDOWS\nVSCODE_CODE_CACHE_PATH: D:\\All\\SCM.Gui\\vscode\\data\\user-data\\CachedData\\645f29cc3176500b4b5762ba887cf2a7f0ffdf2c\nVSCODE_HANDLES_UNCAUGHT_ERRORS: true\nVSCODE_PID: 35008\nwindir: C:\\WINDOWS\nDOTNET_CLI_UI_LANGUAGE: en-US\nDOTNET_NOLOGO: true\n","shell":true}
+{"stdout":"Microsoft.AspNetCore.App 9.0.20 [d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\9.0.20~x64~aspnetcore\\shared\\Microsoft.AspNetCore.App]\r\nMicrosoft.NETCore.App 9.0.20 [d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\9.0.20~x64~aspnetcore\\shared\\Microsoft.NETCore.App]\r\n","stderr":"","status":"0"}
+9000
+true
+
+9/27/2026, 6:22:50 AM 477 [d18f60d0-9a66-43bb-ba0e-ca2f73f92d83] CacheGetEvent
+Checking the cache at 2026-09-27T00:52:50.477Z
+"d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.20~x64~aspnetcore\dotnet.exe" --list-runtimes --arch x64{"cwd":"d:\\All\\SCM.Gui\\vscode\\data\\extensions\\ms-dotnettools.vscode-dotnet-runtime-3.1.0\\dist","encoding":"utf8","env":"ALLUSERSPROFILE: C:\\ProgramData\nComSpec: C:\\WINDOWS\\system32\\cmd.exe\nCommonProgramFiles: C:\\Program Files\\Common Files\nDOTNET_MULTILEVEL_LOOKUP: 0\nELECTRON_RUN_AS_NODE: 1\nPATHEXT: .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC,;.MSC\nPROCESSOR_ARCHITECTURE: AMD64\nPROCESSOR_IDENTIFIER: Intel64 Family 6 Model 183 Stepping 1, GenuineIntel\nPSModulePath: C:\\Program Files (x86)\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\nPath: C:\\tools\\ruby30\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin\\;C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\;C:\\Program Files (x86)\\National Instruments\\Shared\\LabVIEW CLI;C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin;C:\\Program Files (x86)\\IVI Foundation\\IVI\\Bin\\;C:\\Program Files\\IVI Foundation\\IVI\\Bin\\;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\GitHub CLI\\;D:\\All\\SCM.Gui\\Git.Ext\\Git-64\\cmd;D:\\All\\SCM.Gui\\Git.Ext\\Git-64\\bin;D:\\TA\\.பிணை07-64;D:\\TA\\7ஃ-64;D:\\TA\\தோனி-64\\;D:\\TA\\வளர்சி\\MinGW64\\bin;C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Users\\inthirua\\.local\\bin;C:\\Users\\inthirua\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\inthirua\\.dotnet\\tools;C:\\Users\\inthirua\\AppData\\Local\\Muse Hub\\lib;C:\\Users\\inthirua\\AppData\\Local\\GitHubDesktop\\bin;\nProgramFiles: C:\\Program Files\nSystemRoot: C:\\WINDOWS\nVSCODE_CODE_CACHE_PATH: D:\\All\\SCM.Gui\\vscode\\data\\user-data\\CachedData\\645f29cc3176500b4b5762ba887cf2a7f0ffdf2c\nVSCODE_HANDLES_UNCAUGHT_ERRORS: true\nVSCODE_PID: 35008\nwindir: C:\\WINDOWS\nDOTNET_CLI_UI_LANGUAGE: en-US\nDOTNET_NOLOGO: true\n","shell":true}
+{"stdout":"Microsoft.AspNetCore.App 9.0.20 [d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\9.0.20~x64~aspnetcore\\shared\\Microsoft.AspNetCore.App]\r\nMicrosoft.NETCore.App 9.0.20 [d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\9.0.20~x64~aspnetcore\\shared\\Microsoft.NETCore.App]\r\n","stderr":"","status":"0"}
+true
+
+9/27/2026, 6:22:50 AM 477 [d18f60d0-9a66-43bb-ba0e-ca2f73f92d83] CacheAliasCreated
+Aliasing command root "d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.20~x64~aspnetcore\dotnet.exe" to "d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.20~x64~aspnetcore\dotnet.exe"
+true
+
+9/27/2026, 6:22:50 AM 478 [d18f60d0-9a66-43bb-ba0e-ca2f73f92d83] DotnetConditionsValidated
+true
+d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.20~x64~aspnetcore\dotnet.exe satisfies the conditions.
+
+9/27/2026, 6:22:50 AM 478 [d18f60d0-9a66-43bb-ba0e-ca2f73f92d83] DotnetAcquisitionAlreadyInstalled
+9.0.20~x64~aspnetcore
+9.0.20
+x64
+false
+aspnetcore
+fe0bcfb547df7e433612160f21d323162769839b4b2e35033cf1c0724624f408
+
+9/27/2026, 6:22:50 AM 478 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-33fd2061-dfc9-49de-9485-7fff58bde4ab Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:50.478Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:50 AM 479 [e692af44-53a7-4194-883e-983be6469453] AddTrackingVersions
+true
+Adding {"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} with id 9.0.20~x64~aspnetcore from the state.
+
+9/27/2026, 6:22:50 AM 479 [d18f60d0-9a66-43bb-ba0e-ca2f73f92d83] DotnetInstallationValidated
+9.0.20~x64~aspnetcore
+9.0.20~x64~aspnetcore
+9.0.20
+x64
+false
+aspnetcore
+
+9/27/2026, 6:22:50 AM 479 [e692af44-53a7-4194-883e-983be6469453] MarkedInstallInUse
+Session session-9acf9df1c0 marked d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.20~x64~aspnetcore\dotnet.exe as in use.
+Sessions: {"session-9acf9df1c0":["d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.11~x64\\dotnet.exe","d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\10.0.12~x64\\dotnet.exe","d:\\All\\SCM.Gui\\vscode\\data\\user-data\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\9.0.20~x64~aspnetcore\\dotnet.exe"]}
+
+9/27/2026, 6:22:50 AM 499 [e692af44-53a7-4194-883e-983be6469453] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+9/27/2026, 6:22:50 AM 499 [e692af44-53a7-4194-883e-983be6469453] AddTrackingVersions
+true
+Updated installed :
+{"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+ 
+
+9/27/2026, 6:22:50 AM 501 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-33fd2061-dfc9-49de-9485-7fff58bde4ab Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:50.501Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:50 AM 501 [d18f60d0-9a66-43bb-ba0e-ca2f73f92d83] GenericDotnetLockEvent
+Action: 9.0.20~x64~aspnetcore-35322287-ad5a-446f-8b80-a08cdc29dc98 Lock freed: \\.\pipe\vscd-9.0.20~x64~aspnetcore-sock
+2026-09-27T00:52:50.501Z
+9.0.20~x64~aspnetcore
+9.0.20~x64~aspnetcore
+true
+
+9/27/2026, 6:22:50 AM 502 DotnetCommandSucceeded
+acquire
+
+9/27/2026, 6:22:50 AM 502 DotnetAcquisitionTotalSuccessEvent
+9.0.20
+9.0.20~x64~aspnetcore
+9.0.20~x64~aspnetcore
+9.0.20
+x64
+false
+aspnetcore
+fe0bcfb547df7e433612160f21d323162769839b4b2e35033cf1c0724624f408
+d:\All\SCM.Gui\vscode\data\user-data\User\globalStorage\ms-dotnettools.vscode-dotnet-runtime\.dotnet\9.0.20~x64~aspnetcore\dotnet.exe
+
+9/27/2026, 6:22:50 AM 503 DotnetASPNetRuntimeAcquisitionTotalSuccessEvent
+9.0.20~x64~aspnetcore
+9.0.20
+x64
+false
+aspnetcore
+
+9/27/2026, 6:22:50 AM 504 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-ba5a46e3-5eaa-46ec-aae0-bf7d7acebc3c Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:50.504Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:50 AM 506 [e692af44-53a7-4194-883e-983be6469453] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+9/27/2026, 6:22:50 AM 506 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-ba5a46e3-5eaa-46ec-aae0-bf7d7acebc3c Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:50.506Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:50 AM 507 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-b79ffd20-887c-409f-99e4-b4e5d701bb8c Lock acquired: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:50.507Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:50 AM 510 [e692af44-53a7-4194-883e-983be6469453] FoundTrackingVersions
+true
+installed :
+                        {"installId":"9.0.304-global~x64","version":"9.0.304","architecture":"x64","isGlobal":true,"installMode":"sdk"} owned by ms-dotnettools.csdevkit
+,{"installId":"10.0.11~x64","version":"10.0.11","installMode":"runtime","isGlobal":false,"architecture":"x64"} owned by icsharpcode.ilspy-vscode
+,{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"} owned by dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit
+,{"installId":"10.0.12~x64","version":"10.0.12","architecture":"x64","isGlobal":false,"installMode":"runtime"} owned by dotnet-runtime-library, icsharpcode.ilspy-vscode
+
+
+9/27/2026, 6:22:50 AM 510 [e692af44-53a7-4194-883e-983be6469453] AddTrackingVersions
+true
+Adding owners dotnet-runtime-library, ms-dotnettools.csharp, ms-dotnettools.csdevkit to existing install record {"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":"false","installMode":"aspnetcore"}
+
+9/27/2026, 6:22:50 AM 515 [e692af44-53a7-4194-883e-983be6469453] GenericDotnetLockEvent
+Action: installedLk-b79ffd20-887c-409f-99e4-b4e5d701bb8c Lock freed: \\.\pipe\vscd-installedLk-sock
+2026-09-27T00:52:50.515Z
+installedLk
+installedLk
+true
+
+9/27/2026, 6:22:50 AM 515 UninstallingOutdatedInstalls
+The installs [] are outdated - attempting to uninstall. The latest install was {"dotnetInstall":{"installId":"9.0.20~x64~aspnetcore","version":"9.0.20","architecture":"x64","isGlobal":false,"installMode":"aspnetcore"},"installingExtensions":["dotnet-runtime-library","ms-dotnettools.csharp","ms-dotnettools.csdevkit"]}
+

@@ -1,0 +1,24 @@
+Peacock Mementos
+  [
+  {
+    "name": "peacock.favoritesVersion",
+    "type": "globalState",
+    "value": ""
+  },
+  {
+    "name": "peacock.surpriseMeFavoritesOrderIndex",
+    "type": "globalState",
+    "value": -1
+  },
+  {
+    "name": "peacock.surpriseMeFavoritesOrderKey",
+    "type": "globalState",
+    "value": ""
+  },
+  {
+    "name": "peacock.surpriseMeStartupSelections",
+    "type": "globalState",
+    "value": {}
+  }
+]
+Peacock is not in a workspace, so Peacock functionality is not available.

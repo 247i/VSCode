@@ -1,0 +1,336 @@
+{
+	"name": "github-copilot-code-reviewer",
+	"displayName": "Github Copilot Code Reviewer",
+	"description": "Review source code changes in Git using GitHub Copilot",
+	"publisher": "jakubkozera",
+	"version": "0.22.2",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jakubkozera/vsc-copilot-code-review"
+	},
+	"engines": {
+		"vscode": "^1.99.1"
+	},
+	"categories": [
+		"AI",
+		"Chat",
+		"Machine Learning",
+		"Programming Languages"
+	],
+	"keywords": [
+		"ai",
+		"chat",
+		"copilot",
+		"git",
+		"review"
+	],
+	"icon": "images/icon.png",
+	"license": "SEE LICENSE IN LICENSE",
+	"activationEvents": [],
+	"main": "./out/extension.js",
+	"enabledApiProposals": [],
+	"contributes": {
+		"commands": [
+			{
+				"command": "codeReview.selectChatModel",
+				"title": "Select Chat Model",
+				"category": "codeReview"
+			},
+			{
+				"command": "codeReview.openCodeReviewPanel",
+				"title": "Open Code Review Panel",
+				"category": "codeReview"
+			},
+			{
+				"command": "codeReview.refreshCodeReview",
+				"title": "Refresh",
+				"icon": "$(refresh)"
+			},
+			{
+				"command": "codeReview.reviewCommittedChanges",
+				"title": "Review Committed Changes",
+				"icon": "$(git-commit)"
+			},
+			{
+				"command": "codeReview.reviewAllChanges",
+				"title": "Review All Changes",
+				"icon": "$(git-branch)"
+			},
+			{
+				"command": "codeReview.nextComment",
+				"title": "Next Comment",
+				"category": "codeReview",
+				"icon": "$(arrow-right)"
+			},
+			{
+				"command": "codeReview.previousComment",
+				"title": "Previous Comment",
+				"category": "codeReview",
+				"icon": "$(arrow-left)"
+			},
+			{
+				"command": "codeReview.applyCurrentAdjustment",
+				"title": "Apply Fix",
+				"category": "codeReview",
+				"icon": "$(wand)"
+			}
+		],
+		"chatParticipants": [
+			{
+				"id": "codereview",
+				"name": "codereview",
+				"fullName": "Github Copilot Code Reviewer",
+				"description": "Review source code changes",
+				"isSticky": false,
+				"commands": [
+					{
+						"name": "review",
+						"description": "Review changes between two branches, commits, or tags.  You can specify git refs using e.g. `/review develop main`, or omit the second or both arguments to select refs interactively."
+					},
+					{
+						"name": "branch",
+						"description": "Review changes between two branches."
+					},
+					{
+						"name": "commit",
+						"description": "Review changes in a single commit."
+					}
+				]
+			}
+		],
+		"languageModelTools": [
+			{
+				"name": "review",
+				"displayName": "Review source code changes in Git using AI",
+				"modelDescription": "Reviews source code changes in Git using AI. Use this tool to review any changes on the `target` ref (compared to `base`) to discover potential issues. Returns a list of review comments with file names, line numbers, and severity.",
+				"canBeReferencedInPrompt": true,
+				"toolReferenceName": "review",
+				"icon": "images/icon.png",
+				"inputSchema": {
+					"type": "object",
+					"properties": {
+						"target": {
+							"type": "string",
+							"description": "Target git ref (branch, commit, or tag) to review. (e.g. 'main', 'abc1234', 'v0.1.0', 'HEAD')"
+						},
+						"base": {
+							"type": "string",
+							"description": "Base git ref (branch, commit, or tag) to compare against. (e.g. 'origin/main', 'abc1235', 'v0.0.9', 'HEAD~1')"
+						}
+					},
+					"required": [
+						"target",
+						"base"
+					]
+				}
+			},
+			{
+				"name": "reviewStaged",
+				"displayName": "Review staged changes in Git using AI",
+				"modelDescription": "Reviews staged changes in Git using AI. Use this tool to review changes that have been staged with `git add` but not yet committed. Returns a list of review comments with file names, line numbers, and severity.",
+				"canBeReferencedInPrompt": true,
+				"toolReferenceName": "reviewStaged",
+				"icon": "images/icon.png",
+				"inputSchema": {
+					"type": "object",
+					"properties": {
+						"changeDescription": {
+							"type": "string",
+							"description": "Description of what the changes to review are expected to implement. Use this to provide context for the review and be explicit about requirements."
+						}
+					}
+				}
+			},
+			{
+				"name": "reviewUnstaged",
+				"displayName": "Review unstaged changes in Git using AI",
+				"modelDescription": "Reviews unstaged changes in Git using AI. Use this tool to review changes in your working directory that haven't been staged yet. You can use this to check your work after completing a change requested by the user. Returns a list of review comments with file names, line numbers, and severity.",
+				"canBeReferencedInPrompt": true,
+				"toolReferenceName": "reviewUnstaged",
+				"icon": "images/icon.png",
+				"inputSchema": {
+					"type": "object",
+					"properties": {
+						"changeDescription": {
+							"type": "string",
+							"description": "Description of what the changes to review are expected to implement. Use this to provide context for the review and be explicit about requirements."
+						}
+					}
+				}
+			}
+		],
+		"views": {
+			"scm": [
+				{
+					"id": "codeReview.codeReview",
+					"name": "Copilot Code Review",
+					"when": "scmProvider == git",
+					"type": "webview"
+				}
+			]
+		},
+		"viewsContainers": {
+			"activitybar": []
+		},
+		"menus": {
+			"view/title": [
+				{
+					"command": "codeReview.refreshCodeReview",
+					"when": "view == codeReview.codeReview",
+					"group": "navigation"
+				}
+			],
+			"comments/commentThread/context": [
+				{
+					"command": "codeReview.previousComment",
+					"when": "commentThread == codeReview-review",
+					"group": "navigation@1",
+					"icon": "$(arrow-left)"
+				},
+				{
+					"command": "codeReview.nextComment",
+					"when": "commentThread == codeReview-review",
+					"group": "navigation@2",
+					"icon": "$(arrow-right)"
+				},
+				{
+					"command": "codeReview.applyCurrentAdjustment",
+					"when": "commentThread == codeReview-review",
+					"group": "navigation@3",
+					"icon": "$(wand)"
+				}
+			],
+			"comments/commentThread/title": [
+				{
+					"command": "codeReview.previousComment",
+					"when": "commentThread == codeReview-review",
+					"group": "navigation@1",
+					"icon": "$(arrow-left)"
+				},
+				{
+					"command": "codeReview.nextComment",
+					"when": "commentThread == codeReview-review",
+					"group": "navigation@2",
+					"icon": "$(arrow-right)"
+				},
+				{
+					"command": "codeReview.applyCurrentAdjustment",
+					"when": "commentThread == codeReview-review",
+					"group": "navigation@3",
+					"icon": "$(wand)"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "codeReview.nextComment",
+				"key": "ctrl+shift+n",
+				"mac": "cmd+shift+n",
+				"when": "commentController == codeReview-comments"
+			},
+			{
+				"command": "codeReview.previousComment",
+				"key": "ctrl+shift+b",
+				"mac": "cmd+shift+b",
+				"when": "commentController == codeReview-comments"
+			}
+		],
+		"configuration": {
+			"title": "codeReview",
+			"properties": {
+				"codeReview.minSeverity": {
+					"type": "number",
+					"default": 2,
+					"description": "Suppress comments with severity lower than the configured value. (1 to show all issues)",
+					"minimum": 1,
+					"maximum": 5
+				},
+				"codeReview.customPrompt": {
+					"type": "string",
+					"default": "",
+					"description": "Add custom text to the review prompt. For example, \"- In the final JSON output, use Spanish for the  `comment` field.\"",
+					"editPresentation": "multilineText"
+				},
+				"codeReview.exclude": {
+					"type": "array",
+					"default": [
+						"package-lock.json",
+						"yarn.lock",
+						"pnpm-lock.yaml",
+						"*.min.js"
+					],
+					"items": {
+						"type": "string"
+					},
+					"description": "Exclude paths from review using glob patterns. Binary files are not reviewed and do not need to be excluded."
+				},
+				"codeReview.enableDebugOutput": {
+					"type": "boolean",
+					"default": false,
+					"description": "Log debug output to Output Panel > codeReview."
+				},
+				"codeReview.chatModel": {
+					"type": "string",
+					"default": "gpt-4o",
+					"markdownDescription": "Chat model ID to use for generating review comments. Note that non-default models may not be available, may require changes to the [Copilot settings](https://github.com/settings/copilot), or have stricter rate limits. (EXPERIMENTAL). Use the 'codeReview: Select Chat Model' command to choose from available models."
+				},
+				"codeReview.mergeFileReviewRequests": {
+					"type": "boolean",
+					"default": true,
+					"description": "Review changes for multiple files in one request. This improves the model's understanding of the context of individual changes and speeds up reviews. Disabling this will lose these advantages, but can be useful for a very detailed line-by-line review."
+				},
+				"codeReview.maxInputTokensFraction": {
+					"type": "number",
+					"default": 0.95,
+					"description": "Fraction of the chat model's input token limit to use for requests. Lower values may increase quality of e.g. function level comments, but reduce the available context; higher values may improve the models understanding on how different changes relate to each other. The maximum allowed value is 0.95 to avoid token limit errors.",
+					"minimum": 0.05,
+					"maximum": 0.95
+				}
+			}
+		}
+	},
+	"scripts": {
+		"preinstall": "npx only-allow pnpm",
+		"check-exclusive": "ps aux | grep -v grep | grep -q 'esbuild.*--watch' && echo 'esbuild --watch running, aborting!' && exit 1 || exit 0",
+		"vscode:prepublish": "pnpm check-exclusive && rm -rf ./out && pnpm esbuild-base --minify --pure:console.debug",
+		"esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node --define:__GIT_VERSION__=\\\"$GIT_VERSION\\\"",
+		"esbuild": "pnpm esbuild-base --sourcemap",
+		"watch": "pnpm esbuild-base --sourcemap --watch",
+		"dev": "GIT_VERSION=$(git describe  --tags --long) pnpm build",
+		"build": "npx vsce package --no-dependencies",
+		"lint": "tsc --noEmit && eslint src && prettier src --check",
+		"test": "vitest run",
+		"coverage": "vitest run --coverage",
+		"checkall": "pnpm test && pnpm lint && pnpm build"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.31.0",
+		"@types/node": "22.x",
+		"@types/vscode": "^1.99.1",
+		"@vitest/coverage-v8": "^3.2.4",
+		"@vscode/vsce": "^3.6.0",
+		"esbuild": "^0.25.6",
+		"eslint": "^9.31.0",
+		"prettier": "^3.6.2",
+		"typescript": "^5.8.3",
+		"typescript-eslint": "^8.36.0",
+		"vitest": "^3.2.4"
+	},
+	"dependencies": {
+		"fastest-levenshtein": "^1.0.16",
+		"jsonc-parser": "^3.3.1",
+		"minimatch": "^10.0.3",
+		"simple-git": "^3.28.0"
+	},
+	"extensionDependencies": [
+		"github.copilot-chat"
+	],
+	"pnpm": {
+		"overrides": {}
+	},
+	"__metadata": {
+		"installedTimestamp": 1787668786248,
+		"targetPlatform": "undefined",
+		"size": 6339579
+	}
+}

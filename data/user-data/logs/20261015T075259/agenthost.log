@@ -1,0 +1,39 @@
+2026-10-15 07:53:00.376 [info] Agent Host process started successfully
+2026-10-15 07:53:00.386 [info] AgentService initialized
+2026-10-15 07:53:00.393 [info] Registering agent provider: copilotcli
+2026-10-15 07:53:00.394 [info] Registering agent provider: claude
+2026-10-15 07:53:00.395 [info] Registering agent provider: codex
+2026-10-15 07:53:00.404 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-10-15 07:53:00.404 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-10-15 07:53:00.433 [info] [Claude] Models refreshed (merged). Count: 0, 
+2026-10-15 07:53:00.475 [info] [Claude] SDK not downloaded yet; deferring the migratable chat list
+2026-10-15 07:53:00.478 [info] [CommandAutoApprover] Tree-sitter initialized (bash=available, powershell=available)
+2026-10-15 07:53:00.480 [info] [AgentService] sessions_v2 import for provider copilotcli: 0 synchronized, 0 current, 0 excluded, 0 stale exclusions, 0 incomplete, 0 failed, marker set in 86ms (0 db opens, 0 db stats)
+2026-10-15 07:53:00.585 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-10-15 07:53:00.673 [info] [ProtocolServer] Initialize: clientId=955c62ab-1184-448b-ac2d-23b9731da2e8, protocolVersions=[0.10.0, 0.9.0, 0.7.0, 0.6.0, 0.5.2, 0.5.1]
+2026-10-15 07:53:00.925 [info] [WebSocketProtocol] Server listening on socket \\.\pipe\vscode-agent-host-56882b2788e6bc1803d38877c1d56ce604dff2a855b9884b204b81fd619b3986-Q_tV5PA6CLbHzVuYqco3UA
+2026-10-15 07:53:01.080 [info] [Copilot] Auth token updated
+2026-10-15 07:53:01.112 [info] [ClaudeProxyService] listening on http://127.0.0.1:62638
+2026-10-15 07:53:01.112 [info] [Claude] Auth token updated
+2026-10-15 07:53:01.408 [info] [node-compile-cache] agent-host: packaged cache enabled (status: enabled, configured: D:\All\IDLE\t\VSCode\16507d91be\resources\app\node-compile-cache\agent-host, active: D:\All\IDLE\t\VSCode\16507d91be\resources\app\node-compile-cache\agent-host\v24.21.0-x64-c3a7e8f2)
+2026-10-15 07:53:01.408 [info] [AgentService] pruned 0 stale external session row(s) older than 30 days
+2026-10-15 07:53:01.409 [info] [CopilotDiscovery] Started: maxCandidateWatches=32, maxConcurrentStats=4, coalesceMs=500
+2026-10-15 07:53:01.410 [info] [Claude] SDK not downloaded yet; deferring chat discovery
+2026-10-15 07:53:01.411 [info] [CopilotDiscovery] Scan 1 started: initial=true, candidates=2, reasons={"startup":2}, watched=2, pending=2, ignoredHostEvents=0
+2026-10-15 07:53:01.412 [info] [Copilot] Listing discoverable chats...
+2026-10-15 07:53:01.412 [info] [Copilot] Starting CopilotClient...
+2026-10-15 07:53:01.413 [info] [Copilot] Set CLI env: GITHUB_COPILOT_INTEGRATION_ID=vscode-chat
+2026-10-15 07:53:01.416 [info] [Copilot] Using bundled runtime path: d:\All\IDLE\t\VSCode\16507d91be\resources\app\node_modules.asar.unpacked\@github\copilot-sdk-win32-x64\prebuilds\win32-x64\copilot-runtime.exe
+2026-10-15 07:53:01.554 [info] [Copilot] CopilotClient started successfully
+2026-10-15 07:53:01.556 [info] [Copilot] Listed 0 SDK session(s) for discoverable chats
+2026-10-15 07:53:01.556 [info] [CopilotDiscovery] Scan 1 catalog: sdkSessions=0, candidates=0, listMs=144, classifyMs=1, published=0, external=0, legacy=0, known=0, disabledLegacy=0, archivedLegacy=0, missingCwd=0, unsupportedClient=0, stale=0, failed=0
+2026-10-15 07:53:01.557 [info] [CopilotDiscovery] Scan 1 finished: elapsedMs=145, completed=0, pending=2, watched=2, overflow=0, ignoredHostEvents=0
+2026-10-15 07:53:02.879 [info] [Codex] Auth token updated
+2026-10-15 07:53:02.880 [info] [Copilot] Listing models...
+2026-10-15 07:53:04.051 [info] [Copilot] Found 19 models: Auto, Claude Sonnet 5, Claude Opus 5.5, GPT-6.1 Sol, GPT-6 Sol, GPT-6 Luna, GPT-5.6 Sol, GPT-5.6 Terra, GPT-5.6 Luna, GPT-5.5, GPT-5.4, GPT-5.4 mini, GPT-5.3-Codex, MAI-Code-1.1-Flash, Gemini 3.8 Flash, Gemini 3.7 Flash, Claude Sonnet 5.5, Claude Haiku 5.5, Gemini 4 Argon
+2026-10-15 07:53:04.896 [info] [Claude] Models refreshed (merged). Count: 4, Claude Haiku 5.5, Claude Opus 5.5, Claude Sonnet 5.5, Claude Sonnet 5
+2026-10-15 08:52:10.622 [info] [ProtocolServer] Client disconnected: 955c62ab-1184-448b-ac2d-23b9731da2e8, subscriptions=1
+2026-10-15 08:52:10.623 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-10-15 08:52:10.623 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-10-15 08:52:10.625 [info] AgentService: shutting down all providers...
+2026-10-15 08:52:10.625 [info] [Copilot] Shutting down...

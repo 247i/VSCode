@@ -1,0 +1,28 @@
+2026-09-15 06:41:32.317 [info] [RemoteAgentHost] Reconciling: desired=[], current=[]
+2026-09-15 06:41:32.344 [warning] Creation of workbench contribution 'workbench.contrib.agentHostChatDebug' took 28ms.
+2026-09-15 06:41:32.362 [info] [AgentHost:renderer] Acquiring MessagePort to agent host...
+2026-09-15 06:41:32.728 [info] [AgentHost:renderer] MessagePort acquired, creating client...
+2026-09-15 06:41:32.893 [info] Started local extension host with pid 32092.
+2026-09-15 06:41:33.604 [info] [JakubKozera.csharp-dev-tools]: Command `bookmarks.refresh` already registered by Bookmarks (alefragnani.Bookmarks)
+2026-09-15 06:41:33.629 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.lightModeTheme'. This property is already registered.
+2026-09-15 06:41:33.630 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.darkModeTheme'. This property is already registered.
+2026-09-15 06:41:33.631 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.languages'. This property is already registered.
+2026-09-15 06:41:33.631 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.maxTextSize'. This property is already registered.
+2026-09-15 06:41:33.631 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.mouseNavigation.enabled'. This property is already registered.
+2026-09-15 06:41:33.632 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.controls.show'. This property is already registered.
+2026-09-15 06:41:33.632 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.resizable'. This property is already registered.
+2026-09-15 06:41:33.632 [warning] [bierner.markdown-mermaid]: Cannot register 'markdown-mermaid.maxHeight'. This property is already registered.
+2026-09-15 06:41:34.294 [info] [AgentHost:renderer] Protocol connection established; clientId=07a0a46a-8242-4dca-b076-1edeff3969d8
+2026-09-15 06:41:35.103 [error] [Extension Host] (node:32092) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `Code --trace-deprecation ...` to show where the warning was created)
+2026-09-15 06:41:35.231 [info] [AccountPolicyGate] apply: state=inactive, reason=undefined, isRestricted=false
+2026-09-15 06:41:37.155 [error] [EricSia.pythonsnippets3]: Unknown language in `contributes.pythonsnippets3.language`. Provided value: django-html
+2026-09-15 06:41:37.155 [error] [EricSia.pythonsnippets3]: Unknown language in `contributes.pythonsnippets3.language`. Provided value: django-txt
+2026-09-15 06:41:37.856 [info] [AgentHost] Authenticating for resource: https://api.github.com
+2026-09-15 06:41:38.223 [error] [Extension Host] (node:32092) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-15 06:41:38.354 [info] [perf] Render performance baseline is 18ms
+2026-09-15 06:41:38.563 [error] [Extension Host] (node:32092) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+2026-09-15 06:41:39.065 [info] Auto updating outdated extensions. jakubkozera.csharp-dev-tools, sonarsource.sonarlint-vscode
+2026-09-15 06:41:39.483 [info] [AgentHost] Authenticating for resource: https://api.github.com/repos
+2026-09-15 06:41:40.245 [info] [AccountPolicyGate] apply: state=inactive, reason=undefined, isRestricted=false
+2026-09-15 06:41:43.001 [info] Settings Sync: Account status changed from uninitialized to available

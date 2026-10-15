@@ -1,0 +1,3226 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.VsCode.Debugger.Worker</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Evaluation.VariableReferenceTree.LazyPlaceHolderReference">
+            <summary>
+            A temp node for lazy DAP feature support.
+            1. When we detect that a variable may have side effects we add LazyPlaceHolderReference node into the tree and return its lazy-marked variable as a response
+            2. When user clicks on the eye icon to force evaluation refresh, VSCode sends VariablesRequest with the variableReference corresponding to our temp node.
+             We are supposed to return an evaluated variable with the new id. Note that this case differs from the normal getVariables request which returns variables children 
+            3.  
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Evaluation.VariableReferenceTree.LazyPlaceHolderReference.#ctor(Mono.Debugging.Client.DebuggerOptions.IEvaluationOptions,Mono.Debugging.Client.Values.Render.IValueKeyPresentation,Mono.Debugging.Client.Values.Render.IValuePresentation,Mono.Debugging.Client.Values.IValueEntity,JetBrains.VsCode.Debugger.Worker.Evaluation.VariableReferenceTree)">
+            <summary>
+            A temp node for lazy DAP feature support.
+            1. When we detect that a variable may have side effects we add LazyPlaceHolderReference node into the tree and return its lazy-marked variable as a response
+            2. When user clicks on the eye icon to force evaluation refresh, VSCode sends VariablesRequest with the variableReference corresponding to our temp node.
+             We are supposed to return an evaluated variable with the new id. Note that this case differs from the normal getVariables request which returns variables children 
+            3.  
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Converters.EnumMemberConverter`1">
+            <summary>
+            A generic JSON converter for enums that uses the EnumMember attribute value for serialization.
+            Falls back to the enum name if no EnumMember attribute is present.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Entities.Breakpoint">
+            <summary>
+            Information about a breakpoint created in `setBreakpoints`, `setFunctionBreakpoints`, `setInstructionBreakpoints`, or `setDataBreakpoints` requests.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Breakpoint.Id">
+            <summary>
+            The identifier for the breakpoint. It is needed if breakpoint events are used to update or remove breakpoints.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Breakpoint.Verified">
+            <summary>
+            If true, the breakpoint could be set (but not necessarily at the desired location).
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Breakpoint.Message">
+            <summary>
+            A message about the state of the breakpoint.
+            This is shown to the user and can be used to explain why a breakpoint could not be verified.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Breakpoint.Source">
+            <summary>
+            The source where the breakpoint is located.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Breakpoint.Line">
+            <summary>
+            The start line of the actual range covered by the breakpoint.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Breakpoint.Column">
+            <summary>
+            Start position of the source range covered by the breakpoint. It is measured in UTF-16 code units and the client capability `columnsStartAt1` determines whether it is 0- or 1-based.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Breakpoint.EndLine">
+            <summary>
+            The end line of the actual range covered by the breakpoint.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Breakpoint.EndColumn">
+            <summary>
+            End position of the source range covered by the breakpoint. It is measured in UTF-16 code units and the client capability `columnsStartAt1` determines whether it is 0- or 1-based.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Breakpoint.InstructionReference">
+            <summary>
+            A memory reference to where the breakpoint is set.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Breakpoint.Offset">
+            <summary>
+            The offset from the instruction reference.
+            This can be negative.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.BreakpointLocation.Line">
+            <summary>
+            Start line of breakpoint location.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.BreakpointLocation.Column">
+            <summary>
+            The start position of a breakpoint location. Position is measured in UTF-16 code units and the client capability `columnsStartAt1` determines whether it is 0- or 1-based.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.BreakpointLocation.EndLine">
+            <summary>
+            The end line of breakpoint location if the location covers a range.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.BreakpointLocation.EndColumn">
+            <summary>
+            The end position of a breakpoint location (if the location covers a range). Position is measured in UTF-16 code units and the client capability `columnsStartAt1` determines whether it is 0- or 1-based.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Checksum.Algorithm">
+            The algorithm used to calculate this checksum.
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Checksum.Value">
+            Value of the checksum, encoded as a hexadecimal value.
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Entities.ColumnDescriptor">
+            <summary>
+            A ColumnDescriptor specifies what module attribute to show in a column of the modules view, how to format it, and what the column's label should be.
+            It is only used if the underlying UI actually supports this level of customization.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ColumnDescriptor.AttributeName">
+            <summary>
+            Name of the attribute rendered in this column.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ColumnDescriptor.Label">
+            <summary>
+            Header UI label of column.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ColumnDescriptor.Format">
+            <summary>
+            Format to use for the rendered values in this column. TBD on the supported formats.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ColumnDescriptor.Type">
+            <summary>
+            Datatype of values in this column. Defaults to `string` if not specified.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ColumnDescriptor.Width">
+            <summary>
+            Width of this column in characters (hint only).
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.CompletionItem.Label">
+            <summary>
+            The label of this completion item. By default this is also the text that is inserted when selecting this completion.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.CompletionItem.Text">
+            <summary>
+            If text is returned and not an empty string, then it is inserted instead of the label.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.CompletionItem.SortText">
+            <summary>
+            A string that should be used when comparing this item with other items. If not returned or an empty string, the `label` is used instead.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.CompletionItem.Detail">
+            <summary>
+            A human-readable string with additional information about this item, like type or symbol information.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.CompletionItem.Type">
+            <summary>
+            The item's type. Typically the client uses this information to render the item in the UI with an icon.
+            Values: 'method', 'function', 'constructor', 'field', 'variable', 'class', 'interface', 'module', 'property', 'unit', 'value', 'enum', 'keyword', 'snippet', 'text', 'color', 'file', 'reference', 'customcolor'
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.CompletionItem.Start">
+            <summary>
+            Start position (within the `text` attribute of the `completions` request) where the completion text is added. The position is measured in UTF-16 code units and the client capability `columnsStartAt1` determines whether it is 0- or 1-based. If the start position is omitted the text is added at the location specified by the `column` attribute of the `completions` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.CompletionItem.Length">
+            <summary>
+            Length determines how many characters are overwritten by the completion text and it is measured in UTF-16 code units. If missing the value 0 is assumed which results in the completion text being inserted.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.CompletionItem.SelectionStart">
+            <summary>
+            Determines the start of the new selection after the text has been inserted (or replaced). `selectionStart` is measured in UTF-16 code units and must be in the range 0 and length of the completion text. If omitted the selection starts at the end of the completion text.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.CompletionItem.SelectionLength">
+            <summary>
+            Determines the length of the new selection after the text has been inserted (or replaced) and it is measured in UTF-16 code units. The selection can not extend beyond the bounds of the completion text. If omitted the length is assumed to be 0.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.DataBreakpoint.DataId">
+            <summary>
+            An id representing the data. This id is returned from the `dataBreakpointInfo` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.DataBreakpoint.AccessType">
+            <summary>
+            The access type of the data.
+            Values: 'read', 'write', 'readWrite'
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.DataBreakpoint.Condition">
+            <summary>
+            An expression for conditional breakpoints.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.DataBreakpoint.HitCondition">
+            <summary>
+            An expression that controls how many hits of the breakpoint are ignored.
+            The debug adapter is expected to interpret the expression as needed.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.DisassembledInstruction.Address">
+            <summary>
+            The address of the instruction. Treated as a hex value if prefixed with `0x`, or as a decimal value otherwise.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.DisassembledInstruction.InstructionBytes">
+            <summary>
+            Raw bytes representing the instruction and its operands, in an implementation-defined format.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.DisassembledInstruction.Instruction">
+            <summary>
+            Text representing the instruction and its operands, in an implementation-defined format.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.DisassembledInstruction.Symbol">
+            <summary>
+            Name of the symbol that corresponds with the location of this instruction, if any.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.DisassembledInstruction.Location">
+            <summary>
+            Source location that corresponds to this instruction, if any.
+            Should always be set (if available) on the first instruction returned, but can be omitted afterwards if this instruction maps to the same source file as the previous instruction.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.DisassembledInstruction.Line">
+            <summary>
+            The line within the source location that corresponds to this instruction, if any.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.DisassembledInstruction.Column">
+            <summary>
+            The column within the line that corresponds to this instruction, if any.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.DisassembledInstruction.EndLine">
+            <summary>
+            The end line of the range that corresponds to this instruction, if any.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.DisassembledInstruction.EndColumn">
+            <summary>
+            The end column of the range that corresponds to this instruction, if any.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionBreakpointsFilter">
+            <summary>
+            An ExceptionBreakpointsFilter is shown in the UI as an filter option for configuring how exceptions are dealt with.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionBreakpointsFilter.Filter">
+            <summary>
+            The internal ID of the filter option. This value is passed to the `setExceptionBreakpoints` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionBreakpointsFilter.Label">
+            <summary>
+            The name of the filter option. This is shown in the UI.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionBreakpointsFilter.Description">
+            <summary>
+            A help text providing additional information about the exception filter. This string is typically shown as a hover and can be translated.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionBreakpointsFilter.Default">
+            <summary>
+            Initial value of the filter option. If not specified a value false is assumed.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionBreakpointsFilter.SupportsCondition">
+            <summary>
+            Controls whether a condition can be specified for this filter option. If false or missing, a condition can not be set.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionBreakpointsFilter.ConditionDescription">
+            <summary>
+            A help text providing information about the condition. This string is shown as the placeholder text for a text box and can be translated.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionDetails.Message">
+            <summary>
+            Message contained in the exception.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionDetails.TypeName">
+            <summary>
+            Short type name of the exception object.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionDetails.FullTypeName">
+            <summary>
+            Fully-qualified type name of the exception object.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionDetails.EvaluateName">
+            <summary>
+            An expression that can be evaluated in the current scope to obtain the exception object.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionDetails.StackTrace">
+            <summary>
+            Stack trace at the time the exception was thrown.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionDetails.InnerException">
+            <summary>
+            Details of the exception contained by this exception, if any.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionFilterOptions.FilterId">
+            <summary>
+            ID of an exception filter returned by the `exceptionBreakpointFilters` capability.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionFilterOptions.Condition">
+            <summary>
+            An expression for conditional exceptions.
+            The exception breaks into the debugger if the result of the condition is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionOptions.Path">
+            <summary>
+            A path that selects a single or multiple exceptions in a tree. If `path` is missing, the whole tree is selected.
+            By convention the first segment of the path is a category that is used to group exceptions in the UI.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionOptions.BreakMode">
+            <summary>
+            Condition when a thrown exception should result in a break.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionBreakMode.Never">
+            <summary>
+            Never break on exceptions.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionBreakMode.Always">
+            <summary>
+            Always break on exceptions.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionBreakMode.Unhandled">
+            <summary>
+            Break on unhandled exceptions.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionBreakMode.UserUnhandled">
+            <summary>
+            Break on user-unhandled exceptions.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionPathSegment.Negate">
+            <summary>
+            If false or missing this segment matches the names provided, otherwise it matches anything except the names provided.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ExceptionPathSegment.Names">
+            <summary>
+            Depending on the value of `negate` the names that should match or not match.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.FunctionBreakpoint.Name">
+            The name of the function.
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.FunctionBreakpoint.Condition">
+            An expression for conditional breakpoints.
+            It is only honored by a debug adapter if the corresponding capability
+            `supportsConditionalBreakpoints` is true.
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.FunctionBreakpoint.HitCondition">
+            An expression that controls how many hits of the breakpoint are ignored.
+            The debug adapter is expected to interpret the expression as needed.
+            The attribute is only honored by a debug adapter if the corresponding
+            capability `supportsHitConditionalBreakpoints` is true.
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.GotoTarget.Id">
+            <summary>
+            Unique identifier for a goto target. This is used in the `goto` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.GotoTarget.Label">
+            <summary>
+            The name of the goto target (shown in the UI).
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.GotoTarget.Line">
+            <summary>
+            The line of the goto target.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.GotoTarget.Column">
+            <summary>
+            The column of the goto target. It is measured in UTF-16 code units and the client capability `columnsStartAt1` determines whether it is 0- or 1-based.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.GotoTarget.EndLine">
+            <summary>
+            The end line of the range covered by the goto target.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.GotoTarget.EndColumn">
+            <summary>
+            The end column of the range covered by the goto target. It is measured in UTF-16 code units and the client capability `columnsStartAt1` determines whether it is 0- or 1-based.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.GotoTarget.InstructionPointerReference">
+            <summary>
+            A memory reference for the instruction pointer value represented by this target.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.InstructionBreakpoint.InstructionReference">
+            <summary>
+            The instruction reference of the breakpoint.
+            This should be a memory or instruction pointer reference from an `EvaluateResponse`, `Variable`, `StackFrame`, `GotoTarget`, or `Breakpoint`.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.InstructionBreakpoint.Offset">
+            <summary>
+            The offset from the instruction reference in bytes.
+            This can be negative.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.InstructionBreakpoint.Condition">
+            <summary>
+            An expression for conditional breakpoints.
+            It is only honored by a debug adapter if the corresponding capability `supportsConditionalBreakpoints` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.InstructionBreakpoint.HitCondition">
+            <summary>
+            An expression that controls how many hits of the breakpoint are ignored.
+            The debug adapter is expected to interpret the expression as needed.
+            The attribute is only honored by a debug adapter if the corresponding capability `supportsHitConditionalBreakpoints` is true.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Entities.LoadEventReason">
+            <summary>
+            The reason for a load event.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.LoadEventReason.New">
+            <summary>
+            A new module has been loaded.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.LoadEventReason.Changed">
+            <summary>
+            Module information has changed.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.LoadEventReason.Removed">
+            <summary>
+            A module has been unloaded.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Entities.Module">
+             <summary>
+             A Module object represents a row in the modules view.
+             The `id` attribute identifies a module in the modules view and is used in a `module` event for identifying a module for adding, updating or deleting.
+             The `name` attribute is used to minimally render the module in the UI.
+            
+             Additional attributes can be added to the module. They show up in the module view if they have a corresponding `ColumnDescriptor`.
+            
+             To avoid an unnecessary proliferation of additional attributes with similar semantics but different names, we recommend to re-use attributes from the 'recommended' list below first, and only introduce new attributes if nothing appropriate could be found.
+             </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Module.Id">
+            <summary>
+            Unique identifier for the module.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Module.Name">
+            <summary>
+            A name of the module.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Module.Path">
+            <summary>
+            Logical full path to the module. The exact definition is implementation defined, but usually this would be a full path to the on-disk file for the module.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Module.IsOptimized">
+            <summary>
+            True if the module is optimized.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Module.IsUserCode">
+            <summary>
+            True if the module is considered 'user code' by a debugger that supports 'Just My Code'.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Module.Version">
+            <summary>
+            Version of Module.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Module.SymbolStatus">
+            <summary>
+            User-understandable description of if symbols were found for the module (ex: 'Symbols Loaded', 'Symbols not found', etc.)
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Module.SymbolFilePath">
+            <summary>
+            Logical full path to the symbol file. The exact definition is implementation defined.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Module.DateTimeStamp">
+            <summary>
+            Module created or modified, encoded as a RFC 3339 timestamp.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Module.AddressRange">
+            <summary>
+            Address range covered by this module.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Entities.Scope">
+            <summary>
+            A Scope is a named container for variables. Optionally a scope can map to a source or a range within a source.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Scope.Name">
+            <summary>
+            Name of the scope such as 'Arguments', 'Locals', or 'Registers'. This string is shown in the UI as is and can be translated.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Scope.PresentationHint">
+            <summary>
+            A hint for how to present this scope in the UI. If this attribute is missing, the scope is shown with a generic UI.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Scope.VariablesReference">
+            <summary>
+            The variables of this scope can be retrieved by passing the value of `variablesReference` to the `variables` request as long as execution remains suspended. See 'Lifetime of Object References' in the Overview section for details.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Scope.NamedVariables">
+            <summary>
+            The number of named variables in this scope.
+            The client can use this information to present the variables in a paged UI and fetch them in chunks.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Scope.IndexedVariables">
+            <summary>
+            The number of indexed variables in this scope.
+            The client can use this information to present the variables in a paged UI and fetch them in chunks.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Scope.Expensive">
+            <summary>
+            If true, the number of variables in this scope is large or expensive to retrieve.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Scope.Source">
+            <summary>
+            The source for this scope.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Scope.Line">
+            <summary>
+            The start line of the range covered by this scope.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Scope.Column">
+            <summary>
+            Start position of the range covered by the scope. It is measured in UTF-16 code units and the client capability `columnsStartAt1` determines whether it is 0- or 1-based.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Scope.EndLine">
+            <summary>
+            The end line of the range covered by this scope.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Scope.EndColumn">
+            <summary>
+            End position of the range covered by the scope. It is measured in UTF-16 code units and the client capability `columnsStartAt1` determines whether it is 0- or 1-based.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Entities.ScopePresentationHint">
+            <summary>
+            A hint for how to present a scope in the UI.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.ScopePresentationHint.Arguments">
+            <summary>
+            Arguments scope.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.ScopePresentationHint.Locals">
+            <summary>
+            Locals scope.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.ScopePresentationHint.Registers">
+            <summary>
+            Registers scope.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Source.Name">
+            The short name of the source. Every source returned from the debug adapter
+            has a name.
+            When sending a source to the debug adapter this name is optional.
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Source.Path">
+            The path of the source to be shown in the UI.
+            It is only used to locate and load the content of the source if no
+            `sourceReference` is specified (or its value is 0).
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Source.SourceReference">
+            If the value > 0 the contents of the source must be retrieved through the
+            `source` request (even if a path is specified).
+            Since a `sourceReference` is only valid for a session, it can not be used
+            to persist a source.
+            The value should be less than or equal to 2147483647 (2^31-1).
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Source.PresentationHint">
+            A hint for how to present the source in the UI.
+            A value of `deemphasize` can be used to indicate that the source is not
+            available or that it is skipped on stepping.
+            Values: 'normal', 'emphasize', 'deemphasize'
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Source.Origin">
+            The origin of this source. For example, 'internal module', 'inlined content
+            from source map', etc.
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Source.Sources">
+            A list of sources that are related to this source. These may be the source
+            that generated this source.
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Source.AdapterData">
+            Additional data that a debug adapter might want to loop through the client.
+            The client should leave the data intact and persist it across sessions. The
+            client should not interpret the data.
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Source.Checksums">
+            The checksums associated with this file.
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.SourceBreakpoint.Line">
+            The source line of the breakpoint or logpoint.
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.SourceBreakpoint.Column">
+            Start position within source line of the breakpoint or logpoint. It is
+            measured in UTF-16 code units and the client capability `columnsStartAt1`
+            determines whether it is 0- or 1-based.
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.SourceBreakpoint.Condition">
+            The expression for conditional breakpoints.
+            It is only honored by a debug adapter if the corresponding capability
+            `supportsConditionalBreakpoints` is true.
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.SourceBreakpoint.HitCondition">
+            The expression that controls how many hits of the breakpoint are ignored.
+            The debug adapter is expected to interpret the expression as needed.
+            The attribute is only honored by a debug adapter if the corresponding
+            capability `supportsHitConditionalBreakpoints` is true.
+            If both this property and `condition` are specified, `hitCondition` should
+            be evaluated only if the `condition` is met, and the debug adapter should
+            stop only if both conditions are met.
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.SourceBreakpoint.LogMessage">
+            If this attribute exists and is non-empty, the debug adapter must not
+            'break' (stop)
+            but log the message instead. Expressions within `{}` are interpolated.
+            The attribute is only honored by a debug adapter if the corresponding
+            capability `supportsLogPoints` is true.
+            If either `hitCondition` or `condition` is specified, then the message
+            should only be logged if those conditions are met.
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.SourceBreakpoint.Mode">
+            The mode of this breakpoint. If defined, this must be one of the
+            `breakpointModes` the debug adapter advertised in its `Capabilities`.
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFrame">
+            <summary>
+            A stack frame contains the source location.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFrame.Id">
+            <summary>
+            An identifier for the stack frame. It must be unique across all threads.
+            This id can be used to retrieve the scopes of the frame with the `scopes` request or to restart the execution of a stack frame.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFrame.Name">
+            <summary>
+            The name of the stack frame, typically a method name.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFrame.Source">
+            <summary>
+            The source of the frame.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFrame.Line">
+            <summary>
+            The line within the source of the frame. If the source attribute is missing or doesn't exist, `line` is 0 and should be ignored by the client.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFrame.Column">
+            <summary>
+            Start position of the range covered by the stack frame. It is measured in UTF-16 code units and the client capability `columnsStartAt1` determines whether it is 0- or 1-based. If attribute `source` is missing or doesn't exist, `column` is 0 and should be ignored by the client.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFrame.EndLine">
+            <summary>
+            The end line of the range covered by the stack frame.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFrame.EndColumn">
+            <summary>
+            End position of the range covered by the stack frame. It is measured in UTF-16 code units and the client capability `columnsStartAt1` determines whether it is 0- or 1-based.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFrame.CanRestart">
+            <summary>
+            Indicates whether this frame can be restarted with the `restart` request. Clients should only use this if the debug adapter supports the `restart` request and the corresponding capability `supportsRestartFrame` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFrame.InstructionPointerReference">
+            <summary>
+            A memory reference for the current instruction pointer in this frame.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFrame.ModuleId">
+            <summary>
+            The module associated with this frame, if any.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFrame.PresentationHint">
+            <summary>
+            A hint for how to present this frame in the UI.
+            A value of `label` can be used to indicate that the frame is an artificial frame that is used as a visual label or separator. A value of `subtle` can be used to change the appearance of a frame in a 'subtle' way.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFramePresentationHint">
+            <summary>
+            Hint for how to present a stack frame in the UI.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFramePresentationHint.Normal">
+            <summary>
+            Normal frame.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFramePresentationHint.Label">
+            <summary>
+            Artificial frame used as a visual label or separator.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFramePresentationHint.Subtle">
+            <summary>
+            Frame that should be presented in a 'subtle' way.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFrameFormat">
+            <summary>
+            Provides formatting information for a stack frame.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFrameFormat.Parameters">
+            <summary>
+            Displays parameters for the stack frame.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFrameFormat.ParameterTypes">
+            <summary>
+            Displays the types of parameters for the stack frame.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFrameFormat.ParameterNames">
+            <summary>
+            Displays the names of parameters for the stack frame.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFrameFormat.ParameterValues">
+            <summary>
+            Displays the values of parameters for the stack frame.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFrameFormat.Line">
+            <summary>
+            Displays the line number of the stack frame.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFrameFormat.Module">
+            <summary>
+            Displays the module of the stack frame.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StackFrameFormat.IncludeAll">
+            <summary>
+            Includes all stack frames, including those the debug adapter might otherwise hide.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StepInTarget.Id">
+            <summary>
+            Unique identifier for a step-in target.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StepInTarget.Label">
+            <summary>
+            The name of the step-in target (shown in the UI).
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StepInTarget.Line">
+            <summary>
+            The line of the step-in target.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StepInTarget.Column">
+            <summary>
+            Start position of the range covered by the step-in target. It is measured in UTF-16 code units and the client capability `columnsStartAt1` determines whether it is 0- or 1-based.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StepInTarget.EndLine">
+            <summary>
+            The end line of the range covered by the step-in target.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.StepInTarget.EndColumn">
+            <summary>
+            End position of the range covered by the step in target. It is measured in UTF-16 code units and the client capability `columnsStartAt1` determines whether it is 0- or 1-based.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Entities.SteppingGranularity">
+            <summary>
+            Stepping granularity for step requests.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.SteppingGranularity.Statement">
+            <summary>
+            Step at statement level.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.SteppingGranularity.Line">
+            <summary>
+            Step at line level.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.SteppingGranularity.Instruction">
+            <summary>
+            Step at instruction level.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Entities.Thread">
+            <summary>
+            A Thread
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Thread.Id">
+            <summary>
+            Unique identifier for the thread.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Thread.Name">
+            <summary>
+            The name of the thread.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Entities.ValueFormat">
+            <summary>
+            Provides formatting information for a value.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.ValueFormat.Hex">
+            <summary>
+            Display the value in hex.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Entities.Variable">
+            <summary>
+            A Variable is a name/value pair.
+            The `type` attribute is shown if space permits or when hovering over the variable's name.
+            The `kind` attribute is used to render additional properties of the variable, e.g. different icons can be used to indicate that a variable is public or private.
+            If the value is structured (has children), a handle is provided to retrieve the children with the `variables` request.
+            If the number of named or indexed children is large, the numbers should be returned via the `namedVariables` and `indexedVariables` attributes.
+            The client can use this information to present the children in a paged UI and fetch them in chunks.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Variable.Name">
+            <summary>
+            The variable's name.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Variable.Value">
+            <summary>
+            The variable's value.
+            This can be a multi-line text, e.g. for a function the body of a function.
+            For structured variables (which do not have a simple value), it is recommended to provide a one-line representation of the structured object. This helps to identify the structured object in the collapsed state when its children are not yet visible.
+            An empty string can be used if no value should be shown in the UI.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Variable.Type">
+            <summary>
+            The type of the variable's value. Typically shown in the UI when hovering over the value.
+            This attribute should only be returned by a debug adapter if the corresponding capability `supportsVariableType` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Variable.PresentationHint">
+            <summary>
+            Properties of a variable that can be used to determine how to render the variable in the UI.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Variable.EvaluateName">
+            <summary>
+            The evaluatable name of this variable which can be passed to the `evaluate` request to fetch the variable's value.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Variable.VariablesReference">
+            <summary>
+            * If an attribute `variablesReference` exists and its value is > 0, the
+            * output contains objects which can be retrieved by passing
+            * `variablesReference` to the `variables` request as long as execution
+            * remains suspended. See 'Lifetime of Object References' in the Overview
+            * section for details.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Variable.NamedVariables">
+            <summary>
+            The number of named child variables.
+            The client can use this information to present the children in a paged UI and fetch them in chunks.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Variable.IndexedVariables">
+            <summary>
+            The number of indexed child variables.
+            The client can use this information to present the children in a paged UI and fetch them in chunks.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.Variable.MemoryReference">
+            <summary>
+            A memory reference associated with this variable.
+            For pointer type variables, this is generally a reference to the memory address contained in the pointer.
+            For executable data, this reference may later be used in a `disassemble` request.
+            This attribute may be returned by a debug adapter if corresponding capability `supportsMemoryReferences` is true.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint">
+            <summary>
+            Optional properties of a variable that can be used to determine how to render the variable in the UI.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Kind">
+            <summary>
+            The kind of variable. Before introducing additional values, try to use the listed values.
+            Values: 'property', 'method', 'class', 'data', 'event', 'baseClass', 'innerClass', 'interface', 'mostDerivedClass', 'virtual', 'dataBreakpoint'
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Attributes">
+            <summary>
+            Set of attributes represented as an array of strings. Before introducing additional values, try to use the listed values.
+            Values: 'static', 'constant', 'readOnly', 'rawString', 'hasObjectId', 'canHaveObjectId', 'hasSideEffects', 'hasDataBreakpoint'
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Visibility">
+            <summary>
+            Visibility of variable. Before introducing additional values, try to use the listed values.
+            Values: 'public', 'private', 'protected', 'internal', 'final'
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Lazy">
+             <summary>
+            * If true, clients can present the variable with a UI that supports a
+            * specific gesture to trigger its evaluation.
+            * This mechanism can be used for properties that require executing code when
+            * retrieving their value and where the code execution can be expensive and/or
+            * produce side-effects. A typical example are properties based on a getter
+            * function.
+            * Please note that in addition to the `lazy` flag, the variable's
+            * `variablesReference` is expected to refer to a variable that will provide
+            * the value through another `variable` request.
+             </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Kinds">
+            <summary>
+            Known values for the Kind property
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Kinds.Property">
+            <summary>
+            Indicates that the object is a property.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Kinds.Method">
+            <summary>
+            Indicates that the object is a method.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Kinds.Class">
+            <summary>
+            Indicates that the object is a class.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Kinds.Data">
+            <summary>
+            Indicates that the object is data.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Kinds.Event">
+            <summary>
+            Indicates that the object is an event.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Kinds.BaseClass">
+            <summary>
+            Indicates that the object is a base class.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Kinds.InnerClass">
+            <summary>
+            Indicates that the object is an inner class.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Kinds.Interface">
+            <summary>
+            Indicates that the object is an interface.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Kinds.MostDerivedClass">
+            <summary>
+            Indicates that the object is the most derived class.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Kinds.Virtual">
+            <summary>
+            Indicates that the object is virtual, that means it is a synthetic object introduced by the
+            adapter for rendering purposes, e.g. an index range for large arrays.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Kinds.DataBreakpoint">
+            <summary>
+            Deprecated: Indicates that a data breakpoint is registered for the object.
+            The 'hasDataBreakpoint' attribute should generally be used instead.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.AttributeValues">
+            <summary>
+            Known values for the Attributes property
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.AttributeValues.Static">
+            <summary>
+            Indicates that the object is static.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.AttributeValues.Constant">
+            <summary>
+            Indicates that the object is a constant.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.AttributeValues.ReadOnly">
+            <summary>
+            Indicates that the object is read-only.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.AttributeValues.RawString">
+            <summary>
+            Indicates that the object is a raw string.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.AttributeValues.HasObjectId">
+            <summary>
+            Indicates that the object can have an object ID created for it.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.AttributeValues.CanHaveObjectId">
+            <summary>
+            Indicates that the object has an object ID associated with it.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.AttributeValues.HasSideEffects">
+            <summary>
+            Indicates that the evaluation of the object has side effects.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.AttributeValues.HasDataBreakpoint">
+            <summary>
+            Indicates that the object has an associated data breakpoint.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Visibilities">
+            <summary>
+            Known values for the Visibility property
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Visibilities.Public">
+            <summary>
+            Public visibility.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Visibilities.Private">
+            <summary>
+            Private visibility.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Visibilities.Protected">
+            <summary>
+            Protected visibility.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Visibilities.Internal">
+            <summary>
+            Internal visibility.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Entities.VariablePresentationHint.Visibilities.Final">
+            <summary>
+            Final visibility.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Events.BreakpointEvent">
+            <summary>
+            The event indicates that some information about a breakpoint has changed.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Events.BreakpointEvent.#ctor">
+            <summary>
+            The event indicates that some information about a breakpoint has changed.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.BreakpointEventBody.Reason">
+            <summary>
+            The reason for the event.
+            Values: 'changed', 'new', 'removed'
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.BreakpointEventBody.Breakpoint">
+            <summary>
+            The `id` attribute is used to find the target breakpoint, the other attributes are used as the new values.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Events.CapabilitiesEvent">
+            <summary>
+            The event indicates that one or more capabilities have changed.
+            Since the capabilities are dependent on the client and its UI, it might not be possible to change that at random times (or too late).
+            Consequently this event has a hint characteristic: a client can only be expected to make a 'best effort' in honoring individual capabilities but there are no guarantees.
+            Only changed capabilities need to be included, all other capabilities keep their values.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Events.CapabilitiesEvent.#ctor">
+            <summary>
+            The event indicates that one or more capabilities have changed.
+            Since the capabilities are dependent on the client and its UI, it might not be possible to change that at random times (or too late).
+            Consequently this event has a hint characteristic: a client can only be expected to make a 'best effort' in honoring individual capabilities but there are no guarantees.
+            Only changed capabilities need to be included, all other capabilities keep their values.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.CapabilitiesEventBody.Capabilities">
+            <summary>
+            The set of updated capabilities.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Events.ContinuedEvent">
+            <summary>
+            The event indicates that the execution of the debuggee has continued.
+            Please note: a debug adapter is not expected to send this event in response to a request that implies that execution continues, e.g. `launch` or `continue`.
+            It is only necessary to send a `continued` event if there was no previous request that implied this.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Events.ContinuedEvent.#ctor">
+            <summary>
+            The event indicates that the execution of the debuggee has continued.
+            Please note: a debug adapter is not expected to send this event in response to a request that implies that execution continues, e.g. `launch` or `continue`.
+            It is only necessary to send a `continued` event if there was no previous request that implied this.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ContinuedEventBody.ThreadId">
+            <summary>
+            The thread which was continued.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ContinuedEventBody.AllThreadsContinued">
+            <summary>
+            If `allThreadsContinued` is true, a debug adapter can announce that all threads have continued.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Events.ExitedEvent">
+            <summary>
+            The event indicates that the debuggee has exited and returns its exit code.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Events.ExitedEvent.#ctor">
+            <summary>
+            The event indicates that the debuggee has exited and returns its exit code.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ExitedEventBody.ExitCode">
+            <summary>
+            The exit code returned from the debuggee.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Events.InitializedEvent">
+            <summary>
+            This event indicates that the debug adapter is ready to accept configuration requests (e.g., `setBreakpoints`, `setExceptionBreakpoints`).
+            A debug adapter is expected to send this event when it is ready to accept configuration requests (but not before the `initialize` request has finished).
+            The sequence of events/requests is as follows:
+            - adapters sends `initialized` event (after the `initialize` request has returned)
+            - client sends zero or more `setBreakpoints` requests
+            - client sends one `setFunctionBreakpoints` request (if corresponding capability `supportsFunctionBreakpoints` is true)
+            - client sends a `setExceptionBreakpoints` request if one or more `exceptionBreakpointFilters` have been defined (or if `supportsConfigurationDoneRequest` is not true)
+            - client sends other future configuration requests
+            - client sends one `configurationDone` request to indicate the end of the configuration.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Events.InitializedEvent.#ctor">
+            <summary>
+            This event indicates that the debug adapter is ready to accept configuration requests (e.g., `setBreakpoints`, `setExceptionBreakpoints`).
+            A debug adapter is expected to send this event when it is ready to accept configuration requests (but not before the `initialize` request has finished).
+            The sequence of events/requests is as follows:
+            - adapters sends `initialized` event (after the `initialize` request has returned)
+            - client sends zero or more `setBreakpoints` requests
+            - client sends one `setFunctionBreakpoints` request (if corresponding capability `supportsFunctionBreakpoints` is true)
+            - client sends a `setExceptionBreakpoints` request if one or more `exceptionBreakpointFilters` have been defined (or if `supportsConfigurationDoneRequest` is not true)
+            - client sends other future configuration requests
+            - client sends one `configurationDone` request to indicate the end of the configuration.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Events.InvalidatedEvent">
+            <summary>
+            This event signals that some state in the debug adapter has changed and requires that the client needs to re-render the data snapshot previously requested.
+            Debug adapters do not have to emit this event for runtime changes like stopped or thread events because in that case the client refetches the new state anyway. But the event can be used for example to refresh the UI after rendering formatting has changed in the debug adapter.
+            This event should only be sent if the corresponding capability `supportsInvalidatedEvent` is true.
+            TODO [chernyaev] support, if possible
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Events.InvalidatedEvent.#ctor">
+            <summary>
+            This event signals that some state in the debug adapter has changed and requires that the client needs to re-render the data snapshot previously requested.
+            Debug adapters do not have to emit this event for runtime changes like stopped or thread events because in that case the client refetches the new state anyway. But the event can be used for example to refresh the UI after rendering formatting has changed in the debug adapter.
+            This event should only be sent if the corresponding capability `supportsInvalidatedEvent` is true.
+            TODO [chernyaev] support, if possible
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.InvalidatedEventBody.Areas">
+            <summary>
+            Set of logical areas that got invalidated. This property has a hint characteristic: a client can only be expected to make a 'best effort' in honoring the areas but there are no guarantees. If this property is missing, empty, or if values are not understood, the client should assume a single value `all`.
+            Values: 'all', 'stacks', 'threads', 'variables'
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.InvalidatedEventBody.ThreadId">
+            <summary>
+            If specified, the client only needs to refetch data related to this thread.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.InvalidatedEventBody.StackFrameId">
+            <summary>
+            If specified, the client only needs to refetch data related to this stack frame (and the `threadId` is ignored).
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Events.LoadedSourceEvent">
+            <summary>
+            The event indicates that some source has been added, changed, or removed from the set of all loaded sources.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Events.LoadedSourceEvent.#ctor">
+            <summary>
+            The event indicates that some source has been added, changed, or removed from the set of all loaded sources.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.LoadedSourceEventBody.Reason">
+            <summary>
+            The reason for the event.
+            Values: 'new', 'changed', 'removed'
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.LoadedSourceEventBody.Source">
+            <summary>
+            The new, changed, or removed source.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Events.MemoryEvent">
+            <summary>
+            This event indicates that some memory range has been updated. It should only be sent if the corresponding capability `supportsMemoryEvent` is true.
+            Clients typically react to the event by re-issuing a `readMemory` request if they show the memory identified by the `memoryReference` and if the updated memory range overlaps the displayed range. Clients should not make assumptions how individual memory references relate to each other, so they should not assume that they are part of a single continuous address range and might overlap.
+            Debug adapters can use this event to indicate that the contents of a memory range has changed due to some other request like `setVariable` or `setExpression`. Debug adapters are not expected to emit this event for each and every memory change of a running program, because that information is typically not available from debuggers and it would flood clients with too many events.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Events.MemoryEvent.#ctor">
+            <summary>
+            This event indicates that some memory range has been updated. It should only be sent if the corresponding capability `supportsMemoryEvent` is true.
+            Clients typically react to the event by re-issuing a `readMemory` request if they show the memory identified by the `memoryReference` and if the updated memory range overlaps the displayed range. Clients should not make assumptions how individual memory references relate to each other, so they should not assume that they are part of a single continuous address range and might overlap.
+            Debug adapters can use this event to indicate that the contents of a memory range has changed due to some other request like `setVariable` or `setExpression`. Debug adapters are not expected to emit this event for each and every memory change of a running program, because that information is typically not available from debuggers and it would flood clients with too many events.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.MemoryEventBody.MemoryReference">
+            <summary>
+            Memory reference of a memory range that has been updated.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.MemoryEventBody.Offset">
+            <summary>
+            Starting offset in bytes where memory has been updated. Can be negative.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.MemoryEventBody.Count">
+            <summary>
+            Number of bytes updated.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Events.ModuleEvent">
+            <summary>
+            The event indicates that some information about a module has changed.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Events.ModuleEvent.#ctor">
+            <summary>
+            The event indicates that some information about a module has changed.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ModuleEventBody.Reason">
+            <summary>
+            The reason for the event.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ModuleEventBody.Module">
+            <summary>
+            The new, changed, or removed module. In case of `removed` only the module id is used.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Events.OutputEvent">
+            <summary>
+            The event indicates that the target has produced some output.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Events.OutputEvent.#ctor">
+            <summary>
+            The event indicates that the target has produced some output.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.OutputEventBody.Category">
+            <summary>
+            The output category. If not specified or if the category is not understood by the client, `console` is assumed.
+            Values: 'console', 'important', 'stdout', 'stderr', 'telemetry'
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.OutputEventBody.Output">
+            <summary>
+            The output to report.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.OutputEventBody.Group">
+            <summary>
+            Support for keeping an output log organized by grouping related messages.
+            Values: 'start', 'startCollapsed', 'end'
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.OutputEventBody.VariablesReference">
+            <summary>
+            If an attribute `variablesReference` exists and its value is > 0, the output contains objects which can be retrieved by passing `variablesReference` to the `variables` request as long as execution remains suspended. See 'Lifetime of Object References' in the Overview section for details.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.OutputEventBody.Source">
+            <summary>
+            The source location where the output was produced.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.OutputEventBody.Line">
+            <summary>
+            The source location's line where the output was produced.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.OutputEventBody.Column">
+            <summary>
+            The position in `line` where the output was produced. It is measured in UTF-16 code units and the client capability `columnsStartAt1` determines whether it is 0- or 1-based.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.OutputEventBody.Data">
+            <summary>
+            Additional data to report. For the `telemetry` category the data is sent to telemetry, for the other categories the data is shown in JSON format.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Events.ProcessEvent">
+            <summary>
+            The event indicates that the debugger has begun debugging a new process. Either one that it has launched, or one that it has attached to.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Events.ProcessEvent.#ctor">
+            <summary>
+            The event indicates that the debugger has begun debugging a new process. Either one that it has launched, or one that it has attached to.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ProcessEventBody.Name">
+            <summary>
+            The logical name of the process. This is usually the full path to process's executable file. Example: /home/example/myproj/program.js.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ProcessEventBody.SystemProcessId">
+            <summary>
+            The system process id of the debugged process. This property is missing for non-system processes.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ProcessEventBody.IsLocalProcess">
+            <summary>
+            If true, the process is running on the same computer as the debug adapter.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ProcessEventBody.StartMethod">
+            <summary>
+            Describes how the debug engine started debugging this process.
+            Values: 'launch', 'attach', 'attachForSuspendedLaunch'
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ProcessEventBody.PointerSize">
+            <summary>
+            The size of a pointer or address for this process, in bits. This value may be used by clients when formatting addresses for display.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Events.ProgressEndEvent">
+            <summary>
+            The event signals the end of the progress reporting with a final message.
+            This event should only be sent if the corresponding capability `supportsProgressReporting` is true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Events.ProgressEndEvent.#ctor">
+            <summary>
+            The event signals the end of the progress reporting with a final message.
+            This event should only be sent if the corresponding capability `supportsProgressReporting` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ProgressEndEventBody.ProgressId">
+            <summary>
+            The ID that was introduced in the initial `progressStart` event.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ProgressEndEventBody.Message">
+            <summary>
+            More detailed progress message. If omitted, the previous message (if any) is used.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Events.ProgressStartEvent">
+            <summary>
+            The event signals that a long running operation is about to start and provides additional information for the client to set up a corresponding progress and cancellation UI.
+            The client is free to delay the showing of the UI in order to reduce flicker.
+            This event should only be sent if the corresponding capability `supportsProgressReporting` is true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Events.ProgressStartEvent.#ctor">
+            <summary>
+            The event signals that a long running operation is about to start and provides additional information for the client to set up a corresponding progress and cancellation UI.
+            The client is free to delay the showing of the UI in order to reduce flicker.
+            This event should only be sent if the corresponding capability `supportsProgressReporting` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ProgressStartEventBody.ProgressId">
+            <summary>
+            An ID that can be used in subsequent `progressUpdate` and `progressEnd` events to make them refer to the same progress reporting.
+            IDs must be unique within a debug session.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ProgressStartEventBody.Title">
+            <summary>
+            Short title of the progress reporting. Shown in the UI to describe the long running operation.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ProgressStartEventBody.RequestId">
+            <summary>
+            The request ID that this progress report is related to. If specified a debug adapter is expected to emit progress events for the long running request until the request has been either completed or cancelled.
+            If the request ID is omitted, the progress report is assumed to be related to some general activity of the debug adapter.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ProgressStartEventBody.Cancellable">
+            <summary>
+            If true, the request that reports progress may be cancelled with a `cancel` request.
+            So this property basically controls whether the client should use UX that supports cancellation.
+            Clients that don't support cancellation are allowed to ignore the setting.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ProgressStartEventBody.Message">
+            <summary>
+            More detailed progress message.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ProgressStartEventBody.Percentage">
+            <summary>
+            Progress percentage to display (value range: 0 to 100). If omitted no percentage is shown.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Events.ProgressUpdateEvent">
+            <summary>
+            The event signals that the progress reporting needs to be updated with a new message and/or percentage.
+            The client does not have to update the UI immediately, but the clients needs to keep track of the message and/or percentage values.
+            This event should only be sent if the corresponding capability `supportsProgressReporting` is true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Events.ProgressUpdateEvent.#ctor">
+            <summary>
+            The event signals that the progress reporting needs to be updated with a new message and/or percentage.
+            The client does not have to update the UI immediately, but the clients needs to keep track of the message and/or percentage values.
+            This event should only be sent if the corresponding capability `supportsProgressReporting` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ProgressUpdateEventBody.ProgressId">
+            <summary>
+            The ID that was introduced in the initial `progressStart` event.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ProgressUpdateEventBody.Message">
+            <summary>
+            More detailed progress message. If omitted, the previous message (if any) is used.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ProgressUpdateEventBody.Percentage">
+            <summary>
+            Progress percentage to display (value range: 0 to 100). If omitted no percentage is shown.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Events.StoppedEvent">
+            <summary>
+            The event indicates that the execution of the debuggee has stopped due to some condition.
+            This can be caused by a breakpoint previously set, a stepping request has completed, by executing a debugger statement etc.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Events.StoppedEvent.#ctor">
+            <summary>
+            The event indicates that the execution of the debuggee has stopped due to some condition.
+            This can be caused by a breakpoint previously set, a stepping request has completed, by executing a debugger statement etc.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.StoppedEventBody.Reason">
+            <summary>
+            The reason for the event.
+            For backward compatibility this string is shown in the UI if the `description` attribute is missing (but it must not be translated).
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.StoppedEventBody.Description">
+            <summary>
+            The full reason for the event, e.g. 'Paused on exception'. This string is shown in the UI as is and can be translated.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.StoppedEventBody.ThreadId">
+            <summary>
+            The thread which was stopped.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.StoppedEventBody.PreserveFocusHint">
+            <summary>
+            A value of true hints to the client that this event should not change the focus.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.StoppedEventBody.Text">
+            <summary>
+            Additional information. E.g. if reason is `exception`, text contains the exception name. This string is shown in the UI.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.StoppedEventBody.AllThreadsStopped">
+            <summary>
+            If `allThreadsStopped` is true, a debug adapter can announce that all threads have stopped.
+            - The client should use this information to enable that all threads can be expanded to access their stacktraces.
+            - If the attribute is missing or false, only the thread with the given `threadId` can be expanded.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.StoppedEventBody.HitBreakpointIds">
+            <summary>
+            Ids of the breakpoints that triggered the event. In most cases there is a single breakpoint but here are some examples for multiple breakpoints:
+            - Different types of breakpoints map to the same location.
+            - Multiple source breakpoints get collapsed to the same instruction by the compiler/runtime.
+            - Multiple function breakpoints with different function names map to the same location.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Events.StoppedReason">
+            <summary>
+            The reason why the debuggee stopped.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Events.StoppedReason.Unknown">
+            <summary>
+            Unknown reason.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Events.StoppedReason.Step">
+            <summary>
+            Stopped after a step operation completed.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Events.StoppedReason.Breakpoint">
+            <summary>
+            Stopped at a breakpoint.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Events.StoppedReason.Exception">
+            <summary>
+            Stopped due to an exception.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Events.StoppedReason.Pause">
+            <summary>
+            Stopped due to a pause request.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Events.StoppedReason.Entry">
+            <summary>
+            Stopped at the entry point of the program.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Events.StoppedReason.Goto">
+            <summary>
+            Stopped after a goto operation completed.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Events.StoppedReason.FunctionBreakpoint">
+            <summary>
+            Stopped at a function breakpoint.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Events.StoppedReason.DataBreakpoint">
+            <summary>
+            Stopped at a data breakpoint.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Events.StoppedReason.InstructionBreakpoint">
+            <summary>
+            Stopped at an instruction breakpoint.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Events.StoppedReason.Restart">
+            <summary>
+            Frame was restarted.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Events.TerminatedEvent">
+            <summary>
+            The event indicates that debugging of the debuggee has terminated. This does **not** mean that the debuggee itself has exited.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Events.TerminatedEvent.#ctor">
+            <summary>
+            The event indicates that debugging of the debuggee has terminated. This does **not** mean that the debuggee itself has exited.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.TerminatedEventBody.Restart">
+            <summary>
+            A debug adapter may set `restart` to true (or to an arbitrary object) to request that the client restarts the session.
+            The value is not interpreted by the client and passed unmodified as an attribute `__restart` to the `launch` and `attach` requests.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Events.ThreadEvent">
+            <summary>
+            The event indicates that a thread has started or exited.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Events.ThreadEvent.#ctor">
+            <summary>
+            The event indicates that a thread has started or exited.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ThreadEventBody.Reason">
+            <summary>
+            The reason for the event.
+            Values: 'started', 'exited'
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Events.ThreadEventBody.ThreadId">
+            <summary>
+            The identifier of the thread.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.AttachRequest">
+            <summary>
+            The attach request is sent from the client to the debug adapter to attach to a debuggee that is already running.
+            Since attaching is debugger/runtime specific, the arguments for this request are not part of this specification.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.AttachRequest.#ctor">
+            <summary>
+            The attach request is sent from the client to the debug adapter to attach to a debuggee that is already running.
+            Since attaching is debugger/runtime specific, the arguments for this request are not part of this specification.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.AttachRequestArguments.Restart">
+            <summary>
+            Optional data from the previous, restarted session.
+            The data is sent as the `restart` attribute of the `terminated` event.
+            The client should leave the data intact.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.BreakpointLocationsRequest">
+            <summary>
+            The `breakpointLocations` request returns all possible locations for source breakpoints in a given range.
+            Clients should only call this request if the corresponding capability `supportsBreakpointLocationsRequest` is true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.BreakpointLocationsRequest.#ctor">
+            <summary>
+            The `breakpointLocations` request returns all possible locations for source breakpoints in a given range.
+            Clients should only call this request if the corresponding capability `supportsBreakpointLocationsRequest` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.BreakpointLocationsArguments.Source">
+            <summary>
+            The source location of the breakpoints; either `source.path` or `source.sourceReference` must be specified.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.BreakpointLocationsArguments.Line">
+            <summary>
+            Start line of range to search possible breakpoint locations in. If only the line is specified, the request returns all possible locations in that line.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.BreakpointLocationsArguments.Column">
+            <summary>
+            Start position within `line` to search possible breakpoint locations in. It is measured in UTF-16 code units and the client capability `columnsStartAt1` determines whether it is 0- or 1-based. If no column is given, the first position in the start line is assumed.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.BreakpointLocationsArguments.EndLine">
+            <summary>
+            End line of range to search possible breakpoint locations in. If no end line is given, then the end line is assumed to be the start line.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.BreakpointLocationsArguments.EndColumn">
+            <summary>
+            End position within `endLine` to search possible breakpoint locations in. It is measured in UTF-16 code units and the client capability `columnsStartAt1` determines whether it is 0- or 1-based. If no end column is given, the last position in the end line is assumed.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.BreakpointLocationsResponseBody.Breakpoints">
+            <summary>
+            Sorted set of possible breakpoint locations.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.ContinueRequest">
+            <summary>
+            The request resumes execution of all threads. If the debug adapter supports single thread execution (see capability `supportsSingleThreadExecutionRequests`), setting the `singleThread` argument to true resumes only the specified thread. If not all threads were resumed, the `allThreadsContinued` attribute of the response should be set to false.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.ContinueRequest.#ctor">
+            <summary>
+            The request resumes execution of all threads. If the debug adapter supports single thread execution (see capability `supportsSingleThreadExecutionRequests`), setting the `singleThread` argument to true resumes only the specified thread. If not all threads were resumed, the `allThreadsContinued` attribute of the response should be set to false.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.ContinueArguments.ThreadId">
+            <summary>
+            Specifies the active thread. If the debug adapter supports single thread execution (see `supportsSingleThreadExecutionRequests`) and the argument `singleThread` is true, only the thread with this ID is resumed.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.ContinueArguments.SingleThread">
+            <summary>
+            If this flag is true, execution is resumed only for the thread with given `threadId`.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.ContinueResponseBody.AllThreadsContinued">
+            <summary>
+            The value true (or a missing property) signals to the client that all threads have been resumed. The value false indicates that not all threads were resumed.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.DisconnectRequestArguments.Restart">
+            A value of true indicates that this `disconnect` request is part of a
+            restart sequence.
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.DisconnectRequestArguments.TerminateDebuggee">
+            Indicates whether the debuggee should be terminated when the debugger is
+            disconnected.
+            If unspecified, the debug adapter is free to do whatever it thinks is best.
+            The attribute is only honored by a debug adapter if the corresponding
+            capability `supportTerminateDebuggee` is true.
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.DisconnectRequestArguments.SuspendDebuggee">
+            Indicates whether the debuggee should stay suspended when the debugger is
+            disconnected.
+            If unspecified, the debuggee should resume execution.
+            The attribute is only honored by a debug adapter if the corresponding
+            capability `supportSuspendDebuggee` is true.
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.EvaluateRequest">
+            <summary>
+            Evaluates the given expression in the context of the topmost stack frame.
+            The expression has access to any variables and arguments that are in scope.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.EvaluateRequest.#ctor">
+            <summary>
+            Evaluates the given expression in the context of the topmost stack frame.
+            The expression has access to any variables and arguments that are in scope.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.EvaluateArguments.Expression">
+            <summary>
+            The expression to evaluate.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.EvaluateArguments.FrameId">
+            <summary>
+            Evaluate the expression in the scope of this stack frame. If not specified, the expression is evaluated in the global scope.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.EvaluateArguments.Context">
+            <summary>
+            The context in which the evaluate request is used.
+            See <see cref="!:EvaluateContext"/> for well-known values.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.EvaluateArguments.Format">
+            <summary>
+            Specifies details on how to format the result.
+            The attribute is only honored by a debug adapter if the corresponding capability `supportsValueFormattingOptions` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.EvaluateResponseBody.Result">
+            <summary>
+            The result of the evaluate request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.EvaluateResponseBody.Type">
+            <summary>
+            The type of the evaluate result.
+            This attribute should only be returned by a debug adapter if the corresponding capability `supportsVariableType` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.EvaluateResponseBody.PresentationHint">
+            <summary>
+            Properties of an evaluate result that can be used to determine how to render the result in the UI.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.EvaluateResponseBody.VariablesReference">
+            <summary>
+            If `variablesReference` is > 0, the evaluate result is structured and its children can be retrieved by passing `variablesReference` to the `variables` request as long as execution remains suspended. See 'Lifetime of Object References' in the Overview section for details.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.EvaluateResponseBody.NamedVariables">
+            <summary>
+            The number of named child variables.
+            The client can use this information to present the variables in a paged UI and fetch them in chunks.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.EvaluateResponseBody.IndexedVariables">
+            <summary>
+            The number of indexed child variables.
+            The client can use this information to present the variables in a paged UI and fetch them in chunks.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.EvaluateResponseBody.MemoryReference">
+            <summary>
+            A memory reference to a location appropriate for this result.
+            For pointer type eval results, this is generally a reference to the memory address contained in the pointer.
+            This attribute may be returned by a debug adapter if corresponding capability `supportsMemoryReferences` is true.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.EvaluateContexts">
+            <summary>
+            Provides well-known context values for <see cref="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.EvaluateArguments.Context"/>.
+            These values indicate the context in which the evaluate request is used.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Requests.EvaluateContexts.Watch">
+            <summary>
+            Evaluate is called from a watch view context.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Requests.EvaluateContexts.Repl">
+            <summary>
+            Evaluate is called from a REPL context.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Requests.EvaluateContexts.Hover">
+            <summary>
+            Evaluate is called to generate the debug hover contents.
+            This context is used when the user hovers over an expression in the editor.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Requests.EvaluateContexts.Clipboard">
+            <summary>
+            Evaluate is called to generate clipboard contents.
+            This context is used when copying a value to the clipboard.
+            </summary>
+        </member>
+        <member name="F:JetBrains.VsCode.Debugger.Worker.Models.Requests.EvaluateContexts.Variables">
+            <summary>
+            Evaluate is called from a variables view context.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.ExceptionInfoRequest">
+            <summary>
+            Retrieves the details of the exception that caused the `stopped` event to be raised.
+            Clients should only call this request if the corresponding capability `supportsExceptionInfoRequest` is true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.ExceptionInfoRequest.#ctor">
+            <summary>
+            Retrieves the details of the exception that caused the `stopped` event to be raised.
+            Clients should only call this request if the corresponding capability `supportsExceptionInfoRequest` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.ExceptionInfoArguments.ThreadId">
+            <summary>
+            Thread for which exception information should be retrieved.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.ExceptionInfoResponseBody.ExceptionId">
+            <summary>
+            ID of the exception that was thrown.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.ExceptionInfoResponseBody.Description">
+            <summary>
+            Descriptive text for the exception.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.ExceptionInfoResponseBody.BreakMode">
+            <summary>
+            Mode that caused the exception notification to be raised.
+            Values: 'never', 'always', 'unhandled', 'userUnhandled'
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.ExceptionInfoResponseBody.Details">
+            <summary>
+            Detailed information about the exception.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.GotoRequest">
+            <summary>
+            The request sets the location where the debuggee will continue to run.
+            This makes it possible to skip the execution of code or to execute code again.
+            The code between the current location and the goto target is not executed but skipped.
+            The debug adapter first sends the response and then a `stopped` event with reason `goto`.
+            Clients should only call this request if the corresponding capability `supportsGotoTargetsRequest` is true (because only then goto targets exist that can be passed as arguments).
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.GotoRequest.#ctor">
+            <summary>
+            The request sets the location where the debuggee will continue to run.
+            This makes it possible to skip the execution of code or to execute code again.
+            The code between the current location and the goto target is not executed but skipped.
+            The debug adapter first sends the response and then a `stopped` event with reason `goto`.
+            Clients should only call this request if the corresponding capability `supportsGotoTargetsRequest` is true (because only then goto targets exist that can be passed as arguments).
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.GotoArguments.ThreadId">
+            <summary>
+            Set the goto target for this thread.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.GotoArguments.TargetId">
+            <summary>
+            The location where the debuggee will continue to run.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.GotoTargetsRequest">
+            <summary>
+            This request retrieves the possible goto targets for the specified source location.
+            These targets can be used in the `goto` request.
+            Clients should only call this request if the corresponding capability `supportsGotoTargetsRequest` is true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.GotoTargetsRequest.#ctor">
+            <summary>
+            This request retrieves the possible goto targets for the specified source location.
+            These targets can be used in the `goto` request.
+            Clients should only call this request if the corresponding capability `supportsGotoTargetsRequest` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.GotoTargetsArguments.Source">
+            <summary>
+            The source location for which the goto targets are determined.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.GotoTargetsArguments.Line">
+            <summary>
+            The line location for which the goto targets are determined.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.GotoTargetsArguments.Column">
+            <summary>
+            The position within `line` for which the goto targets are determined. It is measured in UTF-16 code units and the client capability `columnsStartAt1` determines whether it is 0- or 1-based.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.GotoTargetsResponseBody.Targets">
+            <summary>
+            The possible goto targets of the specified location.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.InitializeRequestArguments.ClientId">
+            <summary>
+            The ID of the client using this adapter.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.InitializeRequestArguments.ClientName">
+            <summary>
+            The human-readable name of the client using this adapter.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.InitializeRequestArguments.AdapterId">
+            <summary>
+            The ID of the debug adapter.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.InitializeRequestArguments.Locale">
+            <summary>
+            The ISO-639 locale of the client using this adapter, e.g. en-US or de-CH.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.InitializeRequestArguments.LinesStartAt1">
+            <summary>
+            If true all line numbers are 1-based (default).
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.InitializeRequestArguments.ColumnsStartAt1">
+            <summary>
+            If true all column numbers are 1-based (default).
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.InitializeRequestArguments.PathFormat">
+            <summary>
+            Determines in what format paths are specified. The default is `path`, which is the native format.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.InitializeRequestArguments.SupportsVariableType">
+            <summary>
+            Client supports the `type` attribute for variables.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.InitializeRequestArguments.SupportsVariablePaging">
+            <summary>
+            Client supports the paging of variables.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.InitializeRequestArguments.SupportsRunInTerminalRequest">
+            <summary>
+            Client supports the `runInTerminal` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.InitializeRequestArguments.SupportsMemoryReferences">
+            <summary>
+            Client supports memory references.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.InitializeRequestArguments.SupportsProgressReporting">
+            <summary>
+            Client supports progress reporting.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.InitializeRequestArguments.SupportsInvalidatedEvent">
+            <summary>
+            Client supports the `invalidated` event.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.InitializeRequestArguments.SupportsMemoryEvent">
+            <summary>
+            Client supports the `memory` event.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsConfigurationDoneRequest">
+            <summary>
+            The debug adapter supports the `configurationDone` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsFunctionBreakpoints">
+            <summary>
+            The debug adapter supports function breakpoints.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsConditionalBreakpoints">
+            <summary>
+            The debug adapter supports conditional breakpoints.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsHitConditionalBreakpoints">
+            <summary>
+            The debug adapter supports breakpoints that break execution after a specified number of hits.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsEvaluateForHovers">
+            <summary>
+            The debug adapter supports a (side effect free) `evaluate` request for data hovers.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsStepBack">
+            <summary>
+            The debug adapter supports stepping back via the `stepBack` and `reverseContinue` requests.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsSetVariable">
+            <summary>
+            The debug adapter supports the `setVariable` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsRestartFrame">
+            <summary>
+            The debug adapter supports the `restartFrame` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsGotoTargetsRequest">
+            <summary>
+            The debug adapter supports the `gotoTargets` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsStepInTargetsRequest">
+            <summary>
+            The debug adapter supports the `stepInTargets` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsCompletionsRequest">
+            <summary>
+            The debug adapter supports the `completions` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsModulesRequest">
+            <summary>
+            The debug adapter supports the `modules` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsRestartRequest">
+            <summary>
+            The debug adapter supports the `restart` request. In this case a client should not implement `restart` by terminating and relaunching the adapter but by calling the `restart` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsExceptionOptions">
+            <summary>
+            The debug adapter supports `exceptionOptions` on the `setExceptionBreakpoints` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsValueFormattingOptions">
+            <summary>
+            The debug adapter supports a `format` attribute on the `stackTrace`, `variables`, and `evaluate` requests.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsExceptionInfoRequest">
+            <summary>
+            The debug adapter supports the `exceptionInfo` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportTerminateDebuggee">
+            <summary>
+            The debug adapter supports the `terminateDebuggee` attribute on the `disconnect` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportSuspendDebuggee">
+            <summary>
+            The debug adapter supports the `suspendDebuggee` attribute on the `disconnect` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsDelayedStackTraceLoading">
+            <summary>
+            The debug adapter supports the delayed loading of parts of the stack, which requires that both the `startFrame` and `levels` arguments and the `totalFrames` result of the `stackTrace` request are supported.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsLoadedSourcesRequest">
+            <summary>
+            The debug adapter supports the `loadedSources` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsLogPoints">
+            <summary>
+            The debug adapter supports the `logMessage` attribute of the `SourceBreakpoint`.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsTerminateThreadsRequest">
+            <summary>
+            The debug adapter supports the `terminateThreads` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsSetExpression">
+            <summary>
+            The debug adapter supports the `setExpression` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsTerminateRequest">
+            <summary>
+            The debug adapter supports the `terminate` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsDataBreakpoints">
+            <summary>
+            The debug adapter supports data breakpoints.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsReadMemoryRequest">
+            <summary>
+            The debug adapter supports the `readMemory` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsWriteMemoryRequest">
+            <summary>
+            The debug adapter supports the `writeMemory` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsDisassembleRequest">
+            <summary>
+            The debug adapter supports the `disassemble` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsCancelRequest">
+            <summary>
+            The debug adapter supports the `cancel` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsBreakpointLocationsRequest">
+            <summary>
+            The debug adapter supports the `breakpointLocations` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsClipboardContext">
+            <summary>
+            The debug adapter supports the `clipboard` context value in the `evaluate` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsSteppingGranularity">
+            <summary>
+            The debug adapter supports stepping granularity (argument `granularity`) for the stepping requests.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsInstructionBreakpoints">
+            <summary>
+            The debug adapter supports adding breakpoints based on instruction references.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsExceptionFilterOptions">
+            <summary>
+            The debug adapter supports `filterOptions` as an argument on the `setExceptionBreakpoints` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsSingleThreadExecutionRequests">
+            <summary>
+            The debug adapter supports the `singleThread` property on the execution requests (`continue`, `next`, `stepIn`, `stepOut`, `reverseContinue`, `stepBack`).
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.ExceptionBreakpointFilters">
+            <summary>
+            Available exception filter options for the `setExceptionBreakpoints` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.CompletionTriggerCharacters">
+            <summary>
+            The set of characters that should trigger completion in a REPL. If not specified, the UI should assume the `.` character.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.AdditionalModuleColumns">
+            <summary>
+            The set of additional module information exposed by the debug adapter.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportedChecksumAlgorithms">
+            <summary>
+            Checksum algorithms supported by the debug adapter.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsAnsiStyling">
+            <summary>
+            The debug adapter supports ANSI styling in the output.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Capabilities.SupportsDataBreakpointBytes">
+            <summary>
+            The debug adapter supports data breakpoints with access type and size.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.LaunchRequestArguments.Runtime">
+            <summary>
+            For the project-oriented "dotnet" adapter: the concrete runtime ("coreclr"/"msclr"/"mono") the frontend resolved
+            for this project. Ignored for the concrete coreclr/msclr/mono adapters.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.LoadedSourcesRequest">
+            <summary>
+            Retrieves the set of all sources currently loaded by the debugged process.
+            Clients should only call this request if the corresponding capability `supportsLoadedSourcesRequest` is true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.LoadedSourcesRequest.#ctor">
+            <summary>
+            Retrieves the set of all sources currently loaded by the debugged process.
+            Clients should only call this request if the corresponding capability `supportsLoadedSourcesRequest` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.LoadedSourcesResponseBody.Sources">
+            <summary>
+            Set of loaded sources.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.ModulesRequest">
+            <summary>
+            Modules can be retrieved from the debug adapter with this request which can either return all modules or a range of modules to support paging.
+            Clients should only call this request if the corresponding capability `supportsModulesRequest` is true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.ModulesRequest.#ctor">
+            <summary>
+            Modules can be retrieved from the debug adapter with this request which can either return all modules or a range of modules to support paging.
+            Clients should only call this request if the corresponding capability `supportsModulesRequest` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.ModulesArguments.StartModule">
+            <summary>
+            The index of the first module to return; if omitted modules start at 0.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.ModulesArguments.ModuleCount">
+            <summary>
+            The number of modules to return. If `moduleCount` is not specified or 0, all modules are returned.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.ModulesResponseBody.Modules">
+            <summary>
+            All modules or range of modules.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.ModulesResponseBody.TotalModules">
+            <summary>
+            The total number of modules available.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.NextRequest">
+            <summary>
+            The request executes one step (in the given granularity) for the specified thread and allows all other threads to run freely by resuming them.
+            If the debug adapter supports single thread execution (see capability `supportsSingleThreadExecutionRequests`), setting the `singleThread` argument to true prevents other suspended threads from resuming.
+            The debug adapter first sends the response and then a `stopped` event (with reason `step`) after the step has completed.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.NextRequest.#ctor">
+            <summary>
+            The request executes one step (in the given granularity) for the specified thread and allows all other threads to run freely by resuming them.
+            If the debug adapter supports single thread execution (see capability `supportsSingleThreadExecutionRequests`), setting the `singleThread` argument to true prevents other suspended threads from resuming.
+            The debug adapter first sends the response and then a `stopped` event (with reason `step`) after the step has completed.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.NextArguments.ThreadId">
+            <summary>
+            Specifies the thread for which to resume execution for one step (of the given granularity).
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.NextArguments.SingleThread">
+            <summary>
+            If this flag is true, all other suspended threads are not resumed.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.NextArguments.Granularity">
+            <summary>
+            Stepping granularity. If no granularity is specified, a granularity of `statement` is assumed.
+            Values: 'statement', 'line', 'instruction'
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.PauseRequest">
+            <summary>
+            The request suspends the debuggee.
+            The debug adapter first sends the response and then a `stopped` event (with reason `pause`) after the thread has been paused successfully.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.PauseRequest.#ctor">
+            <summary>
+            The request suspends the debuggee.
+            The debug adapter first sends the response and then a `stopped` event (with reason `pause`) after the thread has been paused successfully.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.PauseArguments.ThreadId">
+            <summary>
+            Pause execution for this thread.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.RestartFrameRequest">
+            <summary>
+            The request restarts execution of the specified stack frame.
+            The debug adapter first sends the response and then a `stopped` event (with reason `restart`) after the restart has completed.
+            Clients should only call this request if the corresponding capability `supportsRestartFrame` is true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.RestartFrameRequest.#ctor">
+            <summary>
+            The request restarts execution of the specified stack frame.
+            The debug adapter first sends the response and then a `stopped` event (with reason `restart`) after the restart has completed.
+            Clients should only call this request if the corresponding capability `supportsRestartFrame` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.RestartFrameArguments.FrameId">
+            <summary>
+            Restart the stack frame identified by `frameId`. The `frameId` must have been obtained in the current suspended state. See 'Lifetime of Object References' in the Overview section for details.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.ReverseContinueRequest">
+            <summary>
+            The request resumes backward execution of all threads. If the debug adapter supports single thread execution (see capability `supportsSingleThreadExecutionRequests`), setting the `singleThread` argument to true resumes only the specified thread. If not all threads were resumed, the `allThreadsContinued` attribute of the response should be set to false.
+            Clients should only call this request if the corresponding capability `supportsStepBack` is true.
+            TODO [chernyaev] support, if possible
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.ReverseContinueRequest.#ctor">
+            <summary>
+            The request resumes backward execution of all threads. If the debug adapter supports single thread execution (see capability `supportsSingleThreadExecutionRequests`), setting the `singleThread` argument to true resumes only the specified thread. If not all threads were resumed, the `allThreadsContinued` attribute of the response should be set to false.
+            Clients should only call this request if the corresponding capability `supportsStepBack` is true.
+            TODO [chernyaev] support, if possible
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.ReverseContinueArguments.ThreadId">
+            <summary>
+            Specifies the active thread. If the debug adapter supports single thread execution (see `supportsSingleThreadExecutionRequests`) and the argument `singleThread` is true, only the thread with this ID is resumed.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.ReverseContinueArguments.SingleThread">
+            <summary>
+            If this flag is true, backward execution is resumed only for the thread with given `threadId`.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.ScopesRequest">
+            <summary>
+            The request returns the variable scopes for a given stack frame ID.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.ScopesRequest.#ctor">
+            <summary>
+            The request returns the variable scopes for a given stack frame ID.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.ScopesArguments.FrameId">
+            <summary>
+            Retrieve the scopes for the stack frame identified by `frameId`. The `frameId` must have been obtained in the current suspended state. See 'Lifetime of Object References' in the Overview section for details.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.ScopesResponseBody.Scopes">
+            <summary>
+            The scopes of the stack frame. If the array has length zero, there are no scopes available.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetBreakpointsArguments.Source">
+            The source location of the breakpoints; either `source.path` or
+            `source.sourceReference` must be specified.
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetBreakpointsArguments.Breakpoints">
+            The code locations of the breakpoints.
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetBreakpointsArguments.Lines">
+            Deprecated: The code locations of the breakpoints.
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetBreakpointsArguments.SourceModified">
+            A value of true indicates that the underlying source has been modified
+            which results in new breakpoint locations.
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetBreakpointsResponseBody.Breakpoints">
+            Information about the breakpoints.
+            The array elements are in the same order as the elements of the
+            `breakpoints` (or the deprecated `lines`) array in the arguments.
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetExceptionBreakpointsRequest">
+            <summary>
+            The request configures the debugger's response to thrown exceptions.
+            If an exception is configured to break, a `stopped` event is fired (with reason `exception`).
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetExceptionBreakpointsRequest.#ctor">
+            <summary>
+            The request configures the debugger's response to thrown exceptions.
+            If an exception is configured to break, a `stopped` event is fired (with reason `exception`).
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetExceptionBreakpointsArguments.Filters">
+            <summary>
+            Set of exception filters specified by their ID. The set of all possible exception filters is defined by the `exceptionBreakpointFilters` capability. The `filter` and `filterOptions` sets are additive.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetExceptionBreakpointsArguments.FilterOptions">
+            <summary>
+            Set of exception filters and their options. The set of all possible exception filters is defined by the `exceptionBreakpointFilters` capability. This attribute is only honored by a debug adapter if the corresponding capability `supportsExceptionFilterOptions` is true. The `filter` and `filterOptions` sets are additive.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetExceptionBreakpointsArguments.ExceptionOptions">
+            <summary>
+            Configuration options for selected exceptions.
+            The attribute is only honored by a debug adapter if the corresponding capability `supportsExceptionOptions` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetExceptionBreakpointsResponseBody.Breakpoints">
+            <summary>
+            Information about the exception breakpoints or filters.
+            The breakpoints returned are in the same order as the elements of the `filters`, `filterOptions`, `exceptionOptions` arrays in the arguments. If both `filters` and `filterOptions` are given, the returned array must start with `filters` information first, followed by `filterOptions` information.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetExpressionRequest">
+            <summary>
+            Evaluates the given `value` expression and assigns it to the `expression` which must be a modifiable l-value.
+            The expressions have access to any variables and arguments that are in scope of the specified frame.
+            Clients should only call this request if the corresponding capability `supportsSetExpression` is true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetExpressionRequest.#ctor">
+            <summary>
+            Evaluates the given `value` expression and assigns it to the `expression` which must be a modifiable l-value.
+            The expressions have access to any variables and arguments that are in scope of the specified frame.
+            Clients should only call this request if the corresponding capability `supportsSetExpression` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetExpressionArguments.Expression">
+            <summary>
+            The l-value expression to assign to.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetExpressionArguments.Value">
+            <summary>
+            The value expression to assign to the l-value expression.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetExpressionArguments.FrameId">
+            <summary>
+            Evaluate the expressions in the scope of this stack frame. If not specified, the expressions are evaluated in the global scope.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetExpressionArguments.Format">
+            <summary>
+            Specifies how the resulting value should be formatted.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetExpressionResponseBody.Value">
+            <summary>
+            The new value of the expression.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetExpressionResponseBody.Type">
+            <summary>
+            The type of the value.
+            This attribute should only be returned by a debug adapter if the corresponding capability `supportsVariableType` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetExpressionResponseBody.PresentationHint">
+            <summary>
+            Properties of a value that can be used to determine how to render the result in the UI.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetExpressionResponseBody.VariablesReference">
+            <summary>
+            If `variablesReference` is > 0, the evaluate result is structured and its children can be retrieved by passing `variablesReference` to the `variables` request as long as execution remains suspended. See 'Lifetime of Object References' in the Overview section for details.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetExpressionResponseBody.NamedVariables">
+            <summary>
+            The number of named child variables.
+            The client can use this information to present the variables in a paged UI and fetch them in chunks.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetExpressionResponseBody.IndexedVariables">
+            <summary>
+            The number of indexed child variables.
+            The client can use this information to present the variables in a paged UI and fetch them in chunks.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetFunctionBreakpointsArguments.Breakpoints">
+            The function names of the breakpoints.
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetFunctionBreakpointsResponseBody.Breakpoints">
+            Information about the breakpoints. The array elements correspond to the
+            elements of the `breakpoints` array.
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetInstructionBreakpointsRequest">
+            <summary>
+            Replaces all existing instruction breakpoints. Typically, instruction breakpoints would be set from a disassembly window.
+            To clear all instruction breakpoints, specify an empty array.
+            When an instruction breakpoint is hit, a `stopped` event (with reason `instruction breakpoint`) is generated.
+            Clients should only call this request if the corresponding capability `supportsInstructionBreakpoints` is true.
+            TODO [chernyaev] support, if possible
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetInstructionBreakpointsRequest.#ctor">
+            <summary>
+            Replaces all existing instruction breakpoints. Typically, instruction breakpoints would be set from a disassembly window.
+            To clear all instruction breakpoints, specify an empty array.
+            When an instruction breakpoint is hit, a `stopped` event (with reason `instruction breakpoint`) is generated.
+            Clients should only call this request if the corresponding capability `supportsInstructionBreakpoints` is true.
+            TODO [chernyaev] support, if possible
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetInstructionBreakpointsArguments.Breakpoints">
+            <summary>
+            The instruction references of the breakpoints
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetInstructionBreakpointsResponseBody.Breakpoints">
+            <summary>
+            Information about the breakpoints. The array elements correspond to the elements of the input argument `breakpoints` array.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetVariableRequest">
+            <summary>
+            Set the variable with the given name in the variable container to a new value. Clients should only call this request if the corresponding capability `supportsSetVariable` is true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetVariableRequest.#ctor">
+            <summary>
+            Set the variable with the given name in the variable container to a new value. Clients should only call this request if the corresponding capability `supportsSetVariable` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetVariableArguments.VariablesReference">
+            <summary>
+            The reference of the variable container. The `variablesReference` must have been obtained in the current suspended state. See 'Lifetime of Object References' in the Overview section for details.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetVariableArguments.Name">
+            <summary>
+            The name of the variable in the container.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetVariableArguments.Value">
+            <summary>
+            The value of the variable.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetVariableArguments.Format">
+            <summary>
+            Specifies details on how to format the response value.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetVariableResponseBody.Value">
+            <summary>
+            The new value of the variable.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetVariableResponseBody.Type">
+            <summary>
+            The type of the new value. Typically shown in the UI when hovering over the value.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetVariableResponseBody.VariablesReference">
+            <summary>
+            If `variablesReference` is > 0, the new value is structured and its children can be retrieved by passing `variablesReference` to the `variables` request as long as execution remains suspended. See 'Lifetime of Object References' in the Overview section for details.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetVariableResponseBody.NamedVariables">
+            <summary>
+            The number of named child variables.
+            The client can use this information to present the variables in a paged UI and fetch them in chunks.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.SetVariableResponseBody.IndexedVariables">
+            <summary>
+            The number of indexed child variables.
+            The client can use this information to present the variables in a paged UI and fetch them in chunks.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.StackTraceRequest">
+            <summary>
+            The request returns a stacktrace from the current execution state of a given thread.
+            A client can request all stack frames by omitting the startFrame and levels arguments. For performance-conscious clients and if the corresponding capability `supportsDelayedStackTraceLoading` is true, stack frames can be retrieved in a piecemeal way with the `startFrame` and `levels` arguments. The response of the `stackTrace` request may contain a `totalFrames` property that hints at the total number of frames in the stack. If a client needs this total number upfront, it can issue a request for a single (first) frame and depending on the value of `totalFrames` decide how to proceed. In any case a client should be prepared to receive fewer frames than requested, which is an indication that the end of the stack has been reached.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.StackTraceRequest.#ctor">
+            <summary>
+            The request returns a stacktrace from the current execution state of a given thread.
+            A client can request all stack frames by omitting the startFrame and levels arguments. For performance-conscious clients and if the corresponding capability `supportsDelayedStackTraceLoading` is true, stack frames can be retrieved in a piecemeal way with the `startFrame` and `levels` arguments. The response of the `stackTrace` request may contain a `totalFrames` property that hints at the total number of frames in the stack. If a client needs this total number upfront, it can issue a request for a single (first) frame and depending on the value of `totalFrames` decide how to proceed. In any case a client should be prepared to receive fewer frames than requested, which is an indication that the end of the stack has been reached.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.StackTraceArguments.ThreadId">
+            <summary>
+            Retrieve the stacktrace for this thread.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.StackTraceArguments.StartFrame">
+            <summary>
+            The index of the first frame to return; if omitted frames start at 0.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.StackTraceArguments.Levels">
+            <summary>
+            The maximum number of frames to return. If levels is not specified or 0, all frames are returned.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.StackTraceArguments.Format">
+            <summary>
+            Specifies details on how to format the stack frames.
+            The attribute is only honored by a debug adapter if the corresponding capability `supportsValueFormattingOptions` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.StackTraceResponseBody.StackFrames">
+            <summary>
+            The frames of the stack frame. If the array has length zero, there are no stack frames available.
+            This means that there is no location information available.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.StackTraceResponseBody.TotalFrames">
+            <summary>
+            The total number of frames available in the stack. If omitted or if `totalFrames` is larger than the available frames, a client is expected to request frames until a request returns less frames than requested (which indicates the end of the stack). Returning monotonically increasing `totalFrames` values for subsequent requests can be used to enforce paging in the client.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.StepInRequest">
+            <summary>
+            The request resumes the given thread to step into a function/method and allows all other threads to run freely by resuming them.
+            If the debug adapter supports single thread execution (see capability `supportsSingleThreadExecutionRequests`), setting the `singleThread` argument to true prevents other suspended threads from resuming.
+            If the request cannot step into a target, `stepIn` behaves like the `next` request.
+            The debug adapter first sends the response and then a `stopped` event (with reason `step`) after the step has completed.
+            If there are multiple function/method calls (or other targets) on the source line, the argument `targetId` can be used to control into which target the `stepIn` should occur.
+            The list of possible targets for a given source line can be retrieved via the `stepInTargets` request.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.StepInRequest.#ctor">
+            <summary>
+            The request resumes the given thread to step into a function/method and allows all other threads to run freely by resuming them.
+            If the debug adapter supports single thread execution (see capability `supportsSingleThreadExecutionRequests`), setting the `singleThread` argument to true prevents other suspended threads from resuming.
+            If the request cannot step into a target, `stepIn` behaves like the `next` request.
+            The debug adapter first sends the response and then a `stopped` event (with reason `step`) after the step has completed.
+            If there are multiple function/method calls (or other targets) on the source line, the argument `targetId` can be used to control into which target the `stepIn` should occur.
+            The list of possible targets for a given source line can be retrieved via the `stepInTargets` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.StepInArguments.ThreadId">
+            <summary>
+            Specifies the thread for which to resume execution for one step-into (of the given granularity).
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.StepInArguments.SingleThread">
+            <summary>
+            If this flag is true, all other suspended threads are not resumed.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.StepInArguments.TargetId">
+            <summary>
+            Id of the target to step into.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.StepInArguments.Granularity">
+            <summary>
+            Stepping granularity. If no granularity is specified, a granularity of `statement` is assumed.
+            Values: 'statement', 'line', 'instruction'
+            </summary>  [JsonPropertyName("granularity")]
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.StepOutRequest">
+            <summary>
+            The request resumes the given thread to step out (return) from a function/method and allows all other threads to run freely by resuming them.
+            If the debug adapter supports single thread execution (see capability `supportsSingleThreadExecutionRequests`), setting the `singleThread` argument to true prevents other suspended threads from resuming.
+            The debug adapter first sends the response and then a `stopped` event (with reason `step`) after the step has completed.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.StepOutRequest.#ctor">
+            <summary>
+            The request resumes the given thread to step out (return) from a function/method and allows all other threads to run freely by resuming them.
+            If the debug adapter supports single thread execution (see capability `supportsSingleThreadExecutionRequests`), setting the `singleThread` argument to true prevents other suspended threads from resuming.
+            The debug adapter first sends the response and then a `stopped` event (with reason `step`) after the step has completed.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.StepOutArguments.ThreadId">
+            <summary>
+            Specifies the thread for which to resume execution for one step-out (of the given granularity).
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.StepOutArguments.SingleThread">
+            <summary>
+            If this flag is true, all other suspended threads are not resumed.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.StepOutArguments.Granularity">
+            <summary>
+            Stepping granularity. If no granularity is specified, a granularity of `statement` is assumed.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.TerminateArguments.Restart">
+            A value of true indicates that this `terminate` request is part of a
+            restart sequence.
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.ThreadsRequest">
+            <summary>
+            The request retrieves a list of all threads.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.ThreadsRequest.#ctor">
+            <summary>
+            The request retrieves a list of all threads.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.ThreadsResponseBody.Threads">
+            <summary>
+            All threads.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.CancelRequest">
+            <summary>
+            The `cancel` request is used by the client in two situations:
+            - to indicate that it is no longer interested in the result produced by a specific request issued earlier
+            - to cancel a progress sequence.
+            Clients should only call this request if the corresponding capability `supportsCancelRequest` is true.
+            This request has a hint characteristic: a debug adapter can only be expected to make a 'best effort' in honouring this request but there are no guarantees.
+            The `cancel` request may return an error if it could not cancel an operation but a client should refrain from presenting this error to end users.
+            The request that got cancelled still needs to send a response back. This can either be a normal result (`success` attribute true) or an error response (`success` attribute false and the `message` set to `cancelled`).
+            Returning partial results from a cancelled request is possible but please note that a client has no generic way for detecting that a response is partial or not.
+            The progress that got cancelled still needs to send a `progressEnd` event back.
+            A client should not assume that progress just got cancelled after sending the `cancel` request.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.CancelRequest.#ctor">
+            <summary>
+            The `cancel` request is used by the client in two situations:
+            - to indicate that it is no longer interested in the result produced by a specific request issued earlier
+            - to cancel a progress sequence.
+            Clients should only call this request if the corresponding capability `supportsCancelRequest` is true.
+            This request has a hint characteristic: a debug adapter can only be expected to make a 'best effort' in honouring this request but there are no guarantees.
+            The `cancel` request may return an error if it could not cancel an operation but a client should refrain from presenting this error to end users.
+            The request that got cancelled still needs to send a response back. This can either be a normal result (`success` attribute true) or an error response (`success` attribute false and the `message` set to `cancelled`).
+            Returning partial results from a cancelled request is possible but please note that a client has no generic way for detecting that a response is partial or not.
+            The progress that got cancelled still needs to send a `progressEnd` event back.
+            A client should not assume that progress just got cancelled after sending the `cancel` request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.CancelArguments.RequestId">
+            <summary>
+            The ID (attribute `seq`) of the request to cancel. If missing, no request is cancelled.
+            Both a `requestId` and a `progressId` can be specified in one request.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.CancelArguments.ProgressId">
+            <summary>
+            The ID (attribute `progressId`) of the progress to cancel. If missing, no progress is cancelled.
+            Both a `requestId` and a `progressId` can be specified in one request.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.CompletionsRequest">
+            <summary>
+            Returns a list of possible completions for a given caret position and text.
+            Clients should only call this request if the corresponding capability `supportsCompletionsRequest` is true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.CompletionsRequest.#ctor">
+            <summary>
+            Returns a list of possible completions for a given caret position and text.
+            Clients should only call this request if the corresponding capability `supportsCompletionsRequest` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.CompletionsArguments.FrameId">
+            <summary>
+            Returns completions in the scope of this stack frame. If not specified, the completions are returned for the global scope.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.CompletionsArguments.Text">
+            <summary>
+            One or more source lines. Typically this is the text users have typed into the debug console before they asked for completion.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.CompletionsArguments.Column">
+            <summary>
+            The position within `text` for which to determine the completion proposals. It is measured in UTF-16 code units and the client capability `columnsStartAt1` determines whether it is 0- or 1-based.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.CompletionsArguments.Line">
+            <summary>
+            A line for which to determine the completion proposals. If missing the first line of the text is assumed.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.CompletionsResponseBody.Targets">
+            <summary>
+            The possible completions for .
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.DataBreakpointInfoRequest">
+            <summary>
+            Obtains information on a possible data breakpoint that could be set on an expression or variable.
+            Clients should only call this request if the corresponding capability `supportsDataBreakpoints` is true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.DataBreakpointInfoRequest.#ctor">
+            <summary>
+            Obtains information on a possible data breakpoint that could be set on an expression or variable.
+            Clients should only call this request if the corresponding capability `supportsDataBreakpoints` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.DataBreakpointInfoArguments.VariablesReference">
+            <summary>
+            Reference to the variable container if the data breakpoint is requested for a child of the container.
+            The `variablesReference` must have been obtained in the current suspended state. See 'Lifetime of Object References' in the Overview section for details.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.DataBreakpointInfoArguments.Name">
+            <summary>
+            The name of the variable's child to obtain data breakpoint information for.
+            If `variablesReference` isn't specified, this can be an expression.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.DataBreakpointInfoArguments.FrameId">
+            <summary>
+            When `name` is an expression, evaluate it in the scope of this stack frame. If not specified, the expression is evaluated in the global scope.
+            When `variablesReference` is specified, this property has no effect.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.DataBreakpointInfoResponseBody.DataId">
+            <summary>
+            An identifier for the data on which a data breakpoint can be registered with the `setDataBreakpoints` request or null if no data breakpoint is available.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.DataBreakpointInfoResponseBody.Description">
+            <summary>
+            UI string that describes on what data the breakpoint is set on or why a data breakpoint is not available.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.DataBreakpointInfoResponseBody.AccessTypes">
+            <summary>
+            Attribute lists the available access types for a potential data breakpoint. A UI client could surface this information.
+            Possible values: 'read', 'write', 'readWrite'
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.DataBreakpointInfoResponseBody.CanPersist">
+            <summary>
+            Attribute indicates that a potential data breakpoint could be persisted across sessions.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.DisassembleRequest">
+            <summary>
+            Disassembles code stored at the provided location.
+            Clients should only call this request if the corresponding capability `supportsDisassembleRequest` is true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.DisassembleRequest.#ctor">
+            <summary>
+            Disassembles code stored at the provided location.
+            Clients should only call this request if the corresponding capability `supportsDisassembleRequest` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.DisassembleArguments.MemoryReference">
+            <summary>
+            Memory reference to the base location containing the instructions to disassemble.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.DisassembleArguments.Offset">
+            <summary>
+            Offset (in bytes) to be applied to the reference location before disassembling. Can be negative.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.DisassembleArguments.InstructionOffset">
+            <summary>
+            Offset (in instructions) to be applied after the byte offset (if any) before disassembling. Can be negative.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.DisassembleArguments.InstructionCount">
+            <summary>
+            Number of instructions to disassemble starting at the specified location and offset.
+            An adapter must return exactly this number of instructions - any unavailable instructions should be replaced with an implementation-defined 'invalid instruction' value.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.DisassembleArguments.ResolveSymbols">
+            <summary>
+            If true, the adapter should attempt to resolve memory addresses and other values to symbolic names.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.DisassembleResponseBody.Instructions">
+            <summary>
+            The list of disassembled instructions.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.ReadMemoryRequest">
+            <summary>
+            Reads bytes from memory at the provided location.
+            Clients should only call this request if the corresponding capability `supportsReadMemoryRequest` is true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.ReadMemoryRequest.#ctor">
+            <summary>
+            Reads bytes from memory at the provided location.
+            Clients should only call this request if the corresponding capability `supportsReadMemoryRequest` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.ReadMemoryArguments.MemoryReference">
+            <summary>
+            Memory reference to the base location from which data should be read.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.ReadMemoryArguments.Offset">
+            <summary>
+            Offset (in bytes) to be applied to the reference location before reading data. Can be negative.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.ReadMemoryArguments.Count">
+            <summary>
+            Number of bytes to read at the specified location and offset.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.ReadMemoryResponseBody.Address">
+            <summary>
+            The address of the first byte of data returned.
+            Treated as a hex value if prefixed with `0x`, or as a decimal value otherwise.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.ReadMemoryResponseBody.UnreadableBytes">
+            <summary>
+            The number of unreadable bytes encountered after the last successfully read byte.
+            This can be used to determine the number of bytes that should be skipped before a subsequent `readMemory` request succeeds.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.ReadMemoryResponseBody.Data">
+            <summary>
+            The bytes read from memory, encoded using base64. If the decoded length of `data` is less than the requested `count` in the original `readMemory` request, and `unreadableBytes` is zero or omitted, then the client should assume it's reached the end of readable memory.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.RestartRequest">
+            <summary>
+            Restarts a debug session. Clients should only call this request if the corresponding capability `supportsRestartRequest` is true.
+            If the capability is missing or has the value false, a typical client will emulate `restart` by terminating the debug adapter first and then launching it anew.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.RestartRequest.#ctor">
+            <summary>
+            Restarts a debug session. Clients should only call this request if the corresponding capability `supportsRestartRequest` is true.
+            If the capability is missing or has the value false, a typical client will emulate `restart` by terminating the debug adapter first and then launching it anew.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.RestartRequestArguments.Arguments">
+            <summary>
+            The latest version of the `launch` or `attach` configuration.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.SetDataBreakpointsRequest">
+            <summary>
+            Replaces all existing data breakpoints with new data breakpoints.
+            To clear all data breakpoints, specify an empty array.
+            When a data breakpoint is hit, a `stopped` event (with reason `data breakpoint`) is generated.
+            Clients should only call this request if the corresponding capability `supportsDataBreakpoints` is true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.SetDataBreakpointsRequest.#ctor">
+            <summary>
+            Replaces all existing data breakpoints with new data breakpoints.
+            To clear all data breakpoints, specify an empty array.
+            When a data breakpoint is hit, a `stopped` event (with reason `data breakpoint`) is generated.
+            Clients should only call this request if the corresponding capability `supportsDataBreakpoints` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.SetDataBreakpointsArguments.Breakpoints">
+            <summary>
+            The contents of this array replaces all existing data breakpoints. An empty array clears all data breakpoints.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.SetDataBreakpointsResponseBody.Breakpoints">
+            <summary>
+            Information about the data breakpoints. The array elements correspond to the elements of the input argument `breakpoints` array.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.SourceRequest">
+            <summary>
+            The request retrieves the source code for a given source reference.
+            TODO [chernyaev] support, if possible
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.SourceRequest.#ctor">
+            <summary>
+            The request retrieves the source code for a given source reference.
+            TODO [chernyaev] support, if possible
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.SourceArguments.Source">
+            <summary>
+            Specifies the source content to load. Either `source.path` or `source.sourceReference` must be specified.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.SourceArguments.SourceReference">
+            <summary>
+            The reference to the source. This is the same as `source.sourceReference`.
+            This is provided for backward compatibility since old clients do not understand the `source` attribute.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.SourceResponseBody.Content">
+            <summary>
+            Content of the source reference.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.SourceResponseBody.MimeType">
+            <summary>
+            Content type (MIME type) of the source.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.StepBackRequest">
+            <summary>
+            The request executes one backward step (in the given granularity) for the specified thread and allows all other threads to run backward freely by resuming them.
+            If the debug adapter supports single thread execution (see capability `supportsSingleThreadExecutionRequests`), setting the `singleThread` argument to true prevents other suspended threads from resuming.
+            The debug adapter first sends the response and then a `stopped` event (with reason `step`) after the step has completed.
+            Clients should only call this request if the corresponding capability `supportsStepBack` is true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.StepBackRequest.#ctor">
+            <summary>
+            The request executes one backward step (in the given granularity) for the specified thread and allows all other threads to run backward freely by resuming them.
+            If the debug adapter supports single thread execution (see capability `supportsSingleThreadExecutionRequests`), setting the `singleThread` argument to true prevents other suspended threads from resuming.
+            The debug adapter first sends the response and then a `stopped` event (with reason `step`) after the step has completed.
+            Clients should only call this request if the corresponding capability `supportsStepBack` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.StepBackArguments.ThreadId">
+            <summary>
+            Specifies the thread for which to resume execution for one step backwards (of the given granularity).
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.StepBackArguments.SingleThread">
+            <summary>
+            If this flag is true, all other suspended threads are not resumed.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.StepBackArguments.Granularity">
+            <summary>
+            Stepping granularity. If no granularity is specified, a granularity of `statement` is assumed.
+            Values: 'statement', 'line', 'instruction'
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.StepInTargetsRequest">
+            <summary>
+            This request retrieves the possible step-in targets for the specified stack frame.
+            These targets can be used in the `stepIn` request.
+            Clients should only call this request if the corresponding capability `supportsStepInTargetsRequest` is true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.StepInTargetsRequest.#ctor">
+            <summary>
+            This request retrieves the possible step-in targets for the specified stack frame.
+            These targets can be used in the `stepIn` request.
+            Clients should only call this request if the corresponding capability `supportsStepInTargetsRequest` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.StepInTargetsArguments.FrameId">
+            <summary>
+            The stack frame for which to retrieve the possible step-in targets.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.StepInTargetsResponseBody.Targets">
+            <summary>
+            The possible step-in targets of the specified source location.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.TerminateThreadsRequest">
+            <summary>
+            The request terminates the threads with the given ids.
+            Clients should only call this request if the corresponding capability `supportsTerminateThreadsRequest` is true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.TerminateThreadsRequest.#ctor">
+            <summary>
+            The request terminates the threads with the given ids.
+            Clients should only call this request if the corresponding capability `supportsTerminateThreadsRequest` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.TerminateThreadsArguments.ThreadIds">
+            <summary>
+            Ids of threads to be terminated.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.WriteMemoryRequest">
+            <summary>
+            Writes bytes to memory at the provided location.
+            Clients should only call this request if the corresponding capability `supportsWriteMemoryRequest` is true.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.WriteMemoryRequest.#ctor">
+            <summary>
+            Writes bytes to memory at the provided location.
+            Clients should only call this request if the corresponding capability `supportsWriteMemoryRequest` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.WriteMemoryArguments.MemoryReference">
+            <summary>
+            Memory reference to the base location to which data should be written.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.WriteMemoryArguments.Offset">
+            <summary>
+            Offset (in bytes) to be applied to the reference location before writing data. Can be negative.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.WriteMemoryArguments.AllowPartial">
+            <summary>
+            Property to control partial writes. If true, the debug adapter should attempt to write memory even if the entire memory region is not writable. In such a case the debug adapter should stop after hitting the first byte of memory that cannot be written and return the number of bytes written before the copy was stopped. If false or missing, a debug adapter should attempt to verify the region is writable before writing, and fail the response if it is not.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.WriteMemoryArguments.Data">
+            <summary>
+            Bytes to write, encoded using base64.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.WriteMemoryResponseBody.Offset">
+            <summary>
+            Property that should be returned when `allowPartial` is true to indicate the offset of the first byte of data successfully written. Can be negative.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.Unsupported.WriteMemoryResponseBody.BytesWritten">
+            <summary>
+            Property that should be returned when `allowPartial` is true to indicate the number of bytes starting from address that were successfully written.
+            </summary>
+        </member>
+        <member name="T:JetBrains.VsCode.Debugger.Worker.Models.Requests.VariablesRequest">
+            <summary>
+            Retrieves all child variables for the given variable reference.
+            A filter can be used to limit the fetched children to either named or indexed children.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Models.Requests.VariablesRequest.#ctor">
+            <summary>
+            Retrieves all child variables for the given variable reference.
+            A filter can be used to limit the fetched children to either named or indexed children.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.VariablesArguments.VariablesReference">
+            <summary>
+            The variable for which to retrieve its children. The `variablesReference` must have been obtained in the current suspended state. See 'Lifetime of Object References' in the Overview section for details.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.VariablesArguments.Filter">
+            <summary>
+            Filter to limit the child variables to either named or indexed. If omitted, both types are fetched.
+            Values: 'indexed', 'named'
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.VariablesArguments.Start">
+            <summary>
+            The index of the first variable to return; if omitted children start at 0. The attribute is only honored by a debug adapter if the corresponding capability `supportsVariablePaging` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.VariablesArguments.Count">
+            <summary>
+            The number of variables to return. If count is missing or 0, all variables are returned. The attribute is only honored by a debug adapter if the corresponding capability `supportsVariablePaging` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.VariablesArguments.Format">
+            <summary>
+            Specifies details on how to format the Variable values.
+            The attribute is only honored by a debug adapter if the corresponding capability `supportsValueFormattingOptions` is true.
+            </summary>
+        </member>
+        <member name="P:JetBrains.VsCode.Debugger.Worker.Models.Requests.VariablesResponseBody.Variables">
+            <summary>
+            All (or a range) of variables for the given variable reference.
+            </summary>
+        </member>
+        <member name="M:JetBrains.VsCode.Debugger.Worker.Util.ValueEntityEx.GetTypeAndValuePresentations(Mono.Debugging.Client.Values.IValueEntity,Mono.Debugging.Client.Values.Render.IValueKeyPresentation,Mono.Debugging.Client.Values.Render.IValuePresentation,Mono.Debugging.Client.Values.Render.IPresentationOptions,System.String@,System.String@)">
+            <param name="options"></param>
+            <param name="typePresentationAtPlace">  Value at the typePlace</param>
+            <param name="valuePresentationAtPlace"> Value at the valuePlace</param>
+            <param name="valueEntity"></param>
+            <param name="keyPresentation"></param>
+            <param name="valuePresentation"></param>
+        </member>
+    </members>
+</doc>

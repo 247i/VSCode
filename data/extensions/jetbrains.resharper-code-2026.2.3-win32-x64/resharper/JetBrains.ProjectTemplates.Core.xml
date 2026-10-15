@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ProjectTemplates.Core</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.ProjectTemplates.Core.DotnetWorkloads.ManifestReader.WorkloadId">
+            <summary>
+              Wraps a workload definition id string to help ensure consistency of behavior/semantics.
+              Comparisons are case insensitive but ToString() will return the original string for display purposes.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectTemplates.Core.DotnetWorkloads.ManifestReader.WorkloadId.#ctor(System.String)">
+            <summary>
+              Wraps a workload definition id string to help ensure consistency of behavior/semantics.
+              Comparisons are case insensitive but ToString() will return the original string for display purposes.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ProjectTemplates.Core.DotnetWorkloads.ManifestReader.WorkloadManifest">
+            <summary>
+              An SDK workload manifest
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectTemplates.Core.DotnetWorkloads.ManifestReader.WorkloadManifest.Id">
+            <summary>
+              The ID of the manifest is its filename without the extension.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectTemplates.Core.DotnetWorkloads.ManifestReader.WorkloadManifest.Version">
+            <summary>
+              The version of the manifest. It is relative to the SDK band.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectTemplates.Core.DotnetWorkloads.ManifestReader.WorkloadManifest.ParsedVersion">
+            <summary>
+              The version of the manifest. It is relative to the SDK band.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectTemplates.Core.DotnetWorkloads.ManifestReader.WorkloadManifest.DependsOnManifests">
+            <summary>
+              ID and minimum version for any other manifests that this manifest depends on. Use only for validating consistancy.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectTemplates.Core.DotnetWorkloads.ManifestReader.WorkloadManifestReader.ConsumeValue(JetBrains.ProjectTemplates.Core.DotnetWorkloads.ManifestReader.Utf8JsonStreamReader@)">
+            <summary>
+            this expects the reader to be before the value token, and leaves it on the last token of the value
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectTemplates.Core.DotnetWorkloads.WorkloadManifestProvider.ResolveManifestDirectory(JetBrains.Util.VirtualFileSystemPath)">
+            <summary>
+            Given a folder that may directly include a WorkloadManifest.json file, or may have the workload manifests in version subfolders, choose the directory
+            with the latest workload manifest.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectTemplates.Core.DotnetWorkloads.WorkloadResolver.#ctor(JetBrains.Util.ILogger,JetBrains.ProjectTemplates.Core.DotnetWorkloads.WorkloadManifestProvider,System.ValueTuple{JetBrains.Util.VirtualFileSystemPath,System.Boolean}[],System.String[])">
+            <summary>
+              Creates a resolver by composing all the manifests from the provider.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectTemplates.Core.DotnetWorkloads.WorkloadResolver.GetInstalledWorkloadPacksOfKind(JetBrains.ProjectTemplates.Core.DotnetWorkloads.ManifestReader.WorkloadPackKind)">
+            <summary>
+              Gets the installed workload packs of a particular kind
+            </summary>
+            <remarks>
+              Used by MSBuild resolver to scan SDK packs for AutoImport.props files to be imported.
+              Used by template engine to find templates to be added to hive.
+            </remarks>
+        </member>
+        <member name="M:JetBrains.ProjectTemplates.Core.DotnetWorkloads.WorkloadResolver.ResolveId(JetBrains.ProjectTemplates.Core.DotnetWorkloads.ManifestReader.WorkloadPack)">
+            <summary>
+              Resolve the package ID for the host platform.
+            </summary>
+            <param name="pack">The workload pack</param>
+            <returns>The path to the pack, or null if the pack is not available on the host platform.</returns>
+        </member>
+        <member name="P:JetBrains.ProjectTemplates.Core.DotnetWorkloads.WorkloadResolver.PackInfo.Id">
+            <summary>
+              The workload pack ID. The NuGet package ID <see cref="P:JetBrains.ProjectTemplates.Core.DotnetWorkloads.WorkloadResolver.PackInfo.ResolvedPackageId" /> may differ from this.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectTemplates.Core.DotnetWorkloads.WorkloadResolver.PackInfo.Path">
+            <summary>
+              Path to the pack. If it's a template or library pack, <see cref="P:JetBrains.ProjectTemplates.Core.DotnetWorkloads.WorkloadResolver.PackInfo.IsStillPacked" /> will be <code>true</code> and this
+              will be a path to the <code>nupkg</code>,
+              else <see cref="P:JetBrains.ProjectTemplates.Core.DotnetWorkloads.WorkloadResolver.PackInfo.IsStillPacked" /> will be <code>false</code> and this will be a path to the directory into which it
+              has been unpacked.
+            </summary>
+        </member>
+        <member name="P:JetBrains.ProjectTemplates.Core.DotnetWorkloads.WorkloadResolver.PackInfo.IsStillPacked">
+            <summary>
+              Whether the pack pointed to by the path is still in a packed form.
+            </summary>
+        </member>
+    </members>
+</doc>

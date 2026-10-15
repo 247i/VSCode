@@ -1,0 +1,101 @@
+<!--
+***********************************************************************************************
+Microsoft.DesignTime.targets
+
+WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and have
+          created a backup copy.  Incorrect changes to this file will make it
+          impossible to load or build your projects from the command-line or the IDE.
+
+Copyright (c) .NET Foundation. All rights reserved.
+***********************************************************************************************
+  -->
+
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+ <Target
+    Name="CollectCopyToOutputDirectoryItemDesignTime"
+    DependsOnTargets="PrepareResourceNames;ComputeIntermediateSatelliteAssemblies;ResolveAssemblyReferences;CompileDesignTime;_GetCopyToOutputDirectoryItemsFromThisProject"
+    Returns="@(_CollectedCopyToOutputDirectoryItem)">
+    <ItemGroup>
+
+      <_CollectedCopyToOutputDirectoryItem Include="@(_ThisProjectItemsToCopyToOutputDirectory)">
+        <BuildAccelerationOnly>false</BuildAccelerationOnly>
+      </_CollectedCopyToOutputDirectoryItem>
+
+      <!-- Output assembly -->
+
+      <_CollectedCopyToOutputDirectoryItem Include="$(TargetPath)">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <TargetPath>$([System.IO.Path]::GetFileName('$(TargetPath)'))</TargetPath>
+        <BuildAccelerationOnly>true</BuildAccelerationOnly>
+      </_CollectedCopyToOutputDirectoryItem>
+
+      <!-- Debug symbols -->
+
+      <_CollectedCopyToOutputDirectoryItem Include="@(_DebugSymbolsOutputPath->'%(FullPath)')" Condition="'$(_DebugSymbolsProduced)' == 'true' and '$(SkipCopyingSymbolsToOutputDirectory)' != 'true' and '$(CopyOutputSymbolsToOutputDirectory)' != 'false'">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <TargetPath>$([System.IO.Path]::GetFileName('%(Identity)'))</TargetPath>
+        <BuildAccelerationOnly>true</BuildAccelerationOnly>
+      </_CollectedCopyToOutputDirectoryItem>
+
+      <!-- ReferenceCopyLocalPaths
+
+           These come from two different sources, hence projecting twice here.
+           We filter out items that come from NuGet packages as there can be very many of them, and we exclude
+           them in the project system anyway, so it's better to drop them here (at the source). These items are
+           expected to be copied during an actual build, and need updating during subsequent incremental builds.
+      -->
+
+      <_CollectedCopyToOutputDirectoryItem Include="@(ReferenceCopyLocalPaths->'%(Identity)')" Condition="'%(ReferenceCopyLocalPaths.ReferenceSourceTarget)' != 'ProjectReference' AND '%(ReferenceCopyLocalPaths.DestinationSubPath)' != ''">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <TargetPath>%(ReferenceCopyLocalPaths.DestinationSubPath)</TargetPath>
+        <BuildAccelerationOnly>true</BuildAccelerationOnly>
+      </_CollectedCopyToOutputDirectoryItem>
+
+      <_CollectedCopyToOutputDirectoryItem Include="@(ReferenceCopyLocalPaths->'%(Identity)')" Condition="'%(ReferenceCopyLocalPaths.ReferenceSourceTarget)' != 'ProjectReference' AND '%(ReferenceCopyLocalPaths.DestinationSubPath)' == ''">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <TargetPath>$([System.IO.Path]::GetFileName('%(Identity)'))</TargetPath>
+        <BuildAccelerationOnly>true</BuildAccelerationOnly>
+      </_CollectedCopyToOutputDirectoryItem>
+
+      <!-- Documentation file -->
+
+      <_CollectedCopyToOutputDirectoryItem Include="@(FinalDocFile->'%(FullPath)')" Condition="'$(_DocumentationFileProduced)' == 'true'">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <TargetPath>$([System.IO.Path]::GetFileName('%(Identity)'))</TargetPath>
+        <BuildAccelerationOnly>true</BuildAccelerationOnly>
+      </_CollectedCopyToOutputDirectoryItem>
+
+      <!-- Satellite assemblies -->
+
+      <_CollectedCopyToOutputDirectoryItem Include="@(IntermediateSatelliteAssembliesWithTargetPath->'$(TargetDir)%(Culture)\$(TargetName).resources.dll')" Condition="'@(IntermediateSatelliteAssembliesWithTargetPath)' != ''">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <TargetPath>%(IntermediateSatelliteAssembliesWithTargetPath.Culture)\$(TargetName).resources.dll</TargetPath>
+        <BuildAccelerationOnly>true</BuildAccelerationOnly>
+      </_CollectedCopyToOutputDirectoryItem>
+
+    </ItemGroup>
+  </Target>
+
+  <!-- Returns Csc command-line arguments for the language service -->
+  <Target Name="CompileDesignTime"
+          Returns="@(_CompilerCommandLineArgs)"
+          DependsOnTargets="_CheckCompileDesignTimePrerequisite;Compile"
+          Condition="'$(IsCrossTargetingBuild)' != 'true'">
+
+    <ItemGroup>
+      <_CompilerCommandLineArgs Include="@(CscCommandLineArgs)" />
+    </ItemGroup>
+
+  </Target>
+
+  <!-- Validates that the correct properties have been set for design-time compiles  -->
+  <Target Name="_CheckCompileDesignTimePrerequisite">
+
+    <Error Condition="'$(SkipCompilerExecution)|$(ProvideCommandLineArgs)' != 'true|true'"
+           Text="SkipCompilerExecution and ProvideCommandLineArgs should be set before calling the CompileDesignTime target"
+           />
+
+  </Target>
+
+</Project>

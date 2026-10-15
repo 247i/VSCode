@@ -1,0 +1,5 @@
+[Info  - 1:03:31 PM] ILSpy LSP Backend PID: 20600
+[Error - 1:03:33 PM] Connection to server got closed. Server will not be restarted.
+[Error - 1:03:33 PM] Stopping server failed
+  Message: Pending response rejected since connection got disposed
+  Code: -32097 

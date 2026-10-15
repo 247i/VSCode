@@ -1,0 +1,53 @@
+2026-10-13 05:25:52.944 [info] Agent Host process started successfully
+2026-10-13 05:25:52.955 [info] AgentService initialized
+2026-10-13 05:25:52.962 [info] Registering agent provider: copilotcli
+2026-10-13 05:25:52.962 [info] Registering agent provider: claude
+2026-10-13 05:25:52.972 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-10-13 05:25:52.972 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-10-13 05:25:52.999 [info] [Claude] Models refreshed (merged). Count: 0, 
+2026-10-13 05:25:53.024 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-10-13 05:25:53.027 [info] [ProtocolServer] Initialize: clientId=1147f37c-e52d-478a-b8e8-4af0525d25eb, protocolVersions=[0.10.0, 0.9.0, 0.7.0, 0.6.0, 0.5.2, 0.5.1]
+2026-10-13 05:25:53.038 [info] [AgentService] showExternalSessions changed 'recent' -> 'last7Days'; queueing session list reconciliation
+2026-10-13 05:25:53.040 [info] Registering agent provider: codex
+2026-10-13 05:25:53.050 [info] [CommandAutoApprover] Tree-sitter initialized (bash=available, powershell=available)
+2026-10-13 05:25:53.059 [info] [Copilot] Listing chats to migrate...
+2026-10-13 05:25:53.059 [info] [Copilot] Starting CopilotClient...
+2026-10-13 05:25:53.059 [info] [Copilot] Set CLI env: GITHUB_COPILOT_INTEGRATION_ID=vscode-chat
+2026-10-13 05:25:53.061 [info] [Copilot] Using bundled runtime path: d:\All\IDLE\t\VSCode\2a59476c9b\resources\app\node_modules.asar.unpacked\@github\copilot-sdk-win32-x64\prebuilds\win32-x64\copilot-runtime.exe
+2026-10-13 05:25:53.151 [info] [Claude] SDK not downloaded yet; deferring the migratable chat list
+2026-10-13 05:25:53.254 [info] [Copilot] CopilotClient started successfully
+2026-10-13 05:25:53.256 [info] [Copilot] Listed 0 SDK session(s) for chats to migrate
+2026-10-13 05:25:53.256 [info] [Copilot] Found 0 legacy sessions
+2026-10-13 05:25:53.261 [info] [AgentService] sessions_v2 import for provider copilotcli: 0 synchronized, 0 current, 0 excluded, 0 stale exclusions, 0 incomplete, 0 failed, marker set in 299ms (0 db opens, 0 db stats)
+2026-10-13 05:25:53.526 [info] [WebSocketProtocol] Server listening on socket \\.\pipe\vscode-agent-host-56882b2788e6bc1803d38877c1d56ce604dff2a855b9884b204b81fd619b3986-g_bLYySuQXuEzh5L5N0lQQ
+2026-10-13 05:25:54.017 [info] [node-compile-cache] agent-host: packaged cache enabled (status: enabled, configured: D:\All\IDLE\t\VSCode\2a59476c9b\resources\app\node-compile-cache\agent-host, active: D:\All\IDLE\t\VSCode\2a59476c9b\resources\app\node-compile-cache\agent-host\v24.21.0-x64-c3a7e8f2)
+2026-10-13 05:25:54.017 [info] [AgentService] pruned 0 stale external session row(s) older than 30 days
+2026-10-13 05:25:54.018 [info] [CopilotDiscovery] Started: maxCandidateWatches=32, maxConcurrentStats=4, coalesceMs=500
+2026-10-13 05:25:54.018 [info] [Claude] SDK not downloaded yet; deferring chat discovery
+2026-10-13 05:25:54.021 [info] [CopilotDiscovery] Scan 1 started: initial=true, candidates=2, reasons={"startup":2}, watched=2, pending=2, ignoredHostEvents=0
+2026-10-13 05:25:54.021 [info] [Copilot] Listing discoverable chats...
+2026-10-13 05:25:54.023 [info] [Copilot] Listed 0 SDK session(s) for discoverable chats
+2026-10-13 05:25:54.023 [info] [CopilotDiscovery] Scan 1 catalog: sdkSessions=0, candidates=0, listMs=2, classifyMs=0, published=0, external=0, legacy=0, known=0, disabledLegacy=0, archivedLegacy=0, missingCwd=0, unsupportedClient=0, stale=0, failed=0
+2026-10-13 05:25:54.023 [info] [CopilotDiscovery] Scan 1 finished: elapsedMs=3, completed=0, pending=2, watched=2, overflow=0, ignoredHostEvents=0
+2026-10-13 05:25:54.141 [info] [Copilot] Auth token updated
+2026-10-13 05:25:54.175 [info] [ClaudeProxyService] listening on http://127.0.0.1:64707
+2026-10-13 05:25:54.175 [info] [Claude] Auth token updated
+2026-10-13 05:25:54.178 [info] [Copilot] Startup config changed (hydraFusion=true), restarting CopilotClient
+2026-10-13 05:25:54.178 [info] [Copilot] Restarting CopilotClient (startup config changed: hydraFusion=true)
+2026-10-13 05:25:54.183 [info] [Claude] SDK not downloaded yet; deferring the migratable chat list
+2026-10-13 05:25:54.186 [info] [Claude] SDK not downloaded yet; deferring the migratable chat list
+2026-10-13 05:25:54.211 [info] [Copilot] Listing models...
+2026-10-13 05:25:54.211 [info] [Copilot] Starting CopilotClient...
+2026-10-13 05:25:54.212 [info] [Copilot] Set CLI env: GITHUB_COPILOT_INTEGRATION_ID=vscode-chat
+2026-10-13 05:25:54.212 [info] [Copilot] Using bundled runtime path: d:\All\IDLE\t\VSCode\2a59476c9b\resources\app\node_modules.asar.unpacked\@github\copilot-sdk-win32-x64\prebuilds\win32-x64\copilot-runtime.exe
+2026-10-13 05:25:54.345 [info] [Copilot] CopilotClient started successfully
+2026-10-13 05:25:55.983 [info] [Copilot] Found 18 models: Auto, Claude Sonnet 5, Claude Opus 5.5, Claude Haiku 4.5, GPT-6.1 Sol, GPT-6 Sol, GPT-6 Luna, GPT-5.6 Sol, GPT-5.6 Terra, GPT-5.6 Luna, GPT-5.5, GPT-5.4, GPT-5.4 mini, GPT-5.3-Codex, MAI-Code-1.1-Flash, Gemini 3.8 Flash, Gemini 3.7 Flash, Claude Sonnet 5.5
+2026-10-13 05:25:56.865 [info] [Codex] Auth token updated
+2026-10-13 05:25:56.867 [info] [Copilot] Listing models...
+2026-10-13 05:25:56.870 [info] [Copilot] Found 18 models: Auto, Claude Sonnet 5, Claude Opus 5.5, Claude Haiku 4.5, GPT-6.1 Sol, GPT-6 Sol, GPT-6 Luna, GPT-5.6 Sol, GPT-5.6 Terra, GPT-5.6 Luna, GPT-5.5, GPT-5.4, GPT-5.4 mini, GPT-5.3-Codex, MAI-Code-1.1-Flash, Gemini 3.8 Flash, Gemini 3.7 Flash, Claude Sonnet 5.5
+2026-10-13 05:25:58.914 [info] [Claude] Models refreshed (merged). Count: 4, Claude Opus 5.5, Claude Sonnet 5.5, Claude Sonnet 5, Claude Haiku 4.5
+2026-10-13 05:26:25.142 [info] [ProtocolServer] Client disconnected: 1147f37c-e52d-478a-b8e8-4af0525d25eb, subscriptions=1
+2026-10-13 05:26:25.143 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-10-13 05:26:25.143 [info] [Copilot] BYOK bridge changed; refreshing models
+2026-10-13 05:26:25.144 [info] AgentService: shutting down all providers...
+2026-10-13 05:26:25.145 [info] [Copilot] Shutting down...

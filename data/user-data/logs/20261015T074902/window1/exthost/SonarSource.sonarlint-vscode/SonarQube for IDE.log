@@ -1,0 +1,32 @@
+2026-10-15 07:49:08.310 [info] Executing d:\All\IDLE\t\VSCode\data\extensions\sonarsource.sonarlint-vscode-6.1.1-win32-x64\jre\21.0.12.1-win32-x86_64.tar\bin\java -Dsonarlint.monitoring.enabled=true -jar d:\All\IDLE\t\VSCode\data\extensions\sonarsource.sonarlint-vscode-6.1.1-win32-x64\server\sonarlint-ls.jar -stdio -analyzers d:\All\IDLE\t\VSCode\data\extensions\sonarsource.sonarlint-vscode-6.1.1-win32-x64\analyzers\sonargo.jar d:\All\IDLE\t\VSCode\data\extensions\sonarsource.sonarlint-vscode-6.1.1-win32-x64\analyzers\sonarjava.jar d:\All\IDLE\t\VSCode\data\extensions\sonarsource.sonarlint-vscode-6.1.1-win32-x64\analyzers\sonarjavasymbolicexecution.jar d:\All\IDLE\t\VSCode\data\extensions\sonarsource.sonarlint-vscode-6.1.1-win32-x64\analyzers\sonarjs.jar d:\All\IDLE\t\VSCode\data\extensions\sonarsource.sonarlint-vscode-6.1.1-win32-x64\analyzers\sonarphp.jar d:\All\IDLE\t\VSCode\data\extensions\sonarsource.sonarlint-vscode-6.1.1-win32-x64\analyzers\sonarpython.jar d:\All\IDLE\t\VSCode\data\extensions\sonarsource.sonarlint-vscode-6.1.1-win32-x64\analyzers\sonarhtml.jar d:\All\IDLE\t\VSCode\data\extensions\sonarsource.sonarlint-vscode-6.1.1-win32-x64\analyzers\sonarxml.jar d:\All\IDLE\t\VSCode\data\extensions\sonarsource.sonarlint-vscode-6.1.1-win32-x64\analyzers\sonartext.jar d:\All\IDLE\t\VSCode\data\extensions\sonarsource.sonarlint-vscode-6.1.1-win32-x64\analyzers\sonariac.jar d:\All\IDLE\t\VSCode\data\extensions\sonarsource.sonarlint-vscode-6.1.1-win32-x64\analyzers\sonarlintomnisharp.jar
+2026-10-15 07:49:09.531 [info] [Info - 07:49:09.524] [sonarlint : SonarLint Server RPC sequential executor] Initializing Sentry
+2026-10-15 07:49:10.138 [info] [Info - 07:49:10.136] [org.flywaydb.core.FlywayExecutor : SonarLint Server RPC sequential executor] Database: jdbc:h2:C:\Users\inthirua\.sonarlint\storage\h2\sq-ide (H2 2.4)
+2026-10-15 07:49:10.200 [info] [Warn - 07:49:10.198] [org.flywaydb.core.internal.database.base.Database : SonarLint Server RPC sequential executor] Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026-10-15 07:49:10.240 [info] [Info - 07:49:10.239] [org.flywaydb.core.internal.command.DbValidate : SonarLint Server RPC sequential executor] Successfully validated 6 migrations (execution time 00:00.025s)
+2026-10-15 07:49:10.247 [info] [Info - 07:49:10.246] [org.flywaydb.core.internal.command.DbMigrate : SonarLint Server RPC sequential executor] Current version of schema "PUBLIC": 6
+2026-10-15 07:49:10.252 [info] [Info - 07:49:10.251] [org.flywaydb.core.internal.command.DbMigrate : SonarLint Server RPC sequential executor] Schema "PUBLIC" is up to date. No migration necessary.
+2026-10-15 07:49:10.651 [info] [Info - 07:49:10.649] [org.jooq.impl.DefaultExecuteContext.logVersionSupport : SonarLint Server RPC sequential executor] Version                  : Database version is supported by dialect SQLDialect.H2: 2.4.240 (2025-09-22)
+2026-10-15 07:49:11.294 [info] [Info - 07:49:11.293] [sonarlint : SonarLint Server RPC sequential executor] Started embedded server on port 64120
+2026-10-15 07:49:12.920 [info] [Warn - 07:49:12.919] [sonarlint : SonarLint Server RPC sequential executor] Node.js could not be automatically detected, has to be configured manually in the SonarLint preferences!
+2026-10-15 07:50:11.239 [info] [Error - 07:50:11.237] Cannot determine if user has Joined IDE Labs or not
+java.util.concurrent.ExecutionException: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Request sonarlint/hasJoinedIdeLabs defines 1 params but received none.
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(Unknown Source)
+	at java.base/java.util.concurrent.CompletableFuture.get(Unknown Source)
+	at org.sonarsource.sonarlint.ls.clientapi.SonarLintVSCodeClient.getTelemetryLiveAttributes(SonarLintVSCodeClient.java:384)
+	at org.sonarsource.sonarlint.core.rpc.client.SonarLintRpcClientImpl.lambda$getTelemetryLiveAttributes$23(SonarLintRpcClientImpl.java:288)
+	at org.sonarsource.sonarlint.core.rpc.client.SonarLintRpcClientImpl.lambda$requestAsync$1(SonarLintRpcClientImpl.java:128)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(Unknown Source)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Request sonarlint/hasJoinedIdeLabs defines 1 params but received none.
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponse(RemoteEndpoint.java:214)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:198)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:189)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:97)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	... 3 more
+

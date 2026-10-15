@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.Platform.ProjectModel.NuGet</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.ProjectModel.NuGet.Cache.NuGetPackageSpecBuilder.DumpPackageSpec(JetBrains.Util.FileSystemPath,NuGet.ProjectModel.PackageSpec)">
+            <summary>
+            Dump PackageSpec to project.packagespec.json
+            </summary>
+            <returns>True if content of 'project.packagespec.json' was updated; false otherwise</returns>
+        </member>
+        <member name="M:JetBrains.ProjectModel.NuGet.ProjectDocuments.NuGetMsBuildProjectSystem.GetFullPaths(System.String)">
+            <summary>
+            Returns the list of full paths of all files in the project whose name is <paramref name="fileName"/>.
+            </summary>
+            <param name="fileName">The file name to search.</param>
+            <returns>The list of full paths.</returns>
+        </member>
+        <member name="T:JetBrains.ProjectModel.NuGet.ProjectModel.NuGetProjectModelSuspender">
+            <summary>
+            Suspends nuget operations on every solution host activity
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.NuGet.ProjectServices.RiderNuGetMsBuildProjectServices.ExecutePackageScriptAsync(NuGet.Packaging.Core.PackageIdentity,System.String,System.String,NuGet.ProjectManagement.INuGetProjectContext,System.Boolean,System.Threading.CancellationToken)">
+            The purpose of this is to allow for analyzer addition/removal for `packages.config` projects which rely on install.ps1/uninstall.ps1 scripts for that.
+            Since we do not execute these scripts, we need to manage the analyzers ourselves if we want to support them for these projects.
+            See also:
+              * RIDER-12959
+              * https://learn.microsoft.com/en-us/nuget/guides/analyzers-conventions#analyzers-path-format
+        </member>
+        <member name="M:JetBrains.ProjectModel.NuGet.ProjectSystems.RiderNuGetMsBuildProjectSystem.BuildNuGetAssemblyFullName(JetBrains.Util.VirtualFileSystemPath,JetBrains.Metadata.Utils.AssemblyNameInfo)">
+            <summary>
+            Builds full assembly name in a specific format to be compatible with Visual Studio ones
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.NuGet.Utils.RiderNuGetRestoreOutputPathResolver.GetRestoreOutputSystemPath(JetBrains.Platform.MsBuildHost.ProjectModel.MsBuildProject)">
+            <summary>
+            Expected location of project.assets.json
+            </summary>
+        </member>
+        <member name="M:JetBrains.ProjectModel.NuGet.Utils.RiderNuGetRestoreOutputPathResolver.GetRestoreOutputPathString(JetBrains.Platform.MsBuildHost.ProjectModel.MsBuildProject)">
+            <summary>
+            Expected location of project.assets.json
+            </summary>
+        </member>
+    </members>
+</doc>

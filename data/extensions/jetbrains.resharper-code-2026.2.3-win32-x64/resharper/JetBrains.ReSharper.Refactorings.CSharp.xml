@@ -1,0 +1,299 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.Refactorings.CSharp</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.ReSharper.Refactorings.CSharp.ChangeSignature.TupleExpressionUsage.ConvertToCSharp60OrNet45IfNeeded(JetBrains.ReSharper.Psi.CSharp.Tree.ITupleExpression)">
+            <summary>
+            Deconstruction is only supported since C#7.
+            Mixed variables/declarations deconstruction is only supported since C#10.
+            This method will convert unsupported deconstruction syntax into supported method call.
+            Then it will convert unsupported deconstruction of NET4.5 System.Tuple into assignments, if needed.
+            </summary>
+            <remarks>
+            - `var _` is only supported discard for C#6 and earlier
+            - All declarations are disallowed for simplicity.
+            - Only single-variable declaration expressions are supported for now.
+            </remarks>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.CSharp.ConvertToGeneratedMethod.ConvertToGeneratedMethodRefactoring`2.FetchTargetMethods`1">
+            <param name="methodModelDataCollection"></param>
+            <param name="targetTypeMemberWrapper">A wrapper for a common target type member.</param>
+            <param name="methodsWrappersPerTargetClass">A collection of target type members per containing class.</param>
+            <returns>
+            <c>true</c> if a <see cref="!:TGeneratedMethodWrapper"/>(s) provided via one of
+            <paramref name="targetTypeMemberWrapper"/>, <paramref name="methodsWrappersPerTargetClass"/> out parameters.
+            </returns>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.CSharp.ConvertToGeneratedMethod.GeneratedMethodModel">
+            <summary>
+            A view model for a generated method
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.CSharp.ConvertToGeneratedMethod.GeneratedMethodModel.#ctor(System.String,JetBrains.ReSharper.Psi.IPsiServices)">
+            <summary>
+            A view model for a generated method
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Refactorings.CSharp.ConvertToGeneratedMethod.GeneratedMethodWrapper.FixedConflicts">
+            These conflicts are already fixed and just highlight the changes in a target method.
+            The storage will be <c>null</c> if the conflicts are in just-generated code.
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.CSharp.ConvertToGeneratedMethod.GeneratedMethodWrapper.GetAttributePropertyValue(System.String)">
+            <param name="propertyName">
+            An attribute property name to fetch. NOTE that its decapitalized invariant is also used for parameter name,
+            so the source parameter MUST be named the same, but in camelCase!
+            </param>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.CSharp.ConvertToGeneratedMethod.IConvertToGeneratedMethodModel.GetTargetTypeDeclaration(JetBrains.Application.Progress.IProgressIndicator)">
+            <summary>
+            Use <see cref="P:JetBrains.ReSharper.Refactorings.CSharp.ConvertToGeneratedMethod.ConvertToGeneratedMethodWorkflowBase`1.TargetTypeDeclaration"/> during the refactoring instead.
+            </summary>
+            <returns>
+            <c>null</c> if <see cref="P:JetBrains.ReSharper.Refactorings.CSharp.ConvertToGeneratedMethod.IConvertToGeneratedMethodModel.TargetTypeFullName"/> is empty (containing type of the invocation should be used)
+            or contains new class name (new class will be created during refactoring).
+            </returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.CSharp.ConvertToGeneratedMethod.ConvertToGeneratedMethodModelExtensions.get_SourceTypeFullName(JetBrains.ReSharper.Refactorings.CSharp.ConvertToGeneratedMethod.IConvertToGeneratedMethodModel)">
+            <inheritdoc cref="P:JetBrains.ReSharper.Refactorings.CSharp.ConvertToGeneratedMethod.ConvertToGeneratedMethodModelExtensions.&lt;G&gt;$109D58DA5843D2D4F4463F94390FF29E.SourceTypeFullName"/>
+        </member>
+        <member name="P:JetBrains.ReSharper.Refactorings.CSharp.ConvertToGeneratedMethod.ConvertToGeneratedMethodModelExtensions.&lt;G&gt;$109D58DA5843D2D4F4463F94390FF29E.SourceTypeFullName">
+            <summary>
+            Qualified name of the containing type for <see cref="P:JetBrains.ReSharper.Refactorings.CSharp.ConvertToGeneratedMethod.IConvertToGeneratedMethodModel.SourceTypeMemberDeclaration"/>.
+            <see cref="T:JetBrains.ReSharper.Resources.Shell.ReadLockCookie"/> required for this property call.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.CSharp.ConvertToGeneratedMethod.IInvocationExpressionViewModel">
+            <summary>
+            A view model for a refactoring page
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.CSharp.ConvertToGeneratedMethod.InvocationExpressionModel">
+            <summary>
+            A view model for an invocation expression
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.CSharp.ConvertToGeneratedMethod.InvocationExpressionModel.#ctor(JetBrains.ReSharper.Psi.CSharp.Tree.IInvocationExpression)">
+            <summary>
+            A view model for an invocation expression
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Refactorings.CSharp.ConvertToGeneratedMethod.ToLogMethod.ConvertToLogMethodModel.OriginalInvocationNode">
+            <summary>
+            The node the refactoring was run for initially.
+            Don't use it for context, it will be invalidated during <see cref="M:JetBrains.ReSharper.Refactorings.CSharp.ConvertToGeneratedMethod.ConvertToGeneratedMethodRefactoring`2.ConvertCalls(JetBrains.Application.Progress.IProgressIndicator)"/>,
+            may be use <see cref="P:JetBrains.ReSharper.Refactorings.CSharp.ConvertToGeneratedMethod.ToLogMethod.ConvertToLogMethodModel.SourceTypeMemberDeclaration"/> instead.
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.CSharp.ConvertToGeneratedMethod.ToLogMethod.ConvertToLogMethodModel.LogMessageKey">
+            These data can't be passed via parameters and must be provided via [LoggerMessage] attribute
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.CSharp.ConvertToGeneratedMethod.ToLogMethod.ConvertToLogMethodModel.LogMessageKey.#ctor(JetBrains.ReSharper.Psi.CSharp.Tree.ICSharpExpression,JetBrains.ReSharper.Psi.CSharp.Tree.ICSharpExpression)">
+            These data can't be passed via parameters and must be provided via [LoggerMessage] attribute
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.CSharp.ExtractMethod2.Common.CSharpExtractMethodLogic">
+            <summary>
+            General class to encapsulate logic for extract method action
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.CSharp.ExtractMethod2.Common.CSharpExtractMethodLogic.TryFindRangeToExtract(JetBrains.ReSharper.Psi.Tree.IFile,JetBrains.ReSharper.Psi.TreeTextRange,JetBrains.DocumentModel.DocumentRange)">
+            <summary>
+            Returns ICSharpStatementsRange | ICSharpExpression | null
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Refactorings.CSharp.ExtractMethod2.Common.CSharpExtractMethodParameterKind.PassByValue">
+            <summary>
+            p -> m
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Refactorings.CSharp.ExtractMethod2.Common.CSharpExtractMethodParameterKind.ReturnOnly">
+            <summary>
+            return value only
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Refactorings.CSharp.ExtractMethod2.Common.CSharpExtractMethodParameterKind.Return">
+            <summary>
+            return value, out parameter
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Refactorings.CSharp.ExtractMethod2.Common.CSharpExtractMethodParameterKind.CanReturn">
+            <summary>
+            value is defined in the method and can be returned but it has no usages outside.
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Refactorings.CSharp.ExtractMethod2.Common.CSharpExtractMethodParameterKind.PassThrough">
+            <summary>
+            ref parameter or a combination of value parameter and return value...
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Refactorings.CSharp.ExtractMethod2.Common.CSharpExtractMethodParameterKind.DoNotPass">
+            <summary>
+            Do not pass this parameter at all
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Refactorings.CSharp.ExtractMethod2.Common.CSharpExtractMethodParameterKind.Implicit">
+            <summary>
+            Do not pass this parameter, it is excluded and will be available implicitly
+            </summary>
+        </member>
+        <member name="P:JetBrains.ReSharper.Refactorings.CSharp.ExtractMethod2.Common.ExtractMethodResult.ResultDeclarationPointer">
+            <summary>
+            Result declaration
+            </summary>
+        </member>
+        <member name="F:JetBrains.ReSharper.Refactorings.CSharp.ExtractMethod2.Common.VariableDeclarationKind.External">
+            Any variable declared outside the extraction range 
+        </member>
+        <member name="F:JetBrains.ReSharper.Refactorings.CSharp.ExtractMethod2.Common.VariableDeclarationKind.PrimaryParameter">
+            Primary parameter or extension receiver
+        </member>
+        <member name="F:JetBrains.ReSharper.Refactorings.CSharp.ExtractMethod2.Common.VariableDeclarationKind.LocalUsingDeclaration">
+            using var
+        </member>
+        <member name="F:JetBrains.ReSharper.Refactorings.CSharp.ExtractMethod2.Common.VariableDeclarationKind.LocalAwaitUsingDeclaration">
+            await using var
+        </member>
+        <member name="F:JetBrains.ReSharper.Refactorings.CSharp.ExtractMethod2.Common.VariableDeclarationKind.Local">
+            Any variable declared inside the extraction range 
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.CSharp.Rename.ConstructorParameterRenameEvaluator">
+            <summary>
+            Constructor parameter to:
+            1. Initialized field/property
+            2. Base/derived/delegating constructor parameter
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.CSharp.Rename.EventRenameEvaluator">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.CSharp.Rename.FieldDerivedRenameEvaluator">
+            <summary>
+            Add renames derived from field rename
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.CSharp.Rename.PropertyDerivedRenameEvaluator">
+            <summary>
+            Property to its backing field
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Refactorings.CSharp.TransformParameters.AssignmentLikeModificationHelper">
+            <summary>
+            This tool allows to classify an expression against various assignment-like syntaxes
+            and perform a SINGLE transformation on it (e.g. <see cref="M:JetBrains.ReSharper.Refactorings.CSharp.TransformParameters.AssignmentLikeModificationHelper.ReplaceWithDeconstruction(System.Collections.Generic.IEnumerable{JetBrains.ReSharper.Psi.Tree.ITreeNode})"/>)
+            Helper is one-off, ONLY ONE METHOD CAN BE CALLED after per instance created.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.CSharp.TransformParameters.AssignmentLikeModificationHelper.AssignResultTo(JetBrains.ReSharper.Psi.Tree.ITreeNode,System.Object)">
+            <example>
+            <c>X</c> -> <c>result = X</c>
+            <c>y = X</c> -> <c>y = result = X</c>
+            <c>var y = X</c> -> <c>var y = result = X</c>
+            <c>(a, b) = X</c> -> <c>(a, b) = result = X</c>
+            </example>
+            <remarks>
+            Additionally can replace X with X.M access
+            </remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.CSharp.TransformParameters.AssignmentLikeModificationHelper.AssignResultToInstead(JetBrains.ReSharper.Psi.Tree.ITreeNode,System.Object)">
+            <example>
+            <c>X</c> -> <c>result = X</c>
+            <c>y = X</c> -> <c>result = X</c>
+            <c>var y = X</c> -> <c>result = X</c>
+            <c>(a, b) = X</c> -> <c>result = X</c>
+            </example>
+            <remarks>
+            Additionally can replace X with X.M access
+            </remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.CSharp.TransformParameters.AssignmentLikeModificationHelper.AssignResultToNewVariableInstead(JetBrains.ReSharper.Psi.IType,System.String,System.String)">
+            <example>
+            <c>X;</c> -> <c>var result = X;</c>
+            <c>y = X;</c> -> <c>var result = y = X;</c>
+            <c>var y = X</c> -> <c>var y = result = X</c>
+            <c>(a, b) = X</c> -> <c>(a, b) = result = X</c>
+            </example>
+            <remarks>
+            Additionally can replace X with X.M access.
+            This method doesn't move expression out from its statement.
+            </remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.CSharp.TransformParameters.AssignmentLikeModificationHelper.AssignResultToNewVariableInstead(System.String@)">
+            <example>
+            <c>X;</c> -> <c>var result = X;</c>
+            <c>y = X;</c> -> <c>var result = X;</c>
+            <c>var y = X;</c> -> <c>var result = X;</c>
+            <c>(a, b) = X;</c> -> <c>var result = X;</c>
+            </example>
+            <remarks>
+            This method doesn't move expression out from its statement.
+            </remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.CSharp.TransformParameters.AssignmentLikeModificationHelper.UseResultFromMember(System.Object)">
+            <example>
+            <c>(X)</c> -> <c>X.V</c>
+            <c>var y = X;</c> -> <c>var y = X.V;</c>
+            <c>y = X</c> -> <c>y = X.V</c>
+            <c>(a, b) = X</c> -> <c>(a, b) = X.V</c>
+            </example>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.CSharp.TransformParameters.AssignmentLikeModificationHelper.DeconstructResultToAndReturnMember(System.Collections.Generic.IEnumerable{JetBrains.ReSharper.Psi.Tree.ITreeNode},System.Object)">
+            <example>
+            <c>(X)</c> -> <c>((t1, t2, oldResult) = X).oldResult</c>
+            <c>(y = X)</c> -> <c>((t1, t2, y) = X).y</c>
+            <br/>
+            Calls <see cref="M:JetBrains.ReSharper.Refactorings.CSharp.TransformParameters.AssignmentLikeModificationHelper.ReplaceWithDeconstruction(System.Collections.Generic.IEnumerable{JetBrains.ReSharper.Psi.Tree.ITreeNode})"/> for these cases:
+            <c>var y = X;</c> -> <c>(t1, t2, var y) = X;</c>
+            <c>y = X;</c> -> <c>(t1, t2, y) = X;</c>
+            <c>(a, b) = X;</c> -> <c>(t1, t2, V) = X;</c>
+            <c>X;</c> -> <c>(t1, t2) = X;</c>
+            </example>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.CSharp.TransformParameters.AssignmentLikeModificationHelper.ReplaceWithDeconstruction(System.Collections.Generic.IEnumerable{JetBrains.ReSharper.Psi.Tree.ITreeNode})">
+            <example>
+            <c>X;</c> -> <c>(t1, var t2) = X;</c>
+            <c>var y = X;</c> -> <c>(t1, var t2) = X;</c>
+            <c>y = X</c> -> <c>(t1, t2) = X</c>
+            <c>(a, b) = X</c> -> <c>(t1, var t2) = X</c>
+            </example>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.CSharp.TransformParameters.AssignmentLikeModificationHelper.BuildDeconstructionStatement(System.Collections.Generic.List{JetBrains.ReSharper.Psi.Tree.ITreeNode},System.Boolean)">
+            <remarks>
+            Hack here: `var _` is allowed if `allowDeclarations=false`, look for it in CsTransformParameters
+            </remarks>>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.CSharp.TransformParameters.AssignmentLikeModificationHelper.DropAssignmentButKeepValue">
+            <example>
+            <c>var y = X;</c> -> <c>X;</c>
+            <c>y = X</c> -> <c>X</c>
+            <c>(a, b) = X</c> -> <c>X</c>
+            </example>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.CSharp.TransformParameters.AssignmentLikeModificationHelper.AlsoAssign(JetBrains.ReSharper.Psi.Tree.ITreeNode,System.String)">
+            <summary>
+            Appends additional assignment/declaration statement after.
+            Note that you CAN call this method several times on same helper instance.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.CSharp.TransformParameters.AssignmentLikeModificationHelper.AlsoAssign(JetBrains.ReSharper.Psi.Tree.ITreeNode,System.Collections.Generic.IReadOnlyCollection{System.String},JetBrains.ReSharper.Psi.IType)">
+            <summary>
+            Appends additional tuple assignment/declaration statement after.
+            Note that you CAN call this method several times on same helper instance.
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.CSharp.TransformParameters.CSharpTransformParametersExec.UpdateReturnValueUsage(JetBrains.ReSharper.Psi.CSharp.Tree.ICSharpArgumentsOwner,JetBrains.ReSharper.Refactorings.TransformParameters.PreProcessedCall,JetBrains.ReSharper.Refactorings.ChangeSignature.RebindableReference,System.Collections.Generic.List{JetBrains.ReSharper.Refactorings.ChangeSignature.Impl.ArgumentLikeInfo})">
+            <returns><c>null</c> if there is a serious conflict</returns>
+            <remarks>
+            For C#6 and earlier and/or NETFW 4.5 this method DOES generate deconstructing assignments,
+            but uses discard designations (<c>var _</c>) instead of discard references (<c>_</c>) in older C#.
+            See <see cref="M:JetBrains.ReSharper.Refactorings.CSharp.TransformParameters.CSharpTransformParametersExec.PostProcessCall(JetBrains.ReSharper.Psi.Resolve.IReference,JetBrains.ReSharper.Psi.Resolve.ISubstitution)"/> to translate resulting code to the target version of C#/NETFW.
+            </remarks>
+        </member>
+        <member name="M:JetBrains.ReSharper.Refactorings.CSharp.Util.CSharpAbstractor.MakeDeclaration``1(JetBrains.ReSharper.Psi.Tree.IDeclaration,System.Boolean)">
+            <summary>
+            Create CS abstracts declaration
+            </summary>
+        </member>
+    </members>
+</doc>

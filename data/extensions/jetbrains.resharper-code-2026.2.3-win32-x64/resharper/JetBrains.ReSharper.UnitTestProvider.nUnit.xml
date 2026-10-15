@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.UnitTestProvider.nUnit</name>
+    </assembly>
+    <members>
+        <member name="M:JetBrains.ReSharper.UnitTestProvider.nUnit.NUnitSetupFixtureVault`2.Clear">
+            <summary>
+            Used for tests only 
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.UnitTestProvider.nUnit.v26.NUnitMetadataExplorer.GetAllTestFixtureAttributes(JetBrains.Metadata.Reader.API.IMetadataTypeInfo)">
+            <summary>
+            Returns collection of all TestFixture attribute on type, including its base types.
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1655 @@
+{
+	"name": "ms-sql-manager",
+	"displayName": "MS SQL Manager",
+	"description": "Manage Microsoft SQL Server databases with connection management, schema browsing, and query execution.",
+	"version": "0.20.5",
+	"publisher": "jakubkozera",
+	"icon": "ms-sql-manager.png",
+	"sponsor": {
+		"url": "https://github.com/sponsors/jakubkozera"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jakubkozera/vsc-ms-sql-manager.git"
+	},
+	"engines": {
+		"vscode": "^1.105.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"customEditors": [
+			{
+				"viewType": "mssqlManager.sqlEditor",
+				"displayName": "SQL Editor",
+				"selector": [
+					{
+						"filenamePattern": "*.sql"
+					}
+				],
+				"priority": "default"
+			},
+			{
+				"viewType": "mssqlManager.notebookEditor",
+				"displayName": "SQL Notebook",
+				"selector": [
+					{
+						"filenamePattern": "*.ipynb"
+					}
+				],
+				"priority": "option"
+			}
+		],
+		"commands": [
+			{
+				"command": "mssqlManager.connect",
+				"title": "Connect to Database",
+				"icon": "$(add)"
+			},
+			{
+				"command": "mssqlManager.executeQuery",
+				"title": "Execute SQL Query",
+				"icon": "$(play)"
+			},
+			{
+				"command": "mssqlManager.refresh",
+				"title": "Refresh",
+				"icon": "$(refresh)"
+			},
+			{
+				"command": "mssqlManager.disconnect",
+				"title": "Disconnect",
+				"icon": "$(close)"
+			},
+			{
+				"command": "mssqlManager.generateSelectScript",
+				"title": "Generate SELECT Script",
+				"icon": "$(file-code)"
+			},
+			{
+				"command": "mssqlManager.manageConnections",
+				"title": "Manage Connections",
+				"icon": "$(plug)"
+			},
+			{
+				"command": "mssqlManager.debugConnections",
+				"title": "MS SQL Manager: Debug Connections",
+				"icon": "$(bug)"
+			},
+			{
+				"command": "mssqlManager.editConnection",
+				"title": "Edit Connection",
+				"icon": "$(edit)"
+			},
+			{
+				"command": "mssqlManager.deleteConnection",
+				"title": "Delete Connection",
+				"icon": "$(trash)"
+			},
+			{
+				"command": "mssqlManager.connectToSaved",
+				"title": "Connect",
+				"icon": "$(plug)"
+			},
+			{
+				"command": "mssqlManager.createServerGroup",
+				"title": "Create Server Group",
+				"icon": "$(folder-library)"
+			},
+			{
+				"command": "mssqlManager.addConnectionToServerGroup",
+				"title": "Add Connection",
+				"icon": "$(add)"
+			},
+			{
+				"command": "mssqlManager.editServerGroup",
+				"title": "Edit Server Group",
+				"icon": "$(edit)"
+			},
+			{
+				"command": "mssqlManager.deleteServerGroup",
+				"title": "Delete Server Group",
+				"icon": "$(trash)"
+			},
+			{
+				"command": "mssqlManager.disconnectConnection",
+				"title": "Disconnect",
+				"icon": "$(close)"
+			},
+			{
+				"command": "mssqlManager.selectTop1000",
+				"title": "Select Top 1000",
+				"icon": "$(output)"
+			},
+			{
+				"command": "mssqlManager.scriptTableCreate",
+				"title": "Script as Create",
+				"icon": "$(file-code)"
+			},
+			{
+				"command": "mssqlManager.scriptTableDrop",
+				"title": "Script as Drop",
+				"icon": "$(trash)"
+			},
+			{
+				"command": "mssqlManager.scriptRowInsert",
+				"title": "Script as INSERT",
+				"icon": "$(add)"
+			},
+			{
+				"command": "mssqlManager.scriptRowUpdate",
+				"title": "Script as UPDATE",
+				"icon": "$(edit)"
+			},
+			{
+				"command": "mssqlManager.scriptRowDelete",
+				"title": "Script as DELETE",
+				"icon": "$(trash)"
+			},
+			{
+				"command": "mssqlManager.refreshTable",
+				"title": "Refresh",
+				"icon": "$(refresh)"
+			},
+			{
+				"command": "mssqlManager.refreshNode",
+				"title": "Refresh",
+				"icon": "$(refresh)"
+			},
+			{
+				"command": "mssqlManager.newStoredProcedure",
+				"title": "New Stored Procedure...",
+				"icon": "$(add)"
+			},
+			{
+				"command": "mssqlManager.modifyStoredProcedure",
+				"title": "Modify",
+				"icon": "$(edit)"
+			},
+			{
+				"command": "mssqlManager.executeStoredProcedure",
+				"title": "Execute Stored Procedure...",
+				"icon": "$(play)"
+			},
+			{
+				"command": "mssqlManager.scriptProcedureCreateToWindow",
+				"title": "Script as CREATE To New Query Editor Window"
+			},
+			{
+				"command": "mssqlManager.scriptProcedureCreateToFile",
+				"title": "Script as CREATE To File"
+			},
+			{
+				"command": "mssqlManager.scriptProcedureCreateToClipboard",
+				"title": "Script as CREATE To Clipboard"
+			},
+			{
+				"command": "mssqlManager.scriptProcedureAlterToWindow",
+				"title": "Script as ALTER To New Query Editor Window"
+			},
+			{
+				"command": "mssqlManager.scriptProcedureAlterToFile",
+				"title": "Script as ALTER To File"
+			},
+			{
+				"command": "mssqlManager.scriptProcedureAlterToClipboard",
+				"title": "Script as ALTER To Clipboard"
+			},
+			{
+				"command": "mssqlManager.scriptProcedureDropToWindow",
+				"title": "Script as DROP To New Query Editor Window"
+			},
+			{
+				"command": "mssqlManager.scriptProcedureDropToFile",
+				"title": "Script as DROP To File"
+			},
+			{
+				"command": "mssqlManager.scriptProcedureDropToClipboard",
+				"title": "Script as DROP To Clipboard"
+			},
+			{
+				"command": "mssqlManager.scriptProcedureExecuteToWindow",
+				"title": "Script as EXECUTE To New Query Editor Window"
+			},
+			{
+				"command": "mssqlManager.scriptProcedureExecuteToFile",
+				"title": "Script as EXECUTE To File"
+			},
+			{
+				"command": "mssqlManager.scriptProcedureExecuteToClipboard",
+				"title": "Script as EXECUTE To Clipboard"
+			},
+			{
+				"command": "mssqlManager.viewProcedureDependencies",
+				"title": "View Dependencies",
+				"icon": "$(references)"
+			},
+			{
+				"command": "mssqlManager.renameStoredProcedure",
+				"title": "Rename",
+				"icon": "$(edit)"
+			},
+			{
+				"command": "mssqlManager.deleteStoredProcedure",
+				"title": "Delete",
+				"icon": "$(trash)"
+			},
+			{
+				"command": "mssqlManager.showStoredProcedureProperties",
+				"title": "Properties",
+				"icon": "$(info)"
+			},
+			{
+				"command": "mssqlManager.openQueryFromHistory",
+				"title": "Open Query from History",
+				"icon": "$(go-to-file)"
+			},
+			{
+				"command": "mssqlManager.pinQueryHistoryItem",
+				"title": "Pin Query",
+				"icon": "$(pin)"
+			},
+			{
+				"command": "mssqlManager.unpinQueryHistoryItem",
+				"title": "Unpin Query",
+				"icon": "$(pin)"
+			},
+			{
+				"command": "mssqlManager.renameQueryHistoryItem",
+				"title": "Rename Query",
+				"icon": "$(edit)"
+			},
+			{
+				"command": "mssqlManager.clearQueryHistory",
+				"title": "Clear Query History",
+				"icon": "$(clear-all)"
+			},
+			{
+				"command": "mssqlManager.deleteQueryHistoryItem",
+				"title": "Delete History Item",
+				"icon": "$(trash)"
+			},
+			{
+				"command": "mssqlManager.refreshQueryHistory",
+				"title": "Refresh Query History",
+				"icon": "$(refresh)"
+			},
+			{
+				"command": "mssqlManager.refreshSnippets",
+				"title": "MS SQL Manager: Refresh SQL Snippets",
+				"icon": "$(refresh)"
+			},
+			{
+				"command": "mssqlManager.refreshDatabaseSchema",
+				"title": "Refresh",
+				"icon": "$(refresh)"
+			},
+			{
+				"command": "mssqlManager.clearSchemaCache",
+				"title": "Clear Schema Cache",
+				"icon": "$(clear-all)"
+			},
+			{
+				"command": "mssqlManager.showSchemaCacheInfo",
+				"title": "Show Schema Cache Info",
+				"icon": "$(info)"
+			},
+			{
+				"command": "mssqlManager.toggleQueryHistoryGrouping",
+				"title": "Toggle Query History Grouping",
+				"icon": "$(group-by-ref-type)"
+			},
+			{
+				"command": "mssqlManager.newQuery",
+				"title": "New Query",
+				"icon": "$(new-file)"
+			},
+			{
+				"command": "mssqlManager.newQueryOnDatabase",
+				"title": "New Query",
+				"icon": "$(new-file)"
+			},
+			{
+				"command": "mssqlManager.copyConnectionString",
+				"title": "Copy Connection String"
+			},
+			{
+				"command": "mssqlManager.filterDatabases",
+				"title": "Filter Databases...",
+				"icon": "$(filter)"
+			},
+			{
+				"command": "mssqlManager.filterTables",
+				"title": "Filter Tables...",
+				"icon": "$(filter)"
+			},
+			{
+				"command": "mssqlManager.showDatabaseDiagram",
+				"title": "Diagram",
+				"icon": "$(type-hierarchy)"
+			},
+			{
+				"command": "mssqlManager.compareSchema",
+				"title": "Compare Schema",
+				"icon": "$(diff)"
+			},
+			{
+				"command": "mssqlManager.generateDatabaseScripts",
+				"title": "Generate Scripts...",
+				"icon": "$(file-text)"
+			},
+			{
+				"command": "mssqlManager.exportBackup",
+				"title": "Export Backup...",
+				"icon": "$(export)"
+			},
+			{
+				"command": "mssqlManager.importBackup",
+				"title": "Import Backup...",
+				"icon": "$(import)"
+			},
+			{
+				"command": "mssqlManager.addAzureFirewallRule",
+				"title": "Add IP to Azure Firewall",
+				"icon": "$(shield)"
+			},
+			{
+				"command": "mssqlManager.openAzurePortal",
+				"title": "Open Azure Portal",
+				"icon": "$(globe)"
+			},
+			{
+				"command": "mssqlManager.clearAzureServerCache",
+				"title": "Clear Azure Servers Cache"
+			},
+			{
+				"command": "mssqlManager.showAzureServerCache",
+				"title": "Show Azure Servers Cache"
+			},
+			{
+				"command": "mssqlManager.discoverAzureServers",
+				"title": "Discover Azure SQL Servers",
+				"icon": "$(cloud)"
+			},
+			{
+				"command": "mssqlManager.discoverDockerContainers",
+				"title": "Discover Docker SQL Containers",
+				"icon": "$(vm)"
+			},
+			{
+				"command": "mssqlManager.discoverLocalServers",
+				"title": "Discover Local SQL Servers",
+				"icon": "$(server)"
+			},
+			{
+				"command": "mssqlManager.deployDockerMssql",
+				"title": "Deploy Docker MS SQL container",
+				"icon": "$(add)"
+			},
+			{
+				"command": "mssqlManager.collapseAll",
+				"title": "Collapse All",
+				"icon": "$(collapse-all)"
+			},
+			{
+				"command": "mssqlManager.openSqlChat",
+				"title": "Open SQL Chat",
+				"icon": "$(comment-discussion)"
+			},
+			{
+				"command": "mssqlManager.executeChatGeneratedQuery",
+				"title": "Execute Chat Generated Query"
+			},
+			{
+				"command": "mssqlManager.insertChatGeneratedQuery",
+				"title": "Insert Chat Generated Query"
+			},
+			{
+				"command": "mssqlManager.addDatabaseInstructions",
+				"title": "Add Database Instructions",
+				"icon": "$(note)"
+			},
+			{
+				"command": "mssqlManager.unlinkDatabaseInstructions",
+				"title": "Unlink Database Instructions",
+				"icon": "$(trash)"
+			},
+			{
+				"command": "mssqlManager.editDatabaseInstructions",
+				"title": "Edit Database Instructions",
+				"icon": "$(edit)"
+			},
+			{
+				"command": "mssqlManager.openNotebookFolder",
+				"title": "Open Notebook Folder...",
+				"icon": "$(folder-opened)"
+			},
+			{
+				"command": "mssqlManager.removeNotebook",
+				"title": "Remove from Notebooks",
+				"icon": "$(trash)"
+			},
+			{
+				"command": "mssqlManager.createDatabase",
+				"title": "Create Database...",
+				"icon": "$(add)"
+			},
+			{
+				"command": "mssqlManager.deleteDatabase",
+				"title": "Delete Database",
+				"icon": "$(trash)"
+			},
+			{
+				"command": "mssqlManager.refreshNotebooks",
+				"title": "Refresh Notebooks",
+				"icon": "$(refresh)"
+			},
+			{
+				"command": "mssqlManager.createNotebook",
+				"title": "New Notebook...",
+				"icon": "$(add)"
+			},
+			{
+				"command": "mssqlManager.createNotebookSection",
+				"title": "New Section...",
+				"icon": "$(new-folder)"
+			},
+			{
+				"command": "mssqlManager.openSettings",
+				"title": "MS SQL Manager: Settings",
+				"icon": "$(gear)"
+			}
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "mssqlManager",
+					"title": "MS SQL Manager",
+					"icon": "resources/database-dark.svg"
+				}
+			]
+		},
+		"views": {
+			"mssqlManager": [
+				{
+					"id": "mssqlManager.explorer",
+					"name": "Database Explorer",
+					"when": "true",
+					"icon": "resources/database-dark.svg",
+					"visibility": "visible"
+				},
+				{
+					"id": "mssqlManager.queryHistory",
+					"name": "Query History",
+					"when": "true",
+					"icon": "$(history)"
+				},
+				{
+					"id": "mssqlManager.notebooks",
+					"name": "Notebooks",
+					"when": "true",
+					"icon": "$(notebook)"
+				}
+			]
+		},
+		"submenus": [
+			{
+				"id": "mssqlManager.moreActions",
+				"label": "More Actions",
+				"icon": "$(kebab-vertical)"
+			},
+			{
+				"id": "mssqlManager.scriptProcedureAs",
+				"label": "Script Stored Procedure as",
+				"icon": "$(file-code)"
+			},
+			{
+				"id": "mssqlManager.scriptProcedureCreateTo",
+				"label": "CREATE To",
+				"icon": "$(file-code)"
+			},
+			{
+				"id": "mssqlManager.scriptProcedureAlterTo",
+				"label": "ALTER To",
+				"icon": "$(edit)"
+			},
+			{
+				"id": "mssqlManager.scriptProcedureDropTo",
+				"label": "DROP To",
+				"icon": "$(trash)"
+			},
+			{
+				"id": "mssqlManager.scriptProcedureExecuteTo",
+				"label": "EXECUTE To",
+				"icon": "$(play)"
+			},
+			{
+				"id": "mssqlManager.scriptRowAs",
+				"label": "Script ROW as",
+				"icon": "$(file-code)"
+			}
+		],
+		"chatParticipants": [
+			{
+				"id": "ms-sql-manager.sql",
+				"name": "sql",
+				"fullName": "SQL Database Assistant",
+				"description": "Ask questions about your SQL databases and get help with queries",
+				"isSticky": true,
+				"commands": [
+					{
+						"name": "explain",
+						"description": "Explain a SQL query or database concept"
+					},
+					{
+						"name": "optimize",
+						"description": "Suggest optimizations for a SQL query"
+					},
+					{
+						"name": "schema",
+						"description": "Show information about database tables and structure"
+					}
+				],
+				"disambiguation": [
+					{
+						"category": "database",
+						"description": "The user wants help with SQL queries, database operations, or understanding database schemas.",
+						"examples": [
+							"Show me all customers from New York",
+							"How do I join these two tables?",
+							"Create a query to find the top selling products",
+							"What's the structure of the users table?",
+							"Help me optimize this slow query"
+						]
+					}
+				]
+			}
+		],
+		"menus": {
+			"mssqlManager.moreActions": [
+				{
+					"command": "mssqlManager.openSettings",
+					"group": "0_view@0"
+				},
+				{
+					"command": "mssqlManager.collapseAll",
+					"group": "0_view@1"
+				},
+				{
+					"command": "mssqlManager.deployDockerMssql",
+					"when": "mssqlManager.dockerRunning",
+					"group": "1_discovery@0"
+				},
+				{
+					"command": "mssqlManager.discoverDockerContainers",
+					"group": "1_discovery@1"
+				},
+				{
+					"command": "mssqlManager.discoverAzureServers",
+					"group": "1_discovery@2"
+				},
+				{
+					"command": "mssqlManager.discoverLocalServers",
+					"when": "isWindows",
+					"group": "1_discovery@3"
+				}
+			],
+			"mssqlManager.scriptProcedureAs": [
+				{
+					"submenu": "mssqlManager.scriptProcedureCreateTo",
+					"group": "1_create"
+				},
+				{
+					"submenu": "mssqlManager.scriptProcedureAlterTo",
+					"group": "2_alter"
+				},
+				{
+					"submenu": "mssqlManager.scriptProcedureDropTo",
+					"group": "3_drop"
+				},
+				{
+					"submenu": "mssqlManager.scriptProcedureExecuteTo",
+					"group": "4_execute"
+				}
+			],
+			"mssqlManager.scriptProcedureCreateTo": [
+				{
+					"command": "mssqlManager.scriptProcedureCreateToWindow",
+					"group": "1_destination@1"
+				},
+				{
+					"command": "mssqlManager.scriptProcedureCreateToFile",
+					"group": "1_destination@2"
+				},
+				{
+					"command": "mssqlManager.scriptProcedureCreateToClipboard",
+					"group": "1_destination@3"
+				}
+			],
+			"mssqlManager.scriptProcedureAlterTo": [
+				{
+					"command": "mssqlManager.scriptProcedureAlterToWindow",
+					"group": "1_destination@1"
+				},
+				{
+					"command": "mssqlManager.scriptProcedureAlterToFile",
+					"group": "1_destination@2"
+				},
+				{
+					"command": "mssqlManager.scriptProcedureAlterToClipboard",
+					"group": "1_destination@3"
+				}
+			],
+			"mssqlManager.scriptProcedureDropTo": [
+				{
+					"command": "mssqlManager.scriptProcedureDropToWindow",
+					"group": "1_destination@1"
+				},
+				{
+					"command": "mssqlManager.scriptProcedureDropToFile",
+					"group": "1_destination@2"
+				},
+				{
+					"command": "mssqlManager.scriptProcedureDropToClipboard",
+					"group": "1_destination@3"
+				}
+			],
+			"mssqlManager.scriptProcedureExecuteTo": [
+				{
+					"command": "mssqlManager.scriptProcedureExecuteToWindow",
+					"group": "1_destination@1"
+				},
+				{
+					"command": "mssqlManager.scriptProcedureExecuteToFile",
+					"group": "1_destination@2"
+				},
+				{
+					"command": "mssqlManager.scriptProcedureExecuteToClipboard",
+					"group": "1_destination@3"
+				}
+			],
+			"mssqlManager.scriptRowAs": [
+				{
+					"command": "mssqlManager.scriptRowInsert",
+					"group": "1_row@1"
+				},
+				{
+					"command": "mssqlManager.scriptRowUpdate",
+					"group": "1_row@2"
+				},
+				{
+					"command": "mssqlManager.scriptRowDelete",
+					"group": "1_row@3"
+				}
+			],
+			"editor/title": [],
+			"editor/context": [
+				{
+					"command": "mssqlManager.executeQuery",
+					"when": "resourceLangId == sql",
+					"group": "execution"
+				}
+			],
+			"view/title": [
+				{
+					"command": "mssqlManager.connect",
+					"when": "view == mssqlManager.explorer",
+					"group": "navigation@1"
+				},
+				{
+					"command": "mssqlManager.manageConnections",
+					"when": "view == mssqlManager.explorer",
+					"group": "navigation@2"
+				},
+				{
+					"command": "mssqlManager.createServerGroup",
+					"when": "view == mssqlManager.explorer",
+					"group": "navigation@3"
+				},
+				{
+					"submenu": "mssqlManager.moreActions",
+					"when": "view == mssqlManager.explorer",
+					"group": "navigation@4"
+				},
+				{
+					"command": "mssqlManager.refreshQueryHistory",
+					"when": "view == mssqlManager.queryHistory",
+					"group": "navigation@1"
+				},
+				{
+					"command": "mssqlManager.toggleQueryHistoryGrouping",
+					"when": "view == mssqlManager.queryHistory",
+					"group": "navigation@2"
+				},
+				{
+					"command": "mssqlManager.clearQueryHistory",
+					"when": "view == mssqlManager.queryHistory",
+					"group": "navigation@3"
+				},
+				{
+					"command": "mssqlManager.openNotebookFolder",
+					"when": "view == mssqlManager.notebooks",
+					"group": "navigation@1"
+				},
+				{
+					"command": "mssqlManager.refreshNotebooks",
+					"when": "view == mssqlManager.notebooks",
+					"group": "navigation@2"
+				},
+				{
+					"command": "mssqlManager.createNotebook",
+					"when": "view == mssqlManager.notebooks",
+					"group": "navigation@3"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "mssqlManager.generateSelectScript",
+					"when": "view == mssqlManager.explorer && viewItem == table",
+					"group": "inline"
+				},
+				{
+					"command": "mssqlManager.generateSelectScript",
+					"when": "view == mssqlManager.explorer && viewItem == view",
+					"group": "inline"
+				},
+				{
+					"command": "mssqlManager.connectToSaved",
+					"when": "view == mssqlManager.explorer && viewItem == connectionInactive",
+					"group": "inline@1"
+				},
+				{
+					"command": "mssqlManager.connectToSaved",
+					"when": "view == mssqlManager.explorer && viewItem == connectionFailed",
+					"group": "inline@1"
+				},
+				{
+					"command": "mssqlManager.disconnectConnection",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^connectionActive/",
+					"group": "inline@1"
+				},
+				{
+					"command": "mssqlManager.editConnection",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^connection(Active.*|Inactive|Failed)$/",
+					"group": "inline@2"
+				},
+				{
+					"command": "mssqlManager.deleteConnection",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^connection(Active.*|Inactive|Failed)$/",
+					"group": "inline@3"
+				},
+				{
+					"command": "mssqlManager.newQuery",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^connection(Active.*|Inactive|Failed)$/",
+					"group": "1_connection@1"
+				},
+				{
+					"command": "mssqlManager.connectToSaved",
+					"when": "view == mssqlManager.explorer && viewItem == connectionInactive",
+					"group": "1_connection@2"
+				},
+				{
+					"command": "mssqlManager.connectToSaved",
+					"when": "view == mssqlManager.explorer && viewItem == connectionFailed",
+					"group": "1_connection@2"
+				},
+				{
+					"command": "mssqlManager.addAzureFirewallRule",
+					"when": "view == mssqlManager.explorer && viewItem == connectionFailed",
+					"group": "1_connection@3"
+				},
+				{
+					"command": "mssqlManager.openAzurePortal",
+					"when": "view == mssqlManager.explorer && viewItem == connectionFailed",
+					"group": "1_connection@4"
+				},
+				{
+					"command": "mssqlManager.disconnectConnection",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^connectionActive/",
+					"group": "1_connection@2"
+				},
+				{
+					"command": "mssqlManager.editConnection",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^connection(Active.*|Inactive|Failed)$/",
+					"group": "2_manage@1"
+				},
+				{
+					"command": "mssqlManager.deleteConnection",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^connection(Active.*|Inactive|Failed)$/",
+					"group": "2_manage@2"
+				},
+				{
+					"command": "mssqlManager.copyConnectionString",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^connection(Active|Inactive|Failed)$/",
+					"group": "2_manage@3"
+				},
+				{
+					"command": "mssqlManager.showDatabaseDiagram",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^connectionActive/",
+					"group": "2_manage@4"
+				},
+				{
+					"command": "mssqlManager.compareSchema",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^connectionActive/",
+					"group": "2_manage@5"
+				},
+				{
+					"command": "mssqlManager.generateDatabaseScripts",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^connectionActive/",
+					"group": "2_script@1"
+				},
+				{
+					"command": "mssqlManager.exportBackup",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^connectionActive/",
+					"group": "2_script@2"
+				},
+				{
+					"command": "mssqlManager.openSqlChat",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^connectionActive/",
+					"group": "2_script@3"
+				},
+				{
+					"command": "mssqlManager.addDatabaseInstructions",
+					"when": "view == mssqlManager.explorer && viewItem == connectionActive",
+					"group": "2_script@4"
+				},
+				{
+					"command": "mssqlManager.unlinkDatabaseInstructions",
+					"when": "view == mssqlManager.explorer && viewItem == connectionActiveWithInstructions",
+					"group": "2_script@4"
+				},
+				{
+					"command": "mssqlManager.editDatabaseInstructions",
+					"when": "view == mssqlManager.explorer && viewItem == connectionActiveWithInstructions",
+					"group": "2_script@4"
+				},
+				{
+					"command": "mssqlManager.addConnectionToServerGroup",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverGroup/",
+					"group": "inline@1"
+				},
+				{
+					"command": "mssqlManager.editServerGroup",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverGroup/",
+					"group": "inline@2"
+				},
+				{
+					"command": "mssqlManager.deleteServerGroup",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverGroup/",
+					"group": "inline@3"
+				},
+				{
+					"command": "mssqlManager.addConnectionToServerGroup",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverGroup/",
+					"group": "1_manage@1"
+				},
+				{
+					"command": "mssqlManager.editServerGroup",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverGroup/",
+					"group": "1_manage@2"
+				},
+				{
+					"command": "mssqlManager.deleteServerGroup",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverGroup/",
+					"group": "1_manage@3"
+				},
+				{
+					"command": "mssqlManager.deployDockerMssql",
+					"when": "view == mssqlManager.explorer && viewItem == serverGroupDocker",
+					"group": "2_docker@1"
+				},
+				{
+					"command": "mssqlManager.connectToSaved",
+					"when": "view == mssqlManager.explorer && viewItem == serverConnectionInactive",
+					"group": "inline@1"
+				},
+				{
+					"command": "mssqlManager.connectToSaved",
+					"when": "view == mssqlManager.explorer && viewItem == serverConnectionFailed",
+					"group": "inline@1"
+				},
+				{
+					"command": "mssqlManager.editConnection",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverConnection(Inactive|Failed)$/",
+					"group": "inline@2"
+				},
+				{
+					"command": "mssqlManager.deleteConnection",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverConnection(Inactive|Failed)$/",
+					"group": "inline@3"
+				},
+				{
+					"command": "mssqlManager.disconnectConnection",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverConnectionActive/",
+					"group": "inline@1"
+				},
+				{
+					"command": "mssqlManager.editConnection",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverConnectionActive/",
+					"group": "inline@2"
+				},
+				{
+					"command": "mssqlManager.deleteConnection",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverConnectionActive/",
+					"group": "inline@3"
+				},
+				{
+					"command": "mssqlManager.newQuery",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverConnection(Active.*|Inactive|Failed)$/",
+					"group": "1_connection@1"
+				},
+				{
+					"command": "mssqlManager.newQueryOnDatabase",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^database/",
+					"group": "1_query@1"
+				},
+				{
+					"command": "mssqlManager.copyConnectionString",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^database/",
+					"group": "1_query@2"
+				},
+				{
+					"command": "mssqlManager.connectToSaved",
+					"when": "view == mssqlManager.explorer && viewItem == serverConnectionInactive",
+					"group": "1_connection@2"
+				},
+				{
+					"command": "mssqlManager.connectToSaved",
+					"when": "view == mssqlManager.explorer && viewItem == serverConnectionFailed",
+					"group": "1_connection@2"
+				},
+				{
+					"command": "mssqlManager.disconnectConnection",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverConnectionActive/",
+					"group": "1_connection@2"
+				},
+				{
+					"command": "mssqlManager.filterDatabases",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverConnectionActive/",
+					"group": "1_connection@3"
+				},
+				{
+					"command": "mssqlManager.editConnection",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverConnection(Active.*|Inactive|Failed)$/",
+					"group": "2_manage@1"
+				},
+				{
+					"command": "mssqlManager.deleteConnection",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverConnection(Active.*|Inactive|Failed)$/",
+					"group": "2_manage@2"
+				},
+				{
+					"command": "mssqlManager.copyConnectionString",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverConnection(Active.*|Inactive|Failed)$/",
+					"group": "2_manage@3"
+				},
+				{
+					"command": "mssqlManager.showDatabaseDiagram",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverConnectionActive/",
+					"group": "2_manage@4"
+				},
+				{
+					"command": "mssqlManager.compareSchema",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverConnectionActive/",
+					"group": "2_manage@5"
+				},
+				{
+					"command": "mssqlManager.exportBackup",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverConnectionActive/",
+					"group": "2_manage@6"
+				},
+				{
+					"command": "mssqlManager.importBackup",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverConnectionActive/",
+					"group": "2_manage@7"
+				},
+				{
+					"command": "mssqlManager.openSqlChat",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverConnectionActive/",
+					"group": "2_manage@8"
+				},
+				{
+					"command": "mssqlManager.addDatabaseInstructions",
+					"when": "view == mssqlManager.explorer && viewItem == serverConnectionActive",
+					"group": "2_manage@9"
+				},
+				{
+					"command": "mssqlManager.unlinkDatabaseInstructions",
+					"when": "view == mssqlManager.explorer && viewItem == serverConnectionActiveWithInstructions",
+					"group": "2_manage@9"
+				},
+				{
+					"command": "mssqlManager.editDatabaseInstructions",
+					"when": "view == mssqlManager.explorer && viewItem == serverConnectionActiveWithInstructions",
+					"group": "2_manage@9"
+				},
+				{
+					"command": "mssqlManager.createDatabase",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverConnectionActive/",
+					"group": "2_manage@10"
+				},
+				{
+					"command": "mssqlManager.refreshNode",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^serverConnectionActive/",
+					"group": "3_refresh@1"
+				},
+				{
+					"command": "mssqlManager.showDatabaseDiagram",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^database/",
+					"group": "1_query@3"
+				},
+				{
+					"command": "mssqlManager.compareSchema",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^database/",
+					"group": "1_query@4"
+				},
+				{
+					"command": "mssqlManager.openSqlChat",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^database/",
+					"group": "1_query@5"
+				},
+				{
+					"command": "mssqlManager.addDatabaseInstructions",
+					"when": "view == mssqlManager.explorer && viewItem == database",
+					"group": "1_query@6"
+				},
+				{
+					"command": "mssqlManager.unlinkDatabaseInstructions",
+					"when": "view == mssqlManager.explorer && viewItem == databaseWithInstructions",
+					"group": "1_query@6"
+				},
+				{
+					"command": "mssqlManager.editDatabaseInstructions",
+					"when": "view == mssqlManager.explorer && viewItem == databaseWithInstructions",
+					"group": "1_query@6"
+				},
+				{
+					"command": "mssqlManager.generateDatabaseScripts",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^database/",
+					"group": "2_script@1"
+				},
+				{
+					"command": "mssqlManager.exportBackup",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^database/",
+					"group": "2_script@2"
+				},
+				{
+					"command": "mssqlManager.deleteDatabase",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^database/",
+					"group": "3_danger@1"
+				},
+				{
+					"command": "mssqlManager.filterTables",
+					"when": "view == mssqlManager.explorer && viewItem == tables",
+					"group": "1_filter@1"
+				},
+				{
+					"command": "mssqlManager.refreshNode",
+					"when": "view == mssqlManager.explorer && viewItem == tables",
+					"group": "9_refresh@1"
+				},
+				{
+					"command": "mssqlManager.refreshNode",
+					"when": "view == mssqlManager.explorer && viewItem == views",
+					"group": "9_refresh@1"
+				},
+				{
+					"command": "mssqlManager.refreshNode",
+					"when": "view == mssqlManager.explorer && viewItem == programmability",
+					"group": "9_refresh@1"
+				},
+				{
+					"command": "mssqlManager.refreshDatabaseSchema",
+					"when": "view == mssqlManager.explorer && viewItem == database",
+					"group": "9_refresh@1"
+				},
+				{
+					"command": "mssqlManager.refreshDatabaseSchema",
+					"when": "view == mssqlManager.explorer && viewItem == databaseWithInstructions",
+					"group": "9_refresh@1"
+				},
+				{
+					"command": "mssqlManager.refreshDatabaseSchema",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^connectionActive/",
+					"group": "9_refresh@1"
+				},
+				{
+					"command": "mssqlManager.selectTop1000",
+					"when": "view == mssqlManager.explorer && viewItem == table",
+					"group": "1_query@1"
+				},
+				{
+					"command": "mssqlManager.scriptTableCreate",
+					"when": "view == mssqlManager.explorer && viewItem == table",
+					"group": "2_script@1"
+				},
+				{
+					"command": "mssqlManager.scriptTableDrop",
+					"when": "view == mssqlManager.explorer && viewItem == table",
+					"group": "2_script@2"
+				},
+				{
+					"submenu": "mssqlManager.scriptRowAs",
+					"when": "view == mssqlManager.explorer && viewItem == table",
+					"group": "2_script@3"
+				},
+				{
+					"command": "mssqlManager.refreshTable",
+					"when": "view == mssqlManager.explorer && viewItem == table",
+					"group": "3_refresh@1"
+				},
+				{
+					"command": "mssqlManager.newStoredProcedure",
+					"when": "view == mssqlManager.explorer && viewItem == stored-procedures",
+					"group": "1_new@1"
+				},
+				{
+					"submenu": "mssqlManager.scriptProcedureAs",
+					"when": "view == mssqlManager.explorer && viewItem =~ /^(stored-procedures|procedure)$/",
+					"group": "2_script@1"
+				},
+				{
+					"command": "mssqlManager.modifyStoredProcedure",
+					"when": "view == mssqlManager.explorer && viewItem == procedure",
+					"group": "1_modify@1"
+				},
+				{
+					"command": "mssqlManager.executeStoredProcedure",
+					"when": "view == mssqlManager.explorer && viewItem == procedure",
+					"group": "1_modify@2"
+				},
+				{
+					"command": "mssqlManager.viewProcedureDependencies",
+					"when": "view == mssqlManager.explorer && viewItem == procedure",
+					"group": "3_view@1"
+				},
+				{
+					"command": "mssqlManager.renameStoredProcedure",
+					"when": "view == mssqlManager.explorer && viewItem == procedure",
+					"group": "4_modify@1"
+				},
+				{
+					"command": "mssqlManager.deleteStoredProcedure",
+					"when": "view == mssqlManager.explorer && viewItem == procedure",
+					"group": "4_modify@2"
+				},
+				{
+					"command": "mssqlManager.showStoredProcedureProperties",
+					"when": "view == mssqlManager.explorer && viewItem == procedure",
+					"group": "5_properties@1"
+				},
+				{
+					"command": "mssqlManager.pinQueryHistoryItem",
+					"when": "view == mssqlManager.queryHistory && viewItem == queryHistoryItem",
+					"group": "inline@1"
+				},
+				{
+					"command": "mssqlManager.renameQueryHistoryItem",
+					"when": "view == mssqlManager.queryHistory && viewItem =~ /^queryHistoryItem/",
+					"group": "inline@1"
+				},
+				{
+					"command": "mssqlManager.unpinQueryHistoryItem",
+					"when": "view == mssqlManager.queryHistory && viewItem == queryHistoryItemPinned",
+					"group": "inline@1"
+				},
+				{
+					"command": "mssqlManager.deleteQueryHistoryItem",
+					"when": "view == mssqlManager.queryHistory && viewItem == queryHistoryItem",
+					"group": "inline@2"
+				},
+				{
+					"command": "mssqlManager.removeNotebook",
+					"when": "view == mssqlManager.notebooks && viewItem == notebookFolder",
+					"group": "inline@1"
+				},
+				{
+					"command": "mssqlManager.createNotebook",
+					"when": "view == mssqlManager.notebooks && viewItem =~ /notebookFolder|notebookSubfolder/",
+					"group": "inline@2"
+				},
+				{
+					"command": "mssqlManager.createNotebookSection",
+					"when": "view == mssqlManager.notebooks && viewItem == notebookFolder",
+					"group": "inline@3"
+				}
+			],
+			"commandPalette": [
+				{
+					"command": "mssqlManager.generateSelectScript",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.refresh",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.disconnect",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.selectTop1000",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.scriptTableCreate",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.scriptTableDrop",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.scriptRowInsert",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.scriptRowUpdate",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.scriptRowDelete",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.refreshTable",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.refreshNode",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.newStoredProcedure",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.modifyStoredProcedure",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.executeStoredProcedure",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.scriptProcedureCreateToWindow",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.scriptProcedureCreateToFile",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.scriptProcedureCreateToClipboard",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.scriptProcedureAlterToWindow",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.scriptProcedureAlterToFile",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.scriptProcedureAlterToClipboard",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.scriptProcedureDropToWindow",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.scriptProcedureDropToFile",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.scriptProcedureDropToClipboard",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.scriptProcedureExecuteToWindow",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.scriptProcedureExecuteToFile",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.scriptProcedureExecuteToClipboard",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.viewProcedureDependencies",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.renameStoredProcedure",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.deleteStoredProcedure",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.showStoredProcedureProperties",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.openQueryFromHistory",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.deleteQueryHistoryItem",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.refreshQueryHistory",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.toggleQueryHistoryGrouping",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.newQueryOnDatabase",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.editServerGroup",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.deleteServerGroup",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.filterDatabases",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.filterTables",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.showDatabaseDiagram",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.compareSchema",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.exportBackup",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.importBackup",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.executeChatGeneratedQuery",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.insertChatGeneratedQuery",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.removeNotebook",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.refreshNotebooks",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.createNotebook",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.createNotebookSection",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.deleteDatabase",
+					"when": "false"
+				},
+				{
+					"command": "mssqlManager.createDatabase",
+					"when": "false"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "mssqlManager.executeQuery",
+				"key": "ctrl+shift+e",
+				"when": "editorTextFocus && editorLangId == sql"
+			},
+			{
+				"command": "mssqlManager.executeQuery",
+				"key": "f5",
+				"when": "editorTextFocus && editorLangId == sql"
+			}
+		],
+		"configuration": {
+			"title": "MS SQL Manager",
+			"properties": {
+				"mssqlManager.showTableStatistics": {
+					"type": "boolean",
+					"default": true,
+					"description": "Show row count and size information for tables in the database explorer tree."
+				},
+				"mssqlManager.queryTimeout": {
+					"type": "number",
+					"default": 0,
+					"minimum": 0,
+					"description": "Query execution timeout in seconds. Set to 0 for no timeout (infinite)."
+				},
+				"mssqlManager.immediateActive": {
+					"type": "boolean",
+					"default": true,
+					"description": "Activate extension immediately when VS Code starts. When false, extension activates only when SQL files are opened."
+				},
+				"mssqlManager.colorPrimaryForeignKeys": {
+					"type": "boolean",
+					"default": true,
+					"description": "Color primary key columns (gold) and foreign key columns (blue) in query results."
+				},
+				"mssqlManager.variableHighlightColor": {
+					"type": "string",
+					"default": "#6adc7a",
+					"description": "Color used to highlight SQL variables (e.g. @MyVar) in the SQL editor. Set to empty string to disable."
+				},
+				"mssqlManager.cteHighlightColor": {
+					"type": "string",
+					"default": "#6adc7a",
+					"description": "Color used to highlight CTE names in the SQL editor. Set to empty string to disable."
+				},
+				"mssqlManager.jsonXmlHighlightColor": {
+					"type": "string",
+					"default": "#ce9178",
+					"description": "Color used for JSON/XML values in query result cells."
+				},
+				"mssqlManager.multipleResultSetsDisplay": {
+					"type": "string",
+					"default": "single-view",
+					"enum": [
+						"single-view",
+						"separately"
+					],
+					"enumDescriptions": [
+						"Single view — all result sets displayed stacked in the results tab.",
+						"Separately — each result set shown on its own tab (Set 1, Set 2, ...)."
+					],
+					"description": "Controls how multiple result sets are displayed in the query results panel."
+				},
+				"mssqlManager.numberFormat": {
+					"type": "string",
+					"default": "plain",
+					"enum": [
+						"plain",
+						"locale",
+						"fixed-2",
+						"fixed-4"
+					],
+					"enumDescriptions": [
+						"Plain — no formatting, values displayed as-is (e.g. 1234567.89)",
+						"Locale — locale-aware thousand separators (e.g. 1,234,567.89)",
+						"2 decimal places — locale separators, always 2 decimal digits (e.g. 1,234,567.89)",
+						"4 decimal places — locale separators, always 4 decimal digits (e.g. 1,234,567.8900)"
+					],
+					"description": "Controls how numeric values are displayed in query results."
+				},
+				"mssqlManager.schemaCacheValiditySeconds": {
+					"type": "number",
+					"default": 120,
+					"minimum": 5,
+					"maximum": 3600,
+					"description": "Duration in seconds to cache database schema hash validation results. Longer values reduce database queries but may delay detection of schema changes. (Default: 120 seconds)"
+				},
+				"mssqlManager.queryHistorySaveOnlyUnique": {
+					"type": "boolean",
+					"default": true,
+					"description": "When enabled, executing the same query on the same connection updates the existing history entry instead of creating a duplicate. Different connections always create separate entries."
+				},
+				"mssqlManager.formatting.tabWidth": {
+					"type": "number",
+					"default": 2,
+					"minimum": 1,
+					"maximum": 8,
+					"description": "Number of spaces used for SQL indentation."
+				},
+				"mssqlManager.formatting.keywordCase": {
+					"type": "string",
+					"enum": [
+						"upper",
+						"lower",
+						"preserve"
+					],
+					"default": "upper",
+					"description": "Formatting: SQL keyword case."
+				},
+				"mssqlManager.formatting.dataTypeCase": {
+					"type": "string",
+					"enum": [
+						"upper",
+						"lower",
+						"preserve"
+					],
+					"default": "upper",
+					"description": "Formatting: SQL data type case."
+				},
+				"mssqlManager.formatting.functionCase": {
+					"type": "string",
+					"enum": [
+						"upper",
+						"lower",
+						"preserve"
+					],
+					"default": "upper",
+					"description": "Formatting: SQL function name case."
+				},
+				"mssqlManager.formatting.linesBetweenQueries": {
+					"type": "number",
+					"default": 1,
+					"minimum": 0,
+					"maximum": 5,
+					"description": "Formatting: blank lines between SQL statements."
+				},
+				"mssqlManager.formatting.indentStyle": {
+					"type": "string",
+					"enum": [
+						"standard",
+						"tabularLeft",
+						"tabularRight"
+					],
+					"default": "standard",
+					"description": "Formatting: indentation style for SQL formatting."
+				},
+				"mssqlManager.formatting.logicalOperatorNewline": {
+					"type": "string",
+					"enum": [
+						"before",
+						"after"
+					],
+					"default": "before",
+					"description": "Formatting: place AND/OR before or after line breaks."
+				},
+				"mssqlManager.formatting.formatBeforeRun": {
+					"type": "boolean",
+					"default": false,
+					"description": "Formatting: automatically format query before execution."
+				},
+				"mssqlManager.dmlProtection.warnOnMissingWhere": {
+					"type": "boolean",
+					"default": true,
+					"description": "Show a confirmation dialog before executing UPDATE or DELETE statements that do not contain a WHERE clause."
+				},
+				"mssqlManager.dmlProtection.limitAffectedRows": {
+					"type": "boolean",
+					"default": true,
+					"description": "Before executing UPDATE or DELETE, run the statement in a rolled-back transaction to check the number of affected rows. If the count exceeds the safe threshold, a confirmation dialog is shown."
+				},
+				"mssqlManager.dmlProtection.maxAffectedRows": {
+					"type": "number",
+					"default": 100,
+					"minimum": 1,
+					"description": "Maximum number of affected rows allowed without confirmation when DML row-limit protection is enabled."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"clean:out": "node -e \"require('fs').rmSync('out', { recursive: true, force: true })\"",
+		"build:notebook": "npm ci --prefix webview/sqlNotebook && npm run build --prefix webview/sqlNotebook",
+		"vscode:prepublish": "npm run build:notebook && npm run package",
+		"compile": "cd webview/sqlEditor-react && npm run build && cd ../.. && webpack",
+		"compile:ext": "webpack",
+		"watch": "webpack --watch",
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"compile-tests": "npm run clean:out && tsc -p . --outDir out",
+		"watch-tests": "npm run clean:out && tsc -p . -w --outDir out",
+		"pretest": "npm run compile-tests && npm run compile && npm run lint",
+		"lint": "eslint src",
+		"test:webview": "npm test --prefix webview/sqlEditor-react",
+		"test": "npm run test:webview && vscode-test",
+		"install-extension": "code --install-extension ms-sql-manager-0.0.1.vsix"
+	},
+	"devDependencies": {
+		"@types/jsdom": "^27.0.0",
+		"@types/mssql": "^9.1.8",
+		"@types/node": "^20.x",
+		"@types/sinon": "^21.0.0",
+		"@types/vscode": "^1.105.0",
+		"@typescript-eslint/eslint-plugin": "^8.7.0",
+		"@typescript-eslint/parser": "^8.7.0",
+		"@vscode/test-cli": "^0.0.10",
+		"@vscode/test-electron": "^2.4.1",
+		"copy-webpack-plugin": "^13.0.1",
+		"eslint": "^9.11.1",
+		"jsdom": "^27.2.0",
+		"sinon": "^21.0.0",
+		"ts-loader": "^9.5.1",
+		"typescript": "^5.6.2",
+		"webpack": "^5.95.0",
+		"webpack-cli": "^5.1.4"
+	},
+	"dependencies": {
+		"@azure/identity": "^4.13.0",
+		"msnodesqlv8": "^5.1.1",
+		"mssql": "^10.0.2"
+	},
+	"__metadata": {
+		"installedTimestamp": 1789244670745,
+		"targetPlatform": "undefined",
+		"size": 10314820
+	}
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetBrains.ReSharper.SolutionAnalysis</name>
+    </assembly>
+    <members>
+        <member name="T:JetBrains.ReSharper.Daemon.SolutionAnalysis.FileImages.FileImages">
+            <summary>
+            ICache (myData) stores dependencies and hashes between files
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Daemon.SolutionAnalysis.FileImages.NamespaceDependency">
+            <summary>
+            For each class its namespace, short name, whether class internal or not
+            </summary>
+        </member>
+        <member name="T:JetBrains.ReSharper.Daemon.SolutionAnalysis.SolutionAnalysisManager">
+            <summary>
+            Internal Facade for SWEA, real worker (while <see cref="T:JetBrains.ReSharper.Daemon.SolutionAnalysisService"/> is interface for daemon)
+            </summary>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.SolutionAnalysis.UI.UpdateRequestStore.RequestUpdateAll">
+            <returns>should raise update event</returns>
+        </member>
+        <member name="M:JetBrains.ReSharper.Daemon.SolutionAnalysis.UI.UpdateRequestStore.RequestUpdate(JetBrains.ReSharper.Psi.Pointers.SourceFilePtr)">
+            <returns>should raise update event</returns>
+        </member>
+    </members>
+</doc>
