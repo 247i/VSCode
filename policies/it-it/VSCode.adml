@@ -25,6 +25,7 @@
 			<string id="Supported_1_136">Visual Studio Code &gt;= 1.136</string>
 			<string id="Supported_1_137">Visual Studio Code &gt;= 1.137</string>
 			<string id="Supported_1_140">Visual Studio Code &gt;= 1.140</string>
+			<string id="Supported_1_142">Visual Studio Code &gt;= 1.142</string>
 			<string id="Supported_1_67">Visual Studio Code &gt;= 1.67</string>
 			<string id="Supported_1_96">Visual Studio Code &gt;= 1.96</string>
 			<string id="Supported_1_99">Visual Studio Code &gt;= 1.99</string>
@@ -80,6 +81,8 @@
 			<string id="ChatStrictMarketplaces_chat_plugins_strictMarketplaces_policy">Elenco elementi consentiti relativi alle origini del marketplace del plug-in. Se l'opzione è impostata, solo i marketplace corrispondenti a una voce sono attendibili; una matrice vuota blocca tutti i marketplace.</string>
 			<string id="ChatStrictPluginOnlyCustomization">ChatStrictPluginOnlyCustomization</string>
 			<string id="ChatStrictPluginOnlyCustomization_chat_customizations_strictPluginOnlyCustomization_policy">Blocks standalone user and workspace skills, agents, hooks, instructions, and MCP servers while keeping eligible plugin customizations available.</string>
+			<string id="ChatTemporaryDefaultToLocalHarness">ChatTemporaryDefaultToLocalHarness</string>
+			<string id="ChatTemporaryDefaultToLocalHarness_chat_temporaryDefaultToLocalHarness_policy">Temporarily keeps Local available and prevents automatic selection of the Copilot harness, overriding rollout settings and managed sandbox and permission routing. Local does not enforce runtime-only sandbox and permission settings.</string>
 			<string id="ChatToolsAutoApprove">ChatToolsAutoApprove</string>
 			<string id="ChatToolsAutoApprove_autoApprove3_description">L'approvazione automatica globale, nota anche come "modalità YOLO", disabilita completamente l'approvazione manuale per tutti gli strumenti in tutte le aree di lavoro, consentendo all'agente di agire in modo totalmente autonomo. Questa condizione è estremamente pericolosa e non è *mai* consigliata, anche in ambienti in contenitori come Codespaces: nei contenitori di sviluppo, infatti, le chiavi utente vengono inoltrate nel contenitore e potrebbero essere compromesse.
 
@@ -198,6 +201,7 @@ Nota: questa impostazione controlla solo l'approvazione dello strumento e non im
 			<presentation id="ChatPluginsEnabled"><checkBox refId="ChatPluginsEnabled">ChatPluginsEnabled</checkBox></presentation>
 			<presentation id="ChatStrictMarketplaces"><multiTextBox refId="ChatStrictMarketplaces" /></presentation>
 			<presentation id="ChatStrictPluginOnlyCustomization"><checkBox refId="ChatStrictPluginOnlyCustomization">ChatStrictPluginOnlyCustomization</checkBox></presentation>
+			<presentation id="ChatTemporaryDefaultToLocalHarness"><checkBox refId="ChatTemporaryDefaultToLocalHarness">ChatTemporaryDefaultToLocalHarness</checkBox></presentation>
 			<presentation id="ChatToolsAutoApprove"><checkBox refId="ChatToolsAutoApprove">ChatToolsAutoApprove</checkBox></presentation>
 			<presentation id="ChatToolsEligibleForAutoApproval"><multiTextBox refId="ChatToolsEligibleForAutoApproval" /></presentation>
 			<presentation id="Claude3PIntegration"><checkBox refId="Claude3PIntegration">Claude3PIntegration</checkBox></presentation>

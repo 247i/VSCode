@@ -25,6 +25,7 @@
 			<string id="Supported_1_136">Visual Studio Code &gt;= 1.136</string>
 			<string id="Supported_1_137">Visual Studio Code &gt;= 1.137</string>
 			<string id="Supported_1_140">Visual Studio Code &gt;= 1.140</string>
+			<string id="Supported_1_142">Visual Studio Code &gt;= 1.142</string>
 			<string id="Supported_1_67">Visual Studio Code &gt;= 1.67</string>
 			<string id="Supported_1_96">Visual Studio Code &gt;= 1.96</string>
 			<string id="Supported_1_99">Visual Studio Code &gt;= 1.99</string>
@@ -80,6 +81,8 @@
 			<string id="ChatStrictMarketplaces_chat_plugins_strictMarketplaces_policy">外掛程式市集來源的允許清單。已設定時，只會信任符合項目的市集; 空的陣列會封鎖所有市集。</string>
 			<string id="ChatStrictPluginOnlyCustomization">ChatStrictPluginOnlyCustomization</string>
 			<string id="ChatStrictPluginOnlyCustomization_chat_customizations_strictPluginOnlyCustomization_policy">Blocks standalone user and workspace skills, agents, hooks, instructions, and MCP servers while keeping eligible plugin customizations available.</string>
+			<string id="ChatTemporaryDefaultToLocalHarness">ChatTemporaryDefaultToLocalHarness</string>
+			<string id="ChatTemporaryDefaultToLocalHarness_chat_temporaryDefaultToLocalHarness_policy">Temporarily keeps Local available and prevents automatic selection of the Copilot harness, overriding rollout settings and managed sandbox and permission routing. Local does not enforce runtime-only sandbox and permission settings.</string>
 			<string id="ChatToolsAutoApprove">ChatToolsAutoApprove</string>
 			<string id="ChatToolsAutoApprove_autoApprove3_description">全域自動核准 (亦稱「YOLO 模式」) 會完全停用對所有工作區中所有工具的手動核准，使 Agent 得以完全自主運作。此舉極其危險，且*絕不建議採用。即使是 GitHub Codespaces 和開發容器這樣的容器化環境，也可能因使用者金鑰轉送到容器而遭到入侵。
 
@@ -198,6 +201,7 @@
 			<presentation id="ChatPluginsEnabled"><checkBox refId="ChatPluginsEnabled">ChatPluginsEnabled</checkBox></presentation>
 			<presentation id="ChatStrictMarketplaces"><multiTextBox refId="ChatStrictMarketplaces" /></presentation>
 			<presentation id="ChatStrictPluginOnlyCustomization"><checkBox refId="ChatStrictPluginOnlyCustomization">ChatStrictPluginOnlyCustomization</checkBox></presentation>
+			<presentation id="ChatTemporaryDefaultToLocalHarness"><checkBox refId="ChatTemporaryDefaultToLocalHarness">ChatTemporaryDefaultToLocalHarness</checkBox></presentation>
 			<presentation id="ChatToolsAutoApprove"><checkBox refId="ChatToolsAutoApprove">ChatToolsAutoApprove</checkBox></presentation>
 			<presentation id="ChatToolsEligibleForAutoApproval"><multiTextBox refId="ChatToolsEligibleForAutoApproval" /></presentation>
 			<presentation id="Claude3PIntegration"><checkBox refId="Claude3PIntegration">Claude3PIntegration</checkBox></presentation>

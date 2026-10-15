@@ -2,6 +2,6 @@
 setlocal
 set VSCODE_DEV=
 set ELECTRON_RUN_AS_NODE=1
-"%~dp0..\Code.exe" "%~dp0..\16507d91be\resources\app\out\cli.js" %*
+"%~dp0..\Code.exe" "%~dp0..\6d62b1d5da\resources\app\out\cli.js" %*
 IF %ERRORLEVEL% NEQ 0 EXIT /b %ERRORLEVEL%
 endlocal

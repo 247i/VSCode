@@ -25,6 +25,7 @@
 			<string id="Supported_1_136">Visual Studio Code &gt;= 1.136</string>
 			<string id="Supported_1_137">Visual Studio Code &gt;= 1.137</string>
 			<string id="Supported_1_140">Visual Studio Code &gt;= 1.140</string>
+			<string id="Supported_1_142">Visual Studio Code &gt;= 1.142</string>
 			<string id="Supported_1_67">Visual Studio Code &gt;= 1.67</string>
 			<string id="Supported_1_96">Visual Studio Code &gt;= 1.96</string>
 			<string id="Supported_1_99">Visual Studio Code &gt;= 1.99</string>
@@ -80,6 +81,8 @@
 			<string id="ChatStrictMarketplaces_chat_plugins_strictMarketplaces_policy">Liste verte des sources de la Place de marché des plug-ins. Lorsque cette valeur est définie, seules les places de marché correspondant à une entrée sont approuvées ; un tableau vide bloque toutes les places de marché.</string>
 			<string id="ChatStrictPluginOnlyCustomization">ChatStrictPluginOnlyCustomization</string>
 			<string id="ChatStrictPluginOnlyCustomization_chat_customizations_strictPluginOnlyCustomization_policy">Blocks standalone user and workspace skills, agents, hooks, instructions, and MCP servers while keeping eligible plugin customizations available.</string>
+			<string id="ChatTemporaryDefaultToLocalHarness">ChatTemporaryDefaultToLocalHarness</string>
+			<string id="ChatTemporaryDefaultToLocalHarness_chat_temporaryDefaultToLocalHarness_policy">Temporarily keeps Local available and prevents automatic selection of the Copilot harness, overriding rollout settings and managed sandbox and permission routing. Local does not enforce runtime-only sandbox and permission settings.</string>
 			<string id="ChatToolsAutoApprove">ChatToolsAutoApprove</string>
 			<string id="ChatToolsAutoApprove_autoApprove3_description">L’approbation automatique globale, également appelée « mode YOLO », désactive complètement l’approbation manuelle pour tous les outils dans tous les espaces de travail, permettant à l’assistant d’agir de manière totalement autonome. Ceci est extrêmement dangereux et n’est *jamais* recommandé, même dans des environnements conteneurisés comme les [Codespaces](https://github.com/features/codespaces) et les [Conteneurs de développement](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers), où des clés utilisateur sont transférées dans le conteneur et pourraient être compromises.
 
@@ -198,6 +201,7 @@ Note : ce paramètre ne contrôle que l’approbation d’outil et n’empêche
 			<presentation id="ChatPluginsEnabled"><checkBox refId="ChatPluginsEnabled">ChatPluginsEnabled</checkBox></presentation>
 			<presentation id="ChatStrictMarketplaces"><multiTextBox refId="ChatStrictMarketplaces" /></presentation>
 			<presentation id="ChatStrictPluginOnlyCustomization"><checkBox refId="ChatStrictPluginOnlyCustomization">ChatStrictPluginOnlyCustomization</checkBox></presentation>
+			<presentation id="ChatTemporaryDefaultToLocalHarness"><checkBox refId="ChatTemporaryDefaultToLocalHarness">ChatTemporaryDefaultToLocalHarness</checkBox></presentation>
 			<presentation id="ChatToolsAutoApprove"><checkBox refId="ChatToolsAutoApprove">ChatToolsAutoApprove</checkBox></presentation>
 			<presentation id="ChatToolsEligibleForAutoApproval"><multiTextBox refId="ChatToolsEligibleForAutoApproval" /></presentation>
 			<presentation id="Claude3PIntegration"><checkBox refId="Claude3PIntegration">Claude3PIntegration</checkBox></presentation>

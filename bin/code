@@ -6,12 +6,12 @@ if [ "$VSCODE_WSL_DEBUG_INFO" = true ]; then
 	set -x
 fi
 
-COMMIT="16507d91be0dc1ce4f94c04d4d0430210b8685d9"
+COMMIT="6d62b1d5dace93a33b3a6d3eca1317bd5e15bcb1"
 APP_NAME="code"
 QUALITY="stable"
 NAME="Code"
 SERVERDATAFOLDER=".vscode-server"
-VERSIONFOLDER="16507d91be"
+VERSIONFOLDER="6d62b1d5da"
 VSCODE_PATH="$(dirname "$(dirname "$(realpath "$0")")")"
 ELECTRON="$VSCODE_PATH/$NAME.exe"
 
