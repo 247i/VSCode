@@ -1,8 +1,0 @@
-2026-10-11 13:03:29.876 [info] To enable debug logging, run "GitLens: Enable Debug Logging" or "Developer: Set Log Level..." from the Command Palette
-2026-10-11 13:03:29.877 [info]    [            1] GitLens v19.2.0  activating in Visual Studio Code (1.137.0) on the desktop; mode=production,language='en', logLevel='info', defaultDateLocale='null' (vscode|3722bbf6eef2c1a68268fff2835f7483c345134105edfb4d0b4714054b90237b|250568f5-12ac-43d9-9648-20378e5f5fe01791704003125)
-2026-10-11 13:03:29.877 [info]    GitLens upgraded from v19.1.0 to v19.2.0; window.focused=true
-2026-10-11 13:03:29.877 [info]    [            1] GitLens v19.2.0 activated [147ms]
-2026-10-11 13:03:29.877 [warning] [   78 →    96] GitHubIntegration.isConnected returned false [*1566ms] (slow)
-2026-10-11 13:03:29.877 [info]    [IPC          ] CLI capability published on http://127.0.0.1:62190
-2026-10-11 13:03:30.703 [warning] [    d →     e] ServerConnection.fetch(url=https://configs.gitkraken.dev/gitlens/product.json, options=undefined) completed [*2763ms] (slow)
-2026-10-11 13:03:30.703 [warning] [    c →     d] ServerConnection.fetchGkConfig(path=product.json, options=undefined) completed [*2763ms] (slow)

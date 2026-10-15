@@ -5,3 +5,5 @@ Code.exe
 /data/user-data/User/History
 /data/user-data/agent-host/sdk-cache
 /data/user-data/CachedExtensionVSIXs
+/data
+/data/user-data/Cache

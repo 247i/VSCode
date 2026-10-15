@@ -1,2 +1,0 @@
-#!/bin/sh
-exec "/d/All/IDLE/t/VSCode/data/user-data/User/globalStorage/github.copilot-chat/copilotCli/copilot.bat" "$@"
