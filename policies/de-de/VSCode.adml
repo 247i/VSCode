@@ -26,6 +26,7 @@
 			<string id="Supported_1_137">Visual Studio Code &gt;= 1.137</string>
 			<string id="Supported_1_140">Visual Studio Code &gt;= 1.140</string>
 			<string id="Supported_1_142">Visual Studio Code &gt;= 1.142</string>
+			<string id="Supported_1_143">Visual Studio Code &gt;= 1.143</string>
 			<string id="Supported_1_67">Visual Studio Code &gt;= 1.67</string>
 			<string id="Supported_1_96">Visual Studio Code &gt;= 1.96</string>
 			<string id="Supported_1_99">Visual Studio Code &gt;= 1.99</string>
@@ -77,8 +78,6 @@
 			<string id="ChatMCP_chat_mcp_access_any">Lassen Sie den Zugriff auf alle installierten MCP-Server zu.</string>
 			<string id="ChatPluginsEnabled">ChatPluginsEnabled</string>
 			<string id="ChatPluginsEnabled_chat_plugins_enabled">Agenten-Plug-in-Integration im Chat aktivieren</string>
-			<string id="ChatStrictMarketplaces">ChatStrictMarketplaces</string>
-			<string id="ChatStrictMarketplaces_chat_plugins_strictMarketplaces_policy">Positivliste für Quellen des Plug-in-Marketplace. Wenn diese festgelegt ist, gelten nur Marketplaces als vertrauenswürdig, die einem Eintrag entsprechen; ein leeres Array blockiert alle Marketplaces.</string>
 			<string id="ChatStrictPluginOnlyCustomization">ChatStrictPluginOnlyCustomization</string>
 			<string id="ChatStrictPluginOnlyCustomization_chat_customizations_strictPluginOnlyCustomization_policy">Blocks standalone user and workspace skills, agents, hooks, instructions, and MCP servers while keeping eligible plugin customizations available.</string>
 			<string id="ChatTemporaryDefaultToLocalHarness">ChatTemporaryDefaultToLocalHarness</string>
@@ -95,6 +94,8 @@ Hinweis: Diese Einstellung steuert nur die Toolgenehmigung und verhindert nicht,
 			<string id="Claude3PIntegration_chat_agentHost_claudeAgent_enabled_policy">Aktivieren Sie Claude-Agentsitzungen in VS Code. Starten und setzen Sie agentspezifische Codierungssitzungen fort, die direkt im Editor vom Claude-Agent-SDK von Anthropic unterstützt werden. Verwendet Ihr bestehendes Copilot-Abonnement.</string>
 			<string id="Codex3PIntegration">Codex3PIntegration</string>
 			<string id="Codex3PIntegration_chat_agentHost_codexAgent_enabled_policy">Enable Codex Agent sessions in VS Code. Start and resume agentic coding sessions powered by OpenAI Codex. Usage can be routed through GitHub Copilot or authenticated directly with an OpenAI account.</string>
+			<string id="CopilotCliCommand">CopilotCliCommand</string>
+			<string id="CopilotCliCommand_chat_copilotCliCommand_enabled_policy">Controls whether VS Code provides the copilot command for GitHub Copilot CLI. When disabled, VS Code setup on Windows and the Linux DEB and RPM packages don't add the command to PATH and remove the entry they added, VS Code doesn't install GitHub Copilot CLI, and integrated terminals don't include the command. A GitHub Copilot CLI that was installed separately isn't affected.</string>
 			<string id="CopilotNextEditSuggestions">CopilotNextEditSuggestions</string>
 			<string id="CopilotNextEditSuggestions_github_copilot_nextEditSuggestions_enabled">Whether to enable next edit suggestions (NES). NES can propose a next edit based on your recent changes.</string>
 			<string id="CopilotOtelCaptureContent">CopilotOtelCaptureContent</string>
@@ -199,13 +200,13 @@ Hinweis: Diese Einstellung steuert nur die Toolgenehmigung und verhindert nicht,
 			<presentation id="ChatHooks"><checkBox refId="ChatHooks">ChatHooks</checkBox></presentation>
 			<presentation id="ChatMCP"><dropdownList refId="ChatMCP" /></presentation>
 			<presentation id="ChatPluginsEnabled"><checkBox refId="ChatPluginsEnabled">ChatPluginsEnabled</checkBox></presentation>
-			<presentation id="ChatStrictMarketplaces"><multiTextBox refId="ChatStrictMarketplaces" /></presentation>
 			<presentation id="ChatStrictPluginOnlyCustomization"><checkBox refId="ChatStrictPluginOnlyCustomization">ChatStrictPluginOnlyCustomization</checkBox></presentation>
 			<presentation id="ChatTemporaryDefaultToLocalHarness"><checkBox refId="ChatTemporaryDefaultToLocalHarness">ChatTemporaryDefaultToLocalHarness</checkBox></presentation>
 			<presentation id="ChatToolsAutoApprove"><checkBox refId="ChatToolsAutoApprove">ChatToolsAutoApprove</checkBox></presentation>
 			<presentation id="ChatToolsEligibleForAutoApproval"><multiTextBox refId="ChatToolsEligibleForAutoApproval" /></presentation>
 			<presentation id="Claude3PIntegration"><checkBox refId="Claude3PIntegration">Claude3PIntegration</checkBox></presentation>
 			<presentation id="Codex3PIntegration"><checkBox refId="Codex3PIntegration">Codex3PIntegration</checkBox></presentation>
+			<presentation id="CopilotCliCommand"><checkBox refId="CopilotCliCommand">CopilotCliCommand</checkBox></presentation>
 			<presentation id="CopilotNextEditSuggestions"><checkBox refId="CopilotNextEditSuggestions">CopilotNextEditSuggestions</checkBox></presentation>
 			<presentation id="CopilotOtelCaptureContent"><checkBox refId="CopilotOtelCaptureContent">CopilotOtelCaptureContent</checkBox></presentation>
 			<presentation id="CopilotOtelCaptureIdentity"><checkBox refId="CopilotOtelCaptureIdentity">CopilotOtelCaptureIdentity</checkBox></presentation>
